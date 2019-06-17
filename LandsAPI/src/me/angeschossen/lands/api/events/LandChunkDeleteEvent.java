@@ -1,5 +1,6 @@
 package me.angeschossen.lands.api.events;
 
+import me.angeschossen.lands.api.objects.Land;
 import me.angeschossen.lands.api.objects.LandChunk;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
@@ -9,14 +10,28 @@ public class LandChunkDeleteEvent extends Event implements Cancellable {
     public static HandlerList handlerList = new HandlerList();
     private boolean cancelled;
 
-    private LandChunk landChunk;
+    private final int x, z;
+    private final String world;
+    private final Land land;
 
-    public LandChunkDeleteEvent(LandChunk landChunk) {
-        this.landChunk = landChunk;
+    public LandChunkDeleteEvent(String world, Land land, int x, int z) {
+        this.world = world; this.x = x; this.z = z;
+        this.land = land;
     }
 
-    public LandChunk getLandChunk() {
-        return landChunk;
+    public Land getLand(){
+        return land;
+    }
+    public int getX(){
+        return x;
+    }
+
+    public int getZ(){
+        return z;
+    }
+
+    public String getWorldName(){
+        return world;
     }
 
     public static HandlerList getHandlerList() {
@@ -38,3 +53,4 @@ public class LandChunkDeleteEvent extends Event implements Cancellable {
         return handlerList;
     }
 }
+

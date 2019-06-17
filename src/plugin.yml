@@ -1,6 +1,6 @@
 name: Lands
 main: me.angeschossen.lands.Lands
-version: 2.8.4.0
+version: 2.8.4.6
 author: Angeschossen
 description: Feature rich GUI, Taxes, Customize your own, Titles, New factions - Let players manage their land!
 website: https://www.spigotmc.org/resources/53313
@@ -42,6 +42,7 @@ permissions:
             description: Set free land creations
             default: op
       lands.command.*:
+        description: Access to all player commands
         children:
           lands.command.accept:
             description: /Lands accept
@@ -116,6 +117,7 @@ permissions:
             description: /Lands wild
             default: op
       lands.bypass.*:
+        description: Bypass all protections and other
         children:
           lands.bypass.break:
             description: Bypass block break protection

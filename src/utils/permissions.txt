@@ -1,410 +1,415 @@
   lands.*:
     description: Access to all Lands actions
-    default: false
+    default: op
     children:
       lands.chunks.<Number>:
         description: Set max chunk claims
-        default: false
+        default: op
       lands.lands.<Number>:
         description: Set max lands can be member of (own lands + lands where member)
-        default: false
+        default: op
       lands.ownlands.<Number>:
         description: Set max own lands (own lands)
-        default: false
+        default: op
       lands.members.<Number>:
         description: Set max members in an chunk
-        default: false
+        default: op
       lands.selection.<Selection>:
         description: Set max chunks in selection (/Lands selection)
-        default: false
+        default: op
       lands.free.*:
         description: Player doesn't need to pay claim and land creation costs
-        default: false
+        default: op
         children:
           lands.free.chunks.<Number>:
             description: Set free chunk claims
-            default: false
+            default: op
           lands.free.lands.<Lands>:
             description: Set free land creations
-            default: false
+            default: op
       lands.command.*:
+        description: Access to all player commands
         children:
           lands.command.accept:
             description: /Lands accept
-            default: false
+            default: op
           lands.command.chat:
             description: /Lands chat
-            default: false
+            default: op
           lands.command.claim:
             description: /Lands claim
-            default: false
+            default: op
           lands.command.create:
             description: /Lands create
-            default: false
+            default: op
           lands.command.delete:
             description: /Lands delete
-            default: false
+            default: op
           lands.command.deny:
             description: /Lands deny
-            default: false
+            default: op
           lands.command.edit:
             description: /Lands edit
-            default: false
+            default: op
           lands.command.help:
             description: /Lands help
-            default: false
+            default: op
           lands.command.info:
             description: /Lands info
-            default: false
+            default: op
           lands.command.invites:
             description: /Lands invites
-            default: false
+            default: op
           lands.command.leave:
             description: /Lands leave
-            default: false
+            default: op
           lands.command.menu:
             description: /Lands menu, /Lands
-            default: false
+            default: op
           lands.command.rename:
             description: /Lands reload
-            default: false
+            default: op
           lands.command.selection:
             description: /Lands selection
-            default: false
+            default: op
           lands.command.setrole:
             description: /Lands setrole
-            default: false
+            default: op
           lands.command.setspawn:
             description: /Lands setspawn
-            default: false
+            default: op
           lands.command.spawn:
             description: /Lands spawn
-            default: false
+            default: op
           lands.command.teleport:
             description: /Lands teleport
-            default: false
+            default: op
           lands.command.top:
             description: /Lands top
-            default: false
+            default: op
           lands.command.trust:
             description: /Lands trust
-            default: false
+            default: op
           lands.command.unclaim:
             description: /Lands unclaim
-            default: false
+            default: op
           lands.command.untrust:
             description: /Lands untrust
-            default: false
+            default: op
           lands.command.view:
             description: /Lands view
-            default: false
+            default: op
           lands.command.wild:
             description: /Lands wild
-            default: false
+            default: op
       lands.bypass.*:
+        description: Bypass all protections and other
         children:
           lands.bypass.break:
             description: Bypass block break protection
-            default: false
+            default: op
           lands.bypass.place:
             description: Bypass block place protection
-            default: false
+            default: op
           lands.bypass.interact:
             description: Bypass interaction protection
-            default: false
+            default: op
           lands.bypass.combat.animal:
             description: Bypass animal attack protection
-            default: false
+            default: op
           lands.bypass.combat.player:
             description: Bypass player attack protection
-            default: false
+            default: op
           lands.bypass.member.untrust:
             description: Untrust players or remove invites in other lands
-            default: false
+            default: op
+          lands.bypass.fly:
+            description: Bypass fly flag
+            default: op
           lands.bypass.edit.*:
             description: Select lands you're not member of
-            default: false
+            default: op
             children:
               lands.bypass.edit.settings:
                 description: Edit settings of other lands
-                default: false
+                default: op
           lands.bypass.cooldown.*:
             description: Bypass cooldowns
-            default: false
+            default: op
             children:
               lands.bypass.cooldown.wild:
                 description: Bypass /Lands wild cooldown
-                default: false
+                default: op
               lands.bypass.cooldown.rename:
                 description: Bypass /Lands rename cooldown
-                default: false
+                default: op
               lands.bypass.cooldown.teleport:
                 description: Bypass chunk teleport cooldown
-                default: false
+                default: op
           lands.bypass.spawn.private:
             description: Teleport to private land spawns
-            default: false
+            default: op
           lands.bypass.disallowwilderness.break:
             description: Allow block breaking in wilderness, if disallowwilderness is enabled
-            default: false
+            default: op
           lands.bypass.disallowwilderness.place:
             description: Allow block place in wilderness, if disallowilderness is enabled
-            default: false
+            default: op
           lands.bypass.disallowwilderness.interact:
             description: Allow interaction in wilderness, if disallowwilderness is enabled
       lands.gui.*:
         description: Access to all GUI actions
-        default: false
+        default: op
         children:
           lands.gui.chunk.*:
             description: Access to all chunk GUI actions
-            default: false
+            default: op
             children:
               lands.gui.chunk.teleport:
                 description: Allow teleporting to claimed chunks
-                default: false
+                default: op
       lands.setting.*:
         description: Access to land settings
-        default: false
+        default: op
         children:
           lands.setting.entity_griefing:
             description: Allow to toggle entity griefing
-            default: false
+            default: op
           lands.setting.piston_griefing:
             description: Allow to toggle piston griefing
-            default: false
+            default: op
           lands.setting.monster_spawn:
             description: Allow to toggle monster spawn
-            default: false
+            default: op
           lands.setting.animal_spawn:
             description: Allow to toggle animal spawn
-            default: false
+            default: op
           lands.setting.tax_total:
             description: Allow toggle tax total
-            default: false
+            default: op
           lands.setting.spawn_public:
             description: Allow to toggle land spawn public
-            default: false
+            default: op
       lands.role.*:
         description: Access to all role settings
-        default: false
+        default: op
         children:
           lands.role.visitor.*:
             description: Access to all visitor role settings
-            default: false
+            default: op
             children:
               lands.role.visitor.block_break:
                 description: Allow to toggle block break
-                default: false
+                default: op
               lands.role.visitor.block_place:
                 description: Allow to toggle block place
-                default: false
+                default: op
               lands.role.visitor.attack_player:
                 description: Allow to toggle attack player
-                default: false
+                default: op
               lands.role.visitor.attack_animal:
                 description: Allow to toggle attack animal
-                default: false
+                default: op
               lands.role.visitor.block_ignite:
                 description: Allow to toggle block ignite
-                default: false
+                default: op
               lands.role.visitor.interact_general:
                 description: Allow to toggle general interaction
-                default: false
+                default: op
               lands.role.visitor.interact_doors:
                 description: Allow to toggle open doors
-                default: false
+                default: op
               lands.role.visitor.interact_container:
                 description: Allow to toggle open container
-                default: false
+                default: op
               lands.role.visitor.interact_mechanism:
                 description: Allow to toggle interact mechanism (redstone)
-                default: false
+                default: op
               lands.role.visitor.player_trust:
                 description: Allow to toggle trust player
-                default: false
+                default: op
               lands.role.visitor.player_untrust:
                 description: Allow to toggle player untrust
-                default: false
+                default: op
               lands.role.visitor.player_setrole:
                 description: Allow to toggle player setrole
-                default: false
+                default: op
               lands.role.visitor.land_claim:
                 description: Allow to toggle claim chunks for the land
-                default: false
+                default: op
               lands.role.visitor.land_claim_border:
                 description: Allow to toggle claim chunks at the border of the land
-                default: false
+                default: op
               lands.role.visitor.land_spawn_set:
                 description: Allow to toggle spawn set
-                default: false
+                default: op
               lands.role.visitor.land_spawn_teleport:
                 description: Allow to toggle spawn teleport
-                default: false
+                default: op
               lands.role.visitor.land_rename:
                 description: Allow to rename land
-                default: false
+                default: op
               lands.role.visitor.setting_edit:
                 description: Allow to toggle alow this role to change settings of a role with lower priority
-                default: false
+                default: op
           lands.role.member.*:
             description: Access to all mmeber role settings
-            default: false
+            default: op
             children:
-              lands.role.visitor.block_break:
+              lands.role.member.block_break:
                 description: Allow to toggle block break
-                default: false
-              lands.role.visitor.block_place:
+                default: op
+              lands.role.member.block_place:
                 description: Allow to toggle block place
-                default: false
-              lands.role.visitor.attack_player:
+                default: op
+              lands.role.member.attack_player:
                 description: Allow to toggle attack player
-                default: false
-              lands.role.visitor.attack_animal:
+                default: op
+              lands.role.member.attack_animal:
                 description: Allow to toggle attack animal
-                default: false
-              lands.role.visitor.block_ignite:
+                default: op
+              lands.role.member.block_ignite:
                 description: Allow to toggle block ignite
-                default: false
-              lands.role.visitor.interact_general:
+                default: op
+              lands.role.member.interact_general:
                 description: Allow to toggle general interaction
-                default: false
-              lands.role.visitor.interact_doors:
+                default: op
+              lands.role.member.interact_doors:
                 description: Allow to toggle open doors
-                default: false
-              lands.role.visitor.interact_container:
+                default: op
+              lands.role.member.interact_container:
                 description: Allow to toggle open container
-                default: false
-              lands.role.visitor.interact_mechanism:
+                default: op
+              lands.role.member.interact_mechanism:
                 description: Allow to toggle interact mechanism (redstone)
-                default: false
-              lands.role.visitor.player_trust:
+                default: op
+              lands.role.member.player_trust:
                 description: Allow to toggle trust player
-                default: false
-              lands.role.visitor.player_untrust:
+                default: op
+              lands.role.member.player_untrust:
                 description: Allow to toggle player untrust
-                default: false
-              lands.role.visitor.player_setrole:
+                default: op
+              lands.role.member.player_setrole:
                 description: Allow to toggle player setrole
-                default: false
-              lands.role.visitor.land_claim:
+                default: op
+              lands.role.member.land_claim:
                 description: Allow to toggle claim chunks for the land
-                default: false
-              lands.role.visitor.land_claim_border:
+                default: op
+              lands.role.member.land_claim_border:
                 description: Allow to toggle claim chunks at the border of the land
-                default: false
-              lands.role.visitor.land_spawn_set:
+                default: op
+              lands.role.member.land_spawn_set:
                 description: Allow to toggle spawn set
-                default: false
-              lands.role.visitor.land_spawn_teleport:
+                default: op
+              lands.role.member.land_spawn_teleport:
                 description: Allow to toggle spawn teleport
-                default: false
-              lands.role.visitor.land_rename:
+                default: op
+              lands.role.member.land_rename:
                 description: Allow to rename land
-                default: false
-              lands.role.visitor.setting_edit:
+                default: op
+              lands.role.member.setting_edit:
                 description: Allow to toggle alow this role to change settings of a role with lower priority
-                default: false
+                default: op
           lands.role.admin.*:
             description: Access to all admin role settings
-            default: false
+            default: op
             children:
-              lands.role.visitor.block_break:
+              lands.role.admin.block_break:
                 description: Allow to toggle block break
-                default: false
-              lands.role.visitor.block_place:
+                default: op
+              lands.role.admin.block_place:
                 description: Allow to toggle block place
-                default: false
-              lands.role.visitor.attack_player:
+                default: op
+              lands.role.admin.attack_player:
                 description: Allow to toggle attack player
-                default: false
-              lands.role.visitor.attack_animal:
+                default: op
+              lands.role.admin.attack_animal:
                 description: Allow to toggle attack animal
-                default: false
-              lands.role.visitor.block_ignite:
+                default: op
+              lands.role.admin.block_ignite:
                 description: Allow to toggle block ignite
-                default: false
-              lands.role.visitor.interact_general:
+                default: op
+              lands.role.admin.interact_general:
                 description: Allow to toggle general interaction
-                default: false
-              lands.role.visitor.interact_doors:
+                default: op
+              lands.role.admin.interact_doors:
                 description: Allow to toggle open doors
-                default: false
-              lands.role.visitor.interact_container:
+                default: op
+              lands.role.admin.interact_container:
                 description: Allow to toggle open container
-                default: false
-              lands.role.visitor.interact_mechanism:
+                default: op
+              lands.role.admin.interact_mechanism:
                 description: Allow to toggle interact mechanism (redstone)
-                default: false
-              lands.role.visitor.player_trust:
+                default: op
+              lands.role.admin.player_trust:
                 description: Allow to toggle trust player
-                default: false
-              lands.role.visitor.player_untrust:
+                default: op
+              lands.role.admin.player_untrust:
                 description: Allow to toggle player untrust
-                default: false
-              lands.role.visitor.player_setrole:
+                default: op
+              lands.role.admin.player_setrole:
                 description: Allow to toggle player setrole
-                default: false
-              lands.role.visitor.land_claim:
+                default: op
+              lands.role.admin.land_claim:
                 description: Allow to toggle claim chunks for the land
-                default: false
-              lands.role.visitor.land_claim_border:
+                default: op
+              lands.role.admin.land_claim_border:
                 description: Allow to toggle claim chunks at the border of the land
-                default: false
-              lands.role.visitor.land_spawn_set:
+                default: op
+              lands.role.admin.land_spawn_set:
                 description: Allow to toggle spawn set
-                default: false
-              lands.role.visitor.land_spawn_teleport:
+                default: op
+              lands.role.admin.land_spawn_teleport:
                 description: Allow to toggle spawn teleport
-                default: false
-              lands.role.visitor.land_rename:
+                default: op
+              lands.role.admin.land_rename:
                 description: Allow to rename land
-                default: false
-              lands.role.visitor.setting_edit:
+                default: op
+              lands.role.admin.setting_edit:
                 description: Allow to toggle alow this role to change settings of a role with lower priority
-                default: false
+                default: op
       lands.admin.*:
         description: Access to all admin actions
-        default: false
+        default: op
         children:
           lands.admin.command.*:
             description: Access to all admin commands
-            default: false
+            default: op
             children:
               lands.admin.command.reload:
                 description: Access to /Lands reload
-                default: false
+                default: op
               lands.admin.command.land.*:
                 description: Access to admin land commands
-                default: false
+                default: op
                 children:
                   lands.admin.command.land.delete:
                     description: Delete land
-                    default: false
+                    default: op
                   lands.admin.command.land.edit:
                     description: Open GUI for land
-                    default: false
+                    default: op
                   lands.admin.command.land.trust:
                     description: Trust players to land
-                    default: false
+                    default: op
                   lands.admin.command.land.untrust:
                     description: Untrust players from land
-                    default: false
+                    default: op
                   lands.admin.command.land.rename:
                     description: Rename land
-                    default: false
+                    default: op
                   lands.admin.command.land.settings.reset:
                     description: Reset settings of land
-                    default: false
+                    default: op
                   lands.admin.command.land.setowner:
                     description: Set new owner for land
-                    default: false
+                    default: op
               lands.admin.command.give.claimblock:
                 description: Give claimblocks to player
-                default: false
+                default: op
               lands.admin.command.import:
                 description: Import data from other plugins
-                default: false
+                default: op
               lands.admin.command.safezone:
                 description: Edit safezones
-                default: false
+                default: op
