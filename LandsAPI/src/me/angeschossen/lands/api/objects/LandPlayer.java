@@ -1,7 +1,6 @@
 package me.angeschossen.lands.api.objects;
 
 import me.angeschossen.lands.api.enums.LandsAction;
-import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 
 import java.util.Collection;

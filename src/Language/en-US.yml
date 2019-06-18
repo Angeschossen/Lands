@@ -78,17 +78,17 @@ general:
   autoAction:
     claim: '&aChunk claim'
   map:
-    yours: '&a|||| '
-    others: '&c|||| '
-    friendly: '&5|||| '
-    current-location: '&e|||| '
-    wilderness: '&2|||| '
+    yours: '&a▉ '
+    others: '&c▉ '
+    friendly: '&5▉ '
+    current-location: '&e▉ '
+    wilderness: '&2▉ '
 
 help:
   general:
     prefix: '&8[&aLands&8] &7Usage: '
     header: '&7------------<- &5Lands Help &7Page&6 {page} &8/&e {pages} &7->------------'
-    page: '&7Use &8/&dLands help {next} &7for the next page.'
+    page: '&7Use &8/&dLands help {next} &7for the next page. <> = needed [] = optional'
     footer: '&7------------<- &5Lands Help &7Page&6 {page} &8/&e {pages} &7->------------'
   command:
     help: '&8/&7Lands help &8[&aPage&8] - &eGet help'
@@ -117,6 +117,7 @@ help:
     info: '&8/&7Lands info &8[&aLand&8] - &eView information about land'
     player: '&8/&7Lands player &8<&aPlayer&8> - &eView information about player'
     map: '&8/&7Lands map &8- &eView map'
+    balance: '&8/&7Lands balance &8[&aLand&8] - &eCheck land balance'
     deposit: '&8/&7Lands deposit &8<&aAmount&8> - &eMoney to land bank'
     withdraw: '&8/&7Lands withdraw &8<&aAmount&8> - &eMoney from land bank'
 
@@ -158,9 +159,9 @@ message:
     safezone-enter: '#t#a#!!1!!2!!1!!&7Land&b {land}&7:;;&7owned by&e {player}&7.'
     safezone-leave: '#t#a#&aWilderness&7:;;&7Leaving&b {land};;&eFeel the wild.'
     fly:
-      warning: '&8[&aLands&8] &cYour fly will be disabled in&e {sec} &cseconds. &7You''re not allowed to fly here.'
-      disabled: '&8[&aLands&8] &cYour fly was disabled. &7You''re not allowed to fly in this land.'
-      not-allowed: '&8[&aLands&8] &cYou''re not allowed to fly here. &7You can contact the land owner for help.'
+      warning: '&8[&aLands&8] &7You''re not allowed to fly here. Flight mode will be disabled in a few seconds. Bypass permission:&b {permission}'
+      count: '#t#&cFly mode disabling in;;&e{sec} &csecond(s)'
+      disabled: '&8[&aLands&8] &cYour fly mode was disabled. &7You''re not allowed to fly here.'
   disallowWilderness:
     break: '&8[&aLands&8] &cYou''re not allowed to break blocks in wilderness. &7You can do that only in a claimed land.'
     place: '&8[&aLands&8] &cYou''re not allowed to place blocks in wilderness. &7You can do that only in a claimed land.'
@@ -321,7 +322,7 @@ command:
     format: '&8[&aLands&8] [&d{land}&8] {role} &7{player}&8:&f {message}'
   map:
     header: '&7----------------------'
-    info: '&7Yours: &a|||| &7Wilderness: &2|||| &7Others: &c|||| &7Friendly: &5|||| &7Location: &e||||'
+    info: '&7Yours: &a▉ &7Wilderness: &2▉ &7Others: &c▉ &7Friendly: &5▉ &7Position: &e▉'
     footer: ' '
 
 list:
