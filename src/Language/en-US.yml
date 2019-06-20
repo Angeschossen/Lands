@@ -131,7 +131,7 @@ help:
 message:
   no-permission: '&8[&aLands&8] &cYou don''t have permission to do this. &7You need permission&b {permission}&7.'
   world-invalid: '&8[&aLands&8] &cThis is deactivated in this world.'
-  feature-disabled: '&8[&aLands&8] &cThis feature was diabled by an administrator. &7He needs to enable setting&b {setting} &7in config, to let you use this feature.'
+  feature-disabled: '&8[&aLands&8] &cThis feature was disabled by an administrator. &7He needs to enable setting&b {setting} &7in config, to let you use this feature.'
   noaccess:
     chunk: '&8[&aLands&8] &cYou don''t have access for this chunk. &8(&7Land:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c.'
     land: '&8[&aLands&8] &cYou''re not allowed to do this for this land &8(&7Land:&e {land}&8)&7.'
@@ -148,7 +148,7 @@ message:
       chunk-untrust: '&8[&aLands&8] &cYou''re not allowed to untrust an player in his chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
       land-trust: '&8[&aLands&8] &cYou''re not allowed to trust an player in land &8(&7Land: &e{land}&8)&c.'
       land-untrust: '&8[&aLands&8] &cYou''re not allowed to untrust an player in this land &8(&7Land: &e{land}&8)&c.'
-      land-setrole: '&8[&aLands&8] &cYou''re not allowed to trust an player in this land &8(&e{&7Land: land}&8)&c.'
+      land-setrole: '&8[&aLands&8] &cYou''re not allowed to trust an player in this land &8(&7Land: &e{land}&8)&c.'
     combat:
       animal: '&8[&aLands&8] &cYou''re not allowed to attack animals here.'
       pvp-attacker: '&8[&aLands&8] &cYou''re not allowed to attack players here.'
@@ -189,9 +189,9 @@ command:
     name-exists: '&8[&aLands&8] &cThis name is already taken by an other land. &7You need to choose a different one.'
     money-cost: '&8[&aLands&8] &cYou don''t have enough to pay the cost. &7You need&b ${cost}&7.'
     lands-max: '&8[&aLands&8] &cYou can''t be part of any more lands. &7You reached your maximum of&b {max} &7lands.'
-    name-numbers: '&8[&aLands&8] &cYou can''t use numbers in your landname. &7Please use only latin letters.'
-    name-accent: '&8[&aLands&8] &cYou can''t use accents in your landname. &7Please use only latin letters.'
-    name-length: '&8[&aLands&8] &cThe name is too long. &7Max lenght is&b {max} &7characters.'
+    name-numbers: '&8[&aLands&8] &cYou can''t use numbers in your lands name. &7Please use only latin letters.'
+    name-accent: '&8[&aLands&8] &cYou can''t use accents in your lands name. &7Please use only latin letters.'
+    name-length: '&8[&aLands&8] &cThe name is too long. &7Max length is&b {max} &7characters.'
     action-cooldown: '&8[&aLands&8] &cYou can''t do this now. &7You need to wait&b {time} &7minutes.'
     land-none: '&8[&aLands&8] &cSeems like you''re not member of an land in this world. &7Use &8/&aLands create &7to create one.'
     land-no-own: '&8[&aLands&8] &cYou''re not owning an land in this world. &7Use &8/&aLands create &7to create one.'
@@ -218,7 +218,7 @@ command:
   edit:
     success: '&8[&aLands&8] &7You entered edit mode for this land &8(&7Land:&e {land}&8)&7. Next actions, like &8/&aLands claim &7or &8/&aLands trust&7, will be executed for this land.'
   selection:
-    disabled-config: '&8[&aLands&8] &cThis feature was diabled in config by an administrator. &7You need to enable setting &bland.selection.enabled&7.'
+    disabled-config: '&8[&aLands&8] &cThis feature was disabled in config by an administrator. &7You need to enable setting &bland.selection.enabled&7.'
     enabled: '&8[&aLands&8] &7Selection mode enabled: Select just with your hands &bboth corners &7of the region to &bclaim all chunks &7in it.'
     disabled: '#t#!!1!!1!!1!!&7Selection:;;&cDisabled'
     pos-left: '#t#&7Position;;&b1'
@@ -226,19 +226,19 @@ command:
     max: '&8[&aLands&8] &cYour selection has to many chunks in it. &7Size:&b {current} &7Your allowed size:&b {max}'
     same-world: '&8[&aLands&8] &cBoth positions must be in the same world.'
     claimed: '&8[&aLands&8] &7Successful claimed&b {chunks} &7chunks for this land &8(&7Land:&e {land}&8)&7. You payed&b ${cost}&7.'
-    left: '&8[&aLands&8] &7Successful left&ab {chunks} &7chunks of this land &8(&7Land:&e {land}&8)&7.'
-    unclaimed: '&8[&aLands&8] &7Successful unclaimed&ab {chunks} &7chunks of this land &8(&7Land:&e {land}&8)&7.'
+    left: '&8[&aLands&8] &7Successful left&b {chunks} &7chunks of this land &8(&7Land:&e {land}&8)&7.'
+    unclaimed: '&8[&aLands&8] &7Successful unclaimed&b {chunks} &7chunks of this land &8(&7Land:&e {land}&8)&7.'
   claim:
     max-chunks: '&8[&aLands&8] &cYou can''t claim any more chunks. &7Your maximum is&b {max} &7chunks.'
     auto-create: '&8[&aLands&8] &7Trying to auto create an land for you, because you have none in this world. You can change the name of it by executing &8/&aLands rename&7.'
     auto-create-fail: '&8[&aLands&8] &cFailed to auto create an land for you. &7Please read the messages above and contact someone for help.'
-    near-other: '&8[&aLands&8] &cThis is to near to land&e {land}&c. &7You need to keep distance to this land. Minimum chunk distance:&b {distance}&7.'
+    near-other: '&8[&aLands&8] &cThis is too near to land&e {land}&c. &7You need to keep distance to this land. Minimum chunk distance:&b {distance}&7.'
     far-land: '&8[&aLands&8] &cYou can''t claim this chunk. &7It needs to fit on your land &8(&7Land:&e {land}&8)&7.'
     success: '&8[&aLands&8] &7Successful claimed this chunk &8(&7Land:&e {land} &7X:&e {x} &7Z:&e {z}&8) &7for&b {cost}&7. Next claim will cost&b {next}&7.'
   leave:
     land-owner: '&8[&aLands&8] &cYou can''t leave this land. &7As the owner of the land you need to delete it. Use &8/&aLands delete&7.'
     land-success: '&8[&aLands&8] &7Successful left land&b {land}&7. You don''t have any longer access to the land and his chunks.'
-    chunk-success: '&8[&aLands&8] &7Successful left this chunk. &7You don''t have any longer access to this chunk.'
+    chunk-success: '&8[&aLands&8] &7Successful left this chunk. You don''t have any longer access to this chunk.'
   unclaim:
     success: '&8[&aLands&8] &7Successful unclaimed this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7. You got&b ${back} &7back.'
   delete:
@@ -277,7 +277,7 @@ command:
     own-land: '&8[&aLands&8] &cYou don''t have permission to own an land and be member of other lands. &7You need to leave your own land first.'
     max-reached: '&8[&aLands&8] &cYou can''t join any more lands. &7You can only have&b {max} &7lands.'
     land-tax-confirm: '&8[&aLands&8] &cThe owner of this land wants you to pay&e {tax} &7to join this land. &7Please confirm this action by executing &8/&aLands accept {land} confirm&7.'
-    chunk-tax-confirm: '&8[&aLands&8] &7The owner of this land wants you to pay&b {tax} &7to join this land. &7Please confirm your action with &8/&aLand accept {land} confirm&7.'
+    chunk-tax-confirm: '&8[&aLands&8] &7The owner of this land wants you to pay&b {tax} &7to join this chunk. &7Please confirm your action with &8/&aLand accept {land} confirm&7.'
     land-fail: '&8[&aLands&8] &cCouldn''t trust you in land&e {land}&c. &7The owner of the land reached his maximum of&b {members} &7members in his chunks.'
     land-max-members: '&8[&aLands&8] &cCouldn''t trust you in&e {chunks} &cchunks. &7The owner of the land reached his maximum of&b {members} &7members in his chunks.'
     chunk-max-members: '&8[&aLands&8] &cCouldn''t set the role in this chunk. &7The owner of the land reached his maximum of&b {members} &7members in this chunk.'
@@ -312,7 +312,7 @@ command:
     success: '&8[&aLands&8] &7You successful put&b ${cost} &7in the land bank. &7New balance of bank:&b ${bank} &8(&7Land:&e {land}&8)'
   withdraw:
     number: '&8[&aLands&8] &7You need to specify a amount of money. Use &8/&aLand withdraw &8<&aAmount&8> &7or &8/&aLand withdraw &8<&aLand&8> <&aAmount&8>&7.'
-    balance: '&8[&aLands&8] &7There''s not enough money in the land bank. There''s only&b ${bank} &7in the land bank. Expected:&b ${take}&8(&7Land:&e {land}&8)'
+    balance: '&8[&aLands&8] &7There''s not enough money in the land bank. There''s only&b ${bank} &7in the land bank. Expected:&b ${take} &8(&7Land:&e {land}&8)'
     success: '&8[&aLands&8] &7You successful took&b ${cost} &7out of the land bank. &7New balance of bank:&b ${bank} &8(&7Land:&e {land}&8)'
   balance: '&8[&aLands&8] &7The balance is&b ${balance} &8(&7Land:&e {land}&8)&7.'
   menu:
