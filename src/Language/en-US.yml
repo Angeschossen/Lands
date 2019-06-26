@@ -162,6 +162,8 @@ message:
       warning: '&8[&aLands&8] &7You''re not allowed to fly here. Flight mode will be disabled in a few seconds. Bypass permission:&b {permission}'
       count: '#t#&cFly mode disabling in;;&e{sec} &csecond(s)'
       disabled: '&8[&aLands&8] &cYour fly mode was disabled. &7You''re not allowed to fly here.'
+      disallowed: '&8[&aLands&8] &cYou''re not allowed to fly in this land. &7Contact the land owner. Bypass permission: &blands.bypass.fly'
+      disallowed-wilderness: '&8[&aLands&8] &cYou''re not allowed to fly in wilderness. &7Bypass permission: &blands.bypass.wilderness.fly'
   disallowWilderness:
     break: '&8[&aLands&8] &cYou''re not allowed to break blocks in wilderness. &7You can do that only in a claimed land.'
     place: '&8[&aLands&8] &cYou''re not allowed to place blocks in wilderness. &7You can do that only in a claimed land.'
@@ -187,7 +189,7 @@ command:
     land-not-part: '&8[&aLands&8] &cYou can''t do that. &7Player&b {player} &7isn''t part of this land &8(&7Land:&e {land}&8)&7. You need to trust him first using &8/&aLands trust&7.'
     land-no-action: '&8[&aLands&8] &cYou''re not member of an land where you''re allowed to do this. &7Use &8/&aLand create &7to create one.'
     name-exists: '&8[&aLands&8] &cThis name is already taken by an other land. &7You need to choose a different one.'
-    money-cost: '&8[&aLands&8] &cYou don''t have enough to pay the cost. &7You need&b ${cost}&7.'
+    money-cost: '&8[&aLands&8] &cYou don''t have enough to pay the cost. &7You need&b ${cost}&7. If banks are enabled, you need to deposit money into your land bank: &8/&aLands deposit'
     lands-max: '&8[&aLands&8] &cYou can''t be part of any more lands. &7You reached your maximum of&b {max} &7lands.'
     name-numbers: '&8[&aLands&8] &cYou can''t use numbers in your landname. &7Please use only latin letters.'
     name-accent: '&8[&aLands&8] &cYou can''t use accents in your landname. &7Please use only latin letters.'
@@ -209,8 +211,8 @@ command:
     cmd-not-exist: '&8[&aLands&8] &cThis subcommand doesn''t exist. &7Command&b {command} &7wasn''t found.'
     page-not-exist: '&8[&eProtect&8] &cThe page&e {page} &cdoesn''t exist. &7Typo?'
   create:
-    land-other: '&8[&aLands&8] &cYou''re not allowed to have your own land and be member of an other land. &7You need to leave land&b {land} &7first. An administrator can disable this in config.'
-    max-own: '&8[&aLands&8] &cYou can''t create any more lands. &7You reached your maximum of&b {max} &7own lands.'
+    land-other: '&8[&aLands&8] &cYou''re not allowed to have your own land and be member of an other land. &7You need to leave land&b {land} &7first. A administrator can disable this in config.'
+    max-own: '&8[&aLands&8] &cYou can''t create any more lands. &7You reached your maximum of&b {max} &7own lands. Permission:&b lands.ownlands.NUMBER'
     success: '&8[&aLands&8] &7Successful created land&b {land} &7for&b {cost}&7. You can claim chunks by executing &8/&aLands claim&7.'
     broadcast: '&8[&aLands&8] &7Land&b {land} &7was created by&b {player}&7.'
   rename:
@@ -223,13 +225,13 @@ command:
     disabled: '#t#!!1!!1!!1!!&7Selection:;;&cDisabled'
     pos-left: '#t#&7Position;;&b1'
     pos-right: '#t#&7Position;;&b2'
-    max: '&8[&aLands&8] &cYour selection has to many chunks in it. &7Size:&b {current} &7Your allowed size:&b {max}'
+    max: '&8[&aLands&8] &cYour selection has to many chunks in it. &7Size:&b {current} &7Your allowed size:&b {max} &7Permission: &blands.selection.NUMBER'
     same-world: '&8[&aLands&8] &cBoth positions must be in the same world.'
     claimed: '&8[&aLands&8] &7Successful claimed&b {chunks} &7chunks for this land &8(&7Land:&e {land}&8)&7. You payed&b ${cost}&7.'
     left: '&8[&aLands&8] &7Successful left&ab {chunks} &7chunks of this land &8(&7Land:&e {land}&8)&7.'
     unclaimed: '&8[&aLands&8] &7Successful unclaimed&ab {chunks} &7chunks of this land &8(&7Land:&e {land}&8)&7.'
   claim:
-    max-chunks: '&8[&aLands&8] &cYou can''t claim any more chunks. &7Your maximum is&b {max} &7chunks.'
+    max-chunks: '&8[&aLands&8] &cYou can''t claim any more chunks. &7Your maximum is&b {max} &7chunks. Permission: &blands.chunks.NUMBER'
     auto-create: '&8[&aLands&8] &7Trying to auto create an land for you, because you have none in this world. You can change the name of it by executing &8/&aLands rename&7.'
     auto-create-fail: '&8[&aLands&8] &cFailed to auto create an land for you. &7Please read the messages above and contact someone for help.'
     near-other: '&8[&aLands&8] &cThis is to near to land&e {land}&c. &7You need to keep distance to this land. Minimum chunk distance:&b {distance}&7.'
@@ -275,7 +277,7 @@ command:
   accept:
     not-exist: '&8[&aLands&8] &cYou don''t have an invite from land&e {land} &cor it expired. &7Please check your input.'
     own-land: '&8[&aLands&8] &cYou don''t have permission to own an land and be member of other lands. &7You need to leave your own land first.'
-    max-reached: '&8[&aLands&8] &cYou can''t join any more lands. &7You can only have&b {max} &7lands.'
+    max-reached: '&8[&aLands&8] &cYou can''t join any more lands. &7You can only have&b {max} &7lands. Permission: &blands.lands.NUMBER'
     land-tax-confirm: '&8[&aLands&8] &cThe owner of this land wants you to pay&e {tax} &7to join this land. &7Please confirm this action by executing &8/&aLands accept {land} confirm&7.'
     chunk-tax-confirm: '&8[&aLands&8] &7The owner of this land wants you to pay&b {tax} &7to join this land. &7Please confirm your action with &8/&aLand accept {land} confirm&7.'
     land-fail: '&8[&aLands&8] &cCouldn''t trust you in land&e {land}&c. &7The owner of the land reached his maximum of&b {members} &7members in his chunks.'
@@ -295,7 +297,7 @@ command:
     chunk-not-exist: '&8[&aLands&8] &cThis chunk doesn''t exist. &7Please check your input.'
     success: '&8[&aLands&8] &7Successful teleported to chunk &8(&7X:&e {x} &7Z:&e {z} &7Claimed: {claimed}&8)&7.'
   setSpawn:
-    force-land: '&8[&aLands&8] &cYou only can set the land spawn on your land. &7Go into your land first.'
+    force-land: '&8[&aLands&8] &cYou only can set the land spawn on your land. &7Go to your land&b {land} &7first.'
     success: '#t#&7Land spawn &aset&7.;;&7Cost:&b ${cost}'
   spawn:
     not-exist: '&8[&aLands&8] &cThere''s no spawn set for land&e {land}&c. &7Someone needs to set it first by executing &8/&aLand setSpawn&7.'
