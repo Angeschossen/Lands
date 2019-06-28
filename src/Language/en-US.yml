@@ -1,42 +1,3 @@
-# Here you can edit all chat messages
-# GUI strings can be found in <language>_gui.yml
-# If you encounter any issues, contact plugin support.
-# Plugin page: https://www.spigotmc.org/resources/.53313
-# Discord: https://discord.gg/JVU9qd7
-
-# ###############################
-# About chat message type system:
-# Does only work for messages in
-# "message" or "command" section.
-# ###############################
-
-# You can use some codes to set the type
-# of a message to title, actionbar or chat.
-# How does it work:
-
-# For example we want to print the prefix as a title:
-# Set general.noPerm to: '#t#&cYou''re not allowed to do this.' (Set "#t#" in front of it)
-# This would just print it as a title.
-
-# You also can set in, stay and out fade timings in seconds:
-# Set for example general.prefix to: '#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
-# This would display this message as a title with
-# a fade in delay of 1 seconds, a stay time with 2 seconds
-# and a fade out delay of 3 seconds.
-
-# You also can display it as a actionbar message:
-# Just add "#a#" in front of it.
-# If you want to display it in chat, just don't set any
-# of these in front of it or use "#c#".
-
-# Also you can combine these modes:
-# Set for example general.prefix to: '#c#a#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
-# This would print this message as chat, actionbar and an title with an in delay (1 seconds),
-# stay time (2 seconds) and fade out delay (3 seconds)
-# For any questions or issues, please contact me on discord or via pm.
-# --------------------------
-# Translated by Angeschossen
-
 general:
   wYes: '&aYes'
   wNo: '&cNo'
@@ -55,6 +16,7 @@ general:
     admin: '&cAdmin'
     member: '&eMember'
     visitor: '&5Visitor'
+    all: '&dAll'
   top:
     title: '&7---------<- &6&lTop 10 Lands &7->---------'
     land: '&7#&5{pos}&7: &b{land} &7Size:&e {size}'
@@ -255,8 +217,8 @@ command:
     land-target: '&8[&aLands&8] &7Player&b {player} &7invited you to his land&b {land}&7. Use &8/&aLand accept {land} &7to accept his invite.'
     lands-max: '&8[&aLands&8] &7Player&b {player} &7has already reached the maximum amount of lands. A administrator can give him permission to be part of more lands.'
     land-fail: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin land&e {land}&c. &7The owner of the land reached his maximum of&b {members} &7members in his chunks.'
-    land-max-members: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin&e {chunks} &cchunks. &7The owner of the land reached his maximum of&b {members} &7members in his chunks.'
-    chunk-max-members: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin this chunk. &7The owner of the land reached his maximum of&b {members} &7members in this chunk.'
+    land_max-members: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin this land. &7The owner of the land reached his maximum of&b {members} &7members in his land &8(&e{&7Land: land}&8)&7.'
+    chunk_max-members: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin this chunk. &7The owner of the land reached his maximum of&b {members} &7members in land &8(&e{&7Land: land}&8)&7.'
     chunk-target: '&8[&aLands&8] &7Player&b {player} &7invited you to his chunk &8(&7X:&e {x} &7Z:&e {z}) &7Use &8/&aLands accept {land} &7to accept his invite.'
     chunk-success: '&8[&aLands&8] &7Successful invited player&b {player} &7to this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
     land-success: '&8[&aLands&8] &7Successful invited player&b {player} &7to the whole land &8(&7Land:&e {land}&8)&7. He just needs to accept the invite.'
@@ -329,11 +291,11 @@ command:
 
 list:
   view:
-  - '&7---------<- &5&lLand View &7->---------'
-  - '&7Land:&b {land}'
-  - '&7Taxes -> Global:&b {tax-land} &7Here:&b {tax-chunk}'
-  - '&7World:&e {world} &7X:&e {x} &7Z:&e {z}'
-  - '&4Owner:&7 {owner}'
-  - '&7Admins:&7 {admins}'
-  - '&7Members:&7 {members}'
-  - '&7---------<- &5&lLand View &7->---------'
+    - '&7---------<- &5&lLand View &7->---------'
+    - '&7Land:&b {land}'
+    - '&7Tax:&2 {tax-chunk}'
+    - '&7World:&e {world} &7X:&e {x} &7Z:&e {z}'
+    - '&4Owner:&7 {owner}'
+    - '&7Admins:&7 {admins}'
+    - '&7Members:&7 {members}'
+    - '&7---------<- &5&lLand View &7->---------'

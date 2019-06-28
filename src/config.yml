@@ -73,6 +73,19 @@ general:
     # For /Lands claim you still need
     # to set claim land with /Land edit
     editLocLand: false
+    # Reward players by time
+    time-reward:
+      enabled: false
+      # Time settings
+      # After how many MINUTES
+      # should the players
+      # get rewarded with plus 1
+      # chunk to claim or land
+      # to create?
+      # NOTE: Timeunit is in seconds
+      time:
+        chunks: 3060
+        lands: 604800
     # Backup options
     backup:
       # Enable this to create an backup
@@ -166,6 +179,9 @@ taxes:
   # If enabled, actions like
   # /Lands claim will take the
   # money from the land bank.
+  # Please not that your player will need to
+  # deposit money into the land bank first,
+  # before they can claim.
   # Deposit: /Lands deposit
   # Withdraw: /Lands withdraw
   # Balance check: /Lands balance
@@ -182,11 +198,6 @@ taxes:
   changeCooldown: 302400
   # Land taxes settings
   land:
-    # Remove a land member
-    # if he can't pay the rent?
-    # This affects members
-    # wich are trusted in the whole land.
-    removeMember: true
     # Set max tax value for land
     maxTax: 1000.0
   # Chunk taxes settings
@@ -293,7 +304,10 @@ land:
       # NOTE: Timeunit is seconds
       # Bypass permission: lands.bypass.cooldown.rename
       cooldown: 900
-
+    # Display trusted
+    # players in one GUI, no matter
+    # what role they have?
+    roles-mixed: true
     # Role settings for the land.
     # NOTE: This settings affects only
     # players wich are trusted in the whole land
@@ -1168,6 +1182,50 @@ integration:
       layer: 'Lands'
       land:
         opacity: 0.8
+        # To edit the color you need to
+        # insert the rgb value given here.
+        # Available colors:
+        #
+        # White: 16777215
+        # Silver: 12632256
+        # GRAY: 8421504
+        # Black: 0
+        # Red: 16711680
+        # Maroon: 8388608
+        # Yellow: 16776960
+        # Olive: 8421376
+        # Lime: 65280
+        # Green: 32768
+        # Aqua: 65535
+        # Teal: 32896
+        # Blue: 255
+        # Navy: 128
+        # Fuchsia: 16711935
+        # Purple: 8388736
+        # Orange: 16753920
+        color_2: 32768
       border:
         opacity_2: 50.0
         thickness: 4
+        # To edit the color you need to
+        # insert the rgb value given here.
+        # Available colors:
+        #
+        # White: 16777215
+        # Silver: 12632256
+        # GRAY: 8421504
+        # Black: 0
+        # Red: 16711680
+        # Maroon: 8388608
+        # Yellow: 16776960
+        # Olive: 8421376
+        # Lime: 65280
+        # Green: 32768
+        # Aqua: 65535
+        # Teal: 32896
+        # Blue: 255
+        # Navy: 128
+        # Fuchsia: 16711935
+        # Purple: 8388736
+        # Orange: 16753920
+        color_3: 65280

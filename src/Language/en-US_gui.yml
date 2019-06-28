@@ -220,12 +220,13 @@ gui:
         lore:
           - '&7Get a list of all'
           - '&7players which are'
-          - '&7trusted in the whole land.'
+          - '&7trusted in the land.'
+          - '&7Even if they''re only'
+          - '&7trusted in specific chunks.'
           - ' '
-          - '&8- &7Players, which are only'
-          - '  &7trusted in specific'
-          - '  &7chunks, can be viewed at'
-          - '  &7the &bChunks &7item.'
+          - '&8- &7Use &aright click'
+          - '  &7to open the role'
+          - '  &7selector GUI.'
         material: 'PLAYER_HEAD'
         slot: 13
       settings:
@@ -395,10 +396,9 @@ gui:
           - '&7players, which are'
           - '&7trusted in this chunk.'
           - ' '
-          - '&8- &7Players, which are'
-          - '  &7trusted in the whole'
-          - '  &7land, can be viewed in'
-          - '  &7in the &eLand &7menu.'
+          - '&8- &7Use &aright click'
+          - '  &7to open the role'
+          - '  &7selector GUI.'
         material: 'PLAYER_HEAD'
         slot: 11
       settings:
@@ -620,7 +620,7 @@ gui:
         name: '&cBack'
         lore:
           - '&7Go back to'
-          - '&eSelect Role&7.'
+          - '&eobjective&7.'
         material: 'RED_STAINED_GLASS_PANE'
         slot: 28
     f:
@@ -643,6 +643,17 @@ gui:
     l:
       player:
         name: '&8Player &7->&a {player}'
+        lore:
+          - '&7Click on this player'
+          - '&7to untrust him or to'
+          - '&7get some information.'
+          - ' '
+          - '&8- &7Role:&b {role}'
+        material: 'PLAYER_HEAD'
+        from: 10
+        to: 27
+      player-mixed:
+        name: '{role} &7->&a {player}'
         lore:
           - '&7Click on this player'
           - '&7to untrust him or to'
@@ -760,16 +771,16 @@ gui:
           - '&7Edit taxes for'
           - '&7this objective.'
           - ' '
-          - '&8- &7Players, which are'
-          - '  &7trusted in the whole'
-          - '  &7land, won''t pay the'
-          - '  &7tax value from chunks.'
-          - '  &7They pay the value of'
-          - '  &7this land.'
-          - '&8- &7Players, which are'
-          - '  &7trusted in certain chunks,'
-          - '  &7will only pay the tax'
-          - '  &7values of the chunks.'
+          - '&8- &7If you''re editing'
+          - '  &7taxes from the land menu'
+          - '  &7and not from a chunk,'
+          - '  &7the tax value will be applied'
+          - '  &7to every chunk.'
+          - ' '
+          - '&8- &7Players are paying'
+          - '  &7taxes per chunk. So the'
+          - '  &7calculation is:'
+          - '  &7chunk_1 + chunk_2 etc.'
         material: 'GOLD_NUGGET'
         slot: 15
       land:
@@ -1310,16 +1321,11 @@ gui:
           - '  &7players will only'
           - '  &7pay the tax on land'
           - '  &7or chunk join.'
-          - '&8- &7Players, which are'
-          - '  &7trusted in the whole'
-          - '  &7land, won''t pay the'
-          - '  &7tax value from chunks.'
-          - '  &7They pay the value of'
-          - '  &7this land.'
-          - '&8- &7Players, which are'
-          - '  &7trusted in certain chunks,'
-          - '  &7will only pay the tax'
-          - '  &7values of the chunks.'
+          - ' '
+          - '&8- &7Players are paying'
+          - '  &7taxes per chunk. So the'
+          - '  &7calculation is:'
+          - '  &7chunk_1 + chunk_2 etc.'
         material: 'GOLD_INGOT'
         slot: 14
     a:
@@ -1590,22 +1596,6 @@ gui:
           - '  &7all players must pay'
           - '  &7a specified value on join.'
         material: 'RED_STAINED_GLASS_PANE'
-      failure_notComplete:
-        name: '&4Failure: &bNot complete'
-        lore:
-          - '&7Couldn''t trust you'
-          - '&7in all parts of the land,'
-          - '&7because the owner'
-          - '&7reached the maximum'
-          - '&7members value in some'
-          - '&7chunks.'
-          - ' '
-          - '&8- &7Contact the land'
-          - '  &7owner for help.'
-          - ' '
-          - '&8- &7Permission:'
-          - '&elands.members.<Number>'
-        material: 'RED_STAINED_GLASS_PANE'
       failure_notTrusted:
         name: '&4Failure: &bNot complete'
         lore:
@@ -1619,7 +1609,7 @@ gui:
           - '  &7owner for help.'
           - ' '
           - '&8- &7Permission:'
-          - '&elands.members.<Number>'
+          - '&elands.members.NUMBER'
         material: 'RED_STAINED_GLASS_PANE'
     p:
       placeholder_1:
