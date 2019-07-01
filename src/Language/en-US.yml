@@ -19,7 +19,8 @@ general:
     all: '&dAll'
   top:
     title: '&7---------<- &6&lTop 10 Lands &7->---------'
-    land: '&7#&5{pos}&7: &b{land} &7Size:&e {size}'
+    land-size: '&7#&5{pos}&7: &b{land} &7Size:&e {size}'
+    land-money: '&7#&5{pos}&7: &b{land} &7Balance:&e ${balance}'
     last-updated: '&7Last updated:&e {time}'
     footer: '&7---------<- &6&lTop 10 Lands &7->---------'
   integration:
@@ -27,11 +28,16 @@ general:
       chunk:
         description: '<div class=\"infowindow\"><span style="font-size:200%;">{land}</span><br/>X: {x} Z: {z}</span><br/> Owner: <span style="font-weight:bold;">{owner}</span><br/>Admins: <span style="font-weight:bold;">{admins}</span><br/>Members: <span style="font-weight:bold;">{members}</span><br/></div>'
   sign:
-    topLand:
+    topLand-size:
       line-1: '&6#&e{place}'
       line-2: '&5{owner}'
       line-3: '&2Land &a{land}'
       line-4: '&9Size:&b {size}'
+    topLand-balance:
+      line-1: '&6#&e{place}'
+      line-2: '&5{owner}'
+      line-3: '&2Land &a{land}'
+      line-4: '&9Balance:&b ${balance}'
     noLand:
       line-1: ' '
       line-2: '&cNo land'
@@ -116,10 +122,10 @@ message:
       pvp-attacker: '&8[&aLands&8] &cYou''re not allowed to attack players here.'
       pvp-target: '&8[&aLands&8] &cYour target isn''t allowed to attack players here.'
   event:
-    land-enter: '#t#a#!!1!!2!!1!!&7Land&b {land}&7:;;&7owned by&e {player}&7.'
-    land-leave: '#t#a#&aWilderness&7:;;&7Leaving&b {land};;&eFeel the wild.'
-    safezone-enter: '#t#a#!!1!!2!!1!!&7Land&b {land}&7:;;&7owned by&e {player}&7.'
-    safezone-leave: '#t#a#&aWilderness&7:;;&7Leaving&b {land};;&eFeel the wild.'
+    land-enter: '#t#&a&l{land};;&7Owned by&e {player}&7.'
+    land-leave: '#t#&2&lWilderness;;&7Feel the wild.'
+    safezone-enter: '#t#&e&l{land};;&7Entering safezone.'
+    safezone-leave: '#t#&2&lWilderness;;&7Feel the wild.'
     fly:
       warning: '&8[&aLands&8] &7You''re not allowed to fly here. Flight mode will be disabled in a few seconds. Bypass permission:&b {permission}'
       count: '#t#&cFly mode disabling in;;&e{sec} &csecond(s)'
@@ -151,7 +157,8 @@ command:
     land-not-part: '&8[&aLands&8] &cYou can''t do that. &7Player&b {player} &7isn''t part of this land &8(&7Land:&e {land}&8)&7. You need to trust him first using &8/&aLands trust&7.'
     land-no-action: '&8[&aLands&8] &cYou''re not member of an land where you''re allowed to do this. &7Use &8/&aLand create &7to create one.'
     name-exists: '&8[&aLands&8] &cThis name is already taken by an other land. &7You need to choose a different one.'
-    money-cost: '&8[&aLands&8] &cYou don''t have enough to pay the cost. &7You need&b ${cost}&7. If banks are enabled, you need to deposit money into your land bank: &8/&aLands deposit'
+    money-cost-bank: '&8[&aLands&8] &cYou don''t have enough to pay the cost. &7You need&b ${cost}&7. If banks are enabled, you need to deposit money into your land bank: &8/&aLands deposit'
+    money-cost: '&8[&aLands&8] &cYou don''t have enough to pay the cost. &7You need&b ${cost}&7.'
     lands-max: '&8[&aLands&8] &cYou can''t be part of any more lands. &7You reached your maximum of&b {max} &7lands.'
     name-numbers: '&8[&aLands&8] &cYou can''t use numbers in your lands name. &7Please use only latin letters.'
     name-accent: '&8[&aLands&8] &cYou can''t use accents in your lands name. &7Please use only latin letters.'
@@ -171,7 +178,7 @@ command:
   help:
     help: '&8[&aLands&8] &7Use &8/&aLand help &7for help.'
     cmd-not-exist: '&8[&aLands&8] &cThis subcommand doesn''t exist. &7Command&b {command} &7wasn''t found.'
-    page-not-exist: '&8[&eProtect&8] &cThe page&e {page} &cdoesn''t exist. &7Typo?'
+    page-not-exist: '&8[&aLands&8] &cThe page&e {page} &cdoesn''t exist. &7Typo?'
   create:
     land-other: '&8[&aLands&8] &cYou''re not allowed to have your own land and be member of an other land. &7You need to leave land&b {land} &7first. A administrator can disable this in config.'
     max-own: '&8[&aLands&8] &cYou can''t create any more lands. &7You reached your maximum of&b {max} &7own lands. Permission:&b lands.ownlands.NUMBER'
@@ -268,7 +275,7 @@ command:
   wild:
     searching: '#t#&7Searching:;;&dRandom location'
     loc-unsafe: '&8[&aLands&8] &cCouldn''t find a safe location for you. &7Please try again later. If that doesn''t help, contact an administrator.'
-    success: '&8[&aLands&8] &7You were random teleported &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    success: '&8[&aLands&8] &7You were random teleported &8(&7X:&e {x} &7Z:&e {z}&8)&7. You payed&b ${cost}&7.'
   view:
     show-outline: '&8[&aLands&8] &7Showing borders of whole lands. Move around to see the border.'
   deposit:
