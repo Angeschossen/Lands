@@ -3,6 +3,9 @@ general:
   wNo: '&cNo'
   none: '&cNone'
   wilderness: '&aWilderness'
+  title:
+    land: '&7Owned by&b %owner%&7.'
+    safezone: '&7You''re safe now.'
   time:
     days: 'day(s)'
     hours: 'hour(s)'
@@ -26,7 +29,7 @@ general:
   integration:
     dynmap:
       chunk:
-        description: '<div class=\"infowindow\"><span style="font-size:200%;">{land}</span><br/>X: {x} Z: {z}</span><br/> Owner: <span style="font-weight:bold;">{owner}</span><br/>Admins: <span style="font-weight:bold;">{admins}</span><br/>Members: <span style="font-weight:bold;">{members}</span><br/></div>'
+        description: '<div class=\"infowindow\"><span style="font-size:200%;">{land}</span><br/>{title}<br/><br/>X: {x} Z: {z}</span><br/> Owner: <span style="font-weight:bold;">{owner}</span><br/>Admins: <span style="font-weight:bold;">{admins}</span><br/>Members: <span style="font-weight:bold;">{members}</span><br/></div>'
   sign:
     topLand-size:
       line-1: '&6#&e{place}'
@@ -122,10 +125,12 @@ message:
       pvp-attacker: '&8[&aLands&8] &cYou''re not allowed to attack players here.'
       pvp-target: '&8[&aLands&8] &cYour target isn''t allowed to attack players here.'
   event:
-    land-enter: '#t#&a&l{land};;&7Owned by&e {player}&7.'
-    land-leave: '#t#&2&lWilderness;;&7Feel the wild.'
-    safezone-enter: '#t#&e&l{land};;&7Entering safezone.'
-    safezone-leave: '#t#&2&lWilderness;;&7Feel the wild.'
+    land:
+      enter: '#t#&a&l{land};;{title}'
+      leave: '#t#&2&lWilderness;;&7Feel the wild.'
+    safezone:
+      enter: '#t#&e&l{land};;{title}'
+      leave: '#t#&2&lWilderness;;&7Feel the wild.'
     fly:
       warning: '&8[&aLands&8] &7You''re not allowed to fly here. Flight mode will be disabled in a few seconds. Bypass permission:&b {permission}'
       count: '#t#&cFly mode disabling in;;&e{sec} &csecond(s)'
@@ -149,7 +154,14 @@ message:
     stopped: '&8[&aLands&8] &cStopped your current auto action. &7Reached max rounds. Name:&b {name}'
     started: '&8[&aLands&8] &7Successful started auto action. Name:&b {name}'
     removed: '&8[&aLands&8] &7Successful stopped auto action. &7Name:&b {name}'
-
+  gui:
+    chat:
+      title: '#t#!!1!!4!!2!!&e&lEnter new Title;;&e&lin Chat.'
+      title-done: '#t#&2&lSuccessful set;;&2&lLand Title.'
+      name: '#t#!!1!!4!!2!!&e&lEnter new Name;;&e&lin Chat.'
+      name-done: '#t#&2&lSuccessful set;;&2&lLand Name.'
+      cancel: '&8[&aLands&8] &7Type &bcancel &7in chat to cancel this action.'
+      cancelled: '#t#&c&lCancelled;;&c&lChat Action.'
 command:
   general:
     land-not-exist: '&8[&aLands&8] &cThe land&e {land} &cdoesn''t exist. &7There''s no land with the name&b {land} &7in this world.'
