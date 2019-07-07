@@ -560,6 +560,18 @@ gui:
   roles:
     title: '&8Select Role'
     size: 27
+    a:
+      failure_role:
+        name: '&4Failure: &cRole'
+        lore:
+          - '&7You''re not allowed to edit'
+          - '&7settings of roles that'
+          - '&7have a higher or the same'
+          - '&7weight than your own role.'
+          - ' '
+          - '&8- &7Only server administrators'
+          - '  &7can do that.'
+        material: 'RED_STAINED_GLASS_PANE'
     s:
       admin:
         name: '&cAdmin'
@@ -723,6 +735,14 @@ gui:
         material: 'OAK_SIGN'
         slot: 16
     a:
+      failure_self:
+        name: '&4Failure: &cSelf'
+        lore:
+          - '&7You can''t untrust yourself.'
+          - ' '
+          - '&8- &7Use &8/&aLands leave {land}'
+          - '  &7instead.'
+        material: 'RED_DYE'
       untrust_noAccess:
         name: '&4Denied: &bUntrust'
         lore:
@@ -998,10 +1018,10 @@ gui:
           - ' '
           - '&7Allow this role to'
           - '&7fly here?'
-        material: 'STONE'
+        material: 'FEATHER'
         from: 10
         to: 27
-      setting_edit:
+      setting_edit_land:
         name: '&bEdit Land Settings'
         lore:
           - '&7Status: {enabled}'
@@ -1009,11 +1029,71 @@ gui:
           - ' '
           - '&7Allow this role to'
           - '&7edit land settings?'
+        material: 'COMMAND_BLOCK'
+        from: 10
+        to: 27
+      setting_edit_role:
+        name: '&bEdit Role Settings'
+        lore:
+          - '&7Status: {enabled}'
+          - '&7Unlocked: {unlocked}'
+          - ' '
+          - '&7Allow this role to'
+          - '&7edit role settings?'
           - ' '
           - '&8- &7They won''t be'
           - '  &7able to edit their'
           - '  &7own role settings.'
+          - ' '
+          - '&8- &7You should give'
+          - '  &7this permission only'
+          - '  &7to very trustworthy players.'
         material: 'COMMAND_BLOCK'
+        from: 10
+        to: 27
+      setting_edit_advanced:
+        name: '&bEdit Advanced Role Settings'
+        lore:
+          - '&7Status: {enabled}'
+          - '&7Unlocked: {unlocked}'
+          - ' '
+          - '&7Allow this role to'
+          - '&7edit advanced role settings?'
+          - ' '
+          - '&8- &7You should give'
+          - '  &7this permission only'
+          - '  &7to very trustworthy players.'
+        material: 'COMMAND_BLOCK'
+        from: 10
+        to: 27
+      setting_edit_various:
+        name: '&bEdit various Land Settings'
+        lore:
+          - '&7Status: {enabled}'
+          - '&7Unlocked: {unlocked}'
+          - ' '
+          - '&7Allow this role to'
+          - '&7edit various land settings?'
+          - ' '
+          - '&8- &7Please note that they'
+          - '  &7will be able to change the'
+          - '  &7land name.'
+        material: 'COMMAND_BLOCK'
+        from: 10
+        to: 27
+      setting_edit_taxes:
+        name: '&bEdit Taxes'
+        lore:
+          - '&7Status: {enabled}'
+          - '&7Unlocked: {unlocked}'
+          - ' '
+          - '&7Allow this role to'
+          - '&7edit taxes?'
+          - ' '
+          - '&8- &7You should give'
+          - '  &7this permission only'
+          - '  &7to very trustworthy players.'
+        material: 'GOLD_NUGGET'
         from: 10
         to: 27
     a:

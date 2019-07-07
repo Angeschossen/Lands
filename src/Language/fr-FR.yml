@@ -1,41 +1,12 @@
-# Here you can edit all chat messages
-# GUI strings can be found in <language>_gui.yml
-# If you encounter any issues, contact plugin support.
-# Plugin page: https://www.spigotmc.org/resources/.53313
-# Discord: https://discord.gg/JVU9qd7
-
-# ###############################
-# About chat message type system:
-# Does only work for messages in
-# "message" or "command" section.
-# ###############################
-
-# You can use some codes to set the type
-# of a message to title, actionbar or chat.
-# How does it work:
-
-# For example we want to print the prefix as a title:
-# Set general.noPerm to: '#t#&cYou''re not allowed to do this.' (Set "#t#" in front of it)
-# This would just print it as a title.
-
-# You also can set in, stay and out fade timings in seconds:
-# Set for example general.prefix to: '#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
-# This would display this message as a title with
-# a fade in delay of 1 seconds, a stay time with 2 seconds
-# and a fade out delay of 3 seconds.
-
-# You also can display it as a actionbar message:
-# Just add "#a#" in front of it.
-# If you want to display it in chat, just don't set any
-# of these in front of it or use "#c#".
-
-# Also you can combine these modes:
-# Set for example general.prefix to: '#c#a#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
-# This would print this message as chat, actionbar and an title with an in delay (1 seconds),
-# stay time (2 seconds) and fade out delay (3 seconds)
-# For any questions or issues, please contact me on discord or via pm.
-# --------------------------
-# Translated by Kittle
+# You can set messages under "message:" to
+# display as title or actionbar. Or just
+# as chat message.
+# Use #t# in front of the message to display it as a title.
+# With {newline} you go in a new line.
+# Use #a# in front of the message to display it as a actionbar message.
+#
+# You can get help here:
+# https://discord.gg/B4MAJVk
 
 general:
   wYes: '&aOui'
@@ -198,14 +169,13 @@ command:
       a pas de terrain portant ce nom&b {land} &7dans ce monde.'
     land-not-member: '&8[&aLands&8] &cVous n''êtes pas membre de ce terrain&e {land}&c.
       &7Utilisez &8/&aLands menu &7pour afficher les terrains dont vous êtes membre.'
-    land-not-part: '&8[&aLands&8] &cVous ne pouvez pas faire cela. &7Joueur&b {player}
+    land-not-trusted: '&8[&aLands&8] &cVous ne pouvez pas faire cela. &7Joueur&b {player}
       &7n''est pas membre de ce terrain &8(&7Terrain:&e {land}&8)&7. Vous devez d''abord
       l''inviter en tapant &8/&aLands trust&7.'
     land-no-action: '&8[&aLands&8] &cVous n''êtes pas membre d''un terrain où vous
       êtes autorisé-e à faire cela. &7Utilisez &8/&aLand create &7pour créer un terrain.'
     name-exists: '&8[&aLands&8] &cCe nom est déjà pris par un autre terrain. &7Vous
       devez en choisir un différent.'
-    money-cost-bank-bank: '&8[&aLands&8] &cFonds insuffisants. &7Vous avez besoin de&b ${cost}&7.'
     lands-max: '&8[&aLands&8] &cVous ne pouvez plus faire partie d''aucun terrain
       supplémentaire. &7Vous avez atteint votre quota de&b {max} &7terrains.'
     name-numbers: '&8[&aLands&8] &cVous ne pouvez pas utiliser de chiffres dans le
@@ -263,7 +233,7 @@ command:
     enabled: '&8[&aLands&8] &7Mode sélection activé: Selectionnez juste avec vos mains
       &bles deux coins opposés &7de la région pour vous attribuer simultanément &btoutes
       les parcelles &7circonscrites dans cette région.'
-    disabled: '#t#!!1!!1!!1!!&7Selection:;;&cDésactivée'
+    disabled: '#t#&7Selection:;;&cDésactivée'
     pos-left: '#t#&7Position;;&b1'
     pos-right: '#t#&7Position;;&b2'
     max: '&8[&aLands&8] &cVotre sélection comporte trop de parcelles. &7Taille:&b
