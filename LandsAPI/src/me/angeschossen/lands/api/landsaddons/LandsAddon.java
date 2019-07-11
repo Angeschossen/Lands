@@ -6,6 +6,7 @@ import me.angeschossen.lands.api.objects.LandChunk;
 import me.angeschossen.lands.api.objects.LandPlayer;
 import me.angeschossen.lands.api.objects.LandWorld;
 import org.bukkit.Chunk;
+import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 
 import java.util.concurrent.CompletableFuture;
@@ -34,6 +35,16 @@ public class LandsAddon implements LandsAddons {
 
     @Override
     public CompletableFuture<LandChunk> getLandChunkFromStorage(String worldName, int chunkX, int chunkZ) {
+        return null;
+    }
+
+    @Override
+    public boolean isClaimed(Location location) {
+        return false;
+    }
+
+    @Override
+    public CompletableFuture<Boolean> isClaimed(String worldName, int x, int z) {
         return null;
     }
 

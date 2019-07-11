@@ -1,30 +1,29 @@
 package me.angeschossen.lands.api.events;
 
 import me.angeschossen.lands.api.objects.Land;
-import me.angeschossen.lands.api.objects.LandPlayer;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class LandInviteEvent extends Event implements Cancellable {
+import java.util.UUID;
+
+public class PlayerTrustEventLand extends Event implements Cancellable {
     public static HandlerList handlerList = new HandlerList();
     private boolean cancelled;
 
-    private LandPlayer landPlayer;
+    private UUID targetUUID;
     private Land land;
 
-    public LandInviteEvent(LandPlayer landPlayer, Land land) {
+    public PlayerTrustEventLand(UUID targetUUID, Land land) {
         this.land = land;
-        this.landPlayer = landPlayer;
+        this.targetUUID = targetUUID;
     }
 
     public Land getLand() {
         return land;
     }
 
-    public LandPlayer getLandPlayer() {
-        return landPlayer;
-    }
+    public UUID getTargetUUID(){return targetUUID;}
 
     public static HandlerList getHandlerList() {
         return handlerList;

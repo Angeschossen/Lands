@@ -23,7 +23,7 @@ public class LandRenameEvent extends Event implements Cancellable {
         return land;
     }
 
-    public String getOldName() {
+    public String getCurrentName() {
         return oldName;
     }
 

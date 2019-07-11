@@ -52,4 +52,3 @@ public class LandChunkDeleteEvent extends Event implements Cancellable {
         return handlerList;
     }
 }
-

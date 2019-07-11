@@ -1,25 +1,26 @@
 package me.angeschossen.lands.api.events;
 
-import me.angeschossen.lands.api.objects.LandChunk;
+import me.angeschossen.lands.api.objects.Land;
 import me.angeschossen.lands.api.objects.LandPlayer;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class LandChunkInviteEvent extends Event implements Cancellable {
+public class PlayerLeaveEventLand extends Event implements Cancellable {
+
     public static HandlerList handlerList = new HandlerList();
     private boolean cancelled;
 
     private LandPlayer landPlayer;
-    private LandChunk landChunk;
+    private Land land;
 
-    public LandChunkInviteEvent(LandPlayer landPlayer, LandChunk landChunk) {
-        this.landChunk = landChunk;
+    public PlayerLeaveEventLand(LandPlayer landPlayer, Land land) {
+        this.land = land;
         this.landPlayer = landPlayer;
     }
 
-    public LandChunk getLandChunk() {
-        return landChunk;
+    public Land getLand() {
+        return land;
     }
 
     public LandPlayer getLandPlayer() {

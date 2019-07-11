@@ -1,30 +1,35 @@
 package me.angeschossen.lands.api.events;
 
-import me.angeschossen.lands.api.objects.LandChunk;
-import me.angeschossen.lands.api.objects.LandPlayer;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class LandChunkTrustEvent extends Event implements Cancellable {
+import java.util.UUID;
+
+public class PlayerTrustEventChunk extends Event implements Cancellable {
 
     public static HandlerList handlerList = new HandlerList();
     private boolean cancelled;
 
-    private LandPlayer landPlayer;
-    private LandChunk landChunk;
+    private final UUID targetUID;
+    private final int x, z;
 
-    public LandChunkTrustEvent(LandPlayer landPlayer, LandChunk landChunk) {
-        this.landChunk = landChunk;
-        this.landPlayer = landPlayer;
+    public PlayerTrustEventChunk(int x, int z, UUID targetUUID) {
+        this.x = x;
+        this.z = z;
+        this.targetUID = targetUUID;
     }
 
-    public LandChunk getLandChunk() {
-        return landChunk;
+    public int getX() {
+        return x;
     }
 
-    public LandPlayer getLandPlayer() {
-        return landPlayer;
+    public int getZ() {
+        return z;
+    }
+
+    public UUID getTargetUID() {
+        return targetUID;
     }
 
     public static HandlerList getHandlerList() {

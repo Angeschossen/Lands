@@ -5,6 +5,7 @@ import me.angeschossen.lands.api.objects.LandChunk;
 import me.angeschossen.lands.api.objects.LandPlayer;
 import me.angeschossen.lands.api.objects.LandWorld;
 import org.bukkit.Chunk;
+import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 
 import java.util.concurrent.CompletableFuture;
@@ -50,6 +51,22 @@ public interface LandsAddons {
      * @since 2.5.7
      */
     CompletableFuture<LandChunk> getLandChunkFromStorage(String worldName, int chunkX, int chunkZ);
+
+    /**
+     * Is claimed land?
+     * @param location Location
+     * @return Is claimed
+     */
+    boolean isClaimed(Location location);
+
+    /**
+     * Is claimed land?
+     * @param worldName Name of world
+     * @param x Chunk x
+     * @param z Chunk z
+     * @return Is claimed
+     */
+    CompletableFuture<Boolean> isClaimed(String worldName, int x, int z);
 
     /**
      * Get land.

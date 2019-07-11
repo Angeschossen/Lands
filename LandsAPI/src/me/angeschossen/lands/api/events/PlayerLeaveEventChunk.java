@@ -6,7 +6,7 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class LandChunkLeaveEvent extends Event implements Cancellable {
+public class PlayerLeaveEventChunk extends Event implements Cancellable {
 
     public static HandlerList handlerList = new HandlerList();
     private boolean cancelled;
@@ -14,7 +14,7 @@ public class LandChunkLeaveEvent extends Event implements Cancellable {
     private LandPlayer landPlayer;
     private LandChunk landChunk;
 
-    public LandChunkLeaveEvent(LandPlayer landPlayer, LandChunk landChunk) {
+    public PlayerLeaveEventChunk(LandPlayer landPlayer, LandChunk landChunk) {
         this.landChunk = landChunk;
         this.landPlayer = landPlayer;
     }

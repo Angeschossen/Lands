@@ -16,6 +16,7 @@ public class LandChunkClaimEvent extends Event implements Cancellable {
 
     public LandChunkClaimEvent(LandPlayer landPlayer, String worldName, int x, int z) {
         this.landPlayer = landPlayer;
+
         this.worldName = worldName;
         this.x = x;
         this.z = z;
