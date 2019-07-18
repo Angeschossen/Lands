@@ -3,7 +3,7 @@ package me.angeschossen.lands.api.enums;
 import org.bukkit.ChatColor;
 
 public enum LandRole {
-    OWNER("owner", 4), ADMIN("admin", 3), MEMBER("member", 2), VISITOR("visitor", 1);
+    OWNER("owner", 4), ADMIN("admin", 3), MEMBER("member", 2), VISITOR("visitor", 1), ALL("all", 0);
 
     private int weight;
     private String iD;
@@ -38,5 +38,9 @@ public enum LandRole {
 
     public String getID() {
         return iD;
+    }
+
+    public boolean equals(LandRole landRole) {
+        return landRole == this || landRole == LandRole.ALL;
     }
 }

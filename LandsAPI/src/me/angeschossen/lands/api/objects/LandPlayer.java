@@ -4,8 +4,11 @@ import me.angeschossen.lands.api.enums.LandsAction;
 import org.bukkit.entity.Player;
 
 import java.util.Collection;
+import java.util.UUID;
 
 public interface LandPlayer {
+
+
     /**
      * Get online player, if he's online
      *
@@ -22,11 +25,11 @@ public interface LandPlayer {
     Invite getInvite(String landName);
 
     /**
-     * Get UUID string of player
+     * Get UUID of player
      *
-     * @return UUID string
+     * @return UUID
      */
-    String getPlayerUUID();
+    UUID getUID();
 
     /**
      * Get land where the player is member in
@@ -35,6 +38,14 @@ public interface LandPlayer {
      * @return Land or null, if not member
      */
     Land getLand(String landName);
+
+    /**
+     * Set edit land
+     * /Lands edit
+     *
+     * @param land Land to select
+     */
+    void setEditLand(Land land);
 
     /**
      * Get collection of lands the player is in
@@ -176,6 +187,7 @@ public interface LandPlayer {
 
     /**
      * Check is player in land
+     *
      * @param landName Name of land
      * @return Boolean
      */

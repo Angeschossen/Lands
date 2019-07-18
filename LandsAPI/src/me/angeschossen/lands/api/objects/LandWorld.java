@@ -94,7 +94,7 @@ public interface LandWorld {
      *
      * @param landChunk LandChunk
      */
-    void loadLandChunk(me.angeschossen.lands.api.objects.LandChunk landChunk);
+    void loadLandChunk(LandChunk landChunk);
 
     /**
      * Get all cached landChunks.
@@ -109,4 +109,12 @@ public interface LandWorld {
      * @return Top lands with place
      */
     HashMap<Integer, Land> getTopLands();
+
+    /**
+     * Check if claimed chunk is loaded
+     * @param x X identifier
+     * @param z Z identifier
+     * @return Loaded
+     */
+    boolean isChunkLoaded(int x, int z);
 }

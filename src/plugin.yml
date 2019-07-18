@@ -1,6 +1,6 @@
 name: Lands
 main: me.angeschossen.lands.Lands
-version: 3.7.2.1
+version: 3.8.0.2
 author: Angeschossen
 description: Feature rich GUI, Taxes, Customize your own, Titles, New factions - Let players manage their land!
 website: https://www.spigotmc.org/resources/53313
@@ -16,20 +16,32 @@ permissions:
     description: Access to all Lands actions
     default: op
     children:
-      lands.chunks.<Number>:
+      lands.chunks.NUMBER:
         description: Set max chunk claims
         default: op
-      lands.lands.<Number>:
+      lands.lands.NUMBER:
         description: Set max lands can be member of (own lands + lands where member)
         default: op
-      lands.ownlands.<Number>:
+      lands.ownlands.NUMBER:
         description: Set max own lands (own lands)
         default: op
-      lands.members.<Number>:
+      lands.members.NUMBER:
         description: Set max members in a land
         default: op
-      lands.selection.<Selection>:
+      lands.selection.NUMBER:
         description: Set max chunks in selection (/Lands selection)
+        default: op
+      lands.chunks.max.NUMBER:
+        description: ONLY NEEDED IF OPTION PLAYTIME REWARDS IS ENABLED Set max chunks a player can get through playtime rewards
+        default: op
+      lands.lands.max.NUMBER:
+        description: ONLY NEEDED IF OPTION PLAYTIME REWARDS IS ENABLED Set max lands a player can get through playtime rewards
+        default: op
+      lands.members.max.NUMBER:
+        description: ONLY NEEDED IF OPTION PLAYTIME REWARDS IS ENABLED Set max members the players land can have through playtime rewards
+        default: op
+      lands.ownlands.max.NUMBER:
+        description: ONLY NEEDED IF OPTION PLAYTIME REWARDS IS ENABLED Set max lands a player can own through playtime rewards
         default: op
       lands.free.*:
         description: Player doesn't need to pay claim and land creation costs

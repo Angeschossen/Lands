@@ -5,10 +5,10 @@ import me.angeschossen.lands.api.enums.LandsAction;
 import me.angeschossen.lands.api.enums.LandsSetting;
 
 import java.util.Collection;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 public interface LandChunk {
-
 
     /**
      * Get tex value
@@ -26,11 +26,11 @@ public interface LandChunk {
     boolean getSetting(LandsSetting landsSetting);
 
     /**
-     * Get UUID string of owner of chunk
+     * Get UUID of owner of chunk
      *
-     * @return UUID string
+     * @return UUID
      */
-    String getOwnerUUID();
+    UUID getOwnerUID();
 
     /**
      * Get land of LandChunk
@@ -55,11 +55,11 @@ public interface LandChunk {
 
     /**
      * Get landRoles data
-     * with UUID string and landRole
+     * with UUID and landRole
      *
      * @return Roles
      */
-    ConcurrentHashMap<String, LandRole> getLandChunkRoles();
+    ConcurrentHashMap<UUID, LandRole> getLandChunkRoles();
 
     /**
      * Get all members of an role
@@ -67,15 +67,15 @@ public interface LandChunk {
      * @param landRole The role wich are the members from
      * @return Collection of members wich have this role
      */
-    Collection<String> getRoleMembers(LandRole landRole);
+    Collection<UUID> getRoleMembers(LandRole landRole);
 
     /**
      * Get landRole of player
      *
-     * @param playerUUID UUID string of player
+     * @param playerUUID UUID of player
      * @return LandRole
      */
-    LandRole getLandRole(String playerUUID);
+    LandRole getLandRole(UUID playerUUID);
 
     /**
      * Set tex value of LandChunk
@@ -83,6 +83,12 @@ public interface LandChunk {
      * @param rent Tax value
      */
     void setTax(double rent);
+
+    /**
+     * Check if landChunk is loaded
+     * @return
+     */
+    boolean isLoaded();
 
     /**
      * Enable an setting
@@ -151,7 +157,7 @@ public interface LandChunk {
      * Set an landChunk role
      *
      * @param landPlayer Player wich you want to set
-     * @return 0, if in all chunks set
+     * @return
      */
     boolean trustPlayer(LandPlayer landPlayer);
 
@@ -160,31 +166,31 @@ public interface LandChunk {
      * @param playerUUID UUID of player
      * @param landRole Role
      */
-    void setRole(String playerUUID, LandRole landRole);
+    void setRole(UUID playerUUID, LandRole landRole);
 
     /**
      * Untrust an player
      *
-     * @param playerUUID UUID string of player
+     * @param playerUUID UUID of player
      */
-    void removeRole(String playerUUID);
+    void untrustPlayer(UUID playerUUID);
 
     /**
      * Check if player is trusted
      *
-     * @param playerUUID UUID string of player
+     * @param playerUUID UUID of player
      * @return true, if trusted
      */
-    boolean isTrusted(String playerUUID);
+    boolean isTrusted(UUID playerUUID);
 
     /**
      * Check if player can do an action
      *
-     * @param playerUUID UUID string of player
+     * @param playerUUID UUID of player
      * @param action     Action
      * @return true, if he can do so
      */
-    boolean canAction(String playerUUID, LandsAction action);
+    boolean canAction(UUID playerUUID, LandsAction action);
 
     /**
      * Save landChunk to harddrive
@@ -193,8 +199,9 @@ public interface LandChunk {
 
     /**
      * Get all trusted players
+     * @return
      */
-    Collection<String> getTrustedPlayers();
+    Collection<UUID> getTrustedPlayers();
 
     /**
      * Add tax

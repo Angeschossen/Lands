@@ -13,11 +13,16 @@ public enum LandsAction {
     PLAYER_TRUST("player_trust"),
     PLAYER_UNTRUST("player_untrust"),
     PLAYER_SETROLE("player_setrole"),
-    LAND_CLAIM_GLOBAL("land_claim"),
+    LAND_CLAIM("land_claim"),
+    LAND_CLAIM_BORDER("land_claim_border"),
     LAND_SPAWN_SET("land_spawn_set"),
     LAND_SPAWN_TELEPORT("land_spawn_teleport"),
     LAND_RENAME("land_rename"),
-    SETTING_EDIT("setting_edit"),
+    SETTING_EDIT_LAND("setting_edit_land"),
+    SETTING_EDIT_ROLE("setting_edit_role"),
+    SETTING_EDIT_ADVANCED("setting_edit_advanced"),
+    SETTING_EDIT_TAXES("setting_edit_taxes"),
+    SETTING_EDIT_VARIOUS("setting_edit_various"),
     FLY("fly");
 
     private String iD;
@@ -33,7 +38,7 @@ public enum LandsAction {
                 return action;
         }
 
-        throw new IllegalArgumentException("No enum with iD '" + iD + "' found.");
+        throw new IllegalArgumentException("No LandsAction with iD '" + iD + "' found.");
     }
 
     @Override

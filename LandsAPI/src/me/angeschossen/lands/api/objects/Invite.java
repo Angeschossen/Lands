@@ -2,6 +2,7 @@ package me.angeschossen.lands.api.objects;
 
 import java.util.Date;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 public interface Invite {
 
@@ -17,7 +18,7 @@ public interface Invite {
      *
      * @return UUID of receiver
      */
-    UUID getReceiverUUID();
+    UUID getReceiverUID();
 
     /**
      * Get sent date
@@ -31,7 +32,7 @@ public interface Invite {
      * @return in how many chunks failed
      * -1 means the whole land failed
      */
-    int accept();
+    CompletableFuture<Boolean> accept();
 
     /**
      * Deny invite

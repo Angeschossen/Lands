@@ -75,20 +75,23 @@ general:
     # to set claim land with /Land edit
     editLocLand: false
     # Reward players by time
+    # Explanation: https://github.com/Angeschossen/Lands/wiki/Playtime-Rewards
     time-reward:
       enabled_17: false
       # Time settings
-      # After how many MINUTES
+      # After how many seconds
       # should the players
       # get rewarded with plus 1
-      # chunk to claim or land
-      # to create?
-      # NOTE: Timeunit is in seconds
+      # chunk, land, own land
+      # or member.
+      # NOTE: Timeunit is seconds
       time:
         # /Lands claim
         chunks: 3060
         # Lands the player can be part of.
         lands: 43200
+        # Max land members (How many players can the land have?)
+        members: 21600
         # Lands the player can create.
         # /Lands create
         lands-own: 86400
@@ -256,6 +259,15 @@ land:
   listPerWorld: false
   # Additional settings
   options:
+    # Add the lands.chunks.NUMBER permission value
+    # from trusted players to the max claim amount of the land?
+    chunks-addition:
+      # Set to true, to enable this.
+      enabled_18: false
+      # Only add lands.chunks.NUMBER value
+      # to max claim amount of lands, if the
+      # players is trusted in the whole land?
+      global-trusted: true
     # Force the creation of an land (/Land create)
     # before claiming chunks.
     # If set to false:
@@ -502,10 +514,6 @@ chunk:
   # /Lands selection
   selection:
     enabled_8: true
-    # "/Lands map" settings
-    map:
-      # Radius of map
-      radius: 5
 
   # Additional options
   options:
@@ -1167,8 +1175,12 @@ visualization:
       enemy: 16711680
     # Duration of view in seconds
     duration_8: 60
-  # Radius for /Lands map
-  map-radius: 5
+  # Map chunk lengths for /Lands map
+  map:
+    # X Length (left to right)
+    x_2: 15
+    # Y Heigth (up)
+    y: 10
 
 # Command specific settings
 command:
@@ -1311,6 +1323,12 @@ integration:
     # into scoreboards etc.
     PlaceholderAPI:
       enabled_11: true
+      # Display land you're
+      # standing on?
+      # If disabled Lands
+      # will display the land
+      # you're member of.
+      display-current: false
 
   # Web integration
   web:

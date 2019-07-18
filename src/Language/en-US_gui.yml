@@ -80,6 +80,7 @@ general:
   now: '&aNow'
   enabled: '&aEnabled'
   disabled: '&cDisabled'
+  unlimited: '&aunlimited'
 
 misc:
   claimblock:
@@ -96,6 +97,25 @@ gui:
   mainMenu:
     title: '&8Main Menu'
     size: 27
+    f:
+      limitations:
+        name: '&bYour Limitations'
+        lore:
+          - '&7You can..'
+          - ' '
+          - '&7Create&a {ownlands} &7lands.'
+          - '&7Permission:&9 lands.ownlands.NUMBER'
+          - ' '
+          - '&7Join&a {lands} &7lands.'
+          - '&7Permission:&9 lands.lands.NUMBER'
+          - ' '
+          - '&7Claim&a {chunks} &7chunks per land.'
+          - '&7Permission:&9 lands.chunks.NUMBER'
+          - ' '
+          - '&7Have&a {members} &7members per land.'
+          - '&7Permission:&9 lands.members.NUMBER'
+        material: 'PAPER'
+        slot: 14
     s:
       lands:
         name: '&bLands'
@@ -103,14 +123,14 @@ gui:
           - '&7View all your'
           - '&7lands.'
         material: 'GRASS_BLOCK'
-        slot: 16
+        slot: 17
       invites:
         name: '&bInvites'
         lore:
           - '&7View all your'
           - '&7received invites.'
         material: 'WRITABLE_BOOK'
-        slot: 12
+        slot: 11
       close:
         name: '&cClose'
         lore:
@@ -653,23 +673,19 @@ gui:
         material: 'ARROW'
         slot: 34
     l:
-      player:
-        name: '&8Player &7->&a {player}'
+      players:
+        name: '{role} &7->&b {player}'
         lore:
           - '&7Click on this player'
           - '&7to untrust him or to'
           - '&7get some information.'
           - ' '
-          - '&8- &7Role:&b {role}'
-        material: 'PLAYER_HEAD'
-        from: 10
-        to: 27
-      player-mixed:
-        name: '{role} &7->&a {player}'
-        lore:
-          - '&7Click on this player'
-          - '&7to untrust him or to'
-          - '&7get some information.'
+          - '&8- &7Trusted in&a {trusted} &8/&2 {size} &7chunks'
+          - '  &7Supports this land with&a {chunks} &7chunks'
+          - ' '
+          - '&8- &7Please note that option &9chunks-addition &7needs'
+          - '  &7to be enbled in config, if you want this player to'
+          - '  &7support this land with {chunks} chunks.'
         material: 'PLAYER_HEAD'
         from: 10
         to: 27
@@ -765,6 +781,16 @@ gui:
   settingss:
     title: '&8Select Setting'
     size: 27
+    a:
+      setting_noaccess:
+        name: '&4Failure: &cNo Access'
+        lore:
+          - '&7You''re not allowed to'
+          - '&7edit this setting.'
+          - ' '
+          - '&7The land owner needs'
+          - '&7to give you permission.'
+        material: 'RED_STAINED_GLASS_PANE'
     f:
       various:
         name: '&bVarious Settings'
@@ -1357,6 +1383,7 @@ gui:
           - '&7tax value.'
         material: 'GLOWSTONE_DUST'
         slot: 11
+        amount: 1
       plus_100:
         name: '&aAdd $100'
         lore:
@@ -1764,13 +1791,25 @@ gui:
         lore:
           - '&c{last-seen}'
         material: 'CLOCK'
-        slot: 12
+        slot: 16
+      max-chunks:
+        name: '&bMaximum Claims (Chunks)'
+        lore:
+          - '&7This player can claim'
+          - '&a{chunks} &7chunks.'
+          - ' '
+          - '&8- &7If option &9chunks-addition'
+          - '  &7is enabled in config, this player'
+          - '  &7could support your land with'
+          - '  &7{chunks} chunks.'
+        material: 'GRASS_BLOCK'
+        slot: 14
       lands:
         name: '&bLands &8(&7{amount}&8)'
         lore:
           - '{lands}'
         material: 'OAK_SIGN'
-        slot: 16
+        slot: 12
     p:
       placeholder_1:
         material: 'GRAY_STAINED_GLASS_PANE'

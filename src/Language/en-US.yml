@@ -49,11 +49,19 @@ general:
   autoAction:
     claim: '&aChunk claim'
   map:
+    top: '&7-<------------<- &b&lLANDS MAP &7->------------>-'
+    info:
+      wilderness: ' &2▉ &7= Wilderness'
+      yours: ' &a▉ &7= Yours'
+      trusted: ' &5▉ &7= Friendly'
+      others: ' &c▉ &7= Others'
+      position: ' &e▉ &7= Position'
     yours: '&a▉ '
     others: '&c▉ '
     friendly: '&5▉ '
     current-location: '&e▉ '
     wilderness: '&2▉ '
+    bottom: '&7-<------------<- &b&lLANDS MAP &7->------------>-'
 
 help:
   general:
@@ -108,10 +116,10 @@ message:
     land: '&8[&aLands&8] &cYou''re not allowed to do this for this land &8(&7Land:&e {land}&8)&7.'
     role-weight: '&8[&aLands&8] &cYou can''t edit this player. &7He has an higher role than you. Contact the land owner for help.'
     claim: '&8[&aLands&8] &cYou can''t claim land here. &7This chunk belongs to something different.'
-    place: '&8[&aLands&8] &cYou''re not allowed to place blocks here.'
-    break: '&8[&aLands&8] &cYou''re not allowed to break blocks here.'
-    interact: '&8[&aLands&8] &cYou can''t interact in this chunk.'
-    ignite: '&8[&aLands&8] &cYou''re not allowed to ignite blocks in this chunk.'
+    place: '&8[&aLands&8] &cYou''re not allowed to place blocks in this chunk. &7It belongs to land&b {land}&7.'
+    break: '&8[&aLands&8] &cYou''re not allowed to break blocks in this chunk. &7It belongs to land&b {land}&7.'
+    interact: '&8[&aLands&8] &cYou can''t interact in this chunk. &7It belongs to land&b {land}&7.'
+    ignite: '&8[&aLands&8] &cYou''re not allowed to ignite blocks in this chunk. &7It belongs to land&b {land}&7.'
     edit: '&8[&aLands&8] &cYou''re not allowed to edit this land.'
     player:
       chunk-trust: '&8[&aLands&8] &cYou don''t have permission to trust an player in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
@@ -121,9 +129,9 @@ message:
       land-untrust: '&8[&aLands&8] &cYou''re not allowed to untrust an player in this land &8(&7Land: &e{land}&8)&c.'
       land-setrole: '&8[&aLands&8] &cYou''re not allowed to trust an player in this land &8(&7Land: &e{land}&8)&c.'
     combat:
-      animal: '&8[&aLands&8] &cYou''re not allowed to attack animals here.'
-      pvp-attacker: '&8[&aLands&8] &cYou''re not allowed to attack players here.'
-      pvp-target: '&8[&aLands&8] &cYour target isn''t allowed to attack players here.'
+      animal: '&8[&aLands&8] &cYou''re not allowed to attack animals in this chunk. &7It belongs to land&b {land}&7.'
+      pvp-attacker: '&8[&aLands&8] &cYou''re not allowed to attack players in this chunk. &7It belongs to land&b {land}&7.'
+      pvp-target: '&8[&aLands&8] &cYour target isn''t allowed to attack players in this chunk. &7It belongs to land&b {land}&7.'
   event:
     lands:
       enter: '#t#&a&l{land}{newline}{title}'
@@ -303,10 +311,6 @@ command:
     notExist: '&8[&aLands&8] &cThis player currently doesn''t have any data.'
   chat:
     format: '&8[&aLands&8] [&d{land}&8] {role} &7{player}&8:&f {message}'
-  map:
-    header: '&7----------------------'
-    info: '&7Yours: &a▉ &7Wilderness: &2▉ &7Others: &c▉ &7Friendly: &5▉ &7Position: &e▉'
-    footer: ' '
 
 list:
   view:

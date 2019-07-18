@@ -1,11 +1,13 @@
 package me.angeschossen.lands.api.objects;
 
+import com.sun.istack.internal.NotNull;
 import me.angeschossen.lands.api.enums.LandRole;
 import me.angeschossen.lands.api.enums.LandsAction;
 import me.angeschossen.lands.api.enums.LandsSetting;
 import org.bukkit.Location;
 
 import java.util.Collection;
+import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -22,17 +24,18 @@ public interface Land {
     /**
      * Get invite by receiver UUID
      *
-     * @param receiverUUID UUID string of receiver
+     * @param receiverUUID UUID of receiver
      * @return Invite
      */
-    Invite getInvite(String receiverUUID);
+    Invite getInvite(UUID receiverUUID);
 
     /**
      * Get owner UUID of land
      *
-     * @return UUID string of owner
+     * @return UUID of owner
      */
-    String getOwnerUUID();
+    @NotNull
+    UUID getOwnerUID();
 
     /**
      * Get spawn
@@ -60,24 +63,24 @@ public interface Land {
      * of an certain role
      *
      * @param landRole Role wich you want to receive  members of
-     * @return Collection with UUID strings
+     * @return Collection with UUIDs
      */
-    Collection<String> getRoleMembers(LandRole landRole);
+    Collection<UUID> getRoleMembers(LandRole landRole);
 
     /**
-     * Get all landRoles with UUID strings
+     * Get all landRoles with UUIDs
      *
      * @return LandRoles
      */
-    ConcurrentHashMap<String, LandRole> getLandRoles();
+    ConcurrentHashMap<UUID, LandRole> getLandRoles();
 
     /**
      * Get the landRole of an player
      *
-     * @param playerUUID UUID string of player
+     * @param playerUUID UUID of player
      * @return LandRole
      */
-    LandRole getLandRole(String playerUUID);
+    LandRole getLandRole(UUID playerUUID);
 
     /**
      * Get the size of an land
@@ -88,6 +91,7 @@ public interface Land {
 
     /**
      * Get tax value of land
+     *
      * @return Tax value
      */
     double getTax();
@@ -178,7 +182,10 @@ public interface Land {
      * @return 0 if in all landChunks set.
      * if higher as 0 means amount of chunks where not trusted.
      */
-    int trustPlayer(LandPlayer landPlayer);
+    boolean trustPlayer(LandPlayer landPlayer);
+
+
+    Collection<UUID> getTrustedPlayers();
 
     /**
      * Set role of trusted player
@@ -186,7 +193,9 @@ public interface Land {
      * @param playerUUID UUID of player
      * @param landRole   Role
      */
-    void setRole(String playerUUID, LandRole landRole);
+    void setRole(UUID playerUUID, LandRole landRole);
+
+    void trustPlayerForced(LandPlayer landPlayer);
 
     /**
      * Set the tax of the land
@@ -194,6 +203,12 @@ public interface Land {
      * @param tax Tax value
      */
     void setTax(double tax);
+
+    /**
+     * Check if land is loaded
+     * @return
+     */
+    boolean isLoaded();
 
     /**
      * Add an landChunk to the land
@@ -216,6 +231,10 @@ public interface Land {
      * @return Collection of chunkCoords
      */
     Collection<ChunkCoord> getChunkCoords();
+
+    void setTitleMessage(String title);
+
+    String getTitleMessage();
 
     /**
      * Remove an landChunk
@@ -260,10 +279,10 @@ public interface Land {
     /**
      * Check if player is trusted in whole land.
      *
-     * @param playerUUID UUID string of player
+     * @param playerUUID UUID of player
      * @return true if is
      */
-    boolean isGlobalTrusted(String playerUUID);
+    boolean isTrusted(UUID playerUUID);
 
     /**
      * Get an collection of all online land members
@@ -275,20 +294,20 @@ public interface Land {
     /**
      * Check if player can action
      *
-     * @param playerUUID UUID string of player
+     * @param playerUUID UUID of player
      * @param action     Action
      * @return Result
      */
-    boolean canAction(String playerUUID, LandsAction action);
+    boolean canAction(UUID playerUUID, LandsAction action);
 
     /**
      * Check if player can action global
      *
-     * @param playerUUID UUID string of player
+     * @param playerUUID UUID of player
      * @param action     Action
      * @return Result
      */
-    boolean canActionGlobal(String playerUUID, LandsAction action);
+    boolean canActionGlobal(UUID playerUUID, LandsAction action);
 
     /**
      * Saves to land to the harddrive
@@ -317,4 +336,11 @@ public interface Land {
      * @param location Location of spawn
      */
     void setSpawn(Location location);
+
+
+    double getBalance();
+
+    void setBalance(double balance);
+
+    void addBalance(double value);
 }

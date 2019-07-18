@@ -8,6 +8,7 @@ import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 
+import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 
@@ -17,40 +18,11 @@ public interface LandsAddons {
     /**
      * Get cached landPlayer
      *
-     * @param UUID UUID string of player
+     * @param playerUUID UUID of player
      * @return LandPlayer or null, if not cached
      * @since 2.5.7
      */
-    LandPlayer getLandPlayer(String UUID);
-
-    /**
-     * Get landPlayer. Even he's offline
-     *
-     * @param UUID UUID string of player
-     * @return LandPlayer
-     * @since 2.5.7
-     */
-    CompletableFuture<LandPlayer> getLandPlayerFromStorage(String UUID);
-
-    /**
-     * Get cached landChunk
-     *
-     * @param chunk Chunk
-     * @return LandChunk or null, if not cached
-     * @since 2.5.7
-     */
-    LandChunk getLandChunk(Chunk chunk);
-
-    /**
-     * Get landChunk. Even it's not cached.
-     *
-     * @param worldName Name of world.
-     * @param chunkX    X identifier
-     * @param chunkZ    Z identifier
-     * @return LandChunk or null, if not data exists on harddrive.
-     * @since 2.5.7
-     */
-    CompletableFuture<LandChunk> getLandChunkFromStorage(String worldName, int chunkX, int chunkZ);
+    LandPlayer getLandPlayer(UUID playerUUID);
 
     /**
      * Is claimed land?
@@ -67,6 +39,15 @@ public interface LandsAddons {
      * @return Is claimed
      */
     CompletableFuture<Boolean> isClaimed(String worldName, int x, int z);
+
+    /**
+     * Get cached landChunk
+     *
+     * @param location Location
+     * @return LandChunk or null, if not cached
+     * @since 2.5.7
+     */
+    LandChunk getLandChunk(Location location);
 
     /**
      * Get land.
