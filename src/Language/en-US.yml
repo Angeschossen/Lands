@@ -156,7 +156,7 @@ message:
     noLeft: '&8[&aLands&8] &cYou have no claimblocks left. &7Contact an administrator for help.'
     success: '&8[&aLands&8] &7You got&b {blocks} &7claimblocks. &7Place them on an chunk to claim it.'
   blacklist:
-    untrusted: '&8[&aLands&8] &cYou''re not allowed to use this command here. &7You''re not trusted in this land.'
+    untrusted: '&8[&aLands&8] &cYou''re not allowed to use this command here. &7You''re not trusted in this chunk &8(&7Land: &e{land}&8)&7.'
     general: '&8[&aLands&8] &cYou''re not allowed to use this command in claimed lands.'
   autoAction:
     stopped: '&8[&aLands&8] &cStopped your current auto action. &7Reached max rounds. Name:&b {name}'
@@ -195,6 +195,7 @@ command:
     cooldown: '&8[&aLands&8] &cYou can''t do this now again. &7You need to wait another&b {time} &7minutes.'
     chunk-is-claimed: '&8[&aLands&8] &cYou can''t claim this chunk. &7It already belongs to land&b {land}&7.'
     banks-disabled: '&8[&aLands&8] &7Banks were disabled by a administrator. &7Contact one for help. Setting: taxes.banks'
+    max-members: '&8[&aLands&8] &cCouldn''t trust you in land&e {land}&c. &7This land reached his maximum of&b {members} &7members. The land needs more lands.members.NUMBER permission.'
   help:
     help: '&8[&aLands&8] &7Use &8/&aLand help &7for help.'
     cmd-not-exist: '&8[&aLands&8] &cThis subcommand doesn''t exist. &7Command&b {command} &7wasn''t found.'
@@ -244,10 +245,9 @@ command:
     chunk-already: '&8[&aLands&8] &cThis player is already trusted in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
     invited: '&8[&aLands&8] &cThis player is already invited. &7Please wait while he accept it &8(&7Land:&e {land}&8)&7.'
     land-target: '&8[&aLands&8] &7Player&b {player} &7invited you to his land&b {land}&7. Use &8/&aLand accept {land} &7to accept his invite.'
-    lands-max: '&8[&aLands&8] &7Player&b {player} &7has already reached the maximum amount of lands. A administrator can give him permission to be part of more lands.'
+    lands-max: '&8[&aLands&8] &7Player&b {player} &7has already reached the maximum amount of lands. He needs more lands.lands.NUMBER permission.'
     land-fail: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin land&e {land}&c. &7The owner of the land reached his maximum of&b {members} &7members in his chunks.'
-    land_max-members: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin this land. &7The owner of the land reached his maximum of&b {members} &7members in his land &8(&e{&7Land: land}&8)&7.'
-    chunk_max-members: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin this chunk. &7The owner of the land reached his maximum of&b {members} &7members in land &8(&e{&7Land: land}&8)&7.'
+    max-members: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin this land. &7The land reached his maximum of&b {members} &7members. It needs more lands.members.NUMBER permission &8(&e{&7Land: land}&8)&7.'
     chunk-target: '&8[&aLands&8] &7Player&b {player} &7invited you to his chunk &8(&7X:&e {x} &7Z:&e {z}) &7Use &8/&aLands accept {land} &7to accept his invite.'
     chunk-success: '&8[&aLands&8] &7Successful invited player&b {player} &7to this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
     land-success: '&8[&aLands&8] &7Successful invited player&b {player} &7to the whole land &8(&7Land:&e {land}&8)&7. He just needs to accept the invite.'
@@ -260,10 +260,7 @@ command:
   setRole:
     role-not-exist: '&8[&aLands&8] &cThe role&e {role} &cdoesn''t exist. &7Typo? &8(&aAvailable: &cAdmin&7, &eMember&8)'
     land-not-trusted: '&8[&aLands&8] &cThe player&e {player} &cisn''t trusted in this land &8(&7Land:&e {land}&8)&7. Please check your input.'
-    chunk-max-members: '&8[&aLands&8] &cCouldn''t set the role in this chunk. &7The owner of the land reached his maximum of&b {members} &7members in this chunk.'
-    land-max-members: '&8[&aLands&8] &cCouldn''t set the role in&e {chunks} &cchunks. &7The owner of the land reached his maximum of&b {members} &7members in his chunks.'
     chunk-success: '&8[&aLands&8] &7Successful set role&b {role} &7for player&b {player} &7in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    part-success: '&8[&aLands&8] &7Player&b {player} &7isn''t trusted in the whole land. Set role in all chunks where he''s trusted &8(&7Land:&e {land}&8)&7.'
     land-success: '&8[&aLands&8] &7Successful set role&b {role} &7for player&b {player} &7in the whole land &8(&7Land:&e {land}&8)&7.'
   accept:
     not-exist: '&8[&aLands&8] &cYou don''t have an invite from land&e {land} &cor it expired. &7Please check your input.'
@@ -271,9 +268,6 @@ command:
     max-reached: '&8[&aLands&8] &cYou can''t join any more lands. &7You can only have&b {max} &7lands. Permission: &blands.lands.NUMBER'
     land-tax-confirm: '&8[&aLands&8] &cThe owner of this land wants you to pay&e {tax} &7to join this land. &7Please confirm this action by executing &8/&aLands accept {land} confirm&7.'
     chunk-tax-confirm: '&8[&aLands&8] &7The owner of this land wants you to pay&b {tax} &7to join this chunk. &7Please confirm your action with &8/&aLand accept {land} confirm&7.'
-    land-fail: '&8[&aLands&8] &cCouldn''t trust you in land&e {land}&c. &7The owner of the land reached his maximum of&b {members} &7members in his chunks.'
-    land-max-members: '&8[&aLands&8] &cCouldn''t trust you in&e {chunks} &cchunks. &7The owner of the land reached his maximum of&b {members} &7members in his chunks.'
-    chunk-max-members: '&8[&aLands&8] &cCouldn''t set the role in this chunk. &7The owner of the land reached his maximum of&b {members} &7members in this chunk.'
     land-success: '&8[&aLands&8] &7Successful accepted invite from land&b {land}&7. You now have access to the whole land.'
     chunk-success: '&8[&aLands&8] &7Successful accepted invite from land&b {land} &7for a chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
     chunk-broadcast: '&8[&aLands&8] &b{land} &8| &7Player&b {player} &7is now member of an chunk in our land &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
@@ -286,7 +280,7 @@ command:
   teleport:
     world-not-exist: '&8[&aLands&8] &cThis world doesn''t exist.'
     chunk-not-exist: '&8[&aLands&8] &cThis chunk doesn''t exist. &7Please check your input.'
-    success: '&8[&aLands&8] &7Successful teleported to chunk &8(&7X:&e {x} &7Z:&e {z} &7Claimed: {claimed}&8)&7.'
+    success: '#t#&9&lTeleported{newline}&7&lX:&a {x} &7&lZ: {z} &7Claimed: {claimed}'
   setSpawn:
     force-land: '&8[&aLands&8] &cYou only can set the land spawn on your land. &7Go to your land&b {land} &7first.'
     successs: '#t#&a&lSpawn set{newline}&7&lCost:&b&l ${cost}'
