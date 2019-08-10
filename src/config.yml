@@ -22,6 +22,7 @@ general:
   # German (de-DE) by XjojoX
   # Hungarian (hu-HU) by gbalint
   # Italian (it-IT) by MiniMoro
+  # Russian (ru-RU) by Envel
   # Vietnamese (vi-VN) by anhcraft
   language: 'en-US'
   # This will send an message
@@ -132,27 +133,26 @@ protection:
 # Database settings
 database:
   # Delete inactive lands
-  # Lands are inactive, if
-  # the owner of the land is
+  # Lands, if the owner of the land is
   # offline since x days.
-  purger:
-    # Set it to 'false' to disable it.
+  land-expiration:
+    # NOTE: This setting requires /reload
     enabled: true
     # Time in days wich the
-    # owner need to be offline,
+    # owner needs to be offline,
     # that his land is marked as inactive.
-    ownerOffline: 80
-    # Time in days which an
-    # land members needs to be
+    owner-offline: 80
+    # Time in days which a
+    # land member needs to be
     # offline that he's getting
-    # untrusted in the land.
-    memberOffline: 80
+    # untrusted from the land.
+    member-offline: 80
     # Should an inactive owner be
     # replaced by an land member.
     # NOTE: Admins will be used first for replace.
     # If no admin is there, Lands will take an member.
     # If no member is there, Lands will delete the land.
-    replaceOwner: true
+    replace-owner: true
   # If an issue with the databse occurs
   # This is just to be always on the save side
   error:
@@ -161,22 +161,6 @@ database:
     # couldn't load data to
     # ensure full protection of lands?
     disallowJoin: true
-
-# Chat options
-chat:
-  # Landchat feature
-  landChat:
-    # Type an parameter in global chat
-    # to send message to land chat
-    chatParameter:
-      # Set this to 'false' to disable it.
-      enabled_2: true
-      # Parameter setting
-      # Example: '#land'
-      # If you type "#land Hi I'm in your land"
-      # into global chat, you would send
-      # "Hi I'm in your land" to land chat.
-      parameter: '#land'
 
 # Taxes
 taxes:
@@ -194,7 +178,7 @@ taxes:
   # Deposit: /Lands deposit
   # Withdraw: /Lands withdraw
   # Balance check: /Lands balance
-  banks: false
+  banks: true
   # Set the min. time between
   # an change at the tax value
   # and that players need to pay tax
@@ -218,6 +202,23 @@ taxes:
     removeMember: true
     # Set max tax value for chunk
     maxTax_2: 1000.0
+  # Land upkeep charges
+  # Enable this, if you want
+  # the lands to pay x amount of money
+  # per chunk.
+  upkeep:
+    # NOTE: This setting requires /reload
+    enabled_19: false
+    # Interval of payment
+    # NOTE: Timeunit is seconds
+    interval_2: 172800
+    # How much should the pay per chunk?
+    # NOTE: Final payment would be landsize * cost
+    cost-per-chunk: 50.0
+    # Should Lands delete the LAST CLAIMED
+    # chunk, if the land can't pay the bill?
+    delete-chunk: true
+
 
 # Land settings
 land:
@@ -245,6 +246,10 @@ land:
         change: 400.0
     # Teleport settings
     teleport:
+      # Wait time until the player
+      # gets teleported.
+      # NOTE: Timeunit is seconds
+      wait: 3
       # Cost for teleport to
       # Land spawn.
       costs_5: 0.0
@@ -263,7 +268,7 @@ land:
     # from trusted players to the max claim amount of the land?
     chunks-addition:
       # Set to true, to enable this.
-      enabled_18: false
+      enabled_18: true
       # Only add lands.chunks.NUMBER value
       # to max claim amount of lands, if the
       # players is trusted in the whole land?
@@ -309,8 +314,8 @@ land:
     # to learn how to display messages
     # as a title etc.
     landTitles:
-      # Set this to false, if you want to disable it.
-      enabled_4: true
+      # To disable land titles just set
+      # the title messages in your language config to ''
       # The delay how much seconds
       # lands should wait (maximum) to
       # send the enter or leave message after
@@ -512,6 +517,7 @@ chunk:
     value_2: 15
   # Enable to claim via selection tool
   # /Lands selection
+  # NOTE: This setting requires /reload
   selection:
     enabled_8: true
 
@@ -533,6 +539,9 @@ chunk:
     # for chunk teleport through
     # the GUI menu.
     teleport:
+      # Wait time until getting teleported
+      # NOTE: Timunit is seconds
+      wait_2: 3
       # Teleport cooldown
       # Bypass permission: lands.bypass.cooldown.teleport
       # Command: /Lands teleport of via chunks GUI
@@ -543,13 +552,14 @@ chunk:
     # Allow chunk claiming
     # through placing an special
     # block on it.
+    # You can give claimblocks
+    # by executing /Lands admin give <player> claimblock [amount]
+    # If you don't want your players to claim via command, just
+    # don't give them lands.command.claim
     claimBlock:
-      # Enable or disable this
-      enabled_13: true
-      # Disable /Land claim command
-      # and let players only claim through
-      # the claimblock
-      disableCmd: false
+      # Allow only the owner of the block
+      # to use it.
+      only-owner: true
     # Should Lands regenerate
     # chunk wich where claimed but
     # now the owner or the system deleted them?
@@ -1124,7 +1134,7 @@ visualization:
     claimed:
       particle_2: 'REDSTONE'
       color_2: 65280
-      duration_2: 4
+      duration_2: 8
     # Land where you're the owner
     own:
       particle_3: 'REDSTONE'
@@ -1156,31 +1166,17 @@ visualization:
       duration_7: 4
   # /Lands view
   view:
-    # Particle
-    particle_8: 'REDSTONE'
-    # How should Lands visualize the land?
-    # Types:
-    # OUTLINE - Visualizes the border of the whole land
-    # GRID - Visualizes the border of the whole land AND ALSO chunk borders (NOT ADDED YET!!!)
-    # SINGLE - Only visualize the chunk you're standing on (NOT ADDED YET!!!)
-    type: 'OUTLINE'
-    # Set the colors
-    # Format: RGB Integer
-    color:
-      # Land owned by you
-      own: 65280
-      # Land where you're trusted
-      trusted: 16776960
-      # Enemy land
-      enemy: 16711680
+    # Outline the whole land instead
+    # of just one chunk?
+    outline: true
     # Duration of view in seconds
     duration_8: 60
   # Map chunk lengths for /Lands map
   map:
     # X Length (left to right)
-    x_2: 15
+    x-length: 15
     # Y Heigth (up)
-    y: 10
+    y-heigth: 10
 
 # Command specific settings
 command:
@@ -1189,7 +1185,7 @@ command:
   # NOTE: You can't reload
   # this setting.
   aliases_list:
-    - protection
+    - kingdom
   # Deny commands
   # These aren't case sensitive
   blacklist:
@@ -1208,13 +1204,11 @@ command:
 
 # Lands GUI settings
 gui:
-  # GUI where you can see
-  # all the lands you're in.
-  lands:
-    # Item wich should be displayed in the GUI for the land.
-    # Materials can be found here:
-    # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
-    land: 'STONE'
+  # Should Lands automatically
+  # adjust the length of item
+  # lore lines?
+  # NOTE: Set this to 0 to disable it.
+  max-lore-length: 0
 
   # Taxes GUI
   rent:
@@ -1251,9 +1245,9 @@ randomTeleport:
   # for example.
   size:
     # Max x coordinate
-    x: 20000
+    x: 100
     # Max z coordniate
-    z: 20000
+    z: 100
   # General options
   option:
     # Should players be able
@@ -1263,6 +1257,8 @@ randomTeleport:
     # Prevent random teleport
     # to ocean?
     preventWater: true
+    # Wait time until getting teleported.
+    wait_3: 3
     # Cooldown in seconds
     # Set this to 0, if you want to deactivate it.
     cooldown: 300

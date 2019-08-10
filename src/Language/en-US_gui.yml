@@ -1,78 +1,3 @@
-#   _                     _
-#  | |                   | |
-#  | |     __ _ _ __   __| |___
-#  | |    / _` | '_ \ / _` / __|
-#  | |___| (_| | | | | (_| \__ \
-#  \_____/\__,_|_| |_|\__,_|___/
-#
-# Resource page: https://www.spigotmc.org/resources/53313
-# Discord: https://discord.gg/JVU9qd7
-#
-# If you encounter any issues, please report them
-# to discord support server or via pm.
-# Bugs or issues are mostly fixed within hours.
-#
-#
-# Here you can edit the whole GUI.
-# You can set GUI titles, the size and
-# item names, lores, materials and slots.
-# Don't remove any values or keys.
-#
-# You also can add new items to your GUI.
-# This can be done under gui.<GUI>.s.<YourItemName>
-# The name needs to be unique in this section.
-# Example:
-#
-# gui:
-#   lands:
-#     title: '&8Your Lands'
-#     size: 27
-#     s:
-#       close:
-#         name: '&cClose'
-#         lore:
-#         - '&7Close this menu.'
-#         - ' '
-#         - '&8- &7You can open it again'
-#         - '  &7with &8/&aLands menu&7.'
-#         material: 'RED_STAINED_GLASS_PANE'
-#         slot: 9
-#
-# Please note: You need to set all values
-# otherwise Lands will auto generate values.
-# Also you can't set items where list items
-# are configured. Means if for example the
-# list in the Lands GUI goes from slot
-# 10 - 12 you can set any items with
-# the slot 10, 11, 12. They will be ignored.
-#
-#
-# You also can apply new placeholders.
-# This can be done under gui.<GUI>.p.<YourItemName>
-# The name needs to be unique in this section.
-# Example:
-#
-# gui:
-#   lands:
-#     p:
-#       placeholder_1:
-#       material: 'GRAY_STAINED_GLASS_PANE'
-#       from: 1
-#       to: 9
-#
-# Please note: You need to set all values
-# otherwise Lands will auto generate values.
-# Also you can't set items where list items
-# are configured. Means if for example the
-# list in the Lands GUI goes from slot
-# 10 - 12 you can set any items with
-# the slot 10, 11, 12. They will be ignored.
-#
-#
-# If you encounter any issues or you simply have
-# some questions, contact me via PM or Discord.
-# Discord: https://discord.gg/JVU9qd7
-
 general:
   wYes: '&aYes'
   wNo: '&cNo'
@@ -81,16 +6,18 @@ general:
   enabled: '&aEnabled'
   disabled: '&cDisabled'
   unlimited: '&aunlimited'
+  previous: '&8previous'
 
 misc:
-  claimblock:
+  claim-block:
     name: '&bClaimblock'
     lore:
       - '&7With this block you'
-      - '&7can claim an chunk'
+      - '&7can claim a chunk'
       - '&7by placing it in'
       - '&7the wilderness.'
       - ' '
+      - '&7Owner:&a {owner}'
     material: 'GRASS_BLOCK'
 
 gui:
@@ -98,7 +25,7 @@ gui:
     title: '&8Main Menu'
     size: 27
     f:
-      limitations:
+      limitation:
         name: '&bYour Limitations'
         lore:
           - '&7You can..'
@@ -114,7 +41,11 @@ gui:
           - ' '
           - '&7Have&a {members} &7members per land.'
           - '&7Permission:&9 lands.members.NUMBER'
-        material: 'PAPER'
+          - ' '
+          - '&7Support lands, in which you''re trusted,'
+          - '&7with &a{support-chunks} &7chunks per land.'
+          - '&7Permission:&9 lands.chunks.support.NUMBER'
+        material: 'PLAYER_HEAD'
         slot: 14
     s:
       lands:
@@ -140,6 +71,7 @@ gui:
           - '  &7with &8/&aLands menu&7.'
         material: 'RED_STAINED_GLASS_PANE'
         slot: 9
+        enabled: true
     p:
       placeholder_1:
         material: 'GRAY_STAINED_GLASS_PANE'
@@ -148,14 +80,6 @@ gui:
   lands:
     title: '&8Your Lands'
     size: 27
-    s:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eMain Menu&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 19
     f:
       page_previous:
         name: '&9Previous Page'
@@ -173,6 +97,13 @@ gui:
           - '&8- &7Current:&b {current}'
         material: 'ARROW'
         slot: 25
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 19
     l:
       land:
         name: '&7Land&a {land}'
@@ -224,6 +155,14 @@ gui:
   land:
     title: '&8Land &7->&a {land}'
     size: 27
+    f:
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 19
     s:
       chunks:
         name: '&bChunks'
@@ -275,13 +214,6 @@ gui:
           - '  &7in the whole land.'
         material: 'WRITABLE_BOOK'
         slot: 17
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eLands&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 19
     a:
       settings_noAccess:
         name: '&4Denied: &eSettings'
@@ -302,14 +234,6 @@ gui:
   chunks:
     title: '&8Chunks'
     size: 45
-    s:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eLand&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 37
     f:
       page_previous:
         name: '&9Previous Page'
@@ -327,6 +251,13 @@ gui:
           - '&8- &7Current:&b {current}'
         material: 'ARROW'
         slot: 43
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 37
     l:
       chunk:
         name: '&8Chunk &7-> X:&b {x} &7Z:&b {z}'
@@ -408,6 +339,14 @@ gui:
   chunk:
     title: '&8Chunk &7X:&a {x} &7Z:&a {z}'
     size: 27
+    f:
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 19
     s:
       members:
         name: '&bMembers'
@@ -449,13 +388,6 @@ gui:
           - '  &7in this chunk.'
         material: 'WRITABLE_BOOK'
         slot: 17
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eChunks&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 19
     a:
       settings_noAccess:
         name: '&4Denied: &eSettings'
@@ -477,14 +409,6 @@ gui:
   invites:
     title: '&8Invites'
     size: 36
-    s:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eLand&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 28
     f:
       page_previous:
         name: '&9Previous Page'
@@ -502,6 +426,13 @@ gui:
           - '&8- &7Current:&b {current}'
         material: 'ARROW'
         slot: 34
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 28
     l:
       invite:
         name: '&8Invite &7->&a {player}'
@@ -542,22 +473,37 @@ gui:
           - '&7this invite.'
         material: 'RED_DYE'
         slot: 12
+    f:
+      info_land:
+        name: '&bInformation'
+        lore:
+          - '&7Land:&e {land}'
+          - '&7World:&e {world}'
+          - ' '
+          - '&7Sender:&e {sender}'
+          - '&7Received:&e {time}'
+        material: 'OAK_SIGN'
+        slot: 16
+      info_chunks:
+        name: '&bInformation'
+        lore:
+          - '&7Land:&e {land}'
+          - '&7World:&e {world}'
+          - ' '
+          - '&7Chunks:'
+          - '{chunks}'
+          - ' '
+          - '&7Sender:&e {sender}'
+          - '&7Received:&e {time}'
+        material: 'OAK_SIGN'
+        slot: 16
       back:
         name: '&cBack'
         lore:
           - '&7Go back to'
-          - '&eLand&7.'
+          - '{back}&7.'
         material: 'RED_STAINED_GLASS_PANE'
         slot: 19
-    f:
-      info:
-        name: '&bInformation'
-        lore:
-          - '&7Sender:&e {sender}'
-          - '&7Receiver:&e {receiver}'
-          - '&7Sent:&e {time}'
-        material: 'OAK_SIGN'
-        slot: 16
     a:
       failure_noAccess:
         name: '&4Denied: &bRevoke Invite'
@@ -622,13 +568,6 @@ gui:
           - '&7the visitor role.'
         material: 'WHEAT'
         slot: 14
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eObject&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 19
     f:
       owner:
         name: '&4Owner &7->&b {player}'
@@ -639,6 +578,13 @@ gui:
           - '&7assistance.'
         material: 'PLAYER_HEAD'
         slot: 14
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 19
     p:
       placeholder_1:
         material: 'GRAY_STAINED_GLASS_PANE'
@@ -647,14 +593,6 @@ gui:
   role:
     title: '&8Role &7->&a {role}'
     size: 36
-    s:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eobjective&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 28
     f:
       page_previous:
         name: '&9Previous Page'
@@ -672,6 +610,13 @@ gui:
           - '&8- &7Current:&b {current}'
         material: 'ARROW'
         slot: 34
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 28
     l:
       players:
         name: '{role} &7->&b {player}'
@@ -682,9 +627,10 @@ gui:
           - ' '
           - '&8- &7Trusted in&a {trusted} &8/&2 {size} &7chunks'
           - '  &7Supports this land with&a {chunks} &7chunks'
+          - '  &8(&7Permission:&9 lands.chunks.support.NUMBER&8)'
           - ' '
           - '&8- &7Please note that option &9chunks-addition &7needs'
-          - '  &7to be enbled in config, if you want this player to'
+          - '  &7to be enabled in config, if you want this player to'
           - '  &7support this land with {chunks} chunks.'
         material: 'PLAYER_HEAD'
         from: 10
@@ -732,13 +678,6 @@ gui:
           - '  &7certain chunks.'
         material: 'RED_DYE'
         slot: 12
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eRole&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 19
     f:
       player:
         name: '&bInformation'
@@ -750,6 +689,13 @@ gui:
           - '&e{lands}'
         material: 'OAK_SIGN'
         slot: 16
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 19
     a:
       failure_self:
         name: '&4Failure: &cSelf'
@@ -758,6 +704,13 @@ gui:
           - ' '
           - '&8- &7Use &8/&aLands leave {land}'
           - '  &7instead.'
+        material: 'RED_DYE'
+      untrust_owner:
+        name: '&4Denied: &bUntrust'
+        lore:
+          - '&cYou can''t untrust a owner.'
+          - '&cTo set a new user a administrator can use'
+          - '&8/&eLands admin <land> setOwner <player>&c.'
         material: 'RED_DYE'
       untrust_noAccess:
         name: '&4Denied: &bUntrust'
@@ -802,6 +755,13 @@ gui:
           - '  &7set a new land name.'
         material: 'OAK_SIGN'
         slot: 17
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 19
     s:
       role:
         name: '&bRole Settings'
@@ -837,7 +797,7 @@ gui:
           - '&8- &7Players are paying'
           - '  &7taxes per chunk. So the'
           - '  &7calculation is:'
-          - '  &7chunk_1 + chunk_2 etc.'
+          - '  &7chunk 1 + chunk 2 etc.'
         material: 'GOLD_NUGGET'
         slot: 14
       land:
@@ -848,13 +808,6 @@ gui:
           - '&7for this objective.'
         material: 'GRASS_BLOCK'
         slot: 16
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eObjective&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 19
     p:
       placeholder_1:
         material: 'GRAY_STAINED_GLASS_PANE'
@@ -863,14 +816,6 @@ gui:
   settings_role:
     title: '&8Settings &7-> {role}'
     size: 36
-    s:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eSelect Role&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 28
     f:
       page_previous:
         name: '&9Previous Page'
@@ -888,6 +833,13 @@ gui:
           - '&8- &7Current:&b {current}'
         material: 'ARROW'
         slot: 34
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 28
     l:
       block_break:
         name: '&bBreak Blocks'
@@ -1055,7 +1007,7 @@ gui:
           - ' '
           - '&7Allow this role to'
           - '&7edit land settings?'
-        material: 'COMMAND_BLOCK'
+        material: 'GRASS_BLOCK'
         from: 10
         to: 27
       setting_edit_role:
@@ -1074,11 +1026,11 @@ gui:
           - '&8- &7You should give'
           - '  &7this permission only'
           - '  &7to very trustworthy players.'
-        material: 'COMMAND_BLOCK'
+        material: 'PLAYER_HEAD'
         from: 10
         to: 27
       setting_edit_advanced:
-        name: '&bEdit Advanced Role Settings'
+        name: '&bEdit advanced Role Settings'
         lore:
           - '&7Status: {enabled}'
           - '&7Unlocked: {unlocked}'
@@ -1089,7 +1041,7 @@ gui:
           - '&8- &7You should give'
           - '  &7this permission only'
           - '  &7to very trustworthy players.'
-        material: 'COMMAND_BLOCK'
+        material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMzExYTRmYjljNDkzODliNGY0NThjMjllOTY4MzI0YzU4MjNiOGE5OWVhZGUxNzQ3ODY2Yzk1YjA2NGEifX19'
         from: 10
         to: 27
       setting_edit_various:
@@ -1104,7 +1056,7 @@ gui:
           - '&8- &7Please note that they'
           - '  &7will be able to change the'
           - '  &7land name.'
-        material: 'COMMAND_BLOCK'
+        material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0='
         from: 10
         to: 27
       setting_edit_taxes:
@@ -1144,14 +1096,6 @@ gui:
   settings_role_advanced:
     title: '&8Advanced Settings &7-> {role}'
     size: 27
-    s:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eSelect Role&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 19
     f:
       page_previous:
         name: '&9Previous Page'
@@ -1169,6 +1113,13 @@ gui:
           - '&8- &7Current:&b {current}'
         material: 'ARROW'
         slot: 25
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 19
     l:
       land_claim:
         name: '&bClaim Land'
@@ -1250,14 +1201,6 @@ gui:
   settings_land:
     title: '&8Land Settings'
     size: 27
-    s:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eSelect Setting&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 19
     f:
       page_previous:
         name: '&9Previous Page'
@@ -1275,6 +1218,13 @@ gui:
           - '&8- &7Current:&b {current}'
         material: 'ARROW'
         slot: 25
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 19
     l:
       entity_griefing:
         name: '&bEntity Griefing'
@@ -1339,6 +1289,9 @@ gui:
           - ' '
           - '&7Allow monsters to'
           - '&7spawn?'
+          - ' '
+          - '&8- &7Monsters can still'
+          - '  &7spawn through spawners.'
         material: 'SPAWNER'
         from: 10
         to: 18
@@ -1350,6 +1303,9 @@ gui:
           - ' '
           - '&7Allow animals to'
           - '&7spawn?'
+          - ' '
+          - '&8- &7Monsters can still'
+          - '  &7spawn through spawners.'
         material: 'TALL_GRASS'
         from: 10
         to: 18
@@ -1419,13 +1375,6 @@ gui:
           - '&7tax value.'
         material: 'REDSTONE'
         slot: 17
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eSelect Setting&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 19
     f:
       tax:
         name: '&bTax:&7 {tax}'
@@ -1446,6 +1395,13 @@ gui:
           - '  &7chunk_1 + chunk_2 etc.'
         material: 'GOLD_INGOT'
         slot: 14
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 19
     a:
       failure_maxValue:
         name: '&4Max Value reached'
@@ -1474,14 +1430,6 @@ gui:
   settings_various:
     title: 'Various Settings'
     size: 27
-    s:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eSelect Setting&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 19
     f:
       name:
         name: '&bLand Name'
@@ -1503,6 +1451,13 @@ gui:
           - '  {title}'
         material: 'OAK_SIGN'
         slot: 16
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 19
     p:
       placeholder_1:
         material: 'GRAY_STAINED_GLASS_PANE'
@@ -1601,14 +1556,6 @@ gui:
   invites_player:
     title: '&8Received Invites'
     size: 36
-    s:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&eMain Menu&7.'
-        material: 'RED_STAINED_GLASS_PANE'
-        slot: 28
     f:
       page_previous:
         name: '&9Previous Page'
@@ -1626,6 +1573,13 @@ gui:
           - '&8- &7Current:&b {current}'
         material: 'ARROW'
         slot: 34
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: 'RED_STAINED_GLASS_PANE'
+        slot: 28
     l:
       invite:
         name: '&8Invite &7->&a {land}'
@@ -1670,15 +1624,14 @@ gui:
           - '&7Received:&e {time}'
         material: 'OAK_SIGN'
         slot: 14
-      info_chunk:
+      info_chunks:
         name: '&bInformation'
         lore:
-          - '&7Chunk &8-> &7Land:&e {land} &7X:&e {x} &7Z:&e {z}'
-          - ' '
-          - '&7Location:'
+          - '&7Land:&e {land}'
           - '&7World:&e {world}'
-          - '&7X:&e {loc-x}'
-          - '&7Z:&e {loc-z}'
+          - ' '
+          - '&7Chunks:'
+          - '{chunks}'
           - ' '
           - '&7Sender:&e {sender}'
           - '&7Received:&e {time}'
@@ -1753,13 +1706,13 @@ gui:
           - '  &7a specified value on join.'
         material: 'RED_STAINED_GLASS_PANE'
       failure_notTrusted:
-        name: '&4Failure: &bNot complete'
+        name: '&4Failure: &bMax members reached'
         lore:
           - '&7Couldn''t trust you'
           - '&7in this objective'
           - '&7because the owner reached'
-          - '&7reached the maximum'
-          - '&7members value.'
+          - '&7reached his maximum'
+          - '&7members amount for this land.'
           - ' '
           - '&8- &7Contact the land'
           - '  &7owner for help.'
@@ -1823,7 +1776,7 @@ gui:
         name: '&cBack'
         lore:
           - '&7Go back to'
-          - '&eLands&7.'
+          - '{back}&7.'
         material: 'RED_STAINED_GLASS_PANE'
         slot: 37
       close:
