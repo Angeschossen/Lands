@@ -1,22 +1,15 @@
-#   _                     _
-#  | |                   | |
-#  | |     __ _ _ __   __| |___
-#  | |    / _` | '_ \ / _` / __|
-#  | |___| (_| | | | | (_| \__ \
-#  \_____/\__,_|_| |_|\__,_|___/
-
 # Resource page: https://www.spigotmc.org/resources/53313
-# Discord: https://discord.gg/JVU9qd7
+# Discord: https://discord.gg/B4MAJVk
 
 # If you encounter any issues, please report them
-# to discord support server or via pm.
-# Bugs or issues are mostly fixed within hours.
-# You can ignore the IDs in some setting names (_<ID>).
+# to the Discord support server or through a private message.
+# Bugs or problems are usually fixed within a few hours.
+# You can ignore the IDs in some setting names (_Number).
+
 
 # General options
 general:
-  # Language setting
-  # Pre configured languages:
+  # PRE configured languages:
   # English (en-US)
   # French (fr-FR) by Kittle
   # German (de-DE) by XjojoX
@@ -25,1081 +18,822 @@ general:
   # Russian (ru-RU) by Envel
   # Vietnamese (vi-VN) by anhcraft
   language: 'en-US'
-  # This will send an message
-  # to console, if plugin enables
-  # and an new version of Lands
-  # is available.
-  checkUpdate: true
-  # Print logo to console if Lands enables
-  printLogo: true
+  # This will send a message to console on a server startup,
+  # if a new version is available.
+  check-update: true
+  # Print plugin logo to console when plugin enables.
+  logo: true
+
   # Date format
-  # MM: Month (01)
+  # MM: Month
   # dd: Day of month
   # yyyy: Year
   # hh: hours
   # mm: minutes
   # ss: seconds
-  dateFormat:
-    # General for invities etc.
+  # NOTE: These settings require server reload.
+  date-format:
+    # General format for invites etc.
     # 24 hour format:
     # MM/dd/yyyy HH:mm:ss
     general: 'MM/dd/yyyy hh:mm:ss'
-    # For things like cooldown etc.
+    # Format for things like cooldown etc.
     # NOTE: You will need to change
     # the messages to for example {time} hours,
     # if you change the format to
     # 'hh:mm:ss'.
     small: 'mm:ss'
-  # General options
-  options:
-    # Worlds where players
-    # should be able to claim land
-    claimWorlds_list:
-      - world
-    # Should players be able to build in wilderness?
-    # Info: If you have build bypass
-    # permissions, you still can build
-    # in wilderness (Good for staff for example).
-    disallowWilderness: false
-    # Should safezones stay in cache
-    # and don't get unloaded?
-    # NOTE: This is recommended, if you use
-    # safezones for world spawns.
-    keepSafezones: true
-    # Allow players to only fly in
-    # Lands claim worlds?
-    # Bypass permission: lands.bypass.wilderness.fly
-    fly-only-claimworld: true
-    # Edit the land you're standing in
-    # instead of the land from /Land edit
-    # For /Lands claim you still need
-    # to set claim land with /Land edit
-    editLocLand: false
-    # Reward players by time
-    # Explanation: https://github.com/Angeschossen/Lands/wiki/Playtime-Rewards
-    time-reward:
-      enabled_17: false
-      # Time settings
-      # After how many seconds
-      # should the players
-      # get rewarded with plus 1
-      # chunk, land, own land
-      # or member.
-      # NOTE: Timeunit is seconds
-      time:
-        # /Lands claim
-        chunks: 3060
-        # Lands the player can be part of.
-        lands: 43200
-        # Max land members (How many players can the land have?)
-        members: 21600
-        # Lands the player can create.
-        # /Lands create
-        lands-own: 86400
-    # Backup options
-    backup:
-      # Enable this to create an backup
-      # on every plugin enabling
-      # NOTE: Backups are always recommended,
-      # even if there aren't any issues.
-      createOnStart: true
-    # Top 10 lands
-    top10:
-      # Should the command /Lands top
-      # show only data per world
-      # If true, lands will only show
-      # top 10 from the current world.
-      # NOTE: This also affects the top 10
-      # leaderboards.
-      perWorld: false
 
-# General protection settings
-protection:
-  # When an projectile hits something in an land.
-  projectileHit:
-    # Projectiles wich should become removed.
-    # This is useful, if you use an
-    # special arrow plugin (for example explosive arrows).
-    # To prevent damage in lands.
-    # View projectiles here:
-    # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Projectile.html
-    # Under known Subinterfaces.
-    # NOTE: Dispensers, which shoot from wilderness into lands
-    # can't hurt any entitys anyways.
-    blacklist_list:
-      - 'INSERTENTITYHERE'
+  # Worlds where players
+  # should be able to claim chunks.
+  claim-worlds_list:
+    - world
+  # Should players be able to build in a wilderness?
+  # Info: If you have build bypass
+  # permissions, you still can build
+  # in a wilderness (Good for staff for example).
+  disallow-wilderness: false
+  # Should safezones stay in the cache
+  # and not be unloaded?
+  # NOTE: This is recommended if you use
+  # safezones for world spawns.
+  keep-safezone: true
+  # Allow players to fly only in
+  # Lands claim worlds (setting: claim-worlds_list)?
+  # Bypass permission: lands.bypass.wilderness.fly
+  fly-only-claimworld: true
+  # Edit the land you're standing in
+  # instead of the land from /Lands edit?
+  # For /Lands claim you will still need
+  # to set the claim land with /Land edit.
+  edit-loc-Land: false
+
+  # Reward players by playing on your server.
+  # Explanation: https://github.com/Angeschossen/Lands/wiki/Playtime-Rewards
+  time-reward:
+   enabled_17: false
+   # After how many seconds should players get rewarded with plus 1
+   # chunk, land, own land or member.
+   # NOTE: Time unit is seconds.
+   time:
+     # Plus 1 chunk (/Lands claim)
+     chunk: 3060
+     # Plus 1 lands where a player can be a member (not owner - /Lands accept, /Lands trust).
+     land: 43200
+     # Plus 1 land creation (/Lands create).
+     land-own: 86400
+     # Plus 1 land member (/Lands trust)
+     member: 21600
 
 
-# Database settings
-database:
-  # Delete inactive lands
-  # Lands, if the owner of the land is
-  # offline since x days.
-  land-expiration:
+
+# Land settings
+land:
+  # Land creation
+  creation:
+    # Force the creation of a land (/Lands create) before a land is able to claim chunks.
+    # If set to false, Lands will auto generate a land with the name of the player.
+    # The name can be changed in the land menu or with /Lands rename <name>.
+    force: false
+    # The cost to create a land (/Lands create).
+    costs: 4000.0
+    # Max land name length
+    name-length: 15
+
+  # Set the minimum distance in chunks between lands that don't belong to the same owner.
+  chunk-distance: 1
+  # Force lands to claim near their claims.
+  force-near: true
+  # Deny claim chunks near other players lands.
+  deny-claim-near-other: true
+  # Chunk claiming by placing a special claim block.
+  # You can give claimblocks by executing the command /Lands admin give <player> claimblock [amount]
+  # If you don't want your players to claim via command, just
+  # don't give them lands.command.claim.
+  # If you don't want your players to claim with claimblocks,
+  # just don't give them claimblocks.
+  claimblock-only-owner: true
+
+  # Landspawn settings
+  spawn:
+    # Creation settings (/Land setspawn)
+    creation:
+      # Automatically set land spawn on land creation (/Lands create)?
+      # NOTE: The spawnpoint can always be changed with /Lands setspawn.
+      auto: false
+      # Force the spawn to be in the land.
+      # NOTE: If you unclaim the chunk, where the land spawn is in,
+      # Lands will automatically remove the land spawn.
+      force-land: true
+      # Costs
+      price:
+        # Cost for first time set
+        set: 750.0
+        # Cost for changing spawn
+        change: 400.0
+
+    # Teleportation settings
+    teleport:
+      # Wait time until the player gets teleported.
+      # NOTE: Time unit is seconds
+      wait: 3
+      # Cost for teleportation to Land spawn.
+      price_5: 0.0
+      # Cooldown for teleportation to a land spawn.
+      # NOTE: Time unit is seconds
+      cooldown_3: 0
+      # Teleport a player after death to land spawn.
+      re-spawn: true
+
+  # Chunks (claims) addition (/Lands trust, /Lands accept)
+  chunks-addition:
+    # Only add lands.chunks.support.NUMBER value to max claim amount of lands,
+    # if the player is trusted in the whole land?
+    only-global: true
+
+  # Invite settings
+  invite:
+    # If you disable invites, players can directly trust
+    # other players with /Lands trust.
+    enabled_16: true
+   # Should land owners be able to get invited by other lands (/Lands trust, /Lands accept)?
+   # NOTE: If you disable this, land owners can't be part of another land.
+   invite-owner: true
+
+  # Broadcast settings
+  broadcast:
+    # If someone created a new land.
+    # Message: land.create.broadcast
+    create: true
+    # If someone deleted his land, and the claim size isn't null (this prevents spamming).
+    # Message: land.create.broadcast
+    delete: true
+
+    # Send a message if you enter / leave a land.
+    # You can configure the display mode (title, chat, actionbar) in your language file.
+    # Read the language file description to learn how to display messages as a title, actionbar or chat message.
+    # To disable land titles just set the title messages in your language config to ''
+    titles:
+      # How many seconds should lands wait until sending the enter and leave message after
+      # the player entered or left the land.
+      delay: 1
+      # Display safezone titles? You can set a custom default title in your language config. Titles for already exsiting lands can be edited in the land menu.
+      safezone: false
+
+  # Rename settings
+  # Command: /Lands rename
+  rename:
+    # Costs to rename a land.
+    costs_5: 1000.0
+    # Cooldown to rename the land.
+    # NOTE: Time unit is seconds
+    # Bypass permission: lands.bypass.cooldown.rename
+    cooldown_4: 900
+
+  # Role settings for the land.
+  role:
+    # Display trusted players in one GUI no matter, which role they have?
+    mixed: true
+    # Enable the setting menu where you can edit role restrictions for your land.
+    setting-menu: true
+
+    # Visitors are all players, which aren't trusted in the land.
+    # There are three different roles:
+    # Visitor: Untrusted players
+    # Member: Trusted players
+    # Admin: Land admins (not server admins)
+    # NOTE: The following settings are default settings. This means that they will only apply to new land creations.
+    visitor:
+      # DEFAULT settings
+      # NOTE: This won't change anything at already existing lands.
+      setting:
+        #
+        # LAND_CLAIM
+        # Should this role be able to claim land?
+        # NOTE: It's recommended to let this deactivated for this role.
+        land_claim:
+          # Default setting, which will be used, if you create a new land.
+          default: false
+        #
+        # LAND_RENAME
+        # Should this role be able to rename the land?
+        # NOTE: It's recommended to let this deactivated for this role.
+        land_rename:
+          default_57: false
+        #
+        # LAND_SPAWN_SET
+        # Should this role be able to set / change the land spawn?
+        # NOTE: It's recommended to let this deactivated for this role.
+        land_spawn_set:
+          default_56: false
+        #
+        # LAND_SPAWN_TELEPORT
+        # Should this role be able to teleport to land spawn?
+        land_spawn_teleport:
+          default_62: false
+        #
+        # LAND_CLAIM_BORDER
+        # Should visitors be able to claim land for a other land directly at the border of the land?
+        land_claim_border:
+          default_66: false
+
+    # Members are all players, which are trusted in the land and have the member role.
+    member:
+      setting:
+        #
+        # LAND_CLAIM
+        # Should this role be able to claim land?
+        # NOTE: It's recommended to let this deactivated for this role.
+        land_claim:
+          default_5: false
+        #
+        # LAND_RENAME
+        # Should this role be able to rename the land?
+        # NOTE: It's recommended to let this deactivated for this role.
+        land_rename:
+          default_55: false
+        #
+        # LAND_SPAWN_SET
+        # Should this role be able to set / change the land spawn?
+        # NOTE: It's recommended to let this deactivated for this role.
+        land_spawn_set:
+          default_54: false
+        #
+        # LAND_SPAWN_TELEPORT
+        # Should this role be able to teleport to land spawn?
+        land_spawn_teleport:
+          default_63: false
+        #
+        # LAND_CLAIM_BORDER
+        # Should visitors be able to claim land for a other land directly at the border of the land?
+        land_claim_border:
+          default_67: false
+
+    # Admins are members of a land, which have the admin role.
+    # NOTE: Admins are NOT server administrators. You can change the role name in your language configuration file.
+    admin:
+      setting:
+        #
+        # LAND_CLAIM
+        # Should this role be able to claim land?
+        land_claim:
+          default_9: false
+        #
+        # LAND_RENAME
+        # Should this role be able to rename the land?
+        land_rename:
+          default_53: false
+        #
+        # LAND_SPAWN_SET
+        # Should this role be able to set / change the land spawn?
+        land_spawn_set:
+          default_52: false
+        #
+        # LAND_SPAWN_TELEPORT
+        # Should this role be able to teleport to land spawn?
+        land_spawn_teleport:
+          default_64: false
+        #
+        # LAND_CLAIM_BORDER
+        # Should visitors be able to claim land for a other land directly at the border of the land?
+        land_claim_border:
+          default_68: false
+
+  # Delete inactive Lands, if the owner is offline since x days.
+  expiration:
     # NOTE: This setting requires /reload
     enabled: true
-    # Time in days wich the
-    # owner needs to be offline,
-    # that his land is marked as inactive.
-    owner-offline: 80
-    # Time in days which a
-    # land member needs to be
-    # offline that he's getting
-    # untrusted from the land.
-    member-offline: 80
-    # Should an inactive owner be
-    # replaced by an land member.
+    # Time in days
+    # NOTE: You can set a time setting to 0 to disable it.
+    offline-days:
+      # Time in days the owner needs to be offline to flag his land as inactive.
+      owner: 80
+      # Time in days a land member needs to be offline to automatically untrust him from a protection.
+      member: 80
+    # Should an inactive owner be replaced by a land member?
     # NOTE: Admins will be used first for replace.
-    # If no admin is there, Lands will take an member.
-    # If no member is there, Lands will delete the land.
+    # If no land admin is there, Lands will look for a member.
+    # If no land member is there, Lands will delete the land.
     replace-owner: true
-  # If an issue with the databse occurs
-  # This is just to be always on the save side
-  error:
-    # Should Lands disallow players
-    # to join the server, if Lands
-    # couldn't load data to
-    # ensure full protection of lands?
-    disallowJoin: true
 
-# Taxes
+
+
+# Taxes settings
 taxes:
-  # Set this to 'false' to disable it.
   enabled_3: true
   # Taxes interval
-  # NOTE: Timeunit is seconds
+  # NOTE: Time unit is seconds
   interval: 604800
-  # If enabled, actions like
-  # /Lands claim will take the
-  # money from the land bank.
-  # Please not that your player will need to
-  # deposit money into the land bank first,
-  # before they can claim.
+  # If enabled, land actions like /Lands claim will take the money from the land bank
+  # instead of directly from the player
+  # NOTE: Your players will need to deposit money into the land bank before they are able to claim.
   # Deposit: /Lands deposit
   # Withdraw: /Lands withdraw
-  # Balance check: /Lands balance
+  # Land balance: /Lands balance
   banks: true
-  # Set the min. time between
-  # an change at the tax value
-  # and that players need to pay tax
-  # NOTE: Timeunit is seconds
-  # It's calculated by:
-  # next tax - cooldown
-  # If current time is in
-  # this period, the player
-  # cant higher the tax
-  changeCooldown: 302400
-  # Land taxes settings
-  land:
-    # Set max tax value for land
-    maxTax: 1000.0
-  # Chunk taxes settings
-  chunk:
-    # Remove a chunk member
-    # if he can not pay the rent?
-    # This affects members
-    # wich are only trusted in specific chunks of the land.
-    removeMember: true
-    # Set max tax value for chunk
-    maxTax_2: 1000.0
-  # Land upkeep charges
-  # Enable this, if you want
-  # the lands to pay x amount of money
-  # per chunk.
+  # Set the minimum time between a player's attempt to change the tax for his or her land and the time of the next tax.
+  # It's calculated by: next tax - cooldown
+  # NOTE: Time unit is seconds
+  # If current time is in this period, the player can't set the tax higher than the current value.
+  change-cooldown: 302400
+  # Set max tax value for a CHUNK (not the whole land)
+  # Land taxes are being calculated according to land size (chunks) * chunk tax value
+  max-value: 1000.0
+  # Untrust a land member from the land if he can't pay the taxes?
+  untrust-member: true
+
+  # Land upkeep costs
+  # Enable this, if you want the lands to pay x amount of money per chunk in order to keep their land.
   upkeep:
     # NOTE: This setting requires /reload
     enabled_19: false
     # Interval of payment
-    # NOTE: Timeunit is seconds
+    # NOTE: Time unit is seconds
     interval_2: 172800
-    # How much should the pay per chunk?
-    # NOTE: Final payment would be landsize * cost
+    # How much should a land pay per chunk?
+    # NOTE: Final payment would be land size (chunks) * cost
     cost-per-chunk: 50.0
     # Should Lands delete the LAST CLAIMED
     # chunk, if the land can't pay the bill?
     delete-chunk: true
 
 
-# Land settings
-land:
-  # The cost to create an land.
-  # Set this to 0, if you want to disable it.
-  cost: 4000.0
-  # Max land name length
-  name-length: 15
-  # Landspawn settings
-  spawn:
-    # Creations settings (/Land setspawn)
-    creation:
-      # Auto set spawn on
-      # /Land create
-      # Spawn can be changed later
-      auto: false
-      # Force spawn to be
-      # on the land.
-      forceLand: true
-      # Set creation cost
-      costs:
-        # Cost for first time set
-        set: 750.0
-        # Cost for changing spawn
-        change: 400.0
-    # Teleport settings
-    teleport:
-      # Wait time until the player
-      # gets teleported.
-      # NOTE: Timeunit is seconds
-      wait: 3
-      # Cost for teleport to
-      # Land spawn.
-      costs_5: 0.0
-      # Cooldown for teleport to
-      # land spawn.
-      # NOTE: Timeunit is seconds
-      cooldown_3: 0
-      # Teleport player on death to
-      # land spawn
-      onDeath: true
-  # List spawns in GUI per world
-  listPerWorld: false
-  # Additional settings
-  options:
-    # Add the lands.chunks.NUMBER permission value
-    # from trusted players to the max claim amount of the land?
-    chunks-addition:
-      # Set to true, to enable this.
-      enabled_18: true
-      # Only add lands.chunks.NUMBER value
-      # to max claim amount of lands, if the
-      # players is trusted in the whole land?
-      global-trusted: true
-    # Force the creation of an land (/Land create)
-    # before claiming chunks.
-    # If set to false:
-    # Lands will auto generate
-    # a land with the name of the player.
-    # If this landname is aready taken,
-    # lands will generate a similar name.
-    forceCreation: false
-    # Set the minimum chunks between
-    # lands wich don't have
-    # the same owner.
-    chunkDistance: 1
-    # Invite settings
-    invites:
-      # If you disable invites, players can directly trust
-      # other players via /Lands trust
-      enabled_16: true
-      # Should land owners be able
-      # to get invited by other lands?
-      # NOTE: If you disable this,
-      # land owners can't be part
-      # of an other land.
-      invite-owner: true
-    # Broadcast settings
-    broadcast:
-      # If someone creates an new land.
-      # Message: land.create.broadcast
-      create: true
-      # If someone creates deleted his land
-      # and the size isn't null (no claims).
-      # Message: land.create.broadcast
-      delete: true
-    # Send an message and/or title
-    # and/or actionbar to the player,
-    # if he enters and land.
-    # You can configure the display
-    # in your language file.
-    # Read the language filedescription
-    # to learn how to display messages
-    # as a title etc.
-    landTitles:
-      # To disable land titles just set
-      # the title messages in your language config to ''
-      # The delay how much seconds
-      # lands should wait (maximum) to
-      # send the enter or leave message after
-      # the player entered or leaved the land.
-      delaySec: 1
-      # Display safezone title
-      # enter. You can edit an custom
-      # title in your language config.
-      safezone: false
-    # Rename settings
-    # Command: /Land rename
-    rename:
-      # Cost to rename land.
-      cost: 1000.0
-      # Cooldown to rename the land
-      # NOTE: Timeunit is seconds
-      # Bypass permission: lands.bypass.cooldown.rename
-      cooldown_4: 900
-    # Display trusted
-    # players in one GUI, no matter
-    # what role they have?
-    roles-mixed: true
-    # Role settings for the land.
-    # NOTE: This settings affects only
-    # players wich are trusted in the whole land
-    # and not only in specific chunks.
-    role:
-      # Enable the setting GUI
-      # There you can edit role restrictions
-      # for your land.
-      enableGUI: true
-      # Visitors are all players wich aren't
-      # trusted in the land
-      visitor:
-        setting:
-          #
-          # LAND_CLAIM
-          #
-          # Should visitors be able to
-          # claim land for an land, where they're not trusted?
-          # NOTE: It's recommended to let this deactivated (false).
-          # The player will pay the costs for claiming.
-          land_claim:
-            # Default setting wich will be
-            # used, if you create an new land.
-            default: false
-          #
-          # LAND_RENAME
-          #
-          # Should visitors be able to
-          # change the name of an land, where they're not trusted?
-          # NOTE: It's recommended to let this deactivated (false).
-          # The player will pay the costs for renaming.
-          land_rename:
-            default_57: false
-          #
-          # LAND_SPAWN_SET
-          #
-          # Should visitors be able to
-          # set the spawn of an land, where they're not trusted?
-          # NOTE: It's recommended to let this deactivated (false).
-          # The player will pay the costs for setting the spawn.
-          land_spawn_set:
-            default_56: false
-          #
-          # LAND_SPAWN_TELEPORT
-          #
-          # Should admins be able to teleport
-          # to land spawn?
-          land_spawn_teleport:
-            default_62: false
-          #
-          # LAND_CLAIM_BORDER
-          #
-          # Should visitors be able
-          # to claim land directly at
-          # your border?
-          land_claim_border:
-            default_66: false
-
-      # Members are all players wich
-      # are trusted in the land and have the member role.
-      member:
-        setting:
-          #
-          # LAND_CLAIM
-          #
-          # Should members be able to
-          # claim land for an land, where they're not trusted?
-          # NOTE: It's recommended to let this deactivated (false).
-          # The player will pay the costs for claiming.
-          land_claim:
-            # Default setting wich will be
-            # used, if you create an new land.
-            default_5: false
-          #
-          # LAND_RENAME
-          #
-          # Should members be able to
-          # change the name of an land, where they're not trusted?
-          # NOTE: It's recommended to let this deactivated (false).
-          # The player will pay the costs for renaming.
-          land_rename:
-            default_55: false
-          #
-          # LAND_SPAWN_SET
-          #
-          # Should members be able to
-          # set the spawn of an land, where they're not trusted?
-          # NOTE: It's recommended to let this deactivated (false).
-          # The player will pay the costs for setting the spawn.
-          land_spawn_set:
-            default_54: false
-          #
-          # LAND_SPAWN_TELEPORT
-          #
-          # Should admins be able to teleport
-          # to land spawn?
-          land_spawn_teleport:
-            default_63: true
-          #
-          # LAND_CLAIM_BORDER
-          #
-          # Should members be able
-          # to claim land directly at
-          # your border?
-          land_claim_border:
-            default_67: false
-
-      # Admins are members of an land,
-      # wich have the admin role.
-      admin:
-        setting:
-          #
-          # LAND_CLAIM
-          #
-          # Should admins be able to
-          # claim land for an land, where they're not trusted?
-          # NOTE: The player will pay the costs for claiming.
-          land_claim:
-            # Default setting wich will be
-            # used, if you create an new land.
-            default_9: false
-          #
-          # LAND_RENAME
-          #
-          # Should admins be able to
-          # change the name of an land, where they're not trusted?
-          # NOTE: It's recommended to let this deactivated (false).
-          # The player will pay the costs for renaming.
-          land_rename:
-            default_53: false
-          #
-          # LAND_SPAWN_SET
-          #
-          # Should admins be able to
-          # set the spawn of an land, where they're not trusted?
-          # NOTE: It's recommended to let this deactivated (false).
-          # The player will pay the costs for setting the spawn.
-          land_spawn_set:
-            default_52: false
-          #
-          # LAND_SPAWN_TELEPORT
-          #
-          # Should admins be able to teleport
-          # to land spawn?
-          land_spawn_teleport:
-            default_64: true
-          #
-          # LAND_CLAIM_BORDER
-          #
-          # Should admins be able
-          # to claim land directly at
-          # your border?
-          land_claim_border:
-            default_68: false
 
 # Chunk settings
 chunk:
-  # Cost to claim an chunk
-  # Set this to 0, if you want to disable it.
+  # Cost to claim a chunk.
   costs_2: 1500.0
-  # Increase cost per chunk
-  costsIncrease:
+  # Increase cost per chunk claim.
+  cost-increase:
     # Available modes:
-    # Percentage (For example going up to 10% more cost every time he claims an chunk)
-    # Add (For example adding 10 cash every time he claims to the price)
-    # Default (Disables this option)
+    # Percentage: For example putting 10% per claimon top of the normal claim price per claim.
+    # Add: For example adding 10 dollars to the claim cost every time the land claims a chunk.
+    # Default: Disables this option
     mode: 'DEFAULT'
     value: 2
-  # Should players get their money
-  # back, if they delete an chunk?
+  # Cashback settings (Chunk unclaim: /Lands unclaim)
   cashback:
     # Available modes:
-    # PERCENTAGE (For example giving them 10% of the buy price back)
-    # ADD (For example giving them just 10 cash back.
-    # Set value to 0, if you want to disable this.
+    # PERCENTAGE: For example giving them 10% from the buy price back.
+    # ADD: For example giving them just 10 dollars back.
     mode_2: 'PERCENTAGE'
+    # Set this value to 0, if you want to disable this.
     value_2: 15
-  # Enable to claim via selection tool
-  # /Lands selection
-  # NOTE: This setting requires /reload
-  selection:
-    enabled_8: true
 
-  # Additional options
-  options:
-    # Force players to claim land
-    # near to their land
-    # NOTE: If players have multiple lands,
-    # this settings goes by land.
-    # So if the player claims for land A, he has to claim near land A.
-    forceNear: true
-    # Deny claim land near other players land.
-    # This is recommened that players
-    # can't abuse the 'forceNear' setting to disturb
-    # other players
-    denyNearOthers: true
-    # Teleport options
-    # This settings are only
-    # for chunk teleport through
-    # the GUI menu.
-    teleport:
-      # Wait time until getting teleported
-      # NOTE: Timunit is seconds
-      wait_2: 3
-      # Teleport cooldown
-      # Bypass permission: lands.bypass.cooldown.teleport
-      # Command: /Lands teleport of via chunks GUI
-      # NOTE: Timeunit in seconds
-      cooldown_2: 150
-      # Cost per teleportation
-      costs_3: 15
-    # Allow chunk claiming
-    # through placing an special
-    # block on it.
-    # You can give claimblocks
-    # by executing /Lands admin give <player> claimblock [amount]
-    # If you don't want your players to claim via command, just
-    # don't give them lands.command.claim
-    claimBlock:
-      # Allow only the owner of the block
-      # to use it.
-      only-owner: true
-    # Should Lands regenerate
-    # chunk wich where claimed but
-    # now the owner or the system deleted them?
-    unclaimRegen: false
-    # Auto claim chunks while walking over them.
-    autoClaim:
-      # Enbale this?
-      # NOTE: You can't reload this setting via
-      # reload command.
+  # Chunk teleportation options
+  teleport:
+    # Wait time for a player to be teleported to the chunk.
+    # NOTE: Timunit is seconds
+    wait_2: 3
+    # Teleportation cooldown
+    # Bypass permission: lands.bypass.cooldown.teleport
+    # Command: /Lands teleport or through the GUI menu.
+    # NOTE: Timeunit in seconds
+    cooldown_2: 150
+    # Cost for a teleportation.
+    costs_3: 15
+
+    # Auto claim chunks while standing on them.
+    auto-claim:
+      # NOTE: This setting requires server reload.
       enabled_14: true
-      # How many times should
-      # Lands execute autoclaim
-      # until it stops automatically?
-      roundsToStop: 50
-    # Edit land settings in GUI
+      # How many times should Lands execute autoclaim until it stops automatically?
+      rounds-stop: 50
+
+    # Edit settings of a land in a GUI menu.
     # This affects the following settings (flags).
-    enableGUI_2: true
-    # This are chunk specific settings,
-    # wich can be set for specific or all chunks.
-    # This are default settings. You can edit them
-    # later in your Lands GUI.
+    setting-menu_2: true
+
+    # These settings are chunk specific settings, wich can be set for specific chunks or the whole land.
+    # They are DEFAULT settings, which means that they will only apply to new land creations.
     setting:
       #
       # ENTITY_GRIEFING
-      #
-      # Allow entities to grief your protected buildings etc.?
+      # Allow entities to grief in the chunk / land?
       entity_griefing:
         default_13: false
       #
-      # ENTITY_GRIEFING
-      #
-      # Allow tnt to destroy your protected buildings etc.?
+      # TNT_GRIEFING
+      # Allow tnt to destroy blocks in the chunk / land?
       tnt_griefing:
         default_65: false
       #
       # PISTON_GRIEFING
-      #
-      # Allow pistons from wilderness
-      # to interact in your land
-      # This should be set to false, since
-      # it protects against griefing from other players.
-      # NOTE: If you want to let pistons interact
-      # for example
+      # Allow pistons from a wilderness to push into the chunk / land?
+      # NOTE: This should be set to false, since it protects against griefing from other players.
       piston_griefing:
         default_14: false
       #
       # MONSTER_SPAWN
-      #
-      # Allow monster spawning
-      # in the land.
+      # Allow monster spawning in the chunk / land?
       monster_spawn:
         default_51: true
       #
       # ANIMAL_SPAWN
-      #
-      # Allow animals spawning
-      # in the land.
+      # Allow animal spawning in the chunk / land?
       animal_spawn:
         default_61: true
       #
       # WATERFLOW_ALLOW
-      #
-      # Allow waterflow from
-      # wilderness to land?
-      # NOTE: If set to true, this could
-      # be used for grief attempts.
+      # Allow waterflow from a wilderness to the chunk / land?
+      # NOTE: This should be set to false, since it protects against griefing from other players.
       waterflow_allow:
         default_68: false
-    # Role settings
-    # NOTE: This settings affects every player
-    # wich run different actions on an claimed chunk.
-    # You also can give certain permission
-    # to specific role(s)
-    role:
-      visitor:
-        setting:
-          #
-          # BLOCK_PLACE
-          #
-          # Should visitors be able to place blocks?
-          block_place:
-            # Default setting wich will be
-            # used, if you claim an new chunk.
-            default_15: false
-          #
-          # BLOCK_BREAK
-          #
-          # Should visitors be able to break blocks?
-          block_break:
-            default_16: false
-          # Should visitors be able to interact
-          # with blocks?
-          #
-          # INTERACT
-          #
-          interact_general:
-            default_44: false
-          #
-          # INTERACT_DOOR
-          #
-          # Should visitors be able to
-          # open doors?
-          interact_door:
-            default_41: false
-          #
-          # INTERACT_CONTAINER
-          #
-          # Should visitors be able to
-          # open containers (chest, furnace etc.)?
-          interact_container:
-            default_42: false
-          #
-          # INTERACT_MECHANISM
-          #
-          # Should visitors be able to interact
-          # with buttons, levers, plates etc.?
-          interact_mechanism:
-            default_43: false
-          #
-          # BLOCK_IGNITE
-          #
-          # Should visitors be able to ignite blocks?
-          block_ignite:
-            default_17: false
-          #
-          # ATTACK_PLAYER
-          #
-          # Should visitors be able to
-          # fight other players in this claimed chunk?
-          # NOTE: He only can attack players wich
-          # can attack him.
-          # Also other players can only attack him,
-          # if he also can attack them.
-          # This prevents abusing.
-          attack_player:
-            default_18: false
-          #
-          # ATTACK_ANIMAL
-          #
-          # Should visitors be able to attack animals?
-          attack_animal:
-            default_19: false
-          #
-          # PLAYER_TRUST
-          #
-          # Should visitors be able to trust
-          # other people in an chunk?
-          # NOTE: It's recommended to let this deactivated (false).
-          player_trust:
-            default_20: false
-          #
-          # PLAYER_SETROLE
-          #
-          # Should visitors be able to set roles
-          # for members of an chunk?
-          # NOTE: It's recommended to let this deactivated (false).
-          # Visitors can't demote admins or the owner of the chunk.
-          player_setrole:
-            default_21: false
-          #
-          # PLAYER_UNTRUST
-          #
-          # Should visitors be able to untrust
-          # members or admins of an chunk?
-          # NOTE: It's recommended to let this deactivated (false).
-          # Visitors can't untrust admins or the owner of the chunk.
-          player_untrust:
-            default_22: false
-          # FLY
-          #
-          # Should visitors be able to
-          # fly in this land?
-          #
-          # They can only fly, if they have access
-          # to a fly command or something like this.
-          fly:
-            default_71: true
-          #
-          # SETTING_EDIT_LAND
-          #
-          # Should visitors be able to edit
-          # settings under chunk.setting (config)?
-          # For example mob spawning or entity griefing.
-          # NOTE: It's recommended to let this deactivated (false).
-          # Visitors can't untrust admins or the owner of the chunk.
-          setting_edit_land:
-            default_58: false
-          #
-          # SETTING_EDIT_ROLE
-          #
-          # Should admins be able to edit
-          # settings under chunk.setting (config)?
-          # For example allow other roles to trust players.
-          # NOTE: It's recommended to let this deactivated (false).
-          # A player can't untrust admins or the owner of the chunk.
-          setting_edit_role:
-            default_73: false
-          #
-          # SETTING_EDIT_ADVANCED
-          #
-          # Should visitors be able to edit
-          # settings like allow roles to teleport to land spawn?
-          setting_edit_advanced:
-            default_74: false
-          #
-          # SETTING_EDIT_VARIOUS
-          #
-          # Should visitors be able to edit
-          # various settings, like the land name?
-          # NOTE: It's recommended to let this deactivated (false).
-          setting_edit_various:
-            default_75: false
-          #
-          # SETTING_EDIT_TAXES
-          #
-          # Should visitors be able to edit
-          # taxes?
-          # NOTE: It's recommended to let this deactivated (false).
-          setting_edit_taxes:
-            default_76: false
+
+  # Role settings
+  # There are three different roles:
+  # Visitor: Untrusted players
+  # Member: Trusted players
+  # Admin: Land admins (not server admins)
+  # NOTE: These settings are DEFAULT settings. That means theat the will only apply to new land creations.
+  role:
+    visitor:
+      setting:
+        #
+        # BLOCK_PLACE
+        # Should this role be able to place blocks?
+        block_place:
+          # Default setting, which will be used, if you create a new land.
+          default_15: false
+        #
+        # BLOCK_BREAK
+        # Should this role be able to break blocks?
+        block_break:
+          default_16: false
+        #
+        # INTERACT
+        # Should this role be able to interact?
+        interact_general:
+          default_44: false
+        #
+        # INTERACT_DOOR
+        # Should this role be able to open doors?
+        interact_door:
+          default_41: false
+        #
+        # INTERACT_CONTAINER
+        # Should visitors be able to open containers?
+        interact_container:
+          default_42: false
+        #
+        # INTERACT_MECHANISM
+        # Should this role be able use redstone mechanisms?
+        interact_mechanism:
+          default_43: false
+        #
+        # BLOCK_IGNITE
+        # Should this role be able to ignite blocks?
+        block_ignite:
+          default_17: false
+        #
+        # ATTACK_PLAYER
+        # Should this role be able to attack players?
+        # NOTE: They can only attack players, which can attack this role too.
+        # Other roles can only attack this role, if this role can attack the other role too.
+        attack_player:
+          default_18: false
+        #
+        # ATTACK_ANIMAL
+        # Should this role be able to attack animals?
+        attack_animal:
+          default_19: false
+        #
+        # PLAYER_TRUST
+        # Should this role be able to trust other players?
+        # NOTE: It's recommended to let this deactivated for this role.
+        player_trust:
+          default_20: false
+        #
+        # PLAYER_SETROLE
+        # Should this role be able to set roles for other players.
+        # They can only edit players, which have a lower role than their own role.
+        # NOTE: It's recommended to let this deactivated for this role.
+        player_setrole:
+          default_21: false
+        #
+        # PLAYER_UNTRUST
+        # Should this role be able to untrust players?
+        # They can only edit players, which have a lower role than their own role.
+        # NOTE: It's recommended to let this deactivated for this role.
+        player_untrust:
+          default_22: false
+        #
+        # FLY
+        # Should this role be able to fly in the chunk / land?
+        # NOTE: They can only fly, if they have access
+        # to a /Fly command or something like this.
+        fly:
+          default_71: true
+        #
+        # SETTING_EDIT_LAND
+        # Should this role be able to edit land settings?
+        # For example mob spawning or entity griefing.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_land:
+          default_58: false
+        #
+        # SETTING_EDIT_ROLE
+        # Should this role be able to edit role settings?
+        # For example allow other roles to trust players.
+        # NOTE: It's recommended to let this deactivated for this role.
+        # They can only edit roles, which are lower than their own role.
+        setting_edit_role:
+          default_73: false
+        #
+        # SETTING_EDIT_ADVANCED
+        # Should this role be able to edit advanced role settings.
+        # For example allowing roles to teleport to the land spawn.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_advanced:
+          default_74: false
+        #
+        # SETTING_EDIT_VARIOUS
+        # Should this role be able to edit various land settings,
+        # like changing the land name or title.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_various:
+          default_75: false
+        #
+        # SETTING_EDIT_TAXES
+        # Should this role be able to edit tax settings?
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_taxes:
+          default_76: false
 
 
-      # Members are all players, wich are
-      # trusted in the chunk.
-      member:
-        setting:
-          #
-          # BLOCK_PLACE
-          #
-          # Should members be able to place blocks?
-          block_place:
-            # Default setting wich will be
-            # used, if you claim an new chunk.
-            default_23: true
-          #
-          # BLOCK_BREAK
-          #
-          # Should members be able to break blocks?
-          block_break:
-            default_24: true
-          #
-          # INTERACT
-          #
-          # Should members be able to interact
-          # with blocks?
-          interact_general:
-            default_25: true
-          # Should members be able to
-          # open doors?
-          #
-          # INTERACT_DOOR
-          #
-          interact_door:
-            default_45: true
-          #
-          # INTERACT_CONTAINER
-          #
-          # Should members be able to
-          # open containers (chest, furnace etc.)?
-          interact_container:
-            default_46: true
-          #
-          # INTERACT_MECHANISM
-          #
-          # Should members be able to interact
-          # with buttons, levers, plates etc.?
-          interact_mechanism:
-            default_47: true
-          #
-          # BLOCK_IGNITE
-          #
-          # Should members be able to ignite blocks?
-          block_ignite:
-            default_72: true
-          #
-          # ATTACK_PLAYER
-          #
-          # Should members be able to
-          # fight other players in this claimed chunk?
-          # NOTE: He only can attack players wich
-          # can attack him.
-          # Also other players can only attack him,
-          # if he also can attack them.
-          # This prevents abusing.
-          attack_player:
-            default_27: true
-          #
-          # ATTACK_ANIMAL
-          #
-          # Should members be able to attack animals?
-          attack_animal:
-            default_28: true
-          #
-          # PLAYER_TRUST
-          #
-          # Should members be able to trust
-          # other people in an chunk?
-          # NOTE: It's recommended to let this deactivated (false).
-          player_trust:
-            default_29: false
-          #
-          # PLAYER_SETROLE
-          #
-          # Should members be able to set roles
-          # for members of an chunk?
-          # NOTE: It's recommended to let this deactivated (false).
-          # Members can't demote admins or the owner of the chunk.
-          player_setrole:
-            default_30: false
-          #
-          # PLAYER_UNTRUST
-          #
-          # Should members be able to untrust
-          # members or admins of an chunk?
-          # NOTE: It's recommended to let this deactivated (false).
-          # Members can't untrust admins or the owner of the chunk.
-          player_untrust:
-            default_31: false
-          # FLY
-          #
-          # Should members be able to
-          # fly in this land?
-          #
-          # They can only fly, if they have access
-          # to a fly command or something like this.
-          fly:
-            default_70: true
-          #
-          # SETTING_EDIT_LAND
-          #
-          # Should members be able to edit
-          # settings under chunk.setting (config)?
-          # For example mob spawning or entity griefing.
-          # NOTE: It's recommended to let this deactivated (false).
-          # Visitors can't untrust admins or the owner of the chunk.
-          setting_edit_land:
-            default_59: false
-          #
-          # SETTING_EDIT_ROLE
-          #
-          # Should members be able to edit
-          # settings under chunk.setting (config)?
-          # For example allow other roles to trust players.
-          # NOTE: It's recommended to let this deactivated (false).
-          # A player can't untrust admins or the owner of the chunk.
-          setting_edit_role:
-            default_77: false
-          #
-          # SETTING_EDIT_ADVANCED
-          #
-          # Should members be able to edit
-          # settings like allow roles to teleport to land spawn?
-          setting_edit_advanced:
-            default_78: false
-          #
-          # SETTING_EDIT_VARIOUS
-          #
-          # Should members be able to edit
-          # various settings, like the land name?
-          # NOTE: It's recommended to let this deactivated (false).
-          setting_edit_various:
-            default_79: false
-          #
-          # SETTING_EDIT_TAXES
-          #
-          # Should members be able to edit
-          # taxes?
-          # NOTE: It's recommended to let this deactivated (false).
-          setting_edit_taxes:
-            default_80: false
+    # Members are all players, wich are trusted in the chunk and have no admin role.
+    member:
+      setting:
+        #
+        # BLOCK_PLACE
+        # Should this role be able to place blocks?
+        block_place:
+          # Default setting, which will be used, if you create a new land.
+          default_23: false
+        #
+        # BLOCK_BREAK
+        # Should this role be able to break blocks?
+        block_break:
+          default_24: false
+        #
+        # INTERACT
+        # Should this role be able to interact?
+        interact_general:
+          default_25: false
+        #
+        # INTERACT_DOOR
+        # Should this role be able to open doors?
+        interact_door:
+          default_45: false
+        #
+        # INTERACT_CONTAINER
+        # Should visitors be able to open containers?
+        interact_container:
+          default_46: false
+        #
+        # INTERACT_MECHANISM
+        # Should this role be able use redstone mechanisms?
+        interact_mechanism:
+          default_47: false
+        #
+        # BLOCK_IGNITE
+        # Should this role be able to ignite blocks?
+        block_ignite:
+          default_72: false
+        #
+        # ATTACK_PLAYER
+        # Should this role be able to attack players?
+        # NOTE: They can only attack players, which can attack this role too.
+        # Other roles can only attack this role, if this role can attack the other role too.
+        attack_player:
+          default_27: false
+        #
+        # ATTACK_ANIMAL
+        # Should this role be able to attack animals?
+        attack_animal:
+          default_28: false
+        #
+        # PLAYER_TRUST
+        # Should this role be able to trust other players?
+        # NOTE: It's recommended to let this deactivated for this role.
+        player_trust:
+          default_29: false
+        #
+        # PLAYER_SETROLE
+        # Should this role be able to set roles for other players.
+        # They can only edit players, which have a lower role than their own role.
+        # NOTE: It's recommended to let this deactivated for this role.
+        player_setrole:
+          default_30: false
+        #
+        # PLAYER_UNTRUST
+        # Should this role be able to untrust players?
+        # They can only edit players, which have a lower role than their own role.
+        # NOTE: It's recommended to let this deactivated for this role.
+        player_untrust:
+          default_31: false
+        #
+        # FLY
+        # Should this role be able to fly in the chunk / land?
+        # NOTE: They can only fly, if they have access
+        # to a /Fly command or something like this.
+        fly:
+          default_70: true
+        #
+        # SETTING_EDIT_LAND
+        # Should this role be able to edit land settings?
+        # For example mob spawning or entity griefing.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_land:
+          default_59: false
+        #
+        # SETTING_EDIT_ROLE
+        # Should this role be able to edit role settings?
+        # For example allow other roles to trust players.
+        # NOTE: It's recommended to let this deactivated for this role.
+        # They can only edit roles, which are lower than their own role.
+        setting_edit_role:
+          default_77: false
+        #
+        # SETTING_EDIT_ADVANCED
+        # Should this role be able to edit advanced role settings.
+        # For example allowing roles to teleport to the land spawn.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_advanced:
+          default_78: false
+        #
+        # SETTING_EDIT_VARIOUS
+        # Should this role be able to edit various land settings,
+        # like changing the land name or title.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_various:
+          default_79: false
+        #
+        # SETTING_EDIT_TAXES
+        # Should this role be able to edit tax settings?
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_taxes:
+          default_80: false
 
-      # Admins are members wich got promoted
-      # to the admin role.
-      admin:
-        setting:
-          #
-          # BLOCK_PLACE
-          #
-          # Should admins be able to place blocks?
-          block_place:
-            # Default setting wich will be
-            # used, if you claim an new chunk.
-            default_32: true
-          #
-          # BLOCK_BREAK
-          #
-          # Should admins be able to break blocks?
-          block_break:
-            default_33: true
-          #
-          # INTERACT
-          #
-          # Should admins be able to interact
-          # with blocks?
-          interact_general:
-            default_34: true
-          #
-          # INTERACT_DOOR
-          #
-          # Should members be able to
-          # open doors?
-          interact_door:
-            default_48: true
-          #
-          # INTERACT_CONTAINER
-          #
-          # Should admins be able to
-          # open containers (chest, furnace etc.)?
-          interact_container:
-            default_49: true
-          #
-          # INTERACT_MECHANISM
-          #
-          # Should admins be able to interact
-          # with buttons, levers, plates etc.?
-          interact_mechanism:
-            default_50: true
-          #
-          # BLOCK_IGNITE
-          #
-          # Should admins be able to ignite blocks?
-          block_ignite:
-            default_35: true
-          #
-          # ATTACK_PLAYER
-          #
-          # Should admins be able to
-          # fight other players in this claimed chunk?
-          # NOTE: He only can attack players wich
-          # can attack him.
-          # Also other players can only attack him,
-          # if he also can attack them.
-          # This prevents abusing.
-          attack_player:
-            default_36: true
-          #
-          # ATTACK_ANIMAL
-          #
-          # Should admins be able to trust
-          # other people in this chunk?
-          attack_animal:
-            default_37: true
-          #
-          # PLAYER_TRUST
-          #
-          # Should admins be able to trust
-          # other people in an chunk?
-          player_trust:
-            default_38: true
-          #
-          # PLAYER_SETROLE
-          #
-          # Should admins be able to set roles
-          # for members of an chunk?
-          # Admins can't demote other admins or the owner of the chunk.
-          player_setrole:
-            default_39: false
-          #
-          # PLAYER_UNTRUST
-          #
-          # Should admins be able to untrust
-          # members or admins of an chunk?
-          # Admins can't untrust other admins or the owner of the chunk.
-          player_untrust:
-            default_40: true
-          # FLY
-          #
-          # Should admins be able to
-          # fly in this land?
-          #
-          # They can only fly, if they have access
-          # to a fly command or something like this.
-          fly:
-            default_69: true
-          #
-          # SETTING_EDIT_LAND
-          #
-          # Should admins be able to edit
-          # settings under chunk.setting (config)?
-          # For example mob spawning or entity griefing.
-          # NOTE: It's recommended to let this deactivated (false).
-          # Visitors can't untrust admins or the owner of the chunk.
-          setting_edit_land:
-            default_60: true
-          #
-          # SETTING_EDIT_ROLE
-          #
-          # Should admins be able to edit
-          # settings under chunk.setting (config)?
-          # For example allow other roles to trust players.
-          # NOTE: It's recommended to let this deactivated (false).
-          # Admins can't untrust admins or the owner of the chunk.
-          setting_edit_role:
-            default_81: false
-          #
-          # SETTING_EDIT_ADVANCED
-          #
-          # Should admins be able to edit
-          # settings like allow roles to teleport to land spawn?
-          setting_edit_advanced:
-            default_82: false
-          #
-          # SETTING_EDIT_VARIOUS
-          #
-          # Should admins be able to edit
-          # various settings, like the land name?
-          # NOTE: It's recommended to let this deactivated (false).
-          setting_edit_various:
-            default_83: false
-          #
-          # SETTING_EDIT_TAXES
-          #
-          # Should admins be able to edit
-          # taxes?
-          # NOTE: It's recommended to let this deactivated (false).
-          setting_edit_taxes:
-            default_84: false
+      # Admins are members, which got promoted to the admin role (not server admin).
+    admin:
+      setting:
+        #
+        # BLOCK_PLACE
+        # Should this role be able to place blocks?
+        block_place:
+          # Default setting, which will be used, if you create a new land.
+          default_32: false
+        #
+        # BLOCK_BREAK
+        # Should this role be able to break blocks?
+        block_break:
+          default_33: false
+        #
+        # INTERACT
+        # Should this role be able to interact?
+        interact_general:
+          default_34: false
+        #
+        # INTERACT_DOOR
+        # Should this role be able to open doors?
+        interact_door:
+          default_48: false
+        #
+        # INTERACT_CONTAINER
+        # Should visitors be able to open containers?
+        interact_container:
+          default_49: false
+        #
+        # INTERACT_MECHANISM
+        # Should this role be able use redstone mechanisms?
+        interact_mechanism:
+          default_50: false
+        #
+        # BLOCK_IGNITE
+        # Should this role be able to ignite blocks?
+        block_ignite:
+          default_35: false
+        #
+        # ATTACK_PLAYER
+        # Should this role be able to attack players?
+        # NOTE: They can only attack players, which can attack this role too.
+        # Other roles can only attack this role, if this role can attack the other role too.
+        attack_player:
+          default_36: false
+        #
+        # ATTACK_ANIMAL
+        # Should this role be able to attack animals?
+        attack_animal:
+          default_37: false
+        #
+        # PLAYER_TRUST
+        # Should this role be able to trust other players?
+        # NOTE: It's recommended to let this deactivated for this role.
+        player_trust:
+          default_38: false
+        #
+        # PLAYER_SETROLE
+        # Should this role be able to set roles for other players.
+        # They can only edit players, which have a lower role than their own role.
+        # NOTE: It's recommended to let this deactivated for this role.
+        player_setrole:
+          default_39: false
+        #
+        # PLAYER_UNTRUST
+        # Should this role be able to untrust players?
+        # They can only edit players, which have a lower role than their own role.
+        # NOTE: It's recommended to let this deactivated for this role.
+        player_untrust:
+          default_40: false
+        #
+        # FLY
+        # Should this role be able to fly in the chunk / land?
+        # NOTE: They can only fly, if they have access
+        # to a /Fly command or something like this.
+        fly:
+          default_69: true
+        #
+        # SETTING_EDIT_LAND
+        # Should this role be able to edit land settings?
+        # For example mob spawning or entity griefing.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_land:
+          default_60: false
+        #
+        # SETTING_EDIT_ROLE
+        # Should this role be able to edit role settings?
+        # For example allow other roles to trust players.
+        # NOTE: It's recommended to let this deactivated for this role.
+        # They can only edit roles, which are lower than their own role.
+        setting_edit_role:
+          default_81: false
+        #
+        # SETTING_EDIT_ADVANCED
+        # Should this role be able to edit advanced role settings.
+        # For example allowing roles to teleport to the land spawn.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_advanced:
+          default_82: false
+        #
+        # SETTING_EDIT_VARIOUS
+        # Should this role be able to edit various land settings,
+        # like changing the land name or title.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_various:
+          default_83: false
+        #
+        # SETTING_EDIT_TAXES
+        # Should this role be able to edit tax settings?
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_taxes:
+          default_84: false
 
 
-# Top lands leaderboard settings
-# Includes /Lands top too
+
+# General protection settings
+protection:
+  # When a projectile hits something in a claim.
+  # Projectiles to be removed.
+  # This is useful, if you use a special arrow plugin (for example explosive arrows), to prevent damage in lands.
+  # View projectiles here (of the latest spigot version):
+  # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/Projectile.html
+  # NOTE: Dispensers, which shoot from wilderness into lands
+  # can't hurt any entities anyways.
+  projectile-blacklist_list:
+    - 'InsterProjectileHere'
+
+
+
+# Top 10 lands leaderboard settings
+# Includes /Lands top, leaderboard signs and holograms
 top-lands:
-  # Calculation by bank value?
-  # Means the more money a land
-  # has in their bank they get a
-  # higher rank.
-  # NOTE: Works only if land banks
-  # are enabled. Setting: taxes.banks
-  # This option requires server reload / reboot.
+  # Should /Lands top and leaderboards
+  # only show the top ten lands of the current world?
+  # If disabled, Lands will show the top lands of the whole server instead.
+  per-world: false
+  # Calculation by land bank balance?
+  # Means that a land will get a higher rank, if the land has a higher bank balance.
+  # NOTE: This Works only if land banks are enabled. Setting: banks
+  # This option requires server reload.
   calculation-money: true
   # Sign lederboard settings
   sign:
-    # Place the head of the
-    # owner of the land on top
-    # of the block, where the
-    # leaderboard sign is.
+    # Place the head of the land owner on top of the block, where the leaderboard sign is?
     head-above: false
 
+
+
+# Backup settings
+backup:
+  # Enable this to create backup creation on every plugin enabling.
+  # NOTE: It's alway recommended creating backups,
+  # even if there are no problems.
+  startup: true
+
+
+
 # Visualization settings
-# /Lands view etc.
 visualization:
   type:
     # Wilderness
@@ -1130,211 +864,168 @@ visualization:
       # Orange: 16753920
       color: 16753920
       duration: 20
-    # Shows when players claimed land
+    # If the player is trusted in the chunk.
     claimed:
       particle_2: 'REDSTONE'
       color_2: 65280
       duration_2: 8
-    # Land where you're the owner
+    # If the player is the land owner.
     own:
       particle_3: 'REDSTONE'
       color_3: 65280
       duration_3: 4
-    # Land where you're trusted, but you're
-    # not the owner
+    # If the player is trusted in the chunk.
     trusted:
       particle_4: 'REDSTONE'
       color_4: 16776960
       duration_4: 4
-    # Land where you're not trusted
+    # If player isn't trusted in the chunk.
     untrusted:
       particle_5: 'REDSTONE'
       color_5: 16711680
       duration_5: 4
-    # Enemy land
-    # Will be used in future.
-    enemy:
-      particle_6: 'REDSTONE'
-      color_6: 16711680
-      duration_6: 4
-    # Land where you're for example
-    # not allowed to trust players.
-    # Shows at commands like /Lands trust.
+    # Appears if you try to run an action, which you're not allowed to execute.
     no-access:
       particle_7: 'REDSTONE'
       color_7: 16711680
       duration_7: 4
+
   # /Lands view
   view:
-    # Outline the whole land instead
-    # of just one chunk?
+    # Outline the whole land instead of just one chunk?
     outline: true
-    # Duration of view in seconds
+    # Duration of land view.
+    # NOTE: Time unit is seconds
     duration_8: 60
-  # Map chunk lengths for /Lands map
+
+  # /Lands map lengths
   map:
     # X Length (left to right)
     x-length: 15
     # Y Heigth (up)
     y-heigth: 10
 
-# Command specific settings
+
+
+# Command settings
 command:
-  # Set aliases
-  # for /Lands command
-  # NOTE: You can't reload
-  # this setting.
+  # Set aliases for the /Lands command
+  # NOTE: This setting requires server reload.
   aliases_list:
     - kingdom
-  # Deny commands
-  # These aren't case sensitive
+  # Block commands
+  # They are not case-sensitive.
   blacklist:
-    # This affects all players
-    # wich are currently on an land,
-    # where they aren't trusted
+    # This affects all players wich are standing in a land, where they aren't trusted.
     nottrusted_list:
       - sethome
 
-    # This affects all players
-    # wich are currently on an land.
-    # If they're trusted or not.
+    # This affects all players, which are standing in a land.
     general_list:
       - EnterCommandToDenyOnLandHere
 
 
-# Lands GUI settings
+
+# Random teleportation (/Lands wild)
+random-teleport:
+  # Worlds where players should be able to use /Lands wild.
+  wild-worlds_list:
+    - world
+  # Players will be random teleported in this world, if they're currently not in a world defined above.
+  backup: 'world'
+  # Should players be able to teleport to a location where a land is located?
+  allow-land: false
+  # Prevent oceans?
+  prevent-oceans: true
+  # Wait time until the player will be teleported.
+  wait_3: 3
+  # Command (/Lands wild) cooldown
+  cooldown: 300
+  # Teleportation cost
+  costs_4: 570.0
+
+
+
+# Lands menu settings (/Lands menu)
 gui:
-  # Should Lands automatically
-  # adjust the length of item
-  # lore lines?
+  # Should Lands automatically adjust the length of item lore lines?
+  # Recommended length is 35.
   # NOTE: Set this to 0 to disable it.
   max-lore-length: 0
 
-  # Taxes GUI
-  rent:
-    # Here you can set how much
-    # the blocks in the GUI
-    # should add or removed to
-    # the rent value.
-    # NOTE: Goes from left to right.
-    # plus1 - plus2 - plus3 InfoItem minus1 - minus2 - minus3
-    item:
-      plus1: 1
-      plus2: 100
-      plus3: 1000
-      minus1: 1000
-      minus2: 100
-      minus3: 1
 
 
-# Random teleportation
-randomTeleport:
-  # Worlds where players
-  # should be able to do /Lands wild
-  # (Random teleportation)
-  wildWorlds_list:
-    - world
+# Database settings
+database:
+  # If an issue with the database occurs.
+  # This is just to be always on the save side.
+  # NOTE: This should never happen. However, it's good to have such a setting.
+  # Should Lands disallow players to join the server, if Lands couldn't load data to ensure full protection of lands?
+  error-disallow-join: true
 
-  # Player will be random teleported in
-  # this world, if they're currently not
-  # in a world defined above.
-  # NOTE: Case sensitive
-  backupWorld: 'world'
-  # Define the max x and z (block) ccordniate value
-  # to don't let them teleport over your worldborder
-  # for example.
-  size:
-    # Max x coordinate
-    x: 100
-    # Max z coordniate
-    z: 100
-  # General options
-  option:
-    # Should players be able
-    # to be teleported to location
-    # where an land is?
-    allowLand: false
-    # Prevent random teleport
-    # to ocean?
-    preventWater: true
-    # Wait time until getting teleported.
-    wait_3: 3
-    # Cooldown in seconds
-    # Set this to 0, if you want to deactivate it.
-    cooldown: 300
-    # Set the /Lands wild
-    # teleportation cost
-    costs_4: 570.0
 
 
 # Integration settings
-# You also can request an integration
-# via pm or discord.
+# Missing something? You can request a integration through pm or discord.
 # Resource page: https://www.spigotmc.org/resources/.53313
-# Discord: https://discord.gg/JVU9qd7
+# Discord: https://discord.gg/B4MAJVk
 integration:
-  # Management integration
+  # Management integrations
   manager:
     # WorldGuard
     WorldGuard:
-      # Set this to false, if you want to disable it.
       enabled_5: true
-      # Should lands deny claim in WorldGuard regions?
-      # NOTE: It's recommended to let this activated (true).
-      denyClaim: true
+      # Should Lands deny claiming in WorldGuard regions?
+      # NOTE: It's recommended to let this enabled.
+      deny-claim: true
     # Griefprevention
     GriefPrevention:
       enabled_6: true
-      # Should lands deny claim in GriefPrevention regions?
-      # NOTE: It's recommended to let this activated (true).
-      denyClaim_2: true
+      # Should Lands deny claiming in GriefPrevention regions?
+      # NOTE: It's recommended to let this enabled.
+      deny-claim_2: true
     # Residence
     Residence:
       enabled_15: true
-      # Should lands deny claim in Residence regions?
-      # NOTE: It's recommended to let this activated (true).
-      denyClaim_3: true
+      # Should Lands deny claiming in Residence regions?
+      # NOTE: It's recommended to let this activated.
+      deny-claim_3: true
 
-  # Economy integration
+  # Economy settings
   economy:
     # Default currency
-    # Will be used, if no economy
-    # plugins from below where found.
+    # Will be used, if no Vault economy plugin found.
     # NOTE: This currency is item based.
     Default:
-      # Item wich should be used as currency.
+      # Item, which should be used as currency.
       # Materials can be found here:
       # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
       item_42: 'DIAMOND'
 
     # Vault
-    # An economy plugin is also needed to let this work.
+    # You need an economy plugin, which supports Vault, to let this work.
     Vault:
       enabled_10: true
 
-  # Chat integration
+  # Chat integrations
   chat:
     # PlaceholderAPI
-    # Used to access placeholders and set them
-    # into scoreboards etc.
+    # NOTE: For featherbaord you need to use {} instead of %%.
     PlaceholderAPI:
       enabled_11: true
-      # Display land you're
-      # standing on?
-      # If disabled Lands
-      # will display the land
-      # you're member of.
+      # Display the placeholders for the land you're standing on?
+      # If disabled, Lands will display your edit land (/Lands edit).
       display-current: false
 
-  # Web integration
+  # Web integrations
   web:
     # Dynmap
     Dynmap:
       enabled_12: true
-      # The name of the layer
-      # where users can see the marked lands.
+      # The name of the layer where users can see the marked lands.
       layer: 'Lands'
       land:
+        # Opacity of the marked land.
         opacity: 0.8
         # To edit the color you need to
         # insert the rgb value given here.
@@ -1359,7 +1050,9 @@ integration:
         # Orange: 16753920
         color_2: 32768
       border:
+        # Opactiy of the land border.
         opacity_2: 50.0
+        # Thickness of the land border line.
         thickness: 4
         # To edit the color you need to
         # insert the rgb value given here.
