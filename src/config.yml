@@ -156,9 +156,9 @@ land:
     # If you disable invites, players can directly trust
     # other players with /Lands trust.
     enabled_16: true
-   # Should land owners be able to get invited by other lands (/Lands trust, /Lands accept)?
-   # NOTE: If you disable this, land owners can't be part of another land.
-   invite-owner: true
+    # Should land owners be able to get invited by other lands (/Lands trust, /Lands accept)?
+    # NOTE: If you disable this, land owners can't be part of another land.
+    invite-owner: true
 
   # Broadcast settings
   broadcast:
@@ -326,10 +326,11 @@ taxes:
   interval: 604800
   # If enabled, land actions like /Lands claim will take the money from the land bank
   # instead of directly from the player
-  # NOTE: Your players will need to deposit money into the land bank before they are able to claim.
   # Deposit: /Lands deposit
   # Withdraw: /Lands withdraw
   # Land balance: /Lands balance
+  # NOTE: Your players will need to deposit money into the land bank before they are able to claim.
+  # NOTE: This setting requires server reload.
   banks: true
   # Set the minimum time between a player's attempt to change the tax for his or her land and the time of the next tax.
   # It's calculated by: next tax - cooldown
@@ -404,41 +405,41 @@ chunk:
     # This affects the following settings (flags).
     setting-menu_2: true
 
-    # These settings are chunk specific settings, wich can be set for specific chunks or the whole land.
-    # They are DEFAULT settings, which means that they will only apply to new land creations.
-    setting:
-      #
-      # ENTITY_GRIEFING
-      # Allow entities to grief in the chunk / land?
-      entity_griefing:
-        default_13: false
-      #
-      # TNT_GRIEFING
-      # Allow tnt to destroy blocks in the chunk / land?
-      tnt_griefing:
-        default_65: false
-      #
-      # PISTON_GRIEFING
-      # Allow pistons from a wilderness to push into the chunk / land?
-      # NOTE: This should be set to false, since it protects against griefing from other players.
-      piston_griefing:
-        default_14: false
-      #
-      # MONSTER_SPAWN
-      # Allow monster spawning in the chunk / land?
-      monster_spawn:
-        default_51: true
-      #
-      # ANIMAL_SPAWN
-      # Allow animal spawning in the chunk / land?
-      animal_spawn:
-        default_61: true
-      #
-      # WATERFLOW_ALLOW
-      # Allow waterflow from a wilderness to the chunk / land?
-      # NOTE: This should be set to false, since it protects against griefing from other players.
-      waterflow_allow:
-        default_68: false
+  # These settings are chunk specific settings, wich can be set for specific chunks or the whole land.
+  # They are DEFAULT settings, which means that they will only apply to new land creations.
+  setting:
+    #
+    # ENTITY_GRIEFING
+    # Allow entities to grief in the chunk / land?
+    entity_griefing:
+      default_13: false
+    #
+    # TNT_GRIEFING
+    # Allow tnt to destroy blocks in the chunk / land?
+    tnt_griefing:
+      default_65: false
+    #
+    # PISTON_GRIEFING
+    # Allow pistons from a wilderness to push into the chunk / land?
+    # NOTE: This should be set to false, since it protects against griefing from other players.
+    piston_griefing:
+      default_14: false
+    #
+    # MONSTER_SPAWN
+    # Allow monster spawning in the chunk / land?
+    monster_spawn:
+      default_51: true
+    #
+    # ANIMAL_SPAWN
+    # Allow animal spawning in the chunk / land?
+    animal_spawn:
+      default_61: true
+    #
+    # WATERFLOW_ALLOW
+    # Allow waterflow from a wilderness to the chunk / land?
+    # NOTE: This should be set to false, since it protects against griefing from other players.
+    waterflow_allow:
+      default_68: false
 
   # Role settings
   # There are three different roles:
@@ -929,9 +930,11 @@ command:
 # Random teleportation (/Lands wild)
 random-teleport:
   # Worlds where players should be able to use /Lands wild.
+  # NOTE: World names are case-sensitive. If you don't enter them correctly, issues might occur.
   wild-worlds_list:
     - world
   # Players will be random teleported in this world, if they're currently not in a world defined above.
+  # NOTE: The world name is case-sensitive.
   backup: 'world'
   # Should players be able to teleport to a location where a land is located?
   allow-land: false
