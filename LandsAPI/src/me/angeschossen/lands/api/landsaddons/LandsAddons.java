@@ -4,7 +4,6 @@ import me.angeschossen.lands.api.objects.Land;
 import me.angeschossen.lands.api.objects.LandChunk;
 import me.angeschossen.lands.api.objects.LandPlayer;
 import me.angeschossen.lands.api.objects.LandWorld;
-import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 

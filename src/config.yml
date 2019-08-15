@@ -52,6 +52,7 @@ general:
   # Info: If you have build bypass
   # permissions, you still can build
   # in a wilderness (Good for staff for example).
+  # NOTE: This action requires server reload.
   disallow-wilderness: false
   # Should safezones stay in the cache
   # and not be unloaded?
@@ -71,19 +72,19 @@ general:
   # Reward players by playing on your server.
   # Explanation: https://github.com/Angeschossen/Lands/wiki/Playtime-Rewards
   time-reward:
-   enabled_17: false
-   # After how many seconds should players get rewarded with plus 1
-   # chunk, land, own land or member.
-   # NOTE: Time unit is seconds.
-   time:
-     # Plus 1 chunk (/Lands claim)
-     chunk: 3060
-     # Plus 1 lands where a player can be a member (not owner - /Lands accept, /Lands trust).
-     land: 43200
-     # Plus 1 land creation (/Lands create).
-     land-own: 86400
-     # Plus 1 land member (/Lands trust)
-     member: 21600
+    enabled_17: false
+    # After how many seconds should players get rewarded with plus 1
+    # chunk, land, own land or member.
+    # NOTE: Time unit is seconds.
+    time:
+      # Plus 1 chunk (/Lands claim)
+      chunk: 3060
+      # Plus 1 lands where a player can be a member (not owner - /Lands accept, /Lands trust).
+      land: 43200
+      # Plus 1 land creation (/Lands create).
+      land-own: 86400
+      # Plus 1 land member (/Lands trust)
+      member: 21600
 
 
 
@@ -394,16 +395,16 @@ chunk:
     # Cost for a teleportation.
     costs_3: 15
 
-    # Auto claim chunks while standing on them.
-    auto-claim:
-      # NOTE: This setting requires server reload.
-      enabled_14: true
-      # How many times should Lands execute autoclaim until it stops automatically?
-      rounds-stop: 50
+  # Auto claim chunks while standing on them.
+  auto-claim:
+    # NOTE: This setting requires server reload.
+    enabled_14: true
+    # How many times should Lands execute autoclaim until it stops automatically?
+    rounds-stop: 50
 
-    # Edit settings of a land in a GUI menu.
-    # This affects the following settings (flags).
-    setting-menu_2: true
+  # Edit settings of a land in a GUI menu.
+  # This affects the following settings (flags).
+  setting-menu_2: true
 
   # These settings are chunk specific settings, wich can be set for specific chunks or the whole land.
   # They are DEFAULT settings, which means that they will only apply to new land creations.
@@ -865,31 +866,43 @@ visualization:
       # Orange: 16753920
       color: 16753920
       duration: 20
+      rows: 2
     # If the player is trusted in the chunk.
     claimed:
       particle_2: 'REDSTONE'
       color_2: 65280
       duration_2: 8
+      rows_2: 2
     # If the player is the land owner.
     own:
       particle_3: 'REDSTONE'
       color_3: 65280
       duration_3: 4
+      rows_3: 2
     # If the player is trusted in the chunk.
     trusted:
       particle_4: 'REDSTONE'
       color_4: 16776960
       duration_4: 4
+      rows_4: 2
     # If player isn't trusted in the chunk.
     untrusted:
       particle_5: 'REDSTONE'
       color_5: 16711680
       duration_5: 4
+      rows_5: 2
     # Appears if you try to run an action, which you're not allowed to execute.
     no-access:
       particle_7: 'REDSTONE'
       color_7: 16711680
       duration_7: 4
+      rows_7: 2
+    # Visualize chunk selection (/Lands selection)
+    selection:
+      particle_8: 'REDSTONE'
+      color_8: 16753920
+      duration_8: 45
+      rows_8: 2
 
   # /Lands view
   view:
