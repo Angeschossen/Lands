@@ -1,6 +1,6 @@
 name: Lands
 main: me.angeschossen.lands.Lands
-version: 3.9.7.2
+version: 3.9.8.5
 author: Angeschossen
 description: Feature rich GUI, Taxes, Customize your own, Titles, New factions - Let players manage their land!
 website: https://www.spigotmc.org/resources/53313
@@ -19,6 +19,9 @@ permissions:
     children:
       lands.chunks.NUMBER:
         description: Set max chunk claims
+        default: op
+      lands.chunks.support.NUMBER:
+        description: Support lands, in which you're member of, with additional claims
         default: op
       lands.lands.NUMBER:
         description: Set max lands can be member of (own lands + lands where member)
@@ -136,21 +139,33 @@ permissions:
             description: /Lands wild
             default: op
       lands.bypass.*:
-        description: Bypass all protections and other
+        description: Bypass all protections and other restrictions
         children:
-          lands.bypass.break:
+          lands.bypass.block_break:
             description: Bypass block break protection
             default: op
-          lands.bypass.place:
+          lands.bypass.block_place:
             description: Bypass block place protection
             default: op
-          lands.bypass.interact:
+          lands.bypass.block_ignite:
+            description: Bypass block ignite protection
+            default: op
+          lands.bypass.interact_general:
             description: Bypass interaction protection
             default: op
-          lands.bypass.combat.animal:
+          lands.bypass.interact_mechanism:
+            description: Bypass interaction protection
+            default: op
+          lands.bypass.interact_door:
+            description: Bypass interaction protection
+            default: op
+          lands.bypass.interact_container:
+            description: Bypass interaction protection
+            default: op
+          lands.bypass.attack_animal:
             description: Bypass animal attack protection
             default: op
-          lands.bypass.combat.player:
+          lands.bypass.attack_player:
             description: Bypass player attack protection
             default: op
           lands.bypass.member.untrust:
@@ -159,12 +174,49 @@ permissions:
           lands.bypass.fly:
             description: Bypass fly flag
             default: op
+          lands.bypass.worldedit:
+            description: Bypass WorldEdit restrictions in other players lands
+            default: op
           lands.bypass.edit.*:
             description: Select lands you're not member of
             default: op
             children:
               lands.bypass.edit.settings:
                 description: Edit settings of other lands
+                default: op
+          lands.bypass.wilderness.*:
+            description: Bypass all wilderness protections (for worlds in disallow-wilderness_list)
+            default: op
+            children:
+              lands.bypass.wilderness.block_break:
+                description: Bypass block break protection for disallow-wilderness_list in config
+                default: op
+              lands.bypass.wilderness.block_place:
+                description: Bypass block place protection for disallow-wilderness_list in config
+                default: op
+              lands.bypass.wilderness.block_ignite:
+                description: Bypass block ignite protection for disallow-wilderness_list in config
+                default: op
+              lands.bypass.wilderness.interact_general:
+                description: Bypass interaction protection for disallow-wilderness_list in config
+                default: op
+              lands.bypass.wilderness.interact_mechanism:
+                description: Bypass interaction protection for disallow-wilderness_list in config
+                default: op
+              lands.bypass.wilderness.interact_door:
+                description: Bypass interaction protection for disallow-wilderness_list in config
+                default: op
+              lands.bypass.wilderness.interact_container:
+                description: Bypass interaction protection for disallow-wilderness_list in config
+                default: op
+              lands.bypass.wilderness.attack_animal:
+                description: Bypass animal attack protection for disallow-wilderness_list in config
+                default: op
+              lands.bypass.wilderness.attack_player:
+                description: Bypass player attack protection for disallow-wilderness_list in config
+                default: op
+              lands.bypass.wilderness.worldedit:
+                description: Bypass WorldEdit restrictions in wilderness.
                 default: op
           lands.bypass.cooldown.*:
             description: Bypass cooldowns
@@ -185,14 +237,6 @@ permissions:
           lands.bypass.spawn.private:
             description: Teleport to private land spawns
             default: op
-          lands.bypass.disallowwilderness.break:
-            description: Allow block breaking in wilderness, if disallowwilderness is enabled
-            default: op
-          lands.bypass.disallowwilderness.place:
-            description: Allow block place in wilderness, if disallowilderness is enabled
-            default: op
-          lands.bypass.disallowwilderness.interact:
-            description: Allow interaction in wilderness, if disallowwilderness is enabled
       lands.gui.*:
         description: Access to all GUI actions
         default: op

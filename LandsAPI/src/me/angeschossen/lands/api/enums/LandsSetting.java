@@ -4,6 +4,7 @@ public enum LandsSetting {
     ENTITY_GRIEFING("entity_griefing"),
     PISTON_GRIEFING("piston_griefing"),
     MONSTER_SPAWN("monster_spawn"),
+    ANIMAL_SPAWN("animal_spawn"),
     TAX_TOTAL("tax_total"),
     SPAWN_PUBLIC("spawn_public");
 
