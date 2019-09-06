@@ -48,12 +48,12 @@ general:
   # Worlds where players
   # should be able to claim chunks.
   # NOTE: World names are CASE-SENSITIVE
-  # This setting requires server reload.
+  # This setting requires server reload / restart.
   claim-worlds_list:
     - world
   # Should players be able to build in a wilderness?
   # NOTE: World names are CASE-SENSITIVE
-  # This setting requires server reload.
+  # This setting requires server reload / restart.
   disallow-wilderness_list:
     - InsertWorldHere
   # Should safezones stay in the cache
@@ -73,6 +73,7 @@ general:
 
   # Reward players by playing on your server.
   # Explanation: https://github.com/Angeschossen/Lands/wiki/Playtime-Rewards
+  # NOTE: This setting requires server reload / restart.
   time-reward:
     enabled_17: false
     # After how many seconds should players get rewarded with plus 1
@@ -307,7 +308,7 @@ land:
 
   # Delete inactive Lands, if the owner is offline since x days.
   expiration:
-    # NOTE: This setting requires /reload
+    # NOTE: This setting requires server reload / restart.
     enabled: true
     # Time in days
     # NOTE: You can set a time setting to 0 to disable it.
@@ -336,7 +337,7 @@ taxes:
   # Withdraw: /Lands withdraw
   # Land balance: /Lands balance
   # NOTE: Your players will need to deposit money into the land bank before they are able to claim.
-  # NOTE: This setting requires server reload.
+  # NOTE: This setting requires server reload / restart.
   banks: true
   # Set the minimum time between a player's attempt to change the tax for his or her land and the time of the next tax.
   # It's calculated by: next tax - cooldown
@@ -352,8 +353,8 @@ taxes:
   # Land upkeep costs
   # Enable this, if you want the lands to pay x amount of money per chunk in order to keep their land.
   upkeep:
-    # NOTE: This setting requires /reload
-    enabled_19: true
+    # NOTE: This setting requires server reload / restart.
+    enabled_19: false
     # Interval of payment
     # NOTE: Time unit is seconds
     interval_2: 172800
@@ -363,6 +364,10 @@ taxes:
     # Should Lands delete the LAST CLAIMED
     # chunk, if the land can't pay the bill?
     delete-chunk: true
+    # Exclude land from upkeep, if it was recently created?
+    # This will prevent recently created lands getting a chunk deleted, if the land owner / land bank doesn't have enough money (and if delete-chunk enabled).
+    # So only lands, which are older than x seconds, will need to pay this.
+    nopay-time: 900
 
 
 
@@ -402,7 +407,7 @@ chunk:
 
   # Auto claim chunks while standing on them.
   auto-claim:
-    # NOTE: This setting requires server reload.
+    # NOTE: This setting requires server reload / restart.
     enabled_14: true
     # How many times should Lands execute autoclaim until it stops automatically?
     rounds-stop: 50
@@ -963,7 +968,7 @@ visualization:
 # Command settings
 command:
   # Set aliases for the /Lands command
-  # NOTE: This setting requires server reload.
+  # NOTE: This setting requires server reload / restart.
   aliases_list:
     - l
     - land
@@ -990,7 +995,7 @@ random-teleport:
     - world
   # Max x and z block radius value
   # NOTE: Lands will only teleport to already generated chunks. Therefore, you may not need this feature. If so, just set it to 0 (this disables it).
-  # This setting requires server reload.
+  # This setting requires server reload / restart.
   max-radius:
     x: 0
     z: 0
