@@ -2,7 +2,6 @@ package me.angeschossen.lands.api.objects;
 
 
 import com.sun.istack.internal.NotNull;
-import me.angeschossen.lands.datastore.objects.ChunkCoord;
 
 import java.util.Set;
 
@@ -25,5 +24,5 @@ public interface LandChunkInvite extends Invite {
      * @return Land or landChunk
      */
     @NotNull
-    Set<ChunkCoord> getChunks();
+    Set<ChunkCoordinate> getChunkCoordinates();
 }
