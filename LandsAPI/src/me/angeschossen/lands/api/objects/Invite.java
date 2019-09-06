@@ -1,5 +1,7 @@
 package me.angeschossen.lands.api.objects;
 
+import com.sun.istack.internal.NotNull;
+
 import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -11,6 +13,7 @@ public interface Invite {
      *
      * @return UUID of sender
      */
+    @NotNull
     UUID getSenderUUID();
 
     /**
@@ -18,6 +21,7 @@ public interface Invite {
      *
      * @return UUID of receiver
      */
+    @NotNull
     UUID getReceiverUID();
 
     /**
@@ -25,13 +29,15 @@ public interface Invite {
      *
      * @return Date
      */
+    @NotNull
     Date getDate();
 
     /**
      * Accept invite
-     * @return in how many chunks failed
-     * -1 means the whole land failed
+     *
+     * @return Will return false if invite fails because of max members permission (lands.members.NUMBER).
      */
+    @NotNull
     CompletableFuture<Boolean> accept();
 
     /**
@@ -41,8 +47,9 @@ public interface Invite {
 
     /**
      * Get land
+     *
      * @return Land
      */
-
+    @NotNull
     Land getLand();
 }

@@ -1,12 +1,12 @@
 package me.angeschossen.lands.api.objects;
 
+import com.sun.istack.internal.NotNull;
 import me.angeschossen.lands.api.enums.LandRole;
 import me.angeschossen.lands.api.enums.LandsAction;
 import me.angeschossen.lands.api.enums.LandsSetting;
 
 import java.util.Collection;
 import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
 
 public interface LandChunk {
 
@@ -15,6 +15,7 @@ public interface LandChunk {
      *
      * @return Tax value
      */
+    @NotNull
     double getTax();
 
     /**
@@ -23,6 +24,7 @@ public interface LandChunk {
      * @param landsSetting LandsSetting
      * @return true if setting enabled
      */
+    @NotNull
     boolean getSetting(LandsSetting landsSetting);
 
     /**
@@ -30,6 +32,7 @@ public interface LandChunk {
      *
      * @return UUID
      */
+    @NotNull
     UUID getOwnerUID();
 
     /**
@@ -37,6 +40,7 @@ public interface LandChunk {
      *
      * @return Land the landChunk is in
      */
+    @NotNull
     Land getLand();
 
     /**
@@ -44,6 +48,7 @@ public interface LandChunk {
      *
      * @return X
      */
+    @NotNull
     int getX();
 
     /**
@@ -51,23 +56,17 @@ public interface LandChunk {
      *
      * @return Z
      */
+    @NotNull
     int getZ();
 
     /**
-     * Get landRoles data
-     * with UUID and landRole
-     *
-     * @return Roles
-     */
-    ConcurrentHashMap<UUID, LandRole> getLandChunkRoles();
-
-    /**
-     * Get all members of an role
+     * Get all members of a role
      *
      * @param landRole The role wich are the members from
      * @return Collection of members wich have this role
      */
-    Collection<UUID> getRoleMembers(LandRole landRole);
+    @NotNull
+    Collection<UUID> getRoleMembers(@NotNull LandRole landRole);
 
     /**
      * Get landRole of player
@@ -75,58 +74,64 @@ public interface LandChunk {
      * @param playerUUID UUID of player
      * @return LandRole
      */
-    LandRole getLandRole(UUID playerUUID);
+    @NotNull
+    LandRole getLandRole(@NotNull UUID playerUUID);
 
     /**
      * Set tex value of LandChunk
      *
      * @param rent Tax value
      */
-    void setTax(double rent);
+    void setTax(@NotNull double rent);
+
+    /**
+     * Synchronize with land.
+     *
+     * @return Will return false if it fails. This can happen if the chunk does not belong to the land anymore.
+     */
+    @NotNull
+    boolean update();
 
     /**
      * Check if landChunk is loaded
-     * @return
+     *
+     * @return Is claim loaded?
      */
+    @NotNull
     boolean isLoaded();
 
     /**
-     * Enable an setting
+     * Enable a setting
      *
      * @param landsSetting LandsSetting
      */
-    void enableSetting(LandsSetting landsSetting);
+    void enableSetting(@NotNull LandsSetting landsSetting);
 
     /**
-     * Enable an setting
-     *
-     * @param settingID ID of setting
-     */
-    void enableSetting(String settingID);
-
-    /**
-     * Disable an etting
+     * Disable a setting
      *
      * @param landsSetting LandsSetting
      */
-    void disableSetting(LandsSetting landsSetting);
+    void disableSetting(@NotNull LandsSetting landsSetting);
 
     /**
-     * Toggle an setting
+     * Toggle a setting
      *
      * @param landsSetting LandsSetting
      * @return Result
      */
-    boolean toggleSetting(LandsSetting landsSetting);
+    @NotNull
+    boolean toggleSetting(@NotNull LandsSetting landsSetting);
 
     /**
-     * Check if setting is enabled
+     * Check if setting enabled
      *
      * @param landsAction LandsAction
      * @param landRole    LandRole
      * @return Boolean
      */
-    boolean getAction(LandRole landRole, LandsAction landsAction);
+    @NotNull
+    boolean getAction(@NotNull LandRole landRole, @NotNull LandsAction landsAction);
 
     /**
      * Enable an landsAction
@@ -134,7 +139,7 @@ public interface LandChunk {
      * @param landsAction LandsAction
      * @param landRole    Role
      */
-    void enableAction(LandRole landRole, LandsAction landsAction);
+    void enableAction(@NotNull LandRole landRole, @NotNull LandsAction landsAction);
 
     /**
      * Disable an landsAction
@@ -142,7 +147,7 @@ public interface LandChunk {
      * @param landsAction LandsAction
      * @param landRole    Role
      */
-    void disableAction(LandRole landRole, LandsAction landsAction);
+    void disableAction(@NotNull LandRole landRole, @NotNull LandsAction landsAction);
 
     /**
      * Toggle acces for an action for an speficied role
@@ -151,37 +156,41 @@ public interface LandChunk {
      * @param landsAction Action
      * @return true if enabled, false if disabled
      */
-    boolean toggleAction(LandRole landRole, LandsAction landsAction);
+    @NotNull
+    boolean toggleAction(@NotNull LandRole landRole, @NotNull LandsAction landsAction);
 
     /**
      * Set an landChunk role
      *
      * @param landPlayer Player wich you want to set
-     * @return
+     * @return Will return false, if fails because of max members permission (lands.members.NUMBER).
      */
-    boolean trustPlayer(LandPlayer landPlayer);
+    @NotNull
+    boolean trustPlayer(@NotNull LandPlayer landPlayer);
 
     /**
      * Set role of trusted player
+     *
      * @param playerUUID UUID of player
-     * @param landRole Role
+     * @param landRole   Role
      */
-    void setRole(UUID playerUUID, LandRole landRole);
+    void setRole(@NotNull UUID playerUUID, @NotNull LandRole landRole);
 
     /**
      * Untrust an player
      *
      * @param playerUUID UUID of player
      */
-    void untrustPlayer(UUID playerUUID);
+    void untrustPlayer(@NotNull UUID playerUUID);
 
     /**
-     * Check if player is trusted
+     * Check if player trusted
      *
      * @param playerUUID UUID of player
      * @return true, if trusted
      */
-    boolean isTrusted(UUID playerUUID);
+    @NotNull
+    boolean isTrusted(@NotNull UUID playerUUID);
 
     /**
      * Check if player can do an action
@@ -190,23 +199,22 @@ public interface LandChunk {
      * @param action     Action
      * @return true, if he can do so
      */
-    boolean canAction(UUID playerUUID, LandsAction action);
-
-    /**
-     * Save landChunk to harddrive
-     */
-    void save();
+    boolean canAction(@NotNull UUID playerUUID, @NotNull LandsAction action);
 
     /**
      * Get all trusted players
-     * @return
+     *
+     * @return Trusted players. Including the owner.
      */
+    @NotNull
     Collection<UUID> getTrustedPlayers();
 
     /**
-     * Add tax
+     * Add tax. Use negative number to
+     * remove tax.
+     *
      * @param value Tax value
      * @return Result
      */
-    int addTax(double value);
+    double addTax(@NotNull double value);
 }

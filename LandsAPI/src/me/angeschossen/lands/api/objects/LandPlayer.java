@@ -1,19 +1,47 @@
 package me.angeschossen.lands.api.objects;
 
+import com.sun.istack.internal.NotNull;
 import me.angeschossen.lands.api.enums.LandsAction;
 import org.bukkit.entity.Player;
 
+import javax.annotation.Nullable;
 import java.util.Collection;
+import java.util.Set;
 import java.util.UUID;
 
 public interface LandPlayer {
 
 
     /**
-     * Get online player, if he's online
+     * Get current selection.
      *
-     * @return Player
+     * @return Selection
      */
+    @Nullable
+    Selection getSelection();
+
+    /**
+     * Get max claims per land.
+     *
+     * @return Max claims
+     */
+    @NotNull
+    int getMaxClaimsPerLand();
+
+    /**
+     * Get support claims per land. Permission: lands.chunks.support.NUMBER
+     *
+     * @return Max support claims
+     */
+    @NotNull
+    int getSupportClaimsPerLand();
+
+    /**
+     * Get player
+     *
+     * @return Will return null if player is offline.
+     */
+    @Nullable
     Player getPlayer();
 
     /**
@@ -22,13 +50,14 @@ public interface LandPlayer {
      * @param landName Name of land
      * @return Invite
      */
-    Invite getInvite(String landName);
+    Invite getInvite(@NotNull String landName);
 
     /**
-     * Get UUID of player
+     * Get UID of player
      *
      * @return UUID
      */
+    @NotNull
     UUID getUID();
 
     /**
@@ -37,7 +66,8 @@ public interface LandPlayer {
      * @param landName Name or displayname of land
      * @return Land or null, if not member
      */
-    Land getLand(String landName);
+    @Nullable
+    Land getLand(@NotNull String landName);
 
     /**
      * Set edit land
@@ -45,22 +75,24 @@ public interface LandPlayer {
      *
      * @param land Land to select
      */
-    void setEditLand(Land land);
+    void setEditLand(@Nullable Land land);
 
     /**
      * Get collection of lands the player is in
      *
      * @return Collection of lands
      */
-    Collection<Land> getLands();
+    @NotNull
+    Set<Land> getLands();
 
     /**
      * Get collection of lands the player is in of world
      *
-     * @param world Name of world
+     * @param worldName Name of world
      * @return Collection of lands
      */
-    Collection<Land> getLands(String world);
+    @NotNull
+    Set<Land> getLands(@NotNull String worldName);
 
 
     /**
@@ -69,13 +101,15 @@ public interface LandPlayer {
      * @param worldName Name wof world
      * @return Land or null, if no match found
      */
-    Land getOwningLand(String worldName);
+    @Nullable
+    Land getOwningLand(@NotNull String worldName);
 
     /**
      * Get an owning land
      *
-     * @return Land or null, if player doesn't owns an land
+     * @return Land or null, if player doesn't own a land
      */
+    @Nullable
     Land getOwningLand();
 
     /**
@@ -83,48 +117,8 @@ public interface LandPlayer {
      *
      * @return Invites
      */
+    @NotNull
     Collection<Invite> getInvites();
-
-    /**
-     * Give players claimblocks points
-     *
-     * @param blocks
-     */
-    void addClaimBlocks(int blocks);
-
-    /**
-     * Remove an claimblock
-     */
-    void removeClaimBlock();
-
-    /**
-     * Get claimblock points the player has
-     *
-     * @return Claimblock points
-     */
-    int getClaimBlocks();
-
-    /**
-     * Add the player to an land
-     *
-     * @param land Land to add
-     */
-    void addLand(Land land);
-
-    /**
-     * Add an invite
-     *
-     * @param landName Name of land
-     * @param invite   Invite to add
-     */
-    void addInvite(String landName, Invite invite);
-
-    /**
-     * Remove an land
-     *
-     * @param land Land to remove
-     */
-    void removeLand(Land land);
 
     /**
      * Get the land wich the player set
@@ -141,7 +135,7 @@ public interface LandPlayer {
      * @param landsAction Action
      * @return Land or null, if no match found
      */
-    Land getAccessActionLand(LandsAction landsAction);
+    Land getAccessActionLand(@NotNull LandsAction landsAction);
 
     /**
      * Get an land where the player can do an specific action in an specific world
@@ -149,33 +143,30 @@ public interface LandPlayer {
      * @param landsAction Action
      * @return Land or null, if no match found
      */
-    Land getAccessActionLand(LandsAction landsAction, String worldName);
+    Land getAccessActionLand(@NotNull LandsAction landsAction, @NotNull String worldName);
 
     /**
-     * Remove an invite
+     * Remove a invite
      *
      * @param landName Name of land
      */
-    void removeInvite(String landName);
+    void removeInvite(@NotNull String landName);
 
     /**
-     * Save landPlayer
-     */
-    void save();
-
-    /**
-     * Check if player has invite from land
+     * Check if player invited from land
      *
      * @param landName Name of land
-     * @return
+     * @return Will return false if no invite from land found.
      */
-    boolean hasInvite(String landName);
+    @NotNull
+    boolean hasInvite(@NotNull String landName);
 
     /**
      * Check if player has owning land
      *
-     * @return true, if has land
+     * @return Will return false if players doesn't own land.
      */
+    @NotNull
     boolean hasOwningLand();
 
     /**
@@ -183,13 +174,15 @@ public interface LandPlayer {
      *
      * @return Array
      */
+    @NotNull
     String[] getLandNames();
 
     /**
      * Check is player in land
      *
-     * @param landName Name of land
+     * @param iD ID of land
      * @return Boolean
      */
-    boolean isInLand(String landName);
+    @NotNull
+    boolean isInLand(@NotNull int iD);
 }

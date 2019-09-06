@@ -1,120 +1,76 @@
 package me.angeschossen.lands.api.objects;
 
+import com.sun.istack.internal.NotNull;
+import me.angeschossen.lands.api.enums.LandsAction;
+import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.entity.Player;
 
-import java.util.Collection;
-import java.util.HashMap;
+import javax.annotation.Nullable;
 
 public interface LandWorld {
 
     /**
-     * Enable a setting.
+     * Check if player can action. This also contains the setting disallow-wilderness.
      *
-     * @param iD ID of setting
+     * @param player      Player
+     * @param location    Location
+     * @param landsAction Action
+     * @return Will return false if he can't do this.
      */
-    void enableSetting(String iD);
-
-    /**
-     * Disable a setting
-     *
-     * @param iD ID of setting
-     */
-    void disableSetting(String iD);
-
-    /**
-     * Get status of setting.
-     *
-     * @param iD ID of setting
-     * @return Status of setting
-     */
-    boolean getSetting(String iD);
+    boolean canAction(Player player, Location location, LandsAction landsAction);
 
     /**
      * Get name of world.
      *
      * @return Name of world
      */
+    @NotNull
     String getName();
 
     /**
-     * Get world object
+     * Get world
      *
      * @return World
      */
+    @NotNull
     World getWorld();
 
     /**
-     * Get an land
+     * Get land
      *
      * @param landName Name of land
-     * @return Land or null, if not cached
+     * @return Will return null if this land does not exist.
      */
-    Land getLand(String landName);
+    @Nullable
+    Land getLand(@NotNull String landName);
 
     /**
-     * Get cached lands
+     * Get land by iD
      *
-     * @return Collection of cached lands
+     * @param iD ID of land.
+     * @return Will return null if this land does not exist.
      */
-    Collection<Land> getLoadedLands();
+    @Nullable
+    Land getLand(@NotNull int iD);
 
     /**
-     * Load an land
-     *
-     * @param land Land to land
-     */
-    void loadLand(Land land);
-
-    /**
-     * Unload a land.
-     *
-     * @param landName Name of land
-     */
-    void unloadLand(String landName);
-
-    /**
-     * Get cached landChunk
+     * Get loaded landChunk
      *
      * @param chunkX X identifier
      * @param chunkZ Z identifier
      * @return LandChunk or null, if not cached
      */
-    LandChunk getLandChunk(int chunkX, int chunkZ);
+    @Nullable
+    LandChunk getLandChunk(@NotNull int chunkX, @NotNull int chunkZ);
 
     /**
-     * Unload landChunk
+     * Is landChunk loaded?
      *
-     * @param chunkX X identifier
-     * @param chunkZ Z identifier
-     */
-    void unloadLandChunk(int chunkX, int chunkZ);
-
-    /**
-     * Load an landChunk
-     *
-     * @param landChunk LandChunk
-     */
-    void loadLandChunk(LandChunk landChunk);
-
-    /**
-     * Get all cached landChunks.
-     *
-     * @return Collection of cached landChunks
-     */
-    Collection<LandChunk> getLoadedLandChunks();
-
-    /**
-     * Get top lands with place.
-     *
-     * @return Top lands with place
-     */
-    HashMap<Integer, Land> getTopLands();
-
-    /**
-     * Check if claimed chunk is loaded
      * @param x X identifier
      * @param z Z identifier
      * @return Loaded
      */
-    boolean isChunkLoaded(int x, int z);
+    @NotNull
+    boolean isChunkLoaded(@NotNull int x, @NotNull int z);
 }

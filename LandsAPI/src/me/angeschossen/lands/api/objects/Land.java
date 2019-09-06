@@ -6,12 +6,27 @@ import me.angeschossen.lands.api.enums.LandsAction;
 import me.angeschossen.lands.api.enums.LandsSetting;
 import org.bukkit.Location;
 
+import javax.annotation.Nullable;
 import java.util.Collection;
+import java.util.Set;
 import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ConcurrentHashMap;
 
 public interface Land {
+
+    /**
+     * Apply default settings from
+     * config to this land.
+     */
+    void applyDefaultSettings();
+
+
+    /**
+     * Get upkeep costs
+     *
+     * @return Upkeep costs
+     */
+    @NotNull
+    double getUpkeepCosts();
 
     /**
      * Get name of the land
@@ -19,7 +34,16 @@ public interface Land {
      *
      * @return Name of land
      */
+    @NotNull
     String getName();
+
+    /**
+     * Get id of land.
+     *
+     * @return ID
+     */
+    @NotNull
+    int getID();
 
     /**
      * Get invite by receiver UUID
@@ -27,7 +51,8 @@ public interface Land {
      * @param receiverUUID UUID of receiver
      * @return Invite
      */
-    Invite getInvite(UUID receiverUUID);
+    @Nullable
+    Invite getInvite(@NotNull UUID receiverUUID);
 
     /**
      * Get owner UUID of land
@@ -42,6 +67,7 @@ public interface Land {
      *
      * @return Spawn
      */
+    @Nullable
     Location getSpawn();
 
     /**
@@ -49,6 +75,7 @@ public interface Land {
      *
      * @return Name of world
      */
+    @NotNull
     String getWorldName();
 
     /**
@@ -56,23 +83,26 @@ public interface Land {
      *
      * @return LandWorld
      */
+    @NotNull
     LandWorld getLandWorld();
 
     /**
-     * Get an collection of role members
-     * of an certain role
+     * Get trusted players of this role.
      *
-     * @param landRole Role wich you want to receive  members of
-     * @return Collection with UUIDs
+     * @param landRole Role
+     * @return Trusted players of this role.
      */
-    Collection<UUID> getRoleMembers(LandRole landRole);
+    @NotNull
+    Collection<TrustedPlayer> getTrustedPlayers(LandRole landRole);
 
     /**
-     * Get all landRoles with UUIDs
+     * Get role members.
      *
-     * @return LandRoles
+     * @param landRole Role
+     * @return Members of this role.
      */
-    ConcurrentHashMap<UUID, LandRole> getLandRoles();
+    @NotNull
+    Collection<UUID> getRoleMembers(LandRole landRole);
 
     /**
      * Get the landRole of an player
@@ -80,13 +110,15 @@ public interface Land {
      * @param playerUUID UUID of player
      * @return LandRole
      */
-    LandRole getLandRole(UUID playerUUID);
+    @NotNull
+    LandRole getLandRole(@NotNull UUID playerUUID);
 
     /**
      * Get the size of an land
      *
      * @return Size of land
      */
+    @NotNull
     int getSize();
 
     /**
@@ -94,6 +126,7 @@ public interface Land {
      *
      * @return Tax value
      */
+    @NotNull
     double getTax();
 
     /**
@@ -101,6 +134,7 @@ public interface Land {
      *
      * @return Invites
      */
+    @NotNull
     Collection<Invite> getInvites();
 
     /**
@@ -109,37 +143,29 @@ public interface Land {
      * @param landsSetting LandsSetting
      * @return Boolean
      */
-    boolean getSetting(LandsSetting landsSetting);
+    boolean getSetting(@NotNull LandsSetting landsSetting);
 
     /**
-     * Check if setting is enabled
-     *
-     * @param settingID ID of setting
-     * @return Boolean
-     */
-    boolean getSetting(String settingID);
-
-    /**
-     * Enable an setting
+     * Enable a setting
      *
      * @param landsSetting LandsSetting
      */
-    void enableSetting(LandsSetting landsSetting);
+    void enableSetting(@NotNull LandsSetting landsSetting);
 
     /**
-     * Disable an setting
+     * Disable a setting
      *
      * @param landsSetting LandsSetting
      */
-    void disableSetting(LandsSetting landsSetting);
+    void disableSetting(@NotNull LandsSetting landsSetting);
 
     /**
-     * Toggle an setting
+     * Toggle a setting
      *
      * @param landsSetting LandsSetting
      * @return Result
      */
-    boolean toggleSetting(LandsSetting landsSetting);
+    boolean toggleSetting(@NotNull LandsSetting landsSetting);
 
     /**
      * Check if setting is enabled
@@ -148,7 +174,7 @@ public interface Land {
      * @param landRole    LandRole
      * @return Boolean
      */
-    boolean getAction(LandRole landRole, LandsAction landsAction);
+    boolean getAction(@NotNull LandRole landRole, @NotNull LandsAction landsAction);
 
     /**
      * Enable an landsAction
@@ -156,7 +182,7 @@ public interface Land {
      * @param landsAction LandsAction
      * @param landRole    Role
      */
-    void enableAction(LandRole landRole, LandsAction landsAction);
+    void enableAction(@NotNull LandRole landRole, @NotNull LandsAction landsAction);
 
     /**
      * Disable an landsAction
@@ -164,65 +190,79 @@ public interface Land {
      * @param landsAction LandsAction
      * @param landRole    Role
      */
-    void disableAction(LandRole landRole, LandsAction landsAction);
+    void disableAction(@NotNull LandRole landRole, @NotNull LandsAction landsAction);
 
     /**
-     * Toggle acces for an action for an speficied role
+     * Toggle access for an action for a speficied role
      *
      * @param landRole    Role
      * @param landsAction Action
      * @return true if enabled, false if disabled
      */
-    boolean toggleAction(LandRole landRole, LandsAction landsAction);
+    boolean toggleAction(@NotNull LandRole landRole, @NotNull LandsAction landsAction);
 
     /**
-     * Set landRole for an player
+     * Set landRole for a player
      *
      * @param landPlayer LandPlayer wich you want to set
-     * @return 0 if in all landChunks set.
-     * if higher as 0 means amount of chunks where not trusted.
+     * @return Will return false if fails because of max members permission.
      */
-    boolean trustPlayer(LandPlayer landPlayer);
+    boolean trustPlayer(@NotNull LandPlayer landPlayer);
 
 
+    /**
+     * Get max members.
+     *
+     * @return Max members
+     */
+    @NotNull
+    int getMaxMembers();
+
+    /**
+     * Get max chunk claims.
+     *
+     * @return Max chunk claims
+     */
+    @NotNull
+    int getMaxChunks();
+
+    /**
+     * Get all trusted players
+     *
+     * @return Trusted players
+     */
+    @NotNull
     Collection<UUID> getTrustedPlayers();
 
     /**
-     * Set role of trusted player
+     * Set role of trusted player.
      *
      * @param playerUUID UUID of player
      * @param landRole   Role
      */
-    void setRole(UUID playerUUID, LandRole landRole);
+    void setRole(@NotNull UUID playerUUID, @NotNull LandRole landRole);
 
-    void trustPlayerForced(LandPlayer landPlayer);
+    /**
+     * Force-trust a player. Ignoring max members etc.
+     *
+     * @param landPlayer Player
+     */
+    void trustPlayerForced(@NotNull LandPlayer landPlayer);
 
     /**
      * Set the tax of the land
      *
      * @param tax Tax value
      */
-    void setTax(double tax);
+    void setTax(@NotNull double tax);
 
     /**
-     * Check if land is loaded
-     * @return
+     * Check is land loaded
+     *
+     * @return Boolean
      */
+    @NotNull
     boolean isLoaded();
-
-    /**
-     * Add an landChunk to the land
-     *
-     * @param landChunk LandChunk to add
-     */
-    void addLandChunk(LandChunk landChunk);
-
-    /**
-     * Add an land invite
-     *
-     * @param invite
-     */
-    void addInvite(Invite invite);
 
 
     /**
@@ -230,51 +270,54 @@ public interface Land {
      *
      * @return Collection of chunkCoords
      */
-    Collection<ChunkCoord> getChunkCoords();
-
-    void setTitleMessage(String title);
-
-    String getTitleMessage();
+    @NotNull
+    Set<ChunkCoordinate> getChunkCoordinates();
 
     /**
-     * Remove an landChunk
+     * Set title message.
      *
-     * @param chunkX X of chunk
-     * @param chunkZ Z of chunk
+     * @param title Message
      */
-    void removeLandChunk(int chunkX, int chunkZ);
+    void setTitleMessage(@NotNull String title);
+
+    /**
+     * Get title mesasage.
+     *
+     * @return Title message.
+     */
+    @NotNull
+    String getTitleMessage();
 
     /**
      * Set an new owner for land
      *
      * @param landPlayer LandPlayer for new owner
      */
-    void setOwner(LandPlayer landPlayer);
+    void setOwner(@NotNull LandPlayer landPlayer);
 
     /**
      * Untrust an player
      *
      * @param landPlayer LandPlayer wich should be untrusted
      */
-    void untrustLandPlayer(LandPlayer landPlayer);
+    void untrustLandPlayer(@NotNull LandPlayer landPlayer);
 
     /**
-     * Check if land has chunk
+     * Check if land has a chunk
      *
      * @param worldName Name of world
      * @param x         X of chunk
      * @param z         Z of chunk
      * @return true if has
      */
-    boolean hasChunk(String worldName, int x, int z);
+    boolean hasChunk(@NotNull String worldName, @NotNull int x, @NotNull int z);
 
     /**
      * Set name of land
      *
      * @param name New name
-     * @return
      */
-    CompletableFuture<String> setName(String name);
+    void setName(@NotNull String name);
 
     /**
      * Check if player is trusted in whole land.
@@ -282,13 +325,15 @@ public interface Land {
      * @param playerUUID UUID of player
      * @return true if is
      */
-    boolean isTrusted(UUID playerUUID);
+    @NotNull
+    boolean isTrusted(@NotNull UUID playerUUID);
 
     /**
-     * Get an collection of all online land members
+     * Get a collection of all online land members
      *
      * @return Collection of online players
      */
+    @NotNull
     Collection<LandPlayer> getOnlinePlayers();
 
     /**
@@ -298,21 +343,38 @@ public interface Land {
      * @param action     Action
      * @return Result
      */
-    boolean canAction(UUID playerUUID, LandsAction action);
+    boolean canAction(@NotNull UUID playerUUID, @NotNull LandsAction action);
 
     /**
-     * Check if player can action global
+     * Check if player can action.
      *
      * @param playerUUID UUID of player
      * @param action     Action
      * @return Result
      */
-    boolean canActionGlobal(UUID playerUUID, LandsAction action);
+    boolean canActionGlobal(@NotNull UUID playerUUID, @NotNull LandsAction action);
+
+    /**
+     * Get last claimed chunk.
+     *
+     * @return Coordinate
+     */
+    @Nullable
+    ChunkCoordinate getLastClaimed();
 
     /**
      * Saves to land to the harddrive
      */
     void save();
+
+    /**
+     * Get trusted player.
+     *
+     * @param playerUUID UID of player.
+     * @return Trusted player
+     */
+    @Nullable
+    TrustedPlayer getTrustedPlayer(@NotNull UUID playerUUID);
 
     /**
      * Does land exist?
@@ -322,12 +384,13 @@ public interface Land {
     boolean exists();
 
     /**
-     * Add tax
+     * Add tax value. Use negative numbers
+     * to remove tax.
      *
      * @param value Tax value
      * @return Result
      */
-    int addTax(double value);
+    double addTax(@NotNull double value);
 
 
     /**
@@ -335,12 +398,29 @@ public interface Land {
      *
      * @param location Location of spawn
      */
-    void setSpawn(Location location);
+    void setSpawn(@Nullable Location location);
 
 
+    /**
+     * Get land balance
+     *
+     * @return Balance
+     */
+    @NotNull
     double getBalance();
 
-    void setBalance(double balance);
+    /**
+     * Set land bank balance
+     *
+     * @param balance Value
+     */
+    void setBalance(@NotNull double balance);
 
-    void addBalance(double value);
+    /**
+     * Add money to land bank. Use negative numbers
+     * to remove money.
+     *
+     * @param value Value
+     */
+    void addBalance(@NotNull double value);
 }
