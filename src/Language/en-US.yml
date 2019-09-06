@@ -9,18 +9,20 @@
 # # https://discord.gg/B4MAJVk
 
 general:
+  prefix: '&8[&aLands&8] '
   wYes: '&aYes'
   wNo: '&cNo'
   none: '&8None'
+  disabled: '&cDisabled'
   wilderness: '&aWilderness'
   title:
     land: '&7Owned by&b %owner%&7.'
     safezone: '&7You''re safe now.'
   time:
-    days: day(s)
-    hours: hour(s)
-    minutes: minute(s)
-    seconds: second(s)
+    days: 'day(s)'
+    hours: 'hour(s)'
+    minutes: 'minute(s)'
+    seconds: 'second(s)'
   status:
     online: '&aonline'
     offline: '&coffline'
@@ -31,11 +33,11 @@ general:
     visitor: '&5Visitor'
     all: '&dAll'
   top:
-    title: '&7---------<- &6&lTop 10 Lands &7->---------'
-    land-size: '&7#&5{pos}&7: &b{land} &7Size:&e {size}'
-    land-money: '&7#&5{pos}&7: &b{land} &7Balance:&e ${balance}'
-    last-updated: '&7Last updated:&e {time}'
-    footer: '&7---------<- &6&lTop 10 Lands &7->---------'
+    title: '&7-----<- &5Top 10 Lands &7->-----'
+    land-size: '&c#{pos} &a{land} &7Size:&e {size}'
+    land-money: '&c#{pos} &a{land} &7Balance:&e ${balance}'
+    last-updated: '&7Last updated: {time}'
+    footer: '&7-----<- &5Top 10 Lands &7->-----'
   integration:
     dynmap:
       chunk:
@@ -44,15 +46,15 @@ general:
           <span style="font-weight:bold;">{admins}</span><br/>Members: <span style="font-weight:bold;">{members}</span><br/></div>'
   sign:
     topLand-size:
-      line-1: '&6#&e{place}'
-      line-2: '&5{owner}'
-      line-3: '&2Land &a{land}'
-      line-4: '&9Size:&b {size}'
+      line-1: '&c#&l{place}'
+      line-2: '&8<&a {land} &8>'
+      line-3: '&7by {owner}'
+      line-4: '&7Size:&2 {size}'
     topLand-balance:
-      line-1: '&6#&e{place}'
-      line-2: '&5{owner}'
-      line-3: '&2Land &a{land}'
-      line-4: '&9Balance:&b ${balance}'
+      line-1: '&c#&l{place}'
+      line-2: '&8<&a {land} &8>'
+      line-3: '&7by {owner}'
+      line-4: '&7Balance:&2 ${balance}'
     noLand:
       line-1: ' '
       line-2: '&cNo land'
@@ -66,115 +68,94 @@ general:
     friendly: '&5▉ '
     current-location: '&e▉ '
     wilderness: '&2▉ '
-    top: '&7-<------------<- &b&lLANDS MAP &7->------------>-'
+    top: '&7-<------------<- &6Lands Map &7->------------>-'
     info:
       wilderness: ' &2▉ &7= Wilderness'
       yours: ' &a▉ &7= Yours'
       trusted: ' &5▉ &7= Friendly'
       others: ' &c▉ &7= Others'
       position: ' &e▉ &7= Position'
-    bottom: '&7-<------------<- &b&lLANDS MAP &7->------------>-'
-  prefix: '&8[&aLands&8] '
-  disabled: '&cDisabled'
+    bottom: '&7-<------------<- &6Lands Map &7->------------>-'
 help:
   general:
-    header: '&7------------<- &5Lands Help &7Page&6 {page} &8/&e {pages} &7->------------'
-    page: '&7Use &8/&dLands help {next} &7for the next page. <> = needed [] = optional'
-    footer: '&7------------<- &5Lands Help &7Page&6 {page} &8/&e {pages} &7->------------'
     help-prefix: '&7Usage: '
+    header: '&7------------<- &2Lands Help &7Page&2 {page} &8/&2 {pages} &7->------------'
+    page: '&7Use &8/&eLands help {next} &7for the next page. <> = needed [] = optional'
+    footer: '&7------------<- &2Lands Help &7Page&2 {page} &8/&2 {pages} &7->------------'
   command:
-    help: '&8/&7Lands help &8[&aPage&8] - &eGet help'
-    edit: '&8/&7Lands edit &8<&aLand&8> - &eEnter edit mode for land'
-    claim: '&8/&7Lands claim &8[&7auto&8] - &eClaim chunk'
-    create: '&8/&7Lands create &8<&aName&8> - &eCreate land'
-    leave: '&8/&7Lands leave &8[&aLand] &8- &eLeave chunk or land'
-    unclaim: '&8/&7Lands unclaim &8- &eUnclaim chunk'
-    delete: '&8/&7Lands delete &8<&aLand&8> &8- &eDelete land'
-    trust: '&8/&7Lands trust &8<&aPlayer&8> [&ahere&8] - &eInvite player'
-    untrust: '&8/&7Lands untrust &8[&ahere&8] - &eUntrust player'
-    setRole: '&8/&7Lands setRole &8<&aPlayer&8> <&aRole&8> [&ahere&8] - &eSet role'
-    accept: '&8/&7Lands accept &8<&aLand&8> - &eAccept invite'
-    deny: '&8/&7Lands deny &8<&aLand&8> - &eDeny invite'
-    view: '&8/&7Lands view &8- &eInformation about chunk'
-    menu: '&8/&7Lands menu &8- &eOpen menu'
-    setSpawn: '&8/&7Lands setSpawn - &eSet landspawn'
-    spawn: '&8/&7Lands spawn &8[&aLand&8] - &eTeleport to land'
-    wild: '&8/&7Lands wild &8- &eTeleport to random location'
-    top: '&8/&7Lands top &8- &eShows top 10 lands'
-    selection: '&8/&7Lands selection &8- &eEnable claim selection'
-    chat: '&8/&7Lands chat &8[&aLand&8] <&aMessage&8>'
-    rename: '&8/&7Lands rename <&aName&8> - &eRename land'
-    teleport: '&8/&7Lands teleport &8[&aWorld&8] <&aX&8> <&aZ&8> - &eTeleport to chunk'
-    invites: '&8/&7Lands invites &8- &eShow received invites'
-    info: '&8/&7Lands info &8[&aLand&8] - &eView information about land'
-    player: '&8/&7Lands player &8<&aPlayer&8> - &eView information about player'
-    map: '&8/&7Lands map &8- &eView map'
-    balance: '&8/&7Lands balance &8[&aLand&8] - &eCheck land balance'
-    deposit: '&8/&7Lands deposit &8<&aAmount&8> - &eDeposit money to land bank'
-    withdraw: '&8/&7Lands withdraw &8<&aAmount&8> - &eWithdraw money from land bank'
+    help: '&8/&aLands help &8[&apage&8] - &7Get help'
+    edit: '&8/&aLands edit &8<&aland&8> &8- &7Enter edit mode for land'
+    claim: '&8/&aLands claim &8[&7auto&8] - &7Claim chunk'
+    create: '&8/&aLands create &8<&aname&8> - &7Create land'
+    leave: '&8/&aLands leave &8[&aland] &8- &7Leave chunk or land'
+    unclaim: '&8/&aLands unclaim &8- &7Unclaim chunk'
+    delete: '&8/&aLands delete &8<&aland&8> &8- &7Delete land'
+    trust: '&8/&aLands trust &8<&aplayer&8> [&ahere&8] - &7Invite player'
+    untrust: '&8/&aLands untrust &8[&ahere&8] - &7Untrust player'
+    setRole: '&8/&aLands setRole &8<&aplayer&8> <&arole&8> [&ahere&8] - &7Set role'
+    accept: '&8/&aLands accept &8<&aland&8> - &7Accept invite'
+    deny: '&8/&aLands deny &8<&aland&8> - &7Deny invite'
+    view: '&8/&aLands view &8- &7Information about chunk'
+    menu: '&8/&aLands menu &8- &7Open menu'
+    setSpawn: '&8/&aLands setspawn - &7Set landspawn'
+    spawn: '&8/&aLands spawn &8[&aland&8] - &7Teleport to land'
+    wild: '&8/&aLands wild &8- &7Teleport to random location'
+    top: '&8/&aLands top &8- &7Shows top 10 lands'
+    selection: '&8/&aLands selection &8- &7Enable claim selection'
+    chat: '&8/&aLands chat &8[&aland&8] <&amessage&8> &8- &7Land chat'
+    rename: '&8/&aLands rename &8<&aname&8> - &7Rename land'
+    teleport: '&8/&aLands teleport &8[&aworld&8] <&ax&8> <&az&8> - &7Teleport to chunk'
+    invites: '&8/&aLands invites &8- &7Show received invites'
+    info: '&8/&aLands info &8[&aland&8] - &7View information about land'
+    player: '&8/&aLands player &8<&aplayer&8> - &7View information about player'
+    map: '&8/&aLands map &8- &7View map'
+    balance: '&8/&aLands balance &8[&aland&8] - &7Check land balance'
+    deposit: '&8/&aLands deposit &8<&aamount&8> - &7Deposit money to land bank'
+    withdraw: '&8/&aLands withdraw &8<&aamount&8> - &7Withdraw money from land bank'
+    list: '&8/&aLands list &8[&aworld&8] - &7List all lands'
     admin:
-      admin: '&8/&7Lands admin &8<&aAction&8> &8- &eAdmin commands'
-      debug: '&8/&7Lands debug &8- &eShows loaded data stats'
-      safezone: '&8/&7Lands safezone &8- &eConfigure safezone'
-      reload: '&8/&7Lands reload &8<&aValue&8> &8- &eReload config or messages'
-      about: '&8/&7Lands about &8- &eShow information about Lands'
+      admin: '&8/&aLands admin &8<&asub-command&8> &8- &7Admin commands'
+      debug: '&8/&aLands debug &8- &7Shows loaded data stats'
+      safezone: '&8/&aLands safezone &8- &7Configure safezone'
+      reload: '&8/&aLands reload &8- &7Reload config or messages'
+      about: '&8/&aLands about &8- &7Show information about Lands'
 message:
-  no-permission: '&8[&aLands&8] &cYou don''t have permission to do this. &7You need
-    permission&b {permission}&7.'
-  world-invalid: '&8[&aLands&8] &cThis is deactivated in this world.'
-  feature-disabled: '&8[&aLands&8] &cThis feature was disabled by an administrator.
-    &7They need to enable setting&b {setting} &7in config, to let you use this feature.'
+  no-permission: '&cYou don''t have permission to do this. &7You need permission&b {permission}&7.'
+  world-invalid: '&cThis is deactivated in this world. &7A administrator needs to add it to the config. World:&b {world}'
+  feature-disabled: '&cThis feature was disabled by an administrator. &7They need to enable setting&b {setting} &7in config, to let you use this feature.'
   noaccess:
-    chunk: '&8[&aLands&8] &cYou don''t have access for this chunk. &8(&7Land:&e {land}
-      &7X:&e {x} &7Z:&e {z}&8)&c.'
-    land: '&8[&aLands&8] &cYou''re not allowed to do this for this land &8(&7Land:&e
-      {land}&8)&7.'
-    role-weight: '&8[&aLands&8] &cYou can''t edit this player. &7He has a higher role
-      than you. Contact the land owner for help.'
-    place: '&8[&aLands&8] &cYou''re not allowed to place blocks here.'
-    break: '&8[&aLands&8] &cYou''re not allowed to break blocks here.'
+    chunk: '&cYou don''t have access for this chunk. &8(&7Land:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c.'
+    land: '&cYou''re not allowed to do this for this land &8(&7Land:&e {land}&8)&7.'
+    role-weight: '&cYou can''t edit this player. &7He has a higher role than you. Contact the land owner for help.'
+    plugin: '&cYou can''t claim land here. &7This chunk belongs to a other management plugin. Name:&b {plugin}'
+    place: '&cYou''re not allowed to place blocks here. &7This chunk belongs to land&b {land}&7.'
+    break: '&cYou''re not allowed to break blocks here. &7This chunk belongs to land&b {land}&7.'
     interact:
-      general: '&cYou''re not allowed to interact here. &7This chunk belongs to land&b
-        {land}&7.'
-      door: '&cYou''re not allowed to open doors here. &7This chunk belongs to land&b
-        {land}&7.'
-      mechanism: '&cYou''re not allowed to use mechanisms here. &7This chunk belongs
-        to land&b {land}&7.'
-      container: '&cYou''re not allowed to open containers here. &7This chunk belongs
-        to land&b {land}&7.'
-    ignite: '&8[&aLands&8] &cYou''re not allowed to ignite blocks in this chunk.'
-    edit: '&8[&aLands&8] &cYou''re not allowed to edit this land.'
+      general: '&cYou''re not allowed to interact here. &7This chunk belongs to land&b {land}&7.'
+      door: '&cYou''re not allowed to open doors here. &7This chunk belongs to land&b {land}&7.'
+      mechanism: '&cYou''re not allowed to use mechanisms here. &7This chunk belongs to land&b {land}&7.'
+      container: '&cYou''re not allowed to open containers here. &7This chunk belongs to land&b {land}&7.'
+      villager: '&cYou''re not allowed to trade with villagers here. &7This chunk belongs to land&b {land}&7.'
+    ignite: '&cYou''re not allowed to ignite blocks here. &7This chunk belongs to land&b {land}&7.'
+    edit: '&cYou''re not allowed to edit this land. &7This chunk belongs to land&b {land}&7.'
     player:
-      chunk-trust: '&8[&aLands&8] &cYou don''t have permission to trust a player in
-        this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
-      chunk-setRole: '&8[&aLands&8] &cYou''re not allowed to set a role in this chunk
-        &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
-      chunk-untrust: '&8[&aLands&8] &cYou''re not allowed to untrust a player in their
-        chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
-      land-trust: '&8[&aLands&8] &cYou''re not allowed to trust a player in land &8(&7Land:
-        &e{land}&8)&c.'
-      land-untrust: '&8[&aLands&8] &cYou''re not allowed to untrust a player in this
-        land &8(&7Land: &e{land}&8)&c.'
-      land-setrole: '&8[&aLands&8] &cYou''re not allowed to trust a player in this
-        land &8(&7Land: &e{land}&8)&c.'
+      chunk-trust: '&cYou don''t have permission to trust a player in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      chunk-setRole: '&cYou''re not allowed to set a role in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      chunk-untrust: '&cYou''re not allowed to untrust a player in their chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      land-trust: '&cYou''re not allowed to trust a player in land &8(&7Land: &e{land}&8)&c.'
+      land-untrust: '&cYou''re not allowed to untrust a player in this land &8(&7Land: &e{land}&8)&c.'
+      land-setrole: '&cYou''re not allowed to trust a player in this land &8(&7Land: &e{land}&8)&c.'
     combat:
-      animal: '&8[&aLands&8] &cYou''re not allowed to attack animals here.'
-      pvp-target: '&8[&aLands&8] &cYour target isn''t allowed to attack players here.'
-      pvp: '&cYou''re not allowed to attack players here. &7This chunk belongs to
-        land&b {land}&7.'
-    plugin: '&cYou can''t claim land here. &7This chunk belongs to another management
-      plugin. Name:&b {plugin}'
+      animal: '&cYou''re not allowed to attack animals here. &7This chunk belongs to land&b {land}&7.'
+      pvp: '&cYou''re not allowed to attack players here. &7This chunk belongs to land&b {land}&7.'
+      pvp-target: '&cYour target isn''t allowed to attack players here. &7You can''t fight with them here. &7This chunk belongs to land&b {land}&7.'
   event:
     fly:
-      warning: '&8[&aLands&8] &7You''re not allowed to fly here. Flight mode will
-        be disabled in a few seconds. Bypass permission:&b {permission}'
-      disabled: '&8[&aLands&8] &cYour fly mode was disabled. &7You''re not allowed
-        to fly here.'
-      disallowed: '&8[&aLands&8] &cYou''re not allowed to fly in this land. &7Contact
-        the land owner. Bypass permission: &blands.bypass.fly'
-      disallowed-wilderness: '&8[&aLands&8] &cYou''re not allowed to fly in wilderness.
-        &7Bypass permission: &blands.bypass.wilderness.fly'
+      warning: '&7You''re not allowed to fly here. Flight mode will be disabled in a few seconds. Bypass permission:&b {permission}'
       counter: '#t#&cFly-Mode disabling{newline}&cin &e{sec} &cSecond(s)'
+      disabled: '&cYour fly mode was disabled. &7You''re not allowed to fly here.'
+      disallowed: '&cYou''re not allowed to fly in this land. &7Contact the land owner. Bypass permission: &blands.bypass.fly'
+      disallowed-wilderness: '&cYou''re not allowed to fly in wilderness. &7Bypass permission: &blands.bypass.wilderness.fly'
     lands:
       enter: '#t#&a&l{land}{newline}{title}'
       leave: '#t#&2&lWilderness{newline}&7Feel the wild.'
@@ -182,294 +163,170 @@ message:
       enter: '#t#&e&l{land}{newline}{title}'
       leave: '#t#&2&lWilderness{newline}&7Feel the wild.'
     teleport:
-      already: '&8[&aLands&8] &cCan''t start a second teleportation, because there''s
-        already a teleportation in progress. &7Please wait until it''s done.'
-      started: '&8[&aLands&8] &7Teleportation process started. Teleporting in&b {sec}
-        &7seconds. Please don''t move.'
-      cancelled: '&8[&aLands&8] &cYour teleportation has been cancelled. &7Please
-        don''t move while you''re waiting&b {sec} &7seconds for teleportation.'
+      already: '&cYou can''t start a second teleportation, because there''s already a teleportation in progress. &7Please wait until it''s done.'
+      started: '&7Teleportation process started. Teleporting in&b {sec} &7seconds. Please don''t move.'
+      cancelled: '&cYour teleportation has been cancelled. &7Please don''t move while you''re waiting&b {sec} &7seconds for teleportation.'
       chunk: '#t#&9&lTeleported{newline}&7X: {x} Z: {z} Cost:&a ${cost}'
   claimblock:
-    dropped: '&8[&aLands&8] &cSome claimblocks lie on the ground. &7There was no space
-      left in your inventory.'
-    success: '&8[&aLands&8] &7You got&b {blocks} &7claimblocks. &7Place them on a
-      chunk to claim it.'
-    not-owner: '&8[&aLands&8] &cYou''re not allowed use this claimblock. &7It''s not
-      yours. This claimblock belongs to&b {owner}&7.'
+    dropped: '&cSome claimblocks lie on the ground. &7There was no space left in your inventory.'
+    success: '&7You got&b {blocks} &7claimblocks. &7Place them on a chunk to claim it.'
+    not-owner: '&cYou''re not allowed use this claimblock. &7It''s not yours. This claimblock belongs to&b {owner}&7.'
   blacklist:
-    untrusted: '&8[&aLands&8] &cYou''re not allowed to use this command here. &7You''re
-      not trusted in this land.'
-    general: '&8[&aLands&8] &cYou''re not allowed to use this command in claimed lands.'
+    untrusted: '&cYou''re not allowed to use this command here. &7You''re not trusted in this land.'
+    general: '&cYou''re not allowed to use this command in claimed lands.'
   autoAction:
-    stopped: '&8[&aLands&8] &cStopped your current auto action. &7Reached max rounds.
-      Name:&b {name}'
-    started: '&8[&aLands&8] &7Successful started auto action. Name:&b {name}'
-    removed: '&8[&aLands&8] &7Successful stopped auto action. &7Name:&b {name}'
+    stopped: '&cStopped your current auto action. &7Reached max rounds. Name:&b {name}'
+    started: '&7Successful started auto action. Name:&b {name}'
+    removed: '&7Successful stopped auto action. &7Name:&b {name}'
   gui:
     chats:
       title: '#t#&e&lEnter new{newline}&e&lTitle in Chat'
       title-done: '#t#&a&lSuccessful set{newline}&7&lLand Title.'
       name: '#t#&e&lEnter new{newline}&e&lName in Chat'
       name-done: '#t#&2&lSuccessful set{newline}&7&lLand Name'
-      cancel: '&8[&aLands&8] &7Type &bcancel &7in chat to cancel this action.'
+      cancel: '&7Type &bcancel &7in chat to cancel this action.'
       cancelled: '#t#&c&lCancelled{newline}&c&lChat Action'
 command:
   general:
-    land-not-exist: '&8[&aLands&8] &cThe land&e {land} &cdoesn''t exist. &7There''s
-      no land with the name&b {land} &7in this world.'
-    land-not-member: '&8[&aLands&8] &cYou''re not trusted in land&e {land}&c. &7Use
-      &8/&aLands menu &7to see the lands you''re a member of.'
-    land-no-action: '&8[&aLands&8] &cYou''re not member of a land where you''re allowed
-      to do this. &7Use &8/&aLand create &7to create one.'
-    name-exists: '&8[&aLands&8] &cThis name is already taken by another land. &7You
-      need to choose a different one.'
-    money-cost-bank: '&8[&aLands&8] &cYou don''t have enough to pay the cost. &7You
-      need&b ${cost}&7. If banks are enabled, you need to deposit money into your
-      land bank: &8/&aLands deposit'
-    money-cost: '&8[&aLands&8] &cYou don''t have enough to pay the cost. &7You need&b
-      ${cost}&7.'
-    lands-max: '&8[&aLands&8] &cYou can''t be part of any more lands. &7You reached
-      your maximum of&b {max} &7lands. Permission:&b lands.lands.NUMBER'
-    name-numbers: '&8[&aLands&8] &cYou can''t use numbers in your lands name. &7Please
-      use only latin letters.'
-    name-accent: '&8[&aLands&8] &cYou can''t use accents in your lands name. &7Please
-      use only latin letters.'
-    name-length: '&8[&aLands&8] &cThe name is too long. &7Max length is&b {max} &7characters.'
-    action-cooldown: '&8[&aLands&8] &cYou can''t do this now. &7You need to wait&b
-      {time} &7minutes.'
-    land-none: '&8[&aLands&8] &cSeems like you''re not member of a land in this world.
-      &7Use &8/&aLands create &7to create one.'
-    land-no-own: '&8[&aLands&8] &cYou don''t own a land in this world. &7Use &8/&aLands
-      create &7to create one.'
-    world-invalid: '&8[&aLands&8] &cYou can''t do this in your current world. &7You
-      need to go to another world.'
-    wilderness: '&8[&aLands&8] &cThis chunk is wilderness. &7You need to go to a claimed
-      chunk. &7You can use &8/&aLands menu &7to see your lands.'
-    player-not-exist: '&8[&aLands&8] &cThere''s no player with the name&e {player}&c.
-      &7Please check your input.'
-    player-not-online: '&8[&aLands&8] &cThere''s currently no player with the name&e
-      {player} &conline. &7Please check your input.'
-    role-weight: '&8[&aLands&8] &cYou can''t edit this role. &7It''s a higher or equal
-      role &8(&7Role:&e {role}&8) &7than yours &8(&7Land:&e {land}&8)&7.'
-    player-self: '&8[&aLands&8] &cYou can''t do that with yourself. &7You''re funny.
-      :)'
-    cooldown: '&8[&aLands&8] &cYou can''t do this again. &7You need to wait another&b
-      {time} &7minutes.'
-    chunk-is-claimed: '&8[&aLands&8] &cYou can''t claim this chunk. &7It already belongs
-      to land&b {land}&7.'
-    banks-disabled: '&8[&aLands&8] &7Banks were disabled by a administrator. &7Contact
-      one for help. Setting: taxes.banks'
-    land-not-trusted: '&8[&aLands&8] &cYou can''t do that. &7Player&b {player} &7isn''t
-      part of this land &8(&7Land:&e {land}&8)&7. You need to trust him first using
-      &8/&aLands trust&7.'
-    land-max-members: '&8[&aLands&8] &cCouldn''t trust you in land&e {land}&c. &7This
-      land reached their maximum of&b {members} &7members. The land needs more lands.members.NUMBER
-      permission.'
+    land-not-exist: '&cThe land&e {land} &cdoesn''t exist. &7There''s no land with the name&b {land} &7in this world.'
+    land-not-member: '&cYou''re not trusted in land&e {land}&c. &7Use &8/&aLands menu &7to see the lands you''re a member of.'
+    land-no-action: '&cYou''re not member of a land where you''re allowed to do this. &7Use &8/&aLand create &7to create one.'
+    name-exists: '&cThis name is already taken by another land. &7You need to choose a different one.'
+    money-cost-bank: '&cYou don''t have enough to pay the cost. &7You need&b ${cost}&7. You need to deposit money into your land bank: &8/&aLands deposit {cost}'
+    money-cost: '&cYou don''t have enough to pay the cost. &7You need&b ${cost}&7.'
+    lands-max: '&cYou can''t be part of any more lands. &7You reached your maximum of&b {max} &7lands. Permission:&b lands.lands.NUMBER'
+    name-numbers: '&cYou can''t use numbers in your lands name. &7Please use only latin letters.'
+    name-accent: '&cYou can''t use accents in your lands name. &7Please use only latin letters.'
+    name-length: '&cThe name is too long. &7Max length is&b {max} &7characters.'
+    action-cooldown: '&cYou can''t do this now. &7You need to wait&b {time} &7minutes.'
+    land-none: '&cSeems like you''re not member of a land in this world. &7Use &8/&aLands create &7to create one.'
+    land-no-own: '&cYou don''t own a land in this world. &7Use &8/&aLands create &7to create one.'
+    world-invalid: '&cYou can''t do this in your current world. &7You need to go to another world.'
+    wilderness: '&cThis chunk is wilderness. &7You need to go to a claimed chunk. &7You can use &8/&aLands menu &7to see your lands.'
+    player-not-exist: '&cThere''s no player with the name&e {player}&c. &7Please check your input.'
+    player-not-online: '&cThere''s currently no player with the name&e {player} &conline. &7Please check your input.'
+    role-weight: '&cYou can''t edit this role. &7It''s a higher or equal role &8(&7Role:&e {role}&8) &7than yours &8(&7Land:&e {land}&8)&7.'
+    player-self: '&cYou can''t do that with yourself. &7You''re funny. :)'
+    cooldown: '&cYou can''t do this again. &7You need to wait another&b {time} &7minutes.'
+    chunk-is-claimed: '&cYou can''t claim this chunk. &7It already belongs to land&b {land}&7.'
+    banks-disabled: '&7Banks were disabled by a administrator. &7Contact one for help. Setting: taxes.banks'
+    land-not-trusted: '&cYou can''t do that. &7Player&b {player} &7isn''t part of this land &8(&7Land:&e {land}&8)&7. You need to trust him first using &8/&aLands trust&7.'
+    land-max-members: '&cCouldn''t trust you in land&e {land}&c. &7This land reached their maximum of&b {members} &7members. The land needs more lands.members.NUMBER permission.'
   help:
-    help: '&8[&aLands&8] &7Use &8/&aLand help &7for help.'
-    cmd-not-exist: '&8[&aLands&8] &cThis subcommand doesn''t exist. &7Command&b {command}
-      &7wasn''t found.'
-    page-not-exist: '&8[&aLands&8] &cThe page&e {page} &cdoesn''t exist. &7Typo?'
+    help: '&7Use &8/&aLand help &7for help.'
+    cmd-not-exist: '&cThis subcommand doesn''t exist. &7Command&b {command} &7wasn''t found.'
+    page-not-exist: '&cThe page&e {page} &cdoesn''t exist. &7Typo?'
   create:
-    land-other: '&8[&aLands&8] &cYou''re not allowed to have your own land and be
-      member of another land. &7You need to leave land&b {land} &7first. A administrator
-      can disable this in config.'
-    max-own: '&8[&aLands&8] &cYou can''t create any more lands. &7You reached your
-      maximum of&b {max} &7own lands. Permission:&b lands.ownlands.NUMBER'
-    success: '&8[&aLands&8] &7Successfully created land&b {land} &7for&b {cost}&7.
-      You can claim chunks by executing &8/&aLands claim&7.'
-    broadcast: '&8[&aLands&8] &7Land&b {land} &7was created by&b {player}&7.'
+    land-other: '&cYou''re not allowed to have your own land and be member of another land. &7You need to leave land&b {land} &7first. A administrator can disable this in config.'
+    max-own: '&cYou can''t create any more lands. &7You reached your maximum of&b {max} &7own lands. Permission:&b lands.ownlands.NUMBER'
+    success: '&7Successfully created land&b {land} &7for&b {cost}&7. You can claim chunks by executing &8/&aLands claim&7.'
+    broadcast: '&7Land&b {land} &7was created by&b {player}&7.'
   rename:
-    success: '&8[&aLands&8] &7Successfully set the new name&b {name} &7for this land
-      &8(&7Land:&e {land}&8)&7. You paid&b ${cost}&7.'
+    success: '&7Successfully set the new name&b {name} &7for this land &8(&7Land:&e {land}&8)&7. You paid&b ${cost}&7.'
   edit:
-    success: '&8[&aLands&8] &7You entered edit mode for this land &8(&7Land:&e {land}&8)&7.
-      Next actions, like &8/&aLands claim &7or &8/&aLands trust&7, will be executed
-      for this land.'
+    success: '&7You entered edit mode for this land &8(&7Land:&e {land}&8)&7. Next actions, like &8/&aLands claim &7or &8/&aLands trust&7, will be executed for this land.'
   selection:
-    disabled-config: '&8[&aLands&8] &cThis feature was disabled in config by an administrator.
-      &7You need to enable setting &bland.selection.enabled&7.'
-    max: '&8[&aLands&8] &cYour selection has too many chunks in it. &7Size:&b {current}
-      &7Your allowed size:&b {max} &7Permission: &blands.selection.NUMBER'
+    disabled-config: '&cThis feature was disabled in config by an administrator. &7You need to enable setting &bland.selection.enabled&7.'
+    max: '&cYour selection has too many chunks in it. &7Size:&b {current} &7Your allowed size:&b {max} &7Permission: &blands.selection.NUMBER'
     pos:
-      one: '#t#&5&lSelection{newline}&b&lPos 1 &7&lset'
-      two: '#t#&5&lSelection{newline}&b&lPos 2 &7&lset'
-      cancelled: '&cYou can''t set a selection here. &7This chunk belongs to another
-        management plugin. Name:&b {plugin}'
-    enableds: '&8[&aLands&8] &7You enabled selection mode. Use &5LEFT &7click on a
-      block to set position one. With &5RIGHT &7click you set position two. After
-      that you can apply the selection to these commands: &bClaim&7, &bTrust&7, &bUntrust&7,
-      &bSetRole&7, &bUnclaim&7, &bLeave'
+      cancelled: '&cYou can''t set a selection here. &7This chunk belongs to a other management plugin. Name:&b {plugin}'
+      one: '#t#&5&lSelection{newline}&b&lPos 1 &8-> &7Set'
+      two: '#t#&5&lSelection{newline}&b&lPos 2 &8-> &7Set'
+    enableds: '&7You enabled selection mode. Use &5LEFT &7click on a block to set position one. With &5RIGHT &7click you set position two. After that you can apply the selection to these commands: &bClaim&7, &bTrust&7, &bUntrust&7, &bSetRole&7, &bUnclaim&7, &bLeave'
     disabled: '#t#&5&lSelection{newline}&c&lMode disabled'
-    world: '&8[&aLands&8] &cBoth positions must be in the same world. &7Please set
-      position one and position two in the same world.'
+    world: '&cBoth positions must be in the same world. &7Please set position one and position two in the same world.'
   claim:
-    auto-create: '&8[&aLands&8] &7Trying to auto create a land for you, because you
-      have none in this world. You can change the name of it by executing &8/&aLands
-      rename&7.'
-    auto-create-fail: '&8[&aLands&8] &cFailed to auto create a land for you. &7Please
-      read the messages above and contact someone for help.'
-    near-other: '&8[&aLands&8] &cThis is too near to land&e {land}&c. &7You need to
-      move further away from this land. Minimum chunk distance:&b {distance}&7.'
-    far-land: '&8[&aLands&8] &cYou can''t claim this chunk. &7It needs to be connected
-      to your land &8(&7Land:&e {land}&8)&7.'
-    success: '&8[&aLands&8] &7Successful claimed this chunk &8(&7Land:&e {land} &7X:&e
-      {x} &7Z:&e {z}&8) &7for&b {cost}&7. Next claim will cost&b {next}&7.'
-    max-chunk: '&8[&aLands&8] &cYou can''t claim&e {chunks} &cmore chunks for this
-      land. &7The maximum for land&b {land} &7is&b {max} &7chunks. Permission: &2lands.chunks.NUMBER
-      &8| &7If chunks-addition enabled: &2lands.chunks.support.NUMBER &7(for land
-      members, not owners)'
-    world: '&8[&aLands&8] &cYou can''t claim for this land in this world. &7Land&b
-      {land} &7can only have claims in world&b {world}&7.'
-    selection: '&8[&aLands&8] &7You successfully claimed&b {chunks} &7chunks for this
-      land &8(&7Land:&e {land}&8)&7. You paid&b ${cost}&7. Please note that only chunks
-      which aren''t already claimed got claimed.'
+    auto-create: '&7Trying to auto create a land for you, because you have none in this world. You can change the name of it by executing &8/&aLands rename&7.'
+    auto-create-fail: '&cFailed to auto create a land for you. &7Please read the messages above and contact someone for help.'
+    near-other: '&cThis is too near to land&e {land}&c. &7You need to move further away from this land. Minimum chunk distance:&b {distance}&7.'
+    far-land: '&cYou can''t claim this chunk(s). &7Your claim needs to be connected to your land &8(&7Land:&e {land}&8)&7.'
+    success: '&7Successful claimed this chunk &8(&7Land:&e {land} &7X:&e {x} &7Z:&e {z}&8) &7for&b {cost}&7. Next claim will cost&b {next}&7.'
+    max-chunk: '&cYou can''t claim&e {chunks} &cmore chunks for this land. &7The maximum for land&b {land} &7is&b {max} &7chunks. Permission: &2lands.chunks.NUMBER &8| &7If chunks-addition enabled: &2lands.chunks.support.NUMBER &7(for land members, not owners)'
+    world: '&cYou can''t claim for this land in this world. &7Land&b {land} &7can only have claims in world&b {world}&7.'
+    selection: '&7You successfully claimed&b {chunks} &7chunks for this land &8(&7Land:&e {land}&8)&7. You paid&b ${cost}&7. Please note that only chunks which aren''t already claimed got claimed.'
   leave:
-    land-owner: '&8[&aLands&8] &cYou can''t leave this land. &7As the owner of the
-      land you need to delete it. Use &8/&aLands delete&7.'
-    land-success: '&8[&aLands&8] &7Successfully left land&b {land}&7. You don''t have
-      access to this land anymore.'
-    chunk-success: '&8[&aLands&8] &7Successfully left this chunk. You don''t have
-      access to this chunk anymore.'
-    selection: '&8[&aLands&8] &7You successfully left&b {chunks} &7from your selection.
-      The chunks, in which you were the owner, got deleted.'
+    land-owner: '&cYou can''t leave this land. &7As the owner of the land you need to delete it. Use &8/&aLands delete&7.'
+    land-success: '&7Successfully left land&b {land}&7. You don''t have access to this land anymore.'
+    chunk-success: '&7Successfully left this chunk. You don''t have access to this chunk anymore.'
+    selection: '&7You successfully left&b {chunks} &7from your selection. The chunks, in which you were the owner, got deleted.'
   unclaim:
-    success: '&8[&aLands&8] &7Successfully unclaimed this chunk &8(&7X:&e {x} &7Z:&e
-      {z}&8)&7. You got&b ${back} &7back.'
-    selection: '&8[&aLands&8] &7You successfully unclaimed this selection. Please
-      note that only chunks got unclaimed in which you were the owner.'
+    success: '&7Successfully unclaimed this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7. You got&b ${back} &7back.'
+    selection: '&7You successfully unclaimed this selection. Please note that only chunks got unclaimed in which you were the owner.'
   delete:
-    confirm: '&8[&aLands&8] &cYou need to confirm this action. &7Use &8/&aLand delete
-      {land} confirm&7.'
-    success: '&8[&aLands&8] &7Successfully deleted this land &8(&7Land:&e {land}&8)&7.'
-    broadcast: '&8[&aLands&8] &7The land&b {land} &7was deleted by their owner&b {player}&7.'
+    confirm: '&cYou need to confirm this action. &7Use &8/&aLand delete {land} confirm&7.'
+    success: '&7Successfully deleted this land &8(&7Land:&e {land}&8)&7.'
+    broadcast: '&7The land&b {land} &7was deleted by their owner&b {player}&7.'
   trust:
-    own-land: '&8[&aLands&8] &cThis player isn''t allowed to have their own land and
-      be part of another land. &7They need to leave it first.'
-    land-already: '&8[&aLands&8] &cThis player is already trusted in this land &8(&7Land:&e
-      {land}&8)&7.'
-    chunk-already: '&8[&aLands&8] &cThis player is already trusted in this chunk &8(&7X:&e
-      {x} &7Z:&e {z}&8)&7.'
-    invited: '&8[&aLands&8] &cThis player is already invited. &7Please wait while
-      they accept it &8(&7Land:&e {land}&8)&7.'
-    land-target: '&8[&aLands&8] &7Player&b {player} &7invited you to their land&b
-      {land}&7. Use &8/&aLand accept {land} &7to accept their invite.'
-    lands-max: '&8[&aLands&8] &7Player&b {player} &7has already reached the maximum
-      amount of lands. An administrator can give them permission to be part of more
-      lands.'
-    land-fail: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin land&e {land}&c.
-      &7The owner of the land reached their maximum of&b {members} &7members in their
-      chunks.'
-    chunk-target: '&8[&aLands&8] &7Player&b {player} &7invited you to their chunk
-      &8(&7X:&e {x} &7Z:&e {z}) &7Use &8/&aLands accept {land} &7to accept their invite.'
-    chunk-success: '&8[&aLands&8] &7Successfully invited player&b {player} &7to this
-      chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    land-success: '&8[&aLands&8] &7Successfully invited player&b {player} &7to the
-      whole land &8(&7Land:&e {land}&8)&7. They just need to accept the invite.'
-    max-members: '&8[&aLands&8] &cCouldn''t trust player&e {player} &cin this land.
-      &7The land reached maximum of&b {members} &7members. It needs more lands.members.NUMBER
-      permission &8(&e{&7Land: land}&8)&7.'
-    selection-target: '&8[&aLands&8] &7Player&b {player} &7invited you to&b {chunks}
-      &7chunks of land&b {land}&7. Use &8/&aLands accept {land} &7to accept their
-      invite.'
-    selection: '&8[&aLands&8] &7You successfully invited player&b {player} &7to this
-      selection. &8(&7Land:&e {land}&8)&7. Please note that they will get only trusted
-      in chunks in which you have permission to trust players. This action only does
-      changes to your selected land (/Lands edit): {land}'
+    own-land: '&cThis player isn''t allowed to have their own land and be part of another land. &7They need to leave it first.'
+    land-already: '&cThis player is already trusted in this land &8(&7Land:&e {land}&8)&7.'
+    chunk-already: '&cThis player is already trusted in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    invited: '&cThis player is already invited. &7Please wait while they accept it &8(&7Land:&e {land}&8)&7.'
+    land-target: '&7Player&b {player} &7invited you to their land&b {land}&7. Use &8/&aLand accept {land} &7to accept their invite.'
+    lands-max: '&7Player&b {player} &7has already reached the maximum amount of lands. An administrator can give them permission to be part of more lands.'
+    land-fail: '&cCouldn''t trust player&e {player} &cin land&e {land}&c. &7The owner of the land reached their maximum of&b {members} &7members in their chunks.'
+    chunk-target: '&7Player&b {player} &7invited you to their chunk &8(&7X:&e {x} &7Z:&e {z}) &7Use &8/&aLands accept {land} &7to accept their invite.'
+    chunk-success: '&7Successfully invited player&b {player} &7to this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-success: '&7Successfully invited player&b {player} &7to the whole land &8(&7Land:&e {land}&8)&7. They just need to accept the invite.'
+    max-members: '&cCouldn''t trust player&e {player} &cin this land. &7The land reached maximum of&b {members} &7members. It needs more lands.members.NUMBER permission &8(&e{&7Land: land}&8)&7.'
+    selection-target: '&7Player&b {player} &7invited you to&b {chunks} &7chunks of land&b {land}&7. Use &8/&aLands accept {land} &7to accept their invite.'
+    selection: '&7You successfully invited player&b {player} &7to this selection. &8(&7Land:&e {land}&8)&7. Please note that they will get only trusted in chunks in which you have permission to trust players. This action only does changes to your selected land (/Lands edit): {land}'
   untrust:
-    land-already: '&8[&aLands&8] &cThis player is already untrusted in this land &8(&7Land:&e
-      {land}&8)&7.'
-    chunk-already: '&8[&aLands&8] &cThis player is already untrusted in this chunk
-      &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    invite-removed: '&8[&aLands&8] &7Successfully revoked invite for this player.
-      &8(&7Land:&e {land}&8)&7.'
-    chunk-success: '&8[&aLands&8] &7Successfully untrusted player&b {player} &7in
-      this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    land-success: '&8[&aLands&8] &7Successfully untrusted player&b {player} &7in this
-      land &8(&7Land:&e {land}&8)&7.'
-    selection: '&8[&aLands&8] &7You successfully untrusted player&b {player} &7from
-      this selection &8(&7Land:&e {land}&8)&7. Please note that they only got untrusted
-      at chunks in which you have the permission to untrust players. This action only
-      does changes to your selected land (/Lands edit): {land}'
+    land-already: '&cThis player is already untrusted in this land &8(&7Land:&e {land}&8)&7.'
+    chunk-already: '&cThis player is already untrusted in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    invite-removed: '&7Successfully revoked invite for this player. &8(&7Land:&e {land}&8)&7.'
+    chunk-success: '&7Successfully untrusted player&b {player} &7in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-success: '&7Successfully untrusted player&b {player} &7in this land &8(&7Land:&e {land}&8)&7.'
+    selection: '&7You successfully untrusted player&b {player} &7from this selection &8(&7Land:&e {land}&8)&7. Please note that they only got untrusted at chunks in which you have the permission to untrust players. This action only does changes to your selected land (/Lands edit): {land}'
   setRole:
-    role-not-exist: '&8[&aLands&8] &cThe role&e {role} &cdoesn''t exist. &7Typo? &8(&aAvailable:
-      &cAdmin&7, &eMember&8)'
-    land-not-trusted: '&8[&aLands&8] &cThe player&e {player} &cisn''t trusted in this
-      land &8(&7Land:&e {land}&8)&7. Please check your input.'
-    chunk-success: '&8[&aLands&8] &7Successfully set role&b {role} &7for player&b
-      {player} &7in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    land-success: '&8[&aLands&8] &7Successfully set role&b {role} &7for player&b {player}
-      &7in the whole land &8(&7Land:&e {land}&8)&7.'
-    selection: '&8[&aLands&8] &7You successfully set the role {role} &7for player&b
-      {player} &7in this selection. Please note that the role only applied to chunks
-      where they''re trusted and where you have the permission to set the role &8(&7Land:&e
-      {land}&8)&7. This action only does changes to your selected land (/Lands edit):
-      {land}'
+    role-not-exist: '&cThe role&e {role} &cdoesn''t exist. &7Typo? &8(&aAvailable: &cAdmin&7, &eMember&8)'
+    land-not-trusted: '&cThe player&e {player} &cisn''t trusted in this land &8(&7Land:&e {land}&8)&7. Please check your input.'
+    chunk-success: '&7Successfully set role&b {role} &7for player&b {player} &7in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-success: '&7Successfully set role&b {role} &7for player&b {player} &7in the whole land &8(&7Land:&e {land}&8)&7.'
+    selection: '&7You successfully set the role {role} &7for player&b {player} &7in this selection. Please note that the role only applied to chunks where they''re trusted and where you have the permission to set the role &8(&7Land:&e {land}&8)&7. This action only does changes to your selected land (/Lands edit): {land}'
   accept:
-    not-exist: '&8[&aLands&8] &cYou don''t have an invite from land&e {land} &cor
-      it expired. &7Please check your input.'
-    own-land: '&8[&aLands&8] &cYou don''t have permission to own a land and be member
-      of other lands. &7You need to leave your own land first.'
-    max-reached: '&8[&aLands&8] &cYou can''t join any more lands. &7You can only have&b
-      {max} &7lands. Permission: &blands.lands.NUMBER'
-    land-tax-confirm: '&8[&aLands&8] &cThe owner of this land wants you to pay&e {tax}
-      &7to join this land. &7Please confirm this action by executing &8/&aLands accept
-      {land} confirm&7.'
-    chunk-tax-confirm: '&8[&aLands&8] &7The owner of this land wants you to pay&b
-      {tax} &7to join this chunk. &7Please confirm your action with &8/&aLand accept
-      {land} confirm&7.'
-    land-success: '&8[&aLands&8] &7Successfully accepted invite from land&b {land}&7.
-      You now have access to the whole land.'
-    chunk-success: '&8[&aLands&8] &7Successfully accepted invite from land&b {land}
-      &7for chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    chunk-broadcast: '&8[&aLands&8] &b{land} &8| &7Player&b {player} &7is now member
-      of a chunk in our land &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    land-broadcast: '&8[&aLands&8] &b{land} &8| &7Player&b {player} &7joined our land&7.'
-    notification: '&8[&aLands&8] &7You still have&b {invites} &7invites from other
-      lands. Use &8/&aLand invites &7to get a list of them.'
-    selection: '&8[&aLands&8] You successfully joined&b {chunks} &7chunks of land&b
-      {land}&7.'
+    not-exist: '&cYou don''t have an invite from land&e {land} &cor it expired. &7Please check your input.'
+    own-land: '&cYou don''t have permission to own a land and be member of other lands. &7You need to leave your own land first.'
+    max-reached: '&cYou can''t join any more lands. &7You can only have&b {max} &7lands. Permission: &blands.lands.NUMBER'
+    land-tax-confirm: '&cThe owner of this land wants you to pay&e {tax} &7to join this land. &7Please confirm this action by executing &8/&aLands accept {land} confirm&7.'
+    chunk-tax-confirm: '&7The owner of this land wants you to pay&b {tax} &7to join this chunk. &7Please confirm your action with &8/&aLand accept {land} confirm&7.'
+    land-success: '&7Successfully accepted invite from land&b {land}&7. You now have access to the whole land.'
+    chunk-success: '&7Successfully accepted invite from land&b {land} &7for chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    chunk-broadcast: '&b{land} &8| &7Player&b {player} &7is now member of a chunk in our land &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-broadcast: '&b{land} &8| &7Player&b {player} &7joined our land&7.'
+    notification: '&7You still have&b {invites} &7invites from other lands. Use &8/&aLand invites &7to get a list of them.'
+    selection: 'You successfully joined&b {chunks} &7chunks of land&b {land}&7.'
   deny:
-    not-exist: '&8[&aLands&8] &cYou don''t have an invite from land&e {land} &cor
-      it expired. &7Please check your input.'
-    success: '&8[&aLands&8] &7You successfully denied invite from land&b {land}&7.'
+    not-exist: '&cYou don''t have an invite from land&e {land} &cor it expired. &7Please check your input.'
+    success: '&7You successfully denied invite from land&b {land}&7.'
   teleport:
-    world-not-exist: '&8[&aLands&8] &cThis world doesn''t exist.'
-    chunk-not-exist: '&8[&aLands&8] &cThis chunk doesn''t exist. &7Please check your
-      input.'
-    success: '&8[&aLands&8] &7Successfully teleported to chunk &8(&7X:&e {x} &7Z:&e
-      {z} &7Claimed: {claimed}&8)'
+    world-not-exist: '&cThis world doesn''t exist.'
+    chunk-not-exist: '&cThis chunk doesn''t exist. &7Please check your input.'
+    success: '#t#&9&lTeleported{newline}&7X: {x} Z: {z} Claimed: {claimed}'
   setSpawn:
-    force-land: '&8[&aLands&8] &cYou can only set the land spawn on your land. &7Go
-      to your land&b {land} &7first.'
+    force-land: '&cYou can only set the land spawn on your land. &7Go to your land&b {land} &7first.'
     successs: '#t#&a&lSpawn set{newline}&7&lCost:&b&l ${cost}'
   spawn:
-    not-exist: '&8[&aLands&8] &cThere''s no spawn set for land&e {land}&c. &7Someone
-      needs to set it first by executing &8/&aLand setSpawn&7.'
-    not-allowed: '&8[&aLands&8] &cYou''re not allowed to teleport to the spawn of
-      this land. &7The owner needs to give you permission to do so. Contact him for
-      assistance &8(&7Land:&e {land}&8)&7.'
+    not-exist: '&cThere''s no spawn set for land&e {land}&c. &7Someone  needs to set it first by executing &8/&aLand setSpawn&7.'
+    not-allowed: '&cYou''re not allowed to teleport to the spawn of this land. &7The owner needs to give you permission to do so. Contact him for assistance &8(&7Land:&e {land}&8)&7.'
     successs: '#t#&9&lTeleported{newline}&7&lLand&a {land} &7&lCost:&a ${cost}'
   wild:
-    loc-unsafe: '&8[&aLands&8] &cCouldn''t find a safe location for you. &7Please
-      try again later. If that doesn''t help, contact an administrator.'
-    success: '&8[&aLands&8] &7You were random teleported &8(&7X:&e {x} &7Z:&e {z}&8)&7.
-      You paid&b ${cost}&7.'
+    loc-unsafe: '&cCouldn''t find a safe location for you. &7Please try again later. If that doesn''t help, contact an administrator.'
+    success: '&7You were random teleported &8(&7X:&e {x} &7Z:&e {z}&8)&7. You paid&b ${cost}&7.'
     searchingg: '#t#&9&lSearching{newline}&7&lRandom Location'
   deposit:
-    number: '&8[&aLands&8] &7You need to specify an amount of money. Use &8/&aLand deposit &8<&aAmount&8> &7or &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
-    success: '&8[&aLands&8] &7You successful put&b ${cost} &7in the land bank. &7New balance of bank:&b ${bank} &8(&7Land:&e {land}&8)'
+    number: '&7You need to specify an amount of money. Use &8/&aLand deposit &8<&aAmount&8> &7or &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
+    success: '&7You successful put&b ${cost} &7in the land bank. &7New balance of bank:&b ${bank} &8(&7Land:&e {land}&8)'
   withdraw:
-    number: '&8[&aLands&8] &7You need to specify an amount of money. Use &8/&aLand withdraw &8<&aAmount&8> &7or &8/&aLand withdraw &8<&aLand&8> <&aAmount&8>&7.'
-    balance: '&8[&aLands&8] &7There''s not enough money in the land bank. There''s only&b ${bank} &7in the land bank. Expected:&b ${take} &8(&7Land:&e {land}&8)'
-    success: '&8[&aLands&8] &7You successfully took&b ${cost} &7out of the land bank. &7New balance of bank:&b ${bank} &8(&7Land:&e {land}&8)'
-  balance: '&8[&aLands&8] &7The balance is&b ${balance} &8(&7Land:&e {land}&8)&7.'
+    number: '&7You need to specify an amount of money. Use &8/&aLand withdraw &8<&aAmount&8> &7or &8/&aLand withdraw &8<&aLand&8> <&aAmount&8>&7.'
+    balance: '&7There''s not enough money in the land bank. There''s only&b ${bank} &7in the land bank. Expected:&b ${take} &8(&7Land:&e {land}&8)'
+    success: '&7You successfully took&b ${cost} &7out of the land bank. &7New balance of bank:&b ${bank} &8(&7Land:&e {land}&8)'
+  balance: '&7The balance is&b ${balance} &8(&7Land:&e {land}&8)&7.'
   menu:
-    no-permission-other: '&8[&aLands&8] &cYou''re not allowed to open other players GUIs. &7You need permission&e lands.command.menu.others &7to do that.'
-    notExist: '&8[&aLands&8] &cThis player currently doesn''t have any data.'
+    no-permission-other: '&cYou''re not allowed to open other players GUIs. &7You need permission&e lands.command.menu.others &7to do that.'
+    notExist: '&cThis player currently doesn''t have any data.'
   chat:
-    activated: '&8[&aLands&8] &7Activated land chat. Send a message in public chat to chat with your land. &5NOTE: &7Lands will take your &8/&aLands edit &7land as the chat land.'
-    deactivated: '&8[&aLands&8] &7Successfully deactivated land chat.'
+    activated: '&7Activated land chat. Send a message in public chat to chat with your land. &5NOTE: &7Lands will take your &8/&aLands edit &7land as the chat land.'
+    deactivated: '&7Successfully deactivated land chat.'
     formats: '&a{land} &8| {role} &7{player} &8»&f {message}'
 list:
   view:
