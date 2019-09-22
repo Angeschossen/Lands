@@ -102,19 +102,29 @@ gui:
     size: 27
     s:
       lands:
-        name: '&bLands'
+        name: '&aLands'
         lore:
-          - '&7View all your'
-          - '&7lands.'
+          - '&7View all your lands.'
+          - ' '
+          - '&8- &7This includes your own'
+          - '  &7lands and lands, in which'
+          - '  &7you''re just a member.'
         material: GRASS_BLOCK
-        slot: 16
+        slot: 11
+      all-lands:
+        name: '&9All Lands'
+        lore:
+          - '&7View all created lands'
+          - '&7on this server.'
+        material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0='
+        slot: 13
       invites:
         name: '&bInvites'
         lore:
           - '&7View all your'
           - '&7received invites.'
         material: WRITABLE_BOOK
-        slot: 12
+        slot: 15
       close:
         name: '&cClose'
         lore:
@@ -132,27 +142,27 @@ gui:
         to: 27
     f:
       limitation:
-        name: '&bYour Limitations'
+        name: '&cYour Limitations'
         lore:
           - '&7You can..'
           - ' '
           - '&7Create&a {ownlands} &7lands.'
-          - '&7Permission:&9 lands.ownlands.NUMBER'
+          - '&7Permission: lands.ownlands.NUMBER'
           - ' '
           - '&7Join&a {lands} &7lands.'
-          - '&7Permission:&9 lands.lands.NUMBER'
+          - '&7Permission: lands.lands.NUMBER'
           - ' '
           - '&7Claim&a {chunks} &7chunks per land.'
-          - '&7Permission:&9 lands.chunks.NUMBER'
+          - '&7Permission: lands.chunks.NUMBER'
           - ' '
           - '&7Have&a {members} &7members per land.'
-          - '&7Permission:&9 lands.members.NUMBER'
+          - '&7Permission: lands.members.NUMBER'
           - ' '
           - '&7Support lands, in which you''re trusted,'
           - '&7with &a{support-chunks} &7chunks per land.'
-          - '&7Permission:&9 lands.chunks.support.NUMBER'
+          - '&7Permission: lands.chunks.support.NUMBER'
         material: PAPER
-        slot: 14
+        slot: 17
   lands:
     title: '&8Your Lands'
     size: 27
@@ -189,24 +199,24 @@ gui:
           - '&7World:&e {world}'
           - '&7Size:&e {chunks}'
           - ' '
-          - '&8- &7Use right click to'
-          - '  &7view some general'
-          - '  &7information about this'
-          - '  &7land.'
+          - '&9RIGHT CLICK'
+          - '&7View some general'
+          - '&7information about this'
+          - '&7land.'
         material: PODZOL
         from: 10
         to: 18
       ownLand:
-        name: '&7Land&b {land}'
+        name: '&7Land&a {land}'
         lore:
           - ' '
           - '&7World:&e {world}'
           - '&7Size:&e {chunks}'
           - ' '
-          - '&8- &7Use right click to'
-          - '  &7view some general'
-          - '  &7information about this'
-          - '  &7land.'
+          - '&9RIGHT CLICK'
+          - '&7View some general'
+          - '&7information about this'
+          - '&7land.'
         material: GRASS_BLOCK
         from: 10
         to: 18
@@ -299,6 +309,13 @@ gui:
         from: 1
         to: 27
     f:
+      inbox:
+        name: '&5Inbox &8(&a{amount}&8)'
+        lore:
+          - ' '
+          - '{inbox}'
+        material: 'PAPER'
+        slot: 21
       back:
         name: '&cBack'
         lore:
@@ -1764,7 +1781,7 @@ gui:
         name: '&cBack'
         lore:
           - '&7Go back to'
-          - '&eLands&7.'
+          - '&e{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 37
       close:
@@ -1898,6 +1915,9 @@ gui:
           - ' '
           - '&7The land owner needs'
           - '&7to give you permission.'
+          - ' '
+          - '&8- &7Bypass permission:'
+          - '  &e{permission}'
         material: RED_STAINED_GLASS_PANE
   settings_various:
     title: Various Settings
@@ -1943,17 +1963,37 @@ gui:
 
   lands-list:
     title: '&8All Lands'
-    size: 45
+    size: 54
     s:
       close:
         name: '&cClose'
         lore:
-          - '&7Close this menu. You can'
-          - '&7open it again by executing'
-          - '&8/&aLands list&7.'
+          - '&7Close this menu.'
+          - ' '
+          - '&8- &7You can open it again by'
+          - '  &7executing &8/&aLands list&7.'
         material: RED_STAINED_GLASS_PANE
-        slot: 37
+        slot: 46
     f:
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 46
+      toggle-allowed:
+        name: '&bShow only allowed Lands?'
+        lore:
+          - ' '
+          - '&8- &7Show only lands where you''re'
+          - '  &7allowed to teleport to the land spawn?'
+          - ' '
+          - '&7Show only allowed: {only-allowed}'
+          - ' '
+          - '&8- &7Click here to toggle this setting.'
+        material: 'COMMAND_BLOCK'
+        slot: 50
       page_previous:
         name: '&9Previous Page'
         lore:
@@ -1961,7 +2001,7 @@ gui:
           - ' '
           - '&8- &7Current:&b {current}'
         material: ARROW
-        slot: 39
+        slot: 48
       page_next:
         name: '&aNext Page'
         lore:
@@ -1969,21 +2009,24 @@ gui:
           - ' '
           - '&8- &7Current:&b {current}'
         material: ARROW
-        slot: 43
+        slot: 52
     l:
       land:
-        name: '&8Land &7->&b {land}'
+        name: '&8Land &7->&a {land}'
         lore:
           - '&bLEFT CLICK'
+          - '&7Teleport to the land spawn'
+          - '&7of this land.'
+          - ' '
+          - '&9RIGHT CLICK'
           - '&7Open the land information'
           - '&7menu of this land.'
           - ' '
-          - '&9RIGHT CLICK'
-          - '&7Teleport to the land spawn'
-          - '&7of this land.'
+          - '&7Title:'
+          - '{title}'
         material: PLAYER_HEAD
         from: 10
-        to: 36
+        to: 45
       no-land:
         name: '&8Land &7-> &cNone'
         lore:
@@ -1993,19 +2036,19 @@ gui:
           - '  &8/&aLands create'
         material: PAPER
         from: 10
-        to: 36
+        to: 45
     a:
-      failure_untrusted:
-        name: '&4Denied: &bChunk'
+      failure_private:
+        name: '&4Denied: &bPrivate Spawn'
         lore:
           - '&cYou''re not allowed to'
-          - '&copen the menu for this chunk.'
+          - '&cteleport to their land spawn.'
           - ' '
-          - '&8- &7You need to be trusted'
-          - '  &7in this chunk.'
-          - '&8- &7Contact the land owner'
-          - '  &7for help.'
-        material: GRASS_BLOCK
+          - '&8- &7They need to allow you'
+          - '  &7to teleport to their land spawn.'
+          - '&8- &7They can do that in the'
+          - '  &7land role settings menu of their land.'
+        material: PLAYER_HEAD
       failure_teleport_permission:
         name: '&4Denied: &bPermission'
         lore:
@@ -2013,10 +2056,10 @@ gui:
           - '&cteleport to this chunk.'
           - ' '
           - '&8- &7You need the permission'
-          - '  &elands.gui.chunk.teleport&7.'
+          - '  &elands.gui.lands-list.teleport&7.'
           - '&8- &7Contact an administrator'
           - '  &7for help.'
-        material: GRASS_BLOCK
+        material: PLAYER_HEAD
       failure_teleport_cooldown:
         name: '&4Denied: &bCooldown'
         lore:
@@ -2026,14 +2069,28 @@ gui:
           - ' '
           - '&8- &7Your cooldown is active.'
           - '  &7You need to wait&e {time}&7.'
-        material: GRASS_BLOCK
-      failure_teleport_money:
-        name: '&4Denied: &bMoney'
+          - ' '
+          - '&8- &7Bypass permission:'
+          - '  &7lands.bypass.cooldown.spawn'
+        material: PLAYER_HEAD
+      failure_no-spawn:
+        name: '&4Failure: &bNo Spawn set'
+        lore:
+          - '&cThis land has no spawn'
+          - '&cset yet. They need to'
+          - '&cset a land spawn first.'
+          - ' '
+          - '&8- &7They need to execute'
+          - '  &8/&aLands setspawn &7for'
+          - '  &7this land.'
+        material: 'PLAYER_HEAD'
+      failure_teleport_costs:
+        name: '&4Denied: &cCosts'
         lore:
           - '&cYou can''t afford to'
-          - '&cteleport to this chunk.'
+          - '&cteleport to this land spawn.'
           - ' '
-          - '&8- &7You need&e {money} $&7.'
+          - '&8- &7You need&e {costs} $&7.'
         material: GRASS_BLOCK
     p:
       placeholder_1:
@@ -2042,6 +2099,6 @@ gui:
         to: 9
       placeholder_2:
         material: GRAY_STAINED_GLASS_PANE
-        from: 37
-        to: 45
+        from: 36
+        to: 54
 

@@ -5,6 +5,7 @@ import me.angeschossen.lands.api.enums.LandRole;
 import me.angeschossen.lands.api.enums.LandsAction;
 import me.angeschossen.lands.api.enums.LandsSetting;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 import javax.annotation.Nullable;
 import java.util.Collection;
@@ -32,7 +33,7 @@ public interface Land {
      * Get name of the land
      * This value never changes
      *
-     * @return Name of land
+     * @return Name of land without color
      */
     @NotNull
     String getName();
@@ -44,6 +45,13 @@ public interface Land {
      */
     @NotNull
     int getID();
+
+    /**
+     * Get land name with color.
+     * @return Land name with color
+     */
+    @NotNull
+    String getColoredName();
 
     /**
      * Get invite by receiver UUID
@@ -344,6 +352,16 @@ public interface Land {
      * @return Result
      */
     boolean canAction(@NotNull UUID playerUUID, @NotNull LandsAction action);
+
+    /**
+     * Check if player can action with checking bypass permission
+     * This will send a message to the player if he can't access the action and has no required bypass permission.
+     * @param player Player
+     * @param action Action
+     * @param sendMessage Send message?
+     * @return Will return false if player has no access and has no bypass permission
+     */
+    boolean canAction(@NotNull Player player, @NotNull LandsAction action, @NotNull boolean sendMessage);
 
     /**
      * Check if player can action.

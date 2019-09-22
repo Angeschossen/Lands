@@ -69,7 +69,7 @@ general:
   # instead of the land from /Lands edit?
   # For /Lands claim you will still need
   # to set the claim land with /Land edit.
-  edit-loc-Land: false
+  edit-loc-land: false
 
   # Reward players by playing on your server.
   # Explanation: https://github.com/Angeschossen/Lands/wiki/Playtime-Rewards
@@ -186,6 +186,9 @@ land:
     delay: 1
     # Display safezone titles? You can set a custom default title in your language config. Titles for already exsiting lands can be edited in the land menu.
     safezone: true
+    # Allow colored land names?
+    # If enabled, players can use color codes in their land name.
+    colored-name: false
 
   # Rename settings
   # Command: /Lands rename
@@ -316,7 +319,7 @@ land:
       # Time in days the owner needs to be offline to flag his land as inactive.
       owner: 80
       # Time in days a land member needs to be offline to automatically untrust him from a protection.
-      member: 80
+      member_2: 80
     # Should an inactive owner be replaced by a land member?
     # NOTE: Admins will be used first for replace.
     # If no land admin is there, Lands will look for a member.
@@ -448,6 +451,9 @@ chunk:
     # Allow monster spawning in the chunk / land?
     monster_spawn:
       default_51: true
+      # Remove all monsters on chunk load?
+      # NOTE: This will only work if monster spawning is disabled in the chunk.
+      remove-on-load: true
     #
     # ANIMAL_SPAWN
     # Allow animal spawning in the chunk / land?
@@ -1047,6 +1053,8 @@ integration:
       # Should Lands deny claiming in WorldGuard regions?
       # NOTE: It's recommended to let this enabled.
       deny-claim: true
+      # Should players be able to random teleport (/Lands wild) to WorldGuard regions?
+      random-teleport: true
     # WorldEdit
     WorldEdit:
       # Disallow WorldEdit use in other players lands, where the player isn't trusted?

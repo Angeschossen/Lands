@@ -4,6 +4,7 @@ import com.sun.istack.internal.NotNull;
 import me.angeschossen.lands.api.enums.LandRole;
 import me.angeschossen.lands.api.enums.LandsAction;
 import me.angeschossen.lands.api.enums.LandsSetting;
+import org.bukkit.entity.Player;
 
 import java.util.Collection;
 import java.util.UUID;
@@ -83,6 +84,16 @@ public interface LandChunk {
      * @param rent Tax value
      */
     void setTax(@NotNull double rent);
+
+    /**
+     * Check if player can action.
+     *
+     * @param player      Player
+     * @param action      Action
+     * @param sendMessage Send no access message?
+     * @return Will return false if place has no access.
+     */
+    boolean canAction(@NotNull Player player, @NotNull LandsAction action, @NotNull boolean sendMessage);
 
     /**
      * Synchronize with land.
