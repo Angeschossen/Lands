@@ -381,11 +381,6 @@ public interface Land {
     ChunkCoordinate getLastClaimed();
 
     /**
-     * Saves to land to the harddrive
-     */
-    void save();
-
-    /**
      * Get trusted player.
      *
      * @param playerUUID UID of player.

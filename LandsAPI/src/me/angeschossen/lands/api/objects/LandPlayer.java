@@ -96,6 +96,13 @@ public interface LandPlayer {
 
 
     /**
+     * Get number of lands (own lands and where the player is trusted)
+     * @return Will return 0, if player has no lands.
+     */
+    @NotNull
+    int getSize();
+
+    /**
      * Get an land the player owns in an world
      *
      * @param worldName Name wof world
