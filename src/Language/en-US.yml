@@ -33,11 +33,11 @@ general:
     visitor: '&5Visitor'
     all: '&dAll'
   top:
-    title: '&7-----<- &5Top 10 Lands &7->-----'
-    land-size: '&c#{pos} &a{land} &7Size:&e {size}'
-    land-money: '&c#{pos} &a{land} &7Balance:&e ${balance}'
+    title: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
+    entry: '&c#{pos} &a{land} &7Balance:&e ${value}'
+    next-page: '&7Next page: &8/&2Lands top {next}'
     last-updated: '&7Last updated: {time}'
-    footer: '&7-----<- &5Top 10 Lands &7->-----'
+    footer: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
   integration:
     dynmap:
       chunk:
@@ -45,16 +45,11 @@ general:
           {x} Z: {z}</span><br/> Owner: <span style="font-weight:bold;">{owner}</span><br/>Admins:
           <span style="font-weight:bold;">{admins}</span><br/>Members: <span style="font-weight:bold;">{members}</span><br/></div>'
   sign:
-    topLand-size:
+    topLand:
       line-1: '&c#&l{place}'
       line-2: '&8<&a {land} &8>'
       line-3: '&7by {owner}'
-      line-4: '&7Size:&2 {size}'
-    topLand-balance:
-      line-1: '&c#&l{place}'
-      line-2: '&8<&a {land} &8>'
-      line-3: '&7by {owner}'
-      line-4: '&7Balance:&2 ${balance}'
+      line-4: '&7Balance:&2 ${value}'
     noLand:
       line-1: ' '
       line-2: '&cNo land'
@@ -79,6 +74,9 @@ general:
   land-inbox:
     land:
       created: '&e{date} &7You created your land&b {land}&7.'
+      upkeep:
+        chunk-deleted: '&e{date} &7The last claimed chunk &8(&7X:&b {x} &7Z:&b {z}&8) &7was deleted, because you couldn''t pay the upkeep costs. Cost:&c ${cost}'
+        warning: '&e{date} &7You couldn''t pay the upkeep cost. Cost:&c {cost}'
     player:
       join: '&e{date} &7Player&b {player} &7joined our land.'
 
@@ -106,7 +104,7 @@ help:
     setSpawn: '&8/&aLands setspawn - &7Set landspawn'
     spawn: '&8/&aLands spawn &8[&aland&8] - &7Teleport to land'
     wild: '&8/&aLands wild &8- &7Teleport to random location'
-    top: '&8/&aLands top &8- &7Shows top 10 lands'
+    top: '&8/&aLands top &8[&apage&8] &8- &7Shows top 10 lands'
     selection: '&8/&aLands selection &8- &7Enable claim selection'
     chat: '&8/&aLands chat &8[&aland&8] <&amessage&8> &8- &7Land chat'
     rename: '&8/&aLands rename &8<&aname&8> - &7Rename land'
@@ -221,6 +219,7 @@ command:
     land-not-trusted: '&cYou can''t do that. &7Player&b {player} &7isn''t part of this land &8(&7Land:&e {land}&8)&7. You need to trust him first using &8/&aLands trust&7.'
     land-max-members: '&cCouldn''t trust you in land&e {land}&c. &7This land reached their maximum of&b {members} &7members. The land needs more lands.members.NUMBER permission.'
     chunk-not-trusted: '&cYou can''t do that here. &7You''re not trusted in this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7. It belongs to land&b {land}&7.'
+    invalid-number: '&cThis is not a valid number. &7The&b {argument} &7argument needs to be a number.'
   help:
     help: '&7Use &8/&aLand help &7for help.'
     cmd-not-exist: '&cThis subcommand doesn''t exist. &7Command&b {command} &7wasn''t found.'

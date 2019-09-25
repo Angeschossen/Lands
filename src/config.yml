@@ -366,11 +366,12 @@ taxes:
     cost-per-chunk: 50.0
     # Should Lands delete the LAST CLAIMED
     # chunk, if the land can't pay the bill?
-    delete-chunk: true
+    delete-chunk: false
     # Exclude land from upkeep, if it was recently created?
     # This will prevent recently created lands getting a chunk deleted, if the land owner / land bank doesn't have enough money (and if delete-chunk enabled).
     # So only lands, which are older than x seconds, will need to pay this.
-    nopay-time: 900
+    # Timeunit is seconds.
+    nopay-time: 7200
 
 
 
@@ -453,7 +454,7 @@ chunk:
       default_51: true
       # Remove all monsters on chunk load?
       # NOTE: This will only work if monster spawning is disabled in the chunk.
-      remove-on-load: true
+      remove-on-load: false
     #
     # ANIMAL_SPAWN
     # Allow animal spawning in the chunk / land?
@@ -858,11 +859,11 @@ top-lands:
   # NOTE: The world name is case-sensitive
   backup-world: 'world'
 
-  # Calculation by land bank balance?
-  # Means that a land will get a higher rank, if the land has a higher bank balance.
-  # NOTE: This Works only if land banks are enabled. Setting: banks
+  # Top lands sort mode
+  # Available sort modes: BALANCE, SIZE, MEMBERS
+  # NOTE: BALANCE requires banks to be enabled.
   # This option requires server reload.
-  calculation-money: true
+  sort-mode: 'BALANCE'
   # Sign lederboard settings
   sign:
     # Place the head of the land owner on top of the block, where the leaderboard sign is?
@@ -882,6 +883,9 @@ backup:
   # NOTE: It's alway recommended creating backups,
   # even if there are no problems.
   startup: true
+  # Time in days after a created backup should get deleted.
+  # Set this to 0, to disable it.
+  days-delete: 28
 
 
 
