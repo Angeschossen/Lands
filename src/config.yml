@@ -81,12 +81,16 @@ general:
     # NOTE: Time unit is seconds.
     time:
       # Plus 1 chunk (/Lands claim)
+      # If you want to disable this specific option, just set it to 0 or -1.
       chunk: 3060
       # Plus 1 lands where a player can be a member (not owner - /Lands accept, /Lands trust).
+      # If you want to disable this specific option, just set it to 0 or -1.
       land: 43200
       # Plus 1 land creation (/Lands create).
+      # If you want to disable this specific option, just set it to 0 or -1.
       land-own: 86400
       # Plus 1 land member (/Lands trust)
+      # If you want to disable this specific option, just set it to 0 or -1.
       member: 21600
 
 
@@ -104,6 +108,8 @@ land:
     costs: 4000.0
     # Max land name length
     name-length: 15
+    # Automatically claim chunk on players location?
+    chunk-claim: true
 
   # Set the minimum distance in chunks between lands that don't belong to the same owner.
   chunk-distance: 1

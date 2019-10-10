@@ -75,6 +75,7 @@ general:
       upkeep:
         chunk-deleted: '&e{date} &7The last claimed chunk &8(&7X:&b {x} &7Z:&b {z}&8) &7was deleted, because you couldn''t pay the upkeep costs. Cost:&c ${cost}'
         warning: '&e{date} &7You couldn''t pay the upkeep cost. Cost:&c {cost}'
+        paid: '&e{date} &7Your land paid the upkeep cost. Cost:&c {cost}'
     player:
       join: '&e{date} &7Player&b {player} &7joined our land.'
 
@@ -307,8 +308,8 @@ command:
     not-exist: '&cYou don''t have an invite from land&e {land} &cor it expired. &7Please check your input.'
     success: '&7You successfully denied invite from land&b {land}&7.'
   teleport:
-    world-not-exist: '&cThis world doesn''t exist.'
-    chunk-not-exist: '&cThis chunk doesn''t exist. &7Please check your input.'
+    world-not-exist: '&cThe world with the name&e {world} &cdoes''t exist.'
+    chunk-not-claimed: '&cThis chunk is not claimed &8(&7X:&e {x} &7Z:&e {z}&8)&c. &7Bypass permission:&b lands.bypass.wilderness.teleport'
     success: '#t#&9&lTeleported{newline}&7X: {x} Z: {z} Claimed: {claimed}'
   setSpawn:
     force-land: '&cYou can only set the land spawn on your land. &7Go to your land&b {land} &7first.'

@@ -401,7 +401,7 @@ gui:
           - '  &elands.gui.chunk.teleport&7.'
           - '&8- &7Contact an administrator'
           - '  &7for help.'
-        material: GRASS_BLOCK
+        material: 'GRASS_BLOCK'
       failure_teleport_cooldown:
         name: '&4Denied: &bCooldown'
         lore:
@@ -411,7 +411,7 @@ gui:
           - ' '
           - '&8- &7Your cooldown is active.'
           - '  &7You need to wait&e {time}&7.'
-        material: GRASS_BLOCK
+        material: 'GRASS_BLOCK'
       failure_teleport_money:
         name: '&4Denied: &bMoney'
         lore:
@@ -2053,10 +2053,21 @@ gui:
         name: '&4Denied: &bPermission'
         lore:
           - '&cYou''re not allowed to'
-          - '&cteleport to this chunk.'
+          - '&cteleport to this land spawn.'
           - ' '
           - '&8- &7You need the permission'
-          - '  &elands.gui.lands-list.teleport&7.'
+          - '  &e{permission}&7.'
+          - '&8- &7Contact an administrator'
+          - '  &7for help.'
+        material: 'PLAYER_HEAD'
+      failure_admin_permission:
+        name: '&4Denied: &bAdmin Permission'
+        lore:
+          - '&cYou''re not allowed to'
+          - '&copen the edit-menu for this land.'
+          - ' '
+          - '&8- &7You need the permission'
+          - '  &e{permission}&7.'
           - '&8- &7Contact an administrator'
           - '  &7for help.'
         material: PLAYER_HEAD
