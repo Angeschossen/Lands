@@ -1,0 +1,413 @@
+# Here you can edit all chat messages
+# GUI strings can be found in <language>_gui.yml
+# If you encounter any issues, contact plugin support.
+# Plugin page: https://www.spigotmc.org/resources/.53313
+# Discord: https://discord.gg/JVU9qd7
+
+# ###############################
+# About chat message type system:
+# Does only work for messages in
+# "message" or "command" section.
+# ###############################
+
+# You can use some codes to set the type
+# of a message to title, actionbar or chat.
+# How does it work:
+
+# For example we want to print the prefix as a title:
+# Set general.noPerm to: '#t#&cYou''re not allowed to do this.' (Set "#t#" in front of it)
+# This would just print it as a title.
+
+# You also can set in, stay and out fade timings in seconds:
+# Set for example general.prefix to: '#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
+# This would display this message as a title with
+# a fade in delay of 1 seconds, a stay time with 2 seconds
+# and a fade out delay of 3 seconds.
+
+# You also can display it as a actionbar message:
+# Just add "#a#" in front of it.
+# If you want to display it in chat, just don't set any
+# of these in front of it or use "#c#".
+
+# Also you can combine these modes:
+# Set for example general.prefix to: '#c#a#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
+# This would print this message as chat, actionbar and an title with an in delay (1 seconds),
+# stay time (2 seconds) and fade out delay (3 seconds)
+# For any questions or issues, please contact me on discord or via pm.
+# --------------------------
+# Translated by XjojoX
+
+general:
+  wYes: '&aJa'
+  wNo: '&cNein'
+  none: '&cKeiner'
+  wilderness: '&aWildnis'
+  time:
+    days: 'Tag(e)'
+    hours: 'Stunde(n)'
+    minutes: 'Minute(n)'
+    seconds: 'Sekunde(n)'
+  status:
+    online: '&aOnline'
+    offline: '&cOffline'
+  role:
+    owner: '&4Besitzer'
+    admin: '&cAdministrator'
+    member: '&eMitglied'
+    visitor: '&5Besucher'
+  top:
+    title: '&7---------<- &6&lTop 10 Länder &7->---------'
+    land: '&7#&5{pos}&7: &b{land} &7Size:&e {size}'
+    last-updated: '&7Zuletzt aktualisiert:&e {time}'
+    footer: '&7---------<- &6&lTop 10 Länder &7->---------'
+  integration:
+    dynmap:
+      chunk:
+        description: '<div class=\"infowindow\"><span style="font-size:200%;">{land}</span><br/>X:
+          {x} Z: {z}</span><br/> Besitzer: <span style="font-weight:bold;">{owner}</span><br/>Administratoren:
+          <span style="font-weight:bold;">{admins}</span><br/>Mitglieder: <span style="font-weight:bold;">{members}</span><br/></div>'
+  sign:
+    topLand:
+      line-1: '&6#&e{place}'
+      line-2: '&5{owner}'
+      line-3: '&2Land &a{land}'
+      line-4: '&9Groeße:&b {size}'
+    noLand:
+      line-1: ' '
+      line-2: '&cKein Land'
+      line-3: '&czu zeigen.'
+      line-4: ' '
+  autoAction:
+    claim: '&aChunk claim'
+help:
+  general:
+    prefix: '&8[&aLands&8] &7Verwendung: '
+    header: '&7------------<- &5Lands Hilfe &7Seite&6 {page} &8/&e {pages} &7->------------'
+    page: '&7Verwende &8/&dLands help {next} &7um zur nächsten Seite zu gelangen.'
+    footer: '&7------------<- &5Lands Hilfe &7Seite&6 {page} &8/&e {pages} &7->------------'
+  command:
+    help: '&8/&7Lands help &8[&aPage&8] - &eZeige Hilfeseite an'
+    edit: '&8/&7Lands edit &8<&aLand&8> - &eBetrete den Editier Modus'
+    claim: '&8/&7Lands claim - &eKaufe ein Chunk'
+    create: '&8/&7Lands create &8<&aName&8> - &eErstelle ein Land'
+    leave: '&8/&7Lands leave &8[&aLand] &8- &eVerlasse einen Chunk, oder ein Land'
+    unclaim: '&8/&7Lands unclaim &8- &eVerkaufe ein Chunk'
+    delete: '&8/&7Lands delete &8<&aLand&8> &8- &eLösche ein Land'
+    trust: '&8/&7Lands trust &8<&aPlayer&8> [&ahere&8] - &eSende einem Spieler eine
+      Einladung'
+    untrust: '&8/&7Lands untrust &8[&ahere&8] - &eEntferne einen Spieler von deinem
+      Land'
+    setRole: '&8/&7Lands setRole &8<&aPlayer&8> <&aRole&8> [&ahere&8] - &eTeile einem
+      Spieler eine Rolle zu'
+    accept: '&8/&7Lands accept &8<&aLand&8> - &eAkzeptiere eine Einladung'
+    deny: '&8/&7Lands deny &8<&aLand&8> - &eVerweigere eine Einladung'
+    view: '&8/&7Lands view &8- &eInformationen über einen Chunk'
+    menu: '&8/&7Lands menu &8- &eÖffne das Menü'
+    setSpawn: '&8/&7Lands setSpawn - &eSetze den Haupt Landspawn'
+    spawn: '&8/&7Lands spawn &8[&aLand&8] - &eTeleportiere dich zum Landspawn'
+    wild: '&8/&7Lands wild &8- &eTeleportiere dich zu einer zufälligen Position'
+    top: '&8/&7Lands top &8- &eZeige Top10 Länder'
+    selection: '&8/&7Lands selection &8- &eAktiviere Auswahl Werkzeug'
+    chat: '&8/&7Lands chat &8[&aLand&8] <&aMessage&8>'
+    rename: '&8/&7Lands rename <&aName&8> - &eGib deinem Land einen anderen Namen'
+    teleport: '&8/&7Lands teleport &8[&aWorld&8] <&aX&8> <&aZ&8> - &eTeleportiere
+      dich zu einem Chunk'
+    invites: '&8/&7Lands invites &8- &eZeige erhaltene Einladungen'
+    info: '&8/&7Lands info &8[&aLand&8] - &eZeige Informationen über ein Land'
+    admin:
+      admin: '&8/&7Lands admin &8<&aAction&8> &8- &eAdmin Befehle'
+      debug: '&8/&7Lands debug &8- &eZeigt geladene Datenstatistiken an'
+      safezone: '&8/&7Lands safezone &8- &eKonfiguriere Savezone'
+      reload: '&8/&7Lands reload &8<&aValue&8> &8- &eLade alle Config Dateien neu'
+      about: '&8/&7Lands about &8- &eZeigt Infos über das Plugin an'
+message:
+  no-permission: '&8[&aLands&8] &cDu hast keine Erlaubnis das zu tun. &7Du brauchst
+    Berechtigung&b {permission}&7.'
+  world-invalid: '&8[&aLands&8] &cDies ist in dieser Welt deaktiviert.'
+  feature-disabled: '&8[&aLands&8] &cDiese Funktion wurde von einem Administrator
+    deaktiviert. &7Er muss die Einstellung&b {setting} &7in der config aktivieren,
+    damit du diese Funktion verwenden können.'
+  noaccess:
+    chunk: '&8[&aLands&8] &cDu hast keinen Zugriff für diesen Block. &8(&7Land:&e
+      {land} &7X:&e {x} &7Z:&e {z}&8)&c.'
+    land: '&8[&aLands&8] &cDu darfst dies für dieses Land nicht tun &8(&7Land:&e {land}&8)&7.'
+    role-weight: '&8[&aLands&8] &cDu kannst diesen Player nicht bearbeiten. &7Er hat
+      einen höhere        Rolle als du. Für Hilfe wende dich an den Landbesitzer.'
+    claim: '&8[&aLands&8] &cDu kannst hier nicht claimen. &7Dieser Chunk gehört zu
+      etwas anderem.'
+    place: '&8[&aLands&8] &cDu darfst hier keine Blöcke platzieren.'
+    break: '&8[&aLands&8] &cDu darfst hier keine Blöcke abbauen.'
+    interact: '&8[&aLands&8] &cDu kannst in diesem Chunk nicht interagieren.'
+    ignite: '&8[&aLands&8] &cDu darfst keine Blöcke in diesem Chunk zünden.'
+    edit: '&8[&aLands&8] &cDu darfst dieses Land nicht bearbeiten.'
+    player:
+      chunk-trust: '&8[&aLands&8] &cDu hast keine Erlaubnis, einem Spieler in diesem
+        Chunk zu vertrauen &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      chunk-setRole: '&8[&aLands&8] &cYou''re not allowed to set a role in this chunk
+        &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      chunk-untrust: '&8[&aLands&8] &cDu darfst einem Spieler nicht das Vertrauen
+        entziehen         auf seinem Chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      land-trust: '&8[&aLands&8] &cDir ist nicht erlaubt, einem Spieler im Land zu
+        vertrauen &8(&7Land: &e{land}&8)&c.'
+      land-untrust: '&8[&aLands&8] &cDu darfst keinem Spieler das Vertrauen entziehen
+        in diesem Land &8(&7Land: &e{land}&8)&c.'
+      land-setrole: '&8[&aLands&8] &cDu darfst keinem Spieler vertrauen in diesem
+        Land &8(&e{&7Land: land}&8)&c.'
+    combat:
+      animal: '&8[&aLands&8] &cDu darfst hier keine Tiere angreifen.'
+      pvp-attacker: '&8[&aLands&8] &cDu darfst hier keine Spieler angreifen.'
+      pvp-target: '&8[&aLands&8] &cDein Ziel darf hier keine Spieler angreifen.'
+  disallowWilderness:
+    break: '&8[&aLands&8] &cDu darfst keine Blöcke in der Wildnis abbauen. & 7Du       
+      kannst das nur in einem beanspruchten Land.'
+    place: '&8[&aLands&8] &cDu darfst keine Blöcke in der Wildnis platzieren. & 7Du
+             kannst das nur in einem beanspruchten Land.'
+    interact: '&8[&aLands&8] &cDu darfst nicht in der Wildnis interagieren. & 7Du
+             kannst das nur in einem beanspruchten Land.'
+  claimblock:
+    cmdDisabled: '&8[&aLands&8] &cDu kannst Anspruch nur durch das Setzen von claimblöcken
+      erheben.        &7Dieser Befehl ist deaktiviert.'
+    dropped: '&8[&aLands&8] &cEinige Claimblocks liegen am Boden. & 7Es gab keinen
+      Platz        in deinem Inventar.'
+    notOwner: '&8[&aLands&8] &cDu darfst diesen claimblock nicht verwenden. & 7Es
+      ist nicht        deiner. Dieser Block gehört&b {player}&7.'
+    noLeft: '&8[&aLands&8] &cDu hast keine claimblöcke mehr. &7Kontaktiere einen Administrator
+             für Hilfe.'
+    success: '&8[&aLands&8] &7Du hast &b{blocks} &7claimblöcke. &7Lege sie auf einen
+             Chunk, um ihn zu beanspruchen.'
+  blacklist:
+    untrusted: '&8[&aLands&8] &cDu darfst diesen Befehl hier nicht verwenden. & 7Du
+      bist        auf diesem Land nicht getrusted.'
+    general: '&8[&aLands&8] &cDu darfst diesen Befehl in beanspruchten Ländern nicht
+      verwenden.'
+  autoAction:
+    stopped: '&8[&aLands&8] &cDeine aktuelle Autoauktion wurde angehalten. &7Maximale
+      Runden erreicht. Name:&b {name}'
+    started: '&8[&aLands&8] &7Erfolgreich automatische Aktion gestartet. Name:&b {name}'
+    removed: '&8[&aLands&8] &7Erfolgreich automatische Aktion gestoppt. &7Name:&b
+      {name}'
+command:
+  general:
+    land-not-exist: '&8[&aLands&8] &cDas Land&e {land} &cexistiert nicht. &7Es gibt kein Land mit dem Namen&b {land} &7in dieser Welt.'
+    land-not-member: '&8[&aLands&8] &cDir wird nicht vertraut in Land&e {land}&c. &7Benutze
+      &8/&aLands menu &7um die Länder zu sehen, in denen du Mitglied bist.'
+    land-not-trusted: '&8[&aLands&8] &cDas kannst du nicht tun. &7Spieler&b {player} &7ist nicht
+      Teil dieses Landes &8(&7Land:&e {land}&8)&7. Du musst ihm vertrauen, indem du zuerst 
+      &8/&aLands trust&7 benutzt.'
+    land-no-action: '&8[&aLands&8] &cDu bist nicht Mitglied in einem Land, in dem du
+      dies tun darfst. &7Benutze &8/&aLand create &7um eines zu erstellen.'
+    name-exists: '&8[&aLands&8] &cDieser Name wird bereits von einem anderen Land verwendet. &7Du musst
+      einen anderen benutzen.'
+    money-cost-bank: '&8[&aLands&8] &cDu hast nicht genug, um den Preis zu bezahlen. &7Du brauchst&b
+      ${cost}&7.'
+    lands-max: '&8[&aLands&8] &cDu kannst nicht Teil von weiteren Ländern sein. &7Du hast dein Maximum
+      von&b {max} &7Ländern erreicht.'
+    name-numbers: '&8[&aLands&8] &cDu kannst keine Zahlen in deinem Ländernamen verwenden. &7Bitte verwende
+      nur lateinische Buchstaben.'
+    name-accent: '&8[&aLands&8] &cDu kannst keine Sonderzeichen in deinem Landnamen verwenden. &7Bitte verwende
+      nur lateinische Buchstaben.'
+    name-length: '&8[&aLands&8] &cDer Name ist zu lang. &7Max Länge ist&b {max} &7Zeichen.'
+    action-cooldown: '&8[&aLands&8] &cDu kannst das jetzt nicht tun. &7Du musst&b
+      {time} &7Minuten warten.'
+    land-none: '&8[&aLands&8] &cScheint so, als wärst du kein Mitglied eines Landes. &7Benutze &8/&aLands
+      create &7um eines zu erstellen.'
+    land-no-own: '&8[&aLands&8] &cDu besitzt kein Land. &7Benutze &8/&aLands create
+      &7um eines zu erstellen.'
+    world-invalid: '&8[&aLands&8] &cDu kannst das in der aktuellen Welt nicht tun. &7Du
+      musst in eine andere Welt gehen.'
+    wilderness: '&8[&aLands&8] &cDieser Chunk ist Wildnis. &7Du musst zu einem beanspruchten
+      Chunk gehen. &7Du kannst &8/&aLands menu &7benutzen um deine Länder zu sehen.'
+    player-not-exist: '&8[&aLands&8] &cEs gibt keinen Spieler mit dem Namen&e {player}&c.
+      &7Bitte überprüfen Sie Ihre Eingabe.'
+    role-weight: '&8[&aLands&8] &cDu kannst diese Rolle nicht bearbeiten. &7Es ist eine höhere oder
+      gleiche Rolle  &8(&7Role:&e {role}&8) &7als deine &8(&7Land:&e {land}&8)&7.'
+    player-self: '&8[&aLands&8] &cDas kannst du nicht mit dir selbst machen. &7Du bist lustig.
+      :)'
+    cooldown: '&8[&aLands&8] &cDu kannst das jetzt nicht mehr tun. &7Du musst noch eine weitere&b
+      {time} &7Minuten warten.'
+    chunk-is-claimed: '&8[&aLands&8] &cDu kannst diesen Chunk nicht beanspruchen. &7Er gehört bereits
+      zu land&b {land}&7.'
+  help:
+    help: '&8[&aLands&8] &7Benutze &8/&aLand help &7für Hilfe.'
+    cmd-not-exist: '&8[&aLands&8] &cDieser Unterbefehl existiert nicht. &7Befehl&b {command}
+      &7wurde nicht gefunden.'
+    page-not-exist: '&8[&eProtect&8] &cDie Seite&e {page} &cexistiert nicht. &7Tippfehler?'
+  create:
+    land-other: '&8[&aLands&8] &cEs ist dir nicht erlaubt, dein eigenes Land zu haben und Mitglied in einem anderen Land zu sein.
+      &7Du musst zuerst Land&b {land} &7verlassen. Ein Administrator kann
+      dies in der Konfiguration deaktivieren.'
+    max-own: '&8[&aLands&8] &cDu kannst keine weiteren Länder mehr anlegen. &7Du hast dein Maximum von
+      &b {max} &7eigenen Ländern erreicht.'
+    success: '&8[&aLands&8] &7Land&b {land} &7erfolgreich erstellt für&b {cost}&7. Du kannst 
+      Chunks beanspruchen, indem du Folgendes ausführst &8/&aLands claim&7.'
+    broadcast: '&8[&aLands&8] &7Land&b {land} &7wurde erstellt von&b {player}&7.'
+  rename:
+    success: '&8[&aLands&8] &7Erfolgreiches Setzen des neuen Namens&b {name} &7für das Land
+      &8(&7Land:&e {land}&8)&7. Du hast &b ${cost}&7 bezahlt.'
+  edit:
+    success: '&8[&aLands&8] &7Du hast den Bearbeitungsmodus für das Land &8(&7Land:&e {land}&8)&7 aufgerufen.
+      Nächste Aktionen, wie &8/&aLands claim &7oder &8/&aLands trust&7, werden für dieses
+      Land ausgeführt.'
+  selection:
+    disabled-config: '&8[&aLands&8] &cDiese Funktion wurde in der Konfiguration von einem Administrator deaktiviert.
+      &7Du musst die Einstellung &bland.selection.enabled&7 aktivieren.'
+    enabled: '&8[&aLands&8] &7Auswahlmodus aktiviert: Wählen Sie einfach mit den Händen
+      &bbeide Ecken &7der Region, um alle Teile &bin ihr zu &7beanspruchen.'
+    disabled: '#t#&7Selection:;;&cDisabled'
+    pos-left: '#t#&7Position;;&b1'
+    pos-right: '#t#&7Position;;&b2'
+    max: '&8[&aLands&8] &cDeine Auswahl hat zu viele Chunks. &7Größe:&b {current}
+      &7Deine erlaubte Größe:&b {max}'
+    same-world: '&8[&aLands&8] &cBeide Positionen müssen in der gleichen Welt sein.'
+    claimed: '&8[&aLands&8] &7Erfolgreich beansprucht&b {chunks} &7Chunks für das Land
+      &8(&7Land:&e {land}&8)&7. Du hast&b ${cost}&7 bezahlt.'
+    left: '&8[&aLands&8] &Erfolgreich verbliebene&ab {chunks} &7Chunks des Landes &8(&7Land:&e
+      {land}&8)&7.'
+    unclaimed: '&8[&aLands&8] &7Erfolgreich verkaufte&ab {chunks} &7Chunks des Landes
+      &8(&7Land:&e {land}&8)&7.'
+  claim:
+    max-chunks: '&8[&aLands&8] &cDu kannst keine weiteren Chunks mehr beanspruchen. &7Dein maximum
+      ist&b {max} &7chunks.'
+    auto-create: '&8[&aLands&8] &7Versuche, automatisch ein Land für dich zu erstellen,
+      weil du keins auf dieser Welt hast. Du kannst den Namen ändern, indem du &8/&aLands
+      rename&7 ausführst.'
+    auto-create-fail: '&8[&aLands&8] &cEs ist nicht gelungen, automatisch ein Land für dich zu erstellen. &7Bitte
+      lies die obigen Nachrichten und kontaktiere jemanden für Hilfe.'
+    near-other: '&8[&aLands&8] &cDas ist zu nah an &e {land}&c Land. &7Du musst Abstand
+      zu diesem Land halten. Minimaler Chunk-Abstand:&b {distance}&7.'
+    far-land: '&8[&aLands&8] &cDu kannst diesen Chunk nicht beanspruchen. &7Es muss auf dein Land
+      passen &8(&7Land:&e {land}&8)&7.'
+    success: '&8[&aLands&8] &7Dieser Chunk &8(&7Land:&e {land} &7X:&e
+      {x} &7Z:&e {z}&8) &7wurde für&b {cost}&7 erfolgreich beansprucht. Nächster Claim kostet&b {next}&7.'
+  leave:
+    land-owner: '&8[&aLands&8] &cDu kannst dieses Land nicht verlassen. &7Als Besitzer dieses 
+      Landes, musst du es löschen. Benutze &8/&aLands delete&7.'
+    land-success: '&8[&aLands&8] &7Land erfolgreich verlassen&b {land}&7. Du hast keinen Zugang
+      mehr zum Land und seinen Chunks.'
+    chunk-success: '&8[&aLands&8] &7Chunk erfolgreich verlassen. &7Du hast keinen Zugang
+      zu diesem Chunk.'
+  unclaim:
+    success: '&8[&aLands&8] &7Chunk erfolgreich verkauft &8(&7X:&e {x} &7Z:&e
+      {z}&8)&7. Du erhälst&b ${back} &7zurück.'
+  delete:
+    confirm: '&8[&aLands&8] &cDu musst diese Aktion bestätigen. &7Benutze &8/&aLand delete
+      {land} confirm&7.'
+    success: '&8[&aLands&8] &7Land erfolgreich gelöscht &8(&7Land:&e {land}&8)&7.'
+    broadcast: '&8[&aLands&8] &7Das Land&b {land} &7wurde von seinem Besitzer &b {player}&7 gelöscht.'
+  trust:
+    own-land: '&8[&aLands&8] &cDieser Spieler darf kein eigenes Land haben und Teil
+      eines anderen Landes sein. &7Er muss es zuerst verlassen.'
+    land-already: '&8[&aLands&8] &cDiesem Spieler wird im Land &8(&7Land:&e
+      {land}&8)&7 bereits vertraut.'
+    chunk-already: '&8[&aLands&8] &cDiesem Spieler wird im Chunk &8(&7X:&e
+      {x} &7Z:&e {z}&8)&7 bereits vertraut.'
+    invited: '&8[&aLands&8] &cDieser Spieler ist bereits eingeladen. &Bitte warte bis
+      er akzeptiert hat &8(&7Land:&e {land}&8)&7.'
+    land-target: '&8[&aLands&8] &7Spieler&b {player} &7läd dich in sein Land &b {land}&7 ein.
+      Benutze &8/&aLand accept {land} &7um seine Einladung anzunehmen.'
+    chunk-target: '&8[&aLands&8] &7Spieler&b {player} &7läd dich auf seinen chunk ein &8(&7X:&e
+      {x} &7Z:&e {z}) &7Benutze &8/&aLands accept {land} &7um seine Einladung anzunehmen.'
+    chunk-success: '&8[&aLands&8] &7Spiler&b {player} &7erfolgreich auf den
+      chunk eingeladen &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-success: '&8[&aLands&8] &7Spieler&b {player} &7erfolgreich in das Land
+      &8(&7Land:&e {land}&8)&7 eingeladen. Er muss die Einladung nur noch annehmen.'
+  untrust:
+    land-already: '&8[&aLands&8] &cDieser Spieler ist im Land &8(&7Land:&e
+      {land}&8)&7 bereits entfernt.'
+    chunk-already: '&8[&aLands&8] &cDieser Spieler wurde beriets vom chunk entfernt
+      &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    invite-removed: '&8[&aLands&8] &7Einladung für diesen Spieler wurde erfolgreich widerrufen. &8(&7Land:&e
+      {land}&8)&7.'
+    chunk-success: '&8[&aLands&8] &7Spieler&b {player} &7wurde erfolgreich vom 
+      chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7 entfernt.'
+    land-success: '&8[&aLands&8] &7Spieler&b {player} &7wurde erfolgreich aus dem
+      land &8(&7Land:&e {land}&8)&7 entfernt.'
+  setRole:
+    role-not-exist: '&8[&aLands&8] &cDie Rolle&e {role} &cexestiert nicht. &7Tippfehler? &8(&aAvailable:
+      &cAdmin&7, &eMember&8)'
+    land-not-trusted: '&8[&aLands&8] &cDem Spieler&e {player} &cwird im Land
+      &8(&7Land:&e {land}&8)&7 nicht vertraut. Bitte prüfe deine Eingabe.'
+    chunk-max-members: '&8[&aLands&8] &cDie Rolle konnte in diesem Chunk nicht festgelegt werden. &7Der Besitzer
+      des Grundstücks erreichte sein Maximum von&b {members} &7Mitgliedern in diesem Chunk.'
+    max-members: '&8[&aLands&8] &cKonnte die Rolle in&e {chunks} &cchunks nicht festlegen.
+      &7Der Besitzer des Grundstücks erreichte sein Maximum von&b {members} &7Mitgliedern in seinen
+      chunks.'
+    chunk-success: '&8[&aLands&8] &7Rolle&b {role} &7für Spieler&b {player}
+      &7in diesem Chunk erfolgreich gesetzt &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    part-success: '&8[&aLands&8] &7Spieler&b {player} &7wird in diesem Land nicht
+      vertraut. Rolle in allen Chunks festlegen, in denen ihm vertraut wird &8(&7Land:&e {land}&8)&7.'
+    land-success: '&8[&aLands&8] &7Rolle&b {role} &7für Spieler&b {player}
+      &7im Land &8(&7Land:&e {land}&8)&7 erfolgreich gesetzt.'
+  accept:
+    not-exist: '&8[&aLands&8] &cDu hast keine Einladung von land&e {land} &coder
+      sie ist abgelaufen. &7Bitte überprüfe deine Eingabe.'
+    own-land: '&8[&aLands&8] &cDu hast keine Erlaubnis, ein Land zu besitzen und Mitglied von
+      anderen Ländern zu sein. &7Du musst zuerst dein eigenes Land verlassen.'
+    max-reached: '&8[&aLands&8] &cDu kannst keinen weiteren Ländern beitreten. &7Du kannst nur&b
+      {max} &7Länder haben.'
+    land-tax-confirm: '&8[&aLands&8] &Der Besitzer dieses Landes möchte, dass du&e {tax}
+      &7zahlst um diesem Land beizutreten. &7Bitte bestätige mit &8/&aLands accept
+      {land} confirm&7.'
+    chunk-tax-confirm: '&8[&aLands&8] &7Der Besitzer dieses Landes möchte, dass du&b
+      {tax} &7zahlst um diesem Chunk beizutreten. &7Bitte bestätige mit &8/&aLand accept
+      {land} confirm&7.'
+    land-fail: '&8[&aLands&8] &cDir konnte in land&e {land}&c nicht vertraut werden. &7Der Besitzer des Landes
+      erreichte sein Maximum von&b {members} &7Mitgliedern in seinen Chunks.'
+    max-members: '&8[&aLands&8] &cDir konnte in&e {chunks} &cChunks nicht vertraut werden.
+      &7Der Besitzer des Landes erreichte sein Maximum von&b {members} &7Mitgliedern in seinen
+      Chunks.'
+    chunk-max-members: '&8[&aLands&8] &cRolle konnte in diesem Chunk nicht festgelegt werden. &7Der
+      Besitzer des Landes erreichte sein Maximum von&b {members} &7Mitgliedern in seinen Chunks.'
+    land-success: '&8[&aLands&8] &7Erfolgreich angenommene Einladung von Land&b {land}&7.
+      Du hast jetzt Zugang zum gesamten Land.'
+    chunk-success: '&8[&aLands&8] &7Erfolgreich angenommene Einladung von Land&b {land}
+      &7für einen Chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    chunk-broadcast: '&8[&aLands&8] &b{land} &8| &7Spieler&b {player} &7ist jetzt Mitglied
+      von einem Chunk in deinem Land &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-broadcast: '&8[&aLands&8] &b{land} &8| &7Spieler&b {player} &7ist deinem Land beigetreten&7.'
+    notification: '&8[&aLands&8] &7Du hast noch&b {invites} &7Einladungen von anderen
+      Ländern. Benutze &8/&aLand invites &7um die Liste einzusehen.'
+  deny:
+    not-exist: '&8[&aLands&8] &cDu hast keine Einladung von Land&e {land} &coder
+      sie ist abgelaufen. &7Bitte prüfe deine Eingabe.'
+    land-success: '&8[&aLands&8] &7Einladung vom Land&b {land}&7 erfolgreich abgelehnt.'
+    chunk-success: '&8[&aLands&8] &7Einladung vom Land&b {land} &7für
+      einen Chunk erfolgreich abgelehnt &8(X:&e {x} &7Z:&e {z}&8)&7.'
+  teleport:
+    world-not-exist: '&8[&aLands&8] &cDiese Welt exestiert nicht.'
+    chunk-not-exist: '&8[&aLands&8] &cDieser Chunk exestiert nicht. &7Bitte prüfe deine
+      Eingabe.'
+    success: '&8[&aLands&8] &7Erfolgreich zu Chunk &8(&7X:&e {x} &7Z:&e
+      {z} teleportiert. &7Beansprucht: {claimed}&8)&7.'
+  setSpawn:
+    force-land: '&8[&aLands&8] &cDu kannst nur den Landspawn für dein Land festlegen. &7Gehe dazu
+      zuerst in dein Land.'
+    success: '#t#&7Landspawn &asetzen &7.;;&7kostet:&b {cost}'
+  spawn:
+    not-exist: '&8[&aLands&8] &cEs wurde kein Spawn für land&e {land}&c gesetzt. &7Es muss zuerst
+      einer gesetzt werden, indem folgendes ausgeführt wird &8/&aLand setSpawn&7.'
+    not-allowed: '&8[&aLands&8] &cEs ist dir nicht erlaubt, dich zum Spawn dieses Landes 
+      zu teleportieren. &7Der Besitzer muss dir die Erlaubnis dazu erteilen. Für Hilfe nimm Kontakt
+      mit ihm auf &8(&7Land:&e {land}&8)&7.'
+    success: '#t#&7Teleportiert zum;;&7Land&b {land}'
+  wild:
+    searching: '#t#&7Suche:;;&dZufällige Position'
+    loc-unsafe: '&8[&aLands&8] &cEs konnte keine sichere Position für dich gefunden werden. &7Bitte versuch
+      es später noch einmal. Wenn das nicht hilft, kontaktiere einen Administrator.'
+    success: '&8[&aLands&8] &7Du wurdest zufällig teleportiert &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+  menu:
+    no-permission-other: '&8[&aLands&8] &cDu darfst keine GUIs anderer Spieler öffnen.
+      &7Du brauchst die Erlaubnis&e lands.command.menu.others &7um das zu tun.'
+    notExist: '&8[&aLands&8] &cDieser Spieler hat aktuell keine Daten.'
+  chat:
+    format: '&8[&aLands&8] [&d{land}&8] {role} &7{player}&8:&f {message}'
+list:
+  view:
+  - '&7---------<- &5&lLand Übersicht &7->---------'
+  - '&7Land:&b {land}'
+  - '&7Steuern -> Global:&b {tax-land} &7Hier:&b {tax-chunk}'
+  - '&7Welt:&e {world} &7X:&e {x} &7Z:&e {z}'
+  - '&4Besitzer:&7 {owner}'
+  - '&7Administratoren:&7 {admins}'
+  - '&7Mitglieder:&7 {members}'
+  - '&7---------<- &5&lLand Übersicht &7->---------'
