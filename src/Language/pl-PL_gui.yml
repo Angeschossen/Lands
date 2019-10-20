@@ -1,0 +1,1910 @@
+general:
+  wYes: '&aTak'
+  wNo: '&cNie'
+  none: '&cBrak'
+  now: '&aTeraz'
+  enabled: '&aWłączone'
+  disabled: '&cWyłączone'
+  unlimited: '&aNieskończone'
+  previous: '&8powrót'
+misc:
+  claim-block:
+    name: '&bClaimblock'
+    lore:
+    - '&7Za pomocą tego bloku'
+    - '&7możesz zająć chunk'
+    - '&7kładąc go w "wolności"'
+    - ' '
+    - '&7Właściciel:&a {owner}'
+    material: GRASS_BLOCK
+gui:
+  mainMenu:
+    title: '&8Główne Menu'
+    size: 27
+    s:
+      lands:
+        name: '&aDziałka'
+        lore:
+        - '&7Zobacz wszystkie swoje działki.'
+        - ' '
+        - '&8- &7Pokazuje wszystkie twoje'
+        - '  &7działki, kliknij w dowolną'
+        - '  &7aby ją edytować.'
+        material: GRASS_BLOCK
+        slot: 11
+      all-lands:
+        name: '&9Wszystkie działki'
+        lore:
+        - '&7Pokazuje działki wszystkich'
+        - '&7graczy na serwerze.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
+        slot: 13
+      invites:
+        name: '&bZaproszenia'
+        lore:
+        - '&7Wszystkie otrzymane'
+        - '&7zaproszenia.'
+        material: WRITABLE_BOOK
+        slot: 15
+      close:
+        name: '&cZamknij'
+        lore:
+        - '&7Zamknij menu'
+        - ' '
+        - '&8- &7Możesz otworzyć je ponownie'
+        - '  &7za pomocą komendy &8/&aLands menu&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+        enabled: true
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+    f:
+      limitation:
+        name: '&cTwoje Ograniczenia'
+        lore:
+        - '&7Możesz...'
+        - ' '
+        - '&7Stworzyć&a {ownlands} &7działek.'
+        - ' '
+        - '&7Dołączyć do&a {lands} &7działek.'
+        - ' '
+        - '&7Posiadać&a {chunks} &7chunków na działkę.'
+        - ' '
+        - '&7Posiadać&a {members} &7członków na działce'
+        - ' '
+        - '&7Pomagać na działkach gdzie jesteś dodany,'
+        - '&7z &a{support-chunks} &7chunkami na działkę'
+        material: PAPER
+        slot: 17
+  lands:
+    title: '&8Twoje Działki'
+    size: 27
+    s: {}
+    f:
+      page_previous:
+        name: '&9Poprzednia strona'
+        lore:
+        - '&7Powrót do poprzedniej strony:&9 {previous}'
+        - ' '
+        - '&8- &Aktualna:&b {current}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&aNastpępna strona'
+        lore:
+        - '&7Przejdź do następnej strony:&9 {next}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 25
+      back:
+        name: '&cWróć'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+        lore:
+        - '&7Go back to'
+        - '{back}&7.'
+    l:
+      land:
+        name: '&7Działka&a {land}'
+        lore:
+        - ' '
+        - '&7Świat:&e {world}'
+        - '&7Rozmiar:&e {chunks}'
+        - ' '
+        - '&9KLIKNIJ PRAWYM'
+        - '&7Aby zobaczyć ogólne informacje'
+        - '&7na temat tej działki'
+        material: PODZOL
+        from: 10
+        to: 18
+      ownLand:
+        name: '&7Działka&a {land}'
+        lore:
+        - ' '
+        - '&7Świat:&e {world}'
+        - '&7Rozmiar:&e {chunks}'
+        - ' '
+        - '&9KLIKNIJ PRAWYM'
+        - '&7Aby zobaczyć ogólne informacje'
+        - '&7na temat tej działki'
+        material: GRASS_BLOCK
+        from: 10
+        to: 18
+      noLand:
+        name: '&8Działka &7-> &cBrak'
+        lore:
+        - '&8- &7Aby stworzyć działkę:'
+        - '&8użyj komendy &8/&aLands create &8<&aNazwa&8>'
+        enabled: true
+        material: PAPER
+        from: 10
+        to: 18
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  land:
+    title: '&8Działka &7->&a {land}'
+    size: 27
+    s:
+      chunks:
+        name: '&bChunki'
+        lore:
+        - '&7Pokazuje wszystkie twoje chunki'
+        - '&7należące do tej działki.'
+        - ' '
+        - '&8- &7Za pomocą komendy &8/&aLands claim'
+        - '  &7możesz dodać kolejne chunki do działki'
+        material: GRASS_BLOCK
+        slot: 11
+      members:
+        name: '&bCzłonkowie'
+        lore:
+        - '&7Lista wszystkich'
+        - '&7członków którzy są'
+        - '&7przypisani do działki'
+        - '&7nawet jeśli są przypisani tylko'
+        - '&7do poszczególnych chunków'
+        - ' '
+        - '&8- &7Użyj &aPrawego Przycisku'
+        - '  &7Aby otorzyć menu zarządzania'
+        - '  &7członkami'
+        material: PLAYER_HEAD
+        slot: 13
+      settings:
+        name: '&bUstawienia'
+        lore:
+        - '&7Zmień ustawienia'
+        - '&7Całej działki'
+        - ' '
+        - '&8- &7Możesz tu edytować ogólne'
+        - '  &7ustawienia typu pojawianie się mobów'
+        - '  &7lub ustawienia roli członków'
+        - '&8- &7Dla przykładu zezwolić'
+        - '  &eCzłonkom &7na otwieranie skrzyń'
+        - '  &7na twojej działce.'
+        material: COMMAND_BLOCK
+        slot: 15
+      invites:
+        name: '&bZaproszenia'
+        lore:
+        - '&7Tutaj zarządzaj wysłanymi zaproszeniami'
+        - '&7lub po prostu sprawdź informacje'
+        - '&7na ich temat'
+        material: WRITABLE_BOOK
+        slot: 17
+    a:
+      settings_noAccess:
+        name: '&4Denied: &eUstawienia'
+        lore:
+        - '&cNie jesteś upowiażniony'
+        - '&cdo zmian na tej działce'
+        - ' '
+        - '&8- &7Tylko właściciel działki'
+        - '  &7może to zrobić'
+        - '&8- &7Skontaktuj sie z włascicielem'
+        - '  &7w celu uzyskania pomocy.'
+        material: COMMAND_BLOCK
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+    f:
+      inbox:
+        name: '&5Poczta &8(&a{amount}&8)'
+        lore:
+        - ' '
+        - '{inbox}'
+        material: PAPER
+        slot: 21
+      back:
+        name: '&cWróć'
+        lore:
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+  chunks:
+    title: '&bChunki'
+    size: 45
+    s: {}
+    f:
+      page_previous:
+        name: '&9Poprzednia strona'
+        lore:
+        - '&Wróć do poprzedniej strony:&9 {previous}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 39
+      page_next:
+        name: '&aNastpępna strona'
+        lore:
+        - '&7Idź do kolejnej strony:&9 {next}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 43
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 37
+    l:
+      chunk:
+        name: '&8Chunk &7-> X:&b {x} &7Z:&b {z}'
+        lore:
+        - '&7Otwórz menu dla tego'
+        - '&7chunku'
+        - ' '
+        - '&8- &7Lokalizacja:'
+        - '  &7X:&e {x}'
+        - '  &7Y:&e ?'
+        - '  &7Z:&e {z}'
+        material: GRASS_BLOCK
+        from: 10
+        to: 36
+      noChunk:
+        name: '&8Chunk &7-> &cBrak'
+        lore:
+        - '&7Ta działka nie ma żadnego'
+        - '&7przypisanego chunku'
+        - ' '
+        - '&8- &7Aby przypisać chunk użyj komendy:'
+        - '  &8/&aLands claim'
+        material: PAPER
+        from: 10
+        to: 36
+    a:
+      failure_untrusted:
+        name: '&4Odmowa: &bChunk'
+        lore:
+        - '&cNie jesteś upoważniony'
+        - '&cdo otwarcia menu tego chunku'
+        - ' '
+        - '&8- &7musisz być przypisany'
+        - '  &7do tego chunku'
+        material: GRASS_BLOCK
+      failure_teleport_permission:
+        name: '&4Odmowa: &bPermission'
+        lore:
+        - '&cNie masz pozwolenia'
+        - '&cna teleportację do tego chunku.'
+        - ' '
+        material: GRASS_BLOCK
+      failure_teleport_cooldown:
+        name: '&4Odmowa: &bCooldown'
+        lore:
+        - '&cMusisz poczekac zanim'
+        - '&cbędziesz gotów teleportować się'
+        - '&cdo tego chunku.'
+        - ' '
+        material: GRASS_BLOCK
+      failure_teleport_money:
+        name: '&4Odmowa: &bMoney'
+        lore:
+        - '&cNie stać cię na teleport do tego chunku'
+        - ' '
+        - '&8- &7Potrzebujesz&e {money} $&7.'
+        material: GRASS_BLOCK
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 37
+        to: 45
+  chunk:
+    title: '&8Chunk &7X:&a {x} &7Z:&a {z}'
+    size: 27
+    s:
+      members:
+        name: '&bCzłonkowie'
+        lore:
+        - '&7Lista wszystkich'
+        - '&7graczy którzy są'
+        - '&7dodani do tego chunku.'
+        - ' '
+        - '&8- &7Użyj &aprawego przycisku'
+        - '  &7aby otworzyć menu ról'
+        - '  &7członków'
+        material: PLAYER_HEAD
+        slot: 11
+      settings:
+        name: '&bUstawienia'
+        lore:
+        - '&7Edytuj ustawienia'
+        - '&7dotyczące tego chunku.'
+        - ' '
+        - '&8- &7Użyj prawego przycisku &7aby'
+        - '  &7opuścic ten chunk'
+        - ' '
+        - '&8- &7Możesz tu edytować ogólne'
+        - '  &7ustawienia typu pojawianie się mobów'
+        - '  &7lub ustawienia roli członków'
+        - '&8- &7Dla przykładu zezwolić'
+        - '  &eCzłonkom &7na otwieranie skrzyń'
+        - '  &7na tym chunku.'
+        material: COMMAND_BLOCK
+        slot: 14
+      invites:
+        name: '&bZaproszenia'
+        lore:
+        - '&7Tutaj zarządzaj wysłanymi zaproszeniami'
+        - '&7lub po prostu sprawdź informacje'
+        - '&7na ich temat'
+        - ' '
+        - '&8- &7Te zaproszenia mogą'
+        - '  &7dodać członka tylko'
+        - '  &7do tego chunku'
+        material: WRITABLE_BOOK
+        slot: 17
+    a:
+      settings_noAccess:
+        name: '&4Odmowa: &eSettings'
+        lore:
+        - '&cNie jesteś upoważniony aby'
+        - '&cedytować ustawienia na tym'
+        - '&cchunku'
+        - ' '
+        - '&8- &7Tylko własciciel działki'
+        - '  &7może to zrobić'
+        - '&8- &7Skontaktuj się z włascicielem działki'
+        - '  &7w celu uzyskania pomocy.'
+        material: COMMAND_BLOCK
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+    f:
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+  invites:
+    title: '&8Zaproszenia'
+    size: 36
+    s: {}
+    f:
+      page_previous:
+        name: '&9Poprzednia strona'
+        lore:
+        - '&7Idź do poprzedniej strony:&9 {previous}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aNastpępna strona'
+        lore:
+        - '&7Idź do następnej strony:&9 {next}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      invite:
+        name: '&8Zaproszenie &7->&a {player}'
+        lore:
+        - '&7Edytuj to zaproszenie'
+        - '&7lub wyświetl informacje'
+        material: BOOK
+        from: 10
+        to: 27
+      noInvite:
+        name: '&8Zaproszenie &7-> &cBrak'
+        lore:
+        - '&7Brak aktywnych zaproszeń'
+        - ' '
+        - '&8- &7Aby kogoś zaprosić użyj komendy:'
+        - '  &8/&aLands trust &8<&aNick gracza&8>'
+        material: PAPER
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  invite:
+    title: '&8Zaproś &7->&a {player}'
+    size: 27
+    s:
+      revoke:
+        name: '&bAnuluj zaproszenie'
+        lore:
+        - '&7Tutaj możesz anulować'
+        - '&7to zaproszenie'
+        material: RED_DYE
+        slot: 12
+    f:
+      info_land:
+        name: '&bInformacje'
+        lore:
+        - '&7Działka:&e {land}'
+        - '&7Świat:&e {world}'
+        - ' '
+        - '&7Wysyłający:&e {sender}'
+        - '&7Odebrane:&e {time}'
+        material: OAK_SIGN
+        slot: 16
+      info_chunks:
+        name: '&bInformacje'
+        lore:
+        - '&7Działka:&e {land}'
+        - '&7Świat:&e {world}'
+        - ' '
+        - '&7Chunki:'
+        - '{chunks}'
+        - ' '
+        - '&7Wysyłający:&e {sender}'
+        - '&7Odebrane:&e {time}'
+        material: OAK_SIGN
+        slot: 16
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      failure_noAccess:
+        name: '&4Odmowa: &bRevoke Invite'
+        lore:
+        - '&cNie jesteś upoważniony'
+        - '&cdo wycodania tego zaproszenia.'
+        - ' '
+        - '&8- &7Potrzebujesz uprawnienia'
+        - '  &7wyrzucać graczy.'
+        - '&8- &7Skontaktuj się z własciciel'
+        - '  &7w celu uzyskania pomocy.'
+        material: RED_DYE
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  roles:
+    title: '&8Wybierz rolę'
+    size: 27
+    s:
+      admin:
+        name: '&cAdmin'
+        lore:
+        - '&7Kliknij aby edytować'
+        - '&7lub zobaczyć listę adminów'
+        - ' '
+        - '&8- &7Gracze mogą też'
+        - '  &7posiadać rolę tylko'
+        - '  &7w wybranych chunkach'
+        material: ENCHANTED_GOLDEN_APPLE
+        slot: 11
+      member:
+        name: '&eCzłonek'
+        lore:
+        - '&7Kliknij aby edytować'
+        - '&7lub zobaczyć listę członków'
+        - ' '
+        - '&8- &7Gracze mogą też'
+        - '  &7posiadać rolę tylko'
+        - '  &7w wybranych chunkach'
+        material: APPLE
+        slot: 17
+      visitor:
+        name: '&5Odwiedzający'
+        lore:
+        - '&7Kliknij aby edytować'
+        - '&7lub zobaczyć listę Odwiedzających'
+        material: WHEAT
+        slot: 14
+    f:
+      owner:
+        name: '&4Właściciel &7->&b {player}'
+        lore:
+        - '&7To właściciel działki.'
+        - '&7Jeżeli masz pytania, zapytaj'
+        - '&7go o pomoc.'
+        material: PLAYER_HEAD
+        slot: 14
+      back:
+        name: '&cWróć'
+        lore:
+        - '&Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+    a:
+      failure_role:
+        name: '&4Błąd: &cRole'
+        lore:
+        - '&7Nie jesteś upoważniony do'
+        - '&7edytowania ról wyżych lub'
+        - '&7tej samej co twoja.'
+        - ' '
+        - '&8- &7Tylko Administracja serwerowa'
+        - '  &7może to zrobić.'
+        material: RED_STAINED_GLASS_PANE
+  role:
+    title: '&8Role &7->&a {role}'
+    size: 36
+    s: {}
+    f:
+      page_previous:
+        name: '&9Poprzednia strona'
+        lore:
+        - '&7Idź do poprzedniej strony:&9 {previous}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aNastpępna strona'
+        lore:
+        - '&7Idź do następnej strony:&9 {next}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      noPlayer:
+        name: '&8Gracz &7-> &cBrak'
+        lore:
+        - '&7Ten objekt nie ma'
+        - '&7żadnych graczy z tą rolą'
+        - ' '
+        - '&8- &bAby zaprosić gracza &7do całej działki:'
+        - '  &8/&aLands trust &8<&7Nick Gracza&8>'
+        - '&8- &7Aby zaprosić gracza do chanku:'
+        - '  &8/&7Lands trust &8<&7Nick Gracza&8> &7here'
+        - ' '
+        - '&8- &bAby ustawić rolę &7na całej działce:'
+        - '  &8/&aLands setRole &8<&aNick Gracza&8>'
+        - '&8- &7Aby ustawić rolę na chanku:'
+        - '  &8/&7Lands setRole &8<&7Nick Gracza&8> &7here'
+        material: PAPER
+        from: 10
+        to: 27
+      players:
+        name: '{role} &7->&b {player}'
+        lore:
+        - '&7Kliknij na Gracza'
+        - '&aby go usunąć lub'
+        - '&7wyświetlić informacje.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  player:
+    title: '&8Gracz &7->&a {player}'
+    size: 27
+    s:
+      untrust:
+        name: '&bWyrzuć'
+        lore:
+        - '&7Wyrzuć gracza z'
+        - '&7działki.'
+        - ' '
+        - '&8- &7Gracz może też'
+        - '  &7zostać wyrzucony'
+        - '  &7z poszczególnych chunków'
+        material: RED_DYE
+        slot: 12
+    f:
+      player:
+        name: '&bInformacje'
+        lore:
+        - '&7Ostatnio widziany:'
+        - '&c{seen}'
+        - ' '
+        - '&7Działka:'
+        - '&e{lands}'
+        material: OAK_SIGN
+        slot: 16
+      back:
+        name: '&Wróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      untrust_noAccess:
+        name: '&4Odmowa: &bUntrust'
+        lore:
+        - '&cNie jesteś uprawniony'
+        - '&caby wyrzucić gracza z tego'
+        - '&cobjektu.'
+        - ' '
+        - '&8- &7Musisz być upoważniony'
+        - '  &7Do wyrzucania graczy z tej'
+        - '  &7działki.'
+        - '&8- &7W celu uzyskania pomocy'
+        - '  &7skontaktuj się z włascicielem działki'
+        material: RED_DYE
+      failure_self:
+        name: '&4Błąd: &cSelf'
+        lore:
+        - '&7Nie możesz wyrzucić siebie.'
+        - ' '
+        - '&8- &7Użyj &8/&aLands leave {land}'
+        - '  &7aby opuścić działkę.'
+        material: RED_DYE
+      untrust_owner:
+        name: '&4Odmowa: &bUntrust'
+        lore:
+        - '&cNie możesz wyrzucić własciciela.'
+        - '&cAby zmienić własciciela Działki skontaktuj'
+        - '&csię z administratorem serwera.'
+        material: RED_DYE
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  settings_role:
+    title: '&8Ustawienia &7-> {role}'
+    size: 45
+    s: {}
+    f:
+      page_previous:
+        name: '&9Poprzednia strona'
+        lore:
+        - '&7wróć do poprzedniej strony:&9 {previous}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 39
+      page_next:
+        name: '&aNastpępna strona'
+        lore:
+        - '&7Idź do następnej strony:&9 {next}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 43
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 37
+    l:
+      block_break:
+        name: '&bNiszczenie bloków'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7niszczenie bloków?'
+        material: IRON_PICKAXE
+        from: 10
+        to: 36
+      block_place:
+        name: '&bStawianie Bloków'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7stawianie bloków?'
+        material: OAK_PLANKS
+        from: 10
+        to: 36
+      block_ignite:
+        name: '&bPodpalanie Bloków'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7podpalanie bloków?'
+        material: FLINT_AND_STEEL
+        from: 10
+        to: 36
+      interact_general:
+        name: '&bOgólna interakcja'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7interakcję?'
+        material: STRING
+        from: 10
+        to: 36
+      interact_door:
+        name: '&bOtwieranie drzwi'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7otwieranie drzwi?'
+        material: IRON_DOOR
+        from: 10
+        to: 36
+      interact_container:
+        name: '&bOtwieranie Skrzyń'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7Otwieranie skrzyń?'
+        material: CHEST
+        from: 10
+        to: 36
+      interact_mechanism:
+        name: '&bUżywanie mechanizmów.'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7używanie mechanizmów?'
+        material: REDSTONE
+        from: 10
+        to: 36
+      interact_villager:
+        name: '&bHandel z wieśniakami'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7handel z wieśniakami?'
+        material: EMERALD
+        from: 10
+        to: 36
+      attack_player:
+        name: '&bAtakowanie Graczy'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7atakowanie graczy?'
+        - ' '
+        - '&8- &7Mogą atakować tylko graczy'
+        - '  &7którzy również mogą ich atakować.'
+        material: IRON_SWORD
+        from: 10
+        to: 36
+      attack_animal:
+        name: '&bAtakowanie zwierząt'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7atakowanie zwierząt?'
+        material: BOW
+        from: 10
+        to: 36
+      player_trust:
+        name: '&bDodawanie członków'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7dodawanie człownków?'
+        material: GREEN_DYE
+        from: 10
+        to: 36
+      player_setRole:
+        name: '&bUstawianie ról'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7ustawianie ról dla graczy?'
+        - ' '
+        - '&8- &7Nie będą upoważnieni'
+        - '  &7do edytowania ról wyżych niż'
+        - '  &7własna ani równych swojej.'
+        material: CYAN_DYE
+        from: 10
+        to: 36
+      player_untrust:
+        name: '&bWyrzucanie członków'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7wyrzucanie członków?'
+        - ' '
+        - '&8- &7Nie będą upoważnieni'
+        - '  &7do wyrzucania ról wyżych niż'
+        - '  &7własna ani równych swojej.'
+        material: RED_DYE
+        from: 10
+        to: 36
+      fly:
+        name: '&bLatanie'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7Latanie?'
+        material: FEATHER
+        from: 10
+        to: 36
+      setting_edit_land:
+        name: '&bEdytowanie ustawień działki'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7edytowanie ustawień działki?'
+        material: GRASS_BLOCK
+        from: 10
+        to: 36
+      setting_edit_role:
+        name: '&Edytowanie ustawień ról'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7edytowanie ustawień ról?'
+        - ' '
+        - '&8- &7Nie będą mogli'
+        - '  &7edytować ustawień swojej'
+        - '  &7roli.'
+        - ' '
+        - '&8- &7Powinieneś/aś dać to pozwolenie tylko'
+        - '  &7bardzo zaufanym graczom.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 36
+      setting_edit_advanced:
+        name: '&bZaawansowane edytowanie ustawień ról'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7zaawansowane edytowanie ustawień ról?'
+        - ' '
+        - '&8- &7Powinieneś/aś dać to pozwolenie tylko'
+        - '  &7bardzo zaufanym graczom.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 36
+      setting_edit_various:
+        name: '&bEdytowanie różnych ustawień działki'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7edytowanie różnych ustawień działki?'
+        - ' '
+        - '&8- &7Będą zmienić nazwę działki'
+        - '    &7czy jej opis.'
+        material: NAME_TAG
+        from: 10
+        to: 36
+      setting_edit_taxes:
+        name: '&bEdytowanie podatków'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tej roli na'
+        - '&7edytowanie podatków?'
+        - ' '
+        - '&8- &7Powinieneś/aś dać to pozwolenie tylko'
+        - '  &7bardzo zaufanym graczom.'
+        material: GOLD_NUGGET
+        from: 10
+        to: 36
+    a:
+      failure_permission:
+        name: '&4Błąd: &cBrak uprawnień'
+        lore:
+        - '&7Nie jesteś upoważniony'
+        - '&7do edytowania tych ustawień'
+        - ' '
+        material: RED_STAINED_GLASS_PANE
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 45
+  settings_role_advanced:
+    title: '&8Zaawansowane ustawienia &7-> {role}'
+    size: 27
+    s: {}
+    f:
+      page_previous:
+        name: '&9Poprzednia strona'
+        lore:
+        - '&7Wróć do poprzedniej strony:&9 {previous}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&aNastpępna strona'
+        lore:
+        - '&7Idź do następnej strony`:&9 {next}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 25
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    l:
+      land_claim:
+        name: '&bZajmij Działkę'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Upoważnić tę rolę'
+        - '&7do dodawnia chunków do tej działki?'
+        material: IRON_SHOVEL
+        from: 10
+        to: 18
+      land_claim_border:
+        name: '&bZajmowanie Działki przy granicy'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Upoważnić tę rolę'
+        - '&7do zajmowania chankow na'
+        - '&7granicy twojej działki?'
+        material: LEAD
+        from: 10
+        to: 18
+      land_spawn_set:
+        name: '&bUstaw SpawnDziałki'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Upoważnić tę rolę'
+        - '&7do edytowania spawnu działki?'
+        material: LEVER
+        from: 10
+        to: 18
+      land_spawn_teleport:
+        name: '&bTeleport na spawn'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Upoważnić tę rolę'
+        - '&7do teleportowania się na spawn działki?'
+        material: ENDER_PEARL
+        from: 10
+        to: 18
+      land_rename:
+        name: '&bZmiana nazwy działki'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Upoważnić tę rolę'
+        - '&7do zmiany nazwy działki?'
+        material: NAME_TAG
+        from: 10
+        to: 18
+    a:
+      failure_permission:
+        name: '&4Błąd: &cBrak uprawnień'
+        lore:
+        - '&7Nie jesteś upoważniony'
+        - '&7do edytowania tych ustawień'
+        - ' '
+        material: RED_STAINED_GLASS_PANE
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  settings_land:
+    title: '&8Ustawienia działki'
+    size: 27
+    s: {}
+    f:
+      page_previous:
+        name: '&9Poprzednia strona'
+        lore:
+        - '&7Wróć do poprzedniej strony:&9 {previous}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&aNastpępna strona'
+        lore:
+        - '&7Idź do następnej strony:&9 {next}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 25
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    l:
+      entity_griefing:
+        name: '&bNiszczenie poprzez Moby'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić Mobom na'
+        - '&7niszczenie bloków?'
+        material: CREEPER_HEAD
+        from: 10
+        to: 18
+      tnt_griefing:
+        name: '&bTNT'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić na wybuch TNT?'
+        material: TNT
+        from: 10
+        to: 18
+      piston_griefing:
+        name: '&bTłoki spoza terenu'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić tłokom na niszczenie?'
+        - ' '
+        - '&8- &7Jeśli jest włączone inni'
+        - '  &7gracze mogą niszczyc twoją działkę'
+        - '  &7spoza niej używając tłoków.'
+        material: PISTON
+        from: 10
+        to: 18
+      waterflow_allow:
+        name: '&bDziałanie wody spoza działki'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić na niszczenie'
+        - '&7wodzie spoza działki?'
+        - ' '
+        - '&8- &7Jeśli jest włączone inni'
+        - '  &7gracze mogą niszczyc twoją działkę'
+        - '  &7spoza niej używając wody.'
+        material: WATER_BUCKET
+        from: 10
+        to: 18
+      monster_spawn:
+        name: '&bPojawianie się potworów'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić na pojawianie się stworów?'
+        material: SPAWNER
+        from: 10
+        to: 18
+      animal_spawn:
+        name: '&bPojawianie się zwierząt'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Odblokowane: {unlocked}'
+        - ' '
+        - '&7Zezwolić na pojawianie się zwierząt?'
+        material: TALL_GRASS
+        from: 10
+        to: 18
+    a:
+      failure_permission:
+        name: '&4Błąd: &cBrak uprawnień'
+        lore:
+        - '&7Nie jesteś upoważniony'
+        - '&7do edytowania tych ustawień'
+        - ' '
+        material: RED_STAINED_GLASS_PANE
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  settings_taxes:
+    title: '&8Czynsz'
+    size: 27
+    s:
+      plus_1:
+        name: '&aDodaj $1'
+        lore:
+        - '&7Dodaj $1 do'
+        - '&7czynszu.'
+        material: GLOWSTONE_DUST
+        slot: 11
+        amount: 1
+      plus_100:
+        name: '&aDodaj $100'
+        lore:
+        - '&7Dodaj $100 do'
+        - '&7czynszu.'
+        material: GLOWSTONE_DUST
+        slot: 12
+      plus_1000:
+        name: '&aDodaj $1000'
+        lore:
+        - '&7Dodaj $1000 do'
+        - '&7czynszu'
+        material: GLOWSTONE_DUST
+        slot: 13
+      minus_1000:
+        name: '&cOdejmij $1000'
+        lore:
+        - '&7Odejmij $1000 od'
+        - '&7czynszu'
+        material: REDSTONE
+        slot: 15
+      minus_100:
+        name: '&cOdejmij $100'
+        lore:
+        - '&7Odejmij $100 Od'
+        - '&7Czynszu'
+        material: REDSTONE
+        slot: 16
+      minus_1:
+        name: '&cOdejmij $1'
+        lore:
+        - '&7Odejmij $1 od'
+        - '&7czynszu'
+        material: REDSTONE
+        slot: 17
+    f:
+      tax:
+        name: '&bCzynsz:&7 {tax}'
+        lore:
+        - '&7Nasępny czynsz: &b {next}&7.'
+        - '&7Razem: {total}'
+        - ' '
+        - '&8- &7Kliknij tutaj aby '
+        - '  &7zmienić ustawienia czynszu'
+        - '  &7Gracze będą płacić za'
+        - '  &7całą działkę lub pojedyńczy chunk'
+        - ' '
+        - '&8- &7Gracze będą płacić'
+        - '  &7czynsz za chunk, więc'
+        - '  &7Wzór to:'
+        - '  &7chunk_1 + chunk_2 etc.'
+        material: GOLD_INGOT
+        slot: 14
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      taxes:
+        name: '&bCzynsz:&7 {tax}'
+        lore:
+        - '&7Nasępny czynsz za&2 {next-tax}&7.'
+        - ' '
+        - '&7Nasępna opłata za&2 {next-upkeep}&7.'
+        - '&Twoja działka zapłaci: &c ${costs}&7.'
+        - ' '
+        - '&8- &aCzynsz'
+        - '  &7Zapłacone przez użytkowników działki.'
+        - ' '
+        - '&8- &aUpkeep costs'
+        - '  &7Jest to płacone przez działkę,'
+        - '  &7dla serwera za utrzymanie działki.'
+        - ' '
+        - '&8- &7Gracze płacą'
+        - '  &7czynsz za chunk, więc'
+        - '  &7Wzór to:'
+        - '  &7chunk 1 + chunk 2 etc.'
+        material: GOLD_INGOT
+        slot: 14
+    a:
+      failure_maxValue:
+        name: '&4Maksymalny stan konta osiągnięty.'
+        lore:
+        - '&7Nie możesz ustawić czynszu'
+        - '&7wyżej niż&b {max}&7.'
+        - ' '
+        material: GLOWSTONE_DUST
+      failure_cooldown:
+        name: '&4Ładowanie:&c musisz poczekać.'
+        lore:
+        - '&7Nie możesz zmienić wartości czynszu'
+        - '&7musisz poczekać.'
+        - '&b{time} &7hours.'
+        - ' '
+        material: GLOWSTONE_DUST
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  actionConfirm:
+    title: '&8Potwierdź wykonywane działanie'
+    size: 27
+    s:
+      info:
+        name: '&bProszę potwierdź wykonywane działanie'
+        lore:
+        - '&7Kliknij &aTak &7aby potwierdzić lub'
+        - '&cNie &7aby anulować.'
+        material: OAK_SIGN
+        slot: 14
+    l:
+      yes_player:
+        name: '&aTak'
+        lore:
+        - '&7Potwierdź działanie.'
+        - ' '
+        - '&7Jesteś pewny że chcesz'
+        - '&7wyrzucić tego gracza?'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      no_player:
+        name: '&cNie'
+        lore:
+        - '&7Anuluj działanie.'
+        - ' '
+        - '&7Jesteś pewny że chcesz'
+        - '&7wywalić tego gracza?'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
+      yes_invite:
+        name: '&aTak'
+        lore:
+        - '&7Potwierdź działanie.'
+        - ' '
+        - '&7Jesteś pewny że chcesz'
+        - '&7odwołać to zaproszenie?'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      no_invite:
+        name: '&cNie'
+        lore:
+        - '&7Anuluj działanie.'
+        - ' '
+        - '&7Jesteś pewny że chcesz'
+        - '&7odwołać to zaproszenie?'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
+      yes_chunk:
+        name: '&aTak'
+        lore:
+        - '&7Potwierdź działanie.'
+        - ' '
+        - '&7Jesteś pewny że chcesz'
+        - '&7opuścic ten chunk?'
+        - ' '
+        - '&8- &7Jeśli jesteś włascicielem'
+        - '  &7tego chunku zostanie on usunięty.'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      no_chunk:
+        name: '&cNie'
+        lore:
+        - '&7Anuluj działanie.'
+        - ' '
+        - '&7Jesteś pewny że chcesz'
+        - '&7opuścic ten chunk?'
+        - ' '
+        - '&8- &7Jeśli jesteś włascicielem'
+        - '  &7tego chunku zostanie on usunięty.'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  invites_player:
+    title: '&8Odebrane zaproszenia'
+    size: 36
+    s: {}
+    f:
+      page_previous:
+        name: '&9Poprzednia strona'
+        lore:
+        - '&7Wróć do poprzedniej strony:&9 {previous}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aNastpępna strona'
+        lore:
+        - '&7Idź do następnej strony:&9 {next}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      invite:
+        name: '&8Zaproszenie &7->&a {land}'
+        lore:
+        - '&7Edytuj to zaproszenie'
+        - '&7albo zobacz informacje.'
+        material: BOOK
+        from: 10
+        to: 27
+      noInvite:
+        name: '&8Zaproszenie &7-> &cNone'
+        lore:
+        - '&7Nie ma żanych zaproszeń.'
+        - ' '
+        - '&8- &7Gracze mogą cię zaprosić'
+        - '  &7używając komendy:'
+        - '  &8/&aLands trust &8<&aNick Gracza&8>'
+        material: PAPER
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  invite_player:
+    title: '&8Zaproszenie &7->&a {land}'
+    size: 27
+    f:
+      info_land:
+        name: '&bInformacja'
+        lore:
+        - '&7Działka:&e {land}'
+        - '&7Świat:&e {world}'
+        - ' '
+        - '&7Wysyłający:&e {sender}'
+        - '&7Odebrano:&e {time}'
+        material: OAK_SIGN
+        slot: 14
+      info_chunks:
+        name: '&bInformacja'
+        lore:
+        - '&7Działka:&e {land}'
+        - '&7Świat:&e {world}'
+        - ' '
+        - '&7Chunki:'
+        - '{chunks}'
+        - ' '
+        - '&7Wysyłający:&e {sender}'
+        - '&7Odebrano:&e {time}'
+        material: OAK_SIGN
+        slot: 14
+    l:
+      accept:
+        name: '&aAkceptuj'
+        lore:
+        - '&7Akceptuj zaproszenie.'
+        - ' '
+        - '&7Koszt dołączenia:&e {join}'
+        - '&7wartość czynszu:&e {tax}'
+        - ' '
+        - '&7Jesteś pewny że chcesz'
+        - '&7akceptować to zaproszenie?'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      deny:
+        name: '&cOdrzuć'
+        lore:
+        - '&7Odrzuć to zaproszenie'
+        - ' '
+        - '&7Koszt dołączenia:&e {join}'
+        - '&7wartość czynszu:&e {tax}'
+        - ' '
+        - '&7Jesteś pewny że chcesz'
+        - '&7akceptować to zaproszenie?'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
+    a:
+      failure_lands:
+        name: '&4Błąd: &bLands Amount'
+        lore:
+        - '&7Nie możesz dołączyć do'
+        - '&7tej działki, ponieważ'
+        - '&7osiągnąłeś maksymalną liczbę'
+        - '&7posiadanych działek.'
+        - ' '
+        - '&8- &7Maksymalna ilość:&e {lands}'
+        material: RED_STAINED_GLASS_PANE
+      failure_inviteOwner:
+        name: '&4Błąd: &bZaproszenie własciciela'
+        lore:
+        - '&7Nie możesz dołączyć do'
+        - '&7tej działki ponieważ nie możesz'
+        - '&7mieć własnej działki jednocześnie'
+        - '&7być częścią innej.'
+        - ' '
+        material: RED_STAINED_GLASS_PANE
+      failure_total:
+        name: '&4Błąd: &bCałkowity czynsz'
+        lore:
+        - '&7Nie możesz dołączyć do tej'
+        - '&7działki ponieważ nie masz'
+        - '&7wystarczająco pieniędzy żeby'
+        - '&7zapłacić cenę za dołączenie.'
+        - ' '
+        material: RED_STAINED_GLASS_PANE
+      failure_notTrusted:
+        name: '&4Błąd: &bWłaściciel przekroczył limit!'
+        lore:
+        - '&7Nie można cię dodać'
+        - '&7do tego obiektu ponieważ jego'
+        - '&7właściciel osiągnął maksymalną ilość'
+        - '&7członków'
+        - ' '
+        material: RED_STAINED_GLASS_PANE
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  player_info:
+    title: '&8Gracz {player}'
+    size: 27
+    s:
+      close:
+        name: '&cZamknij'
+        lore:
+        - '&7Zamknij menu.'
+        - ' '
+        - '&8- &7Możesz otwożyć je ponownie'
+        - '  &7za pomocą komendy: &8/&aLands player'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+    f:
+      last_seen:
+        name: '&bOstatnio widziany'
+        lore:
+        - '&c{last-seen}'
+        material: CLOCK
+        slot: 12
+      lands:
+        name: '&Działki &8(&7{amount}&8)'
+        lore:
+        - '{lands}'
+        material: OAK_SIGN
+        slot: 16
+      max-chunks:
+        name: '&bMaksymalna ilość chunków (Chunks)'
+        lore:
+        - '&7Ten gracz może maksymalnie dodać '
+        - '&a{chunks} &7chunków.'
+        - ' '
+        material: GRASS_BLOCK
+        slot: 14
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  land_info:
+    title: '&8Działka {land}'
+    size: 45
+    f:
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '&e{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 37
+      close:
+        name: '&cZamknij'
+        lore:
+        - '&7Zamknij menu'
+        - ' '
+        - '&8- &7Możesz otwożyć je ponownie'
+        - '  &7za pomocą komendy &8/&aLands info {land}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+      owner:
+        name: '&4Właściciel &7->&b {player}'
+        lore:
+        - '&7Oni są właścicielami tej'
+        - '&7działki skontaktuj się z nimi'
+        - '&7jeśli masz jakieś pytania.'
+        material: PLAYER_HEAD
+        slot: 14
+      chunks:
+        name: '&aChunki &8(&7{amount}&8)'
+        lore:
+        - ' '
+        - '&e{chunks}'
+        material: GRASS_BLOCK
+        slot: 30
+      admins:
+        name: '&cAdmini &8(&7{amount}&8)'
+        lore:
+        - ' '
+        - '&e{admins}'
+        material: ENCHANTED_GOLDEN_APPLE
+        slot: 11
+      members:
+        name: '&eCzłonkowie &8(&7{amount}&8)'
+        lore:
+        - ' '
+        - '&e{members}'
+        material: APPLE
+        slot: 17
+      created:
+        name: '&bStworzono'
+        lore:
+        - '&e{date}'
+        material: CLOCK
+        slot: 34
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 45
+  settingss:
+    title: '&8Wybierz ustawienia'
+    size: 27
+    f:
+      various:
+        name: '&bRóżne Ustawienia'
+        lore:
+        - '&7Edytuj różne ustawienia działki'
+        - ' '
+        - '&8- &7Zmień wiadomość powitalną'
+        - '  &7działki albo jej nazwę'
+        material: OAK_SIGN
+        slot: 17
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    s:
+      role:
+        name: '&bUstawienia ról'
+        lore:
+        - '&7Edytuj uprawnienia ról jak'
+        - '&7budowanie, niszczenie czy PvP.'
+        material: PLAYER_HEAD
+        slot: 11
+      advanced:
+        name: '&bZaawansowane ustawienia ról'
+        lore:
+        - '&7Edytuj Zaawansowane ustawienia ról'
+        - '&7typu uprawnienia to zajmowania działki'
+        - '&7albo zmianę jej nazwy.'
+        - ' '
+        - '&8- &7Ustawienia tyczą się'
+        - '  &eCAŁEJ &7działki'
+        material: IRON_HELMET
+        slot: 12
+      taxes:
+        name: '&bCzynsz'
+        lore:
+        - '&7Edytuj czynsz dla'
+        - '&7tego obiektu'
+        - ' '
+        - '&8- &7Jeśli edytujesz'
+        - '  &7czynsz z menu działki'
+        - '  &7a nie z chunku, czynsz będzie'
+        - '  &7zastooswany do każdego chunku'
+        - ' '
+        - '&8- &7Gracze płacą czynsz'
+        - '  &7za chunk więc wzór to:'
+        - '  &7chunk_1 + chunk_2 etc.'
+        material: GOLD_NUGGET
+        slot: 14
+      land:
+        name: '&bUstawienia działki'
+        lore:
+        - '&7Edytuj ustawienia działki'
+        - '&7typu pojawianie się stworów czy '
+        - '&7niszczenie przez nie bloków'
+        - '&7możesz to ustawić osobno dla każdego obiektu'
+        material: GRASS_BLOCK
+        slot: 16
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+    a:
+      setting_noaccess:
+        name: '&4Błąd: &cBrak dostępu'
+        lore:
+        - '&7Nie jesteś upoważniony'
+        - '&7do edytowania tych ustawień.'
+        - ' '
+        material: RED_STAINED_GLASS_PANE
+  settings_various:
+    title: '&8Różne ustawienia'
+    size: 27
+    s: {}
+    f:
+      name:
+        name: '&bNazwa działki'
+        lore:
+        - '&7Ustaw nową nazwę'
+        - '&7dla tej działki'
+        - ' '
+        - '&8- &Aktualna nazwa:'
+        - '  &a{name}'
+        material: NAME_TAG
+        slot: 12
+      title:
+        name: '&bWiadomość działki'
+        lore:
+        - '&7Zmień wiadomość'
+        - '&7powitalną działki'
+        - ' '
+        - '&8- &7Aktualna wiadomość:'
+        - '  {title}'
+        - ' '
+        material: OAK_SIGN
+        slot: 16
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  lands-list:
+    title: '&8Wszystkie działki'
+    size: 54
+    s:
+      close:
+        name: '&cZamknij'
+        lore:
+        - '&7Zamknij menu'
+        - ' '
+        - '&8- &7Możesz je ponownie otworzyć'
+        - '  &7za pomocą komendy: &8/&aLands list&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 46
+    f:
+      back:
+        name: '&cWróć'
+        lore:
+        - '&7Wróć'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 46
+      toggle-allowed:
+        name: '&bPokazwać tylko przyznane działki?'
+        lore:
+        - ' '
+        - '&8- &7Pokazywać tylko działki gdzie masz'
+        - '  &7pozwolenie do teleportacji na spawn?'
+        - ' '
+        material: COMMAND_BLOCK
+        slot: 50
+      page_previous:
+        name: '&9Poprzednia strona'
+        lore:
+        - '&7Wróć do poprzedniej strona:&9 {previous}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 48
+      page_next:
+        name: '&aNastpępna strona'
+        lore:
+        - '&7Idź do następnej strony:&9 {next}'
+        - ' '
+        - '&8- &7Aktualna:&b {current}'
+        material: ARROW
+        slot: 52
+    l:
+      land:
+        name: '&8Działka &7->&a {land}'
+        lore:
+        - '&bKLIKNIJ LEWYM'
+        - '&7Aby sie przeteleportować na'
+        - '&7spawn tej działki'
+        - ' '
+        - '&9KLIKNIJ PRAWYM'
+        - '&7Aby otworzyć menu z informacjami'
+        - '&7o tej działce.'
+        - ' '
+        - '&7Wiadomość:'
+        - '{title}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 45
+      no-land:
+        name: '&8Działka &7-> &cBrak'
+        lore:
+        - '&7Nie ma żadnych stworzonych działek.'
+        - ' '
+        - '&8- &7Aby stworzyć działkę użyj komendy:'
+        - '  &8/&aLands create'
+        material: PAPER
+        from: 10
+        to: 45
+    a:
+      failure_private:
+        name: '&4Odmowa: &bPrywatny spawn'
+        lore:
+        - '&cNie jesteś upoważniony'
+        - '&caby teleportować się na ten spawn.'
+        - ' '
+        material: PLAYER_HEAD
+      failure_teleport_permission:
+        name: '&4Odmowa: &bPozwolenie'
+        lore:
+        - '&cNie jesteś upoważniony'
+        - '&caby teleportować się na ten spawn.'
+        - ' '
+        material: PLAYER_HEAD
+      failure_admin_permission:
+        name: '&4Odmowa: &bPozwolenie Admina'
+        lore:
+        - '&cNie jesteś upoważniony'
+        - '&caby otorzyć menu edytowania tej działki.'
+        - ' '
+        material: PLAYER_HEAD
+      failure_teleport_cooldown:
+        name: '&4Odmowa: &bŁadowanie'
+        lore:
+        - '&cMusisz poczekac zanim będziesz'
+        - '&cgotów się przeteleportować na ten chunk'
+        - ' '
+        - '&8- &7Twój czas ładowania.'
+        - '  &7Musisz czekać &e {time}&7.'
+        - ' '
+        material: PLAYER_HEAD
+      failure_no-spawn:
+        name: '&4Błąd: &bBrak ustawionego spawnu.'
+        lore:
+        - '&cTa działka nie ma spawnu'
+        - '&cjej własciciele muszą najpierw go ustawić'
+        - ' '
+        material: PLAYER_HEAD
+      failure_teleport_costs:
+        name: '&4Odmowa: &cKoszt'
+        lore:
+        - '&cNie stać cię na teleport'
+        - '&cna spawn tej działki.'
+        - ' '
+        - '&8- &7Potrzebujesz &e {costs} $&7.'
+        material: GRASS_BLOCK
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 36
+        to: 54

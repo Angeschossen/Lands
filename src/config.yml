@@ -17,6 +17,7 @@ general:
   # Italian (it-IT) by MiniMoro
   # Russian (ru-RU) by Envel
   # Spanish (es-ES) by Port
+  # Polish (pl-PL) by Nideon
   # Vietnamese (vi-VN) by anhcraft
   language: 'en-US'
   # This will send a message to console on a server startup,
@@ -32,7 +33,7 @@ general:
   # hh: hours
   # mm: minutes
   # ss: seconds
-  # NOTE: These settings require server reload.
+  # NOTE: These settings require server reload / restart.
   date-format:
     # General format for invites etc.
     # 24 hour format:
@@ -92,6 +93,9 @@ general:
       # Plus 1 land member (/Lands trust)
       # If you want to disable this specific option, just set it to 0 or -1.
       member: 21600
+  # Allow Lands to send some anonymous statistics about how you use Lands to https://bstats.org/plugin/bukkit/Lands
+  # This helps the development of Lands to make implementations for new features easier.
+  metrics: true
 
 
 
@@ -935,7 +939,7 @@ top-lands:
   # Top lands sort mode
   # Available sort modes: BALANCE, SIZE, MEMBERS
   # NOTE: BALANCE requires banks to be enabled.
-  # This option requires server reload.
+  # This option requires server reload / restart.
   sort-mode: 'BALANCE'
   # Sign lederboard settings
   sign:
@@ -1082,6 +1086,8 @@ random-teleport:
   max-radius:
     x: 0
     z: 0
+  # Set the minimum distance between the players current position and the teleport destination.
+  min-distance: 500
   # Players will be random teleported in this world, if they're currently not in a world defined above.
   # NOTE: The world name is case-sensitive.
   backup: 'world'
@@ -1183,6 +1189,17 @@ integration:
     # Dynmap
     Dynmap:
       enabled_12: true
+      # Set the maximum amount of chunks beeing processed at once for updating the land markers.
+      # These chunks aren't actual minecraft chunks. Just Lands chunks.
+      # This setting is especially for weaker hardware.
+      # NOTE: This setting requires server reload / restart.
+      max-chunks-per-round: 50000
+      # Set the spawn icon
+      # You can disable this by setting it to ''
+      spawn:
+        icon: 'greenflag'
+        # Set minimum zoom. The icon won't display, if the zoom in your browser is smaller (mousewheel).
+        min-zoom: 5
       # The name of the layer where users can see the marked lands.
       layer: 'Lands'
       land:
@@ -1212,9 +1229,9 @@ integration:
         color_2: 32768
       border:
         # Opactiy of the land border.
-        opacity_2: 50.0
+        opacity_2: 85.0
         # Thickness of the land border line.
-        thickness: 3
+        thickness: 2
         # To edit the color you need to
         # insert the rgb value given here.
         # Available colors:

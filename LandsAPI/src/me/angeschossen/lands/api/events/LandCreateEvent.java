@@ -19,7 +19,7 @@ public class LandCreateEvent extends Event implements Cancellable {
         this.landPlayer = landPlayer;
     }
 
-    public Land getLandChunk() {
+    public Land getLand() {
         return land;
     }
 
