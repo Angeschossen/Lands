@@ -85,6 +85,11 @@ general:
   disabled: '&cDisabled'
   unlimited: '&aunlimited'
   previous: '&8previous'
+
+  war:
+    defenders: '&aDefenders'
+    attackers: '&cAttackers'
+
 misc:
   claim-block:
     name: '&bClaimblock'
@@ -651,15 +656,6 @@ gui:
         material: WHEAT
         slot: 14
     f:
-      owner:
-        name: '&4Owner &7->&b {player}'
-        lore:
-          - '&7They''re the owner of this'
-          - '&7land. If you have any'
-          - '&7questions, ask them for'
-          - '&7assistance.'
-        material: PLAYER_HEAD
-        slot: 14
       back:
         name: '&cBack'
         lore:
@@ -1548,6 +1544,30 @@ gui:
         material: RED_STAINED_GLASS_PANE
         from: 15
         to: 18
+      yes_war-state:
+        name: '&aYes'
+        lore:
+          - '&7Confirm this action.'
+          - ' '
+          - '&7Do you really want to'
+          - '&7surrender in this war?'
+          - ' '
+          - '&4NOTE: &cYour land will'
+          - '&cneed to pay the tribute'
+          - '&cin order to surrender.'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      no_war-state:
+        name: '&cNo'
+        lore:
+          - '&7Abort this action.'
+          - ' '
+          - '&7Do you really want to'
+          - '&7surrender in this war?'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2112,6 +2132,298 @@ gui:
         material: GRAY_STAINED_GLASS_PANE
         from: 36
         to: 54
+
+  war-declaration_tribute:
+    title: '&8Tribute'
+    size: 27
+    s:
+      plus_1:
+        name: '&aAdd $1'
+        lore:
+          - '&7Add $1 to the'
+          - '&7tribute value.'
+        material: GLOWSTONE_DUST
+        slot: 11
+        amount: 1
+      plus_100:
+        name: '&aAdd $100'
+        lore:
+          - '&7Add $100 to the'
+          - '&7tribute value.'
+        material: GLOWSTONE_DUST
+        slot: 12
+      plus_1000:
+        name: '&aAdd $1000'
+        lore:
+          - '&7Add $1000 to the'
+          - '&7tribute value.'
+        material: GLOWSTONE_DUST
+        slot: 13
+      minus_1000:
+        name: '&cRemove $1000'
+        lore:
+          - '&7Remove $1000 from'
+          - '&7the tribute value.'
+        material: REDSTONE
+        slot: 15
+      minus_100:
+        name: '&cRemove $100'
+        lore:
+          - '&7Remove $100 from'
+          - '&7the tribute value.'
+        material: REDSTONE
+        slot: 16
+      minus_1:
+        name: '&cRemove $1'
+        lore:
+          - '&7Remove $1 from'
+          - '&7the tribute value.'
+        material: REDSTONE
+        slot: 17
+      close:
+        name: '&cClose'
+        lore:
+          - '&7Close this menu.'
+          - ' '
+          - '&8- &7You can open it again by'
+          - '  &7executing &8/&aWars menu&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    f:
+      tribute:
+        name: '&bTribute:&a ${tribute}'
+        lore:
+          - '&7The defending land will need to'
+          - '&7to pay this value in order to'
+          - '&7surrender.'
+          - ' '
+          - '&8- &7The maximum tribute for '
+          - '  &7this land is&c ${max}&7.'
+          - '  &7An server administrator can'
+          - '  &7change that in config.'
+          - ' '
+          - '&cNOTE: &7If you set the tribute'
+          - '&7value to 0, the defending land'
+          - '&7won''t be able to surrender.'
+        material: GOLD_INGOT
+        slot: 14
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      max-tribute:
+        name: '&4Max Value reached'
+        lore:
+          - '&7You can''t set the tribute'
+          - '&7value higher than&b {max}&7.'
+          - ' '
+          - '&8- &7You can ask an administrator'
+          - '  &7to change this.'
+        material: GLOWSTONE_DUST
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+
+  war-state:
+    title: '&8War'
+    size: 27
+    s:
+      close:
+        name: '&cClose'
+        lore:
+          - '&7Close this menu.'
+          - ' '
+          - '&8- &7You can open it again by'
+          - '  &7executing &8/&aWars menu&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    f:
+      attackers:
+        name: '&8> &cAttackers'
+        lore:
+          - '&7View all attacking lands'
+          - '&7of this war.'
+          - ' '
+          - '&8- &e&nStats'
+          - '  &7Total lands:&c {attackers}'
+          - '  &7Total players:&c {att-players}'
+        material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTU0OTQ3ZGU3ZjUyNTk4MjU1ZDZhZmVlOWQ3N2JlZmFkOWI0ZjI0YzBjNDY2M2QyOGJjZGY4YTY0NTdmMzQifX19'
+        slot: 11
+      defenders:
+        name: '&8> &aDefenders'
+        lore:
+          - '&7View all defending lands'
+          - '&7of this war.'
+          - ' '
+          - '&8- &e&nStats'
+          - '  &7Total lands:&a {defenders}'
+          - '  &7Total players:&a {def-players}'
+        material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRkYmNiN2UxZmJlY2VhOWE3MzUwNDM2Y2JiZWEyYjQ5NmY3NGMyOTcyMDRmMWJiOWFjYzM4NzhkNTQyY2NiIn19fQ=='
+        slot: 13
+      info_declaration:
+        name: '&8> &bInformation'
+        lore:
+          - '&7The war starts in '
+          - '&5~{time}'
+          - ' '
+          - '&8- &e&nTribute:&4 ${tribute}'
+          - '  &7The initial defender land'
+          - '  &7can pay this tribute in order'
+          - '  &7to surrender.'
+          - ' '
+          - '&8- &7Attackers will be able to do'
+          - '  &7these things in your land:'
+          - ' '
+          - '{settings}'
+        material: IRON_SWORD
+        slot: 15
+      info_war:
+        name: '&8> &bInformation'
+        lore:
+          - '&7The war ends in '
+          - '&5~{time}'
+          - ' '
+          - '&8- &7Attackers can do these'
+          - '  &7things in your land:'
+          - ' '
+          - '{settings}'
+        material: IRON_SWORD
+        slot: 15
+      tribute_attacker:
+        name: '&8> &6Tribute:&a ${tribute}'
+        lore:
+          - '&7Change the tribute'
+          - '&7value for this war.'
+          - ' '
+          - '&8- &7A surrender will need to'
+          - '  &7pay this value in order'
+          - '  &7to surrender.'
+          - ' '
+          - '&8- &7Tribute will be divided'
+          - '  &7to all attackers: {divide}'
+        material: 'GOLD_INGOT'
+        slot: 17
+      tribute_defender:
+        name: '&8> &6Surrender:&c ${tribute}'
+        lore:
+          - '&7Click here to surrender'
+          - '&7in this war.'
+          - ' '
+          - '&8- &cA surrenderer will need to'
+          - '  &cpay the tribute value of&c ${tribute}'
+          - '  &cin order to surrender.'
+          - ' '
+          - '&8- &7If the value equals 0:'
+          - '  &7That means that the'
+          - '  &7attackers don''t accept'
+          - '  &7your surrender.'
+        material: 'GOLD_INGOT'
+        slot: 17
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 21
+    a:
+      failure_permission:
+        name: '&cFailure: No Access'
+        lore:
+          - '&7This action can only'
+          - '&7be executed by the land'
+          - '&7owner of the initial'
+          - '&7attacker land.'
+          - ' '
+          - '&7Player:&b {owner}'
+        material: 'GOLD_INGOT'
+      failure_surrender:
+        name: '&cFailure: &cSurrender rejected'
+        lore:
+          - '&7The initial attacker land'
+          - '&7rejected your surrender.'
+          - ' '
+          - '&7That''s because they don''t'
+          - '&7accept any tribute.'
+        material: 'GOLD_INGOT'
+      failure_surrender-attacker:
+        name: '&cFailure: &cSurrender rejected'
+        lore:
+          - '&7Attackers are not allowed'
+          - '&7to surrender. Only defenders'
+          - '&7can surrender.'
+        material: 'GOLD_INGOT'
+      failure_surrender-cost:
+        name: '&cFailure: &cSurrender rejected'
+        lore:
+          - '&7Your land does''t have'
+          - '&7enough money to pay the'
+          - '&7tribute of&c ${tribute}&7.'
+        material: 'IRON_SWORD'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+
+  war_lands:
+    title: '{type}'
+    size: 36
+    f:
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Previous Page'
+        lore:
+          - '&7Go to previous page:&9 {previous}'
+          - ' '
+          - '&8- &7Current:&b {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aNext Page'
+        lore:
+          - '&7Go to next page:&9 {next}'
+          - ' '
+          - '&8- &7Current:&b {current}'
+        material: ARROW
+        slot: 34
+    l:
+      land:
+        name: '&8Land &7->&a {land}'
+        lore:
+          - '&7Open the land information'
+          - '&7menu of this land.'
+          - ' '
+          - '&8- &e&nStats'
+          - '  &7Total players:&b {players}'
+          - ' '
+          - '&8- &7&nTitle:'
+          - '  {title}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+
   nation:
     title: '{nation}'
     size: 27

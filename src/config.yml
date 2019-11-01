@@ -172,6 +172,7 @@ land:
   invite:
     # If you disable invites, players can directly trust
     # other players with /Lands trust.
+    # This option requires server reload / restart.
     enabled_16: true
     # Should land owners be able to get invited by other lands (/Lands trust, /Lands accept)?
     # NOTE: If you disable this, land owners can't be part of another land.
@@ -467,7 +468,7 @@ chunk:
       remove-on-load: false
       # If monster spawning disabled, these monsters won't spawn. So you can decide, which monsters shouldn't spawn
       # The latest spigot version entities: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
-      monster-list:
+      monsters_list:
         - 'BLAZE'
         - 'CAVE_SPIDER'
         - 'CREEPER'
@@ -510,7 +511,7 @@ chunk:
       default_61: true
       # If animals spawning disabled, these animals won't spawn. So you can decide, which animals shouldn't spawn
       # The latest spigot version entities: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
-      animal-list:
+      animals_list:
         - 'BAT'
         - 'BLAZE'
         - 'CAT'
@@ -1254,3 +1255,71 @@ integration:
         # Purple: 8388736
         # Orange: 16753920
         color_3: 65280
+
+
+# This is experimental
+# Don't touch this!
+war:
+  enabled_20: false
+
+  # War declaration settings
+  declaration:
+    # How much time do you want to give the defender lands for war preparation, before it will start?
+    # NOTE: Timeunit is seconds
+    # Default is one day
+    preparation-time: 86400
+
+  # War status message interval. This message appears while the war is running. This is very useful to inform players, which might have been offline for some time, that their land is participating in a war.
+  status-interval: 900
+  # Set the max time a war can hold on.
+  # Default: 2,5 days
+  duration_2: 216000
+
+  # Allow players doing the following things in the enemy land.
+  role-settings_list:
+    - ATTACK_PLAYER
+    - BLOCK_PLACE
+
+  # Cutomize what happens when a defender surrenders.
+  surrender:
+    # Tribute settings
+    tribute:
+      # The defender will pay a specific amount of money to the attackers land (if they surrender).
+      # Set the tribute mode.
+      # Use % to set a specific percentage of the defenders land balance.
+      # Use normal numbers to set a total amount of money.
+      max-value: 75%
+
+  # War settings, which can also be chaned ingame by players.
+  # Please note that they need certain permissions in order to change the settings. You can find them in the wiki.
+  settings:
+    # Should the tribute be given to all attacking lands or just the initial attacker?
+    divide_tribute:
+      default_88: true
+
+  shield:
+    # Configure when a land should get a war shield.
+    # If a war shield is active, other lands can't attack the land.
+    activation:
+      # Set a war shield for a land after it surrendered?
+      # If you want to disable this, just set the value to 0.
+      surrender:
+        # How long should a war shield last by default?
+        # TimeUnits:
+        # Seconds: s
+        # Minutes: m
+        # Hours: h
+        # Days: d
+        value_3: 4d
+
+      # Set a war shield for a land after war?
+      # If you want to disable this, just set the value to 0.
+      end:
+        # How long should a war shield last by default?
+        # TimeUnits:
+        # Seconds: s
+        # Minutes: m
+        # Hours: h
+        # Days: d
+        value_4: 7d
+

@@ -81,6 +81,10 @@ general:
         paid: '&e{date} &7Your land paid the upkeep cost. Cost:&c {cost}'
     player:
       join: '&e{date} &7Player&b {player} &7joined our land.'
+  war:
+    land-type:
+      enemy: '&cEnemy'
+      ally: '&aAlly'
 
 help:
   general:
@@ -119,12 +123,19 @@ help:
     deposit: '&8/&aLands deposit &8<&aamount&8> - &7Deposit money to land bank'
     withdraw: '&8/&aLands withdraw &8<&aamount&8> - &7Withdraw money from land bank'
     list: '&8/&aLands list &8[&aworld&8] - &7List all lands'
+
+    war:
+      declare: '&8/&aWar declare &8<&aland&8> - &7Declare war'
+      info: '&8/&aWar info - &7Show current or upcoming war'
+      menu: '&8/&aWar menu &8- &7Open war menu'
+
     admin:
       admin: '&8/&aLands admin &8<&asub-command&8> &8- &7Admin commands'
       debug: '&8/&aLands debug &8- &7Shows loaded data stats'
       safezone: '&8/&aLands safezone &8- &7Configure safezone'
       reload: '&8/&aLands reload &8- &7Reload config or messages'
       about: '&8/&aLands about &8- &7Show information about Lands'
+
 message:
   no-permission: '&cYou don''t have permission to do this. &7You need permission&b {permission}&7.'
   world-invalid: '&cThis is deactivated in this world. &7A administrator needs to add it to the config. World:&b {world}'
@@ -132,6 +143,7 @@ message:
   noaccess:
     chunk: '&cYou''re not allowed to do this at this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c. &7Bypass permission: {bypass}'
     land: '&cYou''re not allowed to do this for this land &8(&7Land:&e {land}&8)&7. Bypass permission: {bypass}'
+    land-not-owner: '&cYou''re not allowed to do this for the land&e {land}&c. &7Select your own land &8(/&aLands edit &8<&aland&8>) or create one &8(/&aLands create &8<&aname&8>)&7. Bypass permission:&b {bypass}'
     role-weight: '&cYou can''t edit this player. &7He has a higher role than you. Contact the land owner for help.'
     plugin: '&cYou can''t claim land here. &7This chunk belongs to a other management plugin. Name:&b {plugin}'
     place: '&cYou''re not allowed to place blocks here. &7This chunk belongs to land&b {land}&7.'
@@ -322,7 +334,7 @@ command:
     not-allowed: '&cYou''re not allowed to teleport to the spawn of this land. &7The owner needs to give you permission to do so. Contact him for assistance &8(&7Land:&e {land}&8)&7.'
     successs: '#t#&9&lTeleported{newline}&7&lLand&a {land} &7&lCost:&a ${cost}'
   wild:
-    no-location: '&cCouldn''t find a safe location for you that matches the filter in config. &7You can try to set the maximum x and z radius for random teleportation to 0 in config.'
+    no-location: '&cCouldn''t find a safe location for you that matches the filter in config. &7You can try to set the maximum x and z radius for random teleportation to 0 in config. Also you can set the min-distance option lower.'
     success: '&7You were random teleported &8(&7X:&e {x} &7Z:&e {z}&8)&7. You paid&b ${cost}&7.'
     searchingg: '#t#&9&lSearching{newline}&7&lRandom Location'
   deposit:
@@ -340,6 +352,7 @@ command:
     activated: '&7Activated land chat. Send a message in public chat to chat with your land. &5NOTE: &7Lands will take your &8/&aLands edit &7land as the chat land.'
     deactivated: '&7Successfully deactivated land chat.'
     formats: '&a{land} &8| {role} &7{player} &8»&f {message}'
+
 list:
   view:
     - '&7---------<- &5&lLand View &7->---------'
@@ -350,3 +363,99 @@ list:
     - '&7Admins:&7 {admins}'
     - '&7Members:&7 {members}'
     - '&7---------<- &5&lLand View &7->---------'
+
+  war:
+    declaration:
+      - '&6&nWar Declaration:'
+      - ' '
+      - '&8- &7Attackers:&c {attackers}'
+      - '  &7Defenders:&a {defenders}'
+      - ' '
+      - '&8- &7The war will start in'
+      - '  &5~{time}'
+    current:
+      - '&6&nCurrent War:'
+      - ' '
+      - '&8- &4Attackers'
+      - '      &7Lands: {attackers}'
+      - '      &7Kills: {att-kills}'
+      - '&8- &2Defenders'
+      - '      &7Lands: {defenders}'
+      - '      &7Kills: {def-kills}'
+      - ' '
+      - '&8- &7The war will end in'
+      - '  &5~{time}'
+    started:
+      attacker:
+        - '&cThe War has started!'
+        - ' '
+        - '&8- &7Attackers &8(&5YOU&8)&7: {attackers}'
+        - '  &7Defenders: {defenders}'
+      defender:
+        - '&cThe War has started!'
+        - ' '
+        - '&8- &7Attackers: {attackers}'
+        - '  &7Defenders &8(&5YOU&8)&7: {defenders}'
+    won:
+      attacker:
+        - '&6The War is over:'
+        - '&7The attackers &8({land-type}&8) won&7.'
+        - ' '
+        - '&8- &eStats'
+        - '  &7Attacker kills:&c {att-kills}'
+        - '  &7Defender kills:&c {def-kills}'
+      defender:
+        - '&6The War is over:'
+        - '&7The defenders &8({land-type}&8) won&7.'
+        - ' '
+        - '&8- &eStats'
+        - '  &7Defender kills:&c {def-kills}'
+        - '  &7Attacker kills:&c {att-kills}'
+
+
+war:
+  message:
+    general:
+      noaccess:
+        wilderness-combat: '&cYou''re not allowed to attack this player in wilderness. &7Player&b {target} &7needs to be an enemy in your current war. Bypass: lands.bypass.wilderness.attack_player'
+
+    joined:
+      attacker:
+        enemy: '&cENEMY &8| &6Land&e {land} &6joined the enemy as a &2defender&6.'
+        ally: '&2ALLY &8| &7Land&b {land} &7joined you as a &cattacker&7. They''re fighting on your side.'
+      defender:
+        enemy: '&cENEMY &8| &6Land&e {land} &6joined the enemy as a &cattacker&6.'
+        ally: '&2ALLY &8| &7Land&b {land} &7joined you as a defender&7. They''re fighting on your side.'
+    tribute-payed:
+      defender: '&2ALLY &8| &7Land&b {land} &7payed&c ${tribute} &7as a tribute to the attackers. The war has ended.'
+      attacker: '&2ALLY &8| &7Land&b {land} &7payed&c ${tribute} &7as a tribute to your land&b {attacker}&7. The war has ended.'
+    surrender:
+      tribute:
+        received:
+          all: '&aA enemy land&b {land} &asurrendered. &7The tribute has been divided. You and your allies received&b ${tribute} &7each.'
+          single: '&aA enemy land&b {land} &asurrendered. &7Land&b {land} &7received the tribute of&b ${tribute}&7.'
+      end: '&7The land&b {land} surrendered. The war is over now. They payed&c ${tribute} &7to the enemy.'
+    war-shield:
+      set: '&aYour new war shield will be active for&b {time}&7.'
+
+
+
+
+  command:
+    general:
+      no-war: '&cYour land&e {land} &chas currently no active or upcoming wars. &7Currently it''s peaceful for this land.'
+    declare:
+      trusted: '&cYou can''t declare a war against this land. &7Because you''re a member of it. Please leave the target land first.'
+      war-shield: '&cYou currently can''t declare a war against this land. &7It has a war shield for the next&a {time}&7.'
+      already:
+        war: '&cYour land currently can''t join another war. &7The current war needs to end first.'
+        war-defender: '&cThe other land takes already part in a other war. &7Please try again when their war is finished.'
+        declaration: '&cYour land already has a upcoming war. &7You can check it out in your lands menu.'
+        declaration-defender: '&cThe other land already has a war declaration. &7Please try again in {time}.'
+      is-ally: '&cYou can''t declare war against this land, because it''s your ally. &7Yours and the target land are part of the same nation.'
+      success: '&7Your land&b {attacker} &7successful declared war against land&b {defender}&7. War will start in&b {time}&7.'
+      target:
+        nation: '&6Land&e {attacker} &6declared war against your ally&e {defender}&6. &7You can join the war in order to support your ally.'
+        land: '&cLand&e {attacker} &cdeclared war against your land&e {defender}&c. &7The war will start in&b {time}&7.'
+    info:
+      peace: '&7Everything is peaceful. &7No ongoing wars or war declarations.'
