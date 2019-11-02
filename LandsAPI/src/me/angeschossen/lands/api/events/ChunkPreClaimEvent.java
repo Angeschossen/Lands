@@ -1,35 +1,42 @@
 package me.angeschossen.lands.api.events;
 
+import me.angeschossen.lands.api.objects.LandPlayer;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-import java.util.UUID;
-
-public class PlayerTrustEventChunk extends Event implements Cancellable {
+public class ChunkPreClaimEvent extends Event implements Cancellable {
 
     public static HandlerList handlerList = new HandlerList();
     private boolean cancelled;
 
-    private final UUID targetUID;
-    private final int x, z;
+    private LandPlayer landPlayer;
+    private int x, z;
+    private String worldName;
 
-    public PlayerTrustEventChunk(int x, int z, UUID targetUUID) {
+    public ChunkPreClaimEvent(LandPlayer landPlayer, String worldName, int x, int z) {
+        this.landPlayer = landPlayer;
+
+        this.worldName = worldName;
         this.x = x;
         this.z = z;
-        this.targetUID = targetUUID;
     }
 
     public int getX() {
         return x;
     }
 
+
     public int getZ() {
         return z;
     }
 
-    public UUID getTargetUID() {
-        return targetUID;
+    public String getWorldName() {
+        return worldName;
+    }
+
+    public LandPlayer getLandPlayer() {
+        return landPlayer;
     }
 
     public static HandlerList getHandlerList() {

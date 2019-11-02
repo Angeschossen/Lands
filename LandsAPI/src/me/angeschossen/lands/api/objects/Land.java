@@ -4,6 +4,10 @@ import com.sun.istack.internal.NotNull;
 import me.angeschossen.lands.api.enums.LandRole;
 import me.angeschossen.lands.api.enums.LandsAction;
 import me.angeschossen.lands.api.enums.LandsSetting;
+import me.angeschossen.lands.api.enums.war.WarTeam;
+import me.angeschossen.lands.api.objects.war.Nation;
+import me.angeschossen.lands.api.objects.war.War;
+import me.angeschossen.lands.api.objects.war.WarDeclaration;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -434,6 +438,79 @@ public interface Land {
      * to remove money.
      *
      * @param value Value
+     * @return
      */
-    void addBalance(@NotNull double value);
+    double addBalance(@NotNull double value);
+
+    /**
+     * Set the nation for the land
+     * @param nation New nation
+     */
+    void setNation(@Nullable Nation nation);
+
+    /**
+     * Get the nation
+     * @return Nation or null, if land is not member of a nation
+     */
+    @Nullable
+    Nation getNation();
+
+    /**
+     * Get the current war of the land.
+     * A land can only be engaged in one war at the same time.
+     * @return War or null, if land is in no war.
+     */
+    @Nullable
+    War getWar();
+
+    /**
+     * Leave the current war
+     */
+    void leaveWar();
+
+    /**
+     * Is the land in a war?
+     * @return true, if land is in a war.
+     */
+    boolean isInWar();
+
+    /**
+     * Join a war.
+     * @param war War
+     * @param warTeam ATTACKER or DEFENDER
+     */
+    void joinWar(@NotNull War war, @NotNull WarTeam warTeam);
+
+    /**
+     * Get the team of current war.
+     * @return Team
+     */
+    WarTeam getWarTeam();
+
+    /**
+     * Add time to the war shield.
+     * @param seconds Seconds
+     */
+    void addWarShieldTime(@NotNull long seconds);
+
+    /**
+     * Check if the land has an active war shield
+     * @return true, if land has war shield.
+     */
+    boolean hasWarShield();
+
+    /**
+     * Get the lands current
+     * war declaration.
+     * @return War declaration, or null if none received.
+     */
+    @Nullable
+    WarDeclaration getWarDeclaration();
+
+    /**
+     * Has the land a war declaration?
+     * @return true, if land has war declaration.
+     */
+    boolean hasWarDeclaration();
+
 }

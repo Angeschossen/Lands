@@ -5,25 +5,33 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-import java.util.UUID;
-
-public class PlayerTrustEventLand extends Event implements Cancellable {
+public class ChunkDeleteEvent extends Event implements Cancellable {
     public static HandlerList handlerList = new HandlerList();
     private boolean cancelled;
 
-    private UUID targetUUID;
-    private Land land;
+    private final int x, z;
+    private final String world;
+    private final Land land;
 
-    public PlayerTrustEventLand(UUID targetUUID, Land land) {
+    public ChunkDeleteEvent(String world, Land land, int x, int z) {
+        this.world = world; this.x = x; this.z = z;
         this.land = land;
-        this.targetUUID = targetUUID;
     }
 
-    public Land getLand() {
+    public Land getLand(){
         return land;
     }
+    public int getX(){
+        return x;
+    }
 
-    public UUID getTargetUUID(){return targetUUID;}
+    public int getZ(){
+        return z;
+    }
+
+    public String getWorldName(){
+        return world;
+    }
 
     public static HandlerList getHandlerList() {
         return handlerList;

@@ -11,7 +11,6 @@ import java.util.UUID;
 
 public interface LandPlayer {
 
-
     /**
      * Get current selection.
      *

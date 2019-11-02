@@ -1,31 +1,29 @@
 package me.angeschossen.lands.api.events;
 
-import me.angeschossen.lands.api.objects.Land;
+import me.angeschossen.lands.api.objects.ChunkCoordinate;
+import me.angeschossen.lands.api.objects.LandPlayer;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-import java.util.UUID;
-
-public class PlayerUntrustEventLand extends Event implements Cancellable {
+public class PlayerLeaveChunkEvent extends Event implements Cancellable {
 
     public static HandlerList handlerList = new HandlerList();
     private boolean cancelled;
 
-    private UUID targetUUID;
-    private Land land;
+    private LandPlayer landPlayer;
+    private ChunkCoordinate chunkCoordinate;
 
-    public PlayerUntrustEventLand(UUID targetUUID, Land land) {
-        this.land = land;
-        this.targetUUID = targetUUID;
+    public PlayerLeaveChunkEvent(LandPlayer landPlayer, ChunkCoordinate chunkCoordinate) {
+        this.landPlayer = landPlayer;this.chunkCoordinate = chunkCoordinate;
     }
 
-    public Land getLand() {
-        return land;
+    public ChunkCoordinate getChunkCoordinate(){
+        return chunkCoordinate;
     }
 
-    public UUID getTargetUUID() {
-        return targetUUID;
+    public LandPlayer getLandPlayer() {
+        return landPlayer;
     }
 
     public static HandlerList getHandlerList() {

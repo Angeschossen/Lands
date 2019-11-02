@@ -5,32 +5,26 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class LandChunkDeleteEvent extends Event implements Cancellable {
+import java.util.UUID;
+
+public class PlayerInviteLandEvent extends Event implements Cancellable {
     public static HandlerList handlerList = new HandlerList();
     private boolean cancelled;
 
-    private final int x, z;
-    private final String world;
-    private final Land land;
+    private UUID targetUUID;
+    private Land land;
 
-    public LandChunkDeleteEvent(String world, Land land, int x, int z) {
-        this.world = world; this.x = x; this.z = z;
+    public PlayerInviteLandEvent(Land land, UUID targetUUID) {
         this.land = land;
+        this.targetUUID = targetUUID;
     }
 
-    public Land getLand(){
+    public Land getLand() {
         return land;
     }
-    public int getX(){
-        return x;
-    }
 
-    public int getZ(){
-        return z;
-    }
-
-    public String getWorldName(){
-        return world;
+    public UUID getTargetUUID() {
+        return targetUUID;
     }
 
     public static HandlerList getHandlerList() {

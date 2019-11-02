@@ -5,14 +5,14 @@ import me.angeschossen.lands.api.objects.LandPlayer;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class LandChunkClaimedEvent extends Event {
+public class ChunkPostClaimEvent extends Event {
 
     public static HandlerList handlerList = new HandlerList();
 
     private LandPlayer landPlayer;
     private LandChunk landChunk;
 
-    public LandChunkClaimedEvent(LandPlayer landPlayer, LandChunk landChunk) {
+    public ChunkPostClaimEvent(LandPlayer landPlayer, LandChunk landChunk) {
         this.landPlayer = landPlayer;
 
         this.landChunk = landChunk;

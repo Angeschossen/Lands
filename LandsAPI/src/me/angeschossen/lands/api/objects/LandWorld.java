@@ -10,6 +10,10 @@ import javax.annotation.Nullable;
 
 public interface LandWorld {
 
+    boolean canActionWithResponse(Player player, Location location, LandsAction landsAction);
+
+    boolean canPvP(Player attacker, Player target, Location location);
+
     /**
      * Check if player can action. This also contains the setting disallow-wilderness.
      *
