@@ -1,5 +1,7 @@
 package me.angeschossen.lands.api.landsaddons;
 
+import me.angeschossen.lands.api.objects.LandChunk;
+import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 
 /*
@@ -9,7 +11,7 @@ This class is just a example. It's not part of the API.
 public class LandsAddonExample {
 
     private final LandsAddon landsAddon;
-    private final String key;
+    protected final String key;
 
     private LandsAddonExample(Plugin yourPlugin) {
 
@@ -39,5 +41,11 @@ public class LandsAddonExample {
         You need the received key.
          */
         landsAddon.disable(key);
+    }
+
+    //Just a test
+    private void test(Location location) {
+        final LandChunk landChunk = landsAddon.getLandChunk(location);
+        //Do some stuff.
     }
 }
