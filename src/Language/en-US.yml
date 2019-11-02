@@ -85,6 +85,9 @@ general:
     land-type:
       enemy: '&cEnemy'
       ally: '&aAlly'
+    nametag:
+      enemy: '&cENEMY &8| '
+      ally: '&aALLY &8| '
 
 help:
   general:
@@ -141,7 +144,7 @@ message:
   world-invalid: '&cThis is deactivated in this world. &7A administrator needs to add it to the config. World:&b {world}'
   feature-disabled: '&cThis feature was disabled by an administrator. &7They need to enable setting&b {setting} &7in config, to let you use this feature.'
   noaccess:
-    chunk: '&cYou''re not allowed to do this at this chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c. &7Bypass permission: {bypass}'
+    chunk: '&cYou''re not allowed to do this at this chunk &8(&7Land:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c. &7Bypass permission: {bypass}'
     land: '&cYou''re not allowed to do this for this land &8(&7Land:&e {land}&8)&7. Bypass permission: {bypass}'
     land-not-owner: '&cYou''re not allowed to do this for the land&e {land}&c. &7Select your own land &8(/&aLands edit &8<&aland&8>) or create one &8(/&aLands create &8<&aname&8>)&7. Bypass permission:&b {bypass}'
     role-weight: '&cYou can''t edit this player. &7He has a higher role than you. Contact the land owner for help.'
@@ -265,7 +268,7 @@ command:
     far-land: '&cYou can''t claim this chunk(s). &7Your claim needs to be connected to your land &8(&7Land:&e {land}&8)&7.'
     success: '&7Successful claimed this chunk &8(&7Land:&e {land} &7X:&e {x} &7Z:&e {z}&8) &7for&b ${cost}&7. Next claim will cost&b ${next}&7.'
     already-claimed: '&cIn your selection is a chunk that is already claimed and does not belong to your land &8(&7X:&e {x} &7Z:&e {z}&8)&c. &7It belongs to land&b {land}&7.'
-    max-chunk: '&cYou can''t claim&e {chunks} &cmore chunks for this land. &7The maximum for land&b {land} &7is&b {max} &7chunks. Permission: &2lands.chunks.NUMBER &8| &7If chunks-addition enabled: &2lands.chunks.support.NUMBER &7(for land members, not owners)'
+    max-chunk: '&cYou can''t claim&e {chunks} &cmore chunks for this land. &7The maximum for land&b {land} &7is&b {max} &7chunks. Permission: lands.chunks.NUMBER'
     world: '&cYou can''t claim for this land in this world. &7Land&b {land} &7can only have claims in world&b {world}&7.'
     selection: '&7You successfully claimed&b {chunks} &7chunks for this land &8(&7Land:&e {land}&8)&7. You paid&b ${cost}&7. Please note that only chunks which aren''t already claimed got claimed.'
   leave:
@@ -399,26 +402,29 @@ list:
     won:
       attacker:
         - '&6The War is over:'
-        - '&7The attackers &8({land-type}&8) won&7.'
+        - '&7The attackers &8({land-type}&8) &7won.'
         - ' '
         - '&8- &eStats'
         - '  &7Attacker kills:&c {att-kills}'
-        - '  &7Defender kills:&c {def-kills}'
+        - '  &7Defender kills:&a {def-kills}'
       defender:
         - '&6The War is over:'
-        - '&7The defenders &8({land-type}&8) won&7.'
+        - '&7The defenders &8({land-type}&8) &7won.'
         - ' '
         - '&8- &eStats'
-        - '  &7Defender kills:&c {def-kills}'
+        - '  &7Defender kills:&a {def-kills}'
         - '  &7Attacker kills:&c {att-kills}'
 
 
 war:
   message:
-    general:
-      noaccess:
-        wilderness-combat: '&cYou''re not allowed to attack this player in wilderness. &7Player&b {target} &7needs to be an enemy in your current war. Bypass: lands.bypass.wilderness.attack_player'
-
+    noaccess:
+      pillage: '&cYou can''t pillage a land while no defenders are online. &7Please wait until a minimum of&b {defenders} &7defenders joined.'
+      war-chunk: '&cYou''re not allowed to do this in the war of this land. &7Bypass permission: {bypass}'
+    started:
+      broadcast: '&7The war between the attacker&c {attacker} &7and the defender&a {defender} &7started. It will end in&5 {time}&7.'
+    ended:
+      broadcast: '&7The war between the attacker&c {attacker} &7and the defender&a {defender} &7ended. It took&5 {time}&7.'
     joined:
       attacker:
         enemy: '&cENEMY &8| &6Land&e {land} &6joined the enemy as a &2defender&6.'
@@ -438,6 +444,13 @@ war:
     war-shield:
       set: '&aYour new war shield will be active for&b {time}&7.'
 
+    kill:
+      target:
+        attackers: '&7Our team mate&c {attacker} &7got killed by the defender&a {defender}&7.'
+        defenders: '&7Our team mate&a {defender} &7got killed by the attacker&c {attacker}&7.'
+      killer:
+        attackers: '&7Our team mate&c {attacker} &7killed the defender&a {defender}&7.'
+        defenders: '&7Our team mate&a {defender} &7killed the attacker&c {attacker}&7.'
 
 
 
@@ -453,9 +466,10 @@ war:
         declaration: '&cYour land already has a upcoming war. &7You can check it out in your lands menu.'
         declaration-defender: '&cThe other land already has a war declaration. &7Please try again in {time}.'
       is-ally: '&cYou can''t declare war against this land, because it''s your ally. &7Yours and the target land are part of the same nation.'
-      success: '&7Your land&b {attacker} &7successful declared war against land&b {defender}&7. War will start in&b {time}&7.'
+      success: '&7Your land&c {attacker} &7successful declared war against land&a {defender}&7. War will start in&b {time}&7.'
       target:
         nation: '&6Land&e {attacker} &6declared war against your ally&e {defender}&6. &7You can join the war in order to support your ally.'
         land: '&cLand&e {attacker} &cdeclared war against your land&e {defender}&c. &7The war will start in&b {time}&7.'
+      broadcast: '&7Land&c {attacker} &7declared war against the land&a {defender}&7. Their war will start in&5 {time}&7.'
     info:
-      peace: '&7Everything is peaceful. &7No ongoing wars or war declarations.'
+      peace: '&7Everything is peaceful for land&b {land}&7. &7No ongoing wars or war declarations for this land.'
