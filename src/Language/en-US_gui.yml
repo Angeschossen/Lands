@@ -2272,11 +2272,6 @@ gui:
           - '&7The war starts in '
           - '&5~{time}'
           - ' '
-          - '&8- &e&nTribute:&4 ${tribute}'
-          - '  &7The initial defender land'
-          - '  &7can pay this tribute in order'
-          - '  &7to surrender.'
-          - ' '
           - '&8- &7Attackers will be able to do'
           - '  &7these things in your land:'
           - ' '
@@ -2304,6 +2299,16 @@ gui:
           - '&8- &7A surrender will need to'
           - '  &7pay this value in order'
           - '  &7to surrender.'
+          - ' '
+          - '&8- &9RIGHT CLICK'
+          - '  &7If a attacker wants to'
+          - '  &7surrender, they''ll need'
+          - '  &7to pay&c ${tribute-att} &7to'
+          - '  &7the defenders.'
+          - ' '
+          - '  &8- &7If the value equals 0,'
+          - '      &7the attackers are not'
+          - '      &7allowed to surrender.'
           - ' '
           - '&8- &7Tribute will be divided'
           - '  &7to all attackers: {divide}'
@@ -2343,6 +2348,12 @@ gui:
           - ' '
           - '&7Player:&b {owner}'
         material: 'GOLD_INGOT'
+      failure_surrender-att:
+        name: '&cFailure: &cSurrendering disabled'
+        lore:
+          - '&7Surrendering for attackers was'
+          - '&7disabled in config.'
+        material: 'GOLD_INGOT'
       failure_surrender:
         name: '&cFailure: &cSurrender rejected'
         lore:
@@ -2365,7 +2376,7 @@ gui:
           - '&7Your land does''t have'
           - '&7enough money to pay the'
           - '&7tribute of&c ${tribute}&7.'
-        material: 'IRON_SWORD'
+        material: 'GOLD_INGOT'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE

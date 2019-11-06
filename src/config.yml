@@ -1065,6 +1065,19 @@ command:
     - land
     - claim
     - claims
+
+  # Set aliases for the /Wars command
+  # This is only needed, if wars are enabled.
+  # NOTE: This setting requires server reload / restart.
+  wars-aliases_list:
+    - w
+    - war
+
+  # Command merge settings
+  merge:
+    # Merge /Wars commands into /Lands?
+    wars: true
+
   # Block commands
   # They are not case-sensitive.
   blacklist:
@@ -1260,11 +1273,11 @@ integration:
         color_3: 65280
 
 
-# This is experimental
-# Don't touch this!
+# War settings
 war:
+  # Enable wars? (Command: /Wars)
+  # NOTE: This setting requires server reload / restart.
   enabled_20: false
-
   # War declaration settings
   declaration:
     # How much time do you want to give the defender lands for war preparation, before it will start?
@@ -1290,12 +1303,21 @@ war:
   surrender:
     # Tribute settings
     tribute:
-      # The defender will pay a specific amount of money to the attackers land (if they surrender).
-      # Set the tribute mode.
-      # Use % to set a specific percentage of the defenders land balance.
-      # Use normal numbers to set a total amount of money.
-      # If you have banks disabled, the money will be taken from the land owner.
-      max: 75%
+      # Max tribute settings
+      max:
+        # The defender will pay a specific amount of money to the attackers land, if they surrender.
+        # Set the tribute mode.
+        # Use % to set a specific percentage of the defenders land balance.
+        # Use normal numbers to set a total amount of money.
+        # If you have banks disabled, the money will be taken from the land owner.
+        defender: 75%
+        # The attacker will pay a specific amount of money to the defenders land, if they surrender.
+        # Set the tribute mode.
+        # Use % to set a specific percentage of the defenders land balance.
+        # Use normal numbers to set a total amount of money.
+        # If you have banks disabled, the money will be taken from the land owner.
+        # NOTE: You can set this to 0 to disable it.
+        attacker: 5000
 
   # War settings, which can also be chaned ingame by players.
   # Please note that they need certain permissions in order to change the settings. You can find them in the wiki.

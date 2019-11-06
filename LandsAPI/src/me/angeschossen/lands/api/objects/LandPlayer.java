@@ -2,6 +2,7 @@ package me.angeschossen.lands.api.objects;
 
 import com.sun.istack.internal.NotNull;
 import me.angeschossen.lands.api.enums.LandsAction;
+import me.angeschossen.lands.api.objects.war.War;
 import org.bukkit.entity.Player;
 
 import javax.annotation.Nullable;
@@ -10,6 +11,20 @@ import java.util.Set;
 import java.util.UUID;
 
 public interface LandPlayer {
+
+    /**
+     * Is the player participating in a war?
+     * @return true, if player is in war.
+     */
+    @NotNull
+    boolean isInWar();
+
+    /**
+     * Check if the player is participating in the war.
+     * @param war War
+     * @return true, if they're participating in the war.
+     */
+    boolean isInWar(@NotNull War war);
 
     /**
      * Get current selection.
