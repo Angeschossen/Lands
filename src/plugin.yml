@@ -1,6 +1,6 @@
 name: Lands
 main: me.angeschossen.lands.Lands
-version: 4.1.3.1
+version: 4.1.3.2
 author: Angeschossen
 description: Feature rich GUI, Taxes, Customize your own, Titles, New factions - Let players manage their land!
 website: https://www.spigotmc.org/resources/53313
@@ -11,8 +11,8 @@ commands:
   lands:
     aliases: [land, l]
     description: Manage your land
-  war:
-    aliases: [wars, w]
+  wars:
+    aliases: [war, w]
     description: Lands war command
 
 permissions:
@@ -467,6 +467,9 @@ permissions:
                 default: op
               lands.role.admin.setting.setting_edit:
                 description: Allow to toggle alow this role to change settings of a role with lower priority
+                default: op
+              lands.role.admin.setting.balance_withdraw:
+                description: Allow this role to withdraw money from the land bank.
                 default: op
 
       lands.admin.*:

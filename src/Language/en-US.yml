@@ -81,6 +81,17 @@ general:
         paid: '&e{date} &7Your land paid the upkeep cost. Cost:&c {cost}'
     player:
       join: '&e{date} &7Player&b {player} &7joined our land.'
+    war:
+      declaration:
+        sent: '&e{date} &7Declared war against land&a {defender}&7. War will start in&b {time}&7.'
+        received: '&e{date} &cLand&e {attacker} &cdeclared war against your land. &7War will start in&b {time}&7.'
+      surrender:
+        sent: '&e{date} &cSurrendered in war. &7Payed&c ${tribute} &7tribute to the enemy.'
+        received: '&e{date} &aEnemy&b {land} &asurrendered. &7Received&c ${tribute} &7tribute.'
+      won:
+        attacker: '&e{date} &aWar is over. &7The attackers &8({team}&8) &7won. Attackers: {att-points} Defenders: {def-points}'
+        defender: '&e{date} &aWar is over. &7The defenders &8({team}&8) &7won. Attackers: {att-points} Defenders: {def-points}'
+
   war:
     land-type:
       enemy: '&cEnemy'
@@ -381,10 +392,10 @@ list:
       - ' '
       - '&8- &4Attackers'
       - '      &7Lands: {attackers}'
-      - '      &7Kills: {att-kills}'
+      - '      &7Kills: {att-points}'
       - '&8- &2Defenders'
       - '      &7Lands: {defenders}'
-      - '      &7Kills: {def-kills}'
+      - '      &7Kills: {def-points}'
       - ' '
       - '&8- &7The war will end in'
       - '  &5~{time}'
@@ -392,29 +403,40 @@ list:
       attacker:
         - '&cThe War has started!'
         - ' '
-        - '&8- &7Attackers &8(&5YOU&8)&7: {attackers}'
+        - '&8- &7Attackers &8(&bYOU&8)&7: {attackers}'
         - '  &7Defenders: {defenders}'
+        - ' '
+        - '&8- &7The war will end in'
+        - '  &5~{time}'
       defender:
         - '&cThe War has started!'
         - ' '
         - '&8- &7Attackers: {attackers}'
-        - '  &7Defenders &8(&5YOU&8)&7: {defenders}'
+        - '  &7Defenders &8(&bYOU&8)&7: {defenders}'
+        - ' '
+        - '&8- &7The war will end in'
+        - '  &5~{time}'
     won:
       attacker:
         - '&6The War is over:'
-        - '&7The attackers &8({land-type}&8) &7won.'
+        - '&7The attackers &8({team}&8) &7won.'
         - ' '
         - '&8- &eStats'
-        - '  &7Attacker kills:&c {att-kills}'
-        - '  &7Defender kills:&a {def-kills}'
+        - '  &7Attacker points:&c {att-points}'
+        - '  &7Defender points:&a {def-points}'
+        - ' '
+        - '&8- &7The war took'
+        - '  &5~{time}'
       defender:
         - '&6The War is over:'
-        - '&7The defenders &8({land-type}&8) &7won.'
+        - '&7The defenders &8({team}&8) &7won.'
         - ' '
         - '&8- &eStats'
-        - '  &7Defender kills:&a {def-kills}'
-        - '  &7Attacker kills:&c {att-kills}'
-
+        - '  &7Defender points:&a {def-points}'
+        - '  &7Attacker points:&c {att-points}'
+        - ' '
+        - '&8- &7The war took'
+        - '  &5~{time}'
 
 war:
   message:
@@ -440,7 +462,7 @@ war:
         received:
           all: '&aA enemy land&b {land} &asurrendered. &7The tribute has been divided. You and your allies received&b ${tribute} &7each.'
           single: '&aA enemy land&b {land} &asurrendered. &7Land&b {land} &7received the tribute of&b ${tribute}&7.'
-      end: '&7The land&b {land} surrendered. The war is over now. They payed&c ${tribute} &7to the enemy.'
+      end: '&7The land&b {land} &7surrendered. The war is over now. They payed&c ${tribute} &7to the enemy.'
     war-shield:
       set: '&aYour new war shield will be active for&b {time}&7.'
 
@@ -466,10 +488,9 @@ war:
         declaration: '&cYour land already has a upcoming war. &7You can check it out in your lands menu.'
         declaration-defender: '&cThe other land already has a war declaration. &7Please try again in {time}.'
       is-ally: '&cYou can''t declare war against this land, because it''s your ally. &7Yours and the target land are part of the same nation.'
-      success: '&7Your land&c {attacker} &7successful declared war against land&a {defender}&7. War will start in&b {time}&7.'
+      success: '&7Your land&c {attacker} &7successful declared war against land&a {defender}&7. War will start in&5 ~{time}&7.'
       target:
-        nation: '&6Land&e {attacker} &6declared war against your ally&e {defender}&6. &7You can join the war in order to support your ally.'
-        land: '&cLand&e {attacker} &cdeclared war against your land&e {defender}&c. &7The war will start in&b {time}&7.'
+        land: '&cLand&e {attacker} &cdeclared war against your land&e {defender}&c. &7The war will start in&5 {time}&7.'
       broadcast: '&7Land&c {attacker} &7declared war against the land&a {defender}&7. Their war will start in&5 {time}&7.'
     info:
       peace: '&7Everything is peaceful for land&b {land}&7. &7No ongoing wars or war declarations for this land.'

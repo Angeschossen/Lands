@@ -232,34 +232,18 @@ land:
       # NOTE: This won't change anything at already existing lands.
       setting:
         #
-        # LAND_CLAIM
-        # Should this role be able to claim land?
-        # NOTE: It's recommended to let this deactivated for this role.
-        land_claim:
-          # Default setting, which will be used, if you create a new land.
-          default: false
-        #
-        # LAND_RENAME
-        # Should this role be able to rename the land?
-        # NOTE: It's recommended to let this deactivated for this role.
-        land_rename:
-          default_57: false
-        #
-        # LAND_SPAWN_SET
-        # Should this role be able to set / change the land spawn?
-        # NOTE: It's recommended to let this deactivated for this role.
-        land_spawn_set:
-          default_56: false
-        #
         # LAND_SPAWN_TELEPORT
         # Should this role be able to teleport to land spawn?
         land_spawn_teleport:
           default_62: false
+          display_15: true
         #
         # LAND_CLAIM_BORDER
         # Should visitors be able to claim land for a other land directly at the border of the land?
         land_claim_border:
           default_66: false
+          display_16: true
+
 
     # Members are all players, which are trusted in the land and have the member role.
     member:
@@ -270,28 +254,34 @@ land:
         # NOTE: It's recommended to let this deactivated for this role.
         land_claim:
           default_5: false
-        #
-        # LAND_RENAME
-        # Should this role be able to rename the land?
-        # NOTE: It's recommended to let this deactivated for this role.
-        land_rename:
-          default_55: false
+          display_17: true
         #
         # LAND_SPAWN_SET
         # Should this role be able to set / change the land spawn?
         # NOTE: It's recommended to let this deactivated for this role.
         land_spawn_set:
           default_54: false
+          display_18: true
         #
         # LAND_SPAWN_TELEPORT
         # Should this role be able to teleport to land spawn?
         land_spawn_teleport:
           default_63: true
+          display_54: true
         #
         # LAND_CLAIM_BORDER
         # Should visitors be able to claim land for a other land directly at the border of the land?
         land_claim_border:
           default_67: false
+          display_55: true
+        #
+        # SETTING_EDIT_VARIOUS
+        # Should this role be able to edit various land settings,
+        # like changing the land name or title.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_various:
+          default_79: false
+          display_56: false
 
     # Admins are members of a land, which have the admin role.
     # NOTE: Admins are NOT server administrators. You can change the role name in your language configuration file.
@@ -302,26 +292,40 @@ land:
         # Should this role be able to claim land?
         land_claim:
           default_9: false
-        #
-        # LAND_RENAME
-        # Should this role be able to rename the land?
-        land_rename:
-          default_53: false
+          display_57: true
         #
         # LAND_SPAWN_SET
         # Should this role be able to set / change the land spawn?
         land_spawn_set:
           default_52: false
+          display_58: true
         #
         # LAND_SPAWN_TELEPORT
         # Should this role be able to teleport to land spawn?
         land_spawn_teleport:
           default_64: true
+          display_59: true
         #
         # LAND_CLAIM_BORDER
         # Should visitors be able to claim land for a other land directly at the border of the land?
         land_claim_border:
           default_68: false
+          display_60: true
+        #
+        # SETTING_EDIT_VARIOUS
+        # Should this role be able to edit various land settings,
+        # like changing the land name or title.
+        # NOTE: It's recommended to let this deactivated for this role.
+        setting_edit_various:
+          default_75: false
+          display_61: true
+        #
+        # BALANCE_WITHDRAW
+        # Should this role be able to withdraw money from the lands balance (/Lands withdraw)?
+        # NOTE: This will only work with land banks enabled.
+        balance_withdraw:
+          default_90: false
+          display_12: true
 
   # Delete inactive Lands, if the owner is offline since x days.
   expiration:
@@ -450,17 +454,21 @@ chunk:
     # Allow entities to grief in the chunk / land?
     entity_griefing:
       default_13: false
+      # Display this setting in the land settings menu? If set to false, players won't be able to change it.
+      display_62: true
     #
     # TNT_GRIEFING
     # Allow tnt to destroy blocks in the chunk / land?
     tnt_griefing:
       default_65: false
+      display_63: true
     #
     # PISTON_GRIEFING
     # Allow pistons from a wilderness to push into the chunk / land?
     # NOTE: This should be set to false, since it protects against griefing from other players.
     piston_griefing:
       default_14: false
+      display_64: true
     #
     # MONSTER_SPAWN
     # Allow monster spawning in the chunk / land?
@@ -469,6 +477,8 @@ chunk:
       # Remove all monsters on chunk load?
       # NOTE: This will only work if monster spawning is disabled in the chunk.
       remove-on-load: false
+      # Display this setting in the land settings menu? If set to false, players won't be able to change it.
+      display_65: true
       # If monster spawning disabled, these monsters won't spawn. So you can decide, which monsters shouldn't spawn
       # The latest spigot version entities: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
       monsters_list:
@@ -512,6 +522,8 @@ chunk:
     # Allow animal spawning in the chunk / land?
     animal_spawn:
       default_61: true
+      # Display this setting in the land settings menu? If set to false, players won't be able to change it.
+      display_66: true
       # If animals spawning disabled, these animals won't spawn. So you can decide, which animals shouldn't spawn
       # The latest spigot version entities: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
       animals_list:
@@ -547,6 +559,7 @@ chunk:
     # NOTE: This should be set to false, since it protects against griefing from other players.
     waterflow_allow:
       default_68: false
+      display_67: true
 
   # Role settings
   # There are three different roles:
@@ -563,41 +576,51 @@ chunk:
         block_place:
           # Default setting, which will be used, if you create a new land.
           default_15: false
+          # Should this setting be displayed in the settings menu?
+          # NOTE: Players won't be able to change this setting if display is set to false.
+          display: false
         #
         # BLOCK_BREAK
         # Should this role be able to break blocks?
         block_break:
           default_16: false
+          display_2: true
         #
         # INTERACT
         # Should this role be able to interact?
         interact_general:
           default_44: false
+          display_3: true
         #
         # INTERACT_DOOR
         # Should this role be able to open doors?
         interact_door:
           default_41: false
+          display_4: true
         #
         # INTERACT_CONTAINER
         # Should visitors be able to open containers?
         interact_container:
           default_42: false
+          display_5: true
         #
         # INTERACT_MECHANISM
         # Should this role be able use redstone mechanisms?
         interact_mechanism:
           default_43: false
+          display_6: true
         #
         # INTERACT_VILLAGER
         # Should this role be able to interact (trading included) with villagers?
         interact_villager:
           default_85: false
+          display_7: true
         #
         # BLOCK_IGNITE
         # Should this role be able to ignite blocks?
         block_ignite:
           default_17: false
+          display_8: false
         #
         # ATTACK_PLAYER
         # Should this role be able to attack players?
@@ -605,11 +628,13 @@ chunk:
         # Other roles can only attack this role, if this role can attack the other role too.
         attack_player:
           default_18: false
+          display_9: true
         #
         # ATTACK_ANIMAL
         # Should this role be able to attack animals?
         attack_animal:
           default_19: false
+          display_10: true
         #
         # FLY
         # Should this role be able to fly in the chunk / land?
@@ -617,62 +642,7 @@ chunk:
         # to a /Fly command or something like this.
         fly:
           default_71: false
-        #
-        # PLAYER_TRUST
-        # Should this role be able to trust other players?
-        # NOTE: It's recommended to let this deactivated for this role.
-        player_trust:
-          default_20: false
-        #
-        # PLAYER_SETROLE
-        # Should this role be able to set roles for other players.
-        # They can only edit players, which have a lower role than their own role.
-        # NOTE: It's recommended to let this deactivated for this role.
-        player_setrole:
-          default_21: false
-        #
-        # PLAYER_UNTRUST
-        # Should this role be able to untrust players?
-        # They can only edit players, which have a lower role than their own role.
-        # NOTE: It's recommended to let this deactivated for this role.
-        player_untrust:
-          default_22: false
-        #
-        # SETTING_EDIT_LAND
-        # Should this role be able to edit land settings?
-        # For example mob spawning or entity griefing.
-        # NOTE: It's recommended to let this deactivated for this role.
-        setting_edit_land:
-          default_58: false
-        #
-        # SETTING_EDIT_ROLE
-        # Should this role be able to edit role settings?
-        # For example allow other roles to trust players.
-        # NOTE: It's recommended to let this deactivated for this role.
-        # They can only edit roles, which are lower than their own role.
-        setting_edit_role:
-          default_73: false
-        #
-        # SETTING_EDIT_ADVANCED
-        # Should this role be able to edit advanced role settings.
-        # For example allowing roles to teleport to the land spawn.
-        # NOTE: It's recommended to let this deactivated for this role.
-        setting_edit_advanced:
-          default_74: false
-        #
-        # SETTING_EDIT_VARIOUS
-        # Should this role be able to edit various land settings,
-        # like changing the land name or title.
-        # NOTE: It's recommended to let this deactivated for this role.
-        setting_edit_various:
-          default_75: false
-        #
-        # SETTING_EDIT_TAXES
-        # Should this role be able to edit tax settings?
-        # NOTE: It's recommended to let this deactivated for this role.
-        setting_edit_taxes:
-          default_76: false
-
+          display_11: false
 
     # Members are all players, wich are trusted in the chunk and have no admin role.
     member:
@@ -683,41 +653,49 @@ chunk:
         block_place:
           # Default setting, which will be used, if you create a new land.
           default_23: true
+          display_19: true
         #
         # BLOCK_BREAK
         # Should this role be able to break blocks?
         block_break:
           default_24: true
+          display_20: true
         #
         # INTERACT
         # Should this role be able to interact?
         interact_general:
           default_25: true
+          display_21: true
         #
         # INTERACT_DOOR
         # Should this role be able to open doors?
         interact_door:
           default_45: true
+          display_22: true
         #
         # INTERACT_CONTAINER
         # Should visitors be able to open containers?
         interact_container:
           default_46: true
+          display_23: true
         #
         # INTERACT_MECHANISM
         # Should this role be able use redstone mechanisms?
         interact_mechanism:
           default_47: true
+          display_24: true
         #
         # INTERACT_VILLAGER
         # Should this role be able to interact (trading included) with villagers?
         interact_villager:
-          default_86: false
+          default_86: true
+          display_25: true
         #
         # BLOCK_IGNITE
         # Should this role be able to ignite blocks?
         block_ignite:
           default_72: true
+          display_26: true
         #
         # ATTACK_PLAYER
         # Should this role be able to attack players?
@@ -725,11 +703,13 @@ chunk:
         # Other roles can only attack this role, if this role can attack the other role too.
         attack_player:
           default_27: true
+          display_27: true
         #
         # ATTACK_ANIMAL
         # Should this role be able to attack animals?
         attack_animal:
           default_28: true
+          display_28: true
         #
         # FLY
         # Should this role be able to fly in the chunk / land?
@@ -737,12 +717,14 @@ chunk:
         # to a /Fly command or something like this.
         fly:
           default_70: true
+          display_29: true
         #
         # PLAYER_TRUST
         # Should this role be able to trust other players?
         # NOTE: It's recommended to let this deactivated for this role.
         player_trust:
           default_29: false
+          display_30: false
         #
         # PLAYER_SETROLE
         # Should this role be able to set roles for other players.
@@ -750,6 +732,7 @@ chunk:
         # NOTE: It's recommended to let this deactivated for this role.
         player_setrole:
           default_30: false
+          display_31: false
         #
         # PLAYER_UNTRUST
         # Should this role be able to untrust players?
@@ -757,6 +740,7 @@ chunk:
         # NOTE: It's recommended to let this deactivated for this role.
         player_untrust:
           default_31: false
+          display_32: false
         #
         # SETTING_EDIT_LAND
         # Should this role be able to edit land settings?
@@ -764,6 +748,7 @@ chunk:
         # NOTE: It's recommended to let this deactivated for this role.
         setting_edit_land:
           default_59: false
+          display_33: false
         #
         # SETTING_EDIT_ROLE
         # Should this role be able to edit role settings?
@@ -772,6 +757,7 @@ chunk:
         # They can only edit roles, which are lower than their own role.
         setting_edit_role:
           default_77: false
+          display_34: false
         #
         # SETTING_EDIT_ADVANCED
         # Should this role be able to edit advanced role settings.
@@ -779,21 +765,16 @@ chunk:
         # NOTE: It's recommended to let this deactivated for this role.
         setting_edit_advanced:
           default_78: false
-        #
-        # SETTING_EDIT_VARIOUS
-        # Should this role be able to edit various land settings,
-        # like changing the land name or title.
-        # NOTE: It's recommended to let this deactivated for this role.
-        setting_edit_various:
-          default_79: false
+          display_35: false
         #
         # SETTING_EDIT_TAXES
         # Should this role be able to edit tax settings?
         # NOTE: It's recommended to let this deactivated for this role.
         setting_edit_taxes:
           default_80: false
+          display_36: false
 
-      # Admins are members, which got promoted to the admin role (not server admin).
+    # Admins are members, which got promoted to the admin role (not server admin).
     admin:
       setting:
         #
@@ -802,41 +783,49 @@ chunk:
         block_place:
           # Default setting, which will be used, if you create a new land.
           default_32: true
+          display_36: true
         #
         # BLOCK_BREAK
         # Should this role be able to break blocks?
         block_break:
           default_33: true
+          display_37: true
         #
         # INTERACT
         # Should this role be able to interact?
         interact_general:
           default_34: true
+          display_38: true
         #
         # INTERACT_DOOR
         # Should this role be able to open doors?
         interact_door:
           default_48: true
+          display_39: true
         #
         # INTERACT_CONTAINER
         # Should visitors be able to open containers?
         interact_container:
           default_49: true
+          display_40: true
         #
         # INTERACT_MECHANISM
         # Should this role be able use redstone mechanisms?
         interact_mechanism:
           default_50: true
+          display_41: true
         #
         # INTERACT_VILLAGER
         # Should this role be able to interact (trading included) with villagers?
         interact_villager:
-          default_87: false
+          default_87: true
+          display_42: true
         #
         # BLOCK_IGNITE
         # Should this role be able to ignite blocks?
         block_ignite:
           default_35: true
+          display_43: true
         #
         # ATTACK_PLAYER
         # Should this role be able to attack players?
@@ -844,11 +833,13 @@ chunk:
         # Other roles can only attack this role, if this role can attack the other role too.
         attack_player:
           default_36: true
+          display_44: true
         #
         # ATTACK_ANIMAL
         # Should this role be able to attack animals?
         attack_animal:
           default_37: true
+          display_45: true
         #
         # FLY
         # Should this role be able to fly in the chunk / land?
@@ -856,12 +847,14 @@ chunk:
         # to a /Fly command or something like this.
         fly:
           default_69: true
+          display_46: true
         #
         # PLAYER_TRUST
         # Should this role be able to trust other players?
         # NOTE: It's recommended to let this deactivated for this role.
         player_trust:
           default_38: false
+          display_47: true
         #
         # PLAYER_SETROLE
         # Should this role be able to set roles for other players.
@@ -869,6 +862,7 @@ chunk:
         # NOTE: It's recommended to let this deactivated for this role.
         player_setrole:
           default_39: false
+          display_48: true
         #
         # PLAYER_UNTRUST
         # Should this role be able to untrust players?
@@ -876,6 +870,7 @@ chunk:
         # NOTE: It's recommended to let this deactivated for this role.
         player_untrust:
           default_40: false
+          display_49: true
         #
         # SETTING_EDIT_LAND
         # Should this role be able to edit land settings?
@@ -883,6 +878,7 @@ chunk:
         # NOTE: It's recommended to let this deactivated for this role.
         setting_edit_land:
           default_60: false
+          display_50: true
         #
         # SETTING_EDIT_ROLE
         # Should this role be able to edit role settings?
@@ -891,6 +887,7 @@ chunk:
         # They can only edit roles, which are lower than their own role.
         setting_edit_role:
           default_81: false
+          display_51: true
         #
         # SETTING_EDIT_ADVANCED
         # Should this role be able to edit advanced role settings.
@@ -898,20 +895,14 @@ chunk:
         # NOTE: It's recommended to let this deactivated for this role.
         setting_edit_advanced:
           default_82: false
-        #
-        # SETTING_EDIT_VARIOUS
-        # Should this role be able to edit various land settings,
-        # like changing the land name or title.
-        # NOTE: It's recommended to let this deactivated for this role.
-        setting_edit_various:
-          default_83: false
+          display_52: true
         #
         # SETTING_EDIT_TAXES
         # Should this role be able to edit tax settings?
         # NOTE: It's recommended to let this deactivated for this role.
         setting_edit_taxes:
           default_84: false
-
+          display_53: true
 
 
 # General protection settings
@@ -1283,6 +1274,7 @@ war:
     # How much time do you want to give the defender lands for war preparation, before it will start?
     # NOTE: Timeunit is seconds
     # Default is one day
+    # If the time is smaller than 5 seconds, the war will start immedeately.
     preparation-time: 1d
     # Should a broadcast message be sent to the whole server?
     # You can edit the message in your language file.
@@ -1295,9 +1287,13 @@ war:
   duration_2: 36h
 
   # Allow players doing the following things in the enemy land.
+  # Avialible actions: https://github.com/Angeschossen/Lands/blob/master/LandsAPI/src/me/angeschossen/lands/api/enums/LandsAction.java
+  # NOTE: PLACE_SCAFFOLDING is only availible in spigot 1.14.x or higher.
   role-settings_list:
     - ATTACK_PLAYER
-    - BLOCK_PLACE
+    - PLACE_LADDER
+    - PLACE_VINE
+    - PLACE_SCAFFOLDING
 
   # Cutomize what happens when a defender surrenders.
   surrender:
@@ -1390,6 +1386,13 @@ war:
         # %ally% - Name of the ally land
         # %ally-owner% - Name of the owner of the ally land
         allies: ''
+
+    # The looser will pay a specific amount of money to the attackers land, if they surrender.
+    # Set the reward mode.
+    # Use % to set a specific percentage of the loosers land balance.
+    # Use normal numbers to set a total amount of money. If the looser does not have anough money, they will pay as much as possible.
+    # If you have banks disabled, the money will be taken from the land owner.
+    robbery: 75%
 
   # Combat settings
   combat:

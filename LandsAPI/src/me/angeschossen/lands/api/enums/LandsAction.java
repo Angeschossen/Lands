@@ -23,6 +23,13 @@ public enum LandsAction {
     SETTING_EDIT_ADVANCED,
     SETTING_EDIT_TAXES,
     SETTING_EDIT_VARIOUS,
-    FLY
+    FLY,
+
+    /*
+    Especially for wars
+     */
+    PLACE_LADDER,
+    PLACE_SCAFFOLDING,
+    PLACE_VINE
 
 }
