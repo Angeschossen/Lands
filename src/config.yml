@@ -75,6 +75,10 @@ general:
   # to set the claim land with /Land edit.
   edit-loc-land: false
 
+  # Set max number of digit numbers for economy values, such as claim costs, taxes etc.
+  # This setting requires server reload / restart.
+  max-digits: 2
+
   # Reward players by playing on your server.
   # Explanation: https://github.com/Angeschossen/Lands/wiki/Playtime-Rewards
   # NOTE: This setting requires server reload / restart.
@@ -146,7 +150,7 @@ land:
       # Lands will automatically remove the land spawn.
       force-land: true
       # Costs
-      price:
+      cost:
         # Cost for first time set
         set: 750.0
         # Cost for changing spawn
@@ -350,8 +354,13 @@ land:
 taxes:
   enabled_3: true
   # Taxes interval
-  # NOTE: Time unit is seconds
-  interval: 604800
+  # Interval of payment
+  # TimeUnits:
+  # Seconds: s
+  # Minutes: m
+  # Hours: h
+  # Days: d
+  interval: 10d
   # If enabled, land actions like /Lands claim will take the money from the land bank
   # instead of directly from the player
   # Deposit: /Lands deposit
@@ -377,8 +386,12 @@ taxes:
     # NOTE: This setting requires server reload / restart.
     enabled_19: false
     # Interval of payment
-    # NOTE: Time unit is seconds
-    interval_2: 172800
+    # TimeUnits:
+    # Seconds: s
+    # Minutes: m
+    # Hours: h
+    # Days: d
+    interval_2: 9d
     # How much should a land pay per chunk?
     # NOTE: Final payment would be land size (chunks) * cost
     cost-per-chunk: 50.0
@@ -389,7 +402,22 @@ taxes:
     # This will prevent recently created lands getting a chunk deleted, if the land owner / land bank doesn't have enough money (and if delete-chunk enabled).
     # So only lands, which are older than x seconds, will need to pay this.
     # Timeunit is seconds.
-    nopay-time: 7200
+    nopay-time: 2h
+
+  # Menu settings
+  menu:
+    # Set how much $ the add items (+) should add to the taxes.
+    add:
+      # Item 1. Default is 1$ per click.
+      1_a: 1
+      2_a: 100
+      3_a: 1000
+    # Set how much $ the remove items (-) should remove from the taxes.
+    remove:
+      # Item 1. Default is -1$ per click.
+      1_r: 1
+      2_r: 100
+      3_r: 1000
 
 
 
@@ -1146,15 +1174,14 @@ integration:
       deny-claim: true
       # Should players be able to random teleport (/Lands wild) to WorldGuard regions?
       random-teleport: true
+
     # WorldEdit
     WorldEdit:
       # Disallow WorldEdit use in other players lands, where the player isn't trusted?
       # Bypass permission: lands.bypass.worldedit
       enabled_7: true
-      # Deny WorldEdit outside of the players land?
-      # Bypass permission: lands.bypass.wilderness.worldedit
-      disallow-wilderness: true
-    # Griefprevention
+
+      # Griefprevention
     GriefPrevention:
       enabled_6: true
       # Should Lands deny claiming in GriefPrevention regions?
@@ -1265,7 +1292,8 @@ integration:
 
 
 # War settings
-war:
+# PLEASE NOTE: Wars is in BETA stage and is not meant to be used on live servers.
+wars:
   # Enable wars? (Command: /Wars)
   # NOTE: This setting requires server reload / restart.
   enabled_20: false

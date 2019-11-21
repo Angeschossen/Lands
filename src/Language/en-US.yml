@@ -92,7 +92,7 @@ general:
         attacker: '&e{date} &aWar is over. &7The attackers &8({team}&8) &7won. Attackers: {att-points} Defenders: {def-points}'
         defender: '&e{date} &aWar is over. &7The defenders &8({team}&8) &7won. Attackers: {att-points} Defenders: {def-points}'
 
-  war:
+  wars:
     land-type:
       enemy: '&cEnemy'
       ally: '&aAlly'
@@ -138,7 +138,7 @@ help:
     withdraw: '&8/&aLands withdraw &8<&aamount&8> - &7Withdraw money from land bank'
     list: '&8/&aLands list &8[&aworld&8] - &7List all lands'
 
-    war:
+    wars:
       declare: '&8/&aWars declare &8<&aland&8> - &7Declare war'
       info: '&8/&aWars info - &7Show current or upcoming war'
       menu: '&8/&aWars menu &8- &7Open war menu'
@@ -154,6 +154,7 @@ message:
   no-permission: '&cYou don''t have permission to do this. &7You need permission&b {permission}&7.'
   world-invalid: '&cThis is deactivated in this world. &7A administrator needs to add it to the config. World:&b {world}'
   feature-disabled: '&cThis feature was disabled by an administrator. &7They need to enable setting&b {setting} &7in config, to let you use this feature.'
+  current-war: '&cYou can''t do this right now. &7You land is currently engaged in a war. &7Please try again after the war is over.'
   noaccess:
     chunk: '&cYou''re not allowed to do this at this chunk &8(&7Land:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c. &7Bypass permission: {bypass}'
     land: '&cYou''re not allowed to do this for this land &8(&7Land:&e {land}&8)&7. Bypass permission: {bypass}'
@@ -230,7 +231,7 @@ command:
     money-cost: '&cYou don''t have enough to pay the cost. &7You need&b ${cost}&7.'
     lands-max: '&cYou can''t be part of any more lands. &7You reached your maximum of&b {max} &7lands. Permission:&b lands.lands.NUMBER'
     name-numbers: '&cYou can''t use numbers in your lands name. &7Please use only latin letters.'
-    name-accent: '&cYou can''t use accents in your lands name. &7Please use only latin letters.'
+    name-accent: '&cYou can''t use accents in your lands name. &7Found non latin letter:&b {non-latin} &7Please use only latin letters.'
     name-length: '&cThe name is too long. &7Max length is&b {max} &7characters.'
     action-cooldown: '&cYou can''t do this now. &7You need to wait&b {time} &7minutes.'
     land-none: '&cSeems like you''re not member of a land in this world. &7Use &8/&aLands create &7to create one.'
@@ -378,7 +379,7 @@ list:
     - '&7Members:&7 {members}'
     - '&7---------<- &5&lLand View &7->---------'
 
-  war:
+  wars:
     declaration:
       - '&6&nWar Declaration:'
       - ' '
@@ -437,8 +438,7 @@ list:
         - ' '
         - '&8- &7The war took'
         - '  &5~{time}'
-
-war:
+wars:
   message:
     noaccess:
       pillage: '&cYou can''t pillage a land while no defenders are online. &7Please wait until a minimum of&b {defenders} &7defenders joined.'
@@ -455,17 +455,16 @@ war:
         enemy: '&cENEMY &8| &6Land&e {land} &6joined the enemy as a &cattacker&6.'
         ally: '&2ALLY &8| &7Land&b {land} &7joined you as a defender&7. They''re fighting on your side.'
     tribute-payed:
-      defender: '&2ALLY &8| &7Land&b {land} &7payed&c ${tribute} &7as a tribute to the attackers. The war has ended.'
-      attacker: '&2ALLY &8| &7Land&b {land} &7payed&c ${tribute} &7as a tribute to your land&b {attacker}&7. The war has ended.'
+      defender: '&2ALLY &8| &7Land&b {land} &7paid&c ${tribute} &7as a tribute to the attackers. The war has ended.'
+      attacker: '&2ALLY &8| &7Land&b {land} &7paid&c ${tribute} &7as a tribute to your land&b {attacker}&7. The war has ended.'
     surrender:
       tribute:
         received:
-          all: '&aA enemy land&b {land} &asurrendered. &7The tribute has been divided. You and your allies received&b ${tribute} &7each.'
-          single: '&aA enemy land&b {land} &asurrendered. &7Land&b {land} &7received the tribute of&b ${tribute}&7.'
-      end: '&7The land&b {land} &7surrendered. The war is over now. They payed&c ${tribute} &7to the enemy.'
+          all: '&aAn enemy land&b {land} &asurrendered. &7The tribute has been divided. You and your allies received&b ${tribute} &7each.'
+          single: '&aAn enemy land&b {land} &asurrendered. &7Land&b {land} &7received the tribute of&b ${tribute}&7.'
+      end: '&7The land&b {land} &7surrendered. The war is over now. They paid&c ${tribute} &7to the enemy.'
     war-shield:
       set: '&aYour new war shield will be active for&b {time}&7.'
-
     kill:
       target:
         attackers: '&7Our team mate&c {attacker} &7got killed by the defender&a {defender}&7.'
@@ -473,9 +472,6 @@ war:
       killer:
         attackers: '&7Our team mate&c {attacker} &7killed the defender&a {defender}&7.'
         defenders: '&7Our team mate&a {defender} &7killed the attacker&c {attacker}&7.'
-
-
-
   command:
     general:
       no-war: '&cYour land&e {land} &chas currently no active or upcoming wars. &7Currently it''s peaceful for this land.'
@@ -484,11 +480,11 @@ war:
       war-shield: '&cYou currently can''t declare a war against this land. &7It has a war shield for the next&a {time}&7.'
       already:
         war: '&cYour land currently can''t join another war. &7The current war needs to end first.'
-        war-defender: '&cThe other land takes already part in a other war. &7Please try again when their war is finished.'
-        declaration: '&cYour land already has a upcoming war. &7You can check it out in your lands menu.'
+        war-defender: '&cThe other land is currently at war. &7Please try again when their war is finished.'
+        declaration: '&cYour land already has an upcoming war. &7You can check it out in your lands menu.'
         declaration-defender: '&cThe other land already has a war declaration. &7Please try again in {time}.'
       is-ally: '&cYou can''t declare war against this land, because it''s your ally. &7Yours and the target land are part of the same nation.'
-      success: '&7Your land&c {attacker} &7successful declared war against land&a {defender}&7. War will start in&5 ~{time}&7.'
+      success: '&7Your land&c {attacker} &7successfully declared war against land&a {defender}&7. War will start in&5 ~{time}&7.'
       target:
         land: '&cLand&e {attacker} &cdeclared war against your land&e {defender}&c. &7The war will start in&5 {time}&7.'
       broadcast: '&7Land&c {attacker} &7declared war against the land&a {defender}&7. Their war will start in&5 {time}&7.'

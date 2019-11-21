@@ -1,6 +1,6 @@
 name: Lands
 main: me.angeschossen.lands.Lands
-version: 4.1.3.2
+version: 4.2.0.2
 author: Angeschossen
 description: Feature rich GUI, Taxes, Customize your own, Titles, New factions - Let players manage their land!
 website: https://www.spigotmc.org/resources/53313
@@ -560,4 +560,22 @@ permissions:
               lands.admin.command.safezone:
                 description: Edit safezones
                 default: op
+
+  wars.*:
+    description: Access to all wars actions.
+    default: op
+    children:
+      wars.command.*:
+        description: Access to all /wars commands.
+        default: op
+        children:
+          wars.command.declare:
+            description: Access to /Wars declare
+            default: op
+          wars.command.info:
+            description: Access to /Wars info
+            default: op
+          wars.command.menu:
+            description: Access to /Wars menu
+            default: op
 
