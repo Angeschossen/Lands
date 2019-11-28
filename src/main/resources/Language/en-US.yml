@@ -16,7 +16,7 @@ general:
   disabled: '&cDisabled'
   wilderness: '&aWilderness'
   title:
-    land: '&7Owned by&b %owner%&7.'
+    land: '&7Owned by&3 %owner%&7.'
     safezone: '&7You''re safe now.'
   time:
     days: 'day(s)'
@@ -187,7 +187,7 @@ message:
       disallowed: '&cYou''re not allowed to fly in this land. &7Contact the land owner. Bypass permission: &blands.bypass.fly'
       disallowed-wilderness: '&cYou''re not allowed to fly in wilderness. &7Bypass permission: &blands.bypass.wilderness.fly'
     lands:
-      enter: '#t#&a&l{land}{newline}{title}'
+      enter: '#t#&2&l{land}{newline}&3{title}'
       leave: '#t#&2&lWilderness{newline}&7Feel the wild.'
     safezones:
       enter: '#t#&e&l{land}{newline}{title}'
@@ -273,7 +273,7 @@ command:
     disabled-config: '&cThis feature was disabled in config by an administrator. &7You need to enable setting &bland.selection.enabled&7.'
     not-complete: '&cYour selection is not complete. &7Please make sure that both positions are set &8(&bLEFT CLICK &7and &9RIGHT CLICK&8)&7. You can toggle the selection mode by executing &8/&3Lands selection&7.'
     max: '&cYour selection has too many chunks in it. &7Size:&b {current} &7Your allowed size:&b {max} &7Permission: &blands.selection.NUMBER'
-    enableds: '&7You enabled selection mode. Use &5LEFT &7click on a block to set position one. With &5RIGHT &7click you set position two. After that you can apply the selection to these commands: &bClaim&7, &bTrust&7, &bUntrust&7, &bSetRole&7, &bUnclaim&7, &bLeave'
+    enableds: '&7You enabled selection mode. Use &5LEFT &7click on a block to set position one. With &5RIGHT &7click you set position two. After that you can apply the selection to these commands: &3Claim&7, &3Unclaim&7, &3Leave'
     disabled: '#t#&5&lSelection{newline}&c&lMode disabled'
     world: '&cBoth positions must be in the same world. &7Please set position one and position two in the same world.'
     pos:
@@ -309,50 +309,50 @@ command:
 
   trust:
     own-land: '&cThis player isn''t allowed to have their own land and be part of another land. &7They need to leave it first.'
-    invited: '&cThis player is already invited. &7Please wait while they accept it &8(&7Land:&e {land}&8)&7.'
-    max-lands: '&7Player&b {player} &7has already reached the maximum amount of lands. &8Permission: lands.lands.NUMBER'
-    max-members: '&cCouldn''t trust player&e {player} &cin land&e {land}&c. &7The owner of the land reached their maximum of&b {members} &7members in their chunks.'
+    invited: '&cThis player is already invited. &7Please wait while they accept it &8(&7Land:&2 {land}&8)&7.'
+    max-lands: '&7Player&3 {player} &7has already reached the maximum amount of lands. &8Permission: lands.lands.NUMBER'
+    max-members: '&cCouldn''t trust player&4 {player} &cin land&4 {land}&c. &7The owner of the land reached their maximum of&3 {members} &7players in their land.'
     land:
-      already: '&cThis player is already trusted in this land &8(&7Land:&e {land}&8)&7.'
-      target: '&7Player&b {player} &7invited you to their land&e {land}&7. Use &8/&aLand accept {land} &7to accept their invite.'
-      success: '&7Successfully invited player&b {player} &7to the whole land &8(&7Land:&e {land}&8)&7. Please wait until they accept your invite.'
+      already: '&cThis player is already trusted in this land &8(&7Land:&2 {land}&8)&7.'
+      target: '&7Player&3 {player} &7invited you to join their land&2 {land}&7. Use &8/&3Land accept {land} &7to accept their invite.'
+      success: '&7Successfully invited player&3 {player} &7to the whole land &8(&7Land:&2 {land}&8)&7. Please wait until they accept your invite.'
     area:
-      already: '&cThis player is already trusted in area&e {area} &8(&7Land:&e {land}&8)&7.'
-      target: '&7Player&b {player} &7invited you to their land &8(&7Area:&e {area} &7Land:&e {land}&8) &7Use &8/&3Lands accept {land} &7to accept their invite.'
-      success: '&7Successfully invited player&b {player} &7to this area &8(&7Area:&e {area} &7Land:&e {land}&8)&7. Please wait until they accept your invite.'
+      already: '&cThis player is already trusted in area&6 {area} &8(&7Land:&2 {land}&8)&7.'
+      target: '&7Player&3 {player} &7invited you to their land &8(&7Area:&6 {area} &7Land:&2 {land}&8) &7Use &8/&3Lands accept {land} &7to accept their invite.'
+      success: '&7Successfully invited player&3 {player} &7to this area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Please wait until they accept your invite.'
   untrust:
     land:
-      already: '&cThis player is not trusted in this land &8(&7Land:&e {land}&8)&7.'
-      inv-revoked: '&7Successfully revoked invite for this player. &8(&7Land:&e {land}&8)&7.'
-      success: '&7Successfully untrusted player&b {player} &7in this land &8(&7Land:&e {land}&8)&7.'
+      already: '&cThis player is not trusted in this land &8(&7Land:&2 {land}&8)&7.'
+      inv-revoked: '&7Successfully revoked invite for this player. &8(&7Land:&2 {land}&8)&7.'
+      success: '&7Successfully untrusted player&3 {player} &7from this land &8(&7Land:&2 {land}&8)&7.'
     area:
-      already: '&cThis player is not trusted in this area &8(&7Area:&e {area} &7Land:&e {land}&8)&7.'
-      inv-revoked: '&7Successfully revoked invite for this player. &8(&7Area:&e {area} &7Land:&e {area}&8)&7.'
-      success: '&7Successfully untrusted player&b {player} &7in this area &8(&7Area:&e {area} &7Land:&e {area}&8)&7.'
+      already: '&cThis player is not trusted in this area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      inv-revoked: '&7Successfully revoked invite for this player. &8(&7Area:&6 {area} &7Land:&2 {area}&8)&7.'
+      success: '&7Successfully untrusted player&3 {player} &7in this area &8(&7Area:&6 {area} &7Land:&2 {area}&8)&7.'
 
   setrole:
-    not-exist: '&cThe role&e {role} &cdoesn''t exist. &7Typo?'
+    not-exist: '&cThe role&4 {role} &cdoesn''t exist. &7Typo?'
     land:
-      not-trusted: '&cThe player&e {player} &cisn''t trusted in this land &8(&7Land:&e {land}&8)&7. Please trust them first.'
-      success: '&7Successfully set role&b {role} &7for player&b {player} &7in the whole land &8(&7Land:&e {land}&8)&7.'
+      not-trusted: '&cThe player&4 {player} &cisn''t trusted in this land &8(&7Land:&2 {land}&8)&7. Please trust them first.'
+      success: '&7Successfully set role&3 {role} &7for player&3 {player} &7in the whole land &8(&7Land:&2 {land}&8)&7.'
     area:
-      not-trusted: '&cThe player&e {player} &cisn''t trusted in this area &8(&7Area:&e {area} &7Land:&e {land}&8)&7. Please trust them first.'
-      success: '&7Successfully set role&b {role} &7for player&b {player} &7in this area &8(&7Area:&e {area} &7Land:&e {land}&8)&7.'
+      not-trusted: '&cThe player&4 {player} &cisn''t trusted in this area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Please trust them first.'
+      success: '&7Successfully set role&3 {role} &7for player&3 {player} &7in this area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
 
   accept:
-    not-exist: '&cYou don''t have an invite from land&e {land} &cor it expired. &7Please check your input.'
+    not-exist: '&cYou don''t have an invite from land&4 {land} &cor it expired. &7Please check your input.'
     own-land: '&cYou don''t have permission to own a land and be member of other lands. &7You need to leave your own land first.'
-    max-lands: '&cYou can''t join any more lands. &7You can only have&b {max} &7lands. &8Permission: lands.lands.NUMBER'
-    notification: '&7You still have&b {invites} &7invites from other lands. Use &8/&aLand invites &7to get a list of them.'
+    max-lands: '&cYou can''t join any more lands. &7You can only have&3 {max} &7lands. &8Permission: lands.lands.NUMBER'
+    notification: '&7You still have&3 {invites} &7invites from other lands. Use &8/&3Land invites &7to get a list of them.'
     land:
-      success: '&7Successfully accepted invite from land&b {land}&7. You''re not trusted in the whole land.'
-      broadcast: '&b{land} &8| &7Player&b {player} &7joined our land&7.'
+      success: '&7Successfully accepted invite from land&3 {land}&7. You''re now trusted in the whole land.'
+      broadcast: '&2{land} &8| &7Player&3 {player} &7joined our land&7.'
     area:
-      success: '&7Successfully accepted invite from land&b {land} &7for the area&b {area}&7.'
-      broadcast: '&b{land} &8| &7Player&b {player} &7is now member of area {area} in our land {land}&7.'
+      success: '&7Successfully accepted invite from land&2 {land} &7for the area&6 {area}&7.'
+      broadcast: '&2{land} &8| &7Player&3 {player} &7is now member of area&6 {area} &7in our land&2 {land}&7.'
   deny:
-    not-exist: '&cYou don''t have an invite from land&e {land} &cor it expired. &7Please check your input.'
-    success: '&7You successfully denied invite from land&b {land}&7.'
+    not-exist: '&cYou don''t have an invite from land&4 {land} &cor it expired. &7Please check your input.'
+    success: '&7You successfully denied the invite from land&3 {land}&7.'
 
   teleport:
     world-not-exist: '&cThe world with the name&e {world} &cdoes''t exist.'

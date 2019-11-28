@@ -88,7 +88,7 @@ general:
   offline: '&cOffline'
 
   role:
-    owner: '&6Owner'
+    owner: '&4Owner'
     admin: '&cAdmin'
     member: '&eMember'
     visitor: '&7Visitor'
@@ -434,7 +434,6 @@ gui:
           - '  &7in this area.'
           - '&8- &7Contact the land owner'
           - '  &7for help.'
-        material: GRASS_BLOCK
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -506,14 +505,12 @@ gui:
           - '  &elands.gui.chunk.teleport&7.'
           - '&8- &7Contact a administrator'
           - '  &7for help.'
-        material: 'GRASS_BLOCK'
       failure_teleport_cooldown:
         name: '&4Denied: &cCooldown'
         lore:
           - '&cYou need to wait&5 {time}'
           - '&cuntil you will be able to'
           - '&cteleport to this chunk.'
-        material: 'GRASS_BLOCK'
       failure_teleport_money:
         name: '&4Failure: &cMoney'
         lore:
@@ -521,7 +518,6 @@ gui:
           - '&cteleport to this chunk.'
           - ' '
           - '&7You need&c ${cost} &7.'
-        material: GRASS_BLOCK
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -701,16 +697,14 @@ gui:
         name: '&4Failure: &cRole Weight'
         lore:
           - '&7You can''t edit the role'
-          - '&e{role}&7. &7It has a higher'
+          - '&3{role}&7. &7It has a higher'
           - '&7priority than yours.'
-        material: STONE
       noaccess_setrole:
         name: '&4Failure: &cNot permitted'
         lore:
           - '&7You''re not allowed to do this.'
           - '&7The land owner can give you'
           - '&7permission to do so.'
-        material: STONE
     f:
       trust:
         name: '&8> &aTrust Player'
@@ -718,7 +712,7 @@ gui:
           - '&7Click here to trust'
           - '&7a player in this area.'
           - ' '
-          - '&7Available:&e {players} &8/&c {max}'
+          - '&7Available:&3 {players} &8/&c {max}'
         material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0='
         slot: 32
       untrust:
@@ -771,7 +765,7 @@ gui:
           - '&7Send a invite to a player'
           - '&7to trust him in this area.'
           - ' '
-          - '&7Available:&e {players} &8/&c {max}'
+          - '&7Available:&3 {players} &8/&c {max}'
         material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0='
         slot: 32
       page_previous:
@@ -868,7 +862,6 @@ gui:
           - '&8- &7You need the permission'
           - '  &7to untrust players in this'
           - '  &7area.'
-        material: RED_DYE
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -917,7 +910,7 @@ gui:
           - '&7new player. You''ll be guided'
           - '&7through the player setup.'
           - ' '
-          - '&7Available:&e {roles} &8/&c {max}'
+          - '&7Available:&3 {roles} &8/&c {max}'
         material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19'
         slot: 23
     p:
@@ -991,7 +984,6 @@ gui:
         lore:
           - '&7You need to have a item'
           - '&7in your main hand.'
-        material: 'STONE'
     p:
       placeholder_1:
         material: 'GRAY_STAINED_GLASS_PANE'
@@ -1206,6 +1198,28 @@ gui:
         material: FEATHER
         from: 10
         to: 27
+      spawn_teleport:
+        name: '&6Teleport to Spawn'
+        lore:
+          - '&7Status: {enabled}'
+          - '&7Unlocked: {unlocked}'
+          - ' '
+          - '&7Allow this role to'
+          - '&7teleport to the spawn?'
+        material: ENDER_PEARL
+        from: 10
+        to: 27
+      chunk_assign:
+        name: '&6Assign Chunks to Areas'
+        lore:
+          - '&7Status: {enabled}'
+          - '&7Unlocked: {unlocked}'
+          - ' '
+          - '&7Allow this role to'
+          - '&7assign chunks to areas?'
+        material: OAK_FENCE
+        from: 10
+        to: 27
       player_trust:
         name: '&6Trust Players'
         lore:
@@ -1310,14 +1324,29 @@ gui:
         to: 27
     a:
       failure_permission:
-        name: '&4Failure: &cNo permission'
+        name: '&4Failure: &cNo Permission'
         lore:
           - '&7You''re not allowed to'
           - '&7edit this setting.'
           - ' '
-          - '&8- &7You need permission'
-          - '  &e{permission}&7.'
-        material: RED_STAINED_GLASS_PANE
+          - '&8Permission'
+          - '&8{permission}'
+      failure_noaccess:
+        name: '&4Failure: &cNot Access'
+        lore:
+          - '&7You''re not allowed to'
+          - '&7edit these settings.'
+          - ' '
+          - '&7The land owner needs to'
+          - '&7allow you to do so.'
+          - '&8Setting: {setting}'
+      failure_role-weight:
+        name: '&4Failure: &cRole Priority'
+        lore:
+          - '&7You''re not allowed to'
+          - '&7edit settings of this role.'
+          - '&7It has an higher priority'
+          - '&7than yours.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1392,17 +1421,6 @@ gui:
         material: LEVER
         from: 10
         to: 18
-      land_spawn_teleport:
-        name: '&bTeleport to Spawn'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Unlocked: {unlocked}'
-          - ' '
-          - '&7Allow this role to'
-          - '&7teleport to the land spawn?'
-        material: ENDER_PEARL
-        from: 10
-        to: 18
       setting_edit_various:
         name: '&bEdit various Land Settings'
         lore:
@@ -1442,7 +1460,6 @@ gui:
           - ' '
           - '&8- &7You need permission'
           - '  &e{permission}&7.'
-        material: RED_STAINED_GLASS_PANE
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1575,14 +1592,22 @@ gui:
         to: 18
     a:
       failure_permission:
-        name: '&4Failure: &cNo permission'
+        name: '&4Failure: &cNo Permission'
         lore:
           - '&7You''re not allowed to'
           - '&7edit this setting.'
           - ' '
           - '&8- &7You need permission'
           - '  &e{permission}&7.'
-        material: RED_STAINED_GLASS_PANE
+      failure_noaccess:
+        name: '&4Failure: &cNot Access'
+        lore:
+          - '&7You''re not allowed to'
+          - '&7edit these settings.'
+          - ' '
+          - '&7The land owner needs to'
+          - '&7allow you to do so.'
+          - '&8Setting: {setting}'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1675,11 +1700,10 @@ gui:
         name: '&4Max Value reached'
         lore:
           - '&7You can''t set the tax'
-          - '&7value higher than&b {max}&7.'
+          - '&7value higher than&3 {max}&7.'
           - ' '
           - '&8- &7You can ask an administrator'
           - '  &7to change this.'
-        material: GLOWSTONE_DUST
       failure_cooldown:
         name: '&4Cooldown:&c You need to wait.'
         lore:
@@ -1689,7 +1713,15 @@ gui:
           - ' '
           - '&8- &7You can ask an administrator'
           - '  &7to change this.'
-        material: GLOWSTONE_DUST
+      failure_noaccess:
+        name: '&4Failure:&c No Access'
+        lore:
+          - '&7You''re not allowed to edit'
+          - '&7the taxes of this area.'
+          - ' '
+          - '&8- &7You''re missing permission'
+          - '  &7from the land owner to do so.'
+          - '  &8Setting: {setting}'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1866,7 +1898,6 @@ gui:
           - ' '
           - '&8Permission:'
           - '&8lands.lands.NUMBER'
-        material: RED_STAINED_GLASS_PANE
       failure_inviteOwner:
         name: '&4Failure: &cInvite Owner'
         lore:
@@ -1878,7 +1909,6 @@ gui:
           - ' '
           - '&8A administrator'
           - '&8can change that in config.'
-        material: RED_STAINED_GLASS_PANE
       failure_notTrusted:
         name: '&4Failure: &bNot complete'
         lore:
@@ -1892,7 +1922,6 @@ gui:
           - ' '
           - '&8Permission:'
           - '&8lands.members.NUMBER'
-        material: RED_STAINED_GLASS_PANE
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2139,7 +2168,6 @@ gui:
           - '  &7to teleport to their land spawn.'
           - '&8- &7They can do that in the'
           - '  &7land role settings menu of their land.'
-        material: PLAYER_HEAD
       failure_teleport_permission:
         name: '&4Denied: &cPermission'
         lore:
@@ -2150,7 +2178,6 @@ gui:
           - '  &3{permission}&7.'
           - '&8- &7Contact an administrator'
           - '  &7for help.'
-        material: 'PLAYER_HEAD'
       failure_admin_permission:
         name: '&4Denied: &cAdmin Permission'
         lore:
@@ -2161,7 +2188,6 @@ gui:
           - '  &3{permission}&7.'
           - '&8- &7Contact an administrator'
           - '  &7for help.'
-        material: PLAYER_HEAD
       failure_no-spawn:
         name: '&4Failure: &cNo Spawn set'
         lore:
@@ -2172,7 +2198,6 @@ gui:
           - '&8- &7They can execute'
           - '  &8/&3Lands setspawn &7to'
           - '  &7set the lands spawn.'
-        material: 'PLAYER_HEAD'
       failure_teleport_costs:
         name: '&4Denied: &cCosts'
         lore:
@@ -2180,7 +2205,6 @@ gui:
           - '&cteleport to this land spawn.'
           - ' '
           - '&7You need&c ${costs}&7.'
-        material: GRASS_BLOCK
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2308,13 +2332,11 @@ gui:
           - '&7attacker land.'
           - ' '
           - '&7Player:&b {owner}'
-        material: 'GOLD_INGOT'
       failure_surrender-att:
         name: '&cFailure: &4Surrendering disabled'
         lore:
           - '&7Surrendering for attackers was'
           - '&7disabled in config.'
-        material: 'GOLD_INGOT'
       failure_surrender:
         name: '&cFailure: &4Surrender rejected'
         lore:
@@ -2323,21 +2345,18 @@ gui:
           - ' '
           - '&7That''s because they don''t'
           - '&7accept any tribute.'
-        material: 'GOLD_INGOT'
       failure_surrender-attacker:
         name: '&cFailure: &4Surrender rejected'
         lore:
           - '&7Attackers are not allowed'
           - '&7to surrender. Only defenders'
           - '&7can surrender.'
-        material: 'GOLD_INGOT'
       failure_surrender-cost:
         name: '&cFailure: &4Surrender rejected'
         lore:
           - '&7Your land does''t have'
           - '&7enough money to pay the'
           - '&7tribute of&c ${tribute}&7.'
-        material: 'GOLD_INGOT'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2461,7 +2480,7 @@ gui:
           - '&7surrender.'
           - ' '
           - '&8- &7The maximum tribute for '
-          - '  &7this land is&c ${max}&7.'
+          - '  &7this land is&3 ${max}&7.'
           - '  &7A server administrator can'
           - '  &7change that in the config.'
           - ' '
@@ -2497,11 +2516,10 @@ gui:
         name: '&4Max Value reached'
         lore:
           - '&7You can''t set the tribute'
-          - '&7value higher than&b {max}&7.'
+          - '&7value higher than&3 {max}&7.'
           - ' '
           - '&8- &7You can ask an administrator'
           - '  &7to change this.'
-        material: GLOWSTONE_DUST
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
