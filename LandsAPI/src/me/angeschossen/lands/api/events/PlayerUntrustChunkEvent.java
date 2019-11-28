@@ -1,6 +1,6 @@
 package me.angeschossen.lands.api.events;
 
-import me.angeschossen.lands.api.objects.LandChunk;
+import me.angeschossen.lands.api.objects.land.LandChunk;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;

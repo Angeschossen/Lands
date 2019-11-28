@@ -1,8 +1,6 @@
 package me.angeschossen.lands.api.objects.war;
 
-public interface WarStats {
-
-
+public interface LandWarStats {
     int getWon();
 
     int getLost();

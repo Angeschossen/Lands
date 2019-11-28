@@ -1,6 +1,7 @@
 package me.angeschossen.lands.api.objects.war;
 
-import me.angeschossen.lands.api.objects.Land;
+import me.angeschossen.lands.api.enums.war.WarTeam;
+import me.angeschossen.lands.api.objects.land.Land;
 import org.bukkit.entity.Player;
 
 public interface WarDeclaration {
@@ -15,7 +16,7 @@ public interface WarDeclaration {
 
     double getTribute();
 
-    double getMaxTribute();
+    double getMaxTribute(WarTeam warTeam);
 
     Land getInitialAttacker();
 

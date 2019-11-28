@@ -1,0 +1,309 @@
+# Here you can edit all chat messages
+# GUI strings can be found in <language>_gui.yml
+# If you encounter any issues, contact lands support.
+# Plugin page: https://www.spigotmc.org/resources/.53313
+# Discord: https://discord.gg/JVU9qd7
+
+# ###############################
+# About chat message type system:
+# Does only work for messages in
+# "message" or "command" section.
+# ###############################
+
+# You can use some codes to set the type
+# of a message to title, actionbar or chat.
+# How does it work:
+
+# For example we want to print the prefix as a title:
+# Set general.noPerm to: '#t#&cYou''re not allowed to do this.' (Set "#t#" in front of it)
+# This would just print it as a title.
+
+# You also can set in, stay and out fade timings in seconds:
+# Set for example general.prefix to: '#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
+# This would display this message as a title with
+# a fade in delay of 1 seconds, a stay time with 2 seconds
+# and a fade out delay of 3 seconds.
+
+# You also can display it as a actionbar message:
+# Just add "#a#" in front of it.
+# If you want to display it in chat, just don't set any
+# of these in front of it or use "#c#".
+
+# Also you can combine these modes:
+# Set for example general.prefix to: '#c#a#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
+# This would print this message as chat, actionbar and an title with an in delay (1 seconds),
+# stay time (2 seconds) and fade out delay (3 seconds)
+# For any questions or issues, please contact me on discord or via pm.
+# --------------------------
+# Translated by gbalint
+
+general:
+  wYes: '&aIgen'
+  wNo: '&cNem'
+  none: '&cEgyik sem'
+  wilderness: '&aVadon'
+  time:
+    days: 'nap'
+    hours: 'óra'
+    minutes: 'perc'
+    seconds: 'másodperc'
+  status:
+    online: '&aelérhet?'
+    offline: '&cnem elérhet?'
+  role:
+    owner: '&4Tulaj'
+    admin: '&cAdmin'
+    member: '&eTag'
+    visitor: '&5Vándor'
+  top:
+    title: '&7---------<- &6&lTop 10 Telkek &7->---------'
+    land: '&7#&5{pos}&7: &b{land} &7Méret:&e {size}'
+    last-updated: '&7Frissítve:&e {time}'
+    footer: '&7---------<- &6&lTop 10 Telkek &7->---------'
+  integration:
+    dynmap:
+      chunk:
+        description: '<div class=\"infowindow\"><span style="font-size:200%;">{land}</span><br/>X: {x} Z: {z}</span><br/> Tulaj: <span style="font-weight:bold;">{owner}</span><br/>Adminok: <span style="font-weight:bold;">{admins}</span><br/>Tagok: <span style="font-weight:bold;">{members}</span><br/></div>'
+  sign:
+    topLand:
+      line-1: '&6#&e{place}'
+      line-2: '&5{owner}'
+      line-3: '&2Telek &a{land}'
+      line-4: '&9Méret:&b {size}'
+    noLand:
+      line-1: ' '
+      line-2: '&cNem található'
+      line-3: '&ctelek.'
+      line-4: ' '
+  autoAction:
+    claim: '&aChunk foglalás'
+  map:
+    yours: '&a|||| '
+    others: '&c|||| '
+    friendly: '&e|||| '
+    current-location: '&e|||| '
+    wilderness: '&2|||| '
+
+help:
+  general:
+    prefix: '&8[&aLands&8] &7Használat: '
+    header: '&7------------<- &5Lands Help &7Oldal&6 {page} &8/&e {pages} &7->------------'
+    page: '&7Használd a &8/&dLands help {next} &7parancsot a következ? oldalért.'
+    footer: '&7------------<- &5Lands Help &7Oldal&6 {page} &8/&e {pages} &7->------------'
+  command:
+    help: '&8/&7Lands help &8[&aPage&8] - &eSegítség menü'
+    edit: '&8/&7Lands edit &8<&aLand&8> - &eTelek szerkeszt? módba helyezése'
+    claim: '&8/&7Lands claim &8[&7auto&8] - &eChunk lefoglalása'
+    create: '&8/&7Lands create &8<&aName&8> - &eTelek létrehozása'
+    leave: '&8/&7Lands leave &8[&aLand] &8- &eTelek vagy Chunk elhagyása'
+    unclaim: '&8/&7Lands unclaim &8- &eFoglalás megszüntetése'
+    delete: '&8/&7Lands delete &8<&aLand&8> &8- &eTelek törlése'
+    trust: '&8/&7Lands trust &8<&aPlayer&8> [&ahere&8] - &eJátékos meghívása a telekhez'
+    untrust: '&8/&7Lands untrust &8[&ahere&8] - &eJátékos kirúgása a telekr?l'
+    setRole: '&8/&7Lands setRole &8<&aPlayer&8> <&aRole&8> [&ahere&8] - &eJogkör beállítása '
+    accept: '&8/&7Lands accept &8<&aLand&8> - &eMeghívó elfogadása'
+    deny: '&8/&7Lands deny &8<&aLand&8> - &eMeghívó elutasítása'
+    view: '&8/&7Lands view &8- &eInfó a chunkról'
+    menu: '&8/&7Lands menu &8- &eMenü megnyitás'
+    setSpawn: '&8/&7Lands setSpawn - &eTelek spawn beállítása'
+    spawn: '&8/&7Lands spawn &8[&aLand&8] - &eTelekhez teleportálás'
+    wild: '&8/&7Lands wild &8- &eRandom teleportálás'
+    top: '&8/&7Lands top &8- &eTop 10 telek'
+    selection: '&8/&7Lands selection &8- &eTelekhatárok mutatása'
+    chat: '&8/&7Lands chat &8[&aLand&8] <&aMessage&8>'
+    rename: '&8/&7Lands rename <&aName&8> - &eTelek átnevezése'
+    teleport: '&8/&7Lands teleport &8[&aWorld&8] <&aX&8> <&aZ&8> - &eChunkhoz teleportálás'
+    invites: '&8/&7Lands invites &8- &eMeghívók listázása'
+    info: '&8/&7Lands info &8[&aLand&8] - &eTelek infó mutatása'
+    player: '&8/&7Lands player &8<&aPlayer&8> - &eInfó egy játékosról'
+    map: '&8/&7Lands map &8- &eTérkép mutatása'
+    admin:
+      admin: '&8/&7Lands admin &8<&aAction&8> &8- &eAdmin parancsok'
+      debug: '&8/&7Lands debug &8- &eStatisztikák mutatása'
+      safezone: '&8/&7Lands safezone &8- &eBiztonságos zónák beállítása'
+      reload: '&8/&7Lands reload &8<&aValue&8> &8- &eKonfig és üzenetek újratöltése'
+      about: '&8/&7Lands about &8- &eInfo a pluginról'
+
+message:
+  no-permission: '&8[&aLands&8] &cNincs meg a szükséges jog&7:&b {permission}&7.'
+  world-invalid: '&8[&aLands&8] &cKikapcsolva ebben a világban.'
+  feature-disabled: '&8[&aLands&8] &cA funkció egy admin által kikapcsolva. &7Az alábbi beállítást engedélyezni kell a konfigban:&b {setting} &7'
+  noaccess:
+    chunk: '&8[&aLands&8] &cNincs hozzáférésed a chunkhoz. &8(&7Teleknév:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c.'
+    land: '&8[&aLands&8] &cNem teheted meg ezt a telken &8(&7Teleknév:&e {land}&8)&7.'
+    role-weight: '&8[&aLands&8] &cNem szerkesztheted ezt a játékost. &7Nálad magasabb ranggal rendelkezik. Lépj kapcsolatba a telek tulajával.'
+    claim: '&8[&aLands&8] &cNem foglalhatsz telket itt. &7A terület már másé.'
+    place: '&8[&aLands&8] &cNem rakhatsz le blokkokat itt.'
+    break: '&8[&aLands&8] &cNem törhetsz blokkokat itt.'
+    interact: '&8[&aLands&8] &cNem aktiválhatsz dolgokat itt.'
+    ignite: '&8[&aLands&8] &cNem gyújthatsz fel blokkokat itt.'
+    edit: '&8[&aLands&8] &cNem szerkesztheted a telket.'
+    player:
+      chunk-trust: '&8[&aLands&8] &cNem adhatsz játékost a chunkhoz &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      chunk-setRole: '&8[&aLands&8] &cNem állíthatsz jogköröket a chunkban &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      chunk-untrust: '&8[&aLands&8] &cNem rúghatsz ki játékost a chunkról &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      land-trust: '&8[&aLands&8] &cNem adhatsz játékost a telekhez &8(&7Teleknév: &e{land}&8)&c.'
+      land-untrust: '&8[&aLands&8] &cNem rúghatsz ki játékost a telekr?l &8(&7Teleknév: &e{land}&8)&c.'
+      land-setrole: '&8[&aLands&8] &cNem állíthatsz jogköröket a telken &8(&e{&7Teleknév: land}&8)&c.'
+    combat:
+      animal: '&8[&aLands&8] &cNem támadhatsz meg állatokat.'
+      pvp-attacker: '&8[&aLands&8] &cNem támadhatsz meg játékosokat.'
+      pvp-target: '&8[&aLands&8] &cNem támadhatnak meg itt.'
+  disallowWilderness:
+    break: '&8[&aLands&8] &cNem törhetsz blokkokat a vadonban. &7Csak foglalt telken teheted.'
+    place: '&8[&aLands&8] &cNem rakhatsz le blokkokat a vadonban. &7Csak foglalt telken teheted.'
+    interact: '&8[&aLands&8] &cNem aktiválhasz dolgokat a vadonban. &7Csak foglalt telken teheted.'
+  claimblock:
+    cmdDisabled: '&8[&aLands&8] &cCsak levéd? blokkokkal foglalhatsz telket. &7Parancs kikapcsolva.'
+    dropped: '&8[&aLands&8] &cNéhány levéd?blokk a földre került. &7Nem volt nálad hely.'
+    notOwner: '&8[&aLands&8] &cNem használhatod ezt a levéd?blokkot. &7Nem a tied.&b {player}&7 tulajdona.'
+    noLeft: '&8[&aLands&8] &cNem maradt levéd?blokkod. &7Keress meg egy admint.'
+    success: '&8[&aLands&8] &7Van&b {blocks} &7levéd? blokkod. &7Rakd le egy chunkban, hogy lefoglald.'
+  blacklist:
+    untrusted: '&8[&aLands&8] &cNem használhatod ezt a parancsot itt. &7Nem vagy a chunkhoz adva.'
+    general: '&8[&aLands&8] &cLevédett területeken nem használhatod ezt a parancsot.'
+  autoAction:
+    stopped: '&8[&aLands&8] &cAutomata esemény leállítva. &7Maximum elérve. Név:&b {name}'
+    started: '&8[&aLands&8] &7Automata esemény sikeresen elkezdve. Név:&b {name}'
+    removed: '&8[&aLands&8] &7Automata esemény sikeresen leállítva. &7Név:&b {name}'
+
+command:
+  general:
+    land-not-exist: '&8[&aLands&8] &cA telek &e {land} &cnem létezik ebben a világban.'
+    land-not-member: '&8[&aLands&8] &cNem vagy hozzáadva ehhez a telekhez:&e {land}&c. &7Használd a &8/&aLands menu &7parancsot, hogy lekérd a telkeid.'
+    land-not-trusted: '&8[&aLands&8] &cNem teheted ezt.&b {player} &7Nem tagja a teleknek &8(&7Teleknév:&e {land}&8)&7. El?ször add a telekhez a &8/&aLands trust&7 paranccsal.'
+    land-no-action: '&8[&aLands&8] &cNem vagy tagja teleknek, ahol ezt megtehetnéd. &7Használd a &8/&aLand create &7parancsot, hogy létrehozz egyet.'
+    name-exists: '&8[&aLands&8] &cEz a név már le van foglalva. &7Használj egy másikat.'
+    money-cost-bank: '&8[&aLands&8] &cNincs elég pénzed. &7Kelleni fog:&b ${cost}&7.'
+    lands-max: '&8[&aLands&8] &cNem lehetsz több telek tagja. &7Elérted a maximum &b {max} &7telket.'
+    name-numbers: '&8[&aLands&8] &cNe használj számokat a telek nevében, csak latin bet?ket.'
+    name-accent: '&8[&aLands&8] &cNe használj ékezetes bet?ket.'
+    name-length: '&8[&aLands&8] &ctúl hosszú név. &7A maximum &b {max} &7karakter.'
+    action-cooldown: '&8[&aLands&8] &cNem teheted ezt. &7Várnod kell &b {time} &7percet.'
+    land-none: '&8[&aLands&8] &cNem vagy egy teleknek sem tagja. &7Használd a &8/&aLands create &7parancsot, hogy létrehozz egyet.'
+    land-no-own: '&8[&aLands&8] &cNincs saját telked. &7Használd a &8/&aLands create &7parancsot, hogy létrehozz egyet.'
+    world-invalid: '&8[&aLands&8] &cEbben a világban nem teheted ezt. &7Próbálkozz egy másikban.'
+    wilderness: '&8[&aLands&8] &cEz a chunk a vadon része. &7Menj egy foglalt területre. &7Használd a &8/&aLands menu &7parancsot, hoogy listázd a telkeid.'
+    player-not-exist: '&8[&aLands&8] &e{player}&c nev? játékos nem létezik. &7Ellen?rizd a parancsot.'
+    role-weight: '&8[&aLands&8] &cNem szerkesztheted ezt a jogkört. &7Veled egyez?, vagy magasabb rang &8(&7Jogkör:&e {role}&8) &8(&7Teleknév:&e {land}&8)&7.'
+    player-self: '&8[&aLands&8] &cMagaddal nem teheted ezt.'
+    cooldown: '&8[&aLands&8] &cNem teheted ezt újra. &7Várnod kell&b {time} &7percet.'
+    chunk-is-claimed: '&8[&aLands&8] &cNem védheted le ezt a chunkot. &7Már egy másik telekhez tartozik:&b {land}&7.'
+  help:
+    help: '&8[&aLands&8] &7Használd a &8/&aLand help &7parancsot segítségért.'
+    cmd-not-exist: '&8[&aLands&8] &cEz az al-parancs nem létezik:&b {command}'
+    page-not-exist: '&8[&eProtect&8] &cAz oldalszám&e {page} &cnem létezik. &7Elírtad?'
+  create:
+    land-other: '&8[&aLands&8] &cNem lehet saját telked, ha már tagja vagy egy másiknak. &7El kell hagyd&b {land}&7-t el?ször. Egy admin kikapcsolhatja ezt a funkciót a konfigban.'
+    max-own: '&8[&aLands&8] &cNem lehet több telked. &7Elérted a maximum&b {max} &7 telket.'
+    success: '&8[&aLands&8] &7Sikeresen létrehoztad a&b {land} &7 nev? telket &b {cost}&7-ért. Lefoglalhatsz chunkokat a &8/&aLands claim&7 paranccsal.'
+    broadcast: '&8[&aLands&8] &b{land} &7létrehozva &b {player}&7 által.'
+  rename:
+    success: '&8[&aLands&8] &7Sikeresen átnevezted &b {name}&7-ra/re ennél a teleknél &8(&7Teleknév:&e {land}&8)&7.&b ${cost}&7-t fizettél.'
+  edit:
+    disabled: '&8[&aLands&8] &cCsak akkor szerkesztheted a telkeket, ha éppen rajtuk vagy. &7Konfigban kikapcsolható a "&bgeneral.options.editLocLand&7" beállítással.'
+    success: '&8[&aLands&8] &7Beléptél a szerkesztó módba &8(&7Teleknév:&e {land}&8)&7. M?veletek, mint pl.: &8/&aLands claim &7vagy &8/&aLands trust&7, erre a telekre fognak hatni.'
+  selection:
+    disabled-config: '&8[&aLands&8] &cEz a funkció ki lett kapcsolva egy admin által. &7A &bland.selection.enabled&7 beállításnak engedélyezve kell lennie.'
+    enabled: '&8[&aLands&8] &7Kijelöl? mód aktiválva: Válaszd ki a kezeddel egy terület &bszemben lév? sarkait &7 hogy lefoglalj &bminden chunkot &7benne.'
+    disabled: '#t#!!1!!1!!1!!&7Kijelöl? mód:;;&cKikapcsolva'
+    pos-left: '#t#&7Pozíció;;&b1'
+    pos-right: '#t#&7Pozíció;;&b2'
+    max: '&8[&aLands&8] &cA kijelölt terület túl sok chunkot tartalmaz. &7Méret:&b {current} &7Max megengedett:&b {max}'
+    same-world: '&8[&aLands&8] &cMindkét pozíció egy világban kell legyen'
+    claimed: '&8[&aLands&8] &7Sikeresen lefoglaltál&b {chunks} &7chunkot &8(&7Teleknév:&e {land}&8)&7. Ennyit fizettél:&b ${cost}&7.'
+    left: '&8[&aLands&8] &7Sikeresen elhagytál&b {chunks} &7chunkot &8(&7Teleknév:&e {land}&8)&7.'
+    unclaimed: '&8[&aLands&8] &7Sikeresen felszabadítottál&b {chunks} &7chunkot &8(&7Teleknév:&e {land}&8)&7.'
+  claim:
+    max-chunks: '&8[&aLands&8] &cNem foglalhatsz le több chunkot. &7A maximumod:&b {max} &7chunk.'
+    auto-create: '&8[&aLands&8] &7Automatikusan létrehoztunk egy telket neked. Átnevezheted a &8/&aLands rename&7 paranccsal.'
+    auto-create-fail: '&8[&aLands&8] &cNem lehetett automatikusan telket létrehozni. &7Jegyezd le a megel?z? üzeneteket és lépj kapcsolatba egy adminnal.'
+    near-other: '&8[&aLands&8] &cTúl közel vagy egy másik telekhez:&e {land}&c. &7Minimum chunk távolság szükséges:&b {distance}&7.'
+    far-land: '&8[&aLands&8] &cNem foglalhatod le ezt a chunkot. &7Kell hogy legyen mellette egy már általad lefoglalt &8(&7Teleknév:&e {land}&8)&7.'
+    success: '&8[&aLands&8] &7Sikeresen lefoglalt chunk &8(&7Teleknév:&e {land} &7X:&e {x} &7Z:&e {z}&8) &7&b {cost}&7-ért. következ? foglalás díja:&b {next}&7.'
+  leave:
+    land-owner: '&8[&aLands&8] &cNem hagyhatod el ezt a telket, mert a tulaja vagy. &7Törölnöd kell a &8/&aLands delete&7 parancs használatával.'
+    land-success: '&8[&aLands&8] &7Sikeresen elhagytad a telket:&b {land}&7. Nincs többé hozzáférésed a területhez.'
+    chunk-success: '&8[&aLands&8] &7Sikeresen elhagytad a chunkot. &7Nincs többé hozzáférésed.'
+  unclaim:
+    success: '&8[&aLands&8] &7Sikeresen felszabadítottad a chunkot: &8(&7X:&e {x} &7Z:&e {z}&8)&7. Még maradt&b ${back} &7darabod.'
+  delete:
+    confirm: '&8[&aLands&8] &cEr?sítsd meg a m?veletet. &7Használd a &8/&aLand delete {land} confirm&7 parancsot.'
+    success: '&8[&aLands&8] &7Sikeresen törölted a telket: &8(&7Teleknév:&e {land}&8)&7.'
+    broadcast: '&8[&aLands&8] &7A telek &b {land} &7törölve&b {player}&7 által.'
+  trust:
+    own-land: '&8[&aLands&8] &cA játékosnak nem lehet saját telke miközben tagja egy másiknak. &7El?ször el kell hagynia.'
+    land-already: '&8[&aLands&8] &cA játékos már tagja a teleknek &8(&7Teleknév:&e {land}&8)&7.'
+    chunk-already: '&8[&aLands&8] &cA játékos már tagja a chunknak &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    invited: '&8[&aLands&8] &cA játékos már meg van hívva. &7Várj, amíg elfogadja &8(&7Teleknév:&e {land}&8)&7.'
+    land-target: '&8[&aLands&8] &b{player} &7meghívott a telkére:&b {land}&7. Használd a &8/&aLand accept {land} &7parancsot, hogy elfogadd.'
+    chunk-target: '&8[&aLands&8] &b{player} &7meghívott a chunkjára &8(&7X:&e {x} &7Z:&e {z}) &7Használd a &8/&aLand accept {land} &7parancsot, hogy elfogadd.'
+    chunk-success: '&8[&aLands&8] &7Sikeresen meghívtad&b {player} &7-t a chunkodra &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-success: '&8[&aLands&8] &7Sikeresen meghívtad&b {player} &7-t a telkedre &8(&7Teleknév:&e {land}&8)&7. Már csak el kell fogadnia.'
+  untrust:
+    land-already: '&8[&aLands&8] &cA játékos már el lett távolítva a telekr?l &8(&7Teleknév:&e {land}&8)&7.'
+    chunk-already: '&8[&aLands&8] &cA játékos már el lett távolítva a chunkról &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    invite-removed: '&8[&aLands&8] &7Sikeresen visszavontad a játékos meghívóját. &8(&7Teleknév:&e {land}&8)&7.'
+    chunk-success: '&8[&aLands&8] &7Sikeresen eltávolítottad&b {player} &7-t a chunkról &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-success: '&8[&aLands&8] &7Sikeresen eltávolítottad&b {player} &7-t a telekr?l &8(&7Teleknév:&e {land}&8)&7.'
+  setRole:
+    role-not-exist: '&8[&aLands&8] &cA &e {role} &cjogkör nem létezik. &7Elírás? &8(&aElérhet?: &cAdmin&7, &eTag&8)'
+    land-not-trusted: '&8[&aLands&8] &e{player} &c nincs a telekhez adva &8(&7Teleknév:&e {land}&8)&7.'
+    chunk-max-members: '&8[&aLands&8] &cNem módosítható jogkör. &7A telek tulaja elérte a maximum&b {members} &7tagot a chunkban.'
+    max-members: '&8[&aLands&8] &cNem módosítható jogkör a &e {chunks} &cchunkokon. &7A telek tulaja elérte a maximum&b {members} &7tagot a chunkjában.'
+    chunk-success: '&8[&aLands&8] &7Jogkör sikeresen módosítva&b {role} &7-ra/re&b {player} &7-nak/nek a chunkon: &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    part-success: '&8[&aLands&8] &b{player} &7nem tagja az egész teleknek. Jogkörök beállítva ott, ahol tag &8(&7Teleknév:&e {land}&8)&7.'
+    land-success: '&8[&aLands&8] &7Jogkör sikeresen módosítva&b {role} &7-ra/re&b {player} &7-nak/nek az egész telken &8(&7Teleknév:&e {land}&8)&7.'
+  accept:
+    not-exist: '&8[&aLands&8] &cNincs meghívód a &e {land} &ctelekre, vagy már lejárt.'
+    own-land: '&8[&aLands&8] &cNincs jogod, hogy tagja legyél egy teleknek, miközben van már sajátod. &7Hagyd el el?ször a sajátod.'
+    max-reached: '&8[&aLands&8] &cNem csatlakozhatsz több telekhez. &7A maximum:&b {max}&7.'
+    land-tax-confirm: '&8[&aLands&8] &7A telek tulaja&e {tax} &7 adót kér hogy csatlakozhass a telkéhez. &7Er?sítsd meg a m?veletet a &8/&aLands accept {land} confirm&7 paranccsal.'
+    chunk-tax-confirm: '&8[&aLands&8] &7A telek tulaja&e {tax} &7 adót kér hogy csatlakozhass a telkéhez. &7Er?sítsd meg a m?veletet a &8/&aLands accept {land} confirm&7 paranccsal.'
+    land-fail: '&8[&aLands&8] &cNem lehetett téged a telekhez adni:&e {land}&c. &7A telek tulaja elérte a maximum&b {members} &7tagot a chunkjaiban.'
+    max-members: '&8[&aLands&8] &cNem lehetett téged a&e {chunks} &cchunkokhoz adni. &7A telek tulaja elérte a maximum&b {members} &7tagot a chunkjaiban.'
+    chunk-max-members: '&8[&aLands&8] &cNem lehetett jogköröket módosítani. &7A telek tulaja elérte a maximum&b {members} &7tagot ebben chunkban.'
+    land-success: '&8[&aLands&8] &7Sikeresen elfogadtad a &b {land}&7 telek meghívóját. Mostmár hozzáférsz az egész telekhez.'
+    chunk-success: '&8[&aLands&8] &7Sikeresen elfogadtad a &b {land}&7 telek meghívóját&7 a chunkhoz: &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    chunk-broadcast: '&8[&aLands&8] &b{land} &8|&b {player} &7tagja lett a chunknak: &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-broadcast: '&8[&aLands&8] &b{land} &8|&b {player} &7csatlakozott a területünkhöz&7.'
+    notification: '&8[&aLands&8] &7Még van&b {invites} &7meghívód más telkekt?l. Használd a &8/&aLand invites &7parancsot a listázáshoz.'
+  deny:
+    not-exist: '&8[&aLands&8] &cNincs meghívód a&e {land} &c telekt?l vagy már lejárt.'
+    land-success: '&8[&aLands&8] &7Sikeresen elutasítottad a meghívót:&b {land}&7.'
+    chunk-success: '&8[&aLands&8] &7Sikeresen elutasítottad a meghívót:&b {land} &7telek chunkja: &8(X:&e {x} &7Z:&e {z}&8)&7.'
+  teleport:
+    world-not-exist: '&8[&aLands&8] &cNem létez? világ.'
+    chunk-not-exist: '&8[&aLands&8] &cNem létez? chunk.'
+    success: '&8[&aLands&8] &7Sikeresen elteleportáltál a chunkhoz: &8(&7X:&e {x} &7Z:&e {z} &7Levédve: {claimed}&8)&7.'
+  setSpawn:
+    force-land: '&8[&aLands&8] &cCsak a saját területedre rakhatsz teleport pontot.'
+    success: '#t#&7Teleport pont &abeállítva&7.;;&7Ár:&b {cost}'
+  spawn:
+    not-exist: '&8[&aLands&8] &cNincs teleportálási cél beállítva:&e {land}&c. &7Valakinek be kell állítania a &8/&aLand setSpawn&7 parancs használatával.'
+    not-allowed: '&8[&aLands&8] &cNem teleportálhatsz a telekre. &7A tulajnak jogot kell adnia rá, vedd fel vele a kapcsolatot &8(&7Teleknév:&e {land}&8)&7.'
+    success: '#t#&7Teleported to;;&7Teleknév&b {land}'
+  wild:
+    searching: '#t#&7Keresés:;;&dVéletlen célpont'
+    loc-unsafe: '&8[&aLands&8] &cNem találni biztonságos célt. &7Próbáld újra kés?bb. Ha ezután se menne, keress fel egy admint.'
+    success: '&8[&aLands&8] &7Sikeres teleportálás: &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+  menu:
+    no-permission-other: '&8[&aLands&8] &cNem nyithatsz meg másoknak menüket. &7Szükséges jog:&e lands.command.menu.others &7.'
+    notExist: '&8[&aLands&8] &cA játékoshoz még nem tartozik adat.'
+  chat:
+    format: '&8[&aLands&8] [&d{land}&8] {role} &7{player}&8:&f {message}'
+  map:
+    header: '&7----------------------'
+    info: '&7Saját: &a|||| &7Vadon: &2|||| &7Mások: &c|||| &7Barát: &5|||| &7Helyszín: &e||||'
+    footer: ' '
+
+list:
+  view:
+    - '&7---------<- &5&lTelek Információk &7->---------'
+    - '&7Teleknév:&b {land}'
+    - '&7Adók -> Globális:&b {tax-land} &7Itt:&b {tax-chunk}'
+    - '&7Világ:&e {world} &7X:&e {x} &7Z:&e {z}'
+    - '&4Tulaj:&7 {owner}'
+    - '&7Adminok:&7 {admins}'
+    - '&7Tagok:&7 {members}'
+    - '&7---------<- &5&lTelek Információk &7->---------'

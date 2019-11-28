@@ -1,9 +1,9 @@
 package me.angeschossen.lands.api.landsaddons;
 
-import me.angeschossen.lands.api.objects.Land;
-import me.angeschossen.lands.api.objects.LandChunk;
-import me.angeschossen.lands.api.objects.LandPlayer;
 import me.angeschossen.lands.api.objects.LandWorld;
+import me.angeschossen.lands.api.objects.land.Land;
+import me.angeschossen.lands.api.objects.land.LandChunk;
+import me.angeschossen.lands.api.objects.player.LandPlayer;
 import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 
@@ -67,7 +67,7 @@ public interface LandsAddons {
     LandWorld getLandWorld(String worldName);
 
     /**
-     * Get's plugin wich hooks Lands.
+     * Get's lands wich hooks Lands.
      *
      * @return Plugin
      */

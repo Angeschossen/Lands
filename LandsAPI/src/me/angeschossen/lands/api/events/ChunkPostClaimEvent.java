@@ -1,7 +1,7 @@
 package me.angeschossen.lands.api.events;
 
-import me.angeschossen.lands.api.objects.LandChunk;
-import me.angeschossen.lands.api.objects.LandPlayer;
+import me.angeschossen.lands.api.objects.land.LandChunk;
+import me.angeschossen.lands.api.objects.player.LandPlayer;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 

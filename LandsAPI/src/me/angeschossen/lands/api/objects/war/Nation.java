@@ -1,6 +1,6 @@
 package me.angeschossen.lands.api.objects.war;
 
-import me.angeschossen.lands.api.objects.Land;
+import me.angeschossen.lands.api.objects.land.Land;
 
 public interface Nation {
     Land getLeader();

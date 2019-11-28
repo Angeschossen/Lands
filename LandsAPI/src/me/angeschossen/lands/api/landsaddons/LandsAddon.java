@@ -1,10 +1,11 @@
 package me.angeschossen.lands.api.landsaddons;
 
 
-import me.angeschossen.lands.api.objects.Land;
-import me.angeschossen.lands.api.objects.LandChunk;
-import me.angeschossen.lands.api.objects.LandPlayer;
+
 import me.angeschossen.lands.api.objects.LandWorld;
+import me.angeschossen.lands.api.objects.land.Land;
+import me.angeschossen.lands.api.objects.land.LandChunk;
+import me.angeschossen.lands.api.objects.player.LandPlayer;
 import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 
@@ -15,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 public class LandsAddon implements LandsAddons {
 
 
-    public LandsAddon(Plugin plugin, boolean isPublic) {
+    public LandsAddon(Plugin lands, boolean isPublic) {
     }
 
     @Override

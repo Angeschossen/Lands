@@ -1,6 +1,6 @@
 package me.angeschossen.lands.api.landsaddons;
 
-import me.angeschossen.lands.api.objects.LandChunk;
+import me.angeschossen.lands.api.objects.land.LandChunk;
 import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 

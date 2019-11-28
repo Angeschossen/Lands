@@ -1,16 +1,18 @@
 package me.angeschossen.lands.api.objects;
 
-import com.sun.istack.internal.NotNull;
-import me.angeschossen.lands.api.enums.LandsAction;
+import me.angeschossen.lands.api.enums.role.RoleSetting;
+import me.angeschossen.lands.api.objects.land.Land;
+import me.angeschossen.lands.api.objects.land.LandChunk;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
 public interface LandWorld {
 
-    boolean canActionWithResponse(Player player, Location location, LandsAction landsAction);
+    boolean canActionWithResponse(Player player, Location location, RoleSetting landsAction);
 
     boolean canPvP(Player attacker, Player target, Location location);
 
@@ -22,7 +24,7 @@ public interface LandWorld {
      * @param landsAction Action
      * @return Will return false if he can't do this.
      */
-    boolean canAction(Player player, Location location, LandsAction landsAction);
+    boolean canAction(Player player, Location location, RoleSetting landsAction);
 
     /**
      * Get name of world.
