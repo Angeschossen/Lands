@@ -75,7 +75,8 @@
 # #
 # # If you encounter any issues or you simply have
 # # some questions, contact me via PM or Discord.
-# # Discord: https://discord.gg/JVU9qd7
+# # Discord: https://discord.gg/B4MAJVk
+
 general:
   wYes: 'Yes'
   wNo: 'No'
@@ -166,17 +167,17 @@ gui:
         lore:
           - ' '
           - '&8- &7Create&3 {ownlands} &7lands.'
-          - '  &8lands.ownlands.NUMBER'
+          - '  &7lands.ownlands.NUMBER'
           - '&8- &7Claim&3 {chunks} &7chunks per land.'
-          - '  &8lands.chunks.NUMBER'
+          - '  &7lands.chunks.NUMBER'
           - '&8- &7Support lands, in which you''re trusted,'
           - '  &7with &3{support-chunks} &7chunks per land.'
-          - '  &8lands.chunks.support.NUMBER'
+          - '  &7lands.chunks.support.NUMBER'
           - ' '
           - '&8- &7Join&3 {lands} &7lands.'
-          - '  &8lands.lands.NUMBER'
+          - '  &7lands.lands.NUMBER'
           - '&8- &7Have&3 {members} &7members per land.'
-          - '  &8lands.members.NUMBER'
+          - '  &7lands.members.NUMBER'
         material: PLAYER_HEAD
         slot: 17
   player_lands:
@@ -425,7 +426,7 @@ gui:
         to: 27
     a:
       failure_untrusted:
-        name: '&4Denied: &cChunk'
+        name: '&4Denied: &cNot trusted'
         lore:
           - '&cYou''re not allowed to'
           - '&copen the menu for this area.'
@@ -434,6 +435,13 @@ gui:
           - '  &7in this area.'
           - '&8- &7Contact the land owner'
           - '  &7for help.'
+      failure_max-areas:
+        name: '&4Failure: &cMax Areas'
+        lore:
+          - '&7This land reached their maximum'
+          - '&7amount of&3 {max} &7Areas.'
+          - ' '
+          - '&8Permission: lands.areas.NUMBER'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -533,13 +541,14 @@ gui:
     size: 27
     s:
       leave:
-        name: '&8> &cLeave'
+        name: '&8> &cLeave Area'
         lore:
-          - '&7Leave this chunk.'
+          - '&7Leave this area.'
           - ' '
-          - '&8- &7If you''re the owner'
-          - '  &7of this land, this chunk'
-          - '  &7will become wilderness.'
+          - '&8- &7If you''re the owner of this'
+          - '  &7this land, this single claim'
+          - '  &7will become wilderness &8(&7not'
+          - '  &7the whole area&8)&7.'
         material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWU0MmY2ODJlNDMwYjU1YjYxMjA0YTZmOGI3NmQ1MjI3ZDI3OGVkOWVjNGQ5OGJkYTRhN2E0ODMwYTRiNiJ9fX0='
         slot: 12
       set-area:
@@ -705,6 +714,13 @@ gui:
           - '&7You''re not allowed to do this.'
           - '&7The land owner can give you'
           - '&7permission to do so.'
+      failure_max-players:
+        name: '&4Failure: &cMax trusted Players'
+        lore:
+          - '&7This land reached their maximum'
+          - '&7amount of&3 {max} &7members.'
+          - ' '
+          - '&8Permission: lands.members.NUMBER'
     f:
       trust:
         name: '&8> &aTrust Player'
@@ -913,6 +929,14 @@ gui:
           - '&7Available:&3 {roles} &8/&c {max}'
         material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19'
         slot: 23
+    a:
+      failure_max-roles:
+        name: '&4Failure: &cMax Roles'
+        lore:
+          - '&7This land reached their maximum'
+          - '&7amount of&3 {max} &7roles.'
+          - ' '
+          - '&8Permission: lands.roles.NUMBER'
     p:
       placeholder_1:
         material: 'GRAY_STAINED_GLASS_PANE'
@@ -1993,36 +2017,36 @@ gui:
         material: RED_STAINED_GLASS_PANE
         slot: 9
       owner:
-        name: '&4Owner &7->&b {player}'
+        name: '&4Owner&3 {player}'
         lore:
           - '&7They''re the owner of'
           - '&7this land. Contact'
           - '&7them, if you have any'
           - '&7questions.'
         material: PLAYER_HEAD
-        slot: 14
+        slot: 12
       chunks:
-        name: '&aChunks &8(&7{amount}&8)'
+        name: '&8> &6Chunks &8(&7{amount}&8)'
         lore:
           - ' '
           - '&e{chunks}'
-        material: GRASS_BLOCK
+        material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ=='
         slot: 30
       players:
-        name: '&ePlayers &8(&7{amount}&8)'
+        name: '&8> &6Players &8(&7{amount}&8)'
         lore:
           - ' '
           - '&e{players}'
-        material: APPLE
-        slot: 17
+        material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0='
+        slot: 16
       created:
-        name: '&bCreated'
+        name: '&8> &6Created'
         lore:
-          - '&e{date}'
+          - '&5{date}'
         material: CLOCK
         slot: 34
       war:
-        name: '&cWar Stats'
+        name: '&8> &6War Stats'
         lore:
           - ' '
           - '&7Won:&7 {won}'
@@ -2033,7 +2057,7 @@ gui:
           - '&7Deaths:&7 {deaths}'
           - '  &7KDR:&e {kdr}'
         material: IRON_SWORD
-        slot: 32
+        slot: 23
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
