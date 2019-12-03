@@ -485,6 +485,9 @@ gui:
         lore:
           - '&7Open the menu'
           - '&7for this chunk.'
+          - ' '
+          - '&9RIGHT CLICK'
+          - '&7Teleport to this chunk.'
         material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ=='
         from: 10
         to: 27
@@ -1371,6 +1374,8 @@ gui:
           - '&7edit settings of this role.'
           - '&7It has an higher priority'
           - '&7than yours.'
+          - ' '
+          - '&8Bypass: lands.amdin.setting_edit_role'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1624,7 +1629,7 @@ gui:
           - '&8- &7You need permission'
           - '  &e{permission}&7.'
       failure_noaccess:
-        name: '&4Failure: &cNot Access'
+        name: '&4Failure: &cNo Access'
         lore:
           - '&7You''re not allowed to'
           - '&7edit these settings.'
@@ -1632,6 +1637,8 @@ gui:
           - '&7The land owner needs to'
           - '&7allow you to do so.'
           - '&8Setting: {setting}'
+          - ' '
+          - '&8Bypass permission: lands.admin.setting_edit_land'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1698,18 +1705,18 @@ gui:
         material: RED_STAINED_GLASS_PANE
         slot: 19
       taxes:
-        name: '&7Tax:&a {tax}'
+        name: '&7Tax:&c ${tax}'
         lore:
-          - '&7Next tax is in&2 {next-tax}&7.'
+          - '&7Next tax is in&5 {next-tax}&7.'
           - ' '
-          - '&7Next upkeep is in&2 {next-upkeep}&7.'
+          - '&7Next upkeep is in&5 {next-upkeep}&7.'
           - '&7Your land will pay&c ${costs}&7.'
           - ' '
-          - '&8- &aTaxes'
+          - '&8- &3Taxes'
           - '  &7This is paid by land members,'
           - '  &7which are trusted in this area.'
           - ' '
-          - '&8- &aUpkeep costs'
+          - '&8- &3Upkeep costs'
           - '  &7This is paid by the land'
           - '  &7and to the server, in order to'
           - '  &7keep the land.'
@@ -1746,6 +1753,8 @@ gui:
           - '&8- &7You''re missing permission'
           - '  &7from the land owner to do so.'
           - '  &8Setting: {setting}'
+          - ' '
+          - '&8Bypass permission: lands.admin.setting_edit_taxes'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2051,11 +2060,11 @@ gui:
           - ' '
           - '&7Won:&7 {won}'
           - '&7Lost:&7 {lost}'
-          - '  &7WLR:&e {wlr}'
+          - '  &7WLR:&3 {wlr}'
           - ' '
           - '&7Kills:&7 {kills}'
           - '&7Deaths:&7 {deaths}'
-          - '  &7KDR:&e {kdr}'
+          - '  &7KDR:&3 {kdr}'
         material: IRON_SWORD
         slot: 23
     p:
@@ -2135,7 +2144,7 @@ gui:
           - '&7Click here to toggle this setting.'
           - ' '
           - '&7Only public: {only-allowed}'
-        material: 'COMMAND_BLOCK'
+        material: 'ENDER_PEARL'
         slot: 50
       page_previous:
         name: '&9Previous Page'
