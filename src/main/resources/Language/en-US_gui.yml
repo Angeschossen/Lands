@@ -88,20 +88,21 @@ gui:
         name: '&8> &6Your Limitations'
         lore:
           - ' '
-          - '&8- &7Create&3 {ownlands} &7lands.'
-          - '  &7lands.ownlands.NUMBER'
-          - '&8- &7Claim&3 {chunks} &7chunks per land.'
-          - '  &7lands.chunks.NUMBER'
-          - '&8- &7Support lands, in which you''re trusted,'
+          - '&7+ Create&3 {ownlands} &7lands.'
+          - '  &8lands.ownlands.NUMBER'
+          - '&7+ Claim&3 {chunks} &7chunks per land.'
+          - '  &8lands.chunks.NUMBER'
+          - '&7+ Support lands, in which you''re trusted,'
           - '  &7with &3{support-chunks} &7chunks per land.'
-          - '  &7lands.chunks.support.NUMBER'
+          - '  &8lands.chunks.support.NUMBER'
           - ' '
-          - '&8- &7Join&3 {lands} &7lands.'
-          - '  &7lands.lands.NUMBER'
-          - '&8- &7Have&3 {members} &7members per land.'
-          - '  &7lands.members.NUMBER'
+          - '&7+ Join&3 {lands} &7lands.'
+          - '  &8lands.lands.NUMBER'
+          - '&7+ Have&3 {members} &7members per land.'
+          - '  &8lands.members.NUMBER'
         material: PLAYER_HEAD
         slot: 17
+
   player_lands:
     title: '&8Your Lands'
     size: 27
@@ -136,8 +137,7 @@ gui:
         lore:
           - '&7You''re trusted in this land.'
           - ' '
-          - '&7Size:&3 {chunks}'
-          - '&7World: {world}'
+          - '&7Chunks:&3 {chunks} &7/&c {max-chunks}'
           - ' '
           - '&9RIGHT CLICK'
           - '&7View some general'
@@ -151,8 +151,7 @@ gui:
         lore:
           - '&7You own this land.'
           - ' '
-          - '&7Size:&3 {chunks}'
-          - '&7World: {world}'
+          - '&7Chunks:&3 {chunks} &7/&c {max-chunks}'
           - ' '
           - '&9RIGHT CLICK'
           - '&7View some general'
@@ -195,14 +194,6 @@ gui:
           - '&7in your land.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
-      areas:
-        name: '&8> &6Areas'
-        lore:
-          - '&7View all areas of this land.'
-          - '&7You also can create new'
-          - '&7areas in this menu.'
-        material: OAK_FENCE
-        slot: 13
       trusted-players:
         name: '&8> &6Trusted Players'
         lore:
@@ -278,6 +269,16 @@ gui:
         from: 30
         to: 30
     f:
+      areas:
+        name: '&8> &6Areas'
+        lore:
+          - '&7View all areas of this land.'
+          - '&7You also can create new'
+          - '&7areas in this menu.'
+          - ' '
+          - '&7Size:&3 {chunks} &7/&c {max-chunks}'
+        material: OAK_FENCE
+        slot: 13
       inbox:
         name: '&8> &6Inbox &8(&e{amount}&8)'
         lore:
@@ -342,9 +343,20 @@ gui:
         lore:
           - '&7Open the area menu'
           - '&7for this area.'
-          - ' '
-          - '&7Size:&3 {size}'
         material: OAK_FENCE
+        from: 10
+        to: 27
+      area-setup:
+        name: '&cSetup:&6 {area}'
+        lore:
+          - '&7You haven''t assigned'
+          - '&7any land to this area yet.'
+          - ' '
+          - '&7Use &8/&3Lands selection'
+          - '&7to make a selection and then'
+          - '&8/&3Lands selection assign {area}'
+          - '&7to assign land to this area.'
+        material: 'ACACIA_FENCE'
         from: 10
         to: 27
       no-area:
@@ -386,133 +398,7 @@ gui:
         material: GRAY_STAINED_GLASS_PANE
         from: 29
         to: 36
-  area_chunks:
-    title: '&8Chunks'
-    size: 36
-    f:
-      page_previous:
-        name: '&9Previous Page'
-        lore:
-          - '&7Go to previous page:&9 {previous}'
-          - ' '
-          - '&8- &7Current:&3 {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&aNext Page'
-        lore:
-          - '&7Go to next page:&9 {next}'
-          - ' '
-          - '&8- &7Current:&3 {current}'
-        material: ARROW
-        slot: 34
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-    l:
-      object:
-        name: '&7X: &6{x} &7Z:&6 {z}'
-        lore:
-          - '&7Open the menu'
-          - '&7for this chunk.'
-          - ' '
-          - '&9RIGHT CLICK'
-          - '&7Teleport to this chunk.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ==
-        from: 10
-        to: 27
-      no-chunk:
-        name: '&cNo Chunk'
-        lore:
-          - '&7This area doesn''t have'
-          - '&7any chunks yet.'
-          - ' '
-          - '&8- &7To assign chunks to this'
-          - '  &7area, use the selection tool'
-          - '  &8(/&3Lands selection&8) and'
-          - '  &7then execute'
-          - '  &8/&3Lands selection assign {area}'
-        material: OAK_SIGN
-        from: 10
-        to: 27
-    a:
-      failure_teleport_permission:
-        name: '&4Denied: &cPermission'
-        lore:
-          - '&cYou''re not allowed to'
-          - '&cteleport to this chunk.'
-          - ' '
-          - '&8- &7You need the permission'
-          - '  &8lands.gui.chunk.teleport&7.'
-          - '&8- &7Contact a administrator'
-          - '  &7for help.'
-      failure_teleport_cooldown:
-        name: '&4Denied: &cCooldown'
-        lore:
-          - '&cYou need to wait&5 {time}'
-          - '&cuntil you will be able to'
-          - '&cteleport to this chunk.'
-      failure_teleport_cost:
-        name: '&4Failure: &cMoney'
-        lore:
-          - '&cYou can''t afford to'
-          - '&cteleport to this chunk.'
-          - ' '
-          - '&7You need&c ${cost} &7.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  chunk:
-    title: '&8Chunk &7X:&6 {x} &7Z:&6 {z}'
-    size: 27
-    s:
-      leave:
-        name: '&8> &cLeave Area'
-        lore:
-          - '&7Leave this area.'
-          - ' '
-          - '&8- &7If you''re the owner of'
-          - '  &7this land, this single claim'
-          - '  &7will become wilderness &8(&7not'
-          - '  &7the whole area&8)&7.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWU0MmY2ODJlNDMwYjU1YjYxMjA0YTZmOGI3NmQ1MjI3ZDI3OGVkOWVjNGQ5OGJkYTRhN2E0ODMwYTRiNiJ9fX0=
-        slot: 12
-      set-area:
-        name: '&8> &6Set Area'
-        lore:
-          - '&7Set the area for this chunk.'
-          - ' '
-          - '&7This will open a menu where you'
-          - '&7can select the area to set.'
-          - ' '
-          - '&8- &7Alternatively you can use'
-          - '  &8/&3Lands selection assign &8<&3area&8>'
-          - '  &7to assign chunks to a area.'
-        material: OAK_FENCE
-        slot: 16
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-    f:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
+
   area:
     title: '&8Area {area}'
     size: 45
@@ -535,19 +421,13 @@ gui:
           - '&7in this area.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
-      chunks:
-        name: '&8> &6Chunks'
-        lore:
-          - '&7View all chunks of this area.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ==
-        slot: 13
       trusted-players:
         name: '&8> &6Trusted Players'
         lore:
           - '&7Get a list of all players which are'
           - '&7trusted in this area.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 14
+        slot: 13
       invites:
         name: '&8> &6Invites'
         lore:
@@ -559,7 +439,7 @@ gui:
           - '  &7can trust players'
           - '  &7in this area.'
         material: WRITABLE_BOOK
-        slot: 15
+        slot: 14
       management:
         name: '&6Management'
         lore:
@@ -786,7 +666,6 @@ gui:
         lore:
           - '&7Area:&e {area}'
           - '&7Land: {land}'
-          - '&7World: {world}'
           - ' '
           - '&7Time:&5 {time}'
           - '&7Sender: {sender}'
@@ -1129,6 +1008,12 @@ gui:
           - '&7Allow this role to'
           - '&7attack players?'
           - ' '
+          - '&8- Please note that due combat'
+          - '  &7logging it might still be possible'
+          - '  &7to fight inside your land,'
+          - '  &7if a player attacked a other player'
+          - '  &7outside the land.'
+          - ' '
           - '&8- &7They can only attack'
           - '  &7players which can'
           - '  &7also attack them.'
@@ -1168,14 +1053,14 @@ gui:
         material: OAK_FENCE_GATE
         from: 10
         to: 27
-      chunk_assign:
-        name: '&6Assign Chunks to Areas'
+      area_assign:
+        name: '&6Assign Areas'
         lore:
           - '&7Status: {enabled}'
           - '&7Unlocked: {unlocked}'
           - ' '
-          - '&7Allow this role to'
-          - '&7assign chunks to areas?'
+          - '&7Allow this role to create areas'
+          - '&7and assign land to it?'
         material: OAK_FENCE
         from: 10
         to: 27
@@ -1842,7 +1727,6 @@ gui:
         lore:
           - '&7Area:&6 {area}'
           - '&7Land: {land}'
-          - '&7World: {world}'
           - ' '
           - '&7Received:&5 {time}'
           - '&7Sender: {sender}'
@@ -1980,13 +1864,6 @@ gui:
           - '&7questions.'
         material: PLAYER_HEAD
         slot: 12
-      chunks:
-        name: '&8> &6Chunks &8(&7{amount}&8)'
-        lore:
-          - ' '
-          - '&e{chunks}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ==
-        slot: 30
       players:
         name: '&8> &6Players &8(&7{amount}&8)'
         lore:
