@@ -41,7 +41,7 @@ general:
   prefix: '&8[&aLands&8] '
   wYes: '&aIgen'
   wNo: '&cNem'
-  none: '&cSemelyik'
+  none: '&cNincs'
   disabled: '&cLetiltva'
   wilderness: '&aVadon'
   title:
@@ -64,10 +64,8 @@ general:
   integration:
     dynmap:
       land:
-  description: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br /><br /> Tulaj: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br />Adminok: <span style="font-weight: bold;">{admins}</span><br />Tagok: <span style="font-weight: bold;">{members}</span></div>'
-  spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 120%;"><span style="font-size: 120%;"><span style="color: #00ccff;">Spawn</span><br /></span></span>
-          <p>Publikus: {public}</p>
-          </div>'
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br /><br /> Tulaj: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br />Adminok: <span style="font-weight: bold;">{admins}</span><br />Tagok: <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 120%;"><span style="font-size: 120%;"><span style="color: #00ccff;">Spawn</span><br /></span></span><p>Publikus: {public}</p></div>'
   sign:
     topLand:
       line-1: '&c#&l{place}'
@@ -158,6 +156,7 @@ help:
     deposit: '&8/&3Lands deposit &8<&3amount&8> - &7Pénz töltése a telek bankjába'
     withdraw: '&8/&3Lands withdraw &8<&3amount&8> - &7Pénz lehívása a telek bankjából'
     list: '&8/&3Lands list &8[&3világ&8] - &7Összes telek listája'
+    assign: '&8/&3Lands assign &8<&3terület&8> - &7Kijelöléshez terület rendelése'
     wars:
       declare: '&8/&3Wars declare &8<&3telek&8> - &7Hadüzenet küldése'
       info: '&8/&3Wars info - &7Aktív és jövőbeli háborúk mutatása'
@@ -175,6 +174,7 @@ message:
   current-war: '&cEzt nem teheted most. &7Háborúban vagy, várd meg, amíg vége.'
   noaccess:
     chunk: '&cNincs hozzáférésed a chunkhoz. &8(&7Teleknév:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c.'
+    area: '&cNem hetedet meg ezt ezen a területen &8(&7Terület:&6 {area} &7Telek:&2 {land} &7X: {x} &7Z: {z}&8)&c.'
     land: '&cNem teheted meg ezt a telken &8(&7Teleknév:&e {land}&8)&7.'
     land-not-owner: '&cNem vagy a &4 {land}&c tulaja. &7Válaszd ki a saját telked &8(/&3Lands edit &8<&3land&8>) vagy készíts egyet &8(/&3Lands create &8<&3name&8>)&7.'
     role-weight:
@@ -256,7 +256,9 @@ command:
     area-not-exist: '&e {area} &cnevű terület nem létezik&e {land}&c-n belül '
     role-not-exist: '&e {role} &cjogkör nem létezik &4 {land}&c telek &4 {area} &területén belül'
     land-not-member: '&cNem vagy hozzáadva ehhez a telekhez:&e {land}&c. &7Használd a &8/&aLands menu &7parancsot, hogy lekérd a telkeid.'
-    land-no-action: '&cNem vagy tagja teleknek, ahol ezt megtehetnéd. &7Használd a &8/&aLand create &7parancsot, hogy létrehozz egyet.'
+    land-no-action:
+      edit: '&cNem vagy tagja teleknek, ahol ezt megtehetnéd &8(&4{setting}&8)&c. &7Használd a &8/&aLand create &7parancsot, hogy létrehozz egyet.'
+      position: '&cNem teheted ezt meg a telken, hol vagy. &7Menj a saját telkedre. &7Beállítás:&3 {setting}'
     name-exists: '&cEz a név már le van foglalva. &7Használj egy másikat.'
     money-cost-bank: '&cNincs elég pénzed a bankban. &7Kelleni fog:&b ${cost}&7. Fizess be pénzt: &8/&3Lands deposit {cost}'
     money-cost: '&cNincs elég pénzed. &7Kelleni fog:&b ${cost}&7.'
@@ -313,8 +315,14 @@ command:
     success: '&7Sikeresen lefoglalt chunk &8(&7Teleknév:&e {land} &7X:&e {x} &7Z:&e {z}&8) &7&b {cost}&7-ért. következ? foglalás díja:&b {next}&7.'
     already-claimed: '&cAz egyik chunk a kijelölésedben már más telkének is része: &8(&7X: {x} Z: {z}&8)&c. &7Teleknév:&2 {land}&7.'
     max-chunk: '&cNem tudsz még &4 {chunks} &cchunkot a telkedhez adni. &7A &2 {land} &7telked maximuma:&3 {max} &7chunk.'
-    world: '&cNem adhatsz chunkot a&2 {land} &7nevű telkedhez ebben a világban. Kizárólag a(z) &3 {world}&7-ban/ben.'
     selection: '&7Sikeresen hozzáadtál&3 {chunks} &7chunkot a&2 {land}&7 nevű telkedhez. Költsége: ${cost}&7.'
+  assign:
+    selection: '&cKijelölés nem aktív. &7Használd a &8/&3Lands selection &7parancsot, hogy létrehozz egyet, majd próbáld újra.'
+    size: '&cTúl kicsi kijelölés. &7A minimum &3 {min} &7kocka és csak &3 {current}&7 van kiválasztva.'
+    success: '&7Terület átméretezve. Terület:&6 {area} &7Telek: &2 {land}&7. Vizualizáció bekapcsolva.'
+    conflict:
+      land: '&cA kijelölésed átlóg egy másik telekre:&4 {land}&c.'
+      area: '&cA kijelölésed másik területre is belóg:&4 {area}&c.'
   leave:
     land-owner: '&cNem hagyhatod el ezt a telket, mert a tulaja vagy. &7Törölnöd kell a &8/&aLands delete&7 parancs használatával.'
     selection: '&7Sikeresen elhagytál &b {chunks} &7chunkot. Azok, ahol te voltál a tulaj, törölve lettek.'
@@ -346,7 +354,7 @@ command:
     land:
       already: '&cA játékos már el lett távolítva a telekről &8(&7Teleknév:&e {land}&8)&7.'
       inv-revoked: '&7Sikeresen visszavontad a játékos meghívását. &8(&7Telek:&2 {land}&8)&7.'
-      success:  '&7Sikeresen eltávolítottad&b {player} &7-t a telekről &8(&7Teleknév:&e {land}&8)&7.'
+      success: '&7Sikeresen eltávolítottad&b {player} &7-t a telekről &8(&7Teleknév:&e {land}&8)&7.'
     area:
       already: '&cA játékos már el lett távolítva a területről &8(&7Terület:&6 {area} &7Telek:&2 {land}&8)&7.'
       inv-revoked: '&7Sikeresen visszavontad a játékos meghívását. &8(&7Terület:&6 {area} &7Telek:&2 {area}&8)&7.'
@@ -376,6 +384,7 @@ command:
   teleport:
     world-not-exist: '&cNem létező világ.'
     chunk-not-claimed: '&cA chunk nincs védve: &8(&7X: {x} &7Z: {z}&8)&c.'
+    not-trusted: '&cNem teleportálhatsz oda, mert nem vagy a telekhez adva:&2 {land}&7.'
     success: '#t#&9&lTeleportálva{newline}&7X: {x} Z: {z} Foglalt: {claimed}'
   setspawn:
     force-land: '&cCsak a saját területedre rakhatsz teleport pontot.'
@@ -383,6 +392,7 @@ command:
   spawn:
     not-exist: '&cNincs teleportálási cél beállítva:&e {land}&c. &7Valakinek be kell állítania a &8/&aLand setSpawn&7 parancs használatával.'
     not-allowed: '&cNem teleportálhatsz a telekre. &7A tulajnak jogot kell adnia rá, vedd fel vele a kapcsolatot &8(&7Teleknév:&e {land}&8)&7.'
+    chunk: '&2 {land} &7nem állított még be spawnt &8(&8/&3Lands setspawn&8) &7. &7A legelső levédett chunkhoz lettél teleportálva.'
     success: '#t#&7Teleportálva;;&7Teleknév&b {land};;&7Ár:&b {cost}'
   wild:
     no-location: '&cNem elérhető biztonságos célpont'
@@ -401,7 +411,9 @@ command:
   chat:
     activated: '&7Bekapcsoltad a telek chatet. A normál üzeneteid mostantól csak telektagok látják'
     deactivated: '&7Sikeresen kikapcsoltad a telek chatet.'
-    formats: '[&d{land}&8] {role} &7{player}&8:&f {message}'
+    format:
+      minecraft: '&a{land} &8| {role} &7{player}&8»&f {message}'
+      discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
   view:
     toggle:
       enabled: '&7Bekapcsoltad a telekhatár jelző módot. Kikapcsoláshoz írd be újra a parancsot'
