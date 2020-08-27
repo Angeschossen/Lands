@@ -1,4 +1,6 @@
 # Lands
 Repository for Lands language and configuration.
-For the API please visit: https://github.com/Angeschossen/LandsAPI
+
+* Wiki: https://github.com/Angeschossen/Lands/wiki 
+* API: https://github.com/Angeschossen/LandsAPI
 
