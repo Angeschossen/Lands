@@ -171,26 +171,26 @@ message:
     fly:
       warning: '&7Nie jesteś upoważniony do latania tutaj. Latanie zostanie za chwilę
         Wyłączone. pozwolenie:&b {permission}'
-      counter: '#t#&cLatanie wyłączone{newline}&cza &e{sec} &cSekund'
+      counter: '#t#&cLatanie wyłączone[newline]&cza &e{sec} &cSekund'
       disabled: '&cLatanie wyłączone. &7Nie jesteś upoważniony do latania tutaj.'
       disallowed: '&cNie jesteś upoważniony do latania na tej działce. &7Skontaktuj się z włascicielem
         działki w celu uzyskania pomocy. pozwolenie: &blands.bypass.fly'
       disallowed-wilderness: '&Nie jesteś upoważniony do latania poza działkami. &7
         pozwolenie: &blands.bypass.wilderness.fly'
     lands:
-      enter: '#t#&a&l{land}{newline}{title}'
-      leave: '#t#&2&lWolność{newline}&7Poczuj się wolny!'
+      enter: '#t#&a&l{land}[newline]{title}'
+      leave: '#t#&2&lWolność[newline]&7Poczuj się wolny!'
     safezones:
-      enter: '#t#&e&l{land}{newline}{title}'
-      leave: '#t#&2&lWolność{newline}&7Poczuj się wolny!'
+      enter: '#t#&e&l{land}[newline]{title}'
+      leave: '#t#&2&lWolność[newline]&7Poczuj się wolny!'
     teleport:
       already: '&cNie możesz zacząc teleportacji, Ponieważ trwa już teleportacja. &Proszę poczekaj az się zakończy.'
       started: '&7Proces teleportacji rozpoczęty. Teleportacja za&b {sec} &7sekund.
         Proszę się nie ruszać.'
       cancelled: '&cTeleportacja anulowana. &7Proszę sie nie ruszać
       w trakcie oczekiwania.&b {sec} &7sekund do teleportacji.'
-      chunk: '#t#&9&lPrzeteleportowano{newline}&7X: {x} Z: {z} Za:&a ${cost}'
-      cancelled-lands: '&cTeleportacja została anuloana przez inny lands. &7Proszę
+      chunk: '#t#&9&lPrzeteleportowano[newline]&7X: {x} Z: {z} Za:&a ${cost}'
+      cancelled-plugins: '&cTeleportacja została anuloana przez inny lands. &7Proszę
         sprawdzić pluginy. &7To nie jest ingerencja pluginu Lands'
   claimblock:
     dropped: '&cclaimbloki leżą na ziemi. &7nie masz miejsca w ekwipunku.'
@@ -207,10 +207,10 @@ message:
     removed: '&7Pomyślnie zatrzymano autoakcje &7Nazwa:&b {name}'
   gui:
     chats:
-      title: '#t#&e&lWpisz nową wiadomość {newline}&e&lNa chacie.'
-      title-done: '#t#&a&lPomyślnie ustawiono{newline}&7&lwiadomość działki.'
-      name: '#t#&e&lWpisz nową{newline}&e&lNazwę na chacie.'
-      name-done: '#t#&2&lPomyślnie ustawiono{newline}&7&lNazwę działki'
+      title: '#t#&e&lWpisz nową wiadomość [newline]&e&lNa chacie.'
+      title-done: '#t#&a&lPomyślnie ustawiono[newline]&7&lwiadomość działki.'
+      name: '#t#&e&lWpisz nową[newline]&e&lNazwę na chacie.'
+      name-done: '#t#&2&lPomyślnie ustawiono[newline]&7&lNazwę działki'
       cancel: '&7Napisz &bCacel &7na chacie aby anulować.'
       cancelled: '#t#&c&lAnulowano'
 command:
@@ -239,7 +239,7 @@ command:
       &7możesz użyć &8/&aLands menu &7aby zobaczyć swoje działi.'
     player-not-exist: '&cNie istnieje gracz o takiej nazwie.&e {player}&c. &7Prosze popraw i
     spróbuj ponownie.'
-    player-not-online: '&cGracz o tej nazwie nie jest online.&e {player} &7popraw błąd i spróbuj ponownie.'
+    player-offline: '&cGracz o tej nazwie nie jest online.&e {player} &7popraw błąd i spróbuj ponownie.'
     role-weight: '&cNie możesz edytować tej roli &7jest ona wyższa lub równa twojej. &8(&7Role:&e
       {role}&8) &8(&7Działka:&e {land}&8)&7.'
     player-self: '&cNie możesz tego zrobić z samym sobą. &7Jesteś śmieszny :)'
@@ -283,13 +283,13 @@ command:
     pos:
       cancelled: '&cNie możesz zaznaczyć tego tutaj. &7Ten chunk przysługje się
       innemu pluginowi. Plugin:&b {lands}'
-      one: '#t#&5&lZaznaczenie{newline}&b&lPoz 1 &8-> &7Ustaw'
-      two: '#t#&5&lZaznaczenie{newline}&b&lPoz 2 &8-> &7Ustaw'
+      one: '#t#&5&lZaznaczenie[newline]&b&lPoz 1 &8-> &7Ustaw'
+      two: '#t#&5&lZaznaczenie[newline]&b&lPoz 2 &8-> &7Ustaw'
     enableds: '&7Włączyłeś tryb zaznaczania. Użyj &5LEWY &7przycisk na bloku aby
       ustawić pozycję pierwszą. Następnie &5PRAWY &7Przycisk aby ustawić drugą pozycję. 
       Po zaznaczeniu możesz zastosować komendy: &bClaim&7, &bTrust&7, &bUntrust&7, &bSetRole&7,
       &bUnclaim&7, &bLeave'
-    disabled: '#t#&5&lZaznaczenie{newline}&c&lTryb wyłączony'
+    disabled: '#t#&5&lZaznaczenie[newline]&c&lTryb wyłączony'
     world: '&cObie pozycje muszą być w tym samym świecie. &7Proszę ustawić obie pozycje
     w tym samym świecie.'
   claim:
@@ -402,25 +402,25 @@ command:
   teleport:
     world-not-exist: '&cTen świat nie istnieje'
     chunk-not-exist: '&cTen chunk nie istnieje. &7Sprawdź swoje dane wejściowe.'
-    success: '#t#&9&lTeleportowano{newline}&7X: {x} Z: {z} Zajęto: {claimed}'
+    success: '#t#&9&lTeleportowano[newline]&7X: {x} Z: {z} Zajęto: {claimed}'
   setSpawn:
     force-land: '&cMożesz ustawić spawn tylko na swojej działce. &7Idź do swojej działki&b
       {land} &7first.'
-    successs: '#t#&a&lUstawiono spawn{newline}&7&lKoszt:&b&l ${cost}'
+    successs: '#t#&a&lUstawiono spawn[newline]&7&lKoszt:&b&l ${cost}'
   spawn:
     not-exist: '&cTutaj nie ma ustawionego spawnu dla tej działki&e {land}&c. &7Ktoś musi ustawić
       najpierw wykonując &8/&aLand setSpawn&7.'
     not-allowed: '&cNie możesz teleportować się do spawnu tej działki.d. &7Właściciel musi wyrazić na to zgodę. Skontaktuj się z nim, aby uzyskać pomoc 
     &8(&7Land:&e
       {land}&8)&7.'
-    successs: '#t#&9&lTeleportowano{newline}&7&lDziałka&a {land} &7&lKoszt:&a ${cost}'
+    successs: '#t#&9&lTeleportowano[newline]&7&lDziałka&a {land} &7&lKoszt:&a ${cost}'
   wild:
     no-location: '&cNie można znaleźć dla Ciebie bezpiecznej lokalizacji pasującej do filtra
       w konfiguracji. &7Możesz spróbować ustawić maksymalny promień x oraz z dla losowej teleportacji
       do 0 w konfiguracji.'
     success: '&7Zostałeś losowo przeteleportowany &8(&7X:&e {x} &7Z:&e {z}&8)&7. Zapłaciłeś&b
       ${cost}&7.'
-    searchingg: '#t#&9&lSearching{newline}&7&lRandom Location'
+    searchingg: '#t#&9&lSearching[newline]&7&lRandom Location'
   deposit:
     number: '&7Musisz podać kwotę. Użyj &8/&aDeopozyt gruntu &8<&aAmount&8>
       &7or &8/&aDepozyt gruntu &8<&aLand&8> <&aAmount&8>&7.'

@@ -1,0 +1,588 @@
+general:
+  prefix: '&8[&aLands&8] '
+  wYes: '&a確認'
+  wNo: '&c取消'
+  none: '&8無'
+  disabled: '&c關閉'
+  wilderness: '&a荒野'
+  land:
+    title:
+      land: '&7所有者:&3 %owner%&7.'
+      safezone: '&7你現在安全了...'
+    global-area: Global
+  time:
+    days: 日
+    hours: 小時
+    minutes: 分
+    seconds: 秒
+  status:
+    online: '&a在線'
+    offline: '&c離線'
+  top:
+    title: '&7-----<- &5國家排名 &8(&7國家:&b {total}&8) &7->-----'
+    entry: '&c#{pos} &a{land} &7Balance:&e ${value}'
+    next-page: '&7下一頁: &8/&2Lands top {next}'
+    last-updated: '&7最後更新: {time} &'
+    footer: '&7-----<- &5國家排名 &8(&7國家:&b {total}&8) &7->-----'
+  integration:
+    dynmap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br
+          /><br /> Owner: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br
+          />Admins: <span style="font-weight: bold;">{admins}</span><br />Members:
+          <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<p><span style="font-size: 120%; color: #339966;"><span style="font-size:
+          120%;">Spawnpoint</span></span></p><p>Open to visitors: {public}</p>'
+  sign:
+    topLand:
+      line-1: '&c#&l{place}'
+      line-2: '&8<&2 {land} &8>'
+      line-3: '&7所有者 {owner}'
+      line-4: '&7餘額:&3 ${value}'
+    noLand:
+      line-1: ' '
+      line-2: '&c沒有國家'
+      line-3: ' '
+      line-4: ' '
+  autoAction:
+    claim: '&a區塊占領'
+  map:
+    yours: '&a▉ '
+    others: '&c▉ '
+    friendly: '&5▉ '
+    current-location: '&e▉ '
+    wilderness: '&2▉ '
+    top: '&7-<------------<- &6國家 地圖 &7->------------>-'
+    info:
+      wilderness: ' &2▉ &7= 荒野'
+      yours: ' &a▉ &7= 你擁有的國家'
+      trusted: ' &5▉ &7= 你有權限的國家'
+      others: ' &c▉ &7= 別人的國家'
+      position: ' &e▉ &7= 坐標'
+    bottom: '&7-<------------<- &6國家 地圖 &7->------------>-'
+  land-inbox:
+    land:
+      created: '&7{land} 已創建 &2{date} &7.'
+      upkeep:
+        chunk-deleted: '&2{date}h &4警告: &c你所認領的區塊 &8(&7X: {x} &7Z: {z}&8) &c已取消認領.
+          因為你無法支付維護費用:&c ${cost}'
+        warning: '&2{date}h &c警告: &7無法支付維護費用: ${cost}'
+        paid: '&2{date} &7支付維護費用: ${cost}'
+    player:
+      join: '&2{date} &7玩家 {player} 加入了國家.'
+    wars:
+      declaration:
+        sent: '&2{date}h &7宣戰 {defender}. 戰爭將在 {time} 後爆發.'
+        received: '&2{date} &4警告: &c國家 {attacker} 對你的國家進行宣戰. 戰爭將在 {time} 後爆發.'
+      surrender:
+        sent: '&2{date}h &c在戰爭中投降. 支付 ${tribute} 作為戰利品給敵國.'
+        received: '&2{date} &a敵國 {land} 已投降. 支付 ${tribute} 作為戰利品.'
+      won:
+        attacker: '&2{date}h &a戰爭已結束. &7進攻方 &8({team}&8) &7勝利. 進攻方點數: {att-points}
+          防守方點數: {def-points}'
+        defender: '&2{date}h &a戰爭已技術. &7防守方 &8({team}&8) &7勝利. 進攻方點數: {att-points}
+          防守方點數: {def-points}'
+  wars:
+    land-type:
+      enemy: '&c敵國'
+      ally: '&a盟國'
+    nametag:
+      enemy: '&c敵國 &8| '
+      ally: '&a盟國 &8| '
+  teleportation:
+    bossbar: '&7請等待&5 {time} &7秒(s) 直到傳送.'
+help:
+  general:
+    help-prefix: '&7用法: '
+    header: '&7------------<- &2國家幫助 &7頁面&3 {page} &8/&3 {pages} &7->------------'
+    page: '&7Use &8/&eLands help {next} &7選擇頁面. <> = 必須 [] = 可選'
+    footer: '&7------------<- &2國家幫助 &7頁面&3 {page} &8/&3 {pages} &7->------------'
+  command:
+    help: '&8/&3Lands help &8[&3page&8] - &7獲取幫助'
+    edit: '&8/&3Lands edit &8<&3land&8> &8- &7進入國土編輯模式'
+    claim: '&8/&3Lands claim &8[&3area, auto&8] - &7認領區塊'
+    create: '&8/&3Lands create &8<&3name&8> - &7創建一個國家'
+    leave: '&8/&3Lands leave &8[&3land] &8- &7離開某個國土'
+    unclaim: '&8/&3Lands unclaim &8- &7放棄認領的區塊'
+    delete: '&8/&3Lands delete &8<&3land&8> &8- &7刪除國土'
+    trust: '&8/&3Lands trust &8<&3player&8> [&3here&8] - &7邀請玩家'
+    untrust: '&8/&3Lands untrust &8[&3here&8] - &7取消信任玩家'
+    setRole: '&8/&3Lands setRole &8<&3player&8> <&3role&8> [&3here&8] - &7設置爵位'
+    accept: '&8/&3Lands accept &8<&3land&8> - &7接受邀請'
+    deny: '&8/&3Lands deny &8<&3land&8> - &7拒絕邀請'
+    view: '&8/&3Lands view &8- &7顯示區塊訊息'
+    menu: '&8/&3Lands menu &8[&3here&8] &8- &7打開 國土/區域 菜單'
+    setSpawn: '&8/&3Lands setspawn - &7設置國家出生點'
+    spawn: '&8/&3Lands spawn &8[&3land&8] - &7傳送至國家'
+    wild: '&8/&3Lands wild &8- &7隨機傳送'
+    top: '&8/&3Lands top &8[&3page&8] &8- &7顯示排行前十國家'
+    selection: '&8/&3Lands selection &8[&3assign&8, &3expand&8] &8- &7開啟區塊選擇'
+    chat: '&8/&3Lands chat &8[&3land&8] <&3message&8> &8- &7國家聊天'
+    rename: '&8/&3Lands rename &8<&3name&8> - &7重命名國家'
+    teleport: '&8/&3Lands teleport &8[&3world&8] <&3x&8> <&3z&8> - &7傳送至區塊'
+    invites: '&8/&3Lands invites &8- &7顯示收到的邀請'
+    info: '&8/&3Lands info &8[&3land&8] - &7查看國家訊息'
+    player: '&8/&3Lands player &8<&3player&8> - &7查看玩家訊息'
+    map: '&8/&3Lands map &8- &7查看地圖'
+    balance: '&8/&3Lands balance &8[&3land&8] - &7查看國庫金額'
+    deposit: '&8/&3Lands deposit &8[&3land&8] <&3amount&8> - &7將金錢存入國庫'
+    withdraw: '&8/&3Lands withdraw &8[&3land&8] <&3amount&8> - &7從國庫中取錢'
+    list: '&8/&3Lands list &8[&3world&8] - &7國家列表'
+    assign: '&8/&3Lands assign &8<&3area&8> - &7將選擇分配給區域'
+    setowner: '&8/&3Lands setowner &8<&3player&8> - &7國家轉讓'
+    ban: '&8/&3Lands ban &8<&3player&8> - &7封禁某個玩家'
+    unban: '&8/&3Lands unban &8<&3player&8> - &7解除封禁'
+    wars:
+      declare: '&8/&3Wars declare &8<&3land&8> - &7宣戰'
+      info: '&8/&3Wars info - &7顯示當前或即將發生的戰爭'
+      menu: '&8/&3Wars menu &8- &7打開戰爭菜單'
+    admin:
+      admin: '&8/&3Lands admin &8<&3sub-command&8> &8- &7管理員指令'
+      debug: '&8/&3Lands debug &8- &7顯示加載的數據統計'
+      safezone: '&8/&3Lands safezone &8- &7配置安全區'
+      reload: '&8/&3Lands reload &8- &7重載配置和語言檔'
+      about: '&8/&3Lands about &8- &7顯示有關國家的訊息'
+message:
+  no-permission: '&c你無權執行此操作。 &8你需要權限{permission}.'
+  world-invalid: '&c在這個世界上已停用. &7管理員需要將其添加到配置中 世界： {world}'
+  feature-disabled: '&c此功能已被管理員禁用 &8需要啟用config中的 {setting}, 來啟用該功能.'
+  current-war: '&c你現在不能這麽做. &7你的國家目前正在參戰. &7請在戰爭結束後重試.'
+  noaccess:
+    chunk: '&c你不允許在此區塊中執行此操作 &8(&7國家:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8忽視權限: {bypass}'
+    area: '&c你不允許在此區域中執行此操作 &8(&7區域:&6 {area} &7國家:&2 {land} &7X: {x} &7Z: {z}&8)&c.
+      &8忽視權限: {bypass}'
+    land: '&c你不允許在此國家中執行此操作 &8(&7國家:&2 {land}&8)&7. &8Bypass permission: {bypass}'
+    land-not-owner: '&c你不允許在國家&4 {land}&c 上這樣做. &7請選擇自己的國家 &8(/&3Lands edit &8<&3國家名&8>)
+      &7或者創建一個 &8(/&3Lands create &8<&3欲輸入國家名&8>)&7. &8忽視權限: lands.admin.land_edit'
+    role-weight:
+      land: '&c你無法編輯該玩家的國家&4 {land}&c. &7該爵位&6 {role} &7比你的等級高.'
+      area: '&c你無法編輯該玩家的區域&4 {area} &8(&7國家:&2 {land}&8)&c. &7該爵位&6 {role} &7比你的等級高.'
+    claim: '&c你無法領取這裡的區塊. &7這裡屬於另一個插件 {plugin}'
+    place: '&c你無法在此放置方塊. &7這是屬於&2 {land}&7 的區域.'
+    break: '&c你無法破壞這裡的方塊. &7這裡屬於&2 {land}&7 的區域.'
+    ignite: '&c你無法點燃這裡的方塊. &7這裡屬於&2 {land}&7 的區域.'
+    enter: '&c你無法進入該區域 &4 {area} &c屬於國家&4 {land}&c. &7你已被傳送到上個位置.'
+    edit: '&c你無法編輯該國家. &7該區塊屬於國家&2 {land}&7.'
+    banned: '&c你無法進入該區域. &7你已被封禁 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7. &8Bypass permission:
+      {bypass}'
+    interact:
+      general: '&c你無法與其交互. &7這裡屬於&2 {land}&7 的區域.'
+      door: '&c你無法與門交互. &7這裡屬於&2 {land}&7 的區域.'
+      mechanism: '&c你無法與其交互. &7這裡屬於&2 {land}&7 的區域.'
+      container: '&c你無法與其交互 &7這裡屬於&2 {land}&7 的區域.'
+      villager: '&c你無法與其交互 &7這裡屬於&2 {land}&7 的區域.'
+    combat:
+      animal: '&c你無法攻擊該動物 &7這裡屬於&2 {land}&7 的區域.'
+      pvp:
+        attacker: '&c你無法攻擊玩家. &7這裡屬於&2 {land}&7 的區域.'
+        target: '&c你攻擊的目標在此無法被攻擊. &7你不能和他打架. &7這裡屬於&2{land}&7的區域.'
+        ally: '&c你不能與該玩家在荒野戰鬥, 因為這是你國家中的成員. &7通過在角色設置中允許PVP可以在你的國家中進行戰鬥.'
+        wilderness: '&c你無法攻擊該玩家,因為對方在荒野而你在國家中.'
+    vehicle: '&c你不能在此使用載具. &7這裡屬於&2{land}&7的區域.'
+  event:
+    fly:
+      warning: '&7你不能在這裡飛行. 飛行模式將在幾秒鐘內禁用. &8Bypass permission: {permission}'
+      counter: '#t#&c飛行模式已關閉[newline]&c &4{sec} &c秒(s)'
+      disabled: '&c你的飛行模式已關閉 &7你缺少在此飛行的權限.'
+      disallowed: '&c你不允許在該國家飛行. &8Bypass permission: lands.bypass.fly'
+      disallowed-wilderness: '&c你不能在荒野進行飛行. &8Bypass permission: lands.bypass.wilderness.fly'
+    enter:
+      land: '#t#&2&l{land}[newline]&3{title}'
+      safezone: '#t#&2&l{land}[newline]{title}'
+      pvp-warning: '#a#&c你進入了PVP區域.'
+    leave:
+      land: '#t#&2&l荒野[newline]&7感受大自然吧'
+      safezone: '#t#&2&l荒野[newline]&7感受大自然吧'
+    teleport:
+      already: '&c無法進行二次傳送,因為已經在進行傳送 請等待完成.'
+      started: '&7準備進行傳送. 將在&5 {sec} &7秒後進行傳送. 請不要移動.'
+      cancelled: '&c傳送已被取消. &7請不要移動等待&5 {sec} &7秒.'
+      chunk: '#t#&9&l傳送至[newline]&7X: {x} Z: {z} 花費:&c ${cost}'
+      cancelled-plugins: '&c傳送被另一個插件取消 &7請檢查你的其他插件.'
+  claimblock:
+    dropped: '&c領取方塊掉落在區塊上,你的背包空間不足.'
+    success: '&7你得到了&3 {blocks} &7認領方塊(s). &7放置它來進行認領.'
+    not-owner: '&c你不允許使用此領取方塊。 &7它屬於&3 {owner}&7.'
+  blacklist:
+    untrusted: '&c你不能在這裡使用該指令. &7你不被該國家信任.'
+    general: '&c你不能在這裡使用該指令.'
+  autoAction:
+    stopped: '&c請關閉你的自動操作. &7已達到上限. 名稱:&3 {name}'
+    started: '&7成功啟動自動操作. 名稱:&3 {name}'
+    removed: '&7成功關閉自動操作. &7名稱:&3 {name}'
+  gui:
+    chats:
+      title: '#t#&e&l輸入新[newline]&e&l標題'
+      title-done: '#t#&a&l成功設置[newline]&7&l國家標題.'
+      name: '#t#&e&l輸入新[newline]&e&l國家名稱'
+      name-done: '#t#&2&l成功設置[newline]&7&l國家名稱'
+      cancel: '&7在聊天中輸入&bcancel&7取消此操作.'
+  chat-action:
+    cancelled: '#t#&c&l已取消[newline]&c&l的聊天操作'
+    player: '&7請輸入目標玩家的名字.'
+    role:
+      create: '&7請輸入新爵位的名稱.'
+      default: '&c你不能刪除該爵位,這是默認爵位.'
+      delete: '&7請輸入你要刪除的爵位名稱'
+      exists: '&c存在名稱為&4 {role} &c的爵位. &7請重新命名'
+      max: '&c無法創建更多的爵位. &7已達到爵位數量上限最大為&3 {max} &7爵位. 權限: lands.roles.NUMBER'
+    area:
+      create: '&7請輸入新的區域名稱.'
+      delete: '&7請輸入你要刪除的區域名稱'
+      exists: '&c區域&4 {area} &c已存在 &8(&7國家:&2 {land}&8)&c. &7請輸入重新命名.'
+      max: '&c你無法在該國家創建更多的區域了. &7你已經達到最大限制&3 {max} &7區域. 權限: lands.areas.NUMBER'
+    title: '&7請輸入新的國家標題'
+    rename: '&7重命名國家 (不允許使用空格)'
+command:
+  general:
+    land-not-exist: '&c國家&2 {land} &c不存在. &7國家&2 {land} &7不存在該世界.'
+    area-not-exist: '&c區域&4 {area} &c不存在於國家&4 {land}&c. &7你可以在區域菜單的國家菜單中創建一個新區域'
+    role-not-exist: '&c爵位&e {role} &c不存在於區域&4 {area} &c國家&4 {land}&c. '
+    land-not-member: '&c你不被國家&4 {land}&c 所信任. &7使用 &8/&3Lands menu &7查看你被哪個國家所信任'
+    no-edit-land: '&c你尚未選擇編輯區域. &7使用 &8/&3Lands edit &8<&3land&8> &7來選擇.'
+    land-no-action:
+      edit: '&c你不是任何國家的成員，可以在此處進行此操作 &8(&4{setting}&8)&c. &7使用 &8/&3Land create &7來創建一個國家.'
+      position:
+        setting: '&c你不允許在目前所在的國家上進行此操作. &7請返回你的國家. &7設置:&3 {setting}'
+        general: '&c你不允許在目前所在的國家上進行此操作. &7請返回你的國家.'
+    name-exists: '&c名稱&4 {name} &c已被其他國家使用. &7請重試.'
+    money-cost-bank: '&c你沒有足夠的錢來支付費用. &7你需要&c ${cost}&7. 存一些錢到國庫: &8/&3Lands deposit
+      {cost}'
+    money-cost: '&c你沒有足夠的錢來支付費用. &7你需要&c ${cost}&7.'
+    lands-max: '&c你不能再加入其他國家了. &7已達到上限&3 {max} &7國家. &8Permission: lands.lands.NUMBER'
+    invalid-character: '&c你不能使用無效字符作為名稱. &7發現無效字符:&3 {invalid} &7請僅使用字母和數字.'
+    name-length: '&c名稱過長. &7最大長度為&3 {max} &7字符.'
+    swear-word: '&c檢測到一個禁用詞,請修改它 內容:&c {word}'
+    action-cooldown: '&c請等待&5 {time}&c 後再重試.'
+    land-none: '&c你不是任何一個國家的成員, &7使用 &8/&3Lands create &7來創建一個.'
+    land-no-own: '&c你沒有擁有國家. &7使用 &8/&3Lands create &7來創建一個.'
+    world-invalid: '&c無法在當前的世界中進行此操作.'
+    wilderness: '&c該區塊屬於荒野. &7你需要占領該區塊. &7你可以使用 &8/&3Lands menu &7去查看你的國家.'
+    player-not-exist: '&c玩家&4 {player}&c不存在.'
+    player-self: '&c你不能對自己這麽做.'
+    banks-disabled: '&7國庫已被禁用.'
+    land-not-trusted: '&c玩家&4 {player} &7不是該國家成員 &8(&7國家:&2 {land}&8)&7. 你需要信任該玩家
+      使用 &8/&3Lands trust&7.'
+    land-max-members: '&c無法繼續增加成員了&2 {land}&c. &7已達到最大成員數 of&3 {members} &7.'
+    area-not-trusted: '&c你不能在這裡使用該指令. &7你未被區塊信任 &8(&7X: {x} Z: {z}&8)&7. 它屬於該區域&6
+      {area} &7國家&2 {land}&7.'
+    invalid-number: '&c您輸入的&4 {input} &c不是數字. &3 {argument} &7必須為數字.'
+    player-offline: '&cThere''s currently no player with the name&4 {player} &conline.
+      &7Typo?'
+  help:
+    help: '&7使用 &8/&aLand help &7來獲取幫助.'
+    cmd-not-exist: '&c該指令不存在.'
+    page-not-exist: '&c該頁面不存在&4 {page}'
+  create:
+    land-other: '&c您不能擁有自己的國家然後還想加入其他國家 &7你必須得離開國家&2 {land} &7. .'
+    max-own: '&c您無法再創建任何土地. &7你已達到最大創建數量&3 {max} &7. &8Permission: lands.ownlands.NUMBER'
+    success: '&7成功創建國家&2 {land} &7花費&c ${cost}&7. 你現在可以開始占領區塊了 &8/&3Lands claim&7.
+      你也可以使用 /Lands selection 來選擇區塊. 國家 {land} 的設置可以使用 &8(/&3Lands edit&8)&7.'
+    broadcast: '&7國家&2 {land} &7已創建, 所有者:&3 {player}&7.'
+  rename:
+    success: '&7成功設置國家新名稱&3 {name} &8(&7國家:&2 {land}&8)&7. 花費&c ${cost}&7.'
+  edit:
+    success: '&7您已進入該國家的編輯模式 &8(&7國家:&2 {land}&8)&7. 下一步, 你可以使用 &8/&3Lands claim &7或
+      &8/&3Lands trust&7 來進行編輯'
+  selection:
+    not-complete: '&c您的選擇不完整. &7請確保兩個位置都已設置 &8(&b左鍵 &7和 &9右鍵&8)&7. 你可以通過指令來切換選擇模式
+      &8/&3Lands selection&7.'
+    max: '&c您的選擇已超過最大限制. &7大小:&3 {current} &7最大可設置&3 {max} 區塊. &8Permission: lands.selection.NUMBER'
+    enabled: '&7你開啟了選擇模式. 使用 &5鼠標左鍵 &7來選擇第一個點.  &5鼠標右鍵 &7來設置第二個點. 之後,您可以將選擇應用於這些指令:
+      &3Claim&7, &3Unclaim&7, &3Leave'
+    disabled: '#t#&5&l選擇[newline]&c&l模式 已關閉'
+    world: '&c兩個點必須在同一個世界.'
+    pos:
+      warn: '&c警告: &7該區塊屬於另一個管理插件 名稱:&3 {plugin}'
+      cancelled: '&c您不能在此處設置選擇. &7該塊屬於另一個管理插件 名稱:&b {plugin}'
+      one: '#t#&5&l選擇[newline]&b&l點 1 &8-> &7設置'
+      two: '#t#&5&l選擇[newline]&b&l點 2 &8-> &7設置'
+    area:
+      conflicts: '&c發現&4 {conflicts} &c與已分配給區域的區塊發生沖突. &7使用 &8/&3Lands selection assgin
+        {area} confirm &7確認覆蓋. 沖突來自區域: {areas}'
+      assigned: '&7你已成功分配&3 {chunks} &7區塊至區域&6 {area} &8(&7國家:&2 {land}&8)&7.'
+    expand:
+      enabled: '&7成功地將選擇範圍從底部擴展到頂部 (Y).'
+      disabled: '&7您當前的選擇不再擴展到所有Y軸.'
+  claim:
+    already: '&c你無法認領該區塊. &7它已被國家&2 {land}&7 占領.'
+    auto-create: '&7Trying to automatically create a land for you, because you have
+      none in this world. You can change the name of it by executing &8/&3Lands rename&7.'
+    auto-create-fail: '&c無法自動為您創建土地. &7請閱讀上面的消息.'
+    near-other: '&c這裡太靠近國家&4 {land}&c了. &7你至少需要距離該國家&3 {distance} 遠&7. '
+    far-land: '&c你不能認領該區塊(s). &7你認領的區塊要臨近國家 &8(&7國家:&2 {land}&8)&7.'
+    success: '&7成功認領該區塊 &8(&7國家:&2 {land} &7X: {x} Z: {z}&8) &7花費&c ${cost}&7. 下次認領將會花費&b
+      ${next}&7.'
+    already-claimed: '&c選擇中有已被認領的區塊 &8(&7X: {x} Z: {z}&8)&c. &7I它屬於國家&2 {land}&7.'
+    max-chunk: '&c你不能認領&4 {chunks} &c更多的區塊了 &8Permission: lands.chunks.NUMBER'
+    selection: '&7你已成功認領&3 {chunks} &7區塊 &8(&7國家:&2 {land}&8)&7. 花費&c ${cost}&7.'
+  assign:
+    selection: '&c您需要先創建一個選擇. &7使用 &8/&3Lands selection &7去創建一個並且重試.'
+    size: '&c你選擇的大小過小. &7最小為&3 {min} &7方塊而你只有&3 {current}&7.'
+    success: '&7您成功調整了國家區域的大小&6 {area} &7國家&2 {land}&7. 變化可視.'
+    conflict:
+      land: '&c您的選擇與國家沖突&4 {land}&c. &7請重新選擇.'
+      area: '&c你的選擇與區域沖突&4 {area}&c. &7請重新選擇.'
+  leave:
+    land-owner: '&c你不能離開該國家. &7作為國王，你需要刪除它。 使用 &8/&3Lands delete&7.'
+    selection: '&7你成功離開了&b {chunks} &7'
+    land:
+      success: '&7成功離開該國家&2 {land}&7.你不能訪問該國家了.'
+    area:
+      success: '&7成功離開此區域 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7. 你再也無法訪問它.'
+  unclaim:
+    success: '&7成功取消認領該區塊 &8(&7國家:&2 {land} &7X: {x} Z: {z}&8)&7.你獲得了&a ${back}'
+    selection: '&7你已成功取消認領該區塊. 只能在你所擁有的區塊中才可以執行該操作.'
+  delete:
+    confirm: '&c你需要確認該操作. &7使用 &8/&3Land delete {land} confirm&7.'
+    success: '&7成功解散國家 &8(&7國家:&2 {land}&8)&7. 你獲得了&e ${back} &7.'
+    broadcast: '&7國家&2 {land} &7已被&3 {player}&7 解散.'
+  trust:
+    own-land: '&c不允許玩家擁有自己的國家還加入其他國家'
+    invited: '&c該玩家已被邀請. &7請等待接受邀請 &8(&7國家:&2 {land}&8)&7.'
+    max-lands: '&7玩家&3 {player} &7達到最大國家數量. &8Permission: lands.lands.NUMBER'
+    max-members: '&c無法信任玩家&4 {player} &c國家&4 {land} &7成員達到了最大限制&3 {members} &7'
+    land:
+      already: '&c該玩家已獲得國家信任 &8(&7國家:&2 {land}&8)&7.'
+      target: '&7玩家&3 {player} &7邀請你加入國家&2 {land}&7. 使用 &8/&3Land accept {land} &7來接受邀請.'
+      success: '&7成功邀請玩家&3 {player} &7到國家 &8(&7國家:&2 {land}&8)&7. 等待接受邀請.'
+    area:
+      already: '&c該玩家已被此區域信任&6 {area} &8(&7國家:&2 {land}&8)&7.'
+      target: '&7玩家&3 {player} &7邀請你加入國家 &8(&7區域:&6 {area} &7國家:&2 {land}&8) &7使用
+        &8/&3Lands accept {land} &7來接受邀請.'
+      success: '&7成功邀請玩家&3 {player} &7進入該區域 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7.
+        等待接受邀請.'
+  untrust:
+    land:
+      already: '&c該玩家未被國家所信任 &8(&7國家:&2 {land}&8)&7.'
+      inv-revoked: '&7S已成功撤消對此玩家的邀請. &8(&7國家:&2 {land}&8)&7.'
+      success: '&7成功取消對玩家&3 {player} &7的信任 &8(&7國家:&2 {land}&8)&7.'
+    area:
+      already: '&c該玩家未被區域信任 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7.'
+      inv-revoked: '&7已成功撤消對此玩家的邀請. &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7.'
+      success: '&7成功取消對玩家&3 {player} &7在該區域的信任 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7.'
+  setrole:
+    not-exist: '&c該爵位&4 {role} &c不存在. '
+    land:
+      visitor: '&c你不能設置爵位&4 {role} &c. &7如果你想取消信任該玩家, 使用 &8/&3Lands untrust {player}&7.'
+      not-trusted: '&c玩家&4 {player} &c未被該國家信任 &8(&7國家:&2 {land}&8)&7. 請先信任該玩家.'
+      success: '&7成功設置為玩家&3 {player} &7爵位&3 {role} &7於國家 &8(&7國家:&2 {land}&8)&7.'
+    area:
+      visitor: '&c你無法設置爵位&4 {role} &c. &7如果你想取消信任該玩家, 請使用 &8/&3Lands untrust {player}
+        here&7.'
+      not-trusted: '&c玩家&4 {player} &c未被該區域信任 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7.
+        請先信任該玩家.'
+      success: '&7成功設置為玩家&3 {player} 設置爵位&3 {role} &7在區域 &8(&7區域:&6 {area} &7國家:&2
+        {land}&8)&7.'
+  accept:
+    not-exist: '&c你沒有來自國家&4 {land} &c的邀請或者邀請已過期. &7請檢查你的輸入.'
+    own-land: '&c你無權創建國家並成為其他國家的成員. &7你需要先離開自己的國家.'
+    max-lands: '&c你不能加入更多的國家了. &7你最大只能加入&3 {max} &7國家. &8Permission: lands.lands.NUMBER'
+    notification: '&7你仍然還有&3 {invites} &7個邀請來自其他國家. 使用 &8/&3Land invites &7來獲得列表.'
+    land:
+      success: '&7成功接受來自國家&3 {land}&7 的邀請.'
+      broadcast: '&2{land} &8| &7國家&3 {player} &7加入了國家&7.'
+    area:
+      success: '&7已成功接受來自國家&2 {land} &7區域&6 {area}&7的邀請.'
+      broadcast: '&2{land} &8| &7玩家&3 {player} &7現在是國家&2 {land}&7區域&6 {area} &7中的一份子了'
+  setowner:
+    confirm: '&c請確認你要將國家&2 {land} &c轉讓給&3 {player}&c: &8/&3Lands setowner {player}
+      confirm'
+    success: '&7成功將國家轉讓給&3 {player} &7現在它是國家&2 {land}&7 的所有者. 花費&c ${cost}&7.'
+    max-lands: '&cThe player&4 {player} &cisn''t allowed to own any more lands. &7He
+      already reached his maximum of&3 {max} &7own lands. &8Permission: lands.ownlands.NUMBER'
+  deny:
+    not-exist: '&c你沒有來自&4 {land} &c的邀請或不存在'
+    success: '&7你成功拒絕了國家&2 {land}&7 的邀請.'
+  teleport:
+    world-not-exist: '&c存在名稱為&4 {world} &c的世界,請檢查世界名稱'
+    chunk-not-claimed: '&c此區塊未被認領 &8(&7X: {x} &7Z: {z}&8)&c. &8需要權限: lands.bypass.wilderness.teleport'
+    not-trusted: '&c你不能傳送到那. &7Y你並未國家&2 {land}&7 信任.'
+    success: '&7成功傳送至 X:&3 {x} &7Z:&3 {z} &7區塊: {claimed}'
+  setspawn:
+    force-land: '&c你只能在你的國家設置出生點. &7返回你的國家&2 {land} &7重試.'
+    successs: '#t#&a&l出生點設置至[newline]&7&l花費:&b&l ${cost}'
+  spawn:
+    not-exist: '&c還未為&4 {land}&c設置出生點. &7請使用 &8/&3Land setspawn&7來進行設置.'
+    not-allowed: '&c你不允許傳送到該國家. &7需要國家授予你這樣做的權限 &8(&7國家:&2 {land}&8)&7.'
+    chunk: '&7國家&2 {land} &7還未設置出生點 &8(&8/&3Lands setspawn&8) &7. &7將為你傳送至國家附近'
+    successs: '&7成功傳送至&2 {land} &7出生點 &7花費:&c ${cost}'
+    unsafe: '&cYou can''t teleport to this spawn, because it was detected as being
+      unsafe for teleportation. &7Teleporting there might result into dying. They
+      need to adjust the spawn by using &8/&3Lands setspawn&7.'
+  wild:
+    searching: '#t#&6搜索目的地[newline]&e等待傳送..'
+    success: '&7你被隨機傳送至 &8(&7X: {x} Z: {z}&8)&7. 花費&c ${cost}&7.'
+    no-location: '&cCouldnt find a safe location for you that matches the filter in
+      config. &8Please adjust your max and min distance settings and set the world
+      spawn (/setworldspawn).'
+  deposit:
+    number: '&7你需要指定金額. 使用 &8/&aLand deposit &8<&aAmount&8> &7或者 &8/&aLand deposit
+      &8<&aLand&8> <&aAmount&8>&7.'
+    success: '&7你成功往國庫中存入&b ${cost} &7. &7現在國庫餘額為:&b ${bank} &8(&7國家:&2 {land}&8)'
+  withdraw:
+    number: '&7你需要指定金額. 使用 &8/&aLand withdraw &8<&aAmount&8> &7或者 &8/&aLand withdraw
+      &8<&aLand&8> <&aAmount&8>&7.'
+    balance: '&c國庫中沒有足夠的錢能夠取出. &7國庫餘額僅剩&b ${bank} &7.預期取出:&3 ${take} &8(&7國家:&2 {land}&8)'
+    success: '&7你成功從國庫中取出&b ${cost} &7. &7現在國庫餘額為:&b ${bank} &8(&7國家:&2 {land}&8)'
+  balance: '&7餘額為&b ${balance} &8(&7國家:&2 {land}&8)&7.'
+  ban:
+    area:
+      trusted: '&c玩家&4 {player} &c已被信任. &7你需要先取消信任 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7.'
+      success: '&7成功封禁玩家&3 {player} &7在區域的行動 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7.'
+      target: '&c國家&4 {land} &c已將你封禁&4 {area} &c中的區塊 &7你不能夠進入,'
+    land:
+      trusted: '&cT玩家&4 {player} &c已被&4 {land}&c 信任. &7你需要先取消信任.'
+      success: '&7成功封禁玩家&3 {player} &7國家&2 {land}&7. 不能夠進入該國家.'
+      target: '&c國家&4 {land} &c已將你封禁&c. &7你不能進入該國家'
+  unban:
+    area:
+      success: '&7成功解除玩家&3 {player} &7在區域的封禁 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7.'
+      target: '&7國家&2 {land} &7解除了對你在&6 {area}&7 區域的封禁.'
+    land:
+      success: '&7成功解除玩家&3 {player} &7在國家&2 {land}&7 的封禁.'
+      target: '&7國家&2 {land} &7解除了對你的封禁.'
+  chat:
+    activated: '&7成功開啟國家聊天. 在公共聊天中發送消息以與國家中的成員一起聊天吧.'
+    deactivated: '&7已成功關閉國家聊天.'
+    no-land: '&c錯誤的國家. &7使用 &8/&3Lands chat toggle &7來關閉國家聊天.'
+    format:
+      minecraft: '&a{land} &8| {role} &7{player} &8»&f {message}'
+      discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
+  view:
+    toggle:
+      enabled: '&7你成功打開了訪客模式. &7如果想關閉它,再次輸入該指令即可.'
+      disabled: '&7你成功關閉了訪客模式.'
+list:
+  views:
+  - '&7---------<- &5&l國家訊息 &7->---------'
+  - '&7國家:&a {land}'
+  - '&7區域:&6 {area}'
+  - '  &8區塊 &7X: {x} Z: {z}'
+  - '  &8稅收:&c ${tax}'
+  - '  &8玩家: {players}'
+  - '&7---------<- &5&l國家訊息 &7->---------'
+  swear-words:
+  - fuck
+  - shit
+  wars:
+    declaration:
+    - '&6&n宣戰:'
+    - ' '
+    - '&8- &7進攻方:&c {attackers}'
+    - '  &7防守方:&a {defenders}'
+    - ' '
+    - '&8- &7距離戰爭開始'
+    - '  &5~{time}'
+    current:
+    - '&6&n當前戰爭:'
+    - ' '
+    - '&8- &4進攻方'
+    - '      &7國家: {attackers}'
+    - '      &7擊殺: {att-points}'
+    - '&8- &2防守方'
+    - '      &7國家: {defenders}'
+    - '      &7擊殺: {def-points}'
+    - ' '
+    - '&8- &7距離戰爭結束'
+    - '  &5~{time}'
+    started:
+      attacker:
+      - '&c戰爭已開始!'
+      - ' '
+      - '&8- &7進攻方 &8(&b本國&8)&7: {attackers}'
+      - '  &7防守方: {defenders}'
+      - ' '
+      - '&8- &7距離戰爭結束'
+      - '  &5~{time}'
+      defender:
+      - '&c戰爭已開始!'
+      - ' '
+      - '&8- &7進攻方: {attackers}'
+      - '  &7防守方 &8(&b本國&8)&7: {defenders}'
+      - ' '
+      - '&8- &7距離戰爭結束'
+      - '  &5~{time}'
+    won:
+      attacker:
+      - '&6戰爭已結束:'
+      - '&7進攻方 &8({team}&8) &7勝利.'
+      - ' '
+      - '&8- &e統計'
+      - '  &7攻擊點數:&c {att-points}'
+      - '  &7防守點數:&a {def-points}'
+      - ' '
+      - '&8- &7戰爭時間'
+      - '  &5~{time}'
+      defender:
+      - '&6戰爭已結束:'
+      - '&7The defenders &8({team}&8) &7won.'
+      - ' '
+      - '&8- &e統計'
+      - '  &7防守點數:&a {def-points}'
+      - '  &7攻擊點數:&c {att-points}'
+      - ' '
+      - '&8- &7戰爭時間'
+      - '  &5~{time}'
+wars:
+  message:
+    noaccess:
+      pillage: '&c沒有防守者在線時，你無法對國家進行掠奪. &7請等到至少有&b {defenders} &7防守者.'
+      action: '&c在該國的戰爭中，你不允許這樣做. &7需要權限: {bypass}'
+    started:
+      broadcast: '&7國家&c {attacker} &7與國家&a {defender} &7之間的戰爭開始了. 將在&5 {time}&7後結束.'
+    ended:
+      broadcast: '&7國家&c {attacker} &7a與國家&a {defender} &7的戰爭結束了. 用時&5 {time}&7.'
+    joined:
+      attacker:
+        enemy: '&c敵國 &8| &6國家&2 {land} &6與對方成為了盟國.'
+        ally: '&2盟國 &8| &7國家&b {land} &7與你成為了盟友,同你並肩戰鬥.'
+      defender:
+        enemy: '&c敵國 &8| &6國家&2 {land} &6與對方成為了盟國.'
+        ally: '&2盟國 &8| &7國家&b {land} &7與你成為了盟友,同你並肩戰鬥.'
+    tribute-payed:
+      defender: '&2敵國 &8| &7國家&b {land} &7已支付&c ${tribute} &7作為戰利品. 戰爭已結束.'
+      attacker: '&2盟國 &8| &7國家&b {land} &7已支付&c ${tribute} &7向你的國家 &b{attacker} &7提交戰利品.戰爭已結束.'
+    surrender:
+      tribute:
+        received:
+          all: '&a敵國&b {land} &a投降了！ &7戰利品已被瓜分. 你和你的盟國收到了&b ${tribute} &7.'
+          initial: '&a敵國&b {land} &a投降了! &7國家&b {receiver} &7提供了戰利品&b ${tribute}&7.'
+      end: '&7國家&b {land} &7投降了. 戰爭已結束. 他們必須支付&c ${tribute} &7來作為戰利品給敵國.'
+    war-shield:
+      set: '&a激活保護期&b {time}&7.'
+    kill:
+      target:
+        attackers: '&7隊友&c {attacker} &7被防守者&a {defender}&7殺死.'
+        defenders: '&7隊友&a {defender} &7被進攻者&c {attacker}&7殺死.'
+      killer:
+        attackers: '&7隊友&c {attacker}&7殺死了防守者&a {defender}&7.'
+        defenders: '&7隊友&a {defender} &7殺死了進攻者&c {attacker}&7.'
+  command:
+    general:
+      no-war: '&c你的國家&4 {land} &c目前沒有收到任何宣戰. &7目前國家很和平.'
+    declare:
+      trusted: '&c你不能對該國家宣戰. &7你是該國家的成員. 請先離開該國家再進行宣戰.'
+      war-shield: '&c你目前無法對該國家宣戰. &7該國正處於保護期中,距離結束還有:&a {time}&7.'
+      already:
+        war: '&c你的國家目前無法參加另一場戰爭. &7需要當前的戰爭結束後才可參加.'
+        war-defender: '&c該國家正處於戰爭中. &7請在戰爭結束後重試'
+        declaration: '&c你的國家已經爆發戰爭. &7你可以在國家菜單中查看.'
+        declaration-def: '&c該國已向其他國家宣戰. &7請在 {time} 後重試.'
+      ally: '&c你不能對該國宣戰，因為它是你的盟友. &7你和目標國屬於盟友.'
+      success: '&7你的國家&c {attacker} &7成功向&a {defender} &7宣戰. 戰爭將在&5 ~{time}&7 後爆發.'
+      target:
+        land: '&c國家&e {attacker} &c對你的國家宣戰&e {defender}&c. &7戰爭將在&5 {time}&7 後爆發.'
+      broadcast: '&7國家&c {attacker} &7對&a {defender} &7國家宣戰&7. 戰爭將在&5 {time}&7 後爆發.'
+      min-players:
+        attacker: '&cYou can''t engage in a war, because you need more trusted players
+          in your land&4 {land}&c. &7The required minimum for attackers to send a
+          war declaration is&3 {min} &7players. &8A administrator can change that
+          in config.'
+        defender: '&cYou can''t declare war against the land&4 {land}&c, because they
+          need to be more trusted players. &7The required minimum for defenders to
+          receive a war declaration is&3 {min} &7players. &8A administrator can change
+          that in config.'
+    info:
+      peace: '&7一切都是為了&b {land} &7的和平. &7沒有持續的戰爭或向其他國家宣戰.'

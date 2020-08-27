@@ -9,24 +9,21 @@
 
 # General options
 general:
-  # PRE configured languages:
   # English (en-US)
+  # PRE configured languages:
+  # Please note that these rely on community contributions and my not be up to date.
   # French (fr-FR) by Mina, Kolsark, Kittle
   # German (de-DE) by Cryper
   # Hungarian (hu-HU) by gbalint
   # Italian (it-IT) by MiniMoro
   # Russian (ru-RU) by Envel
   # Spanish (es-ES) by Port
+  # Swedish (sv-SE) by Broken_Arrow1
   # Polish (pl-PL) by Nideon
   # Vietnamese (vi-VN) by anhcraft
   # Chinese (zh-CN) by Ruii
   # Taiwanese (zh-TW) by FallingEagle96
   language: 'en-US'
-  # This will send a message to console on a server startup,
-  # if a new version is available.
-  check-update: true
-  # Print lands logo to console when lands enables.
-  logo: true
 
   # Date format
   # MM: Month
@@ -40,34 +37,34 @@ general:
     # General format for invites etc.
     # 24 hour format:
     # MM/dd/yyyy HH:mm:ss
-    general: 'MM/dd/yyyy hh:mm:ss'
+    general: 'MM/dd/yyyy hh:mm'
     # Format for news messages in the land menu (inbox).
     inbox: 'MM/dd hh'
 
-  # Worlds where players
-  # should be able to claim chunks.
-  # NOTE: World names are CASE-SENSITIVE
+  # Worlds where players should be able to claim.
   # This setting requires server reload / restart.
   claim-worlds_list:
     - world
 
-  # Should safezones stay in the cache
-  # and not be unloaded?
-  # NOTE: This is recommended if you use
-  # safezones for world spawns.
+  # Should safezones stay in the cache and not be unloaded when no players are around?
+  # NOTE: This is recommended if you use safezones for world spawns.
   keep-safezone: true
 
-  # Should players be protected from damage caused by monsters?
+  # Should players be protected from damage caused by monsters in safezones?
   safezone-invincible: true
 
-  # Edit the land you're standing in
-  # instead of the land from /Lands edit?
-  # For /Lands claim you will still need
-  # to set the claim land with /Land edit.
+  # Edit the land you're standing in instead of the land from /Lands edit?
+  # For /Lands claim you will still need to set the claim land with /Land edit.
   edit-by-loc: false
 
+  # Should Lands give every new player the selection tool defined in your gui language file?
+  # If you for example set GOLDEN_HOE as the material in your gui language file, all GOLDEN_HOE's will trigger a selection, not just the given one.
+  # That means that players can craft the tool too and use it to create selections. However, /Lands selection still works without any tool in hand.
+  # Automatically giving new players the selection tool, just informs them about claiming and with it they can manage selections from air, instead of needing to touch the block directly.
+  selection-tool: true
+
   # Set max number of digit numbers for economy values, such as claim costs, taxes etc.
-  # This setting requires server reload / restart.
+  # NOTE: This setting requires server reload / restart.
   max-digits: 2
 
   # Reward players by playing on your server.
@@ -110,15 +107,16 @@ land:
     # Max land name length
     # The maximum possible length is 32 (including color codes)
     name-length: 16
+    # Should colors in land names be allowed?
+    color_2: true
     # Automatically claim chunk on players location?
     chunk-claim: true
 
-  # Set the minimum distance in chunks between lands that don't belong to the same owner.
+  # Set the minimum distance in chunks (16 blocks) between different lands that do not belong to the same owner.
+  # This prevents other land owners claiming directly at your land border.
   chunk-distance: 1
   # Force lands to claim near their claims.
   force-near: true
-  # Deny claim chunks near other players lands.
-  deny-claim-near-other: true
   # Chunk claiming by placing a special claim block.
   # You can give claimblocks by executing the command /Lands admin give <player> claimblock [amount]
   # If you don't want your players to claim via command, just
@@ -131,9 +129,6 @@ land:
     # Should a claim with a claimblock be free of charge (money)?
     free-claim: true
 
-  # Allow colored land names, titles and role names?
-  allow-colors: true
-
   # Landspawn settings
   spawn:
     # Creation settings (/Land setspawn)
@@ -141,10 +136,6 @@ land:
       # Automatically set land spawn on land creation (/Lands create)?
       # NOTE: The spawnpoint can always be changed with /Lands setspawn.
       auto: true
-      # Force the spawn to be in the land.
-      # NOTE: If you unclaim the chunk, where the land spawn is in,
-      # Lands will automatically remove the land spawn.
-      force-land: true
       # Costs
       cost:
         # Cost for first time set
@@ -165,17 +156,14 @@ land:
       # Teleport a player after death to land spawn.
       re-spawn: true
 
-  # Chunks (claims) addition (/Lands trust, /Lands accept)
-  chunks-addition:
-    # Only add lands.chunks.support.NUMBER value to max claim amount of lands,
-    # if the player is trusted in the whole land?
-    only-global: true
-
-  # Land ("sub") areas
-  # With areas you can create "sub" areas to specify special zones in your land.
-  # You can also trust players to them and configure settings.
-  areas:
-    enabled_21: true
+  # Rent/sell areas settings - Wiki: https://github.com/Angeschossen/Lands/wiki/Rent-System
+  # Rent = The players can rent a area of their choice without needing to get trusted. They can decide how long they want to rent it.
+  # Taxes = Trusted players pay a defined amount of tax per defined interval.
+  rent:
+    # Allow your players to set sub areas available for rent?
+    rent: true
+    # Allow your players to sell sub areas or their whole land?
+    sell: true
 
   # Invite settings
   invite:
@@ -195,6 +183,8 @@ land:
     # If someone deleted his land, and the claim size isn't null (this prevents spamming).
     # Message: land.create.broadcast
     delete: true
+    # Should /Lands chat messages be forwarded to console?
+    chat: false
 
   # Send a message if you enter / leave a land.
   # You can configure the display mode (title, chat, actionbar) in your language file.
@@ -214,7 +204,7 @@ land:
     # Bypass permission: lands.bypass.cooldown.rename
     cooldown_4: 900
 
-  # Fly Settings (Flags can be found in the roles section)
+  # Fly Settings (Flags can be found in thme roles section)
   fly:
     # Allow players to fly only in
     # Lands claim worlds (setting: claim-worlds_list)?
@@ -345,12 +335,13 @@ land:
   combat:
     # Combat tagging
     # If a player attacks a other player he will by tagged for x seconds so that, regardless of land settings,
+
     # other players can attack him.
-    # Default: 45 seconds
-    tag-time: 45s
+    # 0s = disabled
+    tag-time: 0s
     # Should players, which are members in a common land, be able to fight in wilderness?
     # NOTE: This option requires server restart / reload.
-    ally-wilderness: false
+    ally-wilderness: true
 
   # Set claim limits per world.
   # Example: If you set the permission lands.chunks.5 for your players,
@@ -360,8 +351,9 @@ land:
   claim-limits-per-world: false
 
 
-
 # Taxes settings
+# Taxes = Trusted players pay a defined amount of tax per defined interval.
+# Rent = The players can rent a area of their choice without needing to get trusted. They can decide how long they want to rent it.
 taxes:
   enabled_3: true
   # Taxes interval
@@ -392,7 +384,8 @@ taxes:
   announcement: 45m
 
   # Land upkeep costs
-  # Enable this, if you want the lands to pay x amount of money per chunk in order to keep their land.
+  # Upkeep = Lands pay a defined amount of money to the server in order to keep their claimed land.
+  # Taxes = Trusted players pay a defined amount of tax per defined interval.
   upkeep:
     # NOTE: This setting requires server reload / restart.
     enabled_19: false
@@ -507,44 +500,7 @@ chunk:
       display_65: true
       # Automatically enable this setting during war?
       during-war_4: false
-      # If monster spawning disabled, these monsters won't spawn. So you can decide, which monsters shouldn't spawn
-      # The latest spigot version entities: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
-      monsters_list:
-        - 'BLAZE'
-        - 'CAVE_SPIDER'
-        - 'CREEPER'
-        - 'DROWNED'
-        - 'ELDER_GUARDIAN'
-        - 'ENDER_DRAGON'
-        - 'ENDERMAN'
-        - 'ENDERMITE'
-        - 'EVOKER'
-        - 'EVOKER'
-        - 'GHAST'
-        - 'GIANT'
-        - 'GUARDIAN'
-        - 'HUSK'
-        - 'ILLUSIONER'
-        - 'MAGMA_CUBE'
-        - 'PHANTOM'
-        - 'PIG_ZOMBIE'
-        - 'PILLAGER'
-        - 'RAVAGER'
-        - 'SHULKER'
-        - 'SILVERFISH'
-        - 'SKELETON'
-        - 'SKELETON_HORSE'
-        - 'SLIME'
-        - 'SPIDER'
-        - 'STRAY'
-        - 'VEX'
-        - 'VINDICATOR'
-        - 'WITCH'
-        - 'WITHER'
-        - 'WITHER_SKELETON'
-        - 'ZOMBIE'
-        - 'ZOMBIE_HORSE'
-        - 'ZOMBIE_VILLAGER'
+
     #
     # ANIMAL_SPAWN
     # Allow animal spawning in the chunk / land?
@@ -554,34 +510,7 @@ chunk:
       display_66: true
       # Automatically enable this setting during war?
       during-war_5: false
-      # If animals spawning disabled, these animals won't spawn. So you can decide, which animals shouldn't spawn
-      # The latest spigot version entities: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
-      animals_list:
-        - 'BAT'
-        - 'CAT'
-        - 'CHICKEN'
-        - 'COD'
-        - 'COW'
-        - 'DOLPHIN'
-        - 'DONKEY'
-        - 'FOX'
-        - 'HORSE'
-        - 'LLAMA'
-        - 'MULE'
-        - 'MUSHROOM_COW'
-        - 'OCELOT'
-        - 'PANDA'
-        - 'PARROT'
-        - 'PIG'
-        - 'POLAR_BEAR'
-        - 'PUFFERFISH'
-        - 'RABBIT'
-        - 'SALMON'
-        - 'SHEEP'
-        - 'SQUID'
-        - 'TROPICAL_FISH'
-        - 'TURTLE'
-        - 'WOLF'
+
     #
     # WATERFLOW_ALLOW
     # Allow waterflow from a wilderness to the chunk / land?
@@ -589,6 +518,26 @@ chunk:
     waterflow_allow:
       default_68: false
       display_67: true
+
+    #
+    # FIRE_SPREAD
+    # Allow fire spreading inside the land? Fire won't be able to spread from wilderness inside the land.
+    fire_spread:
+      default_73: false
+      display_76: true
+
+    #
+    # LEAF_DECAY
+    # Should leaves decay inside a land?
+    leaf_decay:
+      default_74: true
+      display_77: true
+    #
+    # PLANT_GROWTH
+    # Should plants be able to grow?
+    plant_growth:
+      default_75: true
+      display_78: true
 
   # Role settings
   # There are three different roles:
@@ -671,7 +620,7 @@ chunk:
         # to a /Fly command or something like this.
         fly:
           default_71: false
-          display_11: false
+          display_11: true
         #
         # LAND_ENTER
         # Should this role be able to enter the land?
@@ -1019,19 +968,6 @@ top-lands:
     item: 'GOLDEN_HELMET'
 
 
-
-# Backup settings
-backup:
-  # Enable this to create backup creation on every lands enabling.
-  # NOTE: It's always recommended creating backups,
-  # even if there are no problems.
-  startup: false
-  # Time in days after a created backup should get deleted.
-  # Set this to 0, to disable it.
-  days-delete: 28
-
-
-
 # Visualization settings
 visualization:
   type:
@@ -1094,6 +1030,8 @@ visualization:
     # Duration of land view.
     # NOTE: Time unit is seconds
     duration_9: 60
+    # Should Lands display land borders permanently once the player joins?
+    permanent: false
 
   # /Lands map lengths
   map:
@@ -1135,11 +1073,6 @@ command:
     - nation
     - n
 
-  # Command merge settings
-  merge:
-    # Merge /Wars commands into /Lands?
-    wars: true
-
   # Block commands
   # They are not case-sensitive.
   blacklist:
@@ -1151,6 +1084,16 @@ command:
     general_list:
       - EnterCommandToDenyOnLandHere
 
+
+# This is the configuration of the /Lands unstuck command.
+# Purpose of this command is to let players be able to teleported out of locations in lands where they got trapped.
+# For example a player finds a way walking into a land, but can't find a way out.
+# This command will teleported them to the nearest wilderness location.
+unstuck:
+  # Set the cooldown for this command.
+  cooldown_5: 1h
+  # How many seconds should the player need to wait until getting teleported into wilderness?
+  wait_4: 3
 
 # Random teleportation (/Lands wild)
 # When using this make sure to set the worlds spawn with /setworldspawn
@@ -1194,7 +1137,7 @@ gui:
   list-only-public: false
   # Should unused items from older versions automatically be removed from the gui language file?
   # You may not want this if you want to add extra items to the menu.
-  remove-unused: false
+  remove-unused: true
 
 
 
@@ -1216,10 +1159,17 @@ database:
     # It is highly recommended to set a table prefix, if you also connect other plugins to this database.
     table-prefix: 'lands_'
 
-  # If an issue with the database occurs.
-  # This is just to be always on the save side.
-  # NOTE: This should never happen. However, it's good to have such a setting.
-  # Should Lands disallow players to join the server, if Lands couldn't load data to ensure full protection of lands?
+  # Backup settings
+  backup:
+    # Time in days after a created backup should get deleted.
+    # Set this to 0, to disable it.
+    days-delete: 30
+    # Backup creation interval.
+    # NOTE: This is only available if you use Json for data saving.
+    interval_3: 5d
+
+  # If Lands can't connect to your MySQL database, because for example the credentials are invalid or outdated.
+  # Should Lands disallow players to join the server, if it couldn't connect to the database?
   error-disallow-join: true
 
 
@@ -1246,17 +1196,16 @@ integration:
       # Bypass permission: lands.bypass.worldedit
       enabled_7: true
 
-      # Griefprevention
+    # Griefprevention
     GriefPrevention:
       enabled_6: true
       # Should Lands deny claiming in GriefPrevention regions?
-      # NOTE: It's recommended to let this enabled.
       deny-claim_2: true
+
     # Residence
     Residence:
       enabled_15: true
       # Should Lands deny claiming in Residence regions?
-      # NOTE: It's recommended to let this activated.
       deny-claim_3: true
 
   # Economy settings

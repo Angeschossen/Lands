@@ -1,19 +1,40 @@
 name: Lands
 main: me.angeschossen.lands.Lands
 version: ${project.version}
-author: Angeschossen
-description: Feature rich GUI, Taxes, Customize your own, Titles, New factions - Let players manage their land!
-website: https://www.spigotmc.org/resources/53313
-api-version: 1.13
+author: 'Angeschossen'
+description: 'Feature rich GUI, Taxes, Customize your own, Titles, New factions - Let players manage their land!'
+website: 'https://www.spigotmc.org/resources/53313'
+api-version: '1.13'
 load: POSTWORLD
+
+softdepend: [Vault, dynmap, HolographicDisplays, WorldGuard, WorldEdit, PlaceholderAPI, MythicMobs, Residence, GriefPrevention]
 
 commands:
   lands:
     aliases: [land, l]
-    description: Manage your land
+    description: 'Manage your land.'
+  claim:
+    description: 'Shortcut of /Lands claim'
+  assign:
+    description: 'Shortcut of /Lands assign'
+  unclaim:
+    description: 'Shortcut of /Lands unclaim'
+  edit:
+    description: 'Shortcut of /Lands edit'
+  trust:
+    description: 'Shortcut of /Lands trust'
+  untrust:
+    description: 'Shortcut of /Lands untrust'
+  leave:
+    description: 'Shortcut of /Lands leave'
+  view:
+    description: 'Shortcut of /Lands view'
+  chat:
+    description: 'Shortcut of /Lands chat'
+
   wars:
     aliases: [war, w]
-    description: Lands war command
+    description: 'Lands war command.'
 
 permissions:
   lands.*:
@@ -100,10 +121,10 @@ permissions:
             description: /Lands leave
             default: op
           lands.command.menu:
-            description: /Lands menu, /Lands
+            description: /Lands menu
             default: op
           lands.command.rename:
-            description: /Lands reload
+            description: /Lands rename
             default: op
           lands.command.selection:
             description: /Lands selection
@@ -135,6 +156,9 @@ permissions:
           lands.command.view:
             description: /Lands view
             default: op
+          lands.command.view.permanent:
+            description: /Lands view permanent
+            default: op
           lands.command.withdraw:
             description: /Lands withdraw
             default: op
@@ -144,6 +168,23 @@ permissions:
           lands.command.list:
             description: /Lands list
             default: op
+          lands.command.ban:
+            description: /Lands banF
+            default: op
+          lands.command.unban:
+            description: /Lands unban
+            default: op
+          lands.command.setowner:
+            description: /Lands setowner
+            default: op
+          lands.command.taxes:
+            description: /Lands taxes
+            default: op
+          lands.command.rent:
+            description: /Lands rent
+            default: op
+
+
       lands.bypass.*:
         description: Bypass all protections and other restrictions
         children:
@@ -168,6 +209,9 @@ permissions:
           lands.bypass.interact_container:
             description: Bypass interaction protection
             default: op
+          lands.bypass.interact_villager:
+            description: Bypass villager protection
+            default: op
           lands.bypass.attack_animal:
             description: Bypass animal attack protection
             default: op
@@ -183,6 +227,9 @@ permissions:
           lands.bypass.worldedit:
             description: Bypass WorldEdit restrictions in other players lands
             default: op
+          lands.bypass.land_enter:
+            description: Bypass land enter flag
+            default: op
           lands.bypass.edit.*:
             description: Select lands you're not member of
             default: op
@@ -190,6 +237,12 @@ permissions:
               lands.bypass.edit.settings:
                 description: Edit settings of other lands
                 default: op
+          lands.bypass.selection:
+            description: Bypass error message of other plugin cancelling selection
+            default: op
+          lands.bypass.teleport-delay:
+            description: Bypass teleportation delays / warmups
+            default: op
           lands.bypass.wilderness.*:
             description: Bypass all wilderness protections (for worlds in disallow-wilderness_list)
             default: op
@@ -227,6 +280,10 @@ permissions:
               lands.bypass.wilderness.teleport:
                 description: Teleport to wilderness (unclaimed chunks) through /Lands teleport.
                 default: op
+              lands.bypass.wilderness.fly:
+                description: Fly in wilderness
+                default: op
+
           lands.bypass.cooldown.*:
             description: Bypass cooldowns
             default: op
@@ -243,6 +300,10 @@ permissions:
               lands.bypass.cooldown.spawn:
                 description: Bypass /Lands spawn cooldown
                 default: op
+              lands.bypass.cooldown.unstuck:
+                description: Bypass /Lands unstuck cooldown
+                default: op
+
           lands.bypass.spawn.private:
             description: Teleport to private land spawns
             default: op
@@ -256,17 +317,8 @@ permissions:
               lands.bypass.option.chunk-distance:
                 description: Bypass chunk-distance option from config.
                 default: op
-      lands.gui.*:
-        description: Access to all GUI actions
-        default: op
-        children:
-          lands.gui.chunk.*:
-            description: Access to all chunk GUI actions
-            default: op
-            children:
-              lands.gui.chunk.teleport:
-                description: Allow teleporting to claimed chunks
-                default: op
+
+
       lands.setting.*:
         description: Access to land settings
         default: op
@@ -283,194 +335,102 @@ permissions:
           lands.setting.animal_spawn:
             description: Allow to toggle animal spawn
             default: op
-          lands.setting.tax_total:
-            description: Allow toggle tax total
+          lands.setting.waterflow_allow:
+            description: Allow to toggle waterflow
             default: op
-          lands.setting.spawn_public:
-            description: Allow to toggle land spawn public
+          lands.setting.tnt_griefing:
+            description: Allow to toggle tnt griefing
             default: op
+          lands.setting.fire_spread:
+            description: Allow to toggle fire spread
+            default: op
+          lands.setting.leaf_decay:
+            description: Allow to toggle leaf decay
+            default: op
+
       lands.role.*:
         description: Access to all role settings
         default: op
         children:
-          lands.role.visitor.*:
-            description: Access to all visitor role settings
+          lands.role.setting.*:
+            description: Access to all role settings (toggle)
             default: op
             children:
-              lands.role.visitor.setting.block_break:
+              lands.role.setting.block_break:
                 description: Allow to toggle block break
                 default: op
-              lands.role.visitor.setting.block_place:
+              lands.role.setting.block_place:
                 description: Allow to toggle block place
                 default: op
-              lands.role.visitor.setting.attack_player:
+              lands.role.setting.attack_player:
                 description: Allow to toggle attack player
                 default: op
-              lands.role.visitor.setting.attack_animal:
+              lands.role.setting.attack_animal:
                 description: Allow to toggle attack animal
                 default: op
-              lands.role.visitor.setting.block_ignite:
+              lands.role.setting.block_ignite:
                 description: Allow to toggle block ignite
                 default: op
-              lands.role.visitor.setting.interact_general:
+              lands.role.setting.interact_general:
                 description: Allow to toggle general interaction
                 default: op
-              lands.role.visitor.setting.interact_doors:
+              lands.role.setting.interact_door:
                 description: Allow to toggle open doors
                 default: op
-              lands.role.visitor.setting.interact_container:
+              lands.role.setting.interact_container:
                 description: Allow to toggle open container
                 default: op
-              lands.role.visitor.setting.interact_mechanism:
+              lands.role.setting.interact_mechanism:
                 description: Allow to toggle interact mechanism (redstone)
                 default: op
-              lands.role.visitor.setting.player_trust:
+              lands.role.setting.interact_villager:
+                description: Toggle Flag - Allow a role to interact with villager.
+                default: op
+              lands.role.setting.fly:
+                description: Toggle Flag - Allow a role to fly inside the land / area.
+                default: op
+              lands.role.setting.land_enter:
+                description: Toggle Flag - Allow a role to enter the land / area.
+              lands.role.setting.player_trust:
                 description: Allow to toggle trust player
                 default: op
-              lands.role.visitor.setting.player_untrust:
+              lands.role.setting.player_untrust:
                 description: Allow to toggle player untrust
                 default: op
-              lands.role.visitor.setting.player_setrole:
+              lands.role.setting.player_setrole:
                 description: Allow to toggle player setrole
                 default: op
-              lands.role.visitor.setting.land_claim:
+              lands.role.setting.land_claim:
                 description: Allow to toggle claim chunks for the land
                 default: op
-              lands.role.visitor.setting.land_claim_border:
+              lands.role.setting.land_claim_border:
                 description: Allow to toggle claim chunks at the border of the land
                 default: op
-              lands.role.visitor.setting.land_spawn_set:
+              lands.role.setting.spawn_set:
                 description: Allow to toggle spawn set
                 default: op
-              lands.role.visitor.setting.land_spawn_teleport:
+              lands.role.setting.spawn_teleport:
                 description: Allow to toggle spawn teleport
                 default: op
-              lands.role.visitor.setting.land_rename:
-                description: Allow to rename land
+              lands.role.setting.balance_withdraw:
+                description: Toggle Flag - Allow a role to withdraw money from the land bank
                 default: op
-              lands.role.visitor.setting.setting_edit:
-                description: Allow to toggle alow this role to change settings of a role with lower priority
+              lands.role.setting.area_assign:
+                description: Toggle Flag - Allow a role to assign a selection to a area.
                 default: op
-          lands.role.member.*:
-            description: Access to all mmeber role settings
-            default: op
-            children:
-              lands.role.member.setting.block_break:
-                description: Allow to toggle block break
+              lands.role.setting.setting_edit_land:
+                description: Toggle Flag - Allow a role to edit land settings.
                 default: op
-              lands.role.member.setting.block_place:
-                description: Allow to toggle block place
+              lands.role.setting.setting_edit_role:
+                description: Toggle Flag - Allow a role to edit role settings of roles with a lower priority.
                 default: op
-              lands.role.member.setting.attack_player:
-                description: Allow to toggle attack player
+              lands.role.setting.setting_edit_taxes:
+                description: Toggle Flag - Allow a role to edit taxes.
                 default: op
-              lands.role.member.setting.attack_animal:
-                description: Allow to toggle attack animal
-                default: op
-              lands.role.member.setting.block_ignite:
-                description: Allow to toggle block ignite
-                default: op
-              lands.role.member.setting.interact_general:
-                description: Allow to toggle general interaction
-                default: op
-              lands.role.member.setting.interact_doors:
-                description: Allow to toggle open doors
-                default: op
-              lands.role.member.setting.interact_container:
-                description: Allow to toggle open container
-                default: op
-              lands.role.member.setting.interact_mechanism:
-                description: Allow to toggle interact mechanism (redstone)
-                default: op
-              lands.role.member.setting.player_trust:
-                description: Allow to toggle trust player
-                default: op
-              lands.role.member.setting.player_untrust:
-                description: Allow to toggle player untrust
-                default: op
-              lands.role.member.setting.player_setrole:
-                description: Allow to toggle player setrole
-                default: op
-              lands.role.member.setting.land_claim:
-                description: Allow to toggle claim chunks for the land
-                default: op
-              lands.role.member.setting.land_claim_border:
-                description: Allow to toggle claim chunks at the border of the land
-                default: op
-              lands.role.member.setting.land_spawn_set:
-                description: Allow to toggle spawn set
-                default: op
-              lands.role.member.setting.setting.land_spawn_teleport:
-                description: Allow to toggle spawn teleport
-                default: op
-              lands.role.member.setting.land_rename:
-                description: Allow to rename land
-                default: op
-              lands.role.member.setting.setting_edit:
-                description: Allow to toggle alow this role to change settings of a role with lower priority
+              lands.role.setting.vehicle_use:
+                description: Toggle Flag - Allow role to use vehicles.
                 default: op
 
-          lands.role.admin.*:
-            description: Access to all admin role settings
-            default: op
-            children:
-              lands.role.admin.setting.block_break:
-                description: Allow to toggle block break
-                default: op
-              lands.role.admin.setting.block_place:
-                description: Allow to toggle block place
-                default: op
-              lands.role.admin.setting.attack_player:
-                description: Allow to toggle attack player
-                default: op
-              lands.role.admin.setting.attack_animal:
-                description: Allow to toggle attack animal
-                default: op
-              lands.role.admin.setting.block_ignite:
-                description: Allow to toggle block ignite
-                default: op
-              lands.role.admin.setting.interact_general:
-                description: Allow to toggle general interaction
-                default: op
-              lands.role.admin.setting.interact_doors:
-                description: Allow to toggle open doors
-                default: op
-              lands.role.admin.setting.interact_container:
-                description: Allow to toggle open container
-                default: op
-              lands.role.admin.setting.interact_mechanism:
-                description: Allow to toggle interact mechanism (redstone)
-                default: op
-              lands.role.admin.setting.player_trust:
-                description: Allow to toggle trust player
-                default: op
-              lands.role.admin.setting.player_untrust:
-                description: Allow to toggle player untrust
-                default: op
-              lands.role.admin.setting.player_setrole:
-                description: Allow to toggle player setrole
-                default: op
-              lands.role.admin.setting.land_claim:
-                description: Allow to toggle claim chunks for the land
-                default: op
-              lands.role.admin.setting.land_claim_border:
-                description: Allow to toggle claim chunks at the border of the land
-                default: op
-              lands.role.admin.setting.land_spawn_set:
-                description: Allow to toggle spawn set
-                default: op
-              lands.role.admin.setting.land_spawn_teleport:
-                description: Allow to toggle spawn teleport
-                default: op
-              lands.role.admin.setting.land_rename:
-                description: Allow to rename land
-                default: op
-              lands.role.admin.setting.setting_edit:
-                description: Allow to toggle alow this role to change settings of a role with lower priority
-                default: op
-              lands.role.admin.setting.balance_withdraw:
-                description: Allow this role to withdraw money from the land bank.
-                default: op
 
       lands.admin.*:
         description: Access to all admin actions. Commands require execution of /Lands edit <land> (to select the land).
@@ -482,31 +442,13 @@ permissions:
           lands.admin.land_delete:
             description: Allow to delete other lands or unclaim chunks from other lands.
             default: op
-          lands.admin.player_trust:
-            description: Trust players to other lands.
-            default: op
-          lands.admin.player_untrust:
-            description: Untrust players from other lands.
-            default: op
-          lands.admin.player_setrole:
-            description: Set role in other lands.
-            default: op
-          lands.admin.land_claim:
-            description: Claim for other lands.
-            default: op
-          lands.admin.claim_border:
-            description: Claim directly at the border of other lands (bypassing minimum chunk distance setting between lands)
-            default: op
-          lands.admin.spawn_set:
-            description: Set land spawn for other lands.
-            default: op
-          lands.admin.land_rename:
-            description: Rename other peoples lands.
+          lands.admin.land_setowner:
+            description: Allow the usage of /Lands setowner for lands the player doesn't own
             default: op
           lands.admin.setting_edit_land:
             description: Edit land settings of other lands (like mob spawning etc.)
             default: op
-          lands.amdin.setting_edit_role:
+          lands.admin.setting_edit_role:
             description: Edit role settings of other lands.
             default: op
           lands.admin.setting_edit_taxes:
@@ -519,6 +461,9 @@ permissions:
             children:
               lands.admin.command.reload:
                 description: Access to /Lands reload
+                default: op
+              lands.admin.command.wilderness:
+                description: Open wilderness menu /Lands admin wilderness
                 default: op
               lands.admin.command.land.*:
                 description: Access to admin land commands
@@ -551,9 +496,26 @@ permissions:
               lands.admin.command.import:
                 description: Import data from other plugins
                 default: op
+              lands.admin.command.convert:
+                description: Convert database
+                default: op
               lands.admin.command.safezone:
                 description: Edit safezones
                 default: op
+
+
+      lands.mod.*:
+        description: Access to all moderator actions.
+        default: op
+        children:
+          lands.mod.command.*:
+            description: Access to all moderator commands.
+            default: op
+            children:
+              lands.mod.command.chatspy:
+                description: /Lands chatspy
+                default: op
+
 
   wars.*:
     description: Access to all wars actions.
@@ -565,6 +527,9 @@ permissions:
         children:
           wars.command.declare:
             description: Access to /Wars declare
+            default: op
+          wars.command.deny:
+            description: Access to /Wars deny
             default: op
           wars.command.info:
             description: Access to /Wars info

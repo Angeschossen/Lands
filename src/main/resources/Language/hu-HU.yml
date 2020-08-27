@@ -201,21 +201,21 @@ message:
   event:
     fly:
       warning: '&7Nem repülhetsz itt, másodpercek múlva kikapcsolódik a flyod'
-      counter: '#t#&cA repülés kikapcsol{newline}&c&4{sec} &cmásodperc múlva'
+      counter: '#t#&cA repülés kikapcsol[newline]&c&4{sec} &cmásodperc múlva'
       disabled: '&cRepülés kikapcsolva nincs jogod itt repülni.'
       disallowed: '&cNem repülhetsz itt. &7Beszélj a telek tulajával.'
       disallowed-wilderness: '&cNem repülhetsz a vadonban'
     lands:
-      enter: '#t#&2&l{land}{newline}&3{title}'
-      leave: '#t#&2&lVadon{newline}&7Érezd a szabadságot.'
+      enter: '#t#&2&l{land}[newline]&3{title}'
+      leave: '#t#&2&lVadon[newline]&7Érezd a szabadságot.'
     safezones:
-      enter: '#t#&2&l{land}{newline}{title}'
-      leave: '#t#&2&lVadon{newline}&7Érezd a szabadságot.'
+      enter: '#t#&2&l{land}[newline]{title}'
+      leave: '#t#&2&lVadon[newline]&7Érezd a szabadságot.'
     teleport:
       already: '&cCsak egy folyamatban lévő teleportod lehet.'
       started: '&7Teleportálás&5 {sec} &7másodperc múlva. Ne mozogj.'
       cancelled: '&cTeleportálás megszakítva.'
-      chunk: '#t#&9&lElteleportáltál{newline}&7X: {x} Z: {z} Költsége:&c ${cost}'
+      chunk: '#t#&9&lElteleportáltál[newline]&7X: {x} Z: {z} Költsége:&c ${cost}'
       cancelled-plugins: '&cEgy másik plugin letiltotta a teleportodat'
   claimblock:
     dropped: '&cNéhány levédőblokk a földre került. &7Nem volt nálad hely.'
@@ -296,13 +296,13 @@ command:
     not-complete: '&cA kijelölés nem teljes, bizonyosodj meg róla, hogy mindkét pont be van állítva &8(&bBAL &7és &9JOBB kattintás is&8)&7. Kijelölő mód váltható a &8/&3Lands selection&7 paranccsal.'
     max: '&cA kijelölt terület túl sok chunkot tartalmaz. &7Méret:&b {current} &7Max megengedett:&b {max}'
     enableds: '&7Kijelölő mód aktiválva: Válaszd ki a kezeddel egy terület &bszemben lévő sarkait &7 hogy lefoglalj &bminden chunkot &7benne.'
-    disabled: '#t#&5&lKijelölő mód{newline}&c&lkikapcsolva'
+    disabled: '#t#&5&lKijelölő mód[newline]&c&lkikapcsolva'
     world: '&cMindkét pozíció egy világban kell legyen'
     pos:
       warn: '&cFigyelem: &7A chunkot más plugin már védi'
       cancelled: '&cA kijelölés itt nem fog menni, más plugin védi'
-      one: '#t#&5&lKijelölés{newline}&b&lPozíció 1 &8-> &7Beállítva'
-      two: '#t#&5&lKijelölés{newline}&b&lPozíció 2 &8-> &7Beállítva'
+      one: '#t#&5&lKijelölés[newline]&b&lPozíció 1 &8-> &7Beállítva'
+      two: '#t#&5&lKijelölés[newline]&b&lPozíció 2 &8-> &7Beállítva'
     area:
       conflicts: '&4 {conflicts} &ütközés egy másik terület chunkjaival. &7Használd a &8/&3Lands selection assgin {area} confirm &7parancsot a felülíráshoz.'
       assigned: '&7Sikeresen hozzáadtál&3 {chunks} &7chunkot a &6 {area}&7 nevű területedhez &8(&7Telek:&2 {land}&8)&7.'
@@ -385,7 +385,7 @@ command:
     world-not-exist: '&cNem létező világ.'
     chunk-not-claimed: '&cA chunk nincs védve: &8(&7X: {x} &7Z: {z}&8)&c.'
     not-trusted: '&cNem teleportálhatsz oda, mert nem vagy a telekhez adva:&2 {land}&7.'
-    success: '#t#&9&lTeleportálva{newline}&7X: {x} Z: {z} Foglalt: {claimed}'
+    success: '#t#&9&lTeleportálva[newline]&7X: {x} Z: {z} Foglalt: {claimed}'
   setspawn:
     force-land: '&cCsak a saját területedre rakhatsz teleport pontot.'
     success: '#t#&7Teleport pont &abeállítva&7.;;&7Ár:&b {cost}'
@@ -491,7 +491,7 @@ wars:
   message:
     noaccess:
       pillage: '&cNem rombolhatsz amíg nincsenek védők online. &7Legalább &b {defenders} &7 védő játékban kell legyen.'
-      war-chunk: '&cNem teheted ezt meg ezen a hadmezőn'
+      action: '&cNem teheted ezt meg ezen a hadmezőn'
     started:
       broadcast: '&7A háború&c {attacker} &7és&a {defender} &7között elkezdődött. &5 {time} &7múlva lesz vége.'
     ended:
@@ -517,10 +517,10 @@ wars:
     kill:
       target:
         attackers: '&7Bajtársadat,&c {attacker} &7-t megölte &a {defender}&7.'
-        attackers: '&7Bajtársadat,&a {defender} &7-t megölte &c {attacker}&7.'
+        defenders: '&7Bajtársadat,&a {defender} &7-t megölte &c {attacker}&7.'
       killer:
         attackers: '&7Bajtársunkat,&c {attacker} &7-t megölte &a {defender}&7.'
-        attackers: '&7Bajtársunkat,&a {defender} &7-t megölte &c {attacker}&7.'
+        defenders: '&7Bajtársunkat,&a {defender} &7-t megölte &c {attacker}&7.'
   command:
     general:
       no-war: '&cTerületed (&e {land} &c) nem érinti háború. &7Békés időszakban vagy.'
@@ -532,7 +532,7 @@ wars:
         war-defender: '&cA másik fél háborúban van még. &7Próbáld újra, amint végeztek.'
         declaration: '&cMár van egy közelgő háborúd. &7A telek menüben megtalálod.'
         declaration-def: '&cA másik félnek már van közelgő háborúja. &7próbáld újra {time} múlva.'
-      is-ally: '&cNem mehetsz háborúba ellenük, mert barátaid. &7Egy nemzet része vagytok.'
+      ally: '&cNem mehetsz háborúba ellenük, mert barátaid. &7Egy nemzet része vagytok.'
       success: '&7&c {attacker} &7sikeresen háborút hírdetett&a {defender}&7 ellen. Kezdete&5 ~{time}&7 múlva.'
       target:
         land: '&e {attacker} &cháborút hírdetett ellened&e( {defender})&c. Kezdete&5 ~{time}&7 múlva.'

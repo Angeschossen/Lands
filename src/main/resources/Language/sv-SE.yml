@@ -1,0 +1,842 @@
+general:
+  prefix:
+    normal: '&8[&aLands&8] '
+    help: '&8[&aLands&8] &7Usage: '
+  wYes: '&aJa'
+  wNo: '&cNej'
+  none: '&8Ingen'
+  disabled: '&cAvstängd'
+  wilderness: '&aVildmark'
+  time:
+    days: dag(s)
+    hours: timme(s)
+    minutes: minute(s)
+    seconds: sekund(s)
+  status:
+    online: '&aonline'
+    offline: '&coffline'
+  top:
+    title: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
+    entry: '&c#{pos} &a{land} &7Balance:&6 {value} {#fbe232}$'
+    next-page: '&7Nästa sida: &8/&2Lands top {next}'
+    last-updated: '&7Senast uppdaterad: {time} &7sen'
+    footer: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
+  integration:
+    dynmap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br
+          /><br /> Ägare: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br
+          />Members: <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 120%;"><span
+          style="font-size: 120%;"><span style="color: #00ccff;">Spawnpoint</span><br
+          /></span></span><p>Is public: {public}</p></div>'
+  sign:
+    topLand:
+      line-1: '&c#&l{place}'
+      line-2: '&8<&2 {land} &8>'
+      line-3: '&7Ägs av {owner}'
+      line-4: '&cchunks {value}'
+    noLand:
+      line-1: ' '
+      line-2: '&cInget land'
+      line-3: '&cVisa.'
+      line-4: ' '
+  autoAction:
+    claim: '&aÖverta chunck'
+  map:
+    yours: '&a▉ '
+    others: '&c▉ '
+    friendly: '&5▉ '
+    current-location: '&e▉ '
+    wilderness: '&2▉ '
+    top: '&7-<------------<- &6Lands Karta &7->------------>-'
+    info:
+      wilderness: ' &2▉ &7= Vildmarken'
+      yours: ' &a▉ &7= Din'
+      trusted: ' &5▉ &7= Vänn'
+      others: ' &c▉ &7= Andras'
+      position: ' &e▉ &7= Position'
+    bottom: '&7-<------------<- &6Lands Karta &7->------------>-'
+  wars:
+    nametag:
+      enemy: '&cFiende &8| '
+      ally: '&aAllierad &8| '
+    object:
+      enemy: '&cEnemy'
+      ally: '&aAlly'
+  land:
+    title:
+      land: ' &7Ägd av&3 %owner%&7.'
+      safezone: ''
+    default-area: Default
+  teleportation:
+    bossbar: '&7Vänta&5 {time} &7Second(s) innan du teleportera igen.'
+  inbox:
+    general:
+      created: '&8{0}: &7Land skapad.'
+    member:
+      join: '&8{0}: &aInvånare &b{1} &agick med.'
+      leave: '&8{0}: &aInvånare &b{1} &clämnat.'
+      ban: '&8{0}: &cInvånare &4{1} &cfick stå i skamvrån (avhyst).'
+    economy:
+      upkeep:
+        warning: '&8{0}: &cKunde inte betala underhållskostnad till servern: ${1}'
+        unclaimed: '&8{0}: &cDu kunde inte betala {1}{#fbe232}$ &6. Sista inmutade
+          chunk (X: {2} Z: {3}) är borttagen.'
+        paid: '&8{0}: &7Du betalade &6{1}$&7 i underhåll till servern'
+      bank:
+        withdraw: '&8{0}: &cInvånare &9{1} &ctog ut &6{2}{#fbe232}$ &7-> kvar i banken
+          &6{3}&c{#fbe232}$ &6'
+        deposit: '&8{0}: &7Invånare &9{1} &7satte in &6{2}{#fbe232}$ &7-> summa efter
+          i banken &6{3}&c{#fbe232}$'
+      taxes:
+        warning: '&8{0}: &cInvånare {1} betalade inte skatt i landet.'
+        untrusted: '&8{0}: &cInvånare {1} betalade inte skatt. Han är nu borttagen
+          från landet.'
+        received: '&8{0}: &7Du motog totalt &6{1}{#fbe232}$ &7i skatt från lands ivånare
+          -> summa i banken &6{2}{#fbe232}$'
+    war:
+      declaration:
+        sent: '&8{0}: &7Du förklarade krig mot {1},för mer info med kommandot &8/wars
+          info'
+        received: '&8{0}: &c{1} &cförklarade krig mot oss,&7mer info med komandot
+          &8/Wars info'
+        mutual:
+          sent: '&8{0}: &7Sänt kriksförklaring till {1}. &7Det behöver accptera det.'
+          received: '&8{0}: &c{1} &char sänt en krigsförfrågan. Acceptera med komandot:
+            &8/&3Wars declare {2}'
+      surrender:
+        sent: '&8{0}: &cGav upp. betallade &6{1}{#fbe232}$&c i gåva till fienden.'
+        received: '&8{0}: &7Fienden {1} &7gav upp. Motag &6{2}{#fbe232}$$&7 i gåva.'
+      end:
+        won: '&8{0}: vi vann kriget med {1} dödade.'
+        lost: '&8{0}: vi förlorade kriget med {1} döda.'
+        draw: '&8{0}: The war ended in a draw with {1} kills and {2} deaths.'
+  unlimited: '&aunlimited'
+help:
+  command:
+    help: '&8/&3Lands help &8[&3page&8] - &7Här hittar du information om kommandon'
+    edit: '&8/&3Lands edit &8<&3land&8> &8- &7Skriv namnet på det land du vill t.ex
+      inmuta eller anförtro spelare i'
+    claim: '&8/&3Lands claim &8[&3area, auto&8] - &7Inmuta chunk'
+    create: '&8/&3Lands create &8<&3name&8> - &7Skapa land'
+    leave: '&8/&3Lands leave &8[&3land] &8- &7Lämna chunk eller land'
+    unclaim: '&8/&3Lands unclaim &8- &7Ta bort inmutning av chunk'
+    delete: '&8/&3Lands delete &8<&3land&8> &8- &7Ta bort land'
+    trust: '&8/&3Lands trust &8<&3player&8> [&3here&8] - &7Bjud in spelare'
+    untrust: '&8/&3Lands untrust &8[&3here&8] - &7sätt upp spelare på lista för opålitliga'
+    setRole: '&8/&3Lands setRole &8<&3player&8> <&3role&8> [&3here&8] - &7Sätt roll'
+    accept: '&8/&3Lands accept &8<&3land&8> - &7Acceptera inbjudan'
+    deny: '&8/&3Lands deny &8<&3land&8> - &7Neka inbjudan'
+    view: '&8/&3Lands view &8- &7Information om land och inmutad chunk, samt se gränser
+      för land och subzoner'
+    menu: '&8/&3Lands menu &8[&3here&8] &8- &7öppna land / area meny'
+    setSpawn: '&8/&3Lands setspawn - &7Sätter landsspawn punkt'
+    spawn: '&8/&3Lands spawn &8[&3land&8] - &7Teleoportera till land'
+    wild: '&8/&3Lands wild &8- &7Teleoportera till slumpmässig plats'
+    top: '&8/&3Lands top &8[&3page&8] &8- &7Visa top 10 lands'
+    selection: '&8/&3Lands selection &8- &7för att markera yta antingen för inmuta
+      stor yta land eller markera ut underzoner (OBS!!! underzoner måste du räkna
+      med höjd så spelaren kan bygga). Med komndot: &8/&3Lands selection &8[&3assign&8]
+      &8- &7För tilldela underzon som du markerat tidigare, tänk på du måste skapa
+      en underzon först i lands GUI sen gå in i underzoner'
+    chat: '&8/&3Lands chat &8[&3land&8] <&3message&8> &8- &7Land chat'
+    rename: '&8/&3Lands rename &8<&3name&8> - &7Döp om land'
+    teleport: '&8/&3Lands teleport &8[&3world&8] <&3x&8> <&3z&8> - &7Teleoportera
+      till chunk'
+    invites: '&8/&3Lands invites &8- &7Visa motagna Inbjudningar'
+    info: '&8/&3Lands info &8[&3land&8] - &7Visa information om landet'
+    player: '&8/&3Lands player &8<&3player&8> - &7Visa information om spelare'
+    map: '&8/&3Lands map &8- &7Visa karta över närmaste land '
+    balance: '&8/&3Lands balance &8[&3land&8] - &7Kolla lands konto'
+    deposit: '&8/&3Lands deposit &8<&3amount&8> - &7Insätting av guld till lands bank'
+    withdraw: '&8/&3Lands withdraw &8<&3amount&8> - &7Ta ut guld från lands bank'
+    list: '&8/&3Lands list &8[&3world&8] - &7Lista alla lands'
+    assign: '&8/&3Lands assign &8<&3area&8> - &7Tilldela markerningen du gjort med
+      selection till en area du gjort i ditt lands GUI i underzoner'
+    setowner: '&8/&3Lands setowner &8<&3player&8> - &7Överför Ägande av ditt land'
+    ban: '&8/&3Lands ban &8<&3player&8> - &7Hindra spelare komma in i ditt land'
+    unban: '&8/&3Lands unban &8<&3player&8> - &7Ta bort ban för spelare i ditt land'
+    wars:
+      declare: '&8/&3Wars declare &8<&3land or nation&8> - &7Förklara krig'
+      info: '&8/&3Wars info - &7Visar info nuvarande krig eller kommande krig'
+      menu: '&8/&3Wars menu &8- &7Öppna meny för krig'
+      deny: '&8/&3Wars deny &8- &7Deny mutual war declaration'
+    admin:
+      debug: '&8/&3Lands debug &8- &7Shows loaded data stats'
+      safezone: '&8/&3Lands safezone &8- &7Configure safezone'
+      reload: '&8/&3Lands reload &8- &7Reload config or messages'
+      about: '&8/&3Lands about &8- &7Show information about Lands'
+      admin: '&8/&3Lands admin &8<&3sub-command&8> &8- &7Admin commands'
+    taxes: '&8/&3Lands taxes &8- &7Show upcoming tax payments'
+    unstuck: '&8/&3Lands unstuck &8- &7Teleport out of traps'
+    mod:
+      chatspy: '&8/&3Lands chatspy &8[&aland&8] - &7Listen to land chat'
+    claims: '[T]&8/&3Lands claims &8[&3land&8] &8- &7List claims of your land[H]&7This
+      command will show you all /Lands claim''s of your land. &7Click to copy.[/H][SC]lands
+      claims[/SC][/T]'
+message:
+  world-invalid: '&cDetta är avaktiverat i denna värld. &7Admin behöver ändra det
+    i config, Värld: {world}'
+  feature-disabled: '&cDenna funtion är avslagen av Admin. &8Det behöver aktivera
+    {setting} i config, För du ska kunna använda denna funtion.'
+  current-war: '&cDu kan inte göra det nu. &7Ditt land &2{land} &7är med i ett krig.
+    &7Försök igen när kriget är över.'
+  noaccess:
+    chunk: '&cDu har inte tillåtelse gå in i &8(&7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c.
+      &8Bypass permission: {bypass}'
+    area: '&cDu har inte tillåtlse att bryta block i denna area &8(&7Area:&6 {area}
+      &7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Bypass permission: {bypass}'
+    land: '&cDu har inte tillåtesle till att göra detta i &8(&7Land:&2 {land}&8)&7.
+      &8Bypass permission: {bypass}'
+    land-not-owner: '&cDu kan inte göra detta i land&4 {land}&c. &7Markera ditt eget
+      land &8(/&3Lands edit &8<&3land&8>) eller skapa ett land &8(/&3Lands create
+      &8<&3name&8>)&7. &8Bypass permission: lands.admin.land_edit'
+    claim: '&cDu kan inte inmuta land här. &7denna chunk hanteras av annat pluggins
+      skydd. Name: {plugin}'
+    place: '&cDu har inte tillåtelse att placera block här. &7Denna area tillhör land&2
+      {land}&7.'
+    break: '&cDu har inte tillåtelse förstöra block här. &7DEnna area tillhör land&2
+      {land}&7.'
+    ignite: '&cDu har inte tillåtelse tända eld på block här. &7Denna area Tillhör
+      land&2 {land}&7.'
+    enter: '&cDu har inte tillåtelse at gå in i area&4 {area} &cav land&4 {land}&c.
+      &7Du 7Du teleoporteras till din senaste position.'
+    edit: '&cDu har inte tillåtelse till ändra detta land. &7Denna chunk tillhör land&2
+      {land}&7.'
+    interact:
+      general: '&cDu har inte tillåtelse interagera här. &7Denna area tillhör land&2
+        {land}&7.'
+      door: '&cDu har inte tillåtelse öppna dörrar här. &7Denna area tillhör land&2
+        {land}&7.'
+      mechanism: '&cDu har inte tillåtelse att använda knappar,spakar här. &7Denna
+        area tillhör land&2 {land}&7.'
+      container: '&cDu har inte tillåtelse öppna kistor,hoppers här. &7Denna area
+        tillhör land&2 {land}&7.'
+      villager: '&cDu har inte tillåtelse att trade med bybor här. &7Denna area tillhör
+        land&2 {land}&7.'
+    combat:
+      animal: '&cDu har inte tillåtelse att skada djur här. &7Denna area tillhör land&2
+        {land}&7.'
+      pvp:
+        attacker: '&cDu har inte tillåtelse att attackera spelares här. &7Denna area
+          tillhör land&2 {land}&7.'
+        target: '&cDu kan inte anfalla spelare, det är inte tillåtet attackera spelares
+          här. &7du kan inte slåss med dom här. &7DEnna area tillhör land&2 {land}&7.'
+        ally: '&cDu kan inte attackera denna spelare i vildmarken, för han är invånare
+          i en av dina lands. &7Slåss i en arena kan du göra i ditt land om du aktiverar
+          PVP i roll-inställningar.'
+        wilderness: '&cDu kan inte anfalla denna spelare, för han står i vildmarken
+          och du står i inmutad land.'
+    banned: '&cDu har inte tillåtelse gi in i denna area. &7Du har blivit bannlyst
+      från denna area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. &8Bypass permission:
+      {bypass}'
+    vehicle: '&cDu har inte tillåtelse använda gruvvagnar och hästar här. &7Denna
+      area tillhör land&2 {land}&7.'
+    fly: '&cDu har inte flyga här. &7Denna area tillhör land&2 {land}&7.'
+    teleport: '&cDu har inte tillåtelse använda detta item för teleportera in i detta
+      land&4 {land}&c. &7Du är inte invånare i detta land land.'
+    position: '&cYou''re not allowed to do this for the land&4 {land} &cat your current
+      position. &8Bypass permission: {bypass}'
+  event:
+    fly:
+      counter: '#t#&cFly stängs av [newline]&com &4{sec} &csecond(s)'
+      disabled: '&cFlyg avstängd. &7Du saknar premissions för flyga här.'
+    enter:
+      land: '#a#&2&l{land} &3{title}'
+      safezone: '#t#&2&l{land}'
+      pvp-warning: ''
+    leave:
+      land: '#a#&l&9Du är ute i vildmarken'
+      safezone: '#a#&l&9Du är ute i vildmarken'
+  claimblock:
+    dropped: '&cNågra inmutblock ligger på marken&7Ditt Inventarie var fullt'
+    success: '&7Du fick&3 {blocks} &7inmutblock(s). &7Placera dom i en chunk för inmuta.'
+    not-owner: '&cDu har inte tillåtelse använda inmutablock. &7Det tillhör&3 {owner}&7.'
+  blacklist:
+    untrusted: '&cDu har inte tillåtelse använda detta kommando här. &7Du är inte
+      betrodd i detta land. &8En Admin kan ändra det i config.'
+    general: '&ccDu har inte tillåtelse använda detta kommando i inmutat land. &8En
+      Admin kan ändra det i config.'
+  autoAction:
+    stopped: '&cStopade din nuvarnde automatisk åtgärd. &7Nådde max omgång. Namn:&3
+      {name}'
+    started: '&7Startade automatisk åtgärd. Namn:&3 {name}'
+    removed: '&7Stopade automatisk åtgärd. &7Namn:&3 {name}'
+  chat-action:
+    cancelled: '#t#&c&lAvbruten[newline]&c&lchatt åtgärd.'
+    player: '&7Skriv in namnet på spelaren.'
+    area:
+      create: '&7Skriv in namnet för nya arean. Du kan ta med färgkoder.'
+      delete: '&7skriv in namnet på arean du vill ta bort.'
+      exists: '&carena&4 {area} &cExisterar i detta land &8(&7Land:&2 {land}&8)&c.
+        &7Välj ett annat namn.'
+      max: '&cDu kan inte skapa mer areas för detta land. &7Du har nått gränsen av&3
+        {max} &7areas. Permisssion: lands.areas.NUMBER'
+    title: '&7Skriv in ny title för detta land. Du kan använda färgkoder.'
+    rename: '&7Skriv in namnet för detta land. Mellanslag går inte använda.'
+    land: '&7Skriv in namnet på landet.'
+    name: '&7Please enter the name in chat.'
+  world-not-exist: '&cDenna värld med namnet&4 {world} &c existerar inte. &7Misstag?'
+  area:
+    exists: '&cArea med detta namn&4 {area} &cFinns redan i land&4 {land}&c.'
+    not-exist: '&cArea&4 {area} &cFinns inte i land&4 {land}&c.'
+    default: '&cDu kan inte göra detta i area&4 {area} &cav land&4 {land}&c.'
+  role:
+    exists: '&cRank med detta namn&4 {role} &cfinns redan. &7Välj ett annat namn.'
+    not-exist: '&cRank&e {role} &cfinns inte i denna area. &7Misstag?'
+    max: '&cDu kan inte skapa mer ranker för detta land. &7Du har nått gränsen av&3
+      {max} &7ranker. Permisssion: lands.roles.NUMBER'
+    player:
+      land: '&cDu kan inte ändra invånare i land&4 {land}&c. &7Ranken&6 {role} &7har
+        högre befogenheter än din rank eller ni har samma befogenheter.'
+      area: '&cDu kan inte ändra invånare i area&4 {area} &8(&7Land:&2 {land}&8)&c.
+        &7Ranken&6 {role} &7har högre befogenheter än din rank eller ni har samma
+        befogenheter.'
+    weight:
+      land: '&cDu kan inte ändra rank&4 {role} &cav land&4 {land}&c. &7Ranken har
+        högre befogenheter än din rank eller ni har samma befogenheter.'
+      area: '&cDu kan inte ändra rank&4 {roel} &cav area&4 {area} &8(&7Land:&2 {land}&8)&c.
+        &7Den Ranken har högre befogenheter än din rank eller ni har samma befogenheter.'
+    delete:
+      owner: '&cDu kan inte ta bort ägar ranken i ditt land. &7Denna ranken måste
+        finnas kvar.'
+      entry: '&cDu kan inte ta bort orginal rankerna i ditt land. &7Dom behövs för
+        nya invånare.'
+      visitor: '&cDu kan inte ta bort gäst i ditt land. &7Den behövs för invånare
+        som besöker landet.'
+  teleportation:
+    already: '&cYou can''t start a second teleportation. There''s already a teleportation
+      in progress. &7Please wait until it''s done.'
+    started: '&7Teleportation process started. Teleporting in&5 {sec} &7seconds. Please
+      don''t move.'
+    cancelled: '&cYour teleportation has been cancelled. &7Please don''t move while
+      you''re waiting&5 {sec} &7seconds for teleportation.'
+    chunk: '#t#&9&lTeleported[newline]&7X: {x} Z: {z} Cost:&c ${cost}'
+    plugin: '&cTeleportation has been cancelled by a 3rd party plugin. &7Please check
+      your other plugins. &7This is not a Lands issue.'
+    unsafe: '&cTeleportation has been cancelled, because the destination is not safe.'
+    corrected: '&7The original teleport destination was unsafe. &7Your final destination
+      has been corrected to a safe location.'
+command:
+  general:
+    land-not-exist: '&cLand&2 {land} &cExisterar inte. &7Det är inget land med namnet&2
+      {land} &7i denna värld.'
+    area-not-exist: '&cArea&4 {area} &cExisterar inte detta land&4 {land}&c. &7Du
+      kan skapa ny area i ditt land menu i areas sektion. &7Misstag?'
+    land-not-member: '&cDu är inte betrodd i detta land&4 {land}&c. &7använd &8/&3Lands
+      menu &7för att se land du är invånare i.'
+    no-edit-land: '&cDu har inte valt ditt land än. &7Use &8/&3Lands edit &8<&3land&8>
+      &7För att välja ditt land.'
+    name-exists: '&cdetta namn&4 {name} &cÄr redan tagen av annat land. &7Du behöver
+      välja annat namn.'
+    money-cost-bank: '&cDu har inte tillräckligt med guld. &7Du behöver &6{cost}{#fbe232}$&7.
+      Sätt in Guld i din lands bank med komandot: &8/&3Lands deposit {cost}'
+    money-cost: '&cDu har inte tillräckligt med guld. &7Du behöver &6{cost}{#fbe232}$&7.'
+    action-cooldown: '&cDu kan inte göra det nu. &7Du behöver vänta:&5 {time}&7.'
+    land-none: '&cDu är inte invånare av detta land. &7använd &8/&3Lands create &7För
+      skapa en egen.'
+    land-no-own: '&cDu äger inget land. &7Använd &8/&3Lands create &7För skapa en
+      egen.'
+    world-invalid: '&cDu kan inte göra det i denna värld. &7En Admin Behöver lägga
+      till world&3 {world} &7till config först.'
+    wilderness: '&cDenna chunk är vildmark. &7Du behöver gå till inmutad chunck. &7Du
+      kan använda &8/&3Lands menu &7För se dina lands.'
+    player-not-exist: '&cDet finns inte en spelare med namn&4 {player}&c. &7Misstag?'
+    player-self: '&cDu kan inte göra det med dig själv. &7You''re funny. :)'
+    banks-disabled: '&7Bank är avstängt av Admin. &8Admin kan slå på det i config.'
+    land-not-trusted: '&cSpelare&4 {player} &7Är inte del av detta land &8(&7Land:&2
+      {land}&8)&7. Du behöver betro han först, använd &8/&3Lands trust&7.'
+    area-not-trusted: '&cDu kan inte göra det här. &7du är inte betrodd i detta chunk
+      &8(&7X: {x} Z: {z}&8)&7. DEt tillhör area&6 {area} &7av land&2 {land}&7.'
+    invalid-number: '&cDin inmatning&4 {input} &cÄr inte ett nummer. &7Det&3 {argument}
+      &7måste vara ett nummer.'
+    swear-word: '&cAnvänd inte svärord. &7Andvänd vårdat språk. Word:&c {word}'
+    player-offline: '&cDet är inte någon spelare med detta namn&4 {player} &conline.
+      &7Misstag?'
+    no-permission: '&cDu har inte tillåtelse att göra detta. du behöver denna tillåtelse
+      {permission}.'
+    name:
+      character: '&cDu kan inte använnda ogiltiga tecken för namnet. &7Använd bara
+        bokstäver och nummer. &7Hittade ogiltigt tecken:&3 {invalid}'
+      length: '&cDetta namn är för långt. &7Maximal längd är&3 {max} &7tecken &8(&7du
+        skrev: {input}&8)&7. &8detta inkludera färgkoder.'
+      empty: '&cdetta namn är ogiltigt. &7Du måste minst ta med ett tecken, måste
+        vara mer än färgkoder.'
+    number: '&cYour input&4 {input} &cisn''t a number. &7The&3 {argument} &7argument
+      needs to be a number.'
+  help:
+    help: '&7Använd &8/&aLand help &7för hjälp.'
+    cmd-not-exist: '&cDetta kommando existerar inte. &7Kommand&3 {command} &7Är inte
+      gilltigt.'
+    header: '[NoPrefix][T]&7----------&6<<<<&7-[H]&7Tryck här för komma till förgånde
+      sida.[/H][C]lands help {previous}[/C][/T] &2Lands Help &7Page&3 {page} &8/&3
+      {pages} [T]&7-&6>>>>&7----------[H]&7Tryck här för komma till nästa sida.[/H][C]lands
+      help {next}[/C][/T]'
+    footer: |
+      [NoPrefix]
+      &7Tryck på pilarna nedan för byta sida.
+      [T]&7----------&6<<<<&7-[H]&7Tryck här för komma till förgånde sida.[/H][C]lands help {previous}[/C][/T] &2Lands Help &7Page&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7Tryck här för komma till nästa sida.[/H][C]lands help {next}[/C][/T]
+  create:
+    land-other: '&cDu har inte tillåtelse ha eget land och vara invånare av annat
+      land. &7Du behöver lämna &2 {land} &7först. &8En Admin kan stänga av det i config.'
+    max-own: '&cDu kan inte skapa mer lands. &7Du har nått maximalt av&3 {max} &7egna
+      lands. &8Permission: lands.ownlands.NUMBER'
+    success: '&7Du skapa ett land&2 {land} &7för&6{cost} {#fbe232}$&7.Du kan inmuta
+      Chunks med  kommandot &8/&3Lands claim&7. Du kan också använda komandot /Lands
+      selection för Inmuta en selektion (zon). Sätt ett land {land} som ditt land,så
+      kan du ändra det för framtida åtgärder &8(/&3Lands edit&8)&7.'
+    broadcast: '&7Land&2 {land} &7var skapad av&3 {player}&7.'
+  rename:
+    success: '&7Du satte ett nytt namn&3 {name} &7för detta land&8(&7Land:&2 {land}&8)&7.Du
+      betalade&6 {cost}{#fbe232}$&7.'
+  edit:
+    success: '&7Du gick in i edit läget för detta land&8(&7Land:&2 {land}&8)&7. Nästa
+      åtgärd, som &8/&3Lands claim &7eller &8/&3Lands trust&7, kommer att användas
+      för detta land.'
+  selection:
+    not-complete: '&cDin selektion är inte färdig. &7Är du säker du markerat båda
+      positionerna &8(&bLEFT CLICK &7och &9RIGHT CLICK&8)&7.Du kan aktivera selection
+      med kommandot &8/&3Lands selection&7.'
+    max: '&cDin selektion har för många chunk. &7Den här storleken:&3 {current} &7går
+      över din maximala storlek som är&3 {max} chunks. &8Permission: lands.selection.NUMBER'
+    disabled: '#t#&5&lSelektion[newline]&c&lär avstängt'
+    world: '&cBåda positionerna måste vara i samma värld. &7Sätt sätt position ett
+      och position två i samma värld.'
+    pos:
+      warn: '&cWarning: &7Detta chunk tillhör annat plugin. Namn:&3 {plugin}'
+      cancelled: '&cDu kan inte göra en selektion här. &7Detta chunk tillhör annat
+        plugin. Namn:&b {plugin}'
+      one: '#t#&5&lSelection[newline]&b&lPos 1 &8-> &7Set'
+      two: '#t#&5&lSelection[newline]&b&lPos 2 &8-> &7Set'
+    area:
+      conflicts: '&cHittade&4 {conflicts} &csom krockar med chuncks som redan är tilldelad
+        till area(s). &7Använd &8/&3Lands selection assgin {area} confirm &7För att
+        bekräfta en överskrivning. Konflikt tillhör dessa areas: {areas}'
+      assigned: '&7Du har tilldelas:&3 {chunks} &7chunks till area&6 {area} &8(&7Land:&2
+        {land}&8)&7.'
+    enabled: '&7Du har slagit på så du kan markera ut area. Använd &5Vänsterknapp
+      &7på ett block för sätta positon ett. Med &5högerknapp &7så sätter du positon
+      två. Efter du har satt två punkter på motsatt sida så kan du använda dessa kommandon
+      (använd /lands först): &3Claim&7, &3Unclaim&7, &3Leave'
+    expand:
+      enabled: '&7Du har nu förstorat den markering från botten till toppen (i alla
+        nivåer).'
+      disabled: '&7Din markering täcker nu inte alla nivåer från botten till toppen.'
+    too-far: '&cDet block du tittar på, är för långt borta. &7Flytta dig närmare blocket.'
+    complete: |
+      &7Din markering är klar. Dessa komandon kan du göra:
+        &8┏
+        &8┃ &7Inmuta: &8/&3Lands claim
+        &8┃ &7Ta bort inmutning: &8/&3Lands unclaim
+        &8┃ &7Addera till underzon: &8/&3Lands assign
+        &8┗
+  claim:
+    already: '&cDu kan inte inmuta detta chunk. &7Det tillhör land&2 {land}&7.'
+    auto-create: '&7Skapar ett land automatiskt för dig, för du har inget i denna
+      värld. Du kan ändra namn med komandot &8/&3Lands rename&7.'
+    auto-create-fail: '&cMisslyckades att automatisk skapa ett land för dig. &7Läs
+      meddelandet ovanför.'
+    near-other: '&cDEtta är för nära till land&4 {land}&c. &7Du behöver flytta Längre
+      bort ifrån det landet. Minimum chunk avstånd är&3 {distance}&7. &8En Admin kan
+      ändra det i config.'
+    far-land: '&cDu kan inte inmuta detta chunk(s). &7Dinna inmutningar ska ansluta
+      till ditt land &8(&7Land:&2 {land}&8)&7.'
+    success: '&7Inmutade detta chunk &8(&7Land:&2 {land} &7X: {x} Z: {z}&8) &7for&6
+      {cost} {#fbe232}$&7. Nästa inmutning kommer kosta&b {next} {#fbe232}$&7.'
+    already-claimed: '&cI din selektion är det chunk som är inmutade och tillhör inte
+      ditt land &8(&7X: {x} Z: {z}&8)&c. &7Det tillhör land&2 {land}&7.'
+    max-chunk: '&cDu kan inte inmuta&4 {chunks} &cfler chunks för detta land. &7du
+      har nått maximalt för land&2 {land} &7is&3 {max} &7chunks. &8Permission: lands.chunks.NUMBER'
+    selection: '&7Du unmutade&3 {chunks} &7chunks för detta land &8(&7Land:&2 {land}&8)&7.
+      Du betalade&6 {cost} {#fbe232}$&7.'
+  assign:
+    selection: '&cDu behöver skapa en selektion först. &7Använd &8/&3Lands selection
+      &7för vskapa en.Sen provar du igen.'
+    size: '&cDin selektion är för liten. &7Minimum storlek är&3 {min} &7blocks och
+      din är&3 {current}&7.'
+    success: '&7Du ändrade storlek på area&6 {area} &7av land&2 {land}&7. Ändringar
+      visualiseras.'
+    conflict:
+      land: '&cDin selektion krockar med land&4 {land}&c. &7Ändra din selektion.'
+      area: '&cDin selektion krockar med area&4 {area}&c. &7Ändra din selektion.'
+    default: '&cYou can''t assign the selection to a default area. &7Areas can be
+      deleted in the areas menu of the land.'
+  leave:
+    land:
+      success: '&7Du lämnade land&2 {land}&7. Du har inte tillgång till detta land.'
+      untrusted: '&7Du är inte inåvare i någon area av detta land&2 {land}&7.'
+    area:
+      success: '&7Du lämnade area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Du har
+        inte tillgång till arean.'
+      untrusted: '&7Du är inte invånare i denna area&6 {area} &7av detta land&2 {land}&7.'
+    owner: '&cDu kan inte lämna detta land. &7Som ägare av detta land du kan endast
+      ta bort det eller ge ägarrätten till annan spelare. Använd &8/&3Lands delete
+      {land} &7för ta bort land .'
+  unclaim:
+    success: '&7Du tog bort denna inmutning av detta chunk &8(&7Land:&2 {land} &7X:
+      {x} Z: {z}&8)&7. Du fick&6 {back} {#fbe232}$&7tillbaka.'
+    selection: '&7Du tog bort inmutning av denna selektion. Notera du endast tog bort
+      inmutning på chunks du äger.'
+  delete:
+    confirm: '&cDu behöver bekräfta denna åtgärd. &7Använd &8/&3Land delete {land}
+      confirm&7.'
+    success: '&7Du tog bort ditt land &8(&7Land:&2 {land}&8)&7. Du fick tillbaka:&6
+      {back} {#fbe232}$ &7.'
+    broadcast: '&7Detta land&2 {land} &7var borttaget av&3 {player}&7.'
+    nation: '&cDu kan inte ta bort ditt land, eftersom det är nationens huvudstad&4
+      {nation}&c. &7Du kan antingen ta bort nationen med &8(/&3Nations delete&8) &7
+      eller flytta ägare med &8(/Nations setCapital&8)&7.'
+  trust:
+    own-land: '&cDenna spelare har inte tillåtelse att ha eget land och gå med i annat
+      land. &7Han måste lämna först.'
+    max-lands: '&7Spelare&3 {player} &7Har nätt maximalt antal lands. &8Permission:
+      lands.lands.NUMBER'
+    max-members: '&cKunde inte bjuda in invånaree&4 {player} &ci detta land land&4
+      {land}&c. &7Ägaren av detta land nått gränsen av&3 {members} &7invånare.'
+    area:
+      invited: '&cInvånaren&4 {player} &cär redan inbjuden till area&4 {area} &cav
+        land&4 {land}&c. &7Inbjudan skickades den:&5 {time}'
+      trusted: '&7Invånaren&3 {player} &7är redan med i denna area&6 {area} &7av land&2
+        {land}&7.'
+      success: '&7Bjöd in spelare&3 {player} &7till denna area &8(&7Area:&6 {area}
+        &7Land:&2 {land}&8)&7. Vänta tills han accepterar inbjudan.'
+      target: |
+        [T]&7Du blev inbjuden av&3 {player} &7till underzon med namnet:&6 {area} &7i landet:&2 {land}&7.Använd &8/&3Lands accept {land} &7för acceptera deras inbjudan.[H]&7Tryck på texten för öppna inbjudningsmenyn.[/H][C]lands invites[/C][/T]
+
+        &7Skatt i underzon:&6 {tax}{#fbe232}$
+
+        [T]&2Accept &8[&8CLICK&8][H]&7Tryck här för acceptera inbjudan.[/H][C]lands accept {land}[/C][/T]
+        [T]&cDeny &8[&8CLICK&8][H]&7Tryck här för ta bort inbjudan.[/H][C]lands deny {land}[/C][/T]
+    max: '&cSpelaren&4 {player} &ckan inte gå med i fler lands. &7Han har nått maximalt
+      av &3 {max} &7lands att gå med i. &8Permission: lands.lands.NUMBER'
+    land:
+      invited: '&cInvånaren&4 {player} &cär redan inbjuden till landet&4 {land}&c.
+        &7Inbjudan skickades den&5 {time}'
+      trusted: '&7Invånaren&3 {player} &7har redan gått med i land&2 {land}&7.'
+      success: '&7Du skickade  till Invånaren&3 {player} &7en inbjudan till detta
+        land&2 {land}&7. Han kan nu acceptera din injudan.'
+      target: |
+        [T]&7Du blev inbjuden av&3 {player} &7till landet&2 {land}&7. använd kommandot &8/&3Lands invites &7för titta på inbjudan.[H]&7Tryck på texten för öppna inbjudningsmenyn..[/H][C]lands invites[/C][/T]
+
+          &7Skatt i landet:&6 {tax}{#fbe232}$
+
+          [T]&2Accept &8[&8CLICK&8][H]&7Tryck här för acceptera inbjudan.[/H][C]lands accept {land}[/C][/T]
+          [T]&cDeny &8[&8CLICK&8][H]&7Tryck här för ta bort inbjudan.[/H][C]lands deny {land}[/C][/T]
+  untrust:
+    area:
+      already: '&cDenna invånare är inte betrodd i denna area &8(&7Area:&6 {area}
+        &7Land:&2 {land}&8)&7.'
+      success: '&7Du har tagit bort förtrondet för invånare&3 {player} &7i area &8(&7Area:&6
+        {area} &7Land:&2 {area}&8)&7.'
+      revoke: '&7Du har nu tagit bort injudan för invånare&3 {player} &7i area&6 {area}
+        &8(&7Land:&2 {land}&8)&7. Invånaren är inte invånare i arean längre.'
+    land:
+      already: '&7Denna invånare&3 {player} &7är inte betrodd i någon area i detta
+        land&2 {land} &7 och har inte fått någon inbjudan.'
+      revoke: '&7Du har nu tagit bort injudan för invånare&3 {player} &7för hela landet&2
+        {land}&7. Invånaren är inte invånare någon arean.'
+      success: '&7Du har avhyst invånare&3 {player} &7i ditt land&2 {land}&7.'
+  setrole:
+    area:
+      success: '&7Du satte roll&3 {role} &7för spelare&3 {player} &7i denna area &8(&7Area:&6
+        {area} &7Land:&2 {land}&8)&7.'
+      untrusted: '&cSpelare&4 {player} &cär inte invånare i area&4 {area} &cav land&4
+        {land}&c. &7Du mmåste bjuda in han först.'
+    visitor: '&cDu kan inte sätta denna roll&4 {role}&c. &7Om du vill avhysa denna
+      spelare, använd kommandot &8/&3Lands untrust {player} [area]&7.'
+    land:
+      untrusted: '&cSpelare&4 {player} &cär inte invånare i land&4 {land}&c. &7Du
+        mmåste bjuda in han först.'
+      success: '&7Du satte roll&3 {role} &7för invånare&3 {player} &7i area av landet&2
+        {land}&7,där dom är injudna.'
+  accept:
+    not-exist: '&cDu har inte en inbjudan från detta land&4 {land} &celler så har
+      tiden gått ut. &7 kontrollera stavningen.'
+    own-land: '&cDu har inte premission för att äga ett land och vara invånare i annat
+      land. &7Du behöver lämna ditt eget land först.'
+    max-lands: '&cdu kan inte gå med i fler lands. &7Du har&3 {max} &7lands. &8Permission:
+      lands.lands.NUMBER'
+    notification: |
+      [T]&7Du har&a {invites} &7inbjudningar från andra lands.[H]Tryck för komma till alla inbjudningar du kan ta bort eller acceptera dessa[/H][C]lands invites[/C][/T]
+      [T]&7Använd &8/&2Land invites .&7För att få en lista på inbjudningar eller tryck på texten.[H]Tryck för komma till alla inbjudningar du kan ta bort eller acceptera dessa[/H][C]lands invites[/C][/T]
+    area:
+      success: '&7Accepterade inbjudningen från land&2 {land} &7för area&6 {area}&7.'
+      broadcast: '&2{land} &8| &7spelare&3 {player} &7är nu invånare i area&6 {area}
+        &7i ditt land&2 {land}&7.'
+    max: '&cDu kan inte gå med i mer lands. &7Du har bara &3 {max} &7lands att gå
+      med i. &8Permission: lands.lands.NUMBER'
+    land:
+      success: '&7Du har accepterat inbjudan från land&2 {land} &7Du är nu invånare
+        i landet.'
+      broadcast: '&2{land} &8| &7Spelare&3 {player} &7Är nu invånare i ditt land.'
+  setowner:
+    confirm: '&cBekräfta att du vill byta ägare över ditt land&2 {land} &7till spelare&3
+      {player}&7: &8/&3Lands setowner {player} confirm'
+    success: '&7Du har nu satt spelare&3 {player} &7som ny ägare av land&2 {land}&7.
+      Du betalade&6 {cost} {#fbe232}$&7.'
+    max-lands: '&cInvånaren&4 {player} &char inte tillåtelse att äga fler lands. &7Han
+      har redan nått maximalt&3 {max} &7av egna lands. &8Permission: lands.ownlands.NUMBER'
+  deny:
+    not-exist: '&cDu har inte en inbjudan från detta land&4 {land} &celler så har
+      tiden gått ut. &7Misstag?'
+    success: '&7Du har tackat nej till inbjudan för land&2 {land}&7.'
+  teleport:
+    chunk-not-claimed: '&cDetta chunck är inte inmutat&8(&7X: {x} &7Z: {z}&8)&c. &8Bypass
+      permission: lands.bypass.wilderness.teleport'
+    not-trusted: '&cDu kan inte teleoportera hit. &7Du är inte betrod i land&2 {land}&7.'
+    success: '&7Du teleport till X:&3 {x} &7Z:&3 {z} &7inmutat: {claimed}'
+  setspawn:
+    force-land: '&cDu kan bara sätta land spawn i ditt eget land. &7Gå till ditt land&2
+      {land} &7först. &8En Admin kan ändra det i config.'
+    successs: '#t#&a&lSpawn har satts[newline]&7&lKostnad: &6{cost}{#fbe232}$'
+  spawn:
+    not-exist: '&cDet är ingen spawn satt för land&4 {land}&c. &7Någon behöver sätta
+      det först, med komandot: &8/&3Land setspawn&7.'
+    not-allowed: '&cDu har inte tillåtelse att teleoportera till spawn av detta land.
+      &7Ägaren eller borgmästaren behöver ge dig premission för göra det för &8(&7Land:&2
+      {land}&8)&7.'
+    chunk: '&7Land&2 {land} &7har inte satt land spawn&8(&8/&3Lands setspawn&8). &7Du
+      teleoporteras till första claimade chunk av &3{land}.'
+    successs: '&7Du teleoporterades till spawn av land&2 {land} &7Kostnad:&6{cost}
+      {#fbe232}$'
+    unsafe: '&cYou can''t teleport to this spawn, because it was detected as being
+      unsafe for teleportation. &7Teleporting there might result into dying. They
+      need to adjust the spawn by using &8/&3Lands setspawn&7.'
+  wild:
+    success: '&7Du har nu slumpmässig teleporterat till &8(&7X: {x} Z: {z}&8)&7. Du
+      betalade&6 {cost}{#fbe232}$&7.'
+    searching: '#t#&6Searching Destination[newline]&eWaiting for Teleportation to
+      start..'
+    no-location: '&cCouldnt find a safe location for you that matches the filter in
+      config. &8Please adjust your max and min distance settings and set the world
+      spawn (/setworldspawn).'
+  deposit:
+    number: '&7Du behöver ange specifik belopp. Använd &8/&aLand deposit &8<&aAmount&8>
+      &7eller &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
+    success: '&7Du har nu satt in&6 {cost} {#fbe232}$ &7i lands bank. &7Nytt belopp
+      är: &b {bank} {#fbe232}$ &8(&7I land:&a {land}&8)'
+  withdraw:
+    number: '&7Du behöver ange specifik belopp. Använd &8/&aLand withdraw &8<&aAmount&8>
+      &7eller &8/&aLand withdraw &8<&aLand&8> <&aAmount&8>&7.'
+    balance: '&7Det är inte tillräckligt med guld i din lands bank. Det är endast&6
+      {bank} {#fbe232}$ &7i lands bank. Summa du ville ta ut:&6 {take} &c{#fbe232}$
+      &8(&7i land:&e {land}&8)'
+    success: '&7Du tog ut&6 {cost} {#fbe232}$ &7från din lands bank. &7Ny summa på
+      banken: &b{bank} &c{#fbe232}$ &8(&7I land:&a {land}&8)'
+  balance: '&7Summa på banken är &6{balance} {#fbe232}$ &8(&7I land:&e {land}&8)&7.'
+  chat:
+    activated: '&7Aktivera land chat. Skicka meddelande offentlig chatt till chatt
+      med ditt land.'
+    deactivated: '&7Avaktiverade land chatt.'
+    no-land: '&cInget land hittades för land chatt. &7Använd &8/&3Lands chat toggle
+      &7för avaktivera lands chatt.'
+    format:
+      minecraft: '&a{land} &8| {role} &7{player} &8»&f {message}'
+      discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
+      spy: '[NoPrefix]&8[&cChatSpy&8] &a{land} &8| {role} &7{player} &8»&f {message}'
+  view:
+    disabled: '&7Du stängde av &8/&3Lands view &7visualisering.'
+    wilderness: '&7Enabled visualization of claims. &7Your current position is wilderness.'
+    info: |
+      [NoPrefix]
+      &7---------<- &5&lLand översikt &7->---------
+      [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för mer information om detta land.[/H][C]lands info {land}[/C][/T]
+      &7Area:&6 {area}
+        &8Chunk &7X: {x} Z: {z}
+        &8Skatt:&6 {tax} {#fbe232}$
+        &8Invånare: {players}
+      &7---------<- &5&lLand översikt &r&7->---------
+  ban:
+    area:
+      success: '&7Du har avhyst invånare&3 {player} &7från denna area &8(&7Area:&6
+        {area} &7Land:&2 {land}&8)&7.invånaren kommer inte kunna gå in i landet eller
+        teleportera till spawn, om det ligger i detta area.'
+      target: '&cLand&4 {land} &cavhyst dig från deras area&4 {area} &cinne i deras
+        land. &7Du kommer inte kunna gå in i landet eller teleportera till spawn,
+        om det ligger i detta area.'
+    land:
+      success: '&7Du har avhyst invånare&3 {player} &7från land&2 {land}&7. invånaren
+        kommer inte kunna gå in eller teleportera till spawn.'
+      target: '&cLand&4 {land} &cavhyst från deras land&c. &7Du kommer inte kunna
+        gå in i landet eller teleportera till spawn.'
+  unban:
+    area:
+      success: '&7Invånare&3 {player} &7har nu blivit av med sin avhysning från area
+        &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      target: '&7Land&2 {land} &7tog bort avhysning från area&6 {area}&7.'
+    land:
+      success: '&7Invånare&3 {player} &7har nu blivit av med sin avhysning från land&2
+        {land}&7.'
+      target: '&7Land&2 {land} &7tog bort avhysning från land.'
+  taxes:
+    none: '&7Det finns inga kommande skattebetalningar för dig.'
+    upcoming:
+      header: '[NoPrefix]&7---------<- &cUpcoming Taxes &7->---------'
+      entry: '[NoPrefix]&8- &7{land}: &c${tax}'
+      footer: |
+        [NoPrefix]&7You need to pay a total of ${total} in &5{next}&7.
+        &7Balance: ${balance}
+        &7---------<- &cUpcoming Taxes &7->---------
+    changes:
+      header: |
+        [NoPrefix]
+        &7---------<- &4Tax Change &7->---------
+        &cTaxes have been changed in some lands:
+      entry: '[NoPrefix]&8- &7{land}: {color}${tax} &8(previously: {previous})'
+      footer: |
+        [NoPrefix]
+        &7Payment in:&5 {next}
+        &7Balance: ${balance}
+        &8More info: /Lands taxes
+        &7---------<- &4Tax Change &7->---------
+  unstuck:
+    success: '&7Successfully teleported into the nearest unclaimed location.'
+list:
+  swear-words:
+  - fuck
+  - shit
+wars:
+  message:
+    noaccess:
+      action: '&cDu har inte tillåtelse att göra detta under ett krig med detta land.
+        &7Bypass permission: {bypass}'
+      pillage: '&cDu kan inte plundra ett land när inga försvarare är online. &7 Vänta
+        tills minst&b {defenders} försvarare loggat in.'
+    war-shield:
+      set: '&aDin nya sköld kommer vara aktiv för&b {time}&7.'
+    kill:
+      target:
+        attackers: '&7Din lagkamrat&c {attacker} &7blev dödad av försvararna&a {defender}&7.'
+        defenders: '&7Din lagkamrat&a {defender} &7blev dödad av anfallarna&c {attacker}&7.'
+      killer:
+        attackers: '&7Din lagkamrat&c {attacker} &7blev dödad av försvararna&a {defender}&7.'
+        defenders: '&7Din lagkamrat&a {defender} &7blev dödad av anfallarna&c {attacker}&7.'
+    start:
+      broadcast: '&7Kriget mellan {attacker} &7och {defender} &7startat. Det kommer
+        avslutas:&5 {time}&7.'
+      participants: |
+        &4The War has started:
+
+        &7Attacker: {attacker} &8({team_1}&8)
+        &7Defender: {defender} &8({team_2}&8)
+
+        &7The war will end in:
+        &5~{time}
+    end:
+      broadcast: '&7Kriget mellan {attacker} &7och {defender} &7avslutas. Det tog:&5
+        {time}&7.'
+      surrender: '{object} &7Ena landet Kapitulera. Kriget är över och det betala&c
+        ${tribute} &7till fienden {enemy}&7.'
+      draw: '&7The war between {attacker} &7and {defender} &7ended in a draw. It took&5
+        {time}&7.'
+      won: |
+        &aThe War is over:
+        &7The attackers &8({team}&8) &7won.
+
+        &8- &7Stats
+            &7Attacker kills:&3 {att-points}
+            &7Defender kills:&3 {def-points}
+
+        &7The war took:
+        &5~{time}
+  command:
+    general:
+      no-war: '&cDitt land&e {land} &char inte några aktiva eller komande krig. &7För
+        närvarande är det fred i landet.'
+    declare:
+      war-shield: '&cDu kan för tillfället inte starta ett krig emot detta land. &7Det
+        har en sköld tills tiden gått ut om:&a {time}&7.'
+      already:
+        attacker: '&cDitt land&4 {land} &ckan inte gå med i yttrligare krig. &7Nuvarande
+          krig måste ta slut först.'
+        defender: '&cDu kan inte anfalla detta land. &7Landet&2 {land} &7är redan
+          i krig.'
+      success: '&7Ditt land&c {attacker} &7Har förklarat krig emot land&a {defender}&7.
+        Kriget startar om&5 ~{time}&7.'
+      target: {}
+      broadcast: '&7Land&c {attacker} &7Har förklarat krig emot land&a {defender}&7.
+        Kriget startar om&5 {time}&7.'
+      min-players:
+        attacker: '&cYou can''t engage in a war, because you need more trusted players
+          in your land&4 {land}&c. &7The required minimum for attackers to send a
+          war declaration is&3 {min} &7players. &8A administrator can change that
+          in config.'
+        defender: '&cYou can''t declare war against the land&4 {land}&c, because they
+          need to be more trusted players. &7The required minimum for defenders to
+          receive a war declaration is&3 {min} &7players. &8A administrator can change
+          that in config.'
+      ally: '&cYou can''t declare war against this land, because it''s your ally.
+        &7Yours and the target land are part of the same nation&9 {nation}&7.'
+      no-nation: '&cYou can''t attack this land. &7The land&2 {land} &7must be part
+        of a nation to be engaged in a war.'
+      no-target: '&cThere''s no land or nation with the name&4 {target}&c. &7Misstag?'
+      confirm: {}
+      not-allowed: '&cYou''re not allowed to start a war for {object}&c. &7The leader
+        of {object} &7needs to do this.'
+      member: '&cYou can''t declare war against {object}&c, because you''re trusted
+        in common lands. &7You need to leave them first.'
+      mutual:
+        success: '&7You &8({attacker}&8) &7successfully sent a war declaration to
+          {defender}&7. They need to accept it now.'
+        target: '&7The enemy {attacker} &7sent a war declaration against {defender}&7.
+          Use &8/&3Wars declare {input} &7to accept it.'
+      balance: '&cCan''t send this declaration. &7The attackers {object} &7need a
+        minimum balance of&c ${min} &7in order to start a war.'
+    deny:
+      ongoing: '&cYou can''t deny the ongoing war against {enemy}&c. &7You can only
+        deny war declarations for {object}&7.'
+      success: '&7You successfully denied the war declaration for {object} &7against
+        the enemy {enemy}&7.'
+      attacker: '&cAttackers can''t deny their own war declaration. &7Only the defender
+        can do that.'
+    menu:
+      mutual: '&cYou can''t open the war menu right now. &7The war declaration to
+        {object} &7hasn''t been accepted yet.'
+    info:
+      war: |
+        &4Current War:
+
+        &8- &7Attacker
+            &7Name: {attacker}
+            &7Kills: {att-points}
+
+        &8- &7Defender
+            &7Name: {defender}
+            &7Kills: {def-points}
+
+        &7The war will end in:
+        &5~{time}
+      declaration:
+        normal: |
+          &4War Declaration:
+
+          &7Attacker: {attacker}
+          &7Defender: {defender}
+
+          &7The war will start in:
+          &5~{time}
+        mutual:
+          defender: |
+            &4War Declaration:
+
+            &7Attacker: {attacker}
+            &7Defender: {defender}
+
+            &7If defenders surrender during war:
+            &7Tribute:&c ${tribute}
+
+            [T]&7Accept: &8/&3Wars declare {input} &8[&8CLICK&8][H]&7Tryck här för att aceptera krigsförklaring.[/H][C]Wars declare {input}[/C][/T]
+            [T]&7Deny: &8/&3Wars deny &8[&8CLICK&8][H]&7Tryck här för att necka krigsförklaring.[/H][C]Wars deny[/C][/T]
+          attacker: |
+            &4War Declaration:
+
+            &7Attacker: {attacker}
+            &7Defender: {defender}
+
+            &7If defenders surrender during war:
+            &7Tribute:&c ${tribute}
+
+            &cThe defender hasn''t accepted
+            &cthe declaration yet.
