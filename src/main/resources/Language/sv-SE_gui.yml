@@ -42,11 +42,20 @@ physical-Item:
     - '&7Ägare:&a {owner}'
     material: GRASS_BLOCK
   selection:
-    name: '&eClaim Tool'
+    name: '&eInmutnings verktyg'
     lore:
-    - '&7Use this tool to create a'
-    - '&7selection and claim it:'
+    - '&7Du måste först skapa ett land'
+    - '&7med kommandot:'
+    - '&8/&3Lands create'
+    - ''
+    - '&7Innan du kan använda detta verktyg'
+    - '&7för markera yta som du sen kan'
+    - '&7skapa ett land med'
+    - ''
+    - '&eDu kan också använda kommandot:'
     - '&8/&3Lands claim'
+    - '&eEller kommandot:'
+    - '&8/&3Lands selection'
     material: GOLDEN_HOE
 skull:
   role:
@@ -104,17 +113,16 @@ gui:
         lore:
         - ' '
         - '&7+ Du kan göra&3 {ownlands} &7lands.'
-        - '  &8lands.ownlands.NUMBER'
+        - '  '
         - '&7+ Du kan inmuta&3 {chunks} &7chunks per land.'
-        - '  &8lands.chunks.NUMBER'
+        - '  '
         - '&7+ Du kan ge &3{support-chunks} &7chunks till det land du är invånare
           i.'
-        - '  &8lands.chunks.support.NUMBER'
         - ' '
         - '&7+ Du kan gå med i&3 {lands} &7lands.'
-        - '  &8lands.lands.NUMBER'
+        - '  '
         - '&7+ Du kan ha&3 {members} &7invånare per land.'
-        - '  &8lands.members.NUMBER'
+        - ' '
         material: PLAYER_HEAD
         slot: 17
   player_lands:
@@ -128,7 +136,7 @@ gui:
         - '&7Gå till föregående sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 21
       page_next:
         name: '&aNästa sida'
@@ -136,7 +144,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 25
       back:
         name: §2 ☜ Tillbaka
@@ -198,14 +206,15 @@ gui:
     size: 45
     s:
       information:
-        name: '&6Information om {land}'
+        name: '&6Information'
         lore:
-        - '&7Ditt lands saldo:&3 {lands_land_balance}'
-        - '&7Nästa Underhållskostnad betalas om: &3{next-upkeep}.'
-        - '&7Standardhyra för alla underzoner (per underzon): &6{tax}{#fbe232}Ⓖ.'
-        - '&7Underhållskostnad för land: &6{costs}{#fbe232}Ⓖ'
-        - '&7Antal zoner du kan skapa: &3{areas}'
-        - '&7Antal chunks: du har/kan clama &3 {chunks} &7av&c {max-chunks}'
+        - '&7Här hittar du ditt lands olika inställningar och'
+        - '&7info om betalningar.'
+        - ''
+        - '&3-&7 Här kan du skapa eller tilldela underzoner.'
+        - ''
+        - '&3-&7 Bjuda in spelare eller ta bort spelare'
+        - '&7 från ditt land eller underzoner'
         - ''
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
@@ -224,16 +233,25 @@ gui:
         - '&7om dom.'
         - ' '
         - '&8- &7Dessa inbjudningar'
-        - '  &7är för att dom skall bli'
-        - '  &7invånare i ditt land.'
+        - '&7är för att dom skall bli'
+        - '&7invånare i ditt land.'
         material: WRITABLE_BOOK
         slot: 15
       management:
         name: '&6Förvaltning'
         lore:
-        - '&7Här kan du förvalta ditt land.'
-        - '&7du kan sätta olika Land ranker och bjuda in.'
-        - '&7Ändra inställningar och hyra.'
+        - '&7Här förvalta ditt land.'
+        - ''
+        - '&3-&7Du kan ändra eller sätta olika'
+        - '&7ranker på invånare'
+        - ''
+        - '&3-&7Ändra inställningar, bland annat'
+        - '&7ändra om monster och djur ska'
+        - '&7kunna spawna i ditt land'
+        - ''
+        - '&3-&7Ändra skatt, döpa om ditt land'
+        - '&7samt ändra mededelande när spelare'
+        - '&7går in i ditt land'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 29
       land-settings:
@@ -316,13 +334,13 @@ gui:
         - ' '
         - '&6&lEkonomi'
         - ''
-        - '&8- &e&lDitt land'
+        - '&3- &e&lDitt land'
         - '  &7På banken: &6{4} {#fbe232}Ⓖ'
         - '  &7Nästa chunk du inmutar kostar: &6{5} {#fbe232}Ⓖ'
         - '  &7Land betalar:&6{6} {#fbe232}Ⓖ &6 - 0 &8(&7nation&8)'
         - '  &7Betalar till servern om: &b{7}&7.'
         - ''
-        - '&8- &e&lInfo om dig'
+        - '&3- &e&lInfo om dig'
         - '  &7Balance: &6{8} {#fbe232}Ⓖ'
         - '  &7Du behöver betala &6{9} {#fbe232}Ⓖ &7i skatt'
         - '  &7till landet om &b{10}&7.'
@@ -400,7 +418,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 30
       page_next:
         name: '&aNästa sida'
@@ -408,7 +426,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 35
       back:
         name: §2 ☜ Tillbaka
@@ -451,25 +469,26 @@ gui:
         from: 10
         to: 27
       object_default:
-        name: '&6{area}'
+        name: '&6Lands {area}'
         lore:
-        - '&7This is the default area.'
-        - '&7All new claims will be'
-        - '&7assigned to this area.'
+        - '&7Detta är ditt lands area.'
+        - '&7Alla inmutningar och underzoner'
+        - '&7är bundna till detta land.'
         material: DARK_OAK_FENCE
         from: 10
         to: 27
     a:
       failure_untrusted:
-        name: '&4Nekad: &cDu har ej rätt Land rank'
+        name: '&4Nekad: &cDu har inte tillåtelse'
         lore:
         - '&cDu har ej tillåtelse att öppna'
         - '&cmenyn för denna underzon.'
         - ' '
-        - '&8- &7Du måste ha rätt Land rank'
-        - '  &7i denna underzon.'
-        - '&8- &7Kontakta någon med högre Land rank'
-        - '  &7för att få hjälp.'
+        - '&8- &7Du måste ha en rank som har'
+        - '&7tillåtelseatt öppna menyn'
+        - '&7i denna underzon.'
+        - '&8- &7Kontakta någon med högre rank'
+        - '&7i landet för att få hjälp.'
       failure_max-underzoner:
         name: '&4Fel: &cMax underzoner'
         lore:
@@ -484,6 +503,12 @@ gui:
         - '&7antal av &3 {max} &7undezon.'
         - ' '
         - '&8Permission: lands.areas.NUMBER'
+      failure_rental:
+        name: '&4Failure: &cRental'
+        lore:
+        - '&7You can''t edit this area'
+        - '&7while it is rented/sold.'
+        - '&7Tenant:&3 {player}'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -583,6 +608,13 @@ gui:
         material: BLUE_STAINED_GLASS_PANE
         from: 30
         to: 30
+    a:
+      failure_rental:
+        name: '&4Failure: &cRental'
+        lore:
+        - '&7You can''t set taxes for this'
+        - '&7area while it is rented/sold.'
+        - '&7Tenant:&3 {player}'
   area_invites:
     title: '&8Inbjudningar till {area}'
     size: 36
@@ -602,7 +634,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 30
       page_next:
         name: '&aNästa sida'
@@ -610,7 +642,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 34
       back:
         name: §2 ☜ Tillbaka
@@ -742,7 +774,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 21
       page_next:
         name: '&aNästa sida'
@@ -750,7 +782,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 26
       create:
         name: '&8> &aSkapa rank i ditt Land'
@@ -833,7 +865,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 30
       page_next:
         name: '&aNästa sida'
@@ -841,7 +873,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 35
     p:
       placeholder_1:
@@ -863,7 +895,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 30
       page_next:
         name: '&aNästa sida'
@@ -871,7 +903,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 34
       back:
         name: §2 ☜ Tillbaka
@@ -1280,7 +1312,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 21
       page_next:
         name: '&aNästa sida'
@@ -1288,7 +1320,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 25
       back:
         name: §2 ☜ Tillbaka
@@ -1337,8 +1369,8 @@ gui:
         - ' '
         - '&7Tillåt pistons att ta block?'
         - ' '
-        - '&8- &cNotera: &7om den är påslagen, invånare'
-        - '  &7kan grief ditt land från'
+        - '&8- &cNotera: &7om den är påslagen, gäster'
+        - '  &7kan förstöra i ditt land från'
         - '  &7vildmarken genom att använda'
         - '  &7pistons för att flytta blocks'
         - '  &7i ditt land.'
@@ -1354,10 +1386,10 @@ gui:
         - '&7Tillåt vatten från vildmarken'
         - '&7Flyta in till ditt land?'
         - ' '
-        - '&8- &cNotis: &7Om du slår på detta, invånare'
-        - '  &7kan grief ditt land från'
-        - '  &7vildmarken genom använda'
-        - '  &7vatten.'
+        - '&8- &cNotis: &7Om du slår på detta, gäster'
+        - ' &7kan grief ditt land från'
+        - ' &7vildmarken genom använda'
+        - ' &7vatten.'
         material: WATER_BUCKET
         from: 10
         to: 18
@@ -1370,8 +1402,8 @@ gui:
         - '&7Slå på denna för monsters ska'
         - '&7spawna?'
         - ' '
-        - '&8- &cNOTE: &7Spawners are not'
-        - '  &7influenced by this setting.'
+        - '&8- &cNOTE: &7Spawners är inte'
+        - '&7påverkade av denna inställning.'
         material: SPAWNER
         from: 10
         to: 18
@@ -1385,8 +1417,44 @@ gui:
         - '&7för djur ska spawna?'
         - ' '
         - '&8- &cNOTE: &7Spawners är inte'
-        - '  &7influenced av denna inställningar.'
+        - '&7påverkade av denna inställning.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19
+        from: 10
+        to: 18
+      fire_spread:
+        name: '&6Eld spridning'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Tillåt eld sprida sig'
+        - '&7i ditt land.'
+        - ' '
+        - '&7Bränder från vildmarken kan'
+        - '&7inte komma in i ditt land.'
+        material: FLINT_AND_STEEL
+        from: 10
+        to: 18
+      leaf_decay:
+        name: '&6Om löv ska vissna'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Ställer in om löv ska vissna'
+        - '&7inne i ditt land.'
+        material: OAK_LEAVES
+        from: 10
+        to: 18
+      plant_growth:
+        name: '&6Om växter ska gro'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Ska växter kunna'
+        - '&7växa i ditt land?'
+        material: VINE
         from: 10
         to: 18
     a:
@@ -1528,7 +1596,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 30
       page_next:
         name: '&aNästa sida'
@@ -1536,7 +1604,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 34
       back:
         name: §2 ☜ Tillbaka
@@ -1867,7 +1935,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 48
       page_next:
         name: '&aNästa sida'
@@ -1875,7 +1943,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 52
     l:
       object:
@@ -2161,7 +2229,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 30
       page_next:
         name: '&aNästa sida'
@@ -2169,7 +2237,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 34
     l:
       object:
@@ -2375,7 +2443,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 30
       page_next:
         name: '&aNästa sida'
@@ -2383,7 +2451,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 35
       back:
         name: §2 ☜ Tillbaka
@@ -2422,7 +2490,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 21
       page_next:
         name: '&aNästa sida'
@@ -2430,7 +2498,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 25
       back:
         name: §2 ☜ Tillbaka
@@ -2596,7 +2664,7 @@ gui:
         - '&7Go to previous page:&9 {previous}'
         - ' '
         - '&8- &7Current:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 30
       page_next:
         name: '&aNext Page'
@@ -2604,7 +2672,7 @@ gui:
         - '&7Go to next page:&9 {next}'
         - ' '
         - '&8- &7Current:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 35
       back:
         name: '&cBack'
@@ -2615,11 +2683,11 @@ gui:
         slot: 28
     l:
       object:
-        name: '&8# &7{id}'
+        name: '&8# &6{id}'
         lore:
         - '{message}'
         - ' '
-        - '&7Click to remove.'
+        - '&7Tryck för ta bort.'
         material: PAPER
         from: 10
         to: 27
@@ -2753,7 +2821,7 @@ gui:
         - '&7Gå till förgånde sida:&9 {previous}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 29
       page_next:
         name: '&aNästa sida'
@@ -2761,7 +2829,7 @@ gui:
         - '&7Gå till nästa sida:&9 {next}'
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 35
     p:
       placeholder_1:
@@ -2900,7 +2968,7 @@ gui:
         - '&7Go to previous page:&9 {previous}'
         - ' '
         - '&8- &7Current:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
         slot: 30
       page_next:
         name: '&aNext Page'
@@ -2908,7 +2976,7 @@ gui:
         - '&7Go to next page:&9 {next}'
         - ' '
         - '&8- &7Current:&3 {current}'
-        material: ARROW
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
         slot: 34
       back:
         name: '&cBack'
