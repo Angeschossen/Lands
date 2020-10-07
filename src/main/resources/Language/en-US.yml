@@ -15,6 +15,13 @@ general:
       safezone: '&7You''re safe now.'
     default-area: 'Default'
 
+  area:
+    description:
+      default: '&7This is the default area. New claims will belong to this area.'
+      sub: '&7This is a sub area, which can have special flags and members.'
+      rented: '&7This area is rented by player {player}.'
+      sold: '&7This area is sold to player {player}.'
+
   time:
     days: 'day(s)'
     hours: 'hour(s)'
@@ -348,7 +355,8 @@ command:
 
     rent:
       trusted: '&cYou can''t rent area&4 {area} &cof land&4 {land}&c. &7You''re already trusted in this area.'
-      max: '&cYou can''t add any more time to your rental. &7The owner of land&2 {land} &7configured a maximum of&5 {max} &7in total.'
+      expire: '&cYou can''t add any more time to your rental of area&4 {area}&c. &7The land&2 {land} &7removed it for rental. It will expire in&5 {time}&7.'
+      max: '&cYou can''t add any more time to your rental of area&4 {area}&c. &7The land&2 {land} &7configured a maximum of&5 {max} &7in total.'
       add: '&7You added&5 {add} &7to your rental of area&6 {area} &7for&c ${cost}&7. It will expire in&5 {time}&7.'
       success: '&7You rented area&6 {area} &7of land&2 {land} &7for&c ${cost}&7. It will expire in&5 {time}&7.'
       info: |
@@ -560,10 +568,12 @@ command:
       already: '&7The player&3 {player} &7isn''t trusted in the area&6 {area} &8(&7Land:&2 {land}&8) &7and hasn''t received a invite.'
       revoke: '&7Successfully revoked the invite for player&3 {player} &7in area&6 {area} &8(&7Land:&2 {land}&8)&7. The player isn''t trusted.'
       success: '&7Successfully untrusted player&3 {player} &7in area&6 {area} &8(&7Land:&2 {land}&8)&7.'
+      rental: '&cYou can''t untrust the tenant&4 {player} &cof area&4 {area}&c. &7To remove the area for rental, use &8/&3Lands rent remove &7while standing on the area.'
+
     land:
       already: '&7The player&3 {player} &7isn''t trusted in any areas of the land&2 {land} &7and hasn''t received any invites.'
       revoke: '&7Successfully revoked the invite for player&3 {player} &7for the whole land&2 {land}&7. The player isn''t trusted in any areas.'
-      success: '&7Successfully untrusted player&3 {player} &7in the whole land&2 {land}&7.'
+      success: '&7Successfully untrusted player&3 {player} &7in the whole land&2 {land}&7, except for areas which they rented/bought.'
 
   setrole:
     visitor: '&cYou can''t set the&4 {role} &crole. &7If you want to untrust this player, please use &8/&3Lands untrust {player} [area]&7.'
@@ -661,18 +671,20 @@ command:
       [NoPrefix]
       &7---------<- &5&lLand View &7->---------
       [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to get more information about this land.[/H][C]lands info {land}[/C][/T]
+      &7Chunk &7X: {x} Z: {z}
       &7Area:&6 {area}
-        &8Chunk &7X: {x} Z: {z}
-        &8Tax:&c ${tax}
-        &8Players:&7 {players}
+       &8Tax:&c ${tax}
+       &8Players:&7 {players}
+       &8Description:&r {description}
       &7---------<- &5&lLand View &r&7->---------
     area: |
       [NoPrefix]
       &7---------<- &5&lArea View &7->---------
       [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to get more information about this land.[/H][C]lands info {land}[/C][/T]
       &7Area:&6 {area}
-        &8Tax:&c ${tax}
-        &8Players:&7 {players}
+       &8Tax:&c ${tax}
+       &8Players:&7 {players}
+       &8Description:&r {description}
       &7---------<- &5&lArea View &r&7->---------
   unstuck:
     success: '&7Successfully teleported into the nearest unclaimed location.'
