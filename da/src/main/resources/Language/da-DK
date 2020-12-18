@@ -1,31 +1,31 @@
 ---
 general:
-  wYes: '确定'
-  wNo: '取消'
-  none: '&c无'
-  now: '&a目前'
-  enabled: '&a开启'
-  disabled: '&c关闭'
-  unlimited: '&无限'
-  previous: '&8previous'
-  offline: '&c离线'
+  wYes: 是
+  wNo: 否
+  none: '&c無'
+  now: '&a現在'
+  enabled: '&a開啟'
+  disabled: '&c關閉'
+  unlimited: '&a無限'
+  previous: '&8上一個介面'
+  offline: '&c離線'
   role:
-    owner: '&4领主'
-    admin: '&c副领主'
-    member: '&e成员'
-    visitor: '&7参观者'
+    owner: '&4領主'
+    admin: '&c副領主'
+    member: '&e成員'
+    visitor: '&7參觀者'
   war:
-    defenders: '&a防守方'
-    attackers: '&c进攻方'
+    defenders: '&aDefenders'
+    attackers: '&cAttackers'
 physical-Item:
   claim-block:
-    name: '&b占领方块'
+    name: '&b佔領方塊'
     lore:
-      - '&7有了这个方块'
-      - '&7你可以在荒野中'
-      - '&7占领属于你国家的区块'
+      - '&7當你擁有此方塊時'
+      - '&7你可以放置在荒野的任一區塊中'
+      - '&7來獲得該國家'
       - ' '
-      - '&7所有者:&a {owner}'
+      - '&7擁有者:&a {owner}'
     material: GRASS_BLOCK
 skull:
   role:
@@ -35,34 +35,40 @@ skull:
     visitor: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
 gui:
   main:
-    title: '&8主菜单'
+    title: '&8主選單'
     size: 27
     s:
       lands:
-        name: '&8> &2国家'
+        name: '&8> &2國家'
         lore:
-          - '&7查看你所处的国家.'
+          - '&7查看你擁有的國家.'
           - ' '
-          - '&8- &7这包括你所拥有的国家'
-          - '  &7或者你加入的国家'
+          - '&8- &7裡面包含'
+          - '  &7你擁有的國家'
+          - '  &7和有該國家權限的國家.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 11
       all-lands:
-        name: '&8> &b所有国家'
+        name: '&8> &b全部國家'
         lore:
-          - '&7查看服务器中所有的国家'
+          - '&7查看伺服器中'
+          - '&7所有已創建的國家.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
         slot: 13
       invites:
-        name: '&8> &6邀请'
+        name: '&8> &6邀請函'
         lore:
-          - '&7查看你收到的邀请'
+          - '&7查看你所有'
+          - '&7收到的邀請函.'
         material: WRITABLE_BOOK
         slot: 15
       close:
-        name: '&c关闭'
+        name: '&c關閉'
         lore:
-          - '&7'
+          - '&7關閉此介面.'
+          - ' '
+          - '&8- &7關閉之後你還是可以再次開啟'
+          - '  &7只需要輸入 &8/&3Lands menu&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 9
         enabled: true
@@ -73,42 +79,42 @@ gui:
         to: 27
     f:
       limitation:
-        name: '&8> &6当前限制'
+        name: '&8> &6你的國家限制'
         lore:
           - ' '
-          - '&7+ 创建&3 {ownlands} &7国家.'
+          - '&7+ 可以創造&3{ownlands}&7塊國家.'
           - '  &8lands.ownlands.NUMBER'
-          - '&7+ 占领&3 {chunks} &7区块.'
+          - '&7+ 每個國家可以包容&3{chunks}&7塊區塊.'
           - '  &8lands.chunks.NUMBER'
-          - '&7+ 盟国,信任你的国家'
-          - '  &7占有 &3{support-chunks} &7区块.'
+          - '&7+ 只要在你有權限的國家中，'
+          - '  &7你可以增加&3{support-chunks}&7塊區塊在每個國家中&7.'
           - '  &8lands.chunks.support.NUMBER'
           - ' '
-          - '&7+ 加入&3 {lands} &7国家.'
+          - '&7+ 可以獲得&3{lands}&7塊國家的使用權.'
           - '  &8lands.lands.NUMBER'
-          - '&7+ 拥有&3 {members} &7国家成员.'
+          - '&7+ 每個國家可以擁有&3{members}&7位成員.'
           - '  &8lands.members.NUMBER'
         material: PLAYER_HEAD
         slot: 17
   player_lands:
-    title: '&8你的国家'
+    title: '&8你的國家'
     size: 27
     s: { }
     f:
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7Current:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 21
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7Current:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 25
       back:
@@ -122,32 +128,34 @@ gui:
       object:
         name: '&2{land}'
         lore:
-          - '&7你是这个国家的一员.'
+          - '&7你是該國家的成員.'
           - ' '
-          - '&7区块:&3 {chunks} &7/&c {max-chunks}'
+          - '&7大小:&3 {chunks} &7/&c {max-chunks}'
           - ' '
-          - '&9右键查看'
+          - '&9滑鼠右鍵'
+          - '&7來看此國家相關資料'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFiNDNiOGMzZDM0ZjEyNWU1YTNmOGI5MmNkNDNkZmQxNGM2MjQwMmMzMzI5ODQ2MWQ0ZDRkN2NlMmQzYWVhIn19fQ==
         from: 10
         to: 18
       own-land:
         name: '&2{land}'
         lore:
-          - '&7你拥有这个国家.'
+          - '&7你擁有此國家.'
           - ' '
-          - '&7区域:&3 {chunks} &7/&c {max-chunks}'
+          - '&7大小:&3 {chunks} &7/&c {max-chunks}'
           - ' '
-          - '&9右键查看'
+          - '&9滑鼠右鍵'
+          - '&7來看此國家相關資料'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         from: 10
         to: 18
       no-land:
-        name: '&c没有国家'
+        name: '&c無國家區域'
         lore:
-          - '&8- &7To create a land execute:'
-          - '  &8/&3Lands create &8<&3name&8>'
+          - '&8- &7要創建國家請輸入:'
+          - '  &8/&3Lands create &8<&3名稱&8>'
           - ' '
-          - '&8- &7Let other lands trust you:'
+          - '&8- &7讓其他人給你國家使用權，請輸入:'
           - '  &8/&3Lands trust {player}'
         material: OAK_SIGN
         from: 10
@@ -162,69 +170,74 @@ gui:
         from: 19
         to: 27
   land:
-    title: '&8{land}'
+    title: '&8國家 {land}'
     size: 45
     s:
       information:
-        name: '&6国家信息'
+        name: '&6資料'
         lore:
-          - '&7在这里你可以查看'
-          - '&7一些关于国家的详细信息'
-          - '&7记录国家发生的所有事情'
+          - '&7你可以在此查看'
+          - '&7更多關於你國家的相關資訊'
+          - '&7來幫助你追蹤此國家的動態'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
       trusted-players:
-        name: '&8> &6国家成员'
+        name: '&8> &6國家成員'
         lore:
-          - '&7查看收信任的成员'
+          - '&7列出所有此國家中的成員.'
+          - '&7不會特別指定是哪個區域的'
+          - '&7就只是此國家的全部成員.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 14
       invites:
-        name: '&8> &6邀请'
+        name: '&8> &6邀請發送紀錄'
         lore:
-          - '&7撤消已发送的邀请'
-          - '&7或查看一些关于他们的信息'
+          - '&7撤銷已發送的邀請'
+          - '&7或查看相關資訊'
           - ' '
-          - '&8- &7此邀请可以使玩家'
-          - '  &7在整个国家中都被信任'
+          - '&8- &7這些邀請'
+          - '  &7可以讓其他玩家'
+          - '  &7擁有該國家的使用權.'
         material: WRITABLE_BOOK
         slot: 15
       management:
-        name: '&8> &6管理'
+        name: '&6管理'
         lore:
-          - '&7管理你的国家.'
-          - '&7你可以信任玩家, 设置爵位,'
-          - '&7编辑国家设置以及税收.'
+          - '&7你可以在這邊管理你的國家.'
+          - '&7也可以邀請玩家,設置爵位,'
+          - '&7編輯國家設置或是設置國家稅金.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 29
       land-settings:
-        name: '&8> &6国家设置'
+        name: '&8> &6國家設置'
         lore:
-          - '&7Here you can edit general'
-          - '&7settings like mob spawning.'
+          - '&7你可以在此更改基礎設置'
+          - '&7像是生物生成之類的.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 31
       roles:
-        name: '&8> &6国家爵位'
+        name: '&8> &6爵位'
         lore:
-          - '&7查看国家爵位.'
+          - '&7查看爵位.'
           - ' '
-          - '&8- &7国家爵位将会应用至各个区域'
+          - '&8- &7此處的爵位設置將會自動套用在區域中'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 32
       taxes:
-        name: '&8> &6国家税收'
+        name: '&8> &6國家稅金'
         lore:
-          - '&7查看国家税收.'
+          - '&7查看國家稅金.'
           - ' '
-          - '&8- &7应用至每个领域以及区块'
+          - '&8- &7國家稅金是指'
+          - '  &7在該國家的所有區域的稅金'
+          - '  &7並不是指某些區域的稅金.'
         material: GOLD_INGOT
         slot: 33
       various:
-        name: '&8> &6更多设置'
+        name: '&8> &6國家進入訊息'
         lore:
-          - '&7国家重命名'
-          - '&7设置标题.等'
+          - '&7更改國家名稱'
+          - '&7或是設置新的副標題.'
         material: BEACON
         slot: 34
     p:
@@ -242,12 +255,13 @@ gui:
         to: 30
     f:
       areas:
-        name: '&8> &6区域'
+        name: '&8> &6區域'
         lore:
-          - '&7查看国家中的所有区域.'
-          - '&7你也可以在菜单中创建新的区域'
+          - '&7查看國家中的所有區域.'
+          - '&7你也可以在此介面創建新的區域'
           - ' '
-          - '&7大小:&3 {chunks} &7/&c {max-chunks}'
+          - '&7區域區塊:&3 {areas} &7/&c {max-areas}'
+          - '&7國家區塊:&3 {chunks} &7/&c {max-chunks}'
         material: OAK_FENCE
         slot: 13
       inbox:
@@ -260,49 +274,71 @@ gui:
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
-          - '{back}&7.'
+          - '&7返回到'
+          - '&8國家選單&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 37
+      statistics:
+        name: '&8> &6統計'
+        lore:
+          - ' '
+          - '&7&l管理'
+          - '&7領地區塊: {0} / {1} +&a {2} &8(&7國家&8)'
+          - '&7成員: {3} / {4}'
+          - ' '
+          - '&7&l經濟'
+          - ''
+          - '&8- &7&l領土'
+          - '  &7領地銀行: &c✢{5}'
+          - '  &7下次領土花費: &c✢{6}'
+          - '  &7領土花費&c ${7} - ${8} &8(&7國家&8)'
+          - '  &7下次上繳國庫時間 &n{9}&7.'
+          - ' '
+          - '&8- &4&l你'
+          - '  &7擁有平衡幣: &c✢{10}'
+          - '  &7在&c{12}之後需要繳納稅金'
+          - '  &7金額為 &c✢{11}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
+        slot: 17
   land_areas:
-    title: '&8区域'
+    title: '&8區域'
     size: 36
     s: { }
     f:
       create:
-        name: '&a创建区域'
+        name: '&a創建區域'
         lore:
-          - '&7创建一个新的区域'
+          - '&7在此國家中創建一個區域'
           - ' '
-          - '&7剩余:&3 {areas} &8/&c {max}'
+          - '&7可創建數量:&3 {areas} &8/&c {max}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
         slot: 32
       delete:
-        name: '&c删除区域'
+        name: '&c刪除區域'
         lore:
-          - '&7删除一个区域'
+          - '&7在此國家中刪除一個區域'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         slot: 33
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 35
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
@@ -310,48 +346,47 @@ gui:
       object:
         name: '&6{area}'
         lore:
-          - '&7打开区域菜单'
-          - '&7适用于这个区域.'
+          - '&7開啟區域介面'
         material: OAK_FENCE
         from: 10
         to: 27
       area-setup:
-        name: '&c设置:&6 {area}'
+        name: '&c設定:&6 {area}'
         lore:
-          - '&7您尚未在该地区分配任何区块'
+          - '&7你尚未分配任何區塊到區域內'
           - ' '
-          - '&7使用 &8/&3Lands selection'
-          - '&7来分配区块'
-          - '&8/&3Lands selection assign {area}'
-          - '&7分配土地到这个地区.'
-        material: 'ACACIA_FENCE'
+          - '&7輸入 &8/&3Lands selection'
+          - '&7來選擇要分配的範圍'
+          - '&8然後輸入/&3Lands selection assign {區域名稱}'
+          - '&7來將該範圍分配給區域.'
+        material: ACACIA_FENCE
         from: 10
         to: 27
       no-area:
-        name: '&c没有创建区域'
+        name: '&c尚未創建區域'
         lore:
-          - '&7该国家还没有区域'
+          - '&7此國家尚未擁有任何區域'
           - ' '
-          - '&8- &7创建一个新的区域'
-          - '  &7点击下面的区域添加物品.'
+          - '&8- &7創建一個新的區域'
+          - '  &7點擊下面的區域添加物品.'
         material: ACACIA_FENCE
         from: 10
         to: 27
     a:
-      Failure_untrusted:
-        name: '&4被拒绝: &c未被信任'
+      failure_untrusted:
+        name: '&4無效: &c未被信任'
         lore:
-          - '&c你不能打开该区域的区域菜单'
+          - '&c你不能打開該區域的區域菜單'
           - ' '
-          - '&8- &7你需要被该区域信任'
-          - '&8- &7联系国家所有者帮助'
-      Failure_max-areas:
-        name: '&4失败: &c区域已满'
+          - '&8- &7你需要被該區域信任'
+          - '&8- &7聯繫國家所有者幫助'
+      failure_max-areas:
+        name: '&4失敗: &c區域已滿'
         lore:
-          - '&7达到最大区域数量限制'
-          - '&7&3 {max} &7区域.'
+          - '&7達到最大區域數量限制'
+          - '&7&3 {max} &7區域.'
           - ' '
-          - '&8权限: lands.areas.NUMBER'
+          - '&8權限: lands.areas.NUMBER'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -362,69 +397,68 @@ gui:
         from: 29
         to: 36
   area:
-    title: '&8区域 {area}'
+    title: '&8區域 {area}'
     size: 45
     f:
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 37
     s:
       information:
-        name: '&6区域信息'
+        name: '&6資料'
         lore:
-          - '&7查看详细信息'
+          - '&7你可以在此查看'
+          - '&7更多關於你國家的相關資訊'
+          - '&7來幫助你追蹤此區域的動態'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
       trusted-players:
-        name: '&8> &6受信任的玩家'
+        name: '&8> &6國家成員'
         lore:
-          - '&7获取成员名单'
+          - '&7列出所有此區域中的成員.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 13
       invites:
-        name: '&8> &6邀请'
+        name: '&8> &6邀請紀錄'
         lore:
-          - '&7撤销已发送的邀请'
-          - '&7或查看他们的信息'
+          - '&7你可以在這邊查看寄送出去的邀請紀錄'
+          - '&7或是在這邊寄送邀請'
           - ' '
-          - '&8- &7该邀请'
-          - '  &7可以使玩家被'
-          - '  &7该区域信任.'
+          - '&8- &7這些邀請可以會讓玩家'
+          - '  &7擁有區域內的權限'
         material: WRITABLE_BOOK
         slot: 14
       management:
-        name: '&8> &6管理'
+        name: '&6管理'
         lore:
-          - '&7管理区域,你可以 信任玩家'
-          - '&7设置爵位, 编辑国家设置'
-          - '&7设置该区域的税收.'
+          - '&7你可以在這邊管理你的區域.'
+          - '&7也可以邀請玩家,設置爵位,'
+          - '&7編輯區域設置或是設置區域稅金.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 29
       land-settings:
-        name: '&8> &6国家设置'
+        name: '&8> &6區域設置'
         lore:
-          - '&7在这里您可以设置常规选项'
-          - '&7例如: 怪物是否生成'
+          - '&7你可以在此更改基礎設置'
+          - '&7像是生物生成之類的.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 31
       roles:
         name: '&8> &6爵位'
         lore:
-          - '&7查看该区域的爵位.'
-          - ' '
-          - '&8- &7国家爵位自动添加至该区域'
+          - '&7查看區域內的爵位.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 32
       taxes:
-        name: '&8> &6税收'
+        name: '&8> &6稅金'
         lore:
-          - '&7查看该区域的税收.'
+          - '&7查看該區域的稅收.'
           - ' '
-          - '&8- &7税额按地区计算'
+          - '&8- &7稅額按地區計算'
         material: GOLD_INGOT
         slot: 33
     p:
@@ -441,38 +475,38 @@ gui:
         from: 30
         to: 30
   area_invites:
-    title: '&8区域邀请'
+    title: '&8邀請區'
     size: 36
     f:
       send:
-        name: '&a发送邀请'
+        name: '&a發送邀請'
         lore:
-          - '&7发送邀请给玩家'
-          - '&7邀请进入该区域.'
+          - '&7邀請玩家'
+          - '&7讓他們擁有區域的權限.'
           - ' '
-          - '&7容量:&3 {players} &8/&c {max}'
+          - '&7同時可邀請數:&3 {players} &8/&c {max}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
         slot: 32
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 34
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
@@ -480,17 +514,16 @@ gui:
       object:
         name: '&6{player}'
         lore:
-          - '&7编辑此邀请或查看玩家信息'
+          - '&7編輯此邀請或查看玩家訊息'
         material: BOOK
         from: 10
         to: 27
       no-invite:
-        name: '&c没有发送邀请'
+        name: '&c尚未送出任何邀請'
         lore:
-          - '&7国家尚未发送任何邀请'
+          - '&7你的國家尚未送出任何邀請'
           - ' '
-          - '&8- &7To invite someone click'
-          - '  &7要邀请某人 - ''点击下面的邀请按钮.'
+          - '&8- &7想要邀請玩家只需要按底下的按鈕'
         material: OAK_SIGN
         from: 10
         to: 27
@@ -504,40 +537,41 @@ gui:
         from: 27
         to: 36
   area_invite:
-    title: '&8邀请 {player}'
+    title: '&8邀請 {player}'
     size: 27
     s:
       revoke:
-        name: '&8> &c撤销邀请'
+        name: '&8> &c撤銷邀請'
         lore:
-          - '&7点击撤销邀请'
+          - '&7點此撤銷邀請紀錄'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         slot: 12
     f:
       info:
-        name: '&8> &6邀请信息'
+        name: '&8> &6邀請訊息'
         lore:
-          - '&7区域:&e {area}'
-          - '&7国家: {land}'
+          - '&7區域:&e {area}'
+          - '&7國家名: {land}'
           - ' '
-          - '&7时间:&5 {time}'
-          - '&7邀请人: {sender}'
+          - '&7收到時間:&5 {time}'
+          - '&7寄件人: {sender}'
         material: OAK_SIGN
         slot: 16
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     a:
-      Failure_noAccess:
-        name: '&4拒绝: &b撤销申请'
+      failure_noAccess:
+        name: '&4無效: &b無法撤銷邀請'
         lore:
-          - '&c你不能撤销该区域的邀请'
+          - '&c你沒有該區域的權限'
+          - '&c來撤銷邀請'
           - ' '
-          - '&8- &7需要权限'
+          - '&8- &7你需要權限來撤銷邀請'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -550,7 +584,7 @@ gui:
       object:
         name: '&7{role}'
         lore:
-          - '&7点击编辑该爵位.'
+          - '&7點擊編輯爵位.'
         material: PLAYER_HEAD
         from: 10
         to: 18
@@ -558,46 +592,49 @@ gui:
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 21
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 26
       create:
-        name: '&8> &a创建爵位'
+        name: '&8> &a新增爵位'
         lore:
-          - '&7点击来创建一个新的爵位'
-          - '&7将会指导您完成新的爵位设置.'
+          - '&7點此新增爵位'
+          - '&7系統將會手把手帶你操作'
           - ' '
-          - '&7剩余:&3 {roles} &8/&c {max}'
+          - '&7可設置上限:&3 {roles} &8/&c {max}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
         slot: 23
       delete:
-        name: '&c删除一个爵位'
+        name: '&c刪除爵位'
         lore:
-          - '&7'
+          - '&7刪除此國家的爵位'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         slot: 24
     a:
-      Failure_max-roles:
-        name: '&4失败: &c爵位数量已满'
+      failure_max-roles:
+        name: '&4失敗: &c可設置爵位已達上限'
         lore:
-          - ''
+          - '&7此國家已達到可設置的最大上限'
+          - '&7上限為{max}&7.'
+          - ' '
+          - '&8權限: lands.roles.NUMBER'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -608,14 +645,13 @@ gui:
         from: 19
         to: 27
   role_players:
-    title: '&8{role} &7- &8成员'
+    title: '&8{role} &7- &8成員'
     size: 36
     l:
       object:
         name: '&e{player}'
         lore:
-          - '&7该玩家支持你的玩家'
-          - '&7持有 &a{support} &7以及占领区块.'
+          - '&7此玩家為你的國家增加了&a{support}&7塊區塊'
         material: PLAYER_HEAD
         from: 10
         to: 27
@@ -623,24 +659,24 @@ gui:
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 35
     p:
@@ -653,289 +689,342 @@ gui:
         from: 29
         to: 36
   role_settings:
-    title: '&8{role} &7- &8Settings'
+    title: '&8{role} &7- &8設定'
     size: 36
     s: { }
     f:
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7Current:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 34
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
     l:
       block_break:
-        name: '&6方块破坏'
+        name: '&6破壞方塊'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位破壞方塊?'
         material: IRON_PICKAXE
         from: 10
         to: 27
       block_place:
-        name: '&6放置方块'
+        name: '&6放置方塊'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位放置方塊?'
         material: OAK_PLANKS
         from: 10
         to: 27
       block_ignite:
-        name: '&6点燃方块'
+        name: '&6點燃方塊'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位點燃方塊?'
         material: FLINT_AND_STEEL
         from: 10
         to: 27
       interact_general:
         name: '&6交互'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位交互?'
         material: STRING
         from: 10
         to: 27
       interact_door:
-        name: '&6开门'
+        name: '&6開門'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位開門?'
         material: IRON_DOOR
         from: 10
         to: 27
       interact_container:
-        name: '&6打开容器(箱子等)'
+        name: '&6打開容器'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位打開容器(箱子等等)?'
         material: CHEST
         from: 10
         to: 27
       interact_mechanism:
-        name: '&6使用红石'
+        name: '&6使用紅石'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位使用紅石?'
         material: REDSTONE
         from: 10
         to: 27
       interact_villager:
-        name: '&6与村民交易'
+        name: '&6和村民交易'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位和村民交易?'
         material: EMERALD
         from: 10
         to: 27
       attack_player:
-        name: '&6攻击玩家'
+        name: '&6攻擊玩家'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位和攻擊玩家?'
           - ' '
-          - '&8- 注意,如果一名玩家在国家外袭击了'
-          - '  &7另一名玩家,那么是允许玩家在国家内进行战斗'
+          - '&8- 請注意, 如果一名玩家在國家外襲擊了'
+          - '  &7另一名玩家,那麽是允許玩家在國家內進行戰鬥'
           - ' '
-          - '&8- &7只有在互相都可以攻击的情况下'
-          - '&7 才允许战斗'
+          - '&8- &7只有在互相都可以攻擊的情況下'
+          - '&7 才允許戰鬥'
         material: IRON_SWORD
         from: 10
         to: 27
       attack_animal:
-        name: '&6攻击动物'
+        name: '&6攻擊動物'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位和攻擊動物?'
         material: BOW
         from: 10
         to: 27
       fly:
-        name: '&6飞行'
+        name: '&6飛行'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位在此飛行?'
         material: FEATHER
         from: 10
         to: 27
       land_enter:
-        name: '&6进入该区域'
+        name: '&6進入區域'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位進入區域?'
         material: OAK_FENCE_GATE
         from: 10
         to: 27
       area_assign:
-        name: '&6分配区域'
+        name: '&6分配區域'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位分配區域?'
         material: OAK_FENCE
         from: 10
         to: 27
       player_trust:
-        name: '&6添加成员 | 信任玩家'
+        name: '&6添加成員 | 信任玩家'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位添加成員 | 信任玩家?'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
         from: 10
         to: 27
       player_setRole:
-        name: '&6设置爵位'
+        name: '&6設置爵位'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許玩家設定爵位?'
           - ' '
-          - '&8- &7只能设置比他们等级低的'
+          - '&8- &7他們無法更改比自己高階的爵位'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjNmY3NzVlOGFjZmRmNmUxZGVhYzgwYThkYTFmMzdiM2I0YmE1Y2FhNGEzNTI0OWY5ZWIxNDVjY2Y0M2RhNSJ9fX0=
         from: 10
         to: 27
       player_untrust:
-        name: '&6移除成员'
+        name: '&6移除成員'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位移除成員?'
           - ' '
-          - '&8- &7只允许等级比他们低的'
+          - '&8- &7他們無法更改比自己高階的爵位'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         from: 10
         to: 27
       setting_edit_land:
-        name: '&6编辑国家设置'
+        name: '&6編輯國家設定'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位編輯國家設定?'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         from: 10
         to: 27
       setting_edit_role:
-        name: '&6编辑爵位设定'
+        name: '&6編輯爵位設定'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
-          - '&7慎重开启'
+          - '&7是否允許此爵位編輯爵位設定?'
           - ' '
-          - '&8- &7他们不能编辑他们所在的爵位.'
+          - '&8- &7他們無法更改自己的爵位'
           - ' '
+          - '&8- &7建議你只給你最信任的朋友此權限'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         from: 10
         to: 27
       setting_edit_advanced:
-        name: '&6编辑高级角色设置'
+        name: '&6編輯高級角色設置'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位編輯高級角色設定?'
+          - ' '
+          - '&8- &7建議你只給你最信任的朋友此權限'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMzExYTRmYjljNDkzODliNGY0NThjMjllOTY4MzI0YzU4MjNiOGE5OWVhZGUxNzQ3ODY2Yzk1YjA2NGEifX19
         from: 10
         to: 27
       setting_edit_taxes:
-        name: '&6编辑税收'
+        name: '&6編輯稅金'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許編輯稅金?'
+          - ' '
+          - '&8- &7建議你只給你最信任的朋友此權限'
         material: GOLD_INGOT
         from: 10
         to: 27
       land_claim:
-        name: '&6领取区块'
+        name: '&6領取區塊'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位領取區塊?'
         material: IRON_SHOVEL
         from: 10
         to: 27
       land_claim_border:
-        name: '&6在国家边界领取区块'
+        name: '&6在國家邊界領取區塊'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位在國家邊界領取區塊?'
         material: IRON_BARS
         from: 10
         to: 27
       spawn_set:
-        name: '&6设置国家出生点'
+        name: '&6設置國家出生點'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位設置國家出生點?'
         material: ENDER_EYE
         from: 10
         to: 27
       spawn_teleport:
-        name: '&6传送至出生点'
+        name: '&6傳送至出生點'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位傳送至出生點?'
         material: ENDER_PEARL
         from: 10
         to: 27
       balance_withdraw:
-        name: '&6从国库中取钱'
+        name: '&6從國庫中取錢'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
-          - '&8- &7命令:'
+          - '&7是否允許此爵位從國庫中取錢?'
+          - ' '
+          - '&8- &7指令:'
           - '  &8/&3Lands withdraw'
         material: GOLD_NUGGET
         from: 10
         to: 27
+      vehicle_use:
+        name: '&6使用載具'
+        lore:
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
+          - ' '
+          - '&7是否允許此爵位使用載具?'
+        material: MINECART
+        from: 10
+        to: 27
     a:
-      Failure_permission:
-        name: '&4失败: &c没有权限'
+      failure_permission:
+        name: '&4失敗: &c沒有權限'
         lore:
-          - '&8需要权限'
+          - '&7You''re not allowed to'
+          - '&7edit this setting.'
+          - ' '
+          - '&8Permission'
           - '&8{permission}'
-      Failure_noaccess:
-        name: '&4失败: &c无法访问'
+      failure_noaccess:
+        name: '&4Failure: &cNot Access'
         lore:
-          - '&8需要: {setting}'
-      Failure_role-weight:
-        name: '&4失败: &c爵位优先'
+          - '&7You''re not allowed to'
+          - '&7edit these settings.'
+          - ' '
+          - '&7The land owner needs to'
+          - '&7allow you to do so.'
+          - '&8Setting: {setting}'
+      failure_role-weight:
+        name: '&4Failure: &cRole Priority'
         lore:
-          - '&8权限: lands.admin.setting_edit_role'
+          - '&7You''re not allowed to'
+          - '&7edit settings of this role.'
+          - '&7It has a higher priority'
+          - '&7than yours.'
+          - ' '
+          - '&8Bypass: lands.admin.setting_edit_role'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -946,48 +1035,57 @@ gui:
         from: 29
         to: 36
   settings_role_advanced:
-    title: '&8高级设置 &7-> {role}'
+    title: '&8Advanced Settings &7-> {role}'
     size: 27
     s: { }
     f:
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 21
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 25
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     l:
       setting_edit_various:
-        name: '&b编辑各种国家设置'
+        name: '&b編輯國家進入訊息'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許此爵位'
+          - '&7編輯國家進入訊息?'
+          - ' '
+          - '&8- &7他們將可以'
+          - '  &7更改國家名稱/進入訊息.'
         material: NAME_TAG
         from: 10
         to: 18
     a:
-      Failure_permission:
-        name: '&4失败: &c无权限'
+      failure_permission:
+        name: '&4失敗: &cNo permission'
         lore:
+          - '&7You''re not allowed to'
+          - '&7edit this setting.'
           - ' '
+          - '&8- &7You need permission'
+          - '  &e{permission}&7.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -998,94 +1096,129 @@ gui:
         from: 19
         to: 27
   area_settings:
-    title: '&8{area} &7- &8国家设定'
+    title: '&8{area} &7- &8國家設置'
     size: 27
     s: { }
     f:
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 21
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 25
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     l:
       entity_griefing:
-        name: '&6是否能破坏建筑物'
+        name: '&6實體破壞'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許實體破壞?'
+          - '&7像是苦力怕爆炸破壞之類的'
+          - ' '
+          - '&8- &c請注意: &7假如開啟此設定'
+          - '  &7苦力怕等等生物可能會破會地形'
         material: CREEPER_HEAD
         from: 10
         to: 18
       tnt_griefing:
-        name: '&6TNT防爆'
+        name: '&6TNT破壞'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許TNT破壞?'
+          - ' '
+          - '&8- &c請注意: &7假如開啟此設定'
+          - '  &7玩家將可以使用TNT砲台炸國家'
         material: TNT
         from: 10
         to: 18
       piston_griefing:
-        name: '&6活塞是否能从荒野推动至国家'
+        name: '&6活塞從國家外推入國家內'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
           - ' '
+          - '&7是否允許活塞從國家外推入國家內?'
+          - ' '
+          - '&8- &c請注意: &7開啟之後，玩家可以從外面把方塊推進來'
         material: PISTON
         from: 10
         to: 18
       waterflow_allow:
-        name: '&6荒野的水能否流入国家'
+        name: '&6水流從國家外流入國家內'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
+          - ' '
+          - '&7是否允許水流從國家外流入國家內?'
+          - ' '
+          - '&8- &c請注意: &7開啟之後，玩家可以從外面把水流放進來'
         material: WATER_BUCKET
         from: 10
         to: 18
       monster_spawn:
         name: '&6怪物生成'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
+          - ' '
+          - '&7是否允許怪物生成?'
+          - ' '
+          - '&8- &c請注意: &7生怪磚不算在此規則中'
         material: SPAWNER
         from: 10
         to: 18
       animal_spawn:
-        name: '&6动物生成'
+        name: '&6動物生成'
         lore:
-          - '&7状态: {enabled}'
-          - '&7已解锁: {Unlocked}'
+          - '&7狀態: {enabled}'
+          - '&7解鎖: {unlocked}'
+          - ' '
+          - '&7是否允許動物生成?'
+          - ' '
+          - '&8- &c請注意: &7生怪磚不算在此規則中'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19
         from: 10
         to: 18
     a:
-      Failure_permission:
-        name: '&4失败: &c权限不足'
+      failure_permission:
+        name: '&4Failure: &cNo Permission'
         lore:
-          - ''
-      Failure_noaccess:
-        name: '&4失败: &c未开启'
+          - '&7You''re not allowed to'
+          - '&7edit this setting.'
+          - ' '
+          - '&8- &7You need permission'
+          - '  &e{permission}&7.'
+      failure_noaccess:
+        name: '&4Failure: &cNo Access'
         lore:
-          - ''
+          - '&7You''re not allowed to'
+          - '&7edit these settings.'
+          - ' '
+          - '&7The land owner needs to'
+          - '&7allow you to do so.'
+          - '&8Setting: {setting}'
+          - ' '
+          - '&8Bypass permission: lands.admin.setting_edit_land'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1096,54 +1229,54 @@ gui:
         from: 19
         to: 27
   area_taxes:
-    title: '&8{area} &7- &8税收'
+    title: '&8{area} &7- &8稅金'
     size: 27
     s:
       plus-1:
-        name: '&a增加 $1'
+        name: '&a增加 ✢1'
         lore:
-          - '&7增加 $1 税收值'
+          - '&7增加稅金 ✢1'
         material: GLOWSTONE_DUST
         slot: 11
         amount: 1
         data:
           value: 1.0
       plus-2:
-        name: '&a增加 $100'
+        name: '&a增加 ✢100'
         lore:
-          - '&7增加 $100 税收值'
+          - '&7增加稅金 ✢100'
         material: GLOWSTONE_DUST
         slot: 12
         data:
           value: 100.0
       plus-3:
-        name: '&a增加 $1000'
+        name: '&a增加 ✢1000'
         lore:
-          - '&7增加 $1000 税收值'
+          - '&7增加稅金 ✢1000'
         material: GLOWSTONE_DUST
         slot: 13
         data:
           value: 1000.0
       minus-3:
-        name: '&c减少 $1000'
+        name: '&c減少 ✢1000'
         lore:
-          - '&7&7减少 $1000 税收值'
+          - '&7減少稅金 ✢1000'
         material: REDSTONE
         slot: 15
         data:
           value: 1000.0
       minus-2:
-        name: '&c减少 $100 '
+        name: '&c減少 ✢100'
         lore:
-          - '&7减少 $100 税收值'
+          - '&7減少稅金 ✢100'
         material: REDSTONE
         slot: 16
         data:
           value: 100.0
       minus-1:
-        name: '&c减少 $1'
+        name: '&c減少 ✢1'
         lore:
-          - '&7减少 $1 税收值'
+          - '&7減少稅金 ✢1'
         material: REDSTONE
         slot: 17
         data:
@@ -1152,100 +1285,115 @@ gui:
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
       taxes:
-        name: '&7税收:&c ${tax}'
+        name: '&7稅金:&c ✢{tax}'
         lore:
-          - '&7下一次税收&5 {next-tax}&7.'
+          - '&7下次收稅金時間&5 {next-tax}&7.'
           - ' '
-          - '&7下一次维护费用&5 {next-upkeep}&7.'
-          - '&7你需要支付&c ${costs}&7.'
+          - '&7下次上繳稅金時間&5 {next-upkeep}&7.'
+          - '&7你的國家將需要支付&c ✢{costs}&7.'
           - ' '
-          - '&8- &3税收'
-          - '  &7由区域成员支付,'
-          - '  &7必须是该区域的成员.'
+          - '&8- &3稅金'
+          - '  &7只有國家中的成員需要支付稅金'
           - ' '
-          - '&8- &3维护费用'
-          - '  &7这个是由国家支付'
+          - '&8- &3上繳稅金'
+          - '  &7這稅金是上繳給伺服器的'
+          - '  &7沒有上繳的話，你的國家將會消失'
           - ' '
-          - '&8- &7区域费用'
-          - '  &7所处区域所产生的费用,'
+          - '&8- &7國家成員只需要支付一般的稅金即可'
+          - '  &7上繳稅金是從國家的銀行中支付的'
         material: GOLD_INGOT
         slot: 14
     a:
-      Failure_maxValue:
-        name: '&4最大值'
+      failure_maxValue:
+        name: '&4最大金額上限'
         lore:
-          - '&7你可以设置税收的最大值值'
-          - '&7&3 {max} &7.'
+          - '&7You can''t set the tax'
+          - '&7value higher than&3 {max}&7.'
           - ' '
-          - '&8- &7你可以要求腐竹更改此设置'
-      Failure_cooldown:
-        name: '&4冷却时间:&c 你需要等待.'
+          - '&8- &7You can ask an administrator'
+          - '  &7to change this.'
+      failure_cooldown:
+        name: '&4冷卻:&c請稍待片刻.'
         lore:
-          - '&7目前你无法更改税值'
-          - '&7你需要等待'
-          - '&b{time} &7小时.'
+          - '&7You currently can''t change the'
+          - '&7tax value. You need to wait'
+          - '&b{time} &7hours.'
           - ' '
-      Failure_noaccess:
-        name: '&4失败:&c 无法访问'
+          - '&8- &7You can ask an administrator'
+          - '  &7to change this.'
+      failure_noaccess:
+        name: '&4Failure:&c No Access'
         lore:
-          - '&7你没有编辑权限'
+          - '&7You''re not allowed to edit'
+          - '&7the taxes of this area.'
+          - ' '
+          - '&8- &7You''re missing permission'
+          - '  &7from the land owner to do so.'
+          - '  &8Setting: {setting}'
+          - ' '
+          - '&8Bypass permission: lands.admin.setting_edit_taxes'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
   action-confirm:
-    title: '&8确认操作'
+    title: '&8Please confirm this Action'
     size: 27
     s:
       info:
-        name: '&b请确认此操作.'
+        name: '&bPlease confirm this action.'
         lore:
-          - '&7点击 &a确认 &7来进行确认或点击'
-          - '&c中止 &7来中止操作.'
+          - '&7Click &aConfirm &7to confirm or'
+          - '&cAbort &7to abort this action.'
         material: OAK_SIGN
         slot: 14
     l:
       yes_chunk:
-        name: '&a确认'
+        name: '&aConfirm'
         lore:
-          - '&7确认此操作.'
+          - '&7Confirm this action.'
           - ' '
-          - '&8- &7如果你是该区块的所有者'
-          - '  &7它将会变成荒野'
+          - '&8- &7If you''re the owner'
+          - '  &7of this chunk, it will'
+          - '  &7become wilderness.'
         material: LIME_STAINED_GLASS_PANE
         from: 10
         to: 13
       no_chunk:
-        name: '&c中止'
+        name: '&cAbort'
         lore:
-          - '&7取消该操作.'
+          - '&7Abort this action.'
           - ' '
-          - '&8- &7如果你是区块的所有者'
-          - '  &7它将被删除'
+          - '&8- &7If you''re the owner'
+          - '  &7of this chunk, it will'
+          - '  &7be deleted.'
         material: RED_STAINED_GLASS_PANE
         from: 15
         to: 18
       yes_war-state:
-        name: '&a确认'
+        name: '&aConfirm'
         lore:
-          - '&7确认此操作.'
+          - '&7Confirm this action.'
           - ' '
-          - '&4需要支付战利品价值'
+          - '&4NOTE: &cYour land will'
+          - '&cneed to pay the tribute'
+          - '&cin order to surrender.'
         material: LIME_STAINED_GLASS_PANE
         from: 10
         to: 13
       no_war-state:
-        name: '&c中止'
+        name: '&cAbort'
         lore:
-          - '&取消该操作.'
+          - '&7Abort this action.'
           - ' '
-          - '&7你真的要在这场战争中投降吗？'
+          - '&7Do you really want to'
+          - '&7surrender in this war?'
         material: RED_STAINED_GLASS_PANE
         from: 15
         to: 18
@@ -1259,30 +1407,30 @@ gui:
         from: 19
         to: 27
   player_invites:
-    title: '&8收到邀请'
+    title: '&8邀請函'
     size: 36
     s: { }
     f:
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 34
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
@@ -1290,17 +1438,19 @@ gui:
       object:
         name: '&6{land}'
         lore:
-          - '&7编辑此邀请或查看一些信息'
+          - '&7Edit this invite or'
+          - '&7just view some information.'
         material: BOOK
         from: 10
         to: 27
       no-invite:
-        name: '&c未收到邀请'
+        name: '&c尚未獲得任何邀請'
         lore:
-          - '&7他还未收到任何邀请'
-          - '&8- &7该玩家可以被邀请'
-          - '  &7你可以使用指令来邀请他:'
+          - '&7你尚未獲得任何邀請'
+          - ' '
+          - '&8- &7其他玩家可以輸入'
           - '  &8/&3Lands trust {player}'
+          - '  &7來邀請你加入國家'
         material: OAK_SIGN
         from: 10
         to: 27
@@ -1314,85 +1464,113 @@ gui:
         from: 27
         to: 36
   player_invite:
-    title: '&8邀请 {land}'
+    title: '&8邀請函 {land}'
     size: 27
     f:
       info:
-        name: '&8> &6信息'
+        name: '&8> &6資料'
         lore:
-          - '&7区域:&6 {area}'
-          - '&7国家: {land}'
+          - '&7區域名:&6 {area}'
+          - '&7國家名: {land}'
           - ' '
-          - '&7已收到:&5 {time}'
-          - '&7邀请人: {sender}'
+          - '&7收到時間:&5 {time}'
+          - '&7寄件人: {sender}'
         material: OAK_SIGN
         slot: 14
     l:
       accept:
-        name: '&a同意'
+        name: '&a接受'
         lore:
-          - '&7接受该邀请.'
+          - '&7接受此邀請.'
           - ' '
-          - '&7税收值:&c ${tax}'
+          - '&7稅金:&c ${tax}'
         material: LIME_STAINED_GLASS_PANE
         from: 10
         to: 13
       deny:
-        name: '&c拒绝'
+        name: '&c拒絕'
         lore:
-          - '&7拒绝该邀请'
+          - '&7拒絕此邀請.'
           - ' '
-          - '&7税收值:&c ${tax}'
+          - '&7稅金:&c ${tax}'
         material: RED_STAINED_GLASS_PANE
         from: 15
         to: 18
     a:
-      Failure_lands:
-        name: '&4失败: &c国家数量达到最大值'
+      failure_lands:
+        name: '&4失敗: &c可加入的國家數量達到上限'
         lore:
-          - ''
-      Failure_inviteOwner:
-        name: '&4失败: &c玩家已是一国之主了'
-        lore:
-          - ''
-      Failure_notTrusted:
-        name: '&4失败: &b未完成'
-        lore:
-          - '&7该国成员已达到最大值'
+          - '&7你無法加入此國家'
+          - '&7因為你已經達到可加入的上限值了'
+          - '&7你的上限值為{max}'
           - ' '
+          - '&8權限:'
+          - '&8lands.lands.NUMBER'
+      failure_inviteOwner:
+        name: '&4Failure: &cInvite Owner'
+        lore:
+          - '&7You can''t join this'
+          - '&7land, because you''re'
+          - '&7not allowed to have'
+          - '&7your own land and'
+          - '&7be part of another land.'
+          - ' '
+          - '&8An administrator'
+          - '&8can change that in the config.'
+      failure_notTrusted:
+        name: '&4Failure: &bNot complete'
+        lore:
+          - '&7Couldn''t trust you'
+          - '&7in this land, because'
+          - '&7they reached their'
+          - '&7maximum value of&3 {max}&7.'
+          - ' '
+          - '&8- &7Contact the land'
+          - '  &7owner for help.'
+          - ' '
+          - '&8Permission:'
+          - '&8lands.members.NUMBER'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
   player_info:
-    title: '&8玩家 {player}'
+    title: '&8Player {player}'
     size: 27
     s:
       close:
-        name: '&c关闭'
+        name: '&c關閉'
         lore:
+          - '&7關閉選單.'
           - ' '
+          - '&8- &7You can open it again'
+          - '  &7with &8/&3Lands player'
         material: RED_STAINED_GLASS_PANE
         slot: 9
     f:
       last_seen:
-        name: '&8> &6距离上次上线'
+        name: '&8> &6Last seen'
         lore:
           - '&c{last-seen}'
         material: CLOCK
         slot: 12
       lands:
-        name: '&8> &6国家 &8(&7{amount}&8)'
+        name: '&8> &6Lands &8(&7{amount}&8)'
         lore:
           - '{lands}'
         material: OAK_SIGN
         slot: 16
       max-chunks:
-        name: '&8> &6最大占领区块'
+        name: '&8> &6Maximum Chunk Claims'
         lore:
-          - '&7玩家占领'
-          - '&3{chunks} &7区块.'
+          - '&7This player can claim'
+          - '&3{chunks} &7chunks.'
+          - ' '
+          - '&8- &7If option chunks-addition'
+          - '  &7is enabled in config, this player'
+          - '  &7could support your land with'
+          - '  &3{chunks} &7additional chunk claims.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ==
         slot: 14
     p:
@@ -1401,51 +1579,56 @@ gui:
         from: 1
         to: 27
   land_info:
-    title: '&8国家 {land}'
+    title: '&8國家名稱>> {land}'
     size: 45
     f:
       back:
-        name: '&cBack'
+        name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '&e{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 37
       close:
-        name: '&c关闭'
+        name: '&c關閉'
         lore:
+          - '&7關閉選單.'
           - ' '
+          - '&8- &7You can open it again'
+          - '  &7with &8/&3Lands info {land}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 9
       owner:
-        name: '&4主人&3 {player}'
+        name: '&4擁有者&3 {player}'
         lore:
-          - '&7该国的最高统治者'
+          - '&7他們是此國家的擁有者'
+          - '&7假如你有任何此國家的事情'
+          - '&7可以聯絡他們'
         material: PLAYER_HEAD
         slot: 12
       players:
-        name: '&8> &6成员 &8(&7{amount}&8)'
+        name: '&8> &6國家成員 &8(&7{amount}&8)'
         lore:
           - ' '
           - '&e{players}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 16
       created:
-        name: '&8> &6已建立'
+        name: '&8> &6創建時間'
         lore:
           - '&5{date}'
         material: CLOCK
         slot: 34
       war:
-        name: '&8> &6战争统计'
+        name: '&8> &6War Stats'
         lore:
           - ' '
-          - '&7胜利:&7 {won}'
-          - '&7失败:&7 {lost}'
-          - '  &7平局:&3 {wlr}'
+          - '&7Won:&7 {won}'
+          - '&7Lost:&7 {lost}'
+          - '  &7WLR:&3 {wlr}'
           - ' '
-          - '&7击杀:&7 {kills}'
-          - '&7死亡:&7 {deaths}'
+          - '&7Kills:&7 {kills}'
+          - '&7Deaths:&7 {deaths}'
           - '  &7KDR:&3 {kdr}'
         material: IRON_SWORD
         slot: 23
@@ -1455,129 +1638,162 @@ gui:
         from: 1
         to: 45
   land_various:
-    title: '更多设定'
+    title: 國家進入訊息
     size: 27
     s: { }
     f:
       name:
-        name: '&8> &6重命名'
+        name: '&8> &6國家名稱'
         lore:
-          - '&7设置一个新的国家名'
+          - '&7為此國家設置一個新的名稱'
           - ' '
-          - '&8- &7目前名称:'
+          - '&8- &7當前名稱:'
           - '  &a{name}'
         material: NAME_TAG
         slot: 12
-      title:
-        name: '&8> &6标题信息'
-        lore:
-          - '&7更改国家标题信息'
-          - ' '
-          - '&8- &7目前标题为:'
-          - '  {title}'
-          - ' '
-          - '&7可用的变量'
-          - '  &8> &a%owner% &8= &7国家主人'
-          - '  &8> &a%player% &8= &7加入的玩家'
-        material: OAK_SIGN
-        slot: 16
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
+      titles:
+        name: '&8> &6進入訊息'
+        lore:
+          - '&7更改國家進入訊息.'
+          - ' '
+          - '&8- &7是否顯示訊息: {show}'
+          - '  &7切換顯示方式: &9滑鼠右鍵'
+          - ' '
+          - '&8- &7當前訊息:'
+          - '  {title}'
+          - ' '
+          - '&7可使用的變量'
+          - '  &8> &a%owner% &8= &7領主名稱'
+          - '  &8> &a%player% &8= &7進入的玩家名稱'
+        material: OAK_SIGN
+        slot: 16
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
+    a:
+      failure_noaccess:
+        name: '&4Failure: &cNo Access'
+        lore:
+          - '&7You''re not allowed to edit'
+          - '&7these options for this land.'
+          - ' '
+          - '&8- &7Only the land owner'
+          - '  &7is permitted to do that.'
+          - ' '
+          - '&8Bypass permission: {bypass}'
   global_lands:
-    title: '&8所有国家'
+    title: '&8全部國家'
     size: 54
     s:
       close:
-        name: '&c关闭'
+        name: '&c關閉'
         lore:
+          - '&7關閉此介面.'
           - ' '
+          - '&8- &7只要輸入&8/&3Lands list&7.'
+          - '  &7就可以再次開啟此介面'
         material: RED_STAINED_GLASS_PANE
         slot: 46
     f:
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 46
       toggle-allowed:
-        name: '&6设置为开放国家'
+        name: '&6只顯示公開的國家?'
         lore:
-          - '&7设置国家是否能让访客进入'
+          - '&7只顯示那些你有權限傳送的國家?'
           - ' '
-          - '&7单击此处切换此设置.'
-          - '&7公开: {only-allowed}'
+          - '&7點擊切換此設定狀態.'
+          - '&7只領顯示公開國家: {only-allowed}'
         material: ENDER_PEARL
         slot: 50
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 48
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 52
     l:
       object:
         name: '&2{land}'
         lore:
-          - '&b鼠标左键'
-          - '&7传送至该国出生点'
+          - '&b左鍵'
+          - '&7傳送到該國家'
           - ' '
-          - '&9鼠标右键'
-          - '&7查看该国家信息'
+          - '&9右鍵'
+          - '&7查看該國家的相關資料'
           - ' '
-          - '&7标题:'
+          - '&7國家進入訊息:'
           - '&7{title}'
         material: PLAYER_HEAD
         from: 10
         to: 45
       no-land:
-        name: '&c找不到该国'
+        name: '&c查無任何國家'
         lore:
+          - '&7目前沒有任何國家,'
+          - '&7符合你的搜尋條件.'
           - ' '
-          - '&8- &7创建一个国家:'
-          - '  &8/&3Lands create &8<&3name&8>'
+          - '&8- &7要創建國家請輸入:'
+          - '  &8/&3Lands create &8<&3國家名&8>'
         material: PAPER
         from: 10
         to: 45
     a:
-      Failure_teleport_permission:
-        name: '&4拒绝: &c权限不足'
+      failure_teleport_permission:
+        name: '&4無效: &c沒有權限'
         lore:
-          - '&c'
-      Failure_admin_permission:
-        name: '&4拒绝: &c权限不足'
-        lore:
-          - ''
-      Failure_no-spawn:
-        name: '&4失败: &c未设置出生点'
-        lore:
-          - '&c'
-      Failure_teleport_cost:
-        name: '&4拒绝: &c余额不足'
-        lore:
+          - '&c你無法傳送到該國家'
           - ' '
-          - '&7你至少要有&c ${costs}&7.'
+          - '&8- &7你需要權限'
+          - '  &3{permission}&7.'
+          - '&8- &7或是通知服主請他幫忙'
+      failure_admin_permission:
+        name: '&4無效: &c沒有管理員權限'
+        lore:
+          - '&c你無法開啟此國家的編輯介面'
+          - ' '
+          - '&8- &7你需要權限'
+          - '  &3{permission}&7.'
+          - '&8- &7或是通知服主請他幫忙'
+      failure_no-spawn:
+        name: '&4失敗: &c沒有設置傳送點'
+        lore:
+          - '&c此國家目前沒有傳送點'
+          - '&c他們需要先設置傳送點才可傳送'
+          - ' '
+          - '&8- &7他們可以輸入指令：'
+          - '  &8/&3Lands setspawn'
+          - '  &7來設置傳送點.'
+      failure_teleport_cost:
+        name: '&4無效: &c經費不足'
+        lore:
+          - '&c你沒有足夠的平衡幣可以傳送到該國家'
+          - ' '
+          - '&7你需要&c ✢{costs}&7.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1588,136 +1804,155 @@ gui:
         from: 36
         to: 54
   war-state:
-    title: '&8战争'
+    title: '&8War'
     size: 27
     s:
       close:
-        name: '&c关闭'
+        name: '&c關閉'
         lore:
+          - '&7關閉選單.'
           - ' '
+          - '&8- &7You can open it again by'
+          - '  &7executing &8/&3Wars menu&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     f:
       attackers:
-        name: '&8> &c进攻方'
+        name: '&8> &cAttackers'
         lore:
-          - '&7查看这场战争所有进攻国家.'
+          - '&7View all attacking lands'
+          - '&7of this war.'
           - ' '
-          - '&8- &e统计'
-          - '  &7国家: {attackers}'
-          - '  &7成员: {players}'
+          - '&8- &eStats'
+          - '  &7Lands: {attackers}'
+          - '  &7Players: {players}'
           - ' '
-          - '  &7击杀: {kills}'
-          - '  &7死亡: {deaths}'
+          - '  &7Kills: {kills}'
+          - '  &7Deaths: {deaths}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTU0OTQ3ZGU3ZjUyNTk4MjU1ZDZhZmVlOWQ3N2JlZmFkOWI0ZjI0YzBjNDY2M2QyOGJjZGY4YTY0NTdmMzQifX19
         slot: 11
       defenders:
-        name: '&8> &a防守方'
+        name: '&8> &aDefenders'
         lore:
-          - '&7查看这场战争所有防守国家.'' - '' '
-          - '&8- &e统计'
-          - '  &7国家: {defenders}'
-          - '  &7成员: {players}'
+          - '&7View all defending lands'
+          - '&7of this war.'
           - ' '
-          - '  &7击杀: {kills}'
-          - '  &7死亡: {deaths}'
+          - '&8- &eStats'
+          - '  &7Lands: {defenders}'
+          - '  &7Players: {players}'
+          - ' '
+          - '  &7Kills: {kills}'
+          - '  &7Deaths: {deaths}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRkYmNiN2UxZmJlY2VhOWE3MzUwNDM2Y2JiZWEyYjQ5NmY3NGMyOTcyMDRmMWJiOWFjYzM4NzhkNTQyY2NiIn19fQ==
         slot: 13
       info_declaration:
-        name: '&8> &6宣战信息'
+        name: '&8> &6Information'
         lore:
-          - '&7距离战争开始 '
+          - '&7The war starts in '
           - '&5~{time}'
           - ' '
-          - '&8- &7进攻方可以在你土地'
-          - '  &7做这些事情'
-          - '  &8(&7在Config中进行配置&8)&7:'
+          - '&8- &7Attackers can do these'
+          - '  &7things in your land'
+          - '  &8(&7configureable in config&8)&7:'
           - ' '
           - '{settings}'
         material: IRON_SWORD
         slot: 15
       info_war:
-        name: '&8> &6战争信息'
+        name: '&8> &6Information'
         lore:
-          - '&7距离战争结束 '
+          - '&7The war ends in '
           - '&5~{time}'
           - ' '
-          - '&8- &7进攻方可以在你土地'
-          - '  &7做这些事情'
-          - '  &8(&7在Config中进行配置&8)&7:'
+          - '&8- &7Attackers can do these'
+          - '  &7things in your land'
+          - '  &8(&7configureable in config&8)&7:'
           - ' '
           - '{settings}'
         material: IRON_SWORD
         slot: 15
       tribute_attacker:
-        name: '&8> &6战利品:&a ${tribute}'
+        name: '&8> &6Tribute:&a ${tribute}'
         lore:
-          - '&7更改战利品价值'
+          - '&7Change the tribute'
+          - '&7value for this war.'
           - ' '
-          - '&8- &7如果您要投降'
-          - '  &7必须支付所设置的战利品'
-          - '  &7才允许投降.'
+          - '&8- &7A surrender will need to'
+          - '  &7pay this value in order'
+          - '  &7to surrender.'
           - ' '
-          - '&8- &9鼠标右键'
-          - '  &7如果进攻方想要投降'
-          - '  &7他们需要向防守方'
-          - '  &7支付&c ${tribute-att}'
-          - '  &7才可以投降.'
+          - '&8- &9RIGHT CLICK'
+          - '  &7If a attacker wants to'
+          - '  &7surrender, they''ll need'
+          - '  &7to pay&c ${tribute-att} &7to'
+          - '  &7the defenders.'
           - ' '
-          - '  &8- &7如果该值为 0'
-          - '    &7则不允许进攻方投降'
+          - '  &8- &7If the value equals 0,'
+          - '    &7the attackers are not'
+          - '    &7allowed to surrender.'
           - ' '
-          - '&8- &7战利品将瓜分给'
-          - '  &7所有进攻者: {divide}'
+          - '&8- &7Tribute will be divided'
+          - '  &7to all attackers: {divide}'
         material: GOLD_INGOT
         slot: 17
       tribute_defender:
-        name: '&8> &6投降:&c ${tribute}'
+        name: '&8> &6Surrender:&c ${tribute}'
         lore:
-          - '&7点击投降'
+          - '&7Click here to surrender'
+          - '&7in this war.'
           - ' '
-          - '&8- &c投降需要支付战利品:'
-          - '  &c ${tribute}'
+          - '&8- &cA surrenderer will need to'
+          - '  &cpay the tribute value of&c ${tribute}'
+          - '  &cin order to surrender.'
           - ' '
-          - '&8- &7如果该值为 0:'
-          - '  &7将意味着进攻方'
-          - '  &7不接受你的投降'
+          - '&8- &7If the value equals 0:'
+          - '  &7That means that the'
+          - '  &7attackers don''t accept'
+          - '  &7your surrender.'
         material: GOLD_INGOT
         slot: 17
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 21
     a:
-      Failure_permission:
-        name: '&4失败'
+      failure_permission:
+        name: '&4Failure: &cNo Access'
         lore:
-          - '&7禁止访问只能由发起进攻的国家'
-          - '&7所有人来进行设置'
+          - '&7This action can only'
+          - '&7be executed by the land'
+          - '&7owner of the initial'
+          - '&7attacker land.'
           - ' '
-          - '&7玩家:&b {owner}'
-      Failure_surrender-att:
-        name: '&c失败: &4投降已禁用'
+          - '&7Player:&b {owner}'
+      failure_surrender-att:
+        name: '&cFailure: &4Surrendering disabled'
         lore:
-          - '&7投降已被禁用'
-      Failure_surrender:
-        name: '&c失败: &4投降被拒绝'
+          - '&7Surrendering for attackers was'
+          - '&7disabled in config.'
+      failure_surrender:
+        name: '&cFailure: &4Surrender rejected'
         lore:
-          - '&7进攻方拒绝了你的投降'
-          - '&7就是要揍你'
-      Failure_surrender-attacker:
-        name: '&c失败: &4投降被拒绝'
+          - '&7The initial attacker land'
+          - '&7rejected your surrender.'
+          - ' '
+          - '&7That''s because they don''t'
+          - '&7accept any tribute.'
+      failure_surrender-attacker:
+        name: '&cFailure: &4Surrender rejected'
         lore:
-          - '&7不允许进攻方投降'
-          - '&7只允许防守方投降'
-      Failure_surrender-cost:
-        name: '&c失败: &4投降被拒绝'
+          - '&7Attackers are not allowed'
+          - '&7to surrender. Only defenders'
+          - '&7can surrender.'
+      failure_surrender-cost:
+        name: '&cFailure: &4Surrender rejected'
         lore:
-          - '&7你的国家没有足够的钱'
-          - '来支付战利品&c ${tribute}&7.'
+          - '&7Your land doesn''t have'
+          - '&7enough money to pay the'
+          - '&7tribute of&c ${tribute}&7.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1730,36 +1965,37 @@ gui:
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 34
     l:
       object:
         name: '&2{land}'
         lore:
-          - '&7打开国家信息'
+          - '&7Open the land information'
+          - '&7menu of this land.'
           - ' '
-          - '&8- &e统计'
-          - '  &7总成员:&e {players}'
+          - '&8- &eStats'
+          - '  &7Total players:&e {players}'
           - ' '
-          - '&8- &7标题:'
+          - '&8- &7Title:'
           - '  &7{title}'
         material: PLAYER_HEAD
         from: 10
@@ -1774,62 +2010,68 @@ gui:
         from: 29
         to: 36
   war-declaration_tribute:
-    title: '&8战利品'
+    title: '&8Tribute'
     size: 27
     s:
       plus-1:
-        name: '&a增加 $1'
+        name: '&aAdd $1'
         lore:
-          - '&7增加 $1 到战利品中.'
+          - '&7Add $1 to the'
+          - '&7tribute value.'
         material: GLOWSTONE_DUST
         slot: 11
         amount: 1
         data:
           value: 1.0
       plus-2:
-        name: '&a增加 $100'
+        name: '&aAdd $100'
         lore:
-          - '&7增加 $100 到战利品中.'
+          - '&7Add $100 to the'
+          - '&7tribute value.'
         material: GLOWSTONE_DUST
         slot: 12
         data:
           value: 100.0
       plus-3:
-        name: '&a增加 $1000'
+        name: '&aAdd $1000'
         lore:
-          - '&7增加 $1000 到战利品中.'
+          - '&7Add $1000 to the'
+          - '&7tribute value.'
         material: GLOWSTONE_DUST
         slot: 13
         data:
           value: 1000.0
       minus-3:
-        name: '&c减少 $1000'
+        name: '&cRemove $1000'
         lore:
-          - '&7减少 $1000 到战利品中.'
+          - '&7Remove $1000 from'
+          - '&7the tribute value.'
         material: REDSTONE
         slot: 15
         data:
           value: 1000.0
       minus-2:
-        name: '&c减少 $100'
+        name: '&cRemove $100'
         lore:
-          - '&7减少 $100 到战利品中.'
+          - '&7Remove $100 from'
+          - '&7the tribute value.'
         material: REDSTONE
         slot: 16
         data:
           value: 100.0
       minus-1:
-        name: '&c减少 $1'
+        name: '&cRemove $1'
         lore:
-          - '&7减少 $1 到战利品中.'
+          - '&7Remove $1 from'
+          - '&7the tribute value.'
         material: REDSTONE
         slot: 17
         data:
           value: 1.0
       close:
-        name: '&cClose'
+        name: '&c關閉'
         lore:
-          - '&7Close this menu.'
+          - '&7關閉選單.'
           - ' '
           - '&8- &7You can open it again by'
           - '  &7executing &8/&3Wars menu&7.'
@@ -1869,9 +2111,9 @@ gui:
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==
         slot: 19
       back:
-        name: '&cBack'
+        name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
@@ -1896,38 +2138,41 @@ gui:
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '&e{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 37
       close:
-        name: '&c关闭'
+        name: '&c關閉'
         lore:
-          - '&7'
+          - '&7關閉選單.'
+          - ' '
+          - '&8- &7You can open it again'
+          - '  &7with &8/&3Lands info {land}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 9
     s:
       lands:
-        name: '&8> &e国土'
+        name: '&8> &e國土'
         lore:
-          - '&7查看全部国土'
-          - '&7以及国家成员'
+          - '&7查看全部國土'
+          - '&7以及國家成員'
         material: GRASS_BLOCK
         slot: 12
       war:
-        name: '&8> &e当前战争'
+        name: '&8> &e當前戰爭'
         lore:
-          - '&7获取当前战争中的信息'
+          - '&7獲取當前戰爭中的訊息'
           - ' '
-          - '&7显示有关于:'
-          - '&8- &7敌国信息'
-          - '&8- &7战利品'
+          - '&7顯示有關於:'
+          - '&8- &7敵國訊息'
+          - '&8- &7戰利品'
         material: REDSTONE_BLOCK
         slot: 14
       spawn:
-        name: '&8> &e出生点'
+        name: '&8> &e重生點'
         lore:
-          - '&7点击传送至国家出生点'
+          - '&7點擊傳送至國家出生點'
         material: ENDER_PEARL
         slot: 16
     p:
@@ -1936,26 +2181,26 @@ gui:
         from: 1
         to: 27
   admin_wilderness:
-    title: '&8荒野设置'
+    title: '&8荒野設置'
     size: 9
     s:
       player-settings:
-        name: '&8> &6玩家设置'
+        name: '&8> &6玩家設置'
         lore:
-          - '&7设置玩家在荒野能够做什么'
+          - '&7自訂義玩家可以在荒野做什麼事'
         slot: 3
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
       land-settings:
-        name: '&8> &6国家设置'
+        name: '&8> &6國家設置'
         lore:
-          - '&7编辑一些常规的设置'
-          - '&7如：怪物是否生成'
+          - '&7你可以在此更改基礎設置'
+          - '&7像是生物生成之類的.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 7
       close:
-        name: '&c关闭'
+        name: '&c關閉'
         lore:
-          - '&7'
+          - '&7關閉選單.'
         material: RED_STAINED_GLASS_PANE
         slot: 9
         enabled: true
@@ -1965,42 +2210,43 @@ gui:
         from: 1
         to: 9
   admin_wilderness_player-settings:
-    title: '&8玩家设置'
+    title: '&8玩家設置'
     size: 36
     l:
       object:
         name: '&6{setting}'
         lore:
-          - '&7状态: {enabled}'
+          - '&7狀態: {enabled}'
           - ' '
-          - '是否允许玩家在荒野这么做'
-          - '&7点击切换'
+          - '&7點此來允許'
+          - '&7或不允許玩家在荒野'
+          - '&7做某些事情.'
           - ' '
-          - '&8权限: {bypass}'
+          - '&8忽略: {bypass}'
         material: STONE
         from: 10
         to: 27
     f:
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 35
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
+          - '&7返回到'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
@@ -2014,40 +2260,40 @@ gui:
         from: 27
         to: 36
   admin_wilderness_land-settings:
-    title: '&8国家设置'
+    title: '&8國家設置'
     size: 27
     l:
       object:
         name: '&6{setting}'
         lore:
-          - '&7状态: {enabled}'
+          - '&7狀態: {enabled}'
           - ' '
-          - '&7点击切换该设置'
+          - '&7點擊切換此設定狀態'
         material: STONE
         from: 10
         to: 18
     f:
       page_previous:
-        name: '&9上一页'
+        name: '&9上一頁'
         lore:
-          - '&7返回上一页:&9 {previous}'
+          - '&7翻到上一頁:&9 {previous}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 21
       page_next:
-        name: '&a下一页'
+        name: '&a下一頁'
         lore:
-          - '&7进入下一页:&9 {next}'
+          - '&7翻到下一頁:&9 {next}'
           - ' '
-          - '&8- &7当前:&3 {current}'
+          - '&8- &7當前頁數:&3 {current}'
         material: ARROW
         slot: 25
       back:
         name: '&c返回'
         lore:
-          - '&7返回至'
-          - '{back}&7.'
+          - '&7返回到'
+          - back
         material: RED_STAINED_GLASS_PANE
         slot: 19
     p:
@@ -2058,4 +2304,131 @@ gui:
       placeholder_2:
         material: GRAY_STAINED_GLASS_PANE
         from: 19
+        to: 27
+  taxes:
+    title: '&8Taxes'
+    size: 27
+    s:
+      plus-1:
+        name: '&aAdd $1'
+        lore:
+          - '&7Add $1 to'
+          - '&7tax value.'
+        material: GLOWSTONE_DUST
+        slot: 11
+        data:
+          value: 1.0
+      plus-2:
+        name: '&aAdd $50'
+        lore:
+          - '&7Add $50 to'
+          - '&7tax value.'
+        material: GLOWSTONE_DUST
+        slot: 12
+        data:
+          value: 50.0
+      plus-3:
+        name: '&aAdd $500'
+        lore:
+          - '&7Add $500 to'
+          - '&7tax value.'
+        material: GLOWSTONE_DUST
+        slot: 13
+        data:
+          value: 500.0
+      minus-3:
+        name: '&cRemove $500'
+        lore:
+          - '&7Remove $500 from'
+          - '&7tax value.'
+        material: REDSTONE
+        slot: 15
+        data:
+          value: 500.0
+      minus-2:
+        name: '&cRemove $50'
+        lore:
+          - '&7Remove $50 from'
+          - '&7tax value.'
+        material: REDSTONE
+        slot: 16
+        data:
+          value: 50.0
+      minus-1:
+        name: '&cRemove $1'
+        lore:
+          - '&7Remove $1 from'
+          - '&7tax value.'
+        material: REDSTONE
+        slot: 17
+        data:
+          value: 1.0
+    f:
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      tax_area:
+        name: '&7Tax:&c ${tax}'
+        lore:
+          - ' '
+          - '&7In&5 {time} &7your land'
+          - '&7will receive&a ${revenue} &7as taxes'
+          - '&7from the trusted members in area.'
+          - ' '
+          - '&8- &7Players are paying'
+          - '  &7only taxes for areas,'
+          - '  &7in which they''re trusted.'
+        material: GOLD_INGOT
+        slot: 14
+      tax_nation:
+        name: '&7Tax:&c ${tax}'
+        lore:
+          - ' '
+          - '&7In&5 {time} &7your nation'
+          - '&7will receive&a ${revenue} &7as taxes'
+          - '&7from the lands in this nation.'
+          - ' '
+          - '&7This value sets the tax'
+          - '&7per chunk. So bigger lands'
+          - '&7will need to pay more.'
+        material: GOLD_INGOT
+        slot: 14
+    a:
+      failure_maxValue:
+        name: '&4Max Value reached'
+        lore:
+          - '&7You can''t set the tax'
+          - '&7value higher than&3 {max}&7.'
+          - ' '
+          - '&7A administrator can'
+          - '&7change this in config.'
+      failure_cooldown:
+        name: '&4Cooldown:&c You need to wait.'
+        lore:
+          - '&7You currently can''t change the'
+          - '&7tax value. You need to wait'
+          - '&5{time}.'
+          - ' '
+          - '&7A administrator can'
+          - '&7change this in config.'
+      failure_noaccess:
+        name: '&4Failure:&c No Access'
+        lore:
+          - '&7You''re not allowed to edit'
+          - '&7the taxes of this area.'
+          - ' '
+          - '&8- &7You''re missing permission'
+          - '  &7from the land owner to do so.'
+          - '  &8Setting: {setting}'
+          - ' '
+          - '&8Bypass permission:'
+          - '&8lands.admin.setting_edit_taxes'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
         to: 27
