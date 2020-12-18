@@ -1,2434 +1,738 @@
 ---
 general:
-  wYes: 是
-  wNo: 否
-  none: '&c無'
-  now: '&a現在'
-  enabled: '&a開啟'
-  disabled: '&c關閉'
-  unlimited: '&a無限'
-  previous: '&8上一個介面'
-  offline: '&c離線'
-  role:
-    owner: '&4領主'
-    admin: '&c副領主'
-    member: '&e成員'
-    visitor: '&7參觀者'
-  war:
-    defenders: '&aDefenders'
-    attackers: '&cAttackers'
-physical-Item:
-  claim-block:
-    name: '&b佔領方塊'
-    lore:
-      - '&7當你擁有此方塊時'
-      - '&7你可以放置在荒野的任一區塊中'
-      - '&7來獲得該國家'
-      - ' '
-      - '&7擁有者:&a {owner}'
-    material: GRASS_BLOCK
-skull:
-  role:
-    owner: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMzExYTRmYjljNDkzODliNGY0NThjMjllOTY4MzI0YzU4MjNiOGE5OWVhZGUxNzQ3ODY2Yzk1YjA2NGEifX19
-    admin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UzZmVhODhlMmI4NWNjZGZiMWIzODcyOTgyZWFlMTY0ODlhODRjNjgxYmQ5ZmU0ZmU5YmM4YmNjMmU1In19fQ==
-    member: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFhZGZkZjA3MTE3NWFkYWQ2NDRmZTRiM2E5NzMxYWM2YThmYTQ3NTExNjJlODEzOGM4OTlmYmFhNWZmMGI5In19fQ==
-    visitor: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-gui:
-  main:
-    title: '&8主選單'
-    size: 27
-    s:
-      lands:
-        name: '&8> &2國家'
-        lore:
-          - '&7查看你擁有的國家.'
-          - ' '
-          - '&8- &7裡面包含'
-          - '  &7你擁有的國家'
-          - '  &7和有該國家權限的國家.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 11
-      all-lands:
-        name: '&8> &b全部國家'
-        lore:
-          - '&7查看伺服器中'
-          - '&7所有已創建的國家.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
-        slot: 13
-      invites:
-        name: '&8> &6邀請函'
-        lore:
-          - '&7查看你所有'
-          - '&7收到的邀請函.'
-        material: WRITABLE_BOOK
-        slot: 15
-      close:
-        name: '&c關閉'
-        lore:
-          - '&7關閉此介面.'
-          - ' '
-          - '&8- &7關閉之後你還是可以再次開啟'
-          - '  &7只需要輸入 &8/&3Lands menu&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 9
-        enabled: true
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-    f:
-      limitation:
-        name: '&8> &6你的國家限制'
-        lore:
-          - ' '
-          - '&7+ 可以創造&3{ownlands}&7塊國家.'
-          - '  &8lands.ownlands.NUMBER'
-          - '&7+ 每個國家可以包容&3{chunks}&7塊區塊.'
-          - '  &8lands.chunks.NUMBER'
-          - '&7+ 只要在你有權限的國家中，'
-          - '  &7你可以增加&3{support-chunks}&7塊區塊在每個國家中&7.'
-          - '  &8lands.chunks.support.NUMBER'
-          - ' '
-          - '&7+ 可以獲得&3{lands}&7塊國家的使用權.'
-          - '  &8lands.lands.NUMBER'
-          - '&7+ 每個國家可以擁有&3{members}&7位成員.'
-          - '  &8lands.members.NUMBER'
-        material: PLAYER_HEAD
-        slot: 17
-  player_lands:
-    title: '&8你的國家'
-    size: 27
-    s: { }
-    f:
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 21
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 25
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回至'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-    l:
-      object:
-        name: '&2{land}'
-        lore:
-          - '&7你是該國家的成員.'
-          - ' '
-          - '&7大小:&3 {chunks} &7/&c {max-chunks}'
-          - ' '
-          - '&9滑鼠右鍵'
-          - '&7來看此國家相關資料'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFiNDNiOGMzZDM0ZjEyNWU1YTNmOGI5MmNkNDNkZmQxNGM2MjQwMmMzMzI5ODQ2MWQ0ZDRkN2NlMmQzYWVhIn19fQ==
-        from: 10
-        to: 18
-      own-land:
-        name: '&2{land}'
-        lore:
-          - '&7你擁有此國家.'
-          - ' '
-          - '&7大小:&3 {chunks} &7/&c {max-chunks}'
-          - ' '
-          - '&9滑鼠右鍵'
-          - '&7來看此國家相關資料'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        from: 10
-        to: 18
-      no-land:
-        name: '&c無國家區域'
-        lore:
-          - '&8- &7要創建國家請輸入:'
-          - '  &8/&3Lands create &8<&3名稱&8>'
-          - ' '
-          - '&8- &7讓其他人給你國家使用權，請輸入:'
-          - '  &8/&3Lands trust {player}'
-        material: OAK_SIGN
-        from: 10
-        to: 18
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
+  prefix:
+    normal: '&8[&aLands&8] '
+    help: '&8[&aLands&8] &7Usage: '
+  wYes: '&aJa'
+  wNo: '&cNej'
+  none: '&8Ingen'
+  disabled: '&cAvstängd'
+  wilderness: '&aVildmark'
+  time:
+    days: dag(s)
+    hours: timme(s)
+    minutes: minute(s)
+    seconds: sekund(s)
+  status:
+    online: '&aonline'
+    offline: '&coffline'
+  top:
+    title: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
+    entry: '&c#{pos} &a{land} &7Balance:&6 {value} {#fbe232}Ⓖ'
+    next-page: '&7Nästa sida: &8/&2Lands top {next}'
+    last-updated: '&7Senast uppdaterad: {time} &7sen'
+    footer: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
+  integration:
+    dynmap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br /><br /> Ägare: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br />Members: <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 120%;"><span style="font-size: 120%;"><span style="color: #00ccff;">Spawnpoint</span><br /></span></span><p>Is public: {public}</p></div>'
+  sign:
+    topLand:
+      line-1: '&c#&l{place}'
+      line-2: '&8<&2 {land} &8>'
+      line-3: '&7Ägs av {owner}'
+      line-4: '&cchunks {value}'
+    noLand:
+      line-1: ' '
+      line-2: '&cInget land'
+      line-3: '&cVisa.'
+      line-4: ' '
+    rent:
+      line-2: '&6Hyra {area}'
+      line-3: '&c${cost} &8/ &5{time}'
+      line-4: '&8Antal dagar: {max}'
+    sell:
+      area:
+        line-2: '&aKöp'
+        line-3: '&7Underzone&6 {area}'
+        line-4: '&c${cost}'
+      land:
+        line-2: '&aKöp'
+        line-3: '&7Land&2 {land}'
+        line-4: '&c${cost}'
+    rented:
+      line-2: '&7Area&6 {area}'
+      line-3: '&7{player}'
+      line-4: '&5{time} &7left'
+    sold:
+      area:
+        line-2: '&7Area&6 {area}'
+        line-3: '&aSåld &7av'
+        line-4: '&7{player}'
+      land:
+        line-2: '&7Land&2 {land}'
+        line-3: '&aSåld &7till'
+        line-4: '&7{player}'
+  autoAction:
+    claim: '&aÖverta chunk'
+  map:
+    yours: '&a▉ '
+    others: '&c▉ '
+    friendly: '&5▉ '
+    current-location: '&e▉ '
+    wilderness: '&2▉ '
+    top: '&7-<------------<- &6Lands Karta &7->------------>-'
+    info:
+      wilderness: ' &2▉ &7= Vildmarken'
+      yours: ' &a▉ &7= Din'
+      trusted: ' &5▉ &7= Vänn'
+      others: ' &c▉ &7= Andras'
+      position: ' &e▉ &7= Position'
+    bottom: '&7-<------------<- &6Lands Karta &7->------------>-'
+  wars:
+    nametag:
+      enemy: '&cFiende &8| '
+      ally: '&aAllierad &8| '
+    object:
+      enemy: '&cEnemy'
+      ally: '&aAlly'
   land:
-    title: '&8國家 {land}'
-    size: 45
-    s:
-      information:
-        name: '&6資料'
-        lore:
-          - '&7你可以在此查看'
-          - '&7更多關於你國家的相關資訊'
-          - '&7來幫助你追蹤此國家的動態'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
-        slot: 11
-      trusted-players:
-        name: '&8> &6國家成員'
-        lore:
-          - '&7列出所有此國家中的成員.'
-          - '&7不會特別指定是哪個區域的'
-          - '&7就只是此國家的全部成員.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 14
-      invites:
-        name: '&8> &6邀請發送紀錄'
-        lore:
-          - '&7撤銷已發送的邀請'
-          - '&7或查看相關資訊'
-          - ' '
-          - '&8- &7這些邀請'
-          - '  &7可以讓其他玩家'
-          - '  &7擁有該國家的使用權.'
-        material: WRITABLE_BOOK
-        slot: 15
-      management:
-        name: '&6管理'
-        lore:
-          - '&7你可以在這邊管理你的國家.'
-          - '&7也可以邀請玩家,設置爵位,'
-          - '&7編輯國家設置或是設置國家稅金.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
-        slot: 29
-      land-settings:
-        name: '&8> &6國家設置'
-        lore:
-          - '&7你可以在此更改基礎設置'
-          - '&7像是生物生成之類的.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 31
-      roles:
-        name: '&8> &6爵位'
-        lore:
-          - '&7查看爵位.'
-          - ' '
-          - '&8- &7此處的爵位設置將會自動套用在區域中'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 32
+    title:
+      land: ' &7Ägd av&3 %owner%&7.'
+      safezone: ''
+    default-area: Default
+  teleportation:
+    bossbar: '&7Vänta&3 {time} &7Second(s) innan du teleportera igen.'
+  inbox:
+    general:
+      created: '&3{0}: &7Land skapad.'
+    member:
+      join: '&3{0}: &aInvånare &b{1} &agick med.'
+      leave: '&3{0}: &aInvånare &b{1} &clämnat.'
+      ban: '&3{0}: &cInvånare &4{1} &cfick stå i skamvrån (avhyst).'
+    economy:
+      upkeep:
+        warning: '&3{0}: &cKunde inte betala underhållskostnad till servern: ${1}'
+        unclaimed: '&3{0}: &cDu kunde inte betala&6 {1} {#fbe232}Ⓖ &6. Sista inmutade chunk (X: {2} Z: {3}) är borttagen.'
+        paid: '&8{0}: &7Du betalade &6{1} {#fbe232}Ⓖ&7 i underhåll till servern'
+      bank:
+        withdraw: '&3{0}: &cInvånare &9{1} &ctog ut &6{2} {#fbe232}Ⓖ &7kvar i banken &6{3} {#fbe232}Ⓖ'
+        deposit: '&3{0}: &7Invånare &9{1} &7satte in &6{2} {#fbe232}Ⓖ &7summa efter i banken &6{3} {#fbe232}Ⓖ'
       taxes:
-        name: '&8> &6國家稅金'
-        lore:
-          - '&7查看國家稅金.'
-          - ' '
-          - '&8- &7國家稅金是指'
-          - '  &7在該國家的所有區域的稅金'
-          - '  &7並不是指某些區域的稅金.'
-        material: GOLD_INGOT
-        slot: 33
-      various:
-        name: '&8> &6國家進入訊息'
-        lore:
-          - '&7更改國家名稱'
-          - '&7或是設置新的副標題.'
-        material: BEACON
-        slot: 34
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 45
-      placeholder_2:
-        material: BLUE_STAINED_GLASS_PANE
-        from: 12
-        to: 12
-      placeholder_3:
-        material: BLUE_STAINED_GLASS_PANE
-        from: 30
-        to: 30
-    f:
-      areas:
-        name: '&8> &6區域'
-        lore:
-          - '&7查看國家中的所有區域.'
-          - '&7你也可以在此介面創建新的區域'
-          - ' '
-          - '&7區域區塊:&3 {areas} &7/&c {max-areas}'
-          - '&7國家區塊:&3 {chunks} &7/&c {max-chunks}'
-        material: OAK_FENCE
-        slot: 13
-      inbox:
-        name: '&8> &6收件箱 &8(&e{amount}&8)'
-        lore:
-          - ' '
-          - '{inbox}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
-        slot: 16
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '&8國家選單&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 37
-      statistics:
-        name: '&8> &6統計'
-        lore:
-          - ' '
-          - '&7&l管理'
-          - '&7領地區塊: {0} / {1} +&a {2} &8(&7國家&8)'
-          - '&7成員: {3} / {4}'
-          - ' '
-          - '&7&l經濟'
-          - ''
-          - '&8- &7&l領土'
-          - '  &7領地銀行: &c✢{5}'
-          - '  &7下次領土花費: &c✢{6}'
-          - '  &7領土花費&c ${7} - ${8} &8(&7國家&8)'
-          - '  &7下次上繳國庫時間 &n{9}&7.'
-          - ' '
-          - '&8- &4&l你'
-          - '  &7擁有平衡幣: &c✢{10}'
-          - '  &7在&c{12}之後需要繳納稅金'
-          - '  &7金額為 &c✢{11}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
-        slot: 17
-  land_areas:
-    title: '&8區域'
-    size: 36
-    s: { }
-    f:
-      create:
-        name: '&a創建區域'
-        lore:
-          - '&7在此國家中創建一個區域'
-          - ' '
-          - '&7可創建數量:&3 {areas} &8/&c {max}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
-        slot: 32
-      delete:
-        name: '&c刪除區域'
-        lore:
-          - '&7在此國家中刪除一個區域'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        slot: 33
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 35
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-    l:
-      object:
-        name: '&6{area}'
-        lore:
-          - '&7開啟區域介面'
-        material: OAK_FENCE
-        from: 10
-        to: 27
-      area-setup:
-        name: '&c設定:&6 {area}'
-        lore:
-          - '&7你尚未分配任何區塊到區域內'
-          - ' '
-          - '&7輸入 &8/&3Lands selection'
-          - '&7來選擇要分配的範圍'
-          - '&8然後輸入/&3Lands selection assign {區域名稱}'
-          - '&7來將該範圍分配給區域.'
-        material: ACACIA_FENCE
-        from: 10
-        to: 27
-      no-area:
-        name: '&c尚未創建區域'
-        lore:
-          - '&7此國家尚未擁有任何區域'
-          - ' '
-          - '&8- &7創建一個新的區域'
-          - '  &7點擊下面的區域添加物品.'
-        material: ACACIA_FENCE
-        from: 10
-        to: 27
-    a:
-      failure_untrusted:
-        name: '&4無效: &c未被信任'
-        lore:
-          - '&c你不能打開該區域的區域菜單'
-          - ' '
-          - '&8- &7你需要被該區域信任'
-          - '&8- &7聯繫國家所有者幫助'
-      failure_max-areas:
-        name: '&4失敗: &c區域已滿'
-        lore:
-          - '&7達到最大區域數量限制'
-          - '&7&3 {max} &7區域.'
-          - ' '
-          - '&8權限: lands.areas.NUMBER'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
+        warning: '&4{0}: &cInvånare &3{1} betalade inte skatt i landet.'
+        untrusted: '&4{0}: &cInvånare &3{1} betalade inte skatt. Han är nu borttagen från landet.'
+        received: '&3{0}: &7Du motog totalt &6{1} {#fbe232}Ⓖ &7i skatt från lands ivånare summa på banken &6{2} {#fbe232}Ⓖ'
+    war:
+      declaration:
+        sent: '&8{0}: &7Du förklarade krig mot {1},för mer info med kommandot &8/wars info'
+        received: '&8{0}: &c{1} &cförklarade krig mot oss,&7mer info med komandot &8/Wars info'
+        mutual:
+          sent: '&8{0}: &7Sänt kriksförklaring till {1}. &7Det behöver accptera det.'
+          received: '&8{0}: &c{1} &char sänt en krigsförfrågan. Acceptera med komandot: &8/&3Wars declare {2}'
+      surrender:
+        sent: '&8{0}: &cGav upp. betallade &6{1}{#fbe232}Ⓖ&c i gåva till fienden.'
+        received: '&8{0}: &7Fienden {1} &7gav upp. Motag &6{2}{#fbe232}ⒼⒼ&7 i gåva.'
+      end:
+        won: '&8{0}: vi vann kriget med {1} dödade.'
+        lost: '&8{0}: vi förlorade kriget med {1} döda.'
+        draw: '&8{0}: The war ended in a draw with {1} kills and {2} deaths.'
+  unlimited: '&aunlimited'
+help:
+  command:
+    help: '&8/&3Lands help &8[&3page&8] - &7Här hittar du information om kommandon'
+    edit: '&8/&3Lands edit &8<&3land&8> &8- &7Skriv namnet på det land du vill t.ex inmuta eller anförtro spelare i'
+    claim: '&8/&3Lands claim &8[&3area, auto&8] - &7Inmuta chunk'
+    create: '&8/&3Lands create &8<&3name&8> - &7Skapa land'
+    leave: '&8/&3Lands leave &8[&3land] &8- &7Lämna chunk eller land'
+    unclaim: '&8/&3Lands unclaim &8- &7Ta bort inmutning av chunk'
+    delete: '&8/&3Lands delete &8<&3land&8> &8- &7Ta bort land'
+    trust: '&8/&3Lands trust &8<&3player&8> [&3here&8] - &7Bjud in spelare'
+    untrust: '&8/&3Lands untrust &8[&3here&8] - &7sätt upp spelare på lista för opålitliga'
+    setRole: '&8/&3Lands setRole &8<&3player&8> <&3role&8> [&3here&8] - &7Sätt roll'
+    accept: '&8/&3Lands accept &8<&3land&8> - &7Acceptera inbjudan'
+    deny: '&8/&3Lands deny &8<&3land&8> - &7Neka inbjudan'
+    view: '&8/&3Lands view &8- &7Information om land och inmutad chunk, samt se gränser för land och subzoner'
+    menu: '&8/&3Lands menu &8[&3here&8] &8- &7öppna land / area meny'
+    setSpawn: '&8/&3Lands setspawn - &7Sätter landsspawn punkt'
+    spawn: '&8/&3Lands spawn &8[&3land&8] - &7Teleoportera till land'
+    wild: '&8/&3Lands wild &8- &7Teleoportera till slumpmässig plats'
+    top: '&8/&3Lands top &8[&3page&8] &8- &7Visa top 10 lands'
+    selection: '&8/&3Lands selection &8- &7för att markera yta antingen för inmuta stor yta land eller markera ut underzoner (OBS!!! underzoner måste du räkna med höjd så spelaren kan bygga).'
+    chat: '&8/&3Lands chat &8[&3land&8] <&3message&8> &8- &7Land chat'
+    rename: '&8/&3Lands rename &8<&3name&8> - &7Döp om land'
+    teleport: '&8/&3Lands teleport &8[&3world&8] <&3x&8> <&3z&8> - &7Teleoportera till chunk'
+    invites: '&8/&3Lands invites &8- &7Visa motagna Inbjudningar'
+    info: '&8/&3Lands info &8[&3land&8] - &7Visa information om landet'
+    player: '&8/&3Lands player &8<&3player&8> - &7Visa information om spelare'
+    map: '&8/&3Lands map &8- &7Visa karta över närmaste land '
+    balance: '&8/&3Lands balance &8[&3land&8] - &7Kolla lands konto'
+    deposit: '&8/&3Lands deposit &8<&3amount&8> - &7Insätting av guld till lands bank'
+    withdraw: '&8/&3Lands withdraw &8<&3amount&8> - &7Ta ut guld från lands bank'
+    list: '&8/&3Lands list &8[&3world&8] - &7Lista alla lands'
+    assign: '&8/&3Lands selection assign &8<&3area&8> - &7Tilldela markerningen du gjort med selection till en area du gjort i ditt lands GUI i underzoner'
+    setowner: '&8/&3Lands setowner &8<&3player&8> - &7Överför Ägande av ditt land'
+    ban: '&8/&3Lands ban &8<&3player&8> - &7Hindra spelare komma in i ditt land'
+    unban: '&8/&3Lands unban &8<&3player&8> - &7Ta bort ban för spelare i ditt land'
+    wars:
+      declare: '&8/&3Wars declare &8<&3land or nation&8> - &7Förklara krig'
+      info: '&8/&3Wars info - &7Visar info nuvarande krig eller kommande krig'
+      menu: '&8/&3Wars menu &8- &7Öppna meny för krig'
+      deny: '&8/&3Wars deny &8- &7Necka en krigsförklaring'
+    admin:
+      debug: '&8/&3Lands debug &8- &7Shows loaded data stats'
+      safezone: '&8/&3Lands safezone &8- &7Configure safezone'
+      reload: '&8/&3Lands reload &8- &7Reload config or messages'
+      about: '&8/&3Lands about &8- &7Show information about Lands'
+      admin: '&8/&3Lands admin &8<&3sub-command&8> &8- &7Admin commands'
+    taxes: '&8/&3Lands taxes &8- &7Visar kommande betalningar'
+    unstuck: '&8/&3Lands unstuck &8- &7Teleport om du fastnar'
+    mod:
+      chatspy: '&8/&3Lands chatspy &8[&aland&8] - &7Listen to land chat'
+    claims: '[T]&8/&3Lands claims &8[&3land&8] &8- &7List claims of your land[H]&7This command will show you all /Lands claim''s of your land. &7Click to copy.[/H][SC]lands claims[/SC][/T]'
+    rent: '[T]&8/&3Lands rent &8<&3cancel | info | remove&8> &8- &7Manage rental[H]&7With this command you can manage your rent at your current position. &7Click to copy.[/H][SC]lands rent[/SC][/T]'
+message:
+  world-invalid: '&cDetta är avaktiverat i denna värld. &7Admin behöver ändra det i config, Värld: {world}'
+  feature-disabled: '&cDenna funtion är avslagen av Admin. &8Det behöver aktivera {setting} i config, För du ska kunna använda denna funtion.'
+  current-war: '&cDu kan inte göra det nu. &7Ditt land &2{land} &7är med i ett krig. &7Försök igen när kriget är över.'
+  noaccess:
+    chunk: '&cDu har inte tillåtelse gå in i &8(&7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Bypass permission: {bypass}'
+    area: '&cDu har inte tillåtlse att bryta block i denna area &8(&7Area:&6 {area} &7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Bypass permission: {bypass}'
+    land: '&cDu har inte tillåtesle till att göra detta i &8(&7Land:&2 {land}&8)&7. &8Bypass permission: {bypass}'
+    land-not-owner: '&cDu kan inte göra detta i land&4 {land}&c. &7Markera ditt eget land &8(/&3Lands edit &8<&3land&8>) eller skapa ett land &8(/&3Lands create &8<&3name&8>)&7. &8Bypass permission: lands.admin.land_edit'
+    claim: '&cDu kan inte inmuta land här. &7denna chunk hanteras av annat pluggins skydd. Name: {plugin}'
+    place: '&cDu har inte tillåtelse att placera block här. &7Denna area tillhör land&2 {land}&7.'
+    break: '&cDu har inte tillåtelse förstöra block här. &7DEnna area tillhör land&2 {land}&7.'
+    ignite: '&cDu har inte tillåtelse tända eld på block här. &7Denna area Tillhör land&2 {land}&7.'
+    enter: '&cDu har inte tillåtelse at gå in i area&4 {area} &cav land&4 {land}&c. &7Du 7Du teleoporteras till din senaste position.'
+    edit: '&cDu har inte tillåtelse till ändra detta land. &7Denna chunk tillhör land&2 {land}&7.'
+    interact:
+      general: '&cDu har inte tillåtelse interagera här. &7Denna area tillhör land&2 {land}&7.'
+      door: '&cDu har inte tillåtelse öppna dörrar här. &7Denna area tillhör land&2 {land}&7.'
+      mechanism: '&cDu har inte tillåtelse att använda knappar,spakar här. &7Denna area tillhör land&2 {land}&7.'
+      container: '&cDu har inte tillåtelse öppna kistor,hoppers här. &7Denna area tillhör land&2 {land}&7.'
+      villager: '&cDu har inte tillåtelse att trade med bybor här. &7Denna area tillhör land&2 {land}&7.'
+    combat:
+      animal: '&cDu har inte tillåtelse att skada djur här. &7Denna area tillhör land&2 {land}&7.'
+      pvp:
+        attacker: '&cDu har inte tillåtelse att attackera spelares här. &7Denna area tillhör land&2 {land}&7.'
+        target: '&cDu kan inte anfalla spelare, det är inte tillåtet attackera spelares här. &7du kan inte slåss med dom här. &7DEnna area tillhör land&2 {land}&7.'
+        ally: '&cDu kan inte attackera denna spelare i vildmarken, för han är invånare i en av dina lands. &7Slåss i en arena kan du göra i ditt land om du aktiverar PVP i roll-inställningar.'
+        wilderness: '&cDu kan inte anfalla denna spelare, för han står i vildmarken och du står i inmutad land.'
+    banned: '&cDu har inte tillåtelse gi in i denna area. &7Du har blivit bannlyst från denna area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. &8Bypass permission: {bypass}'
+    vehicle: '&cDu har inte tillåtelse använda gruvvagnar och hästar här. &7Denna area tillhör land&2 {land}&7.'
+    fly: '&cDu har inte flyga här. &7Denna area tillhör land&2 {land}&7.'
+    teleport: '&cDu har inte tillåtelse använda detta item för teleportera in i detta land&4 {land}&c. &7Du är inte invånare i detta land land.'
+    position: '&cYou''re not allowed to do this for the land&4 {land} &cat your current position. &8Bypass permission: {bypass}'
+  event:
+    fly:
+      counter: '#t#&cFly stängs av {newline}&com &4{sec} &csecond(s)'
+      disabled: '&cFlyg avstängd. &7Du saknar premissions för flyga här.'
+    enter:
+      land: '#a#&2&l{land} &3{title}'
+      safezone: '#t#&2&l{land}'
+      pvp-warning: ''
+    leave:
+      land: '#a#&l&9Du är ute i vildmarken'
+      safezone: '#a#&l&9Du är ute i vildmarken'
+  claimblock:
+    dropped: '&cNågra inmutblock ligger på marken&7Ditt Inventarie var fullt'
+    success: '&7Du fick&3 {blocks} &7inmutblock(s). &7Placera dom i en chunk för inmuta.'
+    not-owner: '&cDu har inte tillåtelse använda inmutablock. &7Det tillhör&3 {owner}&7.'
+  blacklist:
+    untrusted: '&cDu har inte tillåtelse använda detta kommando här. &7Du är inte betrodd i detta land. &8En Admin kan ändra det i config.'
+    general: '&ccDu har inte tillåtelse använda detta kommando i inmutat land. &8En Admin kan ändra det i config.'
+  autoAction:
+    stopped: '&cStopade din nuvarnde automatisk åtgärd. &7Nådde max omgång. Namn:&3 {name}'
+    started: '&7Startade automatisk åtgärd. Namn:&3 {name}'
+    removed: '&7Stopade automatisk åtgärd. &7Namn:&3 {name}'
+  chat-action:
+    cancelled: '#t#&c&lAvbruten{newline}&c&lchatt åtgärd.'
+    player: '&7Skriv in namnet på spelaren.'
+    area:
+      create: '&7Skriv in namnet för nya arean. Du kan ta med färgkoder.'
+      delete: '&7skriv in namnet på arean du vill ta bort.'
+      exists: '&carena&4 {area} &cExisterar i detta land &8(&7Land:&2 {land}&8)&c. &7Välj ett annat namn.'
+      max: '&cDu kan inte skapa mer areas för detta land. &7Du har nått gränsen av&3 {max} &7areas. Permisssion: lands.areas.NUMBER'
+    title: '&7Skriv in ny title för detta land. Du kan använda färgkoder.'
+    rename: '&7Skriv in namnet för detta land. Mellanslag går inte använda.'
+    land: '&7Skriv in namnet på landet.'
+    name: '&7Please enter the name in chat.'
+  world-not-exist: '&cDenna värld med namnet&4 {world} &c existerar inte. &7Misstag?'
   area:
-    title: '&8區域 {area}'
-    size: 45
-    f:
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 37
-    s:
-      information:
-        name: '&6資料'
-        lore:
-          - '&7你可以在此查看'
-          - '&7更多關於你國家的相關資訊'
-          - '&7來幫助你追蹤此區域的動態'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
-        slot: 11
-      trusted-players:
-        name: '&8> &6國家成員'
-        lore:
-          - '&7列出所有此區域中的成員.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 13
-      invites:
-        name: '&8> &6邀請紀錄'
-        lore:
-          - '&7你可以在這邊查看寄送出去的邀請紀錄'
-          - '&7或是在這邊寄送邀請'
-          - ' '
-          - '&8- &7這些邀請可以會讓玩家'
-          - '  &7擁有區域內的權限'
-        material: WRITABLE_BOOK
-        slot: 14
-      management:
-        name: '&6管理'
-        lore:
-          - '&7你可以在這邊管理你的區域.'
-          - '&7也可以邀請玩家,設置爵位,'
-          - '&7編輯區域設置或是設置區域稅金.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
-        slot: 29
-      land-settings:
-        name: '&8> &6區域設置'
-        lore:
-          - '&7你可以在此更改基礎設置'
-          - '&7像是生物生成之類的.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 31
-      roles:
-        name: '&8> &6爵位'
-        lore:
-          - '&7查看區域內的爵位.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 32
-      taxes:
-        name: '&8> &6稅金'
-        lore:
-          - '&7查看該區域的稅收.'
-          - ' '
-          - '&8- &7稅額按地區計算'
-        material: GOLD_INGOT
-        slot: 33
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 45
-      placeholder_2:
-        material: BLUE_STAINED_GLASS_PANE
-        from: 12
-        to: 12
-      placeholder_3:
-        material: BLUE_STAINED_GLASS_PANE
-        from: 30
-        to: 30
-  area_invites:
-    title: '&8邀請區'
-    size: 36
-    f:
-      send:
-        name: '&a發送邀請'
-        lore:
-          - '&7邀請玩家'
-          - '&7讓他們擁有區域的權限.'
-          - ' '
-          - '&7同時可邀請數:&3 {players} &8/&c {max}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
-        slot: 32
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 34
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-    l:
-      object:
-        name: '&6{player}'
-        lore:
-          - '&7編輯此邀請或查看玩家訊息'
-        material: BOOK
-        from: 10
-        to: 27
-      no-invite:
-        name: '&c尚未送出任何邀請'
-        lore:
-          - '&7你的國家尚未送出任何邀請'
-          - ' '
-          - '&8- &7想要邀請玩家只需要按底下的按鈕'
-        material: OAK_SIGN
-        from: 10
-        to: 27
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 27
-        to: 36
-  area_invite:
-    title: '&8邀請 {player}'
-    size: 27
-    s:
-      revoke:
-        name: '&8> &c撤銷邀請'
-        lore:
-          - '&7點此撤銷邀請紀錄'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        slot: 12
-    f:
-      info:
-        name: '&8> &6邀請訊息'
-        lore:
-          - '&7區域:&e {area}'
-          - '&7國家名: {land}'
-          - ' '
-          - '&7收到時間:&5 {time}'
-          - '&7寄件人: {sender}'
-        material: OAK_SIGN
-        slot: 16
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-    a:
-      failure_noAccess:
-        name: '&4無效: &b無法撤銷邀請'
-        lore:
-          - '&c你沒有該區域的權限'
-          - '&c來撤銷邀請'
-          - ' '
-          - '&8- &7你需要權限來撤銷邀請'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  area_roles:
-    title: '&8{area} &7- &8爵位'
-    size: 27
-    l:
-      object:
-        name: '&7{role}'
-        lore:
-          - '&7點擊編輯爵位.'
-        material: PLAYER_HEAD
-        from: 10
-        to: 18
-    f:
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 21
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 26
-      create:
-        name: '&8> &a新增爵位'
-        lore:
-          - '&7點此新增爵位'
-          - '&7系統將會手把手帶你操作'
-          - ' '
-          - '&7可設置上限:&3 {roles} &8/&c {max}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
-        slot: 23
-      delete:
-        name: '&c刪除爵位'
-        lore:
-          - '&7刪除此國家的爵位'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        slot: 24
-    a:
-      failure_max-roles:
-        name: '&4失敗: &c可設置爵位已達上限'
-        lore:
-          - '&7此國家已達到可設置的最大上限'
-          - '&7上限為{max}&7.'
-          - ' '
-          - '&8權限: lands.roles.NUMBER'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
-  role_players:
-    title: '&8{role} &7- &8成員'
-    size: 36
-    l:
-      object:
-        name: '&e{player}'
-        lore:
-          - '&7此玩家為你的國家增加了&a{support}&7塊區塊'
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-    f:
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 35
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  role_settings:
-    title: '&8{role} &7- &8設定'
-    size: 36
-    s: { }
-    f:
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 34
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-    l:
-      block_break:
-        name: '&6破壞方塊'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位破壞方塊?'
-        material: IRON_PICKAXE
-        from: 10
-        to: 27
-      block_place:
-        name: '&6放置方塊'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位放置方塊?'
-        material: OAK_PLANKS
-        from: 10
-        to: 27
-      block_ignite:
-        name: '&6點燃方塊'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位點燃方塊?'
-        material: FLINT_AND_STEEL
-        from: 10
-        to: 27
-      interact_general:
-        name: '&6交互'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位交互?'
-        material: STRING
-        from: 10
-        to: 27
-      interact_door:
-        name: '&6開門'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位開門?'
-        material: IRON_DOOR
-        from: 10
-        to: 27
-      interact_container:
-        name: '&6打開容器'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位打開容器(箱子等等)?'
-        material: CHEST
-        from: 10
-        to: 27
-      interact_mechanism:
-        name: '&6使用紅石'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位使用紅石?'
-        material: REDSTONE
-        from: 10
-        to: 27
-      interact_villager:
-        name: '&6和村民交易'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位和村民交易?'
-        material: EMERALD
-        from: 10
-        to: 27
-      attack_player:
-        name: '&6攻擊玩家'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位和攻擊玩家?'
-          - ' '
-          - '&8- 請注意, 如果一名玩家在國家外襲擊了'
-          - '  &7另一名玩家,那麽是允許玩家在國家內進行戰鬥'
-          - ' '
-          - '&8- &7只有在互相都可以攻擊的情況下'
-          - '&7 才允許戰鬥'
-        material: IRON_SWORD
-        from: 10
-        to: 27
-      attack_animal:
-        name: '&6攻擊動物'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位和攻擊動物?'
-        material: BOW
-        from: 10
-        to: 27
-      fly:
-        name: '&6飛行'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位在此飛行?'
-        material: FEATHER
-        from: 10
-        to: 27
-      land_enter:
-        name: '&6進入區域'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位進入區域?'
-        material: OAK_FENCE_GATE
-        from: 10
-        to: 27
-      area_assign:
-        name: '&6分配區域'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位分配區域?'
-        material: OAK_FENCE
-        from: 10
-        to: 27
-      player_trust:
-        name: '&6添加成員 | 信任玩家'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位添加成員 | 信任玩家?'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
-        from: 10
-        to: 27
-      player_setRole:
-        name: '&6設置爵位'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許玩家設定爵位?'
-          - ' '
-          - '&8- &7他們無法更改比自己高階的爵位'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjNmY3NzVlOGFjZmRmNmUxZGVhYzgwYThkYTFmMzdiM2I0YmE1Y2FhNGEzNTI0OWY5ZWIxNDVjY2Y0M2RhNSJ9fX0=
-        from: 10
-        to: 27
-      player_untrust:
-        name: '&6移除成員'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位移除成員?'
-          - ' '
-          - '&8- &7他們無法更改比自己高階的爵位'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        from: 10
-        to: 27
-      setting_edit_land:
-        name: '&6編輯國家設定'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位編輯國家設定?'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        from: 10
-        to: 27
-      setting_edit_role:
-        name: '&6編輯爵位設定'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位編輯爵位設定?'
-          - ' '
-          - '&8- &7他們無法更改自己的爵位'
-          - ' '
-          - '&8- &7建議你只給你最信任的朋友此權限'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        from: 10
-        to: 27
-      setting_edit_advanced:
-        name: '&6編輯高級角色設置'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位編輯高級角色設定?'
-          - ' '
-          - '&8- &7建議你只給你最信任的朋友此權限'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMzExYTRmYjljNDkzODliNGY0NThjMjllOTY4MzI0YzU4MjNiOGE5OWVhZGUxNzQ3ODY2Yzk1YjA2NGEifX19
-        from: 10
-        to: 27
-      setting_edit_taxes:
-        name: '&6編輯稅金'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許編輯稅金?'
-          - ' '
-          - '&8- &7建議你只給你最信任的朋友此權限'
-        material: GOLD_INGOT
-        from: 10
-        to: 27
-      land_claim:
-        name: '&6領取區塊'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位領取區塊?'
-        material: IRON_SHOVEL
-        from: 10
-        to: 27
-      land_claim_border:
-        name: '&6在國家邊界領取區塊'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位在國家邊界領取區塊?'
-        material: IRON_BARS
-        from: 10
-        to: 27
-      spawn_set:
-        name: '&6設置國家出生點'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位設置國家出生點?'
-        material: ENDER_EYE
-        from: 10
-        to: 27
-      spawn_teleport:
-        name: '&6傳送至出生點'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位傳送至出生點?'
-        material: ENDER_PEARL
-        from: 10
-        to: 27
-      balance_withdraw:
-        name: '&6從國庫中取錢'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位從國庫中取錢?'
-          - ' '
-          - '&8- &7指令:'
-          - '  &8/&3Lands withdraw'
-        material: GOLD_NUGGET
-        from: 10
-        to: 27
-      vehicle_use:
-        name: '&6使用載具'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位使用載具?'
-        material: MINECART
-        from: 10
-        to: 27
-    a:
-      failure_permission:
-        name: '&4失敗: &c沒有權限'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit this setting.'
-          - ' '
-          - '&8Permission'
-          - '&8{permission}'
-      failure_noaccess:
-        name: '&4Failure: &cNot Access'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit these settings.'
-          - ' '
-          - '&7The land owner needs to'
-          - '&7allow you to do so.'
-          - '&8Setting: {setting}'
-      failure_role-weight:
-        name: '&4Failure: &cRole Priority'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit settings of this role.'
-          - '&7It has a higher priority'
-          - '&7than yours.'
-          - ' '
-          - '&8Bypass: lands.admin.setting_edit_role'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  settings_role_advanced:
-    title: '&8Advanced Settings &7-> {role}'
-    size: 27
-    s: { }
-    f:
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 21
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 25
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-    l:
-      setting_edit_various:
-        name: '&b編輯國家進入訊息'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許此爵位'
-          - '&7編輯國家進入訊息?'
-          - ' '
-          - '&8- &7他們將可以'
-          - '  &7更改國家名稱/進入訊息.'
-        material: NAME_TAG
-        from: 10
-        to: 18
-    a:
-      failure_permission:
-        name: '&4失敗: &cNo permission'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit this setting.'
-          - ' '
-          - '&8- &7You need permission'
-          - '  &e{permission}&7.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
-  area_settings:
-    title: '&8{area} &7- &8國家設置'
-    size: 27
-    s: { }
-    f:
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 21
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 25
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-    l:
-      entity_griefing:
-        name: '&6實體破壞'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許實體破壞?'
-          - '&7像是苦力怕爆炸破壞之類的'
-          - ' '
-          - '&8- &c請注意: &7假如開啟此設定'
-          - '  &7苦力怕等等生物可能會破會地形'
-        material: CREEPER_HEAD
-        from: 10
-        to: 18
-      tnt_griefing:
-        name: '&6TNT破壞'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許TNT破壞?'
-          - ' '
-          - '&8- &c請注意: &7假如開啟此設定'
-          - '  &7玩家將可以使用TNT砲台炸國家'
-        material: TNT
-        from: 10
-        to: 18
-      piston_griefing:
-        name: '&6活塞從國家外推入國家內'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許活塞從國家外推入國家內?'
-          - ' '
-          - '&8- &c請注意: &7開啟之後，玩家可以從外面把方塊推進來'
-        material: PISTON
-        from: 10
-        to: 18
-      waterflow_allow:
-        name: '&6水流從國家外流入國家內'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許水流從國家外流入國家內?'
-          - ' '
-          - '&8- &c請注意: &7開啟之後，玩家可以從外面把水流放進來'
-        material: WATER_BUCKET
-        from: 10
-        to: 18
-      monster_spawn:
-        name: '&6怪物生成'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許怪物生成?'
-          - ' '
-          - '&8- &c請注意: &7生怪磚不算在此規則中'
-        material: SPAWNER
-        from: 10
-        to: 18
-      animal_spawn:
-        name: '&6動物生成'
-        lore:
-          - '&7狀態: {enabled}'
-          - '&7解鎖: {unlocked}'
-          - ' '
-          - '&7是否允許動物生成?'
-          - ' '
-          - '&8- &c請注意: &7生怪磚不算在此規則中'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19
-        from: 10
-        to: 18
-    a:
-      failure_permission:
-        name: '&4Failure: &cNo Permission'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit this setting.'
-          - ' '
-          - '&8- &7You need permission'
-          - '  &e{permission}&7.'
-      failure_noaccess:
-        name: '&4Failure: &cNo Access'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit these settings.'
-          - ' '
-          - '&7The land owner needs to'
-          - '&7allow you to do so.'
-          - '&8Setting: {setting}'
-          - ' '
-          - '&8Bypass permission: lands.admin.setting_edit_land'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
-  area_taxes:
-    title: '&8{area} &7- &8稅金'
-    size: 27
-    s:
-      plus-1:
-        name: '&a增加 ✢1'
-        lore:
-          - '&7增加稅金 ✢1'
-        material: GLOWSTONE_DUST
-        slot: 11
-        amount: 1
-        data:
-          value: 1.0
-      plus-2:
-        name: '&a增加 ✢100'
-        lore:
-          - '&7增加稅金 ✢100'
-        material: GLOWSTONE_DUST
-        slot: 12
-        data:
-          value: 100.0
-      plus-3:
-        name: '&a增加 ✢1000'
-        lore:
-          - '&7增加稅金 ✢1000'
-        material: GLOWSTONE_DUST
-        slot: 13
-        data:
-          value: 1000.0
-      minus-3:
-        name: '&c減少 ✢1000'
-        lore:
-          - '&7減少稅金 ✢1000'
-        material: REDSTONE
-        slot: 15
-        data:
-          value: 1000.0
-      minus-2:
-        name: '&c減少 ✢100'
-        lore:
-          - '&7減少稅金 ✢100'
-        material: REDSTONE
-        slot: 16
-        data:
-          value: 100.0
-      minus-1:
-        name: '&c減少 ✢1'
-        lore:
-          - '&7減少稅金 ✢1'
-        material: REDSTONE
-        slot: 17
-        data:
-          value: 1.0
-    f:
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-      taxes:
-        name: '&7稅金:&c ✢{tax}'
-        lore:
-          - '&7下次收稅金時間&5 {next-tax}&7.'
-          - ' '
-          - '&7下次上繳稅金時間&5 {next-upkeep}&7.'
-          - '&7你的國家將需要支付&c ✢{costs}&7.'
-          - ' '
-          - '&8- &3稅金'
-          - '  &7只有國家中的成員需要支付稅金'
-          - ' '
-          - '&8- &3上繳稅金'
-          - '  &7這稅金是上繳給伺服器的'
-          - '  &7沒有上繳的話，你的國家將會消失'
-          - ' '
-          - '&8- &7國家成員只需要支付一般的稅金即可'
-          - '  &7上繳稅金是從國家的銀行中支付的'
-        material: GOLD_INGOT
-        slot: 14
-    a:
-      failure_maxValue:
-        name: '&4最大金額上限'
-        lore:
-          - '&7You can''t set the tax'
-          - '&7value higher than&3 {max}&7.'
-          - ' '
-          - '&8- &7You can ask an administrator'
-          - '  &7to change this.'
-      failure_cooldown:
-        name: '&4冷卻:&c請稍待片刻.'
-        lore:
-          - '&7You currently can''t change the'
-          - '&7tax value. You need to wait'
-          - '&b{time} &7hours.'
-          - ' '
-          - '&8- &7You can ask an administrator'
-          - '  &7to change this.'
-      failure_noaccess:
-        name: '&4Failure:&c No Access'
-        lore:
-          - '&7You''re not allowed to edit'
-          - '&7the taxes of this area.'
-          - ' '
-          - '&8- &7You''re missing permission'
-          - '  &7from the land owner to do so.'
-          - '  &8Setting: {setting}'
-          - ' '
-          - '&8Bypass permission: lands.admin.setting_edit_taxes'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  action-confirm:
-    title: '&8Please confirm this Action'
-    size: 27
-    s:
-      info:
-        name: '&bPlease confirm this action.'
-        lore:
-          - '&7Click &aConfirm &7to confirm or'
-          - '&cAbort &7to abort this action.'
-        material: OAK_SIGN
-        slot: 14
-    l:
-      yes_chunk:
-        name: '&aConfirm'
-        lore:
-          - '&7Confirm this action.'
-          - ' '
-          - '&8- &7If you''re the owner'
-          - '  &7of this chunk, it will'
-          - '  &7become wilderness.'
-        material: LIME_STAINED_GLASS_PANE
-        from: 10
-        to: 13
-      no_chunk:
-        name: '&cAbort'
-        lore:
-          - '&7Abort this action.'
-          - ' '
-          - '&8- &7If you''re the owner'
-          - '  &7of this chunk, it will'
-          - '  &7be deleted.'
-        material: RED_STAINED_GLASS_PANE
-        from: 15
-        to: 18
-      yes_war-state:
-        name: '&aConfirm'
-        lore:
-          - '&7Confirm this action.'
-          - ' '
-          - '&4NOTE: &cYour land will'
-          - '&cneed to pay the tribute'
-          - '&cin order to surrender.'
-        material: LIME_STAINED_GLASS_PANE
-        from: 10
-        to: 13
-      no_war-state:
-        name: '&cAbort'
-        lore:
-          - '&7Abort this action.'
-          - ' '
-          - '&7Do you really want to'
-          - '&7surrender in this war?'
-        material: RED_STAINED_GLASS_PANE
-        from: 15
-        to: 18
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
-  player_invites:
-    title: '&8邀請函'
-    size: 36
-    s: { }
-    f:
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 34
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-    l:
-      object:
-        name: '&6{land}'
-        lore:
-          - '&7Edit this invite or'
-          - '&7just view some information.'
-        material: BOOK
-        from: 10
-        to: 27
-      no-invite:
-        name: '&c尚未獲得任何邀請'
-        lore:
-          - '&7你尚未獲得任何邀請'
-          - ' '
-          - '&8- &7其他玩家可以輸入'
-          - '  &8/&3Lands trust {player}'
-          - '  &7來邀請你加入國家'
-        material: OAK_SIGN
-        from: 10
-        to: 27
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 27
-        to: 36
-  player_invite:
-    title: '&8邀請函 {land}'
-    size: 27
-    f:
-      info:
-        name: '&8> &6資料'
-        lore:
-          - '&7區域名:&6 {area}'
-          - '&7國家名: {land}'
-          - ' '
-          - '&7收到時間:&5 {time}'
-          - '&7寄件人: {sender}'
-        material: OAK_SIGN
-        slot: 14
-    l:
-      accept:
-        name: '&a接受'
-        lore:
-          - '&7接受此邀請.'
-          - ' '
-          - '&7稅金:&c ${tax}'
-        material: LIME_STAINED_GLASS_PANE
-        from: 10
-        to: 13
-      deny:
-        name: '&c拒絕'
-        lore:
-          - '&7拒絕此邀請.'
-          - ' '
-          - '&7稅金:&c ${tax}'
-        material: RED_STAINED_GLASS_PANE
-        from: 15
-        to: 18
-    a:
-      failure_lands:
-        name: '&4失敗: &c可加入的國家數量達到上限'
-        lore:
-          - '&7你無法加入此國家'
-          - '&7因為你已經達到可加入的上限值了'
-          - '&7你的上限值為{max}'
-          - ' '
-          - '&8權限:'
-          - '&8lands.lands.NUMBER'
-      failure_inviteOwner:
-        name: '&4Failure: &cInvite Owner'
-        lore:
-          - '&7You can''t join this'
-          - '&7land, because you''re'
-          - '&7not allowed to have'
-          - '&7your own land and'
-          - '&7be part of another land.'
-          - ' '
-          - '&8An administrator'
-          - '&8can change that in the config.'
-      failure_notTrusted:
-        name: '&4Failure: &bNot complete'
-        lore:
-          - '&7Couldn''t trust you'
-          - '&7in this land, because'
-          - '&7they reached their'
-          - '&7maximum value of&3 {max}&7.'
-          - ' '
-          - '&8- &7Contact the land'
-          - '  &7owner for help.'
-          - ' '
-          - '&8Permission:'
-          - '&8lands.members.NUMBER'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  player_info:
-    title: '&8Player {player}'
-    size: 27
-    s:
-      close:
-        name: '&c關閉'
-        lore:
-          - '&7關閉選單.'
-          - ' '
-          - '&8- &7You can open it again'
-          - '  &7with &8/&3Lands player'
-        material: RED_STAINED_GLASS_PANE
-        slot: 9
-    f:
-      last_seen:
-        name: '&8> &6Last seen'
-        lore:
-          - '&c{last-seen}'
-        material: CLOCK
-        slot: 12
-      lands:
-        name: '&8> &6Lands &8(&7{amount}&8)'
-        lore:
-          - '{lands}'
-        material: OAK_SIGN
-        slot: 16
-      max-chunks:
-        name: '&8> &6Maximum Chunk Claims'
-        lore:
-          - '&7This player can claim'
-          - '&3{chunks} &7chunks.'
-          - ' '
-          - '&8- &7If option chunks-addition'
-          - '  &7is enabled in config, this player'
-          - '  &7could support your land with'
-          - '  &3{chunks} &7additional chunk claims.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ==
-        slot: 14
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  land_info:
-    title: '&8國家名稱>> {land}'
-    size: 45
-    f:
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '&e{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 37
-      close:
-        name: '&c關閉'
-        lore:
-          - '&7關閉選單.'
-          - ' '
-          - '&8- &7You can open it again'
-          - '  &7with &8/&3Lands info {land}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 9
-      owner:
-        name: '&4擁有者&3 {player}'
-        lore:
-          - '&7他們是此國家的擁有者'
-          - '&7假如你有任何此國家的事情'
-          - '&7可以聯絡他們'
-        material: PLAYER_HEAD
-        slot: 12
-      players:
-        name: '&8> &6國家成員 &8(&7{amount}&8)'
-        lore:
-          - ' '
-          - '&e{players}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 16
-      created:
-        name: '&8> &6創建時間'
-        lore:
-          - '&5{date}'
-        material: CLOCK
-        slot: 34
-      war:
-        name: '&8> &6War Stats'
-        lore:
-          - ' '
-          - '&7Won:&7 {won}'
-          - '&7Lost:&7 {lost}'
-          - '  &7WLR:&3 {wlr}'
-          - ' '
-          - '&7Kills:&7 {kills}'
-          - '&7Deaths:&7 {deaths}'
-          - '  &7KDR:&3 {kdr}'
-        material: IRON_SWORD
-        slot: 23
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 45
-  land_various:
-    title: 國家進入訊息
-    size: 27
-    s: { }
-    f:
-      name:
-        name: '&8> &6國家名稱'
-        lore:
-          - '&7為此國家設置一個新的名稱'
-          - ' '
-          - '&8- &7當前名稱:'
-          - '  &a{name}'
-        material: NAME_TAG
-        slot: 12
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-      titles:
-        name: '&8> &6進入訊息'
-        lore:
-          - '&7更改國家進入訊息.'
-          - ' '
-          - '&8- &7是否顯示訊息: {show}'
-          - '  &7切換顯示方式: &9滑鼠右鍵'
-          - ' '
-          - '&8- &7當前訊息:'
-          - '  {title}'
-          - ' '
-          - '&7可使用的變量'
-          - '  &8> &a%owner% &8= &7領主名稱'
-          - '  &8> &a%player% &8= &7進入的玩家名稱'
-        material: OAK_SIGN
-        slot: 16
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-    a:
-      failure_noaccess:
-        name: '&4Failure: &cNo Access'
-        lore:
-          - '&7You''re not allowed to edit'
-          - '&7these options for this land.'
-          - ' '
-          - '&8- &7Only the land owner'
-          - '  &7is permitted to do that.'
-          - ' '
-          - '&8Bypass permission: {bypass}'
-  global_lands:
-    title: '&8全部國家'
-    size: 54
-    s:
-      close:
-        name: '&c關閉'
-        lore:
-          - '&7關閉此介面.'
-          - ' '
-          - '&8- &7只要輸入&8/&3Lands list&7.'
-          - '  &7就可以再次開啟此介面'
-        material: RED_STAINED_GLASS_PANE
-        slot: 46
-    f:
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 46
-      toggle-allowed:
-        name: '&6只顯示公開的國家?'
-        lore:
-          - '&7只顯示那些你有權限傳送的國家?'
-          - ' '
-          - '&7點擊切換此設定狀態.'
-          - '&7只領顯示公開國家: {only-allowed}'
-        material: ENDER_PEARL
-        slot: 50
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 48
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 52
-    l:
-      object:
-        name: '&2{land}'
-        lore:
-          - '&b左鍵'
-          - '&7傳送到該國家'
-          - ' '
-          - '&9右鍵'
-          - '&7查看該國家的相關資料'
-          - ' '
-          - '&7國家進入訊息:'
-          - '&7{title}'
-        material: PLAYER_HEAD
-        from: 10
-        to: 45
-      no-land:
-        name: '&c查無任何國家'
-        lore:
-          - '&7目前沒有任何國家,'
-          - '&7符合你的搜尋條件.'
-          - ' '
-          - '&8- &7要創建國家請輸入:'
-          - '  &8/&3Lands create &8<&3國家名&8>'
-        material: PAPER
-        from: 10
-        to: 45
-    a:
-      failure_teleport_permission:
-        name: '&4無效: &c沒有權限'
-        lore:
-          - '&c你無法傳送到該國家'
-          - ' '
-          - '&8- &7你需要權限'
-          - '  &3{permission}&7.'
-          - '&8- &7或是通知服主請他幫忙'
-      failure_admin_permission:
-        name: '&4無效: &c沒有管理員權限'
-        lore:
-          - '&c你無法開啟此國家的編輯介面'
-          - ' '
-          - '&8- &7你需要權限'
-          - '  &3{permission}&7.'
-          - '&8- &7或是通知服主請他幫忙'
-      failure_no-spawn:
-        name: '&4失敗: &c沒有設置傳送點'
-        lore:
-          - '&c此國家目前沒有傳送點'
-          - '&c他們需要先設置傳送點才可傳送'
-          - ' '
-          - '&8- &7他們可以輸入指令：'
-          - '  &8/&3Lands setspawn'
-          - '  &7來設置傳送點.'
-      failure_teleport_cost:
-        name: '&4無效: &c經費不足'
-        lore:
-          - '&c你沒有足夠的平衡幣可以傳送到該國家'
-          - ' '
-          - '&7你需要&c ✢{costs}&7.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 36
-        to: 54
-  war-state:
-    title: '&8War'
-    size: 27
-    s:
-      close:
-        name: '&c關閉'
-        lore:
-          - '&7關閉選單.'
-          - ' '
-          - '&8- &7You can open it again by'
-          - '  &7executing &8/&3Wars menu&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-    f:
-      attackers:
-        name: '&8> &cAttackers'
-        lore:
-          - '&7View all attacking lands'
-          - '&7of this war.'
-          - ' '
-          - '&8- &eStats'
-          - '  &7Lands: {attackers}'
-          - '  &7Players: {players}'
-          - ' '
-          - '  &7Kills: {kills}'
-          - '  &7Deaths: {deaths}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTU0OTQ3ZGU3ZjUyNTk4MjU1ZDZhZmVlOWQ3N2JlZmFkOWI0ZjI0YzBjNDY2M2QyOGJjZGY4YTY0NTdmMzQifX19
-        slot: 11
-      defenders:
-        name: '&8> &aDefenders'
-        lore:
-          - '&7View all defending lands'
-          - '&7of this war.'
-          - ' '
-          - '&8- &eStats'
-          - '  &7Lands: {defenders}'
-          - '  &7Players: {players}'
-          - ' '
-          - '  &7Kills: {kills}'
-          - '  &7Deaths: {deaths}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRkYmNiN2UxZmJlY2VhOWE3MzUwNDM2Y2JiZWEyYjQ5NmY3NGMyOTcyMDRmMWJiOWFjYzM4NzhkNTQyY2NiIn19fQ==
-        slot: 13
-      info_declaration:
-        name: '&8> &6Information'
-        lore:
-          - '&7The war starts in '
-          - '&5~{time}'
-          - ' '
-          - '&8- &7Attackers can do these'
-          - '  &7things in your land'
-          - '  &8(&7configureable in config&8)&7:'
-          - ' '
-          - '{settings}'
-        material: IRON_SWORD
-        slot: 15
-      info_war:
-        name: '&8> &6Information'
-        lore:
-          - '&7The war ends in '
-          - '&5~{time}'
-          - ' '
-          - '&8- &7Attackers can do these'
-          - '  &7things in your land'
-          - '  &8(&7configureable in config&8)&7:'
-          - ' '
-          - '{settings}'
-        material: IRON_SWORD
-        slot: 15
-      tribute_attacker:
-        name: '&8> &6Tribute:&a ${tribute}'
-        lore:
-          - '&7Change the tribute'
-          - '&7value for this war.'
-          - ' '
-          - '&8- &7A surrender will need to'
-          - '  &7pay this value in order'
-          - '  &7to surrender.'
-          - ' '
-          - '&8- &9RIGHT CLICK'
-          - '  &7If a attacker wants to'
-          - '  &7surrender, they''ll need'
-          - '  &7to pay&c ${tribute-att} &7to'
-          - '  &7the defenders.'
-          - ' '
-          - '  &8- &7If the value equals 0,'
-          - '    &7the attackers are not'
-          - '    &7allowed to surrender.'
-          - ' '
-          - '&8- &7Tribute will be divided'
-          - '  &7to all attackers: {divide}'
-        material: GOLD_INGOT
-        slot: 17
-      tribute_defender:
-        name: '&8> &6Surrender:&c ${tribute}'
-        lore:
-          - '&7Click here to surrender'
-          - '&7in this war.'
-          - ' '
-          - '&8- &cA surrenderer will need to'
-          - '  &cpay the tribute value of&c ${tribute}'
-          - '  &cin order to surrender.'
-          - ' '
-          - '&8- &7If the value equals 0:'
-          - '  &7That means that the'
-          - '  &7attackers don''t accept'
-          - '  &7your surrender.'
-        material: GOLD_INGOT
-        slot: 17
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 21
-    a:
-      failure_permission:
-        name: '&4Failure: &cNo Access'
-        lore:
-          - '&7This action can only'
-          - '&7be executed by the land'
-          - '&7owner of the initial'
-          - '&7attacker land.'
-          - ' '
-          - '&7Player:&b {owner}'
-      failure_surrender-att:
-        name: '&cFailure: &4Surrendering disabled'
-        lore:
-          - '&7Surrendering for attackers was'
-          - '&7disabled in config.'
-      failure_surrender:
-        name: '&cFailure: &4Surrender rejected'
-        lore:
-          - '&7The initial attacker land'
-          - '&7rejected your surrender.'
-          - ' '
-          - '&7That''s because they don''t'
-          - '&7accept any tribute.'
-      failure_surrender-attacker:
-        name: '&cFailure: &4Surrender rejected'
-        lore:
-          - '&7Attackers are not allowed'
-          - '&7to surrender. Only defenders'
-          - '&7can surrender.'
-      failure_surrender-cost:
-        name: '&cFailure: &4Surrender rejected'
-        lore:
-          - '&7Your land doesn''t have'
-          - '&7enough money to pay the'
-          - '&7tribute of&c ${tribute}&7.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  war_lands:
-    title: '&8{type}'
-    size: 36
-    f:
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 34
-    l:
-      object:
-        name: '&2{land}'
-        lore:
-          - '&7Open the land information'
-          - '&7menu of this land.'
-          - ' '
-          - '&8- &eStats'
-          - '  &7Total players:&e {players}'
-          - ' '
-          - '&8- &7Title:'
-          - '  &7{title}'
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  war-declaration_tribute:
-    title: '&8Tribute'
-    size: 27
-    s:
-      plus-1:
-        name: '&aAdd $1'
-        lore:
-          - '&7Add $1 to the'
-          - '&7tribute value.'
-        material: GLOWSTONE_DUST
-        slot: 11
-        amount: 1
-        data:
-          value: 1.0
-      plus-2:
-        name: '&aAdd $100'
-        lore:
-          - '&7Add $100 to the'
-          - '&7tribute value.'
-        material: GLOWSTONE_DUST
-        slot: 12
-        data:
-          value: 100.0
-      plus-3:
-        name: '&aAdd $1000'
-        lore:
-          - '&7Add $1000 to the'
-          - '&7tribute value.'
-        material: GLOWSTONE_DUST
-        slot: 13
-        data:
-          value: 1000.0
-      minus-3:
-        name: '&cRemove $1000'
-        lore:
-          - '&7Remove $1000 from'
-          - '&7the tribute value.'
-        material: REDSTONE
-        slot: 15
-        data:
-          value: 1000.0
-      minus-2:
-        name: '&cRemove $100'
-        lore:
-          - '&7Remove $100 from'
-          - '&7the tribute value.'
-        material: REDSTONE
-        slot: 16
-        data:
-          value: 100.0
-      minus-1:
-        name: '&cRemove $1'
-        lore:
-          - '&7Remove $1 from'
-          - '&7the tribute value.'
-        material: REDSTONE
-        slot: 17
-        data:
-          value: 1.0
-      close:
-        name: '&c關閉'
-        lore:
-          - '&7關閉選單.'
-          - ' '
-          - '&8- &7You can open it again by'
-          - '  &7executing &8/&3Wars menu&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-    f:
-      tribute:
-        name: '&bTribute:&c ${tribute}'
-        lore:
-          - '&7The defending land will need to'
-          - '&7to pay this value in order to'
-          - '&7surrender.'
-          - ' '
-          - '&8- &7The maximum tribute for '
-          - '  &7this land is&3 ${max}&7.'
-          - '  &7A server administrator can'
-          - '  &7change that in the config.'
-          - ' '
-          - '&cNOTE: &7If you set the tribute'
-          - '&7value to 0, the defending land'
-          - '&7won''t be able to surrender.'
-        material: GOLD_INGOT
-        slot: 14
-      send-declaration:
-        name: '&aSend War Declaration'
-        lore:
-          - '&7Click here to send this'
-          - '&7war declaration to the'
-          - '&7enemy land.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19
-        slot: 27
-      abort-declaration:
-        name: '&cAbort War Declaration'
-        lore:
-          - '&7Click here to abort this'
-          - '&7war declaration.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==
-        slot: 19
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-    a:
-      max-tribute:
-        name: '&4Max Value reached'
-        lore:
-          - '&7You can''t set the tribute'
-          - '&7value higher than&3 {max}&7.'
-          - ' '
-          - '&8- &7You can ask an administrator'
-          - '  &7to change this.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  nation:
-    title: '{nation}'
-    size: 27
-    f:
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '&e{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 37
-      close:
-        name: '&c關閉'
-        lore:
-          - '&7關閉選單.'
-          - ' '
-          - '&8- &7You can open it again'
-          - '  &7with &8/&3Lands info {land}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 9
-    s:
-      lands:
-        name: '&8> &e國土'
-        lore:
-          - '&7查看全部國土'
-          - '&7以及國家成員'
-        material: GRASS_BLOCK
-        slot: 12
-      war:
-        name: '&8> &e當前戰爭'
-        lore:
-          - '&7獲取當前戰爭中的訊息'
-          - ' '
-          - '&7顯示有關於:'
-          - '&8- &7敵國訊息'
-          - '&8- &7戰利品'
-        material: REDSTONE_BLOCK
-        slot: 14
-      spawn:
-        name: '&8> &e重生點'
-        lore:
-          - '&7點擊傳送至國家出生點'
-        material: ENDER_PEARL
-        slot: 16
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  admin_wilderness:
-    title: '&8荒野設置'
-    size: 9
-    s:
-      player-settings:
-        name: '&8> &6玩家設置'
-        lore:
-          - '&7自訂義玩家可以在荒野做什麼事'
-        slot: 3
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-      land-settings:
-        name: '&8> &6國家設置'
-        lore:
-          - '&7你可以在此更改基礎設置'
-          - '&7像是生物生成之類的.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 7
-      close:
-        name: '&c關閉'
-        lore:
-          - '&7關閉選單.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 9
-        enabled: true
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-  admin_wilderness_player-settings:
-    title: '&8玩家設置'
-    size: 36
-    l:
-      object:
-        name: '&6{setting}'
-        lore:
-          - '&7狀態: {enabled}'
-          - ' '
-          - '&7點此來允許'
-          - '&7或不允許玩家在荒野'
-          - '&7做某些事情.'
-          - ' '
-          - '&8忽略: {bypass}'
-        material: STONE
-        from: 10
-        to: 27
-    f:
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 35
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 27
-        to: 36
-  admin_wilderness_land-settings:
-    title: '&8國家設置'
-    size: 27
-    l:
-      object:
-        name: '&6{setting}'
-        lore:
-          - '&7狀態: {enabled}'
-          - ' '
-          - '&7點擊切換此設定狀態'
-        material: STONE
-        from: 10
-        to: 18
-    f:
-      page_previous:
-        name: '&9上一頁'
-        lore:
-          - '&7翻到上一頁:&9 {previous}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 21
-      page_next:
-        name: '&a下一頁'
-        lore:
-          - '&7翻到下一頁:&9 {next}'
-          - ' '
-          - '&8- &7當前頁數:&3 {current}'
-        material: ARROW
-        slot: 25
-      back:
-        name: '&c返回'
-        lore:
-          - '&7返回到'
-          - back
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
+    exists: '&cArea med detta namn&4 {area} &cFinns redan i land&4 {land}&c.'
+    not-exist: '&cArea&4 {area} &cFinns inte i land&4 {land}&c.'
+    default: '&cDu kan inte göra detta i area&4 {area} &cav land&4 {land}&c.'
+  role:
+    exists: '&cRank med detta namn&4 {role} &cfinns redan. &7Välj ett annat namn.'
+    not-exist: '&cRank&e {role} &cfinns inte i denna area. &7Misstag?'
+    max: '&cDu kan inte skapa mer ranker för detta land. &7Du har nått gränsen av&3 {max} &7ranker. Permisssion: lands.roles.NUMBER'
+    player:
+      land: '&cDu kan inte ändra invånare i land&4 {land}&c. &7Ranken&6 {role} &7har högre befogenheter än din rank eller ni har samma befogenheter.'
+      area: '&cDu kan inte ändra invånare i area&4 {area} &8(&7Land:&2 {land}&8)&c. &7Ranken&6 {role} &7har högre befogenheter än din rank eller ni har samma befogenheter.'
+    weight:
+      land: '&cDu kan inte ändra rank&4 {role} &cav land&4 {land}&c. &7Ranken har högre befogenheter än din rank eller ni har samma befogenheter.'
+      area: '&cDu kan inte ändra rank&4 {roel} &cav area&4 {area} &8(&7Land:&2 {land}&8)&c. &7Den Ranken har högre befogenheter än din rank eller ni har samma befogenheter.'
+    delete:
+      owner: '&cDu kan inte ta bort ägar ranken i ditt land. &7Denna ranken måste finnas kvar.'
+      entry: '&cDu kan inte ta bort orginal rankerna i ditt land. &7Dom behövs för nya invånare.'
+      visitor: '&cDu kan inte ta bort gäst i ditt land. &7Den behövs för invånare som besöker landet.'
+  teleportation:
+    already: '&cYou can''t start a second teleportation. There''s already a teleportation in progress. &7Please wait until it''s done.'
+    started: '&7Teleportation process started. Teleporting in&5 {sec} &7seconds. Please don''t move.'
+    cancelled: '&cYour teleportation has been cancelled. &7Please don''t move while you''re waiting&5 {sec} &7seconds for teleportation.'
+    chunk: '#t#&9&lTeleported{newline}&7X: {x} Z: {z} Cost:&c ${cost}'
+    plugin: '&cTeleportation has been cancelled by a 3rd party plugin. &7Please check your other plugins. &7This is not a Lands issue.'
+    unsafe: '&cTeleportation has been cancelled, because the destination is not safe.'
+    corrected: '&7The original teleport destination was unsafe. &7Your final destination has been corrected to a safe location.'
+command:
+  general:
+    land-not-exist: '&cLand&2 {land} &cExisterar inte. &7Det är inget land med namnet&2 {land} &7i denna värld.'
+    area-not-exist: '&cArea&4 {area} &cExisterar inte detta land&4 {land}&c. &7Du kan skapa ny area i ditt land menu i areas sektion. &7Misstag?'
+    land-not-member: '&cDu är inte betrodd i detta land&4 {land}&c. &7använd &8/&3Lands menu &7för att se land du är invånare i.'
+    no-edit-land: '&cDu har inte valt ditt land än. &7Use &8/&3Lands edit &8<&3land&8> &7För att välja ditt land.'
+    name-exists: '&cdetta namn&4 {name} &cÄr redan tagen av annat land. &7Du behöver välja annat namn.'
+    money-cost-bank: '&cDu har inte tillräckligt med guld. &7Du behöver &6{cost}{#fbe232}Ⓖ&7. Sätt in Guld i din lands bank med komandot: &8/&3Lands deposit {cost}'
+    money-cost: '&cDu har inte tillräckligt med guld. &7Du behöver &6{cost}{#fbe232}Ⓖ&7.'
+    action-cooldown: '&cDu kan inte göra det nu. &7Du behöver vänta:&5 {time}&7.'
+    land-none: '&cDu är inte invånare av detta land. &7använd &8/&3Lands create &7För skapa en egen.'
+    land-no-own: '&cDu äger inget land. &7Använd &8/&3Lands create &7För skapa en egen.'
+    world-invalid: '&cDu kan inte göra det i denna värld. &7En Admin Behöver lägga till world&3 {world} &7till config först.'
+    wilderness: '&cDenna chunk är vildmark. &7Du behöver gå till inmutad chunck. &7Du kan använda &8/&3Lands menu &7För se dina lands.'
+    player-not-exist: '&cDet finns inte en spelare med namn&4 {player}&c. &7Misstag?'
+    player-self: '&cDu kan inte göra det med dig själv. &7You''re funny. :)'
+    banks-disabled: '&7Bank är avstängt av Admin. &8Admin kan slå på det i config.'
+    land-not-trusted: '&cSpelare&4 {player} &7Är inte del av detta land &8(&7Land:&2 {land}&8)&7. Du behöver betro han först, använd &8/&3Lands trust&7.'
+    area-not-trusted: '&cDu kan inte göra det här. &7du är inte betrodd i detta chunk &8(&7X: {x} Z: {z}&8)&7. DEt tillhör area&6 {area} &7av land&2 {land}&7.'
+    invalid-number: '&cDin inmatning&4 {input} &cÄr inte ett nummer. &7Det&3 {argument} &7måste vara ett nummer.'
+    swear-word: '&cAnvänd inte svärord. &7Andvänd vårdat språk. Word:&c {word}'
+    player-offline: '&cDet är inte någon spelare med detta namn&4 {player} &conline. &7Misstag?'
+    no-permission: '&cDu har inte tillåtelse att göra detta. du behöver denna tillåtelse {permission}.'
+    name:
+      character: '&cDu kan inte använnda ogiltiga tecken för namnet. &7Använd bara bokstäver och nummer. &7Hittade ogiltigt tecken:&3 {invalid}'
+      length: '&cDetta namn är för långt. &7Maximal längd är&3 {max} &7tecken &8(&7du skrev: {input}&8)&7. &8detta inkludera färgkoder.'
+      empty: '&cdetta namn är ogiltigt. &7Du måste minst ta med ett tecken, måste vara mer än färgkoder.'
+      color: '&cYou''re not allowed to use color codes for this name. &7Please remove any color codes from your input.'
+    number: '&cYour input&4 {input} &cisn''t a number. &7The&3 {argument} &7argument needs to be a number.'
+  help:
+    help: '&7Använd &8/&aLand help &7för hjälp.'
+    cmd-not-exist: '&cDetta kommando existerar inte. &7Kommand&3 {command} &7Är inte gilltigt.'
+    header: '[NoPrefix][T]&7----------&6<<<<&7-[H]&7Tryck här för komma till förgånde sida.[/H][C]lands help {previous}[/C][/T] &2Lands Help &7Page&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7Tryck här för komma till nästa sida.[/H][C]lands help {next}[/C][/T]'
+    footer: |
+      [NoPrefix]
+      &7Tryck på pilarna nedan för byta sida.
+      [T]&7----------&6<<<<&7-[H]&7Tryck här för komma till förgånde sida.[/H][C]lands help {previous}[/C][/T] &2Lands Help &7Page&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7Tryck här för komma till nästa sida.[/H][C]lands help {next}[/C][/T]
+  create:
+    land-other: '&cDu har inte tillåtelse ha eget land och vara invånare av annat land. &7Du behöver lämna &2 {land} &7först. &8En Admin kan stänga av det i config.'
+    max-own: '&cDu kan inte skapa mer lands. &7Du har nått maximalt av&3 {max} &7egna lands. &8Permission: lands.ownlands.NUMBER'
+    success: '&7Du skapa ett land&2 {land} &7för&6{cost} {#fbe232}Ⓖ&7.Du kan inmuta Chunks med  kommandot &8/&3Lands claim&7. Du kan också använda komandot /Lands selection för Inmuta en selektion (zon). Sätt ett land {land} som ditt land,så kan du ändra det för framtida åtgärder &8(/&3Lands edit&8)&7.'
+    broadcast: '&7Land&2 {land} &7var skapad av&3 {player}&7.'
+  rename:
+    success: '&7Du satte ett nytt namn&3 {name} &7för detta land&8(&7Land:&2 {land}&8)&7.Du betalade&6 {cost}{#fbe232}Ⓖ&7.'
+  edit:
+    success: '&7Du gick in i edit läget för detta land&8(&7Land:&2 {land}&8)&7. Nästa åtgärd, som &8/&3Lands claim &7eller &8/&3Lands trust&7, kommer att användas för detta land.'
+  selection:
+    not-complete: '&cDin selektion är inte färdig. &7Är du säker du markerat båda positionerna &8(&bLEFT CLICK &7och &9RIGHT CLICK&8)&7.Du kan aktivera selection med kommandot &8/&3Lands selection&7.'
+    max: '&cDin selektion har för många chunk. &7Den här storleken:&3 {current} &7går över din maximala storlek som är&3 {max} chunks. &8Permission: lands.selection.NUMBER'
+    disabled: '#t#&5&lSelektion{newline}&c&lär avstängt'
+    world: '&cBåda positionerna måste vara i samma värld. &7Sätt sätt position ett och position två i samma värld.'
+    pos:
+      warn: '&cWarning: &7Detta chunk tillhör annat plugin. Namn:&3 {plugin}'
+      cancelled: '&cDu kan inte göra en selektion här. &7Detta chunk tillhör annat plugin. Namn:&b {plugin}'
+      one: '#t#&5&lSelection{newline}&b&lPos 1 &8-> &7Set'
+      two: '#t#&5&lSelection{newline}&b&lPos 2 &8-> &7Set'
+    area:
+      conflicts: '&cHittade&4 {conflicts} &csom krockar med chuncks som redan är tilldelad till area(s). &7Använd &8/&3Lands selection assgin {area} confirm &7För att bekräfta en överskrivning. Konflikt tillhör dessa areas: {areas}'
+      assigned: '&7Du har tilldelas:&3 {chunks} &7chunks till area&6 {area} &8(&7Land:&2 {land}&8)&7.'
+    enabled: '&7Du har slagit på så du kan markera ut area. Använd &5Vänsterknapp &7på ett block för sätta positon ett. Med &5högerknapp &7så sätter du positon två. Efter du har satt två punkter på motsatt sida så kan du använda dessa kommandon (använd /lands först): &3Claim&7, &3Unclaim&7, &3Leave'
+    expand:
+      enabled: '&7Du har nu förstorat den markering från botten till toppen (i alla nivåer).'
+      disabled: '&7Din markering täcker nu inte alla nivåer från botten till toppen.'
+    too-far: '&cDet block du tittar på, är för långt borta. &7Flytta dig närmare blocket.'
+    complete: |
+      &7Din markering är klar. Dessa komandon kan du göra:
+        &8┏
+        &8┃ &7Inmuta: &8/&3Lands claim
+        &8┃ &7Ta bort inmutning: &8/&3Lands unclaim
+        &8┃ &7Addera till underzon: &8/&3Lands assign
+        &8┗
+  claim:
+    already: '&cDu kan inte inmuta detta chunk. &7Det tillhör land&2 {land}&7.'
+    auto-create: '&7Skapar ett land automatiskt för dig, för du har inget i denna värld. Du kan ändra namn med komandot &8/&3Lands rename&7.'
+    auto-create-fail: '&cMisslyckades att automatisk skapa ett land för dig. &7Läs meddelandet ovanför.'
+    near-other: '&cDEtta är för nära till land&4 {land}&c. &7Du behöver flytta Längre bort ifrån det landet. Minimum chunk avstånd är&3 {distance}&7. &8En Admin kan ändra det i config.'
+    far-land: '&cDu kan inte inmuta detta chunk(s). &7Dinna inmutningar ska ansluta till ditt land &8(&7Land:&2 {land}&8)&7.'
+    success: '&7Inmutade detta chunk &8(&7Land:&2 {land} &7X: {x} Z: {z}&8) &7for&6 {cost} {#fbe232}Ⓖ&7. Nästa inmutning kommer kosta&b {next} {#fbe232}Ⓖ&7.'
+    already-claimed: '&cI din selektion är det chunk som är inmutade och tillhör inte ditt land &8(&7X: {x} Z: {z}&8)&c. &7Det tillhör land&2 {land}&7.'
+    max-chunk: '&cDu kan inte inmuta&4 {chunks} &cfler chunks för detta land. &7du har nått maximalt för land&2 {land} &7is&3 {max} &7chunks. &8Permission: lands.chunks.NUMBER'
+    selection: '&7Du unmutade&3 {chunks} &7chunks för detta land &8(&7Land:&2 {land}&8)&7. Du betalade&6 {cost} {#fbe232}Ⓖ&7.'
+  assign:
+    selection: '&cDu behöver skapa en selektion först. &7Använd &8/&3Lands selection &7för skapa en.Sen provar du igen.'
+    size: '&cDin selektion är för liten. &7Minimum storlek är&3 {min} &7blocks och din är&3 {current}&7.'
+    success: '&7Du ändrade storlek på area&6 {area} &7av land&2 {land}&7. Ändringar visualiseras.'
+    conflict:
+      land: '&cDin selektion krockar med land&4 {land}&c. &7Ändra din selektion.'
+      area: '&cDin selektion krockar med area&4 {area}&c. &7Ändra din selektion.'
+    default: '&cYou can''t assign the selection to a default area. &7Areas can be deleted in the areas menu of the land.'
+  leave:
+    land:
+      success: '&7Du lämnade land&2 {land}&7. Du har inte tillgång till detta land.'
+      untrusted: '&7Du är inte inåvare i någon area av detta land&2 {land}&7.'
+    area:
+      success: '&7Du lämnade area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Du har inte tillgång till arean.'
+      untrusted: '&7Du är inte invånare i denna area&6 {area} &7av detta land&2 {land}&7.'
+    owner: '&cDu kan inte lämna detta land. &7Som ägare av detta land du kan endast ta bort det eller ge ägarrätten till annan spelare. Använd &8/&3Lands delete {land} &7för ta bort land .'
+  unclaim:
+    success: '&7Du tog bort denna inmutning av detta chunk &8(&7Land:&2 {land} &7X: {x} Z: {z}&8)&7. Du fick&6 {back} {#fbe232}Ⓖ&7tillbaka.'
+    selection:
+      empty: '&cDu tog inte bort några chunks, för du inte markerat någon chunk än eller du har inte tillåtelse ta bort chunks.'
+      connection: '&7Du har tagit bort {success} / {size} chunks för denna markering, &cmen {failed} kunde inte ta bort chunks för det skulle resultera i landet inte sitta ihop längre.'
+      partly: '&7Du har tagit bort {success} / {size} chunks av denna markering. &8Notera endast chuncks, som du har tillåtelse att ta bort, blir borttagna.'
+      success: '&7Du har tagit bort alla chunks, som du markerat.'
+      rental: '&cDu kan inte ta bort denna markering&7, För den inerhåller hyrd/såld area&6 {area} &7i land&2 {land}&7. Hyresgäst:&3 {player}'
+    connection: '&cDu kan inte ta bort den här chuncken, eftersom detta skulle orsaka att landet kopplas ifrån dom andra chunck du äger. &7Chunk X: {x} Z: {z} skulle inte vara kopplad med ditt land längre.'
+    rental: '&cDu kan inte ta bort denna chunckk&7, för den är uthyrd/såld area&6 {area}&7. Hyresgäst:&3 {player}'
+  delete:
+    confirm: '&cDu behöver bekräfta denna åtgärd. &7Använd &8/&3Land delete {land} confirm&7.'
+    success: '&7Du tog bort ditt land &8(&7Land:&2 {land}&8)&7. Du fick tillbaka:&6 {back} {#fbe232}Ⓖ &7.'
+    broadcast: '&7Detta land&2 {land} &7var borttaget av&3 {player}&7.'
+    nation: '&cDu kan inte ta bort ditt land, eftersom det är nationens huvudstad&4 {nation}&c. &7Du kan antingen ta bort nationen med &8(/&3Nations delete&8) &7 eller flytta ägare med &8(/Nations setCapital&8)&7.'
+  trust:
+    own-land: '&cDenna spelare har inte tillåtelse att ha eget land och gå med i annat land. &7Han måste lämna först.'
+    max-lands: '&7Spelare&3 {player} &7Har nätt maximalt antal lands. &8Permission: lands.lands.NUMBER'
+    max-members: '&cKunde inte bjuda in invånaree&4 {player} &ci detta land land&4 {land}&c. &7Ägaren av detta land nått gränsen av&3 {members} &7invånare.'
+    area:
+      invited: '&cInvånaren&4 {player} &cär redan inbjuden till area&4 {area} &cav land&4 {land}&c. &7Inbjudan skickades den:&5 {time}'
+      trusted: '&7Invånaren&3 {player} &7är redan med i denna area&6 {area} &7av land&2 {land}&7.'
+      success: '&7Bjöd in spelare&3 {player} &7till denna area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Vänta tills han accepterar inbjudan.'
+      target: |
+        [T]&7Du blev inbjuden av&3 {player} &7till underzon med namnet:&6 {area} &7i landet:&2 {land}&7.Använd &8/&3Lands accept {land} &7för acceptera deras inbjudan.[H]&7Tryck på texten för öppna inbjudningsmenyn.[/H][C]lands invites[/C][/T]
+
+        &7Skatt i underzon:&6 {tax}{#fbe232}Ⓖ
+
+        [T]&2Accept &8[&8CLICK&8][H]&7Tryck här för acceptera inbjudan.[/H][C]lands accept {land}[/C][/T]
+        [T]&cDeny &8[&8CLICK&8][H]&7Tryck här för ta bort inbjudan.[/H][C]lands deny {land}[/C][/T]
+    max: '&cSpelaren&4 {player} &ckan inte gå med i fler lands. &7Han har nått maximalt av &3 {max} &7lands att gå med i. &8Permission: lands.lands.NUMBER'
+    land:
+      invited: '&cInvånaren&4 {player} &cär redan inbjuden till landet&4 {land}&c. &7Inbjudan skickades den&5 {time}'
+      trusted: '&7Invånaren&3 {player} &7har redan gått med i land&2 {land}&7.'
+      success: '&7Du skickade  till Invånaren&3 {player} &7en inbjudan till detta land&2 {land}&7. Han kan nu acceptera din injudan.'
+      target: |
+        [T]&7Du blev inbjuden av&3 {player} &7till landet&2 {land}&7. använd kommandot &8/&3Lands invites &7för titta på inbjudan.[H]&7Tryck på texten för öppna inbjudningsmenyn..[/H][C]lands invites[/C][/T]
+
+          &7Skatt i landet:&6 {tax}{#fbe232}Ⓖ
+
+          [T]&2Accept &8[&8CLICK&8][H]&7Tryck här för acceptera inbjudan.[/H][C]lands accept {land}[/C][/T]
+          [T]&cDeny &8[&8CLICK&8][H]&7Tryck här för ta bort inbjudan.[/H][C]lands deny {land}[/C][/T]
+  untrust:
+    area:
+      already: '&cDenna invånare är inte betrodd i denna area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      success: '&7Du har tagit bort förtrondet för invånare&3 {player} &7i area &8(&7Area:&6 {area} &7Land:&2 {area}&8)&7.'
+      revoke: '&7Du har nu tagit bort injudan för invånare&3 {player} &7i area&6 {area} &8(&7Land:&2 {land}&8)&7. Invånaren är inte invånare i arean längre.'
+      rental: '&cDu kan inte ta bort hyresgästen&4 {player} &ci area&4 {area}&c. &7För ta bort area för uthyrning, Använd &8/&3Lands rent remove &7När du står i arean du vill ta bort.'
+    land:
+      already: '&7Denna invånare&3 {player} &7är inte betrodd i någon area i detta land&2 {land} &7 och har inte fått någon inbjudan.'
+      revoke: '&7Du har nu tagit bort injudan för invånare&3 {player} &7för hela landet&2 {land}&7. Invånaren är inte invånare någon arean.'
+      success: '&7Du har avhyst invånare&3 {player} &7i ditt land&2 {land}&7.'
+  setrole:
+    visitor: '&cDu kan inte sätta denna roll&4 {role}&c. &7Om du vill avhysa denna spelare, använd kommandot &8/&3Lands untrust {player} [area]&7.'
+    land:
+      untrusted: '&cSpelare&4 {player} &cär inte invånare i land&4 {land}&c. &7Du mmåste bjuda in han först.'
+      success: '&7Du satte roll&3 {role} &7för invånare&3 {player} &7i area av landet&2 {land}&7,där dom är injudna.'
+    area:
+      untrusted: '&cInvånare &4 {player} &cÄr inte inte med i area&4 {area} &ci land&4 {land}&c. &7Du får bjuda in först.'
+      success: '&7Du satte roll&3 {role} &7för invånare&3 {player} &7i area&6 {area} &7i land&2 {land}&7.'
+  accept:
+    not-exist: '&cDu har inte en inbjudan från detta land&4 {land} &celler så har tiden gått ut. &7 kontrollera stavningen.'
+    own-land: '&cDu har inte premission för att äga ett land och vara invånare i annat land. &7Du behöver lämna ditt eget land först.'
+    max-lands: '&cdu kan inte gå med i fler lands. &7Du har&3 {max} &7lands. &8Permission: lands.lands.NUMBER'
+    notification: |
+      [T]&7Du har&a {invites} &7inbjudningar från andra lands.[H]Tryck för komma till alla inbjudningar du kan ta bort eller acceptera dessa[/H][C]lands invites[/C][/T]
+      [T]&7Använd &8/&2Land invites .&7För att få en lista på inbjudningar eller tryck på texten.[H]Tryck för komma till alla inbjudningar du kan ta bort eller acceptera dessa[/H][C]lands invites[/C][/T]
+    area:
+      success: '&7Accepterade inbjudningen från land&2 {land} &7för area&6 {area}&7.'
+      broadcast: '&2{land} &8| &7spelare&3 {player} &7är nu invånare i area&6 {area} &7i ditt land&2 {land}&7.'
+    max: '&cDu kan inte gå med i mer lands. &7Du har bara &3 {max} &7lands att gå med i. &8Permission: lands.lands.NUMBER'
+    land:
+      success: '&7Du har accepterat inbjudan från land&2 {land} &7Du är nu invånare i landet.'
+      broadcast: '&2{land} &8| &7Spelare&3 {player} &7Är nu invånare i ditt land.'
+  setowner:
+    confirm: '&cBekräfta att du vill byta ägare över ditt land&2 {land} &7till spelare&3 {player}&7: &8/&3Lands setowner {player} confirm'
+    success: '&7Du har nu satt spelare&3 {player} &7som ny ägare av land&2 {land}&7. Du betalade&6 {cost} {#fbe232}Ⓖ&7.'
+    max-lands: '&cInvånaren&4 {player} &char inte tillåtelse att äga fler lands. &7Han har redan nått maximalt&3 {max} &7av egna lands. &8Permission: lands.ownlands.NUMBER'
+  deny:
+    not-exist: '&cDu har inte en inbjudan från detta land&4 {land} &celler så har tiden gått ut. &7Misstag?'
+    success: '&7Du har tackat nej till inbjudan för land&2 {land}&7.'
+  teleport:
+    chunk-not-claimed: '&cDetta chunck är inte inmutat&8(&7X: {x} &7Z: {z}&8)&c. &8Bypass permission: lands.bypass.wilderness.teleport'
+    not-trusted: '&cDu kan inte teleoportera hit. &7Du är inte betrod i land&2 {land}&7.'
+    success: '&7Du teleport till X:&3 {x} &7Z:&3 {z} &7inmutat: {claimed}'
+  setspawn:
+    force-land: '&cDu kan bara sätta land spawn i ditt eget land. &7Gå till ditt land&2 {land} &7först. &8En Admin kan ändra det i config.'
+    successs: '#t#&a&lSpawn har satts{newline}&7&lKostnad: &6{cost}{#fbe232}Ⓖ'
+  spawn:
+    not-exist: '&cDet är ingen spawn satt för land&4 {land}&c. &7Någon behöver sätta det först, med komandot: &8/&3Land setspawn&7.'
+    not-allowed: '&cDu har inte tillåtelse att teleoportera till spawn av detta land. &7Ägaren eller borgmästaren behöver ge dig premission för göra det för &8(&7Land:&2 {land}&8)&7.'
+    chunk: '&7Land&2 {land} &7har inte satt land spawn&8(&8/&3Lands setspawn&8). &7Du teleoporteras till första claimade chunk av &3{land}.'
+    successs: '&7Du teleoporterades till spawn av land&2 {land} &7Kostnad:&6{cost} {#fbe232}Ⓖ'
+    unsafe: '&cYou can''t teleport to this spawn, because it was detected as being unsafe for teleportation. &7Teleporting there might result into dying. They need to adjust the spawn by using &8/&3Lands setspawn&7.'
+  wild:
+    success: '&7Du har nu slumpmässig teleporterat till &8(&7X: {x} Z: {z}&8)&7. Du betalade&6 {cost}{#fbe232}Ⓖ&7.'
+    searching: '#t#&6Searching Destination{newline}&eWaiting for Teleportation to start..'
+    no-location: '&cCouldnt find a safe location for you that matches the filter in config. &8Please adjust your max and min distance settings and set the world spawn (/setworldspawn).'
+  deposit:
+    number: '&7Du behöver ange specifik belopp. Använd &8/&aLand deposit &8<&aAmount&8> &7eller &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
+    success: '&7Du har nu satt in&6 {cost} {#fbe232}Ⓖ &7i lands bank. &7Nytt belopp är: &b {bank} {#fbe232}Ⓖ &8(&7I land:&a {land}&8)'
+  withdraw:
+    number: '&7Du behöver ange specifik belopp. Använd &8/&aLand withdraw &8<&aAmount&8> &7eller &8/&aLand withdraw &8<&aLand&8> <&aAmount&8>&7.'
+    balance: '&7Det är inte tillräckligt med guld i din lands bank. Det är endast&6 {bank} {#fbe232}Ⓖ &7i lands bank. Summa du ville ta ut:&6 {take} &c{#fbe232}Ⓖ &8(&7i land:&e {land}&8)'
+    success: '&7Du tog ut&6 {cost} {#fbe232}Ⓖ &7från din lands bank. &7Ny summa på banken: &b{bank} &c{#fbe232}Ⓖ &8(&7I land:&a {land}&8)'
+  balance: '&7Summa på banken är &6{balance} {#fbe232}Ⓖ &8(&7I land:&e {land}&8)&7.'
+  chat:
+    activated: '&7Aktivera land chat. Skicka meddelande offentlig chatt till chatt med ditt land.'
+    deactivated: '&7Avaktiverade land chatt.'
+    no-land: '&cInget land hittades för land chatt. &7Använd &8/&3Lands chat toggle &7för avaktivera lands chatt.'
+    format:
+      minecraft: '&a{land} &8| {role} &7{player} &8»&f {message}'
+      discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
+      spy: '[NoPrefix]&8[&cChatSpy&8] &a{land} &8| {role} &7{player} &8»&f {message}'
+  view:
+    disabled: '&7Du stängde av &8/&3Lands view &7visualisering.'
+    wilderness: '&7Enabled visualization of claims. &7Your current position is wilderness.'
+    info: |
+      [NoPrefix]
+      &7---------<- &5&lLand översikt &7->---------
+      [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för mer information om detta land.[/H][C]lands info {land}[/C][/T]
+      &7Area:&6 {area}
+        &8Chunk &7X: {x} Z: {z}
+        &8Skatt:&6 {tax} {#fbe232}Ⓖ
+        &8Invånare: {players}
+      &7---------<- &5&lLand översikt &r&7->---------
+    area: |
+      [NoPrefix]
+      &7---------<- &5&lArea View &7->---------
+      [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to get more information about this land.[/H][C]lands info {land}[/C][/T]
+      &7Area:&6 {area}
+        &8Tax:&c ${tax}
+        &8Players:&7 {players}
+      &7---------<- &5&lArea View &r&7->---------
+  ban:
+    area:
+      success: '&7Du har avhyst invånare&3 {player} &7från denna area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.invånaren kommer inte kunna gå in i landet eller teleportera till spawn, om det ligger i detta area.'
+      target: '&cLand&4 {land} &cavhyst dig från deras area&4 {area} &cinne i deras land. &7Du kommer inte kunna gå in i landet eller teleportera till spawn, om det ligger i detta area.'
+    land:
+      success: '&7Du har avhyst invånare&3 {player} &7från land&2 {land}&7. invånaren kommer inte kunna gå in eller teleportera till spawn.'
+      target: '&cLand&4 {land} &cavhyst från deras land&c. &7Du kommer inte kunna gå in i landet eller teleportera till spawn.'
+  unban:
+    area:
+      success: '&7Invånare&3 {player} &7har nu blivit av med sin avhysning från area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      target: '&7Land&2 {land} &7tog bort avhysning från area&6 {area}&7.'
+    land:
+      success: '&7Invånare&3 {player} &7har nu blivit av med sin avhysning från land&2 {land}&7.'
+      target: '&7Land&2 {land} &7tog bort avhysning från land.'
   taxes:
-    title: '&8Taxes'
-    size: 27
-    s:
-      plus-1:
-        name: '&aAdd $1'
-        lore:
-          - '&7Add $1 to'
-          - '&7tax value.'
-        material: GLOWSTONE_DUST
-        slot: 11
-        data:
-          value: 1.0
-      plus-2:
-        name: '&aAdd $50'
-        lore:
-          - '&7Add $50 to'
-          - '&7tax value.'
-        material: GLOWSTONE_DUST
-        slot: 12
-        data:
-          value: 50.0
-      plus-3:
-        name: '&aAdd $500'
-        lore:
-          - '&7Add $500 to'
-          - '&7tax value.'
-        material: GLOWSTONE_DUST
-        slot: 13
-        data:
-          value: 500.0
-      minus-3:
-        name: '&cRemove $500'
-        lore:
-          - '&7Remove $500 from'
-          - '&7tax value.'
-        material: REDSTONE
-        slot: 15
-        data:
-          value: 500.0
-      minus-2:
-        name: '&cRemove $50'
-        lore:
-          - '&7Remove $50 from'
-          - '&7tax value.'
-        material: REDSTONE
-        slot: 16
-        data:
-          value: 50.0
-      minus-1:
-        name: '&cRemove $1'
-        lore:
-          - '&7Remove $1 from'
-          - '&7tax value.'
-        material: REDSTONE
-        slot: 17
-        data:
-          value: 1.0
-    f:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-      tax_area:
-        name: '&7Tax:&c ${tax}'
-        lore:
-          - ' '
-          - '&7In&5 {time} &7your land'
-          - '&7will receive&a ${revenue} &7as taxes'
-          - '&7from the trusted members in area.'
-          - ' '
-          - '&8- &7Players are paying'
-          - '  &7only taxes for areas,'
-          - '  &7in which they''re trusted.'
-        material: GOLD_INGOT
-        slot: 14
-      tax_nation:
-        name: '&7Tax:&c ${tax}'
-        lore:
-          - ' '
-          - '&7In&5 {time} &7your nation'
-          - '&7will receive&a ${revenue} &7as taxes'
-          - '&7from the lands in this nation.'
-          - ' '
-          - '&7This value sets the tax'
-          - '&7per chunk. So bigger lands'
-          - '&7will need to pay more.'
-        material: GOLD_INGOT
-        slot: 14
-    a:
-      failure_maxValue:
-        name: '&4Max Value reached'
-        lore:
-          - '&7You can''t set the tax'
-          - '&7value higher than&3 {max}&7.'
-          - ' '
-          - '&7A administrator can'
-          - '&7change this in config.'
-      failure_cooldown:
-        name: '&4Cooldown:&c You need to wait.'
-        lore:
-          - '&7You currently can''t change the'
-          - '&7tax value. You need to wait'
-          - '&5{time}.'
-          - ' '
-          - '&7A administrator can'
-          - '&7change this in config.'
-      failure_noaccess:
-        name: '&4Failure:&c No Access'
-        lore:
-          - '&7You''re not allowed to edit'
-          - '&7the taxes of this area.'
-          - ' '
-          - '&8- &7You''re missing permission'
-          - '  &7from the land owner to do so.'
-          - '  &8Setting: {setting}'
-          - ' '
-          - '&8Bypass permission:'
-          - '&8lands.admin.setting_edit_taxes'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
+    none: '&7Det finns inga kommande skattebetalningar för dig.'
+    upcoming:
+      header: '[NoPrefix]&7---------<- &cKommande betalningar&7->---------'
+      entry: '[NoPrefix]&8- &7{land}: &6{tax} {#fbe232}Ⓖ'
+      footer: |
+        [NoPrefix]&7Du behöver betala totalt&6 {total} {#fbe232}Ⓖ&7 om &3{next}&7.
+        &7På banken: ${balance} {#fbe232}Ⓖ
+        &7---------<- &cKommande betalningar &7->---------
+    changes:
+      header: |
+        [NoPrefix]
+        &7---------<- &4Hyran har ändras &7->---------
+        &cHyran har blivit ändrad i ett land:
+      entry: '[NoPrefix]&8- &7{land}: {color} {tax} {#fbe232}Ⓖ&7 &8(previously: {previous})'
+      footer: |
+        [NoPrefix]
+        &7Betalar om:&3 {next}
+        &7På banken: {balance} {#fbe232}Ⓖ
+        &8Mer info: /Lands taxes
+        &7---------<- &4Hyran har ändrase &7->---------
+  unstuck:
+    success: '&7Du har blivit teleporterad till närmaste posetion som inte är inmutad.'
+  rent:
+    edit: '&cDu kan inte ändra Underzonen&4 {area} &cav land&4 {land}&7, på grund av det är uthyrt/sålt till invånare&3 {player}&7.'
+    tenant: '&cDu har inte hyrt denna Underzonen som du står på nu. &7Area&6 {area} &7av land&2 {land} &7är inte hyrd av dig.'
+    none: '&cUnderzonen&4 {area} &cav land&4 {land} &cpå din nuvarande plats är inte hyrd av någon.'
+    status: '&cUnderzonen&4 {area} &cav land&4 {land} &cpå nuvarande plats är inte uthyrd eller till salu.'
+    set:
+      land: '&cDu kan inte hyra ut hela ditt land&4 {land} &cför att hyra ut. &7Du kan antingen skapa en underzon och hyra eller sälja (skriv på första raden= sell) hela landet.'
+      already: '&cDu kan inte nu sätta denna underzonen för uthyrning igen. &7Underzonen&6 {area} &7är uthyrd till&3 {player}&7.Uthyrningen går ut om &3 {time}&7.'
+      sold: '&cDu kan inte placera en underzone, som blivt såld och sen hyra ut den. &7Underzonen&6 {area} &7Köpte spelare&6 {player}&7.'
+      success: '&7Du satte underzonen&6 {area} &7till uthyrning. Hyresgästen betalar&6 {cost} {#fbe232}Ⓖ &7varje&3 {time}&7.'
+      invalid: |
+        &7Ditt format är inte korrekt på skylten, använd (line: {line})
+         &81. line:&7 Lands
+         &82. line:&7 rent
+         &83. line:&7 TIME maxTime (not required)
+         &84. line:&7 kostnad (exempel: 5 =&6 5 {#fbe232}Ⓖ)
+      info: |
+        [NoPrefix]
+        &7---------<- &e&lRent Info &7->---------
+        [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för visa den underzone du är i[/H][C]lands view here[/C][/T]
+         &7Underzon:&6 {area}
+         &7Kostnad:&6 {cost} {#fbe232}Ⓖ&7varje {time}
+         &8Max tid: {max}
+        &7---------<- &e&lRent Info &r&7->---------
+    rent:
+      trusted: '&cDu kan inte hyra area&4 {area} &ci land&4 {land}&c. &7Du är redan invånare i denna area.'
+      max: '&cDu kan inte hyra den längre än &3 {max} totalt. &7Ägare av land land&2 {land} &7har ställt in max &3 {max} &7total tid.'
+      add: '&7Du la till&6 {add} &7till hyreskostnad på underzon&6 {area} &7nya kostnaden&6 {cost} {#fbe232}Ⓖ&7. den går ut om&3 {time}&7.'
+      success: '&7Du hyr nu underzon&6 {area} &7i land&2 {land} &7för&6 {cost} {#fbe232}Ⓖ&7. Den går ut om&3 {time}&7.'
+      info: |
+        [NoPrefix]
+        &7---------<- &e&lHyr Info &7->---------
+        [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för visa den underzone som du hyr.[/H][C]lands view here[/C][/T]
+         &7Underzon:&6 {area}
+         &7Hyrs av:&2 {player}
+         &7Tid kvar:&3 {left}
+         &8kostnad: {cost} {#fbe232}Ⓖ&7varje {time}
+        &7---------<- &e&lHyr Info &r&7->---------
+    cancel:
+      success: '&7Du avbröt uthyrning av underzon&6 {area}&7. Du har inte tillgång till denna underzon.'
+    remove:
+      success:
+        land: '&7Land&2 {land} &7går inte längre att köpa.'
+        area: '&7Underzon&6 {area} &7av land&2 {land} &7går inte längre hyra eller köpa. &7Nuvarande hyresgäster stannar tills tiden gått ut.'
+  sell:
+    sell:
+      rented: '&cDu kan inte sälja underzonen, som är hyrd av en hyresgäst. &7 underzonen&6 {area} &7är hyrd av&3 {player}&7. den går ut om &3 {time}&7.'
+      success:
+        area: '&7Du satte ut underzon&6 {area} &7till försäljning. Kostnad:&6 {cost} {#fbe232}Ⓖ'
+        land: '&7Du satte ut hela landet&2 {land} &7till försäljning. Kostnad:&6 {cost} {#fbe232}Ⓖ'
+      invalid: |
+        &7Ditt format är inte korrekt på skylten, använd (line: {line})
+         &81. line:&7 Lands
+         &82. line:&7 sell
+         &83. line:&7 kostnad (exempel: 5 =&6 5 {#fbe232}Ⓖ)
+    buy:
+      success:
+        area: '&7You bought area&6 {area} &7of land&2 {land} &7for&c ${cost}&7.'
+        land: '&7You bought the land&2 {land} &7for&c ${cost}&7.'
+      info:
+        area: |
+          [NoPrefix]
+          &7---------<- &b&lUnderzon att köpa &7->---------
+          [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för visa den underzone som du står i.[/H][C]lands view here[/C][/T]
+           &7Underzon:&6 {area}
+           &7Kostnad:&6 {cost} {#fbe232}Ⓖ
+          &7---------<- &e&lUnderzon att köpa &r&7->---------
+        land: |
+          [NoPrefix]
+          &7---------<- &b&lLand att köpa &7->---------
+          [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för visa land som du står i.[/H][C]lands view[/C][/T]
+          &7Kostnad:&6 {cost} {#fbe232}Ⓖ
+          &7---------<- &a&lLand att köpa &r&7->---------
+list:
+  swear-words:
+    - fuck
+    - shit
+    - hora
+    - bög
+wars:
+  message:
+    noaccess:
+      action: '&cDu har inte tillåtelse att göra detta under ett krig med detta land. &7Bypass permission: {bypass}'
+      pillage: '&cDu kan inte plundra ett land när inga försvarare är online. &7 Vänta tills minst&b {defenders} försvarare loggat in.'
+    war-shield:
+      set: '&aDin nya sköld kommer vara aktiv för&b {time}&7.'
+    kill:
+      target:
+        attackers: '&7Din lagkamrat&c {attacker} &7blev dödad av försvararna&a {defender}&7.'
+        defenders: '&7Din lagkamrat&a {defender} &7blev dödad av anfallarna&c {attacker}&7.'
+      killer:
+        attackers: '&7Din lagkamrat&c {attacker} &7blev dödad av försvararna&a {defender}&7.'
+        defenders: '&7Din lagkamrat&a {defender} &7blev dödad av anfallarna&c {attacker}&7.'
+    start:
+      broadcast: '&7Kriget mellan {attacker} &7och {defender} &7startat. Det kommer avslutas:&5 {time}&7.'
+      participants: |
+        &4Kriget har startat:
+
+        &7Anfallare: {attacker} &8({team_1}&8)
+        &7Försvarare: {defender} &8({team_2}&8)
+
+        &7Kriget tar slut om:
+        &3~{time}
+    end:
+      broadcast: '&7Kriget mellan {attacker} &7och {defender} &7avslutas. Det tog:&3 {time}&7.'
+      surrender: '{object} &7Ena landet Kapitulera. Kriget är över och det betala&c ${tribute} &7till fienden {enemy}&7.'
+      draw: '&7Kriget mellan {attacker} &7och {defender} &7slutade oavgjort. det tog&3 {time}&7.'
+      won: |
+        &aKriget är över:
+        &7Anfallarna &8({team}&8) &7vann.
+
+        &8- &7Stats
+            &7Anfallare döda:&3 {att-points}
+            &7Försvarare döda:&3 {def-points}
+
+        &7The war took:
+        &5~{time}
+  command:
+    general:
+      no-war: '&cDitt land&e {land} &char inte några aktiva eller komande krig. &7För närvarande är det fred i landet.'
+    declare:
+      war-shield: '&cDu kan för tillfället inte starta ett krig emot detta land. &7Det har en sköld tills tiden gått ut om:&3 {time}&7.'
+      already:
+        attacker: '&cDitt land&4 {land} &ckan inte gå med i yttrligare krig. &7Nuvarande krig måste ta slut först.'
+        defender: '&cDu kan inte anfalla detta land. &7Landet&2 {land} &7är redan i krig.'
+      success: '&7Ditt land&c {attacker} &7Har förklarat krig emot land&a {defender}&7. Kriget startar om&5 ~{time}&7.'
+      target: { }
+      broadcast: '&7Land&c {attacker} &7Har förklarat krig emot land&a {defender}&7. Kriget startar om&5 {time}&7.'
+      min-players:
+        attacker: '&cDu kan inte delta i ett krig, eftersom du behöver fler betrodda invånare i land &4 {land} &c.&7 För en anfallare ska kunna skicka en krigsdeklaration behövs minst&3{min} &7invånare. &8Admin kan ändra det i config.'
+        defender: '&cDu kan inte förklara krig mot land&4 {land}&c, eftersom de måste ha mer invånare i sitt land. &7Det minsta antalet försvarare att ta emot en krigsdeklaration är&3 {min} &7invånare. &8Admin kan ändra det i config.'
+      ally: '&cDu kan inte förklara krig emot detta land, för att det är dina allierade. &7Ditt och det lan du ska attakera tillhör samma nation&9 {nation}&7.'
+      no-nation: '&cDu kan inte anfalla detta land. &7Landet&2 {land} &7måste vara en del av en nation för att kunna vara med i ett krig.'
+      no-target: '&cDet är inte något land eller nation med detta namn&4 {target}&c. &7Misstag?'
+      confirm: { }
+      not-allowed: '&cDu har inte tillåtelse starta ett krig för {object}&c. &7Ledaren av {object} &7kan bara göra det.'
+      member: '&cDu kan inte starta ett krig emot {object}&c, pågrund av du är invånare i landet. &7Du måste lämna landet först.'
+      mutual:
+        success: '&7Du &8(&a{attacker}&8) &7 har skickat krigsdeklaration till {&cdefender&7}. Dom måste acceptera det innan kriget kan starta.'
+        target: '&7Fienden &c{attacker} &7har skickat sent krigsdeklaration mot &a{defender}&7. annvänd &8/&3Wars declare {input} &7för acceptera det.'
+      balance: '&cDu kan inte skicka krigsdeklaration. &7Anfallarna &a{object} &7behöver minst ha&6 {min} {#fbe232}Ⓖ &7på banken.&7 För att kunna starta ett krig.'
+    deny:
+      ongoing: '&cDu kan inte neka pågånde krig emot &4{enemy}&c. &7Du kan endast necka krigsdeklaration för &a{object}&7.'
+      success: '&7Du har nu nekat krigsdeklaration för &a{object}, &7emot &c{enemy}&7.'
+      attacker: '&cAnfallarna kan inte necka deras egen krigsdeklaration. &7endast försvararna kan göra det.'
+    menu:
+      mutual: '&cDu kan inte öppna krigsmenyn nu. &7Krigsdeklarationen till &a{object} &7Har inte blivit accepterad än.'
+    info:
+      war: |
+        &4Pågånde krig:
+
+        &8- &4Anfallare
+            &7Namn:&4 {attacker}
+            &7Döda:&c {att-points}
+
+        &8- &aFörsvarare
+            &7Namn:&a {defender}
+            &7Döda:&c {def-points}
+
+        &7Kriget tar slut om:
+        &3~{time}
+      declaration:
+        normal: |
+          &4Krigsdeklaration:
+
+          &cAnfallare:&6 {attacker}
+          &aFörsvarare:&6 {defender}
+
+          &7Kriget startar om:
+          &3~{time}
+        mutual:
+          defender: |
+            &4Krigsdeklaration:
+
+            &cAnfallare:&6 {attacker}
+            &aFörsvarare:&6 {defender}
+
+            &7Om försvararna ger upp under kriget:
+            &7Betalar:&6 {tribute} {#fbe232}Ⓖ
+
+            [T]&7Accetpera: &8/&3Wars declare {input} &8[&8CLICK&8][H]&7Tryck här för att aceptera krigsförklaring.[/H][C]Wars declare {input}[/C][/T]
+            [T]&7Necka: &8/&3Wars deny &8[&8CLICK&8][H]&7Tryck här för att necka krigsförklaring.[/H][C]Wars deny[/C][/T]
+          attacker: |
+            &4Krigsdeklaration:
+
+            &7Anfallare:&6 {attacker}
+            &7Försvarare:&6 {defender}
+
+            &7Om försvararna ger upp under kriget:
+            &7Betalar:&6 {tribute} {#fbe232}Ⓖ
+
+            &cFörsvarararna har inte accepterat
+            &ckrigsdeklarationen än.
