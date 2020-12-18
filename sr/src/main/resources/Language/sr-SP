@@ -1,319 +1,550 @@
 ---
-#Mọi tin nhắn đều có thể chỉnh sửa ở đây
-#Để chỉnh sửa GUI, có thể vào tệp <language>_gui.yml
-#Nếu bạn gặp vấn đề, hãy yêu cầu hỗ trợ.
-#Trang của lands: https://www.spigotmc.org/resources/.53313
-#Discord: https://discord.gg/JVU9qd7
-################################
-#Lưu ý về các loại chat:
-#Chúng sẽ không hoạt động được trong mục "message" và "command".
-################################
-#Tại đây bạn có thể tùy chỉnh loại chat
-#bao gồm: title, actionbar và chat.
-#Cách mà nó hoạt động như sau:
-#Giả sử bạn muốn in tiền tố bằng title:
-#Chỉnh general.noPerm thành: '#t#&cYou''re not allowed to do this.' (Thêm "#t#" vào trước)
-#Bạn cũng có thể thiết đặt thời gian hiện, giữ và ẩn theo đơn vị giây:
-#Chỉnh general.prefix thành: '#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
-#Tin nhắn đó sẽ được gửi cho người chơi thông qua một title
-#hiện 1 giây, giữ lại 2 giây rồi ẩn đi trong 3 giây
-#Bạn cũng có thể gửi tin nhắn qua actionbar:
-#Chỉ cần thêm "#a#" vào trước.
-#Nếu bạn muốn gửi qua hộp chat, hoặc không thêm gì cả
-#hoặc là thêm "#c#" vào trước.
-#Ngoài ra bạn cũng có thể kết hợp các loại chat:
-#Chẳng hạn đặt general.prefix thành: '#c#a#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
-#Điều này sẽ gửi tin nhắn qua chat, qua actionbar lẫn qua title với thời gian hiện (1 giây),
-#thời gian giữ (2 giây) và thời gian ẩn đi (3 giây)
-#Nếu có đề xuất hoặc cần báo lỗi, hãy liên hệ tôi qua Discord hoặc p.m.
-#Discord: https://discord.gg/JVU9qd7
-#--------------------------
-#Được dịch bởi anhcraft
+#####################################
+#汉化By: 瑞瑞
+#汉化内容过多,难免会出现纰漏
+#如有汉化问题请至论坛反馈
+#####################################
 general:
-  wYes: '&aCó'
-  wNo: '&cKhông'
-  none: '&cKhông'
-  wilderness: '&aNơi hoang dã'
+  prefix: '&8[&aLands&8] '
+  wYes: '&a确认'
+  wNo: '&c取消'
+  none: '&8无'
+  disabled: '&c关闭'
+  wilderness: '&a荒野'
+  land:
+    title:
+      land: '&7所有者:&3 %owner%&7.'
+      safezone: '&7你现在安全了...'
+    global-area: 'Global'
   time:
-    days: 'ngày'
-    hours: 'giờ'
-    minutes: 'phút'
-    seconds: 'giây'
+    days: 日(s)
+    hours: 小时(s)
+    minutes: 分钟(s)
+    seconds: 秒(s)
   status:
-    online: '&atrực tuyến'
-    offline: '&cngoại tuyến'
-  role:
-    owner: '&4Chủ sở hữu'
-    admin: '&cQuản trị viên'
-    member: '&eThành viên'
-    visitor: '&5Khách'
+    online: '&a在线'
+    offline: '&c离线'
   top:
-    title: '&7---------<- &6&lTop 10 Vùng đất &7->---------'
-    land: '&7#&5{pos}&7: &b{land} &7Kích thước:&e {size}'
-    last-updated: '&7LCập nhật gần nhất:&e {time}'
-    footer: '&7---------<- &6&lTop 10 Vùng đất &7->---------'
+    title: '&7-----<- &5国家排名 &8(&7国家:&b {total}&8) &7->-----'
+    entry: '&c#{pos} &a{land} &7Balance:&e ${value}'
+    next-page: '&7下一页: &8/&2Lands top {next}'
+    last-updated: '&7最后更新: {time} &'
+    footer: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
   integration:
     dynmap:
-      chunk:
-        description: '<div class="infowindow"><span style="font-size:200%;">{land}</span><br/>X: {x} Z: {z}</span><br/> Chủ sở hữu: <span style="font-weight:bold;">{owner}</span><br/>Quản trị viên: <span style="font-weight:bold;">{admins}</span><br/>Thành viên: <span style="font-weight:bold;">{members}</span><br/></div>'
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br /><br /> Owner: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br />Admins: <span style="font-weight: bold;">{admins}</span><br />Members: <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<p><span style="font-size: 120%; color: #339966;"><span style="font-size: 120%;">Spawnpoint</span></span></p><p>Open to visitors: {public}</p>'
   sign:
     topLand:
-      line-1: '&6#&e{place}'
-      line-2: '&5{owner}'
-      line-3: '&2Vùng đất &a{land}'
-      line-4: '&9Kích thước:&b {size}'
+      line-1: '&c#&l{place}'
+      line-2: '&8<&2 {land} &8>'
+      line-3: '&7所有者 {owner}'
+      line-4: '&7余额:&3 ${value}'
     noLand:
       line-1: ' '
-      line-2: '&cKhông có vùng đất'
-      line-3: '&cnào để hiện.'
+      line-2: '&c没有国家'
+      line-3: ' '
       line-4: ' '
   autoAction:
-    claim: '&aChiếm chunk'
+    claim: '&a区块占领'
   map:
     yours: '&a▉ '
     others: '&c▉ '
     friendly: '&5▉ '
     current-location: '&e▉ '
     wilderness: '&2▉ '
+    top: '&7-<------------<- &6国家 地图 &7->------------>-'
+    info:
+      wilderness: ' &2▉ &7= 荒野'
+      yours: ' &a▉ &7= 你所处的'
+      trusted: ' &5▉ &7= 你所在的国家'
+      others: ' &c▉ &7= 其他'
+      position: ' &e▉ &7= 坐标'
+    bottom: '&7-<------------<- &6国家 地图 &7->------------>-'
+  land-inbox:
+    land:
+      created: '&7{land} 已创建 &2{date}h &7.'
+      upkeep:
+        chunk-deleted: '&2{date}h &4警告: &c你所认领的区块 &8(&7X: {x} &7Z: {z}&8) &c已取消认领. 因为你无法支付维护费用:&c ${cost}'
+        warning: '&2{date}h &c警告: &7无法支付维护费用: ${cost}'
+        paid: '&2{date}h &7支付维护费用: ${cost}'
+    player:
+      join: '&2{date}h &7玩家 {player} 加入了国家.'
+    wars:
+      declaration:
+        sent: '&2{date}h &7宣战 {defender}. 战争将在 {time} 后爆发.'
+        received: '&2{date}h &4警告: &c国家 {attacker} 对你的国家进行宣战. 战争将在 {time} 后爆发.'
+      surrender:
+        sent: '&2{date}h &c在战争中投降. 支付 ${tribute} 作为战利品给敌国.'
+        received: '&2{date}h &a敌国 {land} 已投降. 支付 ${tribute} 作为战利品.'
+      won:
+        attacker: '&2{date}h &a战争已结束. &7进攻方 &8({team}&8) &7胜利. 进攻方点数: {att-points} 防守方点数: {def-points}'
+        defender: '&2{date}h &a战争已技术. &7防守方 &8({team}&8) &7胜利. 进攻方点数: {att-points} 防守方点数: {def-points}'
+  wars:
+    land-type:
+      enemy: '&c敌国'
+      ally: '&a盟国'
+    nametag:
+      enemy: '&c敌国 &8| '
+      ally: '&a盟国 &8| '
+  teleportation:
+    bossbar: '&7请等待&5 {time} &7秒(s) 直到传送.'
 help:
   general:
-    prefix: '&8[&aLands&8] &7Cách sử dụng: '
-    header: '&7------------<- &5Hưỡng dẫn Lands &7Trang&6 {page} &8/&e {pages} &7->------------'
-    page: '&7Sử dụng &8/&dLands help {next} &7để sang trang tiếp theo. <> = bắt buộc [] = tùy chọn'
-    footer: '&7------------<- &5Hưỡng dẫn Lands &7Trang&6 {page} &8/&e {pages} &7->------------'
+    help-prefix: '&7用法: '
+    header: '&7------------<- &2国家帮助 &7页面&3 {page} &8/&3 {pages} &7->------------'
+    page: '&7Use &8/&eLands help {next} &7选择页面. <> = 必须 [] = 可选'
+    footer: '&7------------<- &2国家帮助 &7页面&3 {page} &8/&3 {pages} &7->------------'
   command:
-    help: '&8/&7Lands help &8[&aPage&8] - &eTrợ giúp'
-    edit: '&8/&7Lands edit &8<&aLand&8> - &eTham gia chế độ chỉnh sửa'
-    claim: '&8/&7Lands claim &8[&7auto&8] - &eChiếm chunk'
-    create: '&8/&7Lands create &8<&aName&8> - &eTạo vùng đất'
-    leave: '&8/&7Lands leave &8[&aLand] &8- &eRời bỏ chunk hoặc vùng đất'
-    unclaim: '&8/&7Lands unclaim &8- &eTrả chunk về nơi hoang dã'
-    delete: '&8/&7Lands delete &8<&aLand&8> &8- &eXóa vùng đất'
-    trust: '&8/&7Lands trust &8<&aPlayer&8> [&ahere&8] - &eMời người chơi vào vùng đất'
-    untrust: '&8/&7Lands untrust &8[&ahere&8] - &eSút người chơi ra khỏi vùng đất'
-    setRole: '&8/&7Lands setRole &8<&aPlayer&8> <&aRole&8> [&ahere&8] - &eĐặt vai trò người chơi'
-    accept: '&8/&7Lands accept &8<&aLand&8> - &eĐồng ý lời mời'
-    deny: '&8/&7Lands deny &8<&aLand&8> - &eHủy lời mời'
-    view: '&8/&7Lands view &8- &eThông tin về chunk'
-    menu: '&8/&7Lands menu &8- &eMở menu'
-    setSpawn: '&8/&7Lands setSpawn - &eĐặt điểm hồi sinh của vùng đất'
-    spawn: '&8/&7Lands spawn &8[&aLand&8] - &eDịch chuyển tới vùng đất'
-    wild: '&8/&7Lands wild &8- &eDịch chuyển tới nơi ngẫu nhiên'
-    top: '&8/&7Lands top &8- &eHiển thị Top 10 vùng đất'
-    selection: '&8/&7Lands selection &8- &eBật lựa chọn'
-    chat: '&8/&7Lands chat &8[&aLand&8] <&aMessage&8>'
-    rename: '&8/&7Lands rename <&aName&8> - &eĐổi tên vùng đất'
-    teleport: '&8/&7Lands teleport &8[&aWorld&8] <&aX&8> <&aZ&8> - &eDịch chuyển tới chunk'
-    invites: '&8/&7Lands invites &8- &eHiển thị lời mời nhận được'
-    info: '&8/&7Lands info &8[&aLand&8] - &eXem thông tin về vùng đất'
-    player: '&8/&7Lands player &8<&aPlayer&8> - &eXem thông tin người chơi'
-    map: '&8/&7Lands map &8- &eXem bản đồ'
-    balance: '&8/&7Lands balance &8[&aLand&8] - &eKiểm tra số tiền hiện có trong vùng đất'
-    deposit: '&8/&7Lands deposit &8<&aAmount&8> - &eGửi tiền vào ngân hàng của vùng đất'
-    withdraw: '&8/&7Lands withdraw &8<&aAmount&8> - &eLấy tiền từ ngân hàng của vùng đất'
+    help: '&8/&3Lands help &8[&3page&8] - &7获取帮助'
+    edit: '&8/&3Lands edit &8<&3land&8> &8- &7进入国土编辑模式'
+    claim: '&8/&3Lands claim &8[&3area, auto&8] - &7认领区块'
+    create: '&8/&3Lands create &8<&3name&8> - &7创建一个国家'
+    leave: '&8/&3Lands leave &8[&3land] &8- &7离开某个国土'
+    unclaim: '&8/&3Lands unclaim &8- &7放弃认领的区块'
+    delete: '&8/&3Lands delete &8<&3land&8> &8- &7删除国土'
+    trust: '&8/&3Lands trust &8<&3player&8> [&3here&8] - &7邀请玩家'
+    untrust: '&8/&3Lands untrust &8[&3here&8] - &7取消信任玩家'
+    setRole: '&8/&3Lands setRole &8<&3player&8> <&3role&8> [&3here&8] - &7设置爵位'
+    accept: '&8/&3Lands accept &8<&3land&8> - &7接受邀请'
+    deny: '&8/&3Lands deny &8<&3land&8> - &7拒绝邀请'
+    view: '&8/&3Lands view &8- &7显示区块信息'
+    menu: '&8/&3Lands menu &8[&3here&8] &8- &7打开 国土/区域 菜单'
+    setSpawn: '&8/&3Lands setspawn - &7设置国家出生点'
+    spawn: '&8/&3Lands spawn &8[&3land&8] - &7传送至国家'
+    wild: '&8/&3Lands wild &8- &7随机传送'
+    top: '&8/&3Lands top &8[&3page&8] &8- &7显示排行前十国家'
+    selection: '&8/&3Lands selection &8[&3assign&8, &3expand&8] &8- &7开启区块选择'
+    chat: '&8/&3Lands chat &8[&3land&8] <&3message&8> &8- &7国家聊天'
+    rename: '&8/&3Lands rename &8<&3name&8> - &7重命名国家'
+    teleport: '&8/&3Lands teleport &8[&3world&8] <&3x&8> <&3z&8> - &7传送至区块'
+    invites: '&8/&3Lands invites &8- &7显示收到的邀请'
+    info: '&8/&3Lands info &8[&3land&8] - &7查看国家信息'
+    player: '&8/&3Lands player &8<&3player&8> - &7查看玩家信息'
+    map: '&8/&3Lands map &8- &7查看地图'
+    balance: '&8/&3Lands balance &8[&3land&8] - &7查看国库金额'
+    deposit: '&8/&3Lands deposit &8[&3land&8] <&3amount&8> - &7将金钱存入国库'
+    withdraw: '&8/&3Lands withdraw &8[&3land&8] <&3amount&8> - &7从国库中取钱'
+    list: '&8/&3Lands list &8[&3world&8] - &7国家列表'
+    assign: '&8/&3Lands assign &8<&3area&8> - &7将选择分配给区域'
+    setowner: '&8/&3Lands setowner &8<&3player&8> - &7国家转让'
+    ban: '&8/&3Lands ban &8<&3player&8> - &7封禁某个玩家'
+    unban: '&8/&3Lands unban &8<&3player&8> - &7解除封禁'
+    wars:
+      declare: '&8/&3Wars declare &8<&3land&8> - &7宣战'
+      info: '&8/&3Wars info - &7显示当前或即将发生的战争'
+      menu: '&8/&3Wars menu &8- &7打开战争菜单'
     admin:
-      admin: '&8/&7Lands admin &8<&aAction&8> &8- &eHiển thị lệnh dành cho quản trị viên'
-      debug: '&8/&7Lands debug &8- &eHiển thị thống kê về dữ liệu đã nạp'
-      safezone: '&8/&7Lands safezone &8- &eTùy chỉnh vùng an toàn'
-      reload: '&8/&7Lands reload &8<&aValue&8> &8- &eNạp lại cấu hình và tin nhắn'
-      about: '&8/&7Lands about &8- &eHiển thị thông tin về Lands'
+      admin: '&8/&3Lands admin &8<&3sub-command&8> &8- &7管理员命令'
+      debug: '&8/&3Lands debug &8- &7显示加载的数据统计'
+      safezone: '&8/&3Lands safezone &8- &7配置安全区'
+      reload: '&8/&3Lands reload &8- &7重载配置'
+      about: '&8/&3Lands about &8- &7显示有关国家的信息'
 message:
-  no-permission: '&8[&aLands&8] &cBạn không có quyền để làm điều này. &7Bạn cần quyền&b {permission}&7.'
-  world-invalid: '&8[&aLands&8] &cThứ này đã bị tắt.'
-  feature-disabled: '&8[&aLands&8] &cTính năng này đã bị tắt bởi quản trị viên. &7Họ cần bật&b {setting} &7trong cấu hình để cho phép bạn sử dụng.'
+  no-permission: '&c你无权执行此操作。 &8你需要权限{permission}.'
+  world-invalid: '&c在这个世界上已停用. &7管理员需要将其添加到配置中 世界： {world}'
+  feature-disabled: '&c此功能已被管理员禁用 &8需要启用config中的 {setting}, 来启用该功能.'
+  current-war: '&c你现在不能这么做. &7你的国家目前正在参战. &7请在战争结束后重试.'
   noaccess:
-    chunk: '&8[&aLands&8] &cBạn không có quyền trong chunk. &8(&7Vùng đất:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c.'
-    land: '&8[&aLands&8] &cBạn không được phép để làm điều đó trong vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
-    role-weight: '&8[&aLands&8] &cBạn không thể chỉnh vai trò của người chơi này. &7Người đó có vai trò cao hơn bạn. Liên hệ chủ vùng đất để được nhận trợ giúp.'
-    claim: '&8[&aLands&8] &cBạn không thể chiếm chunk này. &7Nó hiện đang thuộc một vùng đất khác.'
-    place: '&8[&aLands&8] &cBạn không được phép đặt khối trong chunk này.'
-    break: '&8[&aLands&8] &cBạn không được phép phá khối trong chunk này.'
-    interact: '&8[&aLands&8] &cBạn không được phép tương tác trong chunk này.'
-    ignite: '&8[&aLands&8] &cBạn không được phép đốt khối trong chunk này.'
-    edit: '&8[&aLands&8] &cBạn không được phép chỉnh sửa chunk này.'
-    player:
-      chunk-trust: '&8[&aLands&8] &cBạn không được phép mời người chơi vào chunk này &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
-      chunk-setRole: '&8[&aLands&8] &cBạn không được phép chỉnh vai trò trong chunk này &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
-      chunk-untrust: '&8[&aLands&8] &cBạn không đuợc phép sút người chơi khỏi chunk này &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
-      land-trust: '&8[&aLands&8] &cBạn không được phép mời người chơi vào vùng đất này &8(&7Vùng đất: &e{land}&8)&c.'
-      land-untrust: '&8[&aLands&8] &cBạn không đuợc phép sút người chơi khỏi vùng đất này &8(&7Vùng đất: &e{land}&8)&c.'
-      land-setrole: '&8[&aLands&8] &cBạn không được phép chỉnh vai trò trong vùng đất này &8(&7Vùng đất: &e{land}&8)&c.'
+    chunk: '&c你不允许在此区块中执行此操作 &8(&7国家:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Bypass permission: {bypass}'
+    area: '&c你不允许在此区域中执行此操作 &8(&7区域:&6 {area} &7国家:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Bypass permission: {bypass}'
+    land: '&c你不允许在此国家中执行此操作 &8(&7国家:&2 {land}&8)&7. &8Bypass permission: {bypass}'
+    land-not-owner: '&c你不允许在国家&4 {land}&c 上这样做. &7请选择自己的国家 &8(/&3Lands edit &8<&3land&8>) &7或者创建一个 &8(/&3Lands create &8<&3name&8>)&7. &8Bypass permission: lands.admin.land_edit'
+    role-weight:
+      land: '&c你无法编辑该玩家的国家&4 {land}&c. &7该爵位&6 {role} &7比你的等级高.'
+      area: '&c你无法编辑该玩家的区域&4 {area} &8(&7国家:&2 {land}&8)&c. &7该爵位&6 {role} &7比你的等级高.'
+    claim: '&c你无法领取这里的区块. &7这里属于另一个插件 {plugin}'
+    place: '&c你无法在此放置方块. &7这是属于&2 {land}&7 的区域.'
+    break: '&c你无法破坏这里的方块. &7这里属于&2 {land}&7 的区域.'
+    ignite: '&c你无法点燃这里的方块. &7这里属于&2 {land}&7 的区域.'
+    enter: '&c你无法进入该区域 &4 {area} &c属于国家&4 {land}&c. &7你已被传送到上个位置.'
+    edit: '&c你无法编辑该国家. &7该区块属于国家&2 {land}&7.'
+    banned: '&c你无法进入该区域. &7你已被封禁 &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7. &8Bypass permission: {bypass}'
+    interact:
+      general: '&c你无法与其交互. &7这里属于&2 {land}&7 的区域.'
+      door: '&c你无法与门交互. &7这里属于&2 {land}&7 的区域.'
+      mechanism: '&c你无法与其交互. &7这里属于&2 {land}&7 的区域.'
+      container: '&c你无法与其交互 &7这里属于&2 {land}&7 的区域.'
+      villager: '&c你无法与其交互 &7这里属于&2 {land}&7 的区域.'
     combat:
-      animal: '&8[&aLands&8] &cBạn không được phép tấn công động vật.'
-      pvp-attacker: '&8[&aLands&8] &cBạn không được phép tấn công người chơi.'
-      pvp-target: '&8[&aLands&8] &cĐối thủ của bạn không được phép tấn công người chơi.'
+      animal: '&c你无法攻击该动物 &7这里属于&2 {land}&7 的区域.'
+      pvp:
+        attacker: '&c你无法攻击玩家. &7这里属于&2 {land}&7 的区域.'
+        target: '&c你攻击的目标在此无法被攻击. &7你不能和他打架. &7这里属于&2 {land}&7 的区域.'
+        ally: '&c你不能与该玩家在荒野战斗, 因为这是你国家中的成员. &7通过在角色设置中允许PVP可以在你的国家中进行战斗.'
+        wilderness: '&c你无法攻击该玩家,因为对方在荒野而你在国家中.'
+  event:
     fly:
-      warning: '&8[&aLands&8] &7Bạn không được phép bay ở đây. Chế độ bay sẽ bị tắt trong vài giây nữa. Quyền hạn để vượt qua:&b {permission}'
-      count: '#t#&cChế độ bay sẽ bị tắt trong;;&e{sec} &cgiây'
-      disabled: '&8[&aLands&8] &cChế độ bay của bạn đã bị tắt. &7Bạn không được phép bay ở đây.'
-  disallowWilderness:
-    break: '&8[&aLands&8] &cBạn không được phép phá khối ở nơi hoang dã. &7Bạn chỉ có thể làm điều đó trong vùng đất.'
-    place: '&8[&aLands&8] &cBạn không được phép đặt khối ở nơi hoang dã. &7Bạn chỉ có thể làm điều đó trong vùng đất.'
-    interact: '&8[&aLands&8] &cBạn không được phép tương tác ở nơi hoang dã. &7Bạn chỉ có thể làm điều đó trong vùng đất.'
+      warning: '&7你不能在这里飞行. 飞行模式将在几秒钟内禁用. &8Bypass permission: {permission}'
+      counter: '#t#&c飞行模式已关闭[newline]&c &4{sec} &c秒(s)'
+      disabled: '&c你的飞行模式已关闭 &7你缺少在此飞行的权限.'
+      disallowed: '&c你不允许在该国家飞行. &8Bypass permission: lands.bypass.fly'
+      disallowed-wilderness: '&c你不能在荒野进行飞行. &8Bypass permission: lands.bypass.wilderness.fly'
+    enter:
+      land: '#t#&2&l{land}[newline]&3{title}'
+      safezone: '#t#&2&l{land}[newline]{title}'
+      pvp-warning: '#a#&c你进入了PVP区域.'
+    leave:
+      land: '#t#&2&l荒野[newline]&7感受野性'
+      safezone: '#t#&2&l荒野[newline]&7感受野性'
+    teleport:
+      already: '&c无法进行二次传送,因为已经在进行传送 请等待完成.'
+      started: '&7准备进行传送. 将在&5 {sec} &7秒后进行传送. 请不要移动.'
+      cancelled: '&c传送已被取消. &7请不要移动等待&5 {sec} &7秒.'
+      chunk: '#t#&9&l传送至[newline]&7X: {x} Z: {z} 花费:&c ${cost}'
+      cancelled-plugins: '&c传送被另一个插件取消 &7请检查你的其他插件.'
   claimblock:
-    cmdDisabled: '&8[&aLands&8] &cBạn chỉ có thể chiếm chunk thông qua khối claim. &7Lệnh này đã bị tắt.'
-    dropped: '&8[&aLands&8] &cMột vài khối claim đã bị rớt. &7Không còn khoảng trống trong túi đồ của bạn.'
-    notOwner: '&8[&aLands&8] &cBạn không được phép sử dụng khối claim này. &7Nó không phải của bạn. Khối này thuộc về&b {player}&7.'
-    noLeft: '&8[&aLands&8] &cBạn không còn khối claim nào. &7Liên hệ quản trị viên để nhận trợ giúp.'
-    success: '&8[&aLands&8] &7Bạn có&b {blocks} &7khối claim. &7Đặt chúng trên chunk bạn muốn để chiếm nó.'
+    dropped: '&c领取方块掉落在区块上,你的背包空间不足.'
+    success: '&7你得到了&3 {blocks} &7认领方块(s). &7放置它来进行认领.'
+    not-owner: '&c你不允许使用此领取方块。 &7它属于&3 {owner}&7.'
   blacklist:
-    untrusted: '&8[&aLands&8] &cBạn không được phép sử dụng lệnh tại đây. &7Bạn không có quyền trong vùng đất này.'
-    general: '&8[&aLands&8] &cBạn không được phép sử dụng lệnh này trong các vùng đất.'
+    untrusted: '&c你不能在这里使用该命令. &7你不被该国家信任.'
+    general: '&c你不能在这里使用该命令.'
   autoAction:
-    stopped: '&8[&aLands&8] &cĐã dừng hành động tự động của bạn. &7Đã đạt số vòng tối đa. Tên:&b {name}'
-    started: '&8[&aLands&8] &7Bắt đầu hành động tự động thành công. Tên:&b {name}'
-    removed: '&8[&aLands&8] &7Dừng hành động tự động thành công. &7Tên:&b {name}'
+    stopped: '&c请关闭你的自动操作. &7已达到上限. 名称:&3 {name}'
+    started: '&7成功启动自动操作. 名称:&3 {name}'
+    removed: '&7成功关闭自动操作. &7名称:&3 {name}'
+  gui:
+    chats:
+      title: '#t#&e&l输入新[newline]&e&l标题'
+      title-done: '#t#&a&l成功设置[newline]&7&l国家标题.'
+      name: '#t#&e&l输入新[newline]&e&l国家名称'
+      name-done: '#t#&2&l成功设置[newline]&7&l国家名称'
+      cancel: '&7在聊天中输入&bcancel&7取消此操作.'
+  chat-action:
+    cancelled: '#t#&c&l已取消[newline]&c&l的聊天操作'
+    player: '&7请输入目标玩家的名字.'
+    role:
+      create: '&7请输入新爵位的名称.'
+      default: '&c你不能删除该爵位,这是默认爵位.'
+      delete: '&7请输入你要删除的爵位名称'
+      exists: '&c存在名称为&4 {role} &c的爵位. &7请重新命名'
+      max: '&c无法创建更多的爵位. &7已达到爵位数量上限最大为&3 {max} &7爵位. Permisssion: lands.roles.NUMBER'
+    area:
+      create: '&7请输入新的区域名称.'
+      delete: '&7请输入你要删除的区域名称'
+      exists: '&c区域&4 {area} &c已存在 &8(&7国家:&2 {land}&8)&c. &7请输入重新命名.'
+      max: '&c你无法在该国家创建更多的区域了. &7你已经达到最大限制&3 {max} &7区域. Permisssion: lands.areas.NUMBER'
+    title: '&7请输入新的国家标题'
+    rename: '&7重命名国家 (不允许使用空格)'
 command:
   general:
-    land-not-exist: '&8[&aLands&8] &cVùng đất&e {land} &ckhông tồn tại. &7Không có vùng đất với tên&b {land} &7trong thế giới này.'
-    land-not-member: '&8[&aLands&8] &cBạn không có quyền trong vùng đất&e {land}&c. &7Dùng &8/&aLands menu &7để xem vùng đất mà bạn đang tham gia.'
-    land-not-trusted: '&8[&aLands&8] &cBạn không thể làm điều đó. &7Người chơi&b {player} &7không thuộc vùng đất này &8(&7Vùng đất:&e {land}&8)&7. Bạn cần mời người đó bằng lệnh &8/&aLands trust&7.'
-    land-no-action: '&8[&aLands&8] &cBạn không phải là thành viên của vùng đất nào cả. &7Dùng &8/&aLand create &7để tạo mới.'
-    name-exists: '&8[&aLands&8] &cTên này đã được chọn bởi vùng đất khác. &7Hãy chọn một cái tên khác.'
-    money-cost-bank: '&8[&aLands&8] &cBạn không có đủ tiền để chi trả. &7Bạn cần&b ${cost}&7.'
-    lands-max: '&8[&aLands&8] &cBạn không thể gia nhập thêm vùng đất nào nữa. &7Tối đa:&b {max} &7vùng đất.'
-    name-numbers: '&8[&aLands&8] &cTên vùng đất không thể chứa số. &7Vui lòng chỉ dùng kí tự latin.'
-    name-accent: '&8[&aLands&8] &cTên vùng đất không thể chứa dấu. &7Vui lòng chỉ dùng kí tự latin.'
-    name-length: '&8[&aLands&8] &cTên quá dài. &7Tối đa&b {max} &7kí tự.'
-    action-cooldown: '&8[&aLands&8] &cBạn không thể làm điều này ngay bây giờ. &7Bạn phải chờ&b {time} &7phút.'
-    land-none: '&8[&aLands&8] &cHình như bạn chưa phải là thành viên của bất kỳ vùng đất nào trên thế giới này. &7Dùng &8/&aLands create &7để tạo mới.'
-    land-no-own: '&8[&aLands&8] &cBạn không sở hữu vùng đất nào trên thế giới này. &7Dùng &8/&aLands create &7để tạo mới.'
-    world-invalid: '&8[&aLands&8] &cBạn không thể làm điều đó trên thế giới này. &7Bạn cần sang thế giới khác.'
-    wilderness: '&8[&aLands&8] &cChunk này thuộc về nơi hoang dã. &7Bạn cần đi đến một chunk đã được sở hữu. &7Sử dụng &8/&aLands menu &7để xem các vùng đất mà bạn hiện có.'
-    player-not-exist: '&8[&aLands&8] &cKhông có người chơi nào có tên là&e {player}&c. &7Vui lòng kiểm tra lại.'
-    player-offline: '&8[&aLands&8] &cHiện không có người chơi trực tuyến nào tên là&e {player}. &7Vui lòng kiểm tra lại.'
-    role-weight: '&8[&aLands&8] &cBạn không thể sửa vai trò này. &7Nó là một vai trò cao hơn hoặc ngang bằng &8(&7Vai trò:&e {role}&8) &7so với vai trò của bạn &8(&7Vùng đất:&e {land}&8)&7.'
-    player-self: '&8[&aLands&8] &cBạn không thể làm điều đó với chính bạn.'
-    cooldown: '&8[&aLands&8] &cBạn không thể làm điều đó ngay bây giờ. &7Bạn cần chờ thêm&b {time} &7phút.'
-    chunk-is-claimed: '&8[&aLands&8] &cBạn không thể chiếm chunk này. &7Nó hiện thuộc về vùng đất&b {land}&7.'
-    banks-disabled: '&8[&aLands&8] &7Ngân hàng đã bị tắt bởi quản trị viên. &7Liên hệ họ để trợ giúp. Thiết đặt: taxes.banks'
+    land-not-exist: '&c国家&2 {land} &c不存在. &7国家&2 {land} &7不存在该世界.'
+    area-not-exist: '&c区域&4 {area} &c不存在于国家&4 {land}&c. &7你可以在区域菜单的国家菜单中创建一个新区域'
+    role-not-exist: '&c爵位&e {role} &c不存在于区域&4 {area} &c国家&4 {land}&c. '
+    land-not-member: '&c你不被国家&4 {land}&c 所信任. &7使用 &8/&3Lands menu &7查看你被哪个国家所信任'
+    no-edit-land: '&c你尚未选择编辑区域. &7使用 &8/&3Lands edit &8<&3land&8> &7来选择.'
+    land-no-action:
+      edit: '&c你不是任何国家的成员，可以在此处进行此操作 &8(&4{setting}&8)&c. &7使用 &8/&3Land create &7来创建一个国家.'
+      position:
+        setting: '&c你不允许在目前所在的国家上进行此操作. &7请返回你的国家. &7设置:&3 {setting}'
+        general: '&c你不允许在目前所在的国家上进行此操作. &7请返回你的国家.'
+    name-exists: '&c名称&4 {name} &c已被其他国家使用. &7请重试.'
+    money-cost-bank: '&c你没有足够的钱来支付费用. &7你需要&c ${cost}&7. 存一些钱到国库: &8/&3Lands deposit {cost}'
+    money-cost: '&c你没有足够的钱来支付费用. &7你需要&c ${cost}&7.'
+    lands-max: '&c你不能再加入其他国家了. &7已达到上限&3 {max} &7国家. &8Permission: lands.lands.NUMBER'
+    invalid-character: '&c你不能使用无效字符作为名称. &7发现无效字符:&3 {invalid} &7请仅使用字母和数字.'
+    name-length: '&c名称过长. &7最大长度为&3 {max} &7字符.'
+    swear-word: '&c检测到一个禁用词,请修改它 内容:&c {word}'
+    action-cooldown: '&c请等待&5 {time}&c 后再重试.'
+    land-none: '&c你不是任何一个国家的成员, &7使用 &8/&3Lands create &7来创建一个.'
+    land-no-own: '&c你没有拥有国家. &7使用 &8/&3Lands create &7来创建一个.'
+    world-invalid: '&c无法在当前的世界中进行此操作.'
+    wilderness: '&c该区块属于荒野. &7你需要占领该区块. &7你可以使用 &8/&3Lands menu &7去查看你的国家.'
+    player-not-exist: '&c玩家&4 {player}&c不存在.'
+    player-offline: '&c玩家&4 {player} &c不在线或者不存在'
+    player-self: '&c你不能对自己这么做.'
+    banks-disabled: '&7国库已被禁用.'
+    land-not-trusted: '&c玩家&4 {player} &7不是该国家成员 &8(&7国家:&2 {land}&8)&7. 你需要信任该玩家 使用 &8/&3Lands trust&7.'
+    land-max-members: '&c无法继续增加成员了&2 {land}&c. &7已达到最大成员数 of&3 {members} &7.'
+    area-not-trusted: '&c你不能在这里使用该命令. &7你未被区块信任 &8(&7X: {x} Z: {z}&8)&7. 它属于该区域&6 {area} &7国家&2 {land}&7.'
+    invalid-number: '&c您输入的&4 {input} &c不是数字. &3 {argument} &7必须为数字.'
   help:
-    help: '&8[&aLands&8] &7Dùng &8/&aLand help &7để nhận trợ giúp.'
-    cmd-not-exist: '&8[&aLands&8] &cLệnh &b{command} không tồn tại.'
-    page-not-exist: '&8[&eProtect&8] &cTrang&e {page} &ckhông tồn tại.'
+    help: '&7使用 &8/&aLand help &7来获取帮助.'
+    cmd-not-exist: '&c该命令不存在.'
+    page-not-exist: '&c该页面不存在&4 {page}'
   create:
-    land-other: '&8[&aLands&8] &cBạn không được phép vừa sở hữu vùng đất riêng, vừa là thành viên của vùng đất khác. &7Bạn cần rời khỏi vùng đất&b {land} &7trước. Bạn có thể yêu cầu quản trị viên tắt tính năng này.'
-    max-own: '&8[&aLands&8] &cBạn không thể tự sở hữu thêm vùng đất được nữa. &7Tối đa:&b {max} &7vùng đất.'
-    success: '&8[&aLands&8] &7Đã tạo thành công vùng đất&b {land} &7với giá&b {cost}&7. Bạn có thể chiếm chunk bằng lệnh &8/&aLands claim&7.'
-    broadcast: '&8[&aLands&8] &7Vùng đất&b {land} &7đã được thành lập bởi&b {player}&7.'
+    land-other: '&c您不能拥有自己的国家然后还想加入其他国家 &7你必须得离开国家&2 {land} &7. .'
+    max-own: '&c您无法再创建任何土地. &7你已达到最大创建数量&3 {max} &7. &8Permission: lands.ownlands.NUMBER'
+    success: '&7成功创建国家&2 {land} &7花费&c ${cost}&7. 你现在可以开始占领区块了 &8/&3Lands claim&7. 你也可以使用 /Lands selection 来选择区块. 国家 {land} 的设置可以使用 &8(/&3Lands edit&8)&7.'
+    broadcast: '&7国家&2 {land} &7已创建, 所有者:&3 {player}&7.'
   rename:
-    success: '&8[&aLands&8] &7Đã đặt tên mới (&b{name}) &7cho vùng đất &e{land}. Bạn đã chi&b ${cost}&7.'
+    success: '&7成功设置国家新名称&3 {name} &8(&7国家:&2 {land}&8)&7. 花费&c ${cost}&7.'
   edit:
-    success: '&8[&aLands&8] &7Bạn đã tham gia chế độ chỉnh sửa &8(&7Vùng đất:&e {land}&8)&7. Những hành động trong tương lai như &8/&aLands claim &7hay &8/&aLands trust&7, sẽ dành cho vùng đất này.'
+    success: '&7您已进入该国家的编辑模式 &8(&7国家:&2 {land}&8)&7. 下一步, 你可以使用 &8/&3Lands claim &7或 &8/&3Lands trust&7 来进行编辑'
   selection:
-    disabled-config: '&8[&aLands&8] &cTính năng này đã bị tắt bởi quản trị viên. &7Hãy bật nó trong cấu hình: &bland.selection.enabled&7.'
-    enabled: '&8[&aLands&8] &7Chế độ lựa chọn đã bật: Dùng tay lựa chọn &bcả hai góc &7trong một vùng bất kỳ để &bchiếm mọi chunk &7bên trong vùng đó.'
-    disabled: '#t#!!1!!1!!1!!&7Lựa chọn:;;&cTắt'
-    pos-left: '#t#&7Vị trí;;&b1'
-    pos-right: '#t#&7Vị trí;;&b2'
-    max: '&8[&aLands&8] &cVùng lựa chọn của bạn có quá nhiều chunk. &7Đã chọn:&b {current} &7Tối đa:&b {max}'
-    same-world: '&8[&aLands&8] &cHai vị trí phải ở trong cùng một thế giới.'
-    claimed: '&8[&aLands&8] &7Đã chiếm thành công&b {chunks} &7chunk &8(&7Vùng đất:&e {land}&8)&7. Bạn đã chi&b ${cost}&7.'
-    left: '&8[&aLands&8] &7Đã từ bỏ thành công&b {chunks} &7chunk &8(&7Vùng đất:&e {land}&8)&7.'
-    unclaimed: '&8[&aLands&8] &7Đã trả&b {chunks} &7chunk về nơi hoang dã &8(&7Vùng đất:&e {land}&8)&7.'
+    not-complete: '&c您的选择不完整. &7请确保两个位置都已设置 &8(&b左键 &7和 &9右键&8)&7. 你可以通过命令来切换选择模式 &8/&3Lands selection&7.'
+    max: '&c您的选择已超过最大限制. &7大小:&3 {current} &7最大可设置&3 {max} 区块. &8Permission: lands.selection.NUMBER'
+    enabled: '&7你开启了选择模式. 使用 &5鼠标左键 &7来选择第一个点.  &5鼠标右键 &7来设置第二个点. 之后,您可以将选择应用于这些命令: &3Claim&7, &3Unclaim&7, &3Leave'
+    disabled: '#t#&5&l选择[newline]&c&l模式 已关闭'
+    world: '&c两个点必须在同一个世界.'
+    pos:
+      warn: '&c警告: &7该区块属于另一个管理插件 名称:&3 {plugin}'
+      cancelled: '&c您不能在此处设置选择. &7该块属于另一个管理插件 名称:&b {plugin}'
+      one: '#t#&5&l选择[newline]&b&l点 1 &8-> &7设置'
+      two: '#t#&5&l选择[newline]&b&l点 2 &8-> &7设置'
+    area:
+      conflicts: '&c发现&4 {conflicts} &c与已分配给区域的区块发生冲突. &7使用 &8/&3Lands selection assgin {area} confirm &7确认覆盖. 冲突来自区域: {areas}'
+      assigned: '&7你已成功分配&3 {chunks} &7区块至区域&6 {area} &8(&7国家:&2 {land}&8)&7.'
+    expand:
+      enabled: '&7成功地将选择范围从底部扩展到顶部 (Y).'
+      disabled: '&7您当前的选择不再扩展到所有Y轴.'
   claim:
-    max-chunks: '&8[&aLands&8] &cBạn không thể chiếm thêm chunk nữa. &7Tối đa:&b {max} &7chunk.'
-    auto-create: '&8[&aLands&8] &7Đang thử tạo vùng đất mới cho bạn bởi vì bạn chưa hề có trên thế giới này. Bạn có thể đổi tên thông qua lệnh &8/&aLands rename&7.'
-    auto-create-fail: '&8[&aLands&8] &cKhông thể tự tạo vùng đất cho bạn. &7Hãy đọc tin nhắn trên và gửi cho quản trị viên.'
-    near-other: '&8[&aLands&8] &cQuá gần vùng đất&e {land}&c. &7Bạn cần phải giữ khoảng cách tối thiểu là&b {distance}&7.'
-    far-land: '&8[&aLands&8] &cBạn không thể chiếm chunk này. &7Nó cần phải sát với vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
-    success: '&8[&aLands&8] &7Đã chiếm chunk này thành công &8(&7Vùng đất:&e {land} &7X:&e {x} &7Z:&e {z}&8) &7với giá&b {cost}&7. Lần chiếm chunk tiếp theo sẽ tốn&b {next}&7.'
+    already: '&c你无法认领该区块. &7它已被国家&2 {land}&7 占领.'
+    auto-create: '&7Trying to automatically create a land for you, because you have none in this world. You can change the name of it by executing &8/&3Lands rename&7.'
+    auto-create-fail: '&c无法自动为您创建土地. &7请阅读上面的消息.'
+    near-other: '&c这里太靠近国家&4 {land}&c了. &7你至少需要距离该国家&3 {distance} 远&7. '
+    far-land: '&c你不能认领该区块(s). &7你认领的区块要临近国家 &8(&7国家:&2 {land}&8)&7.'
+    success: '&7成功认领该区块 &8(&7国家:&2 {land} &7X: {x} Z: {z}&8) &7花费&c ${cost}&7. 下次认领将会花费&b ${next}&7.'
+    already-claimed: '&c选择中有已被认领的区块 &8(&7X: {x} Z: {z}&8)&c. &7I它属于国家&2 {land}&7.'
+    max-chunk: '&c你不能认领&4 {chunks} &c更多的区块了 &8Permission: lands.chunks.NUMBER'
+    selection: '&7你已成功认领&3 {chunks} &7区块 &8(&7国家:&2 {land}&8)&7. 花费&c ${cost}&7.'
+  assign:
+    selection: '&c您需要先创建一个选择. &7使用 &8/&3Lands selection &7去创建一个并且重试.'
+    size: '&c你选择的大小过小. &7最小为&3 {min} &7方块而你只有&3 {current}&7.'
+    success: '&7您成功调整了国家区域的大小&6 {area} &7国家&2 {land}&7. 变化可视.'
+    conflict:
+      land: '&c您的选择与国家冲突&4 {land}&c. &7请重新选择.'
+      area: '&c你的选择与区域冲突&4 {area}&c. &7请重新选择.'
   leave:
-    land-owner: '&8[&aLands&8] &cBạn không thể rời bỏ vùng đất này. &7Vì bạn là chủ sở hữu, bạn chỉ có thể xóa nó. Dùng &8/&aLands delete&7.'
-    land-success: '&8[&aLands&8] &7Đã rời khỏi&b {land}&7 thành công. Bạn không còn thuộc về vùng đất đó nữa.'
-    chunk-success: '&8[&aLands&8] &7Đã rời khỏi chunk. Bạn không còn thuộc về chunk này nữa.'
+    land-owner: '&c你不能离开该国家. &7作为国王，你需要删除它。 使用 &8/&3Lands delete&7.'
+    selection: '&7你成功离开了&b {chunks} &7'
+    land:
+      success: '&7成功离开该国家&2 {land}&7.你不能访问该国家了.'
+    area:
+      success: '&7成功离开此区域 &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7. 你再也无法访问它.'
   unclaim:
-    success: '&8[&aLands&8] &7Đã trả chunk này về nơi hoang dã &8(&7X:&e {x} &7Z:&e {z}&8)&7. Bạn được hoàn lại&b ${back}.'
+    success: '&7成功取消认领该区块 &8(&7国家:&2 {land} &7X: {x} Z: {z}&8)&7.你获得了&a ${back}'
+    selection: '&7你已成功取消认领该区块. 只能在你所拥有的区块中才可以执行该操作.'
   delete:
-    confirm: '&8[&aLands&8] &cBạn cần chấp nhận hành động này. &7Dùng &8/&aLand delete {land} confirm&7.'
-    success: '&8[&aLands&8] &7Đã xóa vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
-    broadcast: '&8[&aLands&8] &7Vùng đất&b {land} &7đã bị xóa bởi&b {player}&7.'
+    confirm: '&c你需要确认该操作. &7使用 &8/&3Land delete {land} confirm&7.'
+    success: '&7成功解散国家 &8(&7国家:&2 {land}&8)&7. 你获得了&e ${back} &7.'
+    broadcast: '&7国家&2 {land} &7已被&3 {player}&7 解散.'
   trust:
-    own-land: '&8[&aLands&8] &cNgười chơi này không được phép vừa sở hữu vùng đất riêng, vừa là thành viên của vùng đất khác. &7Người đó cần rời bỏ vùng đất của mình trước.'
-    land-already: '&8[&aLands&8] &cNgười chơi này đã tham gia vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
-    chunk-already: '&8[&aLands&8] &cNgười chơi này đã tham gia chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    invited: '&8[&aLands&8] &cNgười chơi này đã được mời. &7Vui lòng chờ đến khi người đó đồng ý &8(&7Vùng đất:&e {land}&8)&7.'
-    land-target: '&8[&aLands&8] &7Người chơi&b {player} &7đã mời bạn tham gia vùng đất&b {land}&7. Dùng &8/&aLand accept {land} &7để đồng ý.'
-    lands-max: '&8[&aLands&8] &7Người chơi&b {player} &7đã có quá nhiều vùng đất. Liên hệ quản trị viên để cho phép người đó có thêm nhiều vùng đất nữa.'
-    land-fail: '&8[&aLands&8] &cKhông thể mời&e {player} &cvào vùng đất&e {land}&c. &7Chủ sở hữu của vùng đất đã đạt giới hạn số lượng thành viên:&b {members}&7.'
-    max-members: '&8[&aLands&8] &cKhông thể mời&e {player} &cvào&e {chunks} &cchunk. &7Chủ sở hữu của vùng đất đã đạt giới hạn số lượng thành viên:&b {members}&7 người.'
-    chunk-max-members: '&8[&aLands&8] &cKhông thể mời&e {player} &cvào chunk này. &7Chủ sở hữu của vùng đất đã đạt giới hạn số lượng thành viên:&b {members}&7 người.'
-    chunk-target: '&8[&aLands&8] &7Người chơi&b {player} &7đã mời bạn vào chunk &8(&7X:&e {x} &7Z:&e {z}) &7Dùng &8/&aLands accept {land} &7để đồng ý.'
-    chunk-success: '&8[&aLands&8] &7Đã mời người chơi&b {player} &7vào chunk này &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    land-success: '&8[&aLands&8] &7Đã mời người chơi&b {player} &7vào vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
+    own-land: '&c不允许玩家拥有自己的国家还加入其他国家'
+    invited: '&c该玩家已被邀请. &7请等待接受邀请 &8(&7国家:&2 {land}&8)&7.'
+    max-lands: '&7玩家&3 {player} &7达到最大国家数量. &8Permission: lands.lands.NUMBER'
+    max-members: '&c无法信任玩家&4 {player} &c国家&4 {land} &7成员达到了最大限制&3 {members} &7'
+    land:
+      already: '&c该玩家已获得国家信任 &8(&7国家:&2 {land}&8)&7.'
+      target: '&7玩家&3 {player} &7邀请你加入国家&2 {land}&7. 使用 &8/&3Land accept {land} &7来接受邀请.'
+      success: '&7成功邀请玩家&3 {player} &7到国家 &8(&7国家:&2 {land}&8)&7. 等待接受邀请.'
+    area:
+      already: '&c该玩家已被此区域信任&6 {area} &8(&7国家:&2 {land}&8)&7.'
+      target: '&7玩家&3 {player} &7邀请你加入国家 &8(&7区域:&6 {area} &7国家:&2 {land}&8) &7使用 &8/&3Lands accept {land} &7来接受邀请.'
+      success: '&7成功邀请玩家&3 {player} &7进入该区域 &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7. 等待接受邀请.'
   untrust:
-    land-already: '&8[&aLands&8] &cNgười chơi đó đã rời khỏi vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
-    chunk-already: '&8[&aLands&8] &cNgười chơi đó đã rời khỏi chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    invite-removed: '&8[&aLands&8] &7Đã hủy lời mời. &8(&7Vùng đất:&e {land}&8)&7.'
-    chunk-success: '&8[&aLands&8] &7Đã sút thành công người chơi&b {player} &7ra khỏi chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    land-success: '&8[&aLands&8] &7Đã sút thành công người chơi&b {player} &7ra khỏi vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
-  setRole:
-    role-not-exist: '&8[&aLands&8] &cVai trò&e {role} &ckhông tồn tại. &7Lỗi đánh máy? &8(&aHiện có: &cAdmin&7, &eMember&8)'
-    land-not-trusted: '&8[&aLands&8] &cNgười chơi&e {player} &cchưa tham gia vùng đất này &8(&7Vùng đất:&e {land}&8)&7. Vui lòng kiểm tra lại.'
-    chunk-max-members: '&8[&aLands&8] &cKhông thể chỉnh vài trò trong chunk này. &7Chủ sở hữu vùng đất đã đạt giới hạn thành viên:&b {members}&7 người.'
-    max-members: '&8[&aLands&8] &cKhông thể chỉnh vai trò trong&e {chunks} &cchunk. &7Chủ sở hữu vùng đất đã đạt giới hạn thành viên:&b {members}&7 người.'
-    chunk-success: '&8[&aLands&8] &7Đã đặt vai trò&b {role} &7cho người chơi&b {player} &7trong chunk này &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    part-success: '&8[&aLands&8] &7Người chơi&b {player} &7chưa là thành viên của vùng đất. Đã đặt vai trò trong các chunk người đó tham gia &8(&7Vùng đất:&e {land}&8)&7.'
-    land-success: '&8[&aLands&8] &7Đã đặt vai trò&b {role} &7cho người chơi&b {player} &8(&7Vùng đất:&e {land}&8)&7.'
+    land:
+      already: '&c该玩家未被国家所信任 &8(&7国家:&2 {land}&8)&7.'
+      inv-revoked: '&7S已成功撤消对此玩家的邀请. &8(&7国家:&2 {land}&8)&7.'
+      success: '&7成功取消对玩家&3 {player} &7的信任 &8(&7国家:&2 {land}&8)&7.'
+    area:
+      already: '&c该玩家未被区域信任 &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7.'
+      inv-revoked: '&7已成功撤消对此玩家的邀请. &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7.'
+      success: '&7成功取消对玩家&3 {player} &7在该区域的信任 &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7.'
+  setrole:
+    not-exist: '&c该爵位&4 {role} &c不存在. '
+    land:
+      visitor: '&c你不能设置爵位&4 {role} &c. &7如果你想取消信任该玩家, 使用 &8/&3Lands untrust {player}&7.'
+      not-trusted: '&c玩家&4 {player} &c未被该国家信任 &8(&7国家:&2 {land}&8)&7. 请先信任该玩家.'
+      success: '&7成功设置为玩家&3 {player} &7爵位&3 {role} &7于国家 &8(&7国家:&2 {land}&8)&7.'
+    area:
+      visitor: '&c你无法设置爵位&4 {role} &c. &7如果你想取消信任该玩家, 请使用 &8/&3Lands untrust {player} here&7.'
+      not-trusted: '&c玩家&4 {player} &c未被该区域信任 &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7. 请先信任该玩家.'
+      success: '&7成功设置为玩家&3 {player} 设置爵位&3 {role} &7在区域 &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7.'
   accept:
-    not-exist: '&8[&aLands&8] &cBạn chưa có lời mời nào từ vùng đất&e {land} &choặc là lời mời đã bị hết hạn. &7Vui lòng kiểm tra lại.'
-    own-land: '&8[&aLands&8] &cBạn không có quyền để vừa sở hữu vùng đất riêng, vừa là thành viên của vùng đất khác. &7Bạn cần rời khỏi vùng đất của bạn trước.'
-    max-reached: '&8[&aLands&8] &cBạn không thể tham gia thêm vùng đất khác nữa. &7Tối đa:&b {max} &7vùng đất.'
-    land-tax-confirm: '&8[&aLands&8] &cChủ của vùng đất này muốn bạn trả&e {tax} &7để tham gia vùng đất này. &7Chấp nhận bằng lệnh &8/&aLands accept {land} confirm&7.'
-    chunk-tax-confirm: '&8[&aLands&8] &7Chủ của vùng đất này muốn bạn trả&b {tax} &7để tham gia chunk này. &7Chấp nhận bằng lệnh &8/&aLand accept {land} confirm&7.'
-    land-fail: '&8[&aLands&8] &cBạn không thể tham gia vùng đất&e {land}&c. &7Chủ sở hữu của vùng đất đã đạt giới hạn&b {members} &7thành viên.'
-    max-members: '&8[&aLands&8] &cBạn không thể tham gia trong&e {chunks} &cchunk. &7Chủ sở hữu của vùng đất đã đạt giới hạn&b {members} &7thành viên.'
-    chunk-max-members: '&8[&aLands&8] &cKhông thể đặt vai trò trong chunk này. &7Chủ sở hữu của vùng đất đã đạt giới hạn&b {members} &7thành viên.'
-    land-success: '&8[&aLands&8] &7Đã chấp nhận lời mời từ vùng đất&b {land}&7. Bạn đã có quyền trên toàn bộ chunk.'
-    chunk-success: '&8[&aLands&8] &7Đã chấp nhận lời mời từ vùng đất&b {land} &7cho chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    chunk-broadcast: '&8[&aLands&8] &b{land} &8| &7Người chơi&b {player} &7đã là thành viên của một chunk trong vùng đất của chúng ta &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    land-broadcast: '&8[&aLands&8] &b{land} &8| &7Người chơi&b {player} &7đã tham gia vùng đất của chúng ta&7.'
-    notification: '&8[&aLands&8] &7Bạn vẫn còn&b {invites} &7lời mời từ các vùng đất khác. Dùng &8/&aLand invites &7để xem.'
+    not-exist: '&c你没有来自国家&4 {land} &c的邀请或者邀请已过期. &7请检查你的输入.'
+    own-land: '&c你无权创建国家并成为其他国家的成员. &7你需要先离开自己的国家.'
+    max-lands: '&c你不能加入更多的国家了. &7你最大只能加入&3 {max} &7国家. &8Permission: lands.lands.NUMBER'
+    notification: '&7你仍然还有&3 {invites} &7个邀请来自其他国家. 使用 &8/&3Land invites &7来获得列表.'
+    land:
+      success: '&7成功接受来自国家&3 {land}&7 的邀请.'
+      broadcast: '&2{land} &8| &7国家&3 {player} &7加入了国家&7.'
+    area:
+      success: '&7已成功接受来自国家&2 {land} &7区域&6 {area}&7的邀请.'
+      broadcast: '&2{land} &8| &7玩家&3 {player} &7现在是国家&2 {land}&7区域&6 {area} &7中的一份子了'
+  setowner:
+    confirm: '&c请确认你要将国家&2 {land} &c转让给&3 {player}&c: &8/&3Lands setowner {player} confirm'
+    success: '&7成功将国家转让给&3 {player} &7现在它是国家&2 {land}&7 的所有者. 花费&c ${cost}&7.'
   deny:
-    not-exist: '&8[&aLands&8] &cBạn chưa có lời mời nào từ vùng đất&e {land} &choặc là lời mời đã bị hết hạn. &7Vui lòng kiểm tra lại.'
-    land-success: '&8[&aLands&8] &7Đã từ chối thành công lời mời gia nhập vùng đất&b {land}&7.'
-    chunk-success: '&8[&aLands&8] &7Đã từ chối thành công lời mời gia nhập chunk &8(X:&e {x} &7Z:&e {z}&8)&7 thuộc vùng đất&b {land}&7.'
+    not-exist: '&c你没有来自&4 {land} &c的邀请或不存在'
+    success: '&7你成功拒绝了国家&2 {land}&7 的邀请.'
   teleport:
-    world-not-exist: '&8[&aLands&8] &cThế giới này không tồn tại.'
-    chunk-not-exist: '&8[&aLands&8] &cChunk này không tồn tại. &7Vui lòng kiểm tra lại.'
-    success: '&8[&aLands&8] &7Đã dịch chuyển tới chunk &8(&7X:&e {x} &7Z:&e {z} &7Tình trạng sở hữu: {claimed}&8)&7.'
-  setSpawn:
-    force-land: '&8[&aLands&8] &cBạn chỉ có thể chỉnh điểm hồi sinh tại vùng đất của bạn. &7Vui lòng vào vùng đất của bạn trước.'
-    success: '#t#&7Vị trí hồi sinh &ađã đặt&7.;;&7Chi phí:&b ${cost}'
+    world-not-exist: '&c存在名称为&4 {world} &c的世界,请检查世界名称'
+    chunk-not-claimed: '&c此区块未被认领 &8(&7X: {x} &7Z: {z}&8)&c. &8需要权限: lands.bypass.wilderness.teleport'
+    not-trusted: '&c你不能传送到那. &7Y你并未国家&2 {land}&7 信任.'
+    success: '&7成功传送至 X:&3 {x} &7Z:&3 {z} &7区块: {claimed}'
+  setspawn:
+    force-land: '&c你只能在你的国家设置出生点. &7返回你的国家&2 {land} &7重试.'
+    successs: '#t#&a&l出生点设置至[newline]&7&l花费:&b&l ${cost}'
   spawn:
-    not-exist: '&8[&aLands&8] &cChưa hề có điểm hồi sinh cho vùng đất&e {land}&c. &7Ai đó cần thiết lập nó bằng lệnh &8/&aLand setSpawn&7.'
-    not-allowed: '&8[&aLands&8] &cBạn không được phép dịch chuyển tới vùng đất này. &7Chủ sở hữu cần phải cho phép bạn làm điều này. Liên lạc với họ để được giúp đỡ &8(&7Vùng đất:&e {land}&8)&7.'
-    success: '#t#&7Đã dịch chuyển tới;;&7vùng đất&b {land}'
+    not-exist: '&c还未为&4 {land}&c设置出生点. &7请使用 &8/&3Land setspawn&7来进行设置.'
+    not-allowed: '&c你不允许传送到该国家. &7需要国家授予你这样做的权限 &8(&7国家:&2 {land}&8)&7.'
+    chunk: '&7国家&2 {land} &7还未设置出生点 &8(&8/&3Lands setspawn&8) &7. &7将为你传送至国家附近'
+    successs: '&7成功传送至&2 {land} &7出生点 &7花费:&c ${cost}'
   wild:
-    searching: '#t#&7Đang tìm kiếm:;;&dĐịa điểm ngẫu nhiên'
-    loc-unsafe: '&8[&aLands&8] &cKhông thể tìm thấy vị trí nào an toàn cho bạn. &7Vui lòng thử lại hoặc liên hệ quản trị viên.'
-    success: '&8[&aLands&8] &7Bạn đã dịch chuyển ngẫu nhiên tới &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-  view:
-    show-outline: '&8[&aLands&8] &7Đang hiển thị biên giới của vùng đất. Di chuyển xung quanh để xem.'
+    no-loc: '&c无法为你找到与config中的设置的安全位置. &8请在配置中为随机传送设置最大距离设置.'
+    searching: '#t#&6搜索目的地[newline]&e等待传送..'
+    success: '&7你被随机传送至 &8(&7X: {x} Z: {z}&8)&7. 花费&c ${cost}&7.'
   deposit:
-    number: '&8[&aLands&8] &7Bạn cần phải chỉ ra số tiền. Dùng &8/&aLand deposit &8<&aAmount&8> &7hoặc &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
-    success: '&8[&aLands&8] &7Bạn đã gửi thành công&b ${cost} &7vào ngân hàng của vùng đất. &7Số tiền mà ngân hàng hiện có:&b ${bank} &8(&7Vùng đất:&e {land}&8)'
+    number: '&7你需要指定金额. 使用 &8/&aLand deposit &8<&aAmount&8> &7或者 &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
+    success: '&7你成功往国库中存入&b ${cost} &7. &7现在国库余额为:&b ${bank} &8(&7国家:&2 {land}&8)'
   withdraw:
-    number: '&8[&aLands&8] &7Bạn cần phải chỉ ra số tiền. Dùng &8/&aLand withdraw &8<&aAmount&8> &7hoặc &8/&aLand withdraw &8<&aLand&8> <&aAmount&8>&7.'
-    balance: '&8[&aLands&8] &7Không có đủ tiền trong ngân hàng. Hiện chỉ có&b ${bank}&7 so với yêu cầu là&b ${take} &8(&7Vùng đất:&e {land}&8)'
-    success: '&8[&aLands&8] &7Bạn đã rút thành công&b ${cost} &7khỏi ngân hàng. &7Số tiền mà ngân hàng hiện có:&b ${bank} &8(&7Vùng đất:&e {land}&8)'
-  balance: '&8[&aLands&8] &7Số tiền mà ngân hàng hiện có là&b ${balance} &8(&7Vùng đất:&e {land}&8)&7.'
+    number: '&7你需要指定金额. 使用 &8/&aLand withdraw &8<&aAmount&8> &7或者 &8/&aLand withdraw &8<&aLand&8> <&aAmount&8>&7.'
+    balance: '&c国库中没有足够的钱能够取出. &7国库余额仅剩&b ${bank} &7.预期取出:&3 ${take} &8(&7国家:&2 {land}&8)'
+    success: '&7你成功从国库中取出&b ${cost} &7. &7现在国库余额为:&b ${bank} &8(&7国家:&2 {land}&8)'
+  balance: '&7余额为&b ${balance} &8(&7国家:&2 {land}&8)&7.'
+  ban:
+    area:
+      trusted: '&c玩家&4 {player} &c已被信任. &7你需要先取消信任 &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7.'
+      success: '&7成功封禁玩家&3 {player} &7在区域的行动 &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7.'
+      target: '&c国家&4 {land} &c已将你封禁&4 {area} &c中的区块 &7你不能够进入,'
+    land:
+      trusted: '&cT玩家&4 {player} &c已被&4 {land}&c 信任. &7你需要先取消信任.'
+      success: '&7成功封禁玩家&3 {player} &7国家&2 {land}&7. 不能够进入该国家.'
+      target: '&c国家&4 {land} &c已将你封禁&c. &7你不能进入该国家'
+  unban:
+    area:
+      success: '&7成功解除玩家&3 {player} &7在区域的封禁 &8(&7区域:&6 {area} &7国家:&2 {land}&8)&7.'
+      target: '&7国家&2 {land} &7解除了对你在&6 {area}&7 区域的封禁.'
+    land:
+      success: '&7成功解除玩家&3 {player} &7在国家&2 {land}&7 的封禁.'
+      target: '&7国家&2 {land} &7解除了对你的封禁.'
   menu:
-    no-permission-other: '&8[&aLands&8] &cBạn không được phép mở GUI của người khác. &7Bạn cần có quyền&e lands.command.menu.others &7để làm điều đó.'
-    notExist: '&8[&aLands&8] &cKhông có dữ liệu về người chơi này.'
+    no-permission-other: '&c你无权打开其他玩家的面板. &7你需要权限&e lands.command.menu.others &7'
+    notExist: '&c该玩家目前没有任何数据.'
   chat:
-    format: '&8[&aLands&8] [&d{land}&8] {role} &7{player}&8:&f {message}'
-  map:
-    header: '&7----------------------'
-    info: '&7Của bạn: &a▉ &7Nơi hoang dã: &2▉ &7Của người khác: &c▉ &7Thân thiện: &5▉ &7Vị trí: &e▉'
-    footer: ' '
-list:
+    activated: '&7成功开启国家聊天. 在公共聊天中发送消息以与国家中的成员一起聊天吧.'
+    deactivated: '&7已成功关闭国家聊天.'
+    no-land: '&c错误的国家. &7使用 &8/&3Lands chat toggle &7来关闭国家聊天.'
+    format:
+      minecraft: '&a{land} &8| {role} &7{player} &8»&f {message}'
+      discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
   view:
-    - '&7---------<- &5&lXem vùng đất &7->---------'
-    - '&7Vùng đất:&b {land}'
-    - '&7Thuế -> Chung:&b {tax-land} &7Tại đây:&b {tax-chunk}'
-    - '&7Thế giới:&e {world} &7X:&e {x} &7Z:&e {z}'
-    - '&4Chủ sở hữu:&7 {owner}'
-    - '&7Quản trị viên:&7 {admins}'
-    - '&7Thành viên:&7 {members}'
-    - '&7---------<- &5&lXem vùng đất &7->---------'
+    toggle:
+      enabled: '&7你成功打开了访客模式. &7如果想关闭它,再次输入该指令即可.'
+      disabled: '&7你成功关闭了访客模式.'
+list:
+  views:
+    - '&7---------<- &5&l国家信息 &7->---------'
+    - '&7国家:&a {land}'
+    - '&7区域:&6 {area}'
+    - '  &8区块 &7X: {x} Z: {z}'
+    - '  &8税收:&c ${tax}'
+    - '  &8玩家: {players}'
+    - '&7---------<- &5&l国家信息 &7->---------'
+  swear-words:
+    - 'fuck'
+    - 'shit'
+  wars:
+    declaration:
+      - '&6&n宣战:'
+      - ' '
+      - '&8- &7进攻方:&c {attackers}'
+      - '  &7防守方:&a {defenders}'
+      - ' '
+      - '&8- &7距离战争开始'
+      - '  &5~{time}'
+    current:
+      - '&6&n当前战争:'
+      - ' '
+      - '&8- &4进攻方'
+      - '      &7国家: {attackers}'
+      - '      &7击杀: {att-points}'
+      - '&8- &2防守方'
+      - '      &7国家: {defenders}'
+      - '      &7击杀: {def-points}'
+      - ' '
+      - '&8- &7距离战争结束'
+      - '  &5~{time}'
+    started:
+      attacker:
+        - '&c战争已开始!'
+        - ' '
+        - '&8- &7进攻方 &8(&b本国&8)&7: {attackers}'
+        - '  &7防守方: {defenders}'
+        - ' '
+        - '&8- &7距离战争结束'
+        - '  &5~{time}'
+      defender:
+        - '&c战争已开始!'
+        - ' '
+        - '&8- &7进攻方: {attackers}'
+        - '  &7防守方 &8(&b本国&8)&7: {defenders}'
+        - ' '
+        - '&8- &7距离战争结束'
+        - '  &5~{time}'
+    won:
+      attacker:
+        - '&6战争已结束:'
+        - '&7进攻方 &8({team}&8) &7胜利.'
+        - ' '
+        - '&8- &e统计'
+        - '  &7攻击点数:&c {att-points}'
+        - '  &7防守点数:&a {def-points}'
+        - ' '
+        - '&8- &7战争时间'
+        - '  &5~{time}'
+      defender:
+        - '&6战争已结束:'
+        - '&7The defenders &8({team}&8) &7won.'
+        - ' '
+        - '&8- &e统计'
+        - '  &7防守点数:&a {def-points}'
+        - '  &7攻击点数:&c {att-points}'
+        - ' '
+        - '&8- &7战争时间'
+        - '  &5~{time}'
+wars:
+  message:
+    noaccess:
+      pillage: '&c没有防守者在线时，你无法对国家进行掠夺. &7请等到至少有&b {defenders} &7防守者.'
+      action: '&c在该国的战争中，你不允许这样做. &7需要权限: {bypass}'
+    started:
+      broadcast: '&7国家&c {attacker} &7与国家&a {defender} &7之间的战争开始了. 将在&5 {time}&7后结束.'
+    ended:
+      broadcast: '&7国家&c {attacker} &7a与国家&a {defender} &7的战争结束了. 用时&5 {time}&7.'
+    joined:
+      attacker:
+        enemy: '&c敌国 &8| &6国家&2 {land} &6与对方成为了盟国.'
+        ally: '&2盟国 &8| &7国家&b {land} &7与你成为了盟友,同你并肩战斗.'
+      defender:
+        enemy: '&c敌国 &8| &6国家&2 {land} &6与对方成为了盟国.'
+        ally: '&2盟国 &8| &7国家&b {land} &7与你成为了盟友,同你并肩战斗.'
+    tribute-payed:
+      defender: '&2敌国 &8| &7国家&b {land} &7已支付&c ${tribute} &7作为战利品. 战争已结束.'
+      attacker: '&2盟国 &8| &7国家&b {land} &7已支付&c ${tribute} &7向你的国家 &b{attacker} &7提交战利品.战争已结束.'
+    surrender:
+      tribute:
+        received:
+          all: '&a敌国&b {land} &a投降了！ &7战利品已被瓜分. 你和你的盟国收到了&b ${tribute} &7.'
+          initial: '&a敌国&b {land} &a投降了! &7国家&b {receiver} &7提供了战利品&b ${tribute}&7.'
+      end: '&7国家&b {land} &7投降了. 战争已结束. 他们必须支付&c ${tribute} &7来作为战利品给敌国.'
+    war-shield:
+      set: '&a激活保护期&b {time}&7.'
+    kill:
+      target:
+        attackers: '&7队友&c {attacker} &7被防守者&a {defender}&7杀死.'
+        defenders: '&7队友&a {defender} &7被进攻者&c {attacker}&7杀死.'
+      killer:
+        attackers: '&7队友&c {attacker}&7杀死了防守者&a {defender}&7.'
+        defenders: '&7队友&a {defender} &7杀死了进攻者&c {attacker}&7.'
+  command:
+    general:
+      no-war: '&c你的国家&4 {land} &c目前没有收到任何宣战. &7目前国家很和平.'
+    declare:
+      trusted: '&c你不能对该国家宣战. &7你是该国家的成员. 请先离开该国家再进行宣战.'
+      war-shield: '&c你目前无法对该国家宣战. &7该国正处于保护期中,距离结束还有:&a {time}&7.'
+      already:
+        war: '&c你的国家目前无法参加另一场战争. &7需要当前的战争结束后才可参加.'
+        war-defender: '&c该国家正处于战争中. &7请在战争结束后重试'
+        declaration: '&c你的国家已经爆发战争. &7你可以在国家菜单中查看.'
+        declaration-def: '&c该国已向其他国家宣战. &7请在 {time} 后重试.'
+      ally: '&c你不能对该国宣战，因为它是你的盟友. &7你和目标国属于盟友.'
+      success: '&7你的国家&c {attacker} &7成功向&a {defender} &7宣战. 战争将在&5 ~{time}&7 后爆发.'
+      target:
+        land: '&c国家&e {attacker} &c对你的国家宣战&e {defender}&c. &7战争将在&5 {time}&7 后爆发.'
+      broadcast: '&7国家&c {attacker} &7对&a {defender} &7国家宣战&7. 战争将在&5 {time}&7 后爆发.'
+    info:
+      peace: '&7一切都是为了&b {land} &7的和平. &7没有持续的战争或向其他国家宣战.'
