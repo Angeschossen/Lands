@@ -1,3012 +1,546 @@
 ---
 general:
-  wYes: Ja
-  wNo: Nej
-  none: '&cIngen'
-  now: '&aNu'
-  enabled: '&aActiverat'
-  disabled: '&cAv activerat'
-  unlimited: '&aOändlig'
-  previous: '&8Föregående'
-  offline: '&cOffline'
-  role:
-    owner: '&4Ägare'
-    admin: '&cBorgmästare'
-    member: '&eInvånare'
-    visitor: '&7Gäst'
-    nation:
-      leader: '&4Leader'
-      politican: '&ePolitican'
-      capital: '&4Capital'
-      land: '&2Land'
-  war:
-    defenders: '&aFösvarare'
-    attackers: '&cAttakerare'
-    name:
-      land: '&2Land '
-      nation: '&9Nation '
-  inbox-filter:
-    all: '&aAlla'
-    members: '&eInvånare'
-    economy: '&cEkonomi'
-    war: '&4Krig'
-  all: '&aAll'
-physical-Item:
-  claim-block:
-    name: '&bInmutablock'
-    lore:
-      - '&7Med detta block'
-      - '&7kan du inmuta chunk'
-      - '&7genom att placera'
-      - '&7blocket i vildmarken.'
-      - ' '
-      - '&7Ägare:&a {owner}'
-    material: GRASS_BLOCK
-  selection:
-    name: '&eInmutnings verktyg'
-    lore:
-      - '&7Du måste först skapa ett land'
-      - '&7med kommandot:'
-      - '&8/&3Lands create'
-      - ''
-      - '&7Innan du kan använda detta verktyg'
-      - '&7för markera yta som du sen kan'
-      - '&7skapa ett land med'
-      - ''
-      - '&eDu kan också använda kommandot:'
-      - '&8/&3Lands claim'
-      - '&eEller kommandot:'
-      - '&8/&3Lands selection'
-    material: GOLDEN_HOE
-skull:
-  role:
-    owner: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMzExYTRmYjljNDkzODliNGY0NThjMjllOTY4MzI0YzU4MjNiOGE5OWVhZGUxNzQ3ODY2Yzk1YjA2NGEifX19
-    admin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UzZmVhODhlMmI4NWNjZGZiMWIzODcyOTgyZWFlMTY0ODlhODRjNjgxYmQ5ZmU0ZmU5YmM4YmNjMmU1In19fQ==
-    member: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFhZGZkZjA3MTE3NWFkYWQ2NDRmZTRiM2E5NzMxYWM2YThmYTQ3NTExNjJlODEzOGM4OTlmYmFhNWZmMGI5In19fQ==
-    visitor: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-gui:
-  main:
-    title: '&9Lands Huvud Menu'
-    size: 27
-    s:
-      lands:
-        name: '&8> &2Land'
-        lore:
-          - '&7Se alla dinna land.'
-          - ' '
-          - '&8- &7Det inkluderar land'
-          - '  &7du äger och är invånare i.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 11
-      all-lands:
-        name: '&8> &bAlla Land'
-        lore:
-          - '&7Se alla lands på'
-          - '&7Midgardsaga.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
-        slot: 13
-      invites:
-        name: '&8> &6Inbjudningar'
-        lore:
-          - '&7Se alla '
-          - '&7inbjudningar.'
-          - '&7du har.'
-        material: WRITABLE_BOOK
-        slot: 15
-      close:
-        name: '&cStäng'
-        lore:
-          - '&7Stäng denna meny.'
-          - ' '
-          - '&8- &7Du kan öppna den igen'
-          - '  &7med &8/&3Lands menu&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-        enabled: true
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-    f:
-      limitation:
-        name: '&8> &6Dinna gränser'
-        lore:
-          - ' '
-          - '&7+ Du kan göra&3 {ownlands} &7lands.'
-          - '  '
-          - '&7+ Du kan inmuta&3 {chunks} &7chunks per land.'
-          - '  '
-          - '&7+ Du kan ge &3{support-chunks} &7chunks till det land du är invånare i.'
-          - ' '
-          - '&7+ Du kan gå med i&3 {lands} &7lands.'
-          - '  '
-          - '&7+ Du kan ha&3 {members} &7invånare per land.'
-          - ' '
-        material: PLAYER_HEAD
-        slot: 17
-  player_lands:
-    title: '&9Dinna Land'
-    size: 27
-    s: { }
-    f:
-      page_previous:
-        name: '&9Föregående Sida'
-        lore:
-          - '&7Gå till föregående sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 21
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 25
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-    l:
-      object:
-        name: '&2{land}'
-        lore:
-          - '&7Du är invånare i detta land.'
-          - ' '
-          - '&7Antal chunks:&3 {chunks} &7av&c {max-chunks}'
-          - ' '
-          - '&9Höger klicka'
-          - '&7för att se generel'
-          - '&7information om'
-          - '&7landet.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFiNDNiOGMzZDM0ZjEyNWU1YTNmOGI5MmNkNDNkZmQxNGM2MjQwMmMzMzI5ODQ2MWQ0ZDRkN2NlMmQzYWVhIn19fQ==
-        from: 10
-        to: 18
-      own-land:
-        name: '&a{land}'
-        lore:
-          - '&7Du äger detta land.'
-          - '&7Antal chunks:&3 {chunks} &7av&c {max-chunks}'
-          - ' '
-          - '&9Höger klicka'
-          - '&7för att se generel'
-          - '&7information om'
-          - '&7landet.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        from: 10
-        to: 18
-      no-land:
-        name: '&cDu har inget Land'
-        lore:
-          - '&8- &7För att göra ett land:'
-          - '  &8/&3Lands create &8<&3namn&8>'
-          - ' '
-          - '&8- &7Låt andra länder bjuda in dig, med komandot:'
-          - '  &8/&3Lands trust {Spelar namn}'
-        material: OAK_SIGN
-        from: 10
-        to: 18
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
+  prefix: '&8[&aLands&8] '
+  wYes: '&aSi'
+  wNo: '&cNo'
+  none: '&8Ningun'
+  disabled: '&cDesactivado'
+  wilderness: '&aNaturaleza'
   land:
-    title: '&9{land}'
-    size: 45
-    s:
-      information:
-        name: '&6Information'
-        lore:
-          - '&7Här hittar du ditt lands olika inställningar och'
-          - '&7info om betalningar.'
-          - ''
-          - '&3-&7 Här kan du skapa eller tilldela underzoner.'
-          - ''
-          - '&3-&7 Bjuda in spelare eller ta bort spelare'
-          - '&7 från ditt land eller underzoner'
-          - ''
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
-        slot: 11
-      trusted-players:
-        name: '&8> &6Se invånare i ditt land'
-        lore:
-          - '&7Få en lista på alla invånare,'
-          - '&7som du bjudit in i dit land.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 14
-      invites:
-        name: '&8> &6Inbjudningar'
-        lore:
-          - '&7Ta bort/ta bort inbjudningar'
-          - '&7eller se information'
-          - '&7om dom.'
-          - ' '
-          - '&8- &7Dessa inbjudningar'
-          - '&7är för att dom skall bli'
-          - '&7invånare i ditt land.'
-        material: WRITABLE_BOOK
-        slot: 15
-      management:
-        name: '&6Förvaltning'
-        lore:
-          - '&7Här förvalta ditt land.'
-          - ''
-          - '&3-&7Du kan ändra eller sätta olika'
-          - '&7ranker på invånare'
-          - ''
-          - '&3-&7Ändra inställningar, bland annat'
-          - '&7ändra om monster och djur ska'
-          - '&7kunna spawna i ditt land'
-          - ''
-          - '&3-&7Ändra skatt, döpa om ditt land'
-          - '&7samt ändra mededelande när spelare'
-          - '&7går in i ditt land'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
-        slot: 29
-      land-settings:
-        name: '&8> &6Land inställningar'
-        lore:
-          - '&7Här ändrar du generella'
-          - '&7inställningar som monster spawn, mm.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 31
-      roles:
-        name: '&8> &6Rank inställningar för ditt land'
-        lore:
-          - '&7Se dinna inställningar för ranker i detta land.'
-          - ' '
-          - '&8- &7Rankerna är automatiskt'
-          - '  &7adderade på alla underzoner.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 32
-      taxes:
-        name: '&8> &6Hyror i landet'
-        lore:
-          - '&7Se hyror för detta land eller ändra dom.'
-          - ' '
-          - '&8- &7Hyrorna räkanar alla'
-          - '  &7chunks som inte är underzoner'
-        material: GOLD_INGOT
-        slot: 33
-      various:
-        name: '&8> &6Diverse'
-        lore:
-          - '&7Döp om land,'
-          - '&7Göra nya titlar.'
-        material: BEACON
-        slot: 34
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 45
-      placeholder_2:
-        material: BLUE_STAINED_GLASS_PANE
-        from: 12
-        to: 12
-      placeholder_3:
-        material: BLUE_STAINED_GLASS_PANE
-        from: 30
-        to: 30
-    f:
-      areas:
-        name: '&8>&6Underzoner'
-        lore:
-          - '&7Se alla underzoner i detta land.'
-          - '&7Du kan även göra nya'
-          - '&7underzoner i denna meny.'
-          - ' '
-          - '&7Antal zoner:&3 {areas} &7av&c {max-areas}'
-        material: OAK_FENCE
-        slot: 13
-      inbox:
-        name: '&8> &6Inbox &8(&e{amount}&8)'
-        lore:
-          - ' '
-          - '{inbox}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
-        slot: 16
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 37
-      stats:
-        name: '&8> &l&6Statistik'
-        lore:
-          - ' '
-          - '&6&lAdministration'
-          - '&7Antal chunks: &a {0} &7/ &c{1} &7+ 0 &8(&7nation&8)'
-          - '&7Invånare: &a {2} &7/ &c{3}'
-          - ' '
-          - '&6&lEkonomi'
-          - ''
-          - '&3- &e&lDitt land'
-          - '  &7På banken: &6{4} {#fbe232}Ⓖ'
-          - '  &7Nästa chunk du inmutar kostar: &6{5} {#fbe232}Ⓖ'
-          - '  &7Land betalar:&6{6} {#fbe232}Ⓖ &6 - 0 &8(&7nation&8)'
-          - '  &7Betalar till servern om: &b{7}&7.'
-          - ''
-          - '&3- &e&lInfo om dig'
-          - '  &7Balance: &6{8} {#fbe232}Ⓖ'
-          - '  &7Du behöver betala &6{9} {#fbe232}Ⓖ &7i skatt'
-          - '  &7till landet om &b{10}&7.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
-        slot: 17
-      stats-nation:
-        name: '&8> &6Statistics'
-        lore:
-          - ' '
-          - '&7&lManagement'
-          - '&7Nation: {0}'
-          - '&7Claims: {1} / {2} &a+ {3} &8(&7nation&8)'
-          - '&7Members: {4} / {5}'
-          - ' '
-          - '&7&lEconomy'
-          - ''
-          - '&8- &7&lLand'
-          - '  &7Balance: ${6}'
-          - '  &7Next claim cost: ${7}'
-          - '  &7The land pays&c ${8}'
-          - '  &7upkeep to the nation in'
-          - '  &7&n{9}&7.'
-          - ' '
-          - '&8- &4&lYou'
-          - '  &7Balance: ${10}'
-          - '  &7You need to pay&c ${11} &7for taxes'
-          - '  &7to the land in &n{12}&7.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzk1MGNjNjc1NDg2M2Q4YWRiNDVmNGQ2NzI1ZTE3ZjVjZTE0YjhiNzNhZDRmZjg4MmYyMzgxYmQzNDkyZTk1NiJ9fX0=
-        slot: 17
-      land-settings:
-        name: '&8> &6Land inställningar'
-        lore:
-          - '&7Ändra inställnigar'
-          - '&7för area&6 {area}&7.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 31
-      roles:
-        name: '&8> &6Ranker'
-        lore:
-          - '&7Vissa ranker för'
-          - '&7area&6 {area}&7.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 32
-      taxes:
-        name: '&8> &6Skatt i landet'
-        lore:
-          - '&7Visa skatt för'
-          - '&7area&6 {area}&7.'
-        material: GOLD_INGOT
-        slot: 33
-  land_areas:
-    title: '&9Underzoner'
-    size: 36
-    s: { }
-    f:
-      create:
-        name: '&aSkapa underzoner'
-        lore:
-          - '&7Skapa ny underzoner'
-          - '&7för detta land.'
-          - ' '
-          - '&7Antal zoner:&3 {areas} &7av&c {max}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
-        slot: 32
-      delete:
-        name: '&cTa bort Underzon'
-        lore:
-          - '&7Ta bort underzon'
-          - '&7för detta land.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        slot: 33
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 30
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 35
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-    l:
-      object:
-        name: '&6{area}'
-        lore:
-          - '&7öppna meny för denna underzon'
-          - '&7underzon.'
-        material: OAK_FENCE
-        from: 10
-        to: 27
-      area-setup:
-        name: '&cSkapa Underzon:&6 {area}'
-        lore:
-          - '&7Du har ej stält in vart denna'
-          - '&7underzon skall vara i ditt land.'
-          - ' '
-          - '&7Använd &8/&3Lands selection'
-          - '&7för att aktivera markering'
-          - '&8/&3Lands selection assign {area}'
-          - '&7För att sätta underzon där du markerat.'
-        material: ACACIA_FENCE
-        from: 10
-        to: 27
-      no-area:
-        name: '&cingen underzoner skapad'
-        lore:
-          - '&7Detta land har ingen'
-          - '&7underzoner än.'
-          - ' '
-          - '&8- &7För att skapa underzon'
-          - '  &7klicka skapa underzon.'
-        material: ACACIA_FENCE
-        from: 10
-        to: 27
-      object_default:
-        name: '&6Lands {area}'
-        lore:
-          - '&7Detta är ditt lands area.'
-          - '&7Alla inmutningar och underzoner'
-          - '&7är bundna till detta land.'
-        material: DARK_OAK_FENCE
-        from: 10
-        to: 27
-    a:
-      failure_untrusted:
-        name: '&4Nekad: &cDu har inte tillåtelse'
-        lore:
-          - '&cDu har ej tillåtelse att öppna'
-          - '&cmenyn för denna underzon.'
-          - ' '
-          - '&8- &7Du måste ha en rank som har'
-          - '&7tillåtelseatt öppna menyn'
-          - '&7i denna underzon.'
-          - '&8- &7Kontakta någon med högre rank'
-          - '&7i landet för att få hjälp.'
-      failure_max-underzoner:
-        name: '&4Fel: &cMax underzoner'
-        lore:
-          - '&7Detta land har nåt sin maximala'
-          - '&7nummer av&3 {max} &7underzoner.'
-          - ' '
-          - '&8Du kan uppgradera detta i Uppdaterings menyn'
-      failure_max-areas:
-        name: '&4Failure: &cMax Areas'
-        lore:
-          - '&7Detta land har nått sit maximala'
-          - '&7antal av &3 {max} &7undezon.'
-          - ' '
-          - '&8Permission: lands.areas.NUMBER'
-      failure_rental:
-        name: '&4Failure: &cRental'
-        lore:
-          - '&7You can''t edit this area'
-          - '&7while it is rented/sold.'
-          - '&7Tenant:&3 {player}'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  area:
-    title: '&9Din zon: &6{area}'
-    size: 45
-    f:
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 37
-    s:
-      information:
-        name: '&6Information'
-        lore:
-          - '&7Här kan du se detaljerad'
-          - '&7information om denna'
-          - '&7underzon. Detta hjälper'
-          - '&7hålla koll på denna'
-          - '&7underzon.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
-        slot: 11
-      trusted-players:
-        name: '&8> &6Invånare'
-        lore:
-          - '&7Få lista på alla invånare'
-          - '&7för denna specifika underzon.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 13
-      invites:
-        name: '&8> &6inbjudningar'
-        lore:
-          - '&7Ta bort/skicka inbjudningar.'
-          - '&7eller bara se information'
-          - '&7om dom.'
-          - ' '
-          - '&8- &7Dessa inbjudningar'
-          - '  &7gör så dom blir'
-          - '  &7invånare i denna area.'
-        material: WRITABLE_BOOK
-        slot: 14
-      management:
-        name: '&6Management'
-        lore:
-          - '&7Här kan du ändra iställningar för denna'
-          - '&7Underzon. Underzon ranker, hyra mm.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
-        slot: 29
-      land-settings:
-        name: '&8> &6Underzon inställningar'
-        lore:
-          - '&7Här ändrar du inställningar för'
-          - '&7monsters,vatten mm.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 31
-      roles:
-        name: '&8> &6Rank inställningar för underzon'
-        lore:
-          - '&7Se inställnigar för denna Underzon.'
-          - ' '
-          - '&8- &7Invånare som är med i denna underzon får'
-          - ' &7inte någon rank i själva landet,'
-          - '&7utan du kan bara ge tillåtelser i underzon.'
-          - ' '
-          - '&8- &7Invånare som är med i landet får'
-          - ' &7automatiskt samma tillåtelser i denna underzon'
-          - '&7(som du get i rank inställningar i landet).'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 32
-      taxes:
-        name: '&8> &6Hyra'
-        lore:
-          - '&7Se hyra för detta land.'
-          - ' '
-          - '&8- &7Hyra räknas/underzon'
-        material: GOLD_INGOT
-        slot: 33
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 45
-      placeholder_2:
-        material: BLUE_STAINED_GLASS_PANE
-        from: 12
-        to: 12
-      placeholder_3:
-        material: BLUE_STAINED_GLASS_PANE
-        from: 30
-        to: 30
-    a:
-      failure_rental:
-        name: '&4Failure: &cRental'
-        lore:
-          - '&7You can''t set taxes for this'
-          - '&7area while it is rented/sold.'
-          - '&7Tenant:&3 {player}'
-  area_invites:
-    title: '&8Inbjudningar till {area}'
-    size: 36
-    f:
-      send:
-        name: '&aSänd Inbjudning'
-        lore:
-          - '&7Sänd en inbjudning till invånare'
-          - '&7för bjuda in invånaren till ditt land eller underzone.'
-          - ' '
-          - '&7Antal invånare du har i ditt land:&3 {players} &8av&c {max}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
-        slot: 32
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 30
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 34
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-    l:
-      object:
-        name: '&e{player}'
-        lore:
-          - '&7Ändra denna inbjudan eller'
-          - '&7visa information.'
-          - ' '
-          - '&7Denna inbjudan kommer bjuda'
-          - '&7in dom till area&6 {area}&7.'
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-      object_land:
-        name: '&e{player}'
-        lore:
-          - '&7Ändra denna inbjudan eller'
-          - '&7visa information.'
-          - ' '
-          - '&7Denna inbjudan så bjuder'
-          - '&7du in invånaren till'
-          - '&7landet.'
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-      no-invite:
-        name: '&cIngen inbjudan skickad'
-        lore:
-          - '&7Ditt land Har inte skickat'
-          - '&7Någon inbjudan.'
-          - ' '
-          - '&8- &7För skicka inbjudan tryck på'
-          - '  &7gröna knappen nedanför.'
-        material: OAK_SIGN
-        from: 10
-        to: 27
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 27
-        to: 36
-  area_invite:
-    title: '&8Bjud in {player}'
-    size: 27
-    s:
-      revoke:
-        name: '&8> &cTa bort inbjudan'
-        lore:
-          - '&7Tryck här för ta bort'
-          - '&7denna inbjudan.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        slot: 12
-    f:
-      info:
-        name: '&8> &6Information'
-        lore:
-          - '&7Area:&e {area}'
-          - '&7Land: {land}'
-          - ' '
-          - '&7Tid:&5 {time}'
-          - '&7Avsändare: {sender}'
-        material: OAK_SIGN
-        slot: 16
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-      info_land:
-        name: '&8> &6Information'
-        lore:
-          - '&7Bjud in dom till landet'
-          - '&2{land}&7.'
-          - ' '
-          - '&7Sickat:&5 {time}'
-          - '&7Avsändare: {sender}'
-        material: OAK_SIGN
-        slot: 16
-    a:
-      failure_noAccess:
-        name: '&4Du har inte tillåtese ta bort inbjudan'
-        lore:
-          - '&cDu har inte tillåtese att'
-          - '&cta bort inbjudan i denna'
-          - '&carea.'
-          - ' '
-          - '&8- &7Du behöver tillåtelse för att'
-          - '  &7ta bort invånare i denna area'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  area_roles:
-    title: '&8{area} &7- &8Lands rank'
-    size: 27
-    l:
-      object:
-        name: '&7{role}'
-        lore:
-          - '&7Tryck här för ändra denna rank.'
-        material: PLAYER_HEAD
-        from: 10
-        to: 18
-    f:
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 21
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 26
-      create:
-        name: '&8> &aSkapa rank i ditt Land'
-        lore:
-          - '&7Tryck här för skapa'
-          - '&7ny rank i ditt land. Du kommer bli guidad'
-          - '&7genom inställningarna för ditt Lands rank.'
-          - ' '
-          - '&7Antal du kan skapa:&3 {roles} &8/&c {max}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
-        slot: 23
-      delete:
-        name: '&cTa bort en rank i ditt land'
-        lore:
-          - '&7Ta bort rank i detta Land'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        slot: 24
-    a:
-      failure_max-roles:
-        name: '&cDu har nått gränsen av antal ranker i Landet'
-        lore:
-          - '&7Detta land har nått gränsen'
-          - '&7avf&3 {max} &7ranker.'
-          - ' '
-          - '&8Permission: lands.roles.NUMBER'
-      failure_default:
-        name: '&4Default rank'
-        lore:
-          - '&7Du kan inte ändra rangordning'
-          - '&7på default rank&3 {role}&7.'
-      failure_priority:
-        name: '&4Du har lägre rank'
-        lore:
-          - '&7Du har inte tillåtelse'
-          - '&7ändra inställningar på denna rank.'
-          - '&7Som har högre rank än'
-          - '&7du har eller så har du samma'
-          - '&7rank som du försöker ändra.'
-          - ' '
-          - '&8Kringå det med: {bypass}'
-      failure_access:
-        name: '&4Failure: &cNot allowed'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit roles in this area.'
-          - ' '
-          - '&8Bypass: {bypass}'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
-  role_players:
-    title: '&8{role} &7- &8invånare'
-    size: 36
-    l:
-      object:
-        name: '&e{player}'
-        lore:
-          - '&7Denna invånare supports ditt land'
-          - '&7med &a{support} &7ytterligare inmutningar.'
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-    f:
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 30
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 35
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  role_settings:
-    title: '&8{role} &7- &8Settings'
-    size: 36
-    s: { }
-    f:
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 30
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 34
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-    l:
-      block_break:
-        name: '&6Bryta block'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt land'
-          - '&7bryta block?'
-        material: IRON_PICKAXE
-        from: 10
-        to: 27
-      block_place:
-        name: '&6Placera Block'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt land'
-          - '&7placera block?'
-        material: OAK_PLANKS
-        from: 10
-        to: 27
-      block_ignite:
-        name: '&6Block Ignite'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt land'
-          - '&7antända block?'
-        material: FLINT_AND_STEEL
-        from: 10
-        to: 27
-      interact_general:
-        name: '&6Allmän interaktion'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt land'
-          - '&7interagera?'
-        material: STRING
-        from: 10
-        to: 27
-      interact_door:
-        name: '&6Öppna dörrar'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt land'
-          - '&7öppna dörrar?'
-        material: IRON_DOOR
-        from: 10
-        to: 27
-      interact_container:
-        name: '&6Öppna kistor/tunnor'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt land'
-          - '&7öppna kistor/tunnor?'
-        material: CHEST
-        from: 10
-        to: 27
-      interact_mechanism:
-        name: '&6Använda knappar/spakar'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare  att använda'
-          - '&7knappar/spakar bland annat?'
-        material: REDSTONE
-        from: 10
-        to: 27
-      interact_villager:
-        name: '&6Handla med bybor'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt land'
-          - '&7handla med bybor?'
-        material: EMERALD
-        from: 10
-        to: 27
-      attack_player:
-        name: '&6Attackera invånare'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt land'
-          - '&7anfalla players?'
-          - ' '
-          - '&8- &7Notera under strid'
-          - '  &7det kan fortfarande möjligt att slåss'
-          - '  &7inne i ditt land,'
-          - '  &7om en invånare annafaller annan invånare'
-          - '  &7utanför ditt land.'
-          - ' '
-          - '&8- &7De kan bara anfalla'
-          - '  &7invånare som kan'
-          - '  &7också anfalla dem.'
-        material: IRON_SWORD
-        from: 10
-        to: 27
-      attack_animal:
-        name: '&6Döda boskap'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare att'
-          - '&7döda boskap?'
-        material: BOW
-        from: 10
-        to: 27
-      fly:
-        name: '&6Flyga'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt land'
-          - '&7använda &8/&3Fly &7?'
-        material: FEATHER
-        from: 10
-        to: 27
-      land_enter:
-        name: '&6Tillåtelse att gå in i ditt land/area'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare att'
-          - '&7gå in i denna land/area?'
-        material: OAK_FENCE_GATE
-        from: 10
-        to: 27
-      area_assign:
-        name: '&6Tilldela underzoner'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare att göra underzoner och'
-          - '&7tilldela underzoner i ett land?'
-        material: OAK_FENCE
-        from: 10
-        to: 27
-      player_trust:
-        name: '&6Bjuda in invånare'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt land'
-          - '&7bjuda in andra invånare?'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
-        from: 10
-        to: 27
-      player_setRole:
-        name: '&6Land rank'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare att ändra rank'
-          - '&7på andra invånare i ditt land?'
-          - ' '
-          - '&8- &7De kan inte ändra rank, på dom'
-          - '  &7som har en högre rank än de själva'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjNmY3NzVlOGFjZmRmNmUxZGVhYzgwYThkYTFmMzdiM2I0YmE1Y2FhNGEzNTI0OWY5ZWIxNDVjY2Y0M2RhNSJ9fX0=
-        from: 10
-        to: 27
-      player_untrust:
-        name: '&6Avhysa invånare'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare att'
-          - '&7avhysa andra invånare?'
-          - ' '
-          - '&8- &7De kan inte'
-          - '  &7avhysa invånare som har'
-          - '  &7högre rank, än dom själva.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        from: 10
-        to: 27
-      setting_edit_land:
-        name: '&6Ändra land inställningar'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare att'
-          - '&7ändra land inställningar?'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        from: 10
-        to: 27
-      setting_edit_role:
-        name: '&6Ändra Land rank inställningar'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i ditt Land'
-          - '&7ändra ranker på andra invånare.'
-          - ' '
-          - '&8- &7Dom kan inte'
-          - '  &7ändra deras egna'
-          - '  &7rank inställningar.'
-          - ' '
-          - '&8- &7Du ska bara ge denna'
-          - '  &7tillåtelse, till'
-          - '  &7invånare som du litar på.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        from: 10
-        to: 27
-      setting_edit_advanced:
-        name: '&6Ändra advancerade land rank inställningar'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare med denna ranken att'
-          - '&7ändra rank inställningar i ditt land?'
-          - ' '
-          - '&8- &7Du ska bara ge denna'
-          - '  &7tillåtelse, till'
-          - '  &7invånare som du litar på.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMzExYTRmYjljNDkzODliNGY0NThjMjllOTY4MzI0YzU4MjNiOGE5OWVhZGUxNzQ3ODY2Yzk1YjA2NGEifX19
-        from: 10
-        to: 27
-      setting_edit_taxes:
-        name: '&6Ändra Hyror'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare med denna ranken att'
-          - '&7ändra Hyror?'
-          - ' '
-          - '&8- &7Du bör bara ge denna'
-          - '  &7Tillåtelse till invånare'
-          - '  &7du litar på.'
-        material: GOLD_INGOT
-        from: 10
-        to: 27
-      land_claim:
-        name: '&6Inmuta Land'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt denna invånare inmuta'
-          - '&7chunks i ditt land?'
-        material: IRON_SHOVEL
-        from: 10
-        to: 27
-      land_claim_border:
-        name: '&6Inmuta Land vid gränsen'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare i landet att'
-          - '&7Inmuta chunks på gränsen'
-          - '&7av ditt land.'
-        material: IRON_BARS
-        from: 10
-        to: 27
-      spawn_set:
-        name: '&6Sätt Spawn för landet'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare med denna ranken att'
-          - '&7ändra spawn för detta land?'
-        material: ENDER_EYE
-        from: 10
-        to: 27
-      spawn_teleport:
-        name: '&6Teleport till Spawn'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare med denna ranken att'
-          - '&7teleportera till spawn?'
-        material: ENDER_PEARL
-        from: 10
-        to: 27
-      balance_withdraw:
-        name: '&6Ta ut guld från Land´s Bank'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare med denna ranken att'
-          - '&7ta ut guld från'
-          - '&7land´s bank?'
-          - ' '
-          - '&8- &7Command:'
-          - '  &8/&3Lands withdraw'
-        material: GOLD_NUGGET
-        from: 10
-        to: 27
-      vehicle_use:
-        name: '&6Använda minecart'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Unlocked: {unlocked}'
-          - ' '
-          - '&7Tillåt invånare att'
-          - '&7använda minecart,båtar osv.'
-        material: MINECART
-        from: 10
-        to: 27
-      war_manage:
-        name: '&6Manage War'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Unlocked: {unlocked}'
-          - ' '
-          - '&7Allow this role to be able'
-          - '&7to declare and manage the'
-          - '&7war for your land?'
-        material: IRON_SWORD
-        from: 10
-        to: 27
-    a:
-      failure_permission:
-        name: '&4Fel: &cingen Permission'
-        lore:
-          - '&7Du har inte tillåtelse att'
-          - '&7ändra denna inställning.'
-          - ' '
-          - '&8Permission'
-          - '&8{permission}'
-      failure_noaccess:
-        name: '&4Fel: &cIngen åtkomst'
-        lore:
-          - '&7Du har inte tillåtelse att'
-          - '&7ändra denna inställning.'
-          - ' '
-          - '&7Land´s ägaren måste'
-          - '&7tillåta dig ändra detta i'
-          - '&8inställningar: {setting}'
-      failure_role-weight:
-        name: '&4Fel: &cLand ranker'
-        lore:
-          - '&7Du har inte tillåtelse att'
-          - '&7ändra inställnigar för denna Land ranker.'
-          - '&7Han har högre Land ranker'
-          - '&7än du.'
-          - ' '
-          - '&8Bypass: lands.amdin.setting_edit_role'
-      failure_priority:
-        name: '&4Failure: &cRole Priority'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit settings of this role.'
-          - '&7It has a higher priority'
-          - '&7than yours.'
-          - ' '
-          - '&8Bypass: {bypass}'
-      failure_access:
-        name: '&4Failure: &cNot allowed'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit roles in this area.'
-          - ' '
-          - '&8Bypass: {bypass}'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  area_settings:
-    title: '&8{area} &7- &8Land inställningar'
-    size: 27
-    s: { }
-    f:
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 21
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 25
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-    l:
-      entity_griefing:
-        name: '&6Föremål Griefing'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt föremål'
-          - '&7grief block?'
-          - ' '
-          - '&8- &cNotera: &7om föremål griefing'
-          - '  &7är påslaget, invånare kan'
-          - '  &7förstöra dina byggnader.'
-        material: CREEPER_HEAD
-        from: 10
-        to: 18
-      tnt_griefing:
-        name: '&6TNT Griefing'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt TNT att'
-          - '&7detonera?'
-          - ' '
-          - '&8- &cNotera: &7Om TNT griefing'
-          - '  &7är påslaget, invånare kan'
-          - '  &7grief ditt'
-          - '  &7land med TNT cannons.'
-        material: TNT
-        from: 10
-        to: 18
-      piston_griefing:
-        name: '&6Tillåt Pistons från vildmarken.'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt pistons att ta block?'
-          - ' '
-          - '&8- &cNotera: &7om den är påslagen, gäster'
-          - '  &7kan förstöra i ditt land från'
-          - '  &7vildmarken genom att använda'
-          - '  &7pistons för att flytta blocks'
-          - '  &7i ditt land.'
-        material: PISTON
-        from: 10
-        to: 18
-      waterflow_allow:
-        name: '&6Tillåt vatten från vildmarken'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Tillåt vatten från vildmarken'
-          - '&7Flyta in till ditt land?'
-          - ' '
-          - '&8- &cNotis: &7Om du slår på detta, gäster'
-          - ' &7kan grief ditt land från'
-          - ' &7vildmarken genom använda'
-          - ' &7vatten.'
-        material: WATER_BUCKET
-        from: 10
-        to: 18
-      monster_spawn:
-        name: '&6Monster Spawning'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Slå på denna för monsters ska'
-          - '&7spawna?'
-          - ' '
-          - '&8- &cNOTE: &7Spawners är inte'
-          - '&7påverkade av denna inställning.'
-        material: SPAWNER
-        from: 10
-        to: 18
-      animal_spawn:
-        name: '&6Djur Spawning'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Upplåst: {unlocked}'
-          - ' '
-          - '&7Slå på denna'
-          - '&7för djur ska spawna?'
-          - ' '
-          - '&8- &cNOTE: &7Spawners är inte'
-          - '&7påverkade av denna inställning.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19
-        from: 10
-        to: 18
-      fire_spread:
-        name: '&6Eld spridning'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Unlocked: {unlocked}'
-          - ' '
-          - '&7Tillåt eld sprida sig'
-          - '&7i ditt land.'
-          - ' '
-          - '&7Bränder från vildmarken kan'
-          - '&7inte komma in i ditt land.'
-        material: FLINT_AND_STEEL
-        from: 10
-        to: 18
-      leaf_decay:
-        name: '&6Om löv ska vissna'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Unlocked: {unlocked}'
-          - ' '
-          - '&7Ställer in om löv ska vissna'
-          - '&7inne i ditt land.'
-        material: OAK_LEAVES
-        from: 10
-        to: 18
-      plant_growth:
-        name: '&6Om växter ska gro'
-        lore:
-          - '&7Status: {enabled}'
-          - '&7Unlocked: {unlocked}'
-          - ' '
-          - '&7Ska växter kunna'
-          - '&7växa i ditt land?'
-        material: VINE
-        from: 10
-        to: 18
-    a:
-      failure_permission:
-        name: '&4Fel: &cIngen Permission'
-        lore:
-          - '&7Du har inte tillåtelse'
-          - '&7ändra denna inställning.'
-          - ' '
-          - '&8- &7Du behöver permission'
-          - '  &e{permission}&7.'
-      failure_noaccess:
-        name: '&4Fel: &cIngen åtkomst'
-        lore:
-          - '&7Du har inte tillåtelse att'
-          - '&7ändra denna inställningen.'
-          - ' '
-          - '&7Land ägaren behöver'
-          - '&7sätta tillåtelse i'
-          - '&8inställningar: {setting}'
-          - ' '
-          - '&8Bypass permission: lands.admin.setting_edit_land'
-      failure_priority:
-        name: '&4Failure: &cRole Priority'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit settings of this role.'
-          - '&7It has a higher priority'
-          - '&7than yours or you''re a'
-          - '&7member of this role.'
-          - ' '
-          - '&8Bypass: {bypass}'
-      failure_access:
-        name: '&4Failure: &cNot allowed'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit roles in this area.'
-          - ' '
-          - '&8Bypass: {bypass}'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
-  action-confirm:
-    title: '&8Bekräfta åtgärd'
-    size: 27
-    s:
-      info:
-        name: '&bBekräfta åtgärd.'
-        lore:
-          - '&7Tryck &aBekräfta &7för bekräfta eller'
-          - '&cAvbryt &7för avbryta åtgärden.'
-        material: OAK_SIGN
-        slot: 14
-    l:
-      yes_chunk:
-        name: '&aBekräfta'
-        lore:
-          - '&7Bekräfta åtgärd.'
-          - ' '
-          - '&8- &7Om du är ägare'
-          - '  &7av denna chunk, kommer det'
-          - '  &7bli vildmark.'
-        material: LIME_STAINED_GLASS_PANE
-        from: 10
-        to: 13
-      no_chunk:
-        name: '&cAvbryt'
-        lore:
-          - '&7Avbryt åtgärd.'
-          - ' '
-          - '&8- &7Om du är ägare'
-          - '  &7av denna chunk, kommer den'
-          - '  &7bli borttagen.'
-        material: CHORUS_FLOWER
-        from: 15
-        to: 18
-      yes_war-state:
-        name: '&aBekräfta'
-        lore:
-          - '&7Bekräfta åtgärd.'
-          - ' '
-          - '&4Notera: &cDitt land kommer'
-          - '&cbehöva betala en tribute'
-          - '&cför att kapitulera.'
-        material: LIME_STAINED_GLASS_PANE
-        from: 10
-        to: 13
-      no_war-state:
-        name: '&cAvbryt'
-        lore:
-          - '&7Avbryt åtgärd.'
-          - ' '
-          - '&7Vill du verkligen'
-          - '&7kapitulera detta krig?'
-        material: CHORUS_FLOWER
-        from: 15
-        to: 18
-      yes_surrender:
-        name: '&aConfirm'
-        lore:
-          - '&7Confirm this action.'
-          - ' '
-          - '&cNOTE: &7Your land may'
-          - '&7need to pay a tribute'
-          - '&7in order to surrender.'
-        material: LIME_STAINED_GLASS_PANE
-        from: 10
-        to: 13
-      no_surrender:
-        name: '&cAbort'
-        lore:
-          - '&7Abort this action.'
-        material: CHORUS_FLOWER
-        from: 15
-        to: 18
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
-  player_invites:
-    title: '&8Mottagna inbjudningar'
-    size: 36
-    s: { }
-    f:
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 30
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 34
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e>{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-    l:
-      object:
-        name: '&6{land}'
-        lore:
-          - '&7Ändra denna inbjudning eller'
-          - '&7bara visa information.'
-        material: BOOK
-        from: 10
-        to: 27
-      no-invite:
-        name: '&cInga inbjudningar mottagna'
-        lore:
-          - '&7Det är inte några'
-          - '&7mottagna inbjudningar än.'
-          - ' '
-          - '&8- &7invånare kan bjuda in'
-          - '  &7dig med följande kommando:'
-          - '  &8/&3Lands trust {player}'
-        material: OAK_SIGN
-        from: 10
-        to: 27
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 27
-        to: 36
-  player_invite:
-    title: '&8Inbjudan {land}'
-    size: 27
-    f:
-      info:
-        name: '&8> &6Information'
-        lore:
-          - '&7Area:&6 {area}'
-          - '&7Land: {land}'
-          - ' '
-          - '&7Motaget:&5 {time}'
-          - '&7Avsändare: {sender}'
-        material: OAK_SIGN
-        slot: 14
-    l:
-      accept:
-        name: '&aAcceptera'
-        lore:
-          - '&7Acceptera denna inbjudan.'
-          - ' '
-          - '&7Skattvärde:&6 {tax}{#fbe232}Ⓖ'
-        material: LIME_STAINED_GLASS_PANE
-        from: 10
-        to: 13
-      deny:
-        name: '&cNecka'
-        lore:
-          - '&7Necka denna inbjudan.'
-          - ' '
-          - '&7Skattvärde:&6 {tax}{#fbe232}Ⓖ'
-        material: CHORUS_FLOWER
-        from: 15
-        to: 18
-    a:
-      failure_lands:
-        name: '&4Fel: &cAntal Lands'
-        lore:
-          - '&7Du kan inte gå med i'
-          - '&7land,på grund av du nått'
-          - '&7din maximala antal av'
-          - '&3{max} &7lands du kan'
-          - '&7gå med i.'
-          - ' '
-          - '&8Permission:'
-          - '&8lands.lands.NUMBER'
-      failure_inviteOwner:
-        name: '&4Fel: &cBjuda in ägare'
-        lore:
-          - '&7Du kan inte gå med detta'
-          - '&7land, på grund av du'
-          - '&7har inte tillåtelse'
-          - '&7äga land och'
-          - '&7vara del av annat land.'
-          - ' '
-          - '&8En admin'
-          - '&8kan ändra det i config.'
-      failure_notTrusted:
-        name: '&4Fel: &bInte färdigt'
-        lore:
-          - '&7Kunde inte betro dig'
-          - '&7i detta land, på grund av'
-          - '&7dom nått'
-          - '&7Maximal antal av&3 {max}&7invånare.'
-          - ' '
-          - '&8- &7Kontakta land'
-          - '  &7ägaren för hjälp.'
-          - ' '
-          - '&8Permission:'
-          - '&8lands.members.NUMBER'
-      failure_members:
-        name: '&4Failure: &cNot complete'
-        lore:
-          - '&7Couldn''t trust you in'
-          - '&7land&2 {land}, &7because'
-          - '&7they reached their maximum'
-          - '&7of&3 {max} &7members.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  player_info:
-    title: '&8Invånare {player}'
-    size: 27
-    s:
-      close:
-        name: '&cstäng'
-        lore:
-          - '&7Stäng denna meny'
-          - ' '
-          - '&8- &7Du kan öppna den igen'
-          - '  &7med &8/&3Lands player'
-        material: CHORUS_FLOWER
-        slot: 9
-    f:
-      last_seen:
-        name: '&8> &6Sågs senast'
-        lore:
-          - '&c{last-seen}'
-        material: CLOCK
-        slot: 12
-      lands:
-        name: '&8> &6Lands &8(&7{amount}&8)'
-        lore:
-          - '{lands}'
-        material: OAK_SIGN
-        slot: 16
-      max-chunks:
-        name: '&8> &6Maximalt Chunk Inmutningar'
-        lore:
-          - '&7Denna invånare kan inmuta'
-          - '&3{chunks} &7chunks.'
-          - ' '
-          - '&8- &7Om inställningen chunks-addition'
-          - '  &7är påslagen i inställningar, denna player'
-          - '  &7skulle kunna stödja ditt land med'
-          - '  &3{chunks} &7ytterligare chunks inmutningar.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ==
-        slot: 14
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-      areas:
-        name: '&8> &6Trusted Areas &8(&7{amount}&8)'
-        lore:
-          - '&7This player is trusted in these'
-          - '&7areas of land&2 {land}&7:'
-          - ' '
-          - '{areas}'
-        slot: 17
-        material: OAK_FENCE
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  land_info:
-    title: '&8Land {land}'
-    size: 45
-    f:
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e>{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 37
-      owner:
-        name: '&4Ägare&3 {player}'
-        lore:
-          - '&7Dom är ägare av'
-          - '&7detta land. Kontakta'
-          - '&7Dom, om du har'
-          - '&7frågor.'
-        material: PLAYER_HEAD
-        slot: 12
-      players:
-        name: '&8> &6Antal invånare &8(&7{amount}&8)'
-        lore:
-          - ' '
-          - '&aInvånare i landet:'
-          - '&e{players}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 16
-      created:
-        name: '&8> &6Skapad'
-        lore:
-          - '&2{date}'
-        material: CLOCK
-        slot: 34
-      war:
-        name: '&8> &6Krigsstatestik'
-        lore:
-          - ' '
-          - '&7Vunna:&7 {won}'
-          - '&7Förlorade:&7 {lost}'
-          - '  &7WLR:&3 {wlr}'
-          - ' '
-          - '&7Dödade:&7 {kills}'
-          - '&7Döda:&7 {deaths}'
-          - '  &7KDR:&3 {kdr}'
-        material: IRON_SWORD
-        slot: 23
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 45
-    s:
-      close:
-        name: '&cStäng denna meny'
-        lore:
-          - ' '
-          - '&8- &7Du kan öppna den igen'
-          - '  &7med &8/&3Lands info {land}&7.'
-        material: CHORUS_FLOWER
-        slot: 9
-  land_various:
-    title: Various Settings
-    size: 27
-    s: { }
-    f:
-      name:
-        name: '&8> &6Land Namn'
-        lore:
-          - '&7Sätt nytt namn'
-          - '&7för detta land.'
-          - ' '
-          - '&8- &7Nuvarande namn:'
-          - '  &a{name}'
-        material: NAME_TAG
-        slot: 12
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e>{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-      titles:
-        name: '&8> &6Ändra titel när spelare går in i ditt land'
-        lore:
-          - '&7Ändra meddelande'
-          - '&7på landet.'
-          - ' '
-          - '&8- &7Visa titel: {show}'
-          - '&7Slå på: &9Höger klick'
-          - ' '
-          - '&8- &7Nuvarande meddelande:'
-          - '&7 {title}'
-          - ' '
-          - '&7Tillgängliga placeholders'
-          - '  &8> &a%owner% &8= &7Land ägare.'
-          - '  &8> &a%player% &8= &7när spelare/invånare gå in i landet.'
-        material: OAK_SIGN
-        slot: 16
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-    a:
-      failure_noaccess:
-        name: '&4Failure: &cNo Access'
-        lore:
-          - '&7You''re not allowed to edit'
-          - '&7these options for this land.'
-          - ' '
-          - '&8- &7Only the land owner'
-          - '  &7is permitted to do that.'
-          - ' '
-          - '&8Bypass permission: {bypass}'
-  global_lands:
-    title: '&8All Lands'
-    size: 54
-    s:
-      close:
-        name: '&cStäng denna meny'
-        lore:
-          - ' '
-          - '&8- &7Du kan öppna igen med'
-          - '  &7komandot &8/&3Lands list&7.'
-        material: CHORUS_FLOWER
-        slot: 46
-    f:
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e>{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 46
-      toggle-allowed:
-        name: '&6Visa endast allmäna Lands?'
-        lore:
-          - '&7Visa endast lands där du står'
-          - '&7tillåtet att teleportera till lands spawn?'
-          - '&7Tryck här för slå på denna inställning.'
-          - ' '
-          - '&7Only public: {only-allowed}'
-        material: ENDER_PEARL
-        slot: 50
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 48
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 52
-    l:
-      object:
-        name: '&2{land}'
-        lore:
-          - '&bVänsterklicka'
-          - '&7Teleport till lands spawn'
-          - '&7av detta land.'
-          - ' '
-          - '&9Högerklick'
-          - '&7öppna lands information'
-          - '&7menu av detta land.'
-          - ' '
-          - '&7Title:'
-          - '&7{title}'
-        material: PLAYER_HEAD
-        from: 10
-        to: 45
-      no-land:
-        name: '&cInga Lands hittade'
-        lore:
-          - '&7Det är inga skapade lands,'
-          - '&7som matchar ditt filter.'
-          - ' '
-          - '&8- &7För skapa ett land använd kommando:'
-          - '  &8/&3Lands create &8<&3name&8>'
-        material: PAPER
-        from: 10
-        to: 45
-    a:
-      failure_teleport_permission:
-        name: '&4Nekad: &cPermission'
-        lore:
-          - '&cDu har inte tillåtlse att'
-          - '&cteleport till detta lands spawn.'
-          - ' '
-          - '&8- &7Du behöver permission'
-          - '  &3{permission}&7.'
-          - '&8- &7Kontakta admin'
-          - '  &7för hjälp.'
-      failure_admin_permission:
-        name: '&4Nekad: &cAdmin Permission'
-        lore:
-          - '&cDu har inte tillåtlse att'
-          - '&cöppna edit-menu för detta land.'
-          - ' '
-          - '&8- &7Du behöver permission'
-          - '  &3{permission}&7.'
-          - '&8- &7Kontakta admin'
-          - '  &7för hjälp.'
-      failure_no-spawn:
-        name: '&4Fel: &cSpawn punkt inte satt'
-        lore:
-          - '&cDetta land har inte satt någon spawn'
-          - '&cpunkt än. Dom behöver'
-          - '&csätta en land spawn först.'
-          - ' '
-          - '&8- &7Dom behöver köra komandot'
-          - '  &8/&3Lands setspawn &7för'
-          - '  &7sätta lands spawn.'
-      failure_teleport_cost:
-        name: '&4Nekad: &ckostnad'
-        lore:
-          - '&cDu har inte tillräkligt med guld'
-          - '&cteleportertera till detta land spawn.'
-          - ' '
-          - '&7Du behöver&6 {costs}{#fbe232}Ⓖ&7.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 36
-        to: 54
-  war-state:
-    title: '&8Krig'
-    size: 27
-    s:
-      close:
-        name: '&cstäng'
-        lore:
-          - '&7Stäng denna meny'
-          - ' '
-          - '&8- &7Du kan öppna igen med'
-          - '  &7komandot &8/&3Wars menu&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-    f:
-      attackers:
-        name: '&8> &cAttackers'
-        lore:
-          - '&7Visa alla anfallande lands'
-          - '&7av detta krig.'
-          - ' '
-          - '&8- &eStatestik'
-          - '  &7Lands: {attackers}'
-          - '  &7invånare: {players}'
-          - ' '
-          - '  &7Dödade: {kills}'
-          - '  &7Dött: {deaths}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTU0OTQ3ZGU3ZjUyNTk4MjU1ZDZhZmVlOWQ3N2JlZmFkOWI0ZjI0YzBjNDY2M2QyOGJjZGY4YTY0NTdmMzQifX19
-        slot: 11
-      defenders:
-        name: '&8> &aFörsvarare'
-        lore:
-          - '&7Visa alla försvarande lands'
-          - '&7av detta krig.'
-          - ' '
-          - '&8- &eStatestik'
-          - '  &7Lands: {defenders}'
-          - '  &7invånare: {players}'
-          - ' '
-          - '  &7Dödade: {kills}'
-          - '  &7Dött: {deaths}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRkYmNiN2UxZmJlY2VhOWE3MzUwNDM2Y2JiZWEyYjQ5NmY3NGMyOTcyMDRmMWJiOWFjYzM4NzhkNTQyY2NiIn19fQ==
-        slot: 13
-      info_declaration:
-        name: '&8> &6Information'
-        lore:
-          - '&7Kriget startar om'
-          - '&5~{time}'
-          - ' '
-          - '&8- &7Anfallare kan göra dessa'
-          - '  &7saker i ditt land'
-          - '  &8(&7går ändra i inställningarna&8)&7:'
-          - ' '
-          - '{settings}'
-        material: IRON_SWORD
-        slot: 15
-      info_war:
-        name: '&8> &6Information'
-        lore:
-          - '&7Kriget avslutas om'
-          - '&5~{time}'
-          - ' '
-          - '&8- &7Anfallare kan göra dessa'
-          - '  &7saker i ditt land'
-          - '  &8(&7går ändra i inställningarna&8)&7:'
-          - ' '
-          - '{settings}'
-        material: IRON_SWORD
-        slot: 15
-      tribute_attacker:
-        name: '&8> &6Tribute: &6{tribute}{#fbe232}Ⓖ'
-        lore:
-          - '&7Ändrar tribute'
-          - '&7för detta krig.'
-          - ' '
-          - '&8- &7En som kapitulerat behöver'
-          - '  &7betala denna tribute för att'
-          - '  &7kapitulera.'
-          - ' '
-          - '&8- &9Högerklick'
-          - '  &7Om anfallare vill'
-          - '  &7kapitulera, det behöver'
-          - '  &7betala&6 {tribute-att}{#fbe232}Ⓖ &7till'
-          - '  &7försvarare.'
-          - ' '
-          - '  &8- &7Om summan är 0,'
-          - '    &7anfallare kan inte'
-          - '    &7kapitulera.'
-          - ' '
-          - '&8- &7Tribute delas'
-          - '  &7till alla anfallare: {divide}'
-        material: GOLD_INGOT
-        slot: 17
-      tribute_defender:
-        name: '&8> &6Kapitulera: &7{tribute}{#fbe232}Ⓖ'
-        lore:
-          - '&7Tryck här för kapitulera'
-          - '&7i detta krig.'
-          - ' '
-          - '&8- &cKapitulerade ska'
-          - '  &cbetala tribute av &7{tribute}{#fbe232}Ⓖ'
-          - '  &cför kunna kapitulera.'
-          - ' '
-          - '&8- &7Om summan är 0:'
-          - '  &7Det betyder'
-          - '  &7anfallarna inte accepterade'
-          - '  &7din kapitulera.'
-        material: GOLD_INGOT
-        slot: 17
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e>{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 21
-      close:
-        name: '&cStäng'
-        lore:
-          - '&7Stäng denna meny.'
-          - ' '
-          - '&8- &7Du kan öppna den igen med detta'
-          - '  &7kommando &8/&3Wars menu&7.'
-        material: CHORUS_FLOWER
-        slot: 9
-      tribute_attacker_mutual:
-        name: '&8> &6Tribute:&7{tribute}{#fbe232}Ⓖ'
-        lore:
-          - '&7Surrender as a attacker:'
-          - '&7Attackers need to pay&7{tribute-att}{#fbe232}Ⓖ'
-          - '&7to the defenders.'
-          - ' '
-          - '&7If the defenders surrender:'
-          - '&7Defenders need to pay&7{tribute}{#fbe232}Ⓖ'
-          - '&7to you. &7If the value equals 0, the'
-          - '&7defenders wont be able to surrender.'
-        material: GOLD_INGOT
-        slot: 17
-    a:
-      failure_permission:
-        name: '&4Fel: &cDu har inte tillåtelse'
-        lore:
-          - '&7Denna åtgärd kan endast'
-          - '&7kan utföras av lands'
-          - '&7ägare av första'
-          - '&7anfallande land.'
-          - ' '
-          - '&7Player:&b {owner}'
-      failure_surrender-att:
-        name: '&cFel: &4Kapitulation är avstängt'
-        lore:
-          - '&7Kapitulation för anfallare var'
-          - '&7avstängd i inställningar.'
-      failure_surrender:
-        name: '&cFel: &4Kapitulation kunde inte genomföras'
-        lore:
-          - '&7initial attacks land'
-          - '&7rejected din kapitulation.'
-          - ' '
-          - '&7Det är för dom inte'
-          - '&7accepterade någon tribute.'
-      failure_surrender-attacker:
-        name: '&cFel: &4Kapitulation kunde inte genomföras'
-        lore:
-          - '&7Anfallare har inte tillåtelse'
-          - '&7att kapitulera. Endast försvarare'
-          - '&7can surrender.'
-      failure_surrender-cost:
-        name: '&cFel: &4Kapitulation kunde inte genomföras'
-        lore:
-          - '&7Ditt land har inte'
-          - '&7tillräkligt med guld för betala'
-          - '&7tribute av&7{tribute}{#fbe232}Ⓖ&7.'
-      failure_attacker:
-        name: '&4Failure: &cNot allowed'
-        lore:
-          - '&7Attackers are not allowed'
-          - '&7to surrender. Only defenders'
-          - '&7can surrender.'
-          - ' '
-          - '&8This has been configured'
-          - '&8in config.'
-      failure_cost:
-        name: '&4Failure: &cNot enough Money'
-        lore:
-          - '&7You &8({object}&8) &7have'
-          - '&7not enough money to pay the'
-          - '&7tribute of&c ${tribute}&7.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  war_lands:
-    title: '&8{type}'
-    size: 36
-    f:
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e>{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 30
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 34
-    l:
-      object:
-        name: '&2{land}'
-        lore:
-          - '&7Öppna land information'
-          - '&7menu för detta land.'
-          - ' '
-          - '&8- &eStats'
-          - '  &7Total players:&e {players}'
-          - ' '
-          - '&8- &7Title:'
-          - '  &7{title}'
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  war-declaration_tribute:
-    title: '&8Tribute'
-    size: 27
-    s:
-      plus-1:
-        name: '&aHöj 1{#fbe232}Ⓖ'
-        lore:
-          - '&7höj 1{#fbe232}Ⓖ&7 till'
-          - '&7tribute.'
-        material: GLOWSTONE_DUST
-        slot: 11
-        amount: 1
-        data:
-          value: 1.0
-      plus-2:
-        name: '&aHöj 10{#fbe232}Ⓖ'
-        lore:
-          - '&7höj 10{#fbe232}Ⓖ&7 till'
-          - '&7tribute summa.'
-        material: GLOWSTONE_DUST
-        slot: 12
-        data:
-          value: 10.0
-      plus-3:
-        name: '&aHöj 100{#fbe232}Ⓖ'
-        lore:
-          - '&7Lägger till 100{#fbe232}Ⓖ'
-          - '&7tribute .'
-        material: GLOWSTONE_DUST
-        slot: 13
-        data:
-          value: 100.0
-      minus-3:
-        name: '&cSänk 100{#fbe232}Ⓖ'
-        lore:
-          - '&7Sänk 100{#fbe232}Ⓖ &7från'
-          - '&7tribute.'
-        material: REDSTONE
-        slot: 15
-        data:
-          value: 100.0
-      minus-2:
-        name: '&cSänk 10{#fbe232}Ⓖ'
-        lore:
-          - '&7Sänk 10{#fbe232}Ⓖ &7från'
-          - '&7tribute.'
-        material: REDSTONE
-        slot: 16
-        data:
-          value: 10.0
-      minus-1:
-        name: '&cSänk 1{#fbe232}Ⓖ'
-        lore:
-          - '&7Sänk 1{#fbe232}Ⓖ&7 from'
-          - '&7tribute.'
-        material: REDSTONE
-        slot: 17
-        data:
-          value: 1.0
-      close:
-        name: '&cStäng'
-        lore:
-          - '&7Stäng denna meny'
-          - ' '
-          - '&8- &7Du kan öppna igen med'
-          - '  &7komandot &8/&3Wars menu&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-    f:
+    title:
+      land: '&7Propiedad de&3 %owner%&7.'
+      safezone: '&7Estas seguro ahora.'
+    global-area: 'Global'
+  time:
+    days: 'dia(s)'
+    hours: 'hora(s)'
+    minutes: 'minuto(s)'
+    seconds: 'segundo(s)'
+  status:
+    online: '&aen linea'
+    offline: '&cdesconectado'
+  top:
+    title: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
+    entry: '&c#{pos} &a{land} &7Balance:&e ${value}'
+    next-page: '&7Next page: &8/&2Lands top {next}'
+    last-updated: '&7Última actualización: {time} &7ago'
+    footer: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
+  integration:
+    dynmap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br /><br /> Owner: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br />Admins: <span style="font-weight: bold;">{admins}</span><br />Members: <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<p><span style="font-size: 120%; color: #339966;"><span style="font-size: 120%;">Spawnpoint</span></span></p><p>Open to visitors: {public}</p>'
+  sign:
+    topLand:
+      line-1: '&c#&l{place}'
+      line-2: '&8<&2 {land} &8>'
+      line-3: '&7by {owner}'
+      line-4: '&7Balance:&3 ${value}'
+    noLand:
+      line-1: ' '
+      line-2: '&cSin land'
+      line-3: '&cpara mostrar.'
+      line-4: ' '
+  autoAction:
+    claim: '&aClaimeo de Chunk'
+  map:
+    yours: '&a▉ '
+    others: '&c▉ '
+    friendly: '&5▉ '
+    current-location: '&e▉ '
+    wilderness: '&2▉ '
+    top: '&7-<------------<- &6Lands Map &7->------------>-'
+    info:
+      wilderness: ' &2▉ &7= Naturaleza'
+      yours: ' &a▉ &7= Tuyo(a)'
+      trusted: ' &5▉ &7= Amigables'
+      others: ' &c▉ &7= Otros'
+      position: ' &e▉ &7= Posición'
+    bottom: '&7-<------------<- &6Lands Map &7->------------>-'
+  land-inbox:
+    land:
+      created: '&2{date}h &7Land {land} creada.'
+      upkeep:
+        chunk-deleted: '&2{date}h &4ADVERTENCIA: &cUltimo chunk claimeado &8(&7X: {x} &7Z: {z}&8) &cdes-claimeado. No se puedo pagar el costo de mantenimiento:&c ${cost}'
+        warning: '&2{date}h &cADVERTENCIA: &7No se puedo pagar el costo de mantenimiento: ${cost}'
+        paid: '&2{date}h &7Costo de mantenimiento pagado: ${cost}'
+    player:
+      join: '&2{date}h &7Jugador(a) {player} Se unió a tu Land.'
+    wars:
+      declaration:
+        sent: '&2{date}h &7Se declara la Guerra contra Land {defender}. La guerra comienza en {time}.'
+        received: '&2{date}h &4ADVERTENCIA: &cLand {attacker} le ha declarado la Guerra a tu Land la guerra comienza en {time}.'
+      surrender:
+        sent: '&2{date}h &cRendirse en Guerra. Tienes que pagar ${tribute} de tributo al enemigo.'
+        received: '&2{date}h &aEl enemigo de la land {land} se ha rendido. Tributo de ${tribute} recibido.'
+      won:
+        attacker: '&2{date}h &aLa guerra se acabó. &7Los atacantes &8({team}&8) &7han ganado. Atacantes: {att-points} Defensores: {def-points}'
+        defender: '&2{date}h &aLa guerra se acabó. &7Los defensores &8({team}&8) &7han ganado. Atacantes: {att-points} Defensores: {def-points}'
+  wars:
+    land-type:
+      enemy: '&cEnemigo'
+      ally: '&aAliado'
+    nametag:
+      enemy: '&cENEMIGO &8| '
+      ally: '&aALIADO &8| '
+  teleportation:
+    bossbar: '&7Espera&5 {time} &7Segundo(s) hasta teletransportarte.'
+help:
+  general:
+    help-prefix: '&7Usa: '
+    header: '&7------------<- &5Ayuda &aLands &7Página&6 {page} &8/&e {pages} &7->------------'
+    page: '&7Usa &8/&dLands help {next} &7para la próxima página. <> = necesario [] = opcional'
+    footer: '&7------------<- &5Ayuda &aLands &7Página&6 {page} &8/&e {pages} &7->------------'
+  command:
+    help: '&8/&3Lands help &8[&3page&8] - &7Obtén ayuda'
+    edit: '&8/&3Lands edit &8<&3land&8> &8- &7Entra en el modo edición de Land'
+    claim: '&8/&3Lands claim &8[&3area, auto&8] - &7Claimea un chunk'
+    create: '&8/&3Lands create &8<&3nombre&8> - &7Create una Land'
+    leave: '&8/&3Lands leave &8[&3land] &8- &7Abandona un Chunk o Land'
+    unclaim: '&8/&3Lands unclaim &8- &7Des-claimea un Chunk'
+    delete: '&8/&3Lands delete &8<&3land&8> &8- &7Elimina tu Land'
+    trust: '&8/&3Lands trust &8<&3player&8> [&3here&8] - &7Invita a un jugador(a)'
+    untrust: '&8/&3Lands untrust &8[&3here&8] - &7Expulsa a un jugador'
+    setRole: '&8/&3Lands setRole &8<&3jugador(a)&8> <&3rol&8> [&3here&8] - &7Establece un rol'
+    accept: '&8/&3Lands accept &8<&3land&8> - &7Aceptar invitación'
+    deny: '&8/&3Lands deny &8<&3land&8> - &7Denegar invitación'
+    view: '&8/&3Lands view &8- &7Información sobre tu chunk'
+    menu: '&8/&3Lands menu &8[&3here&8] &8- &7Abre el menu Land/area '
+    setSpawn: '&8/&3Lands setspawn - &7Establece el spawn de land'
+    spawn: '&8/&3Lands spawn &8[&3land&8] - &7Haz teleport a Land'
+    wild: '&8/&3Lands wild &8- &7Haz teleport a una ubicación aleatoria'
+    top: '&8/&3Lands top &8[&3page&8] &8- &7Muestra el top10 de lands'
+    selection: '&8/&3Lands selection &8[&3assign&8, &3expand&8] &8- &7Activa la selección de claim'
+    chat: '&8/&3Lands chat &8[&3land&8] <&3mensaje&8> &8- &7Land chat'
+    rename: '&8/&3Lands rename &8<&3name&8> - &7Renombra tu land'
+    teleport: '&8/&3Lands teleport &8[&3world&8] <&3x&8> <&3z&8> - &7Teleport al chunk'
+    invites: '&8/&3Lands invites &8- &7Muestra las invitaciones recibidas'
+    info: '&8/&3Lands info &8[&3land&8] - &7Vista de información sobre tu Land'
+    player: '&8/&3Lands player &8<&3jugador(a)&8> - &7Vista de información sobre jugador(a)'
+    map: '&8/&3Lands map &8- &7Vista de mapa de Lands'
+    balance: '&8/&3Lands balance &8[&3land&8] - &7Revisa el balance de Land'
+    deposit: '&8/&3Lands deposit &8[&3land&8] <&3amount&8> - &7Deposita dinero al banco de Land'
+    withdraw: '&8/&3Lands withdraw &8[&3land&8] <&3Monto&8> - &7Gira dinero desde el banco de Land'
+    list: '&8/&3Lands list &8[&3world&8] - &7Lista de todas las Land'
+    assign: '&8/&3Lands assign &8<&3area&8> - &7Asigna la selección al área'
+    setowner: '&8/&3Lands setowner &8<&3jugador(a)&8> - &7Transfiere la propiedad'
+    ban: '&8/&3Lands ban &8<&3player&8> - &7Ban a un jugador(a)'
+    unban: '&8/&3Lands unban &8<&3player&8> - &7Desbanea un jugador(a)'
+    wars:
+      declare: '&8/&3Wars declare &8<&3land&8> - &7Declara una Guerra'
+      info: '&8/&3Wars info - &7Muestra la actual o venidera Guerra'
+      menu: '&8/&3Wars menu &8- &7Abre el menu de Guerra'
+    admin:
+      admin: '&8/&3Lands admin &8<&3sub-command&8> &8- &7Admin commands'
+      debug: '&8/&3Lands debug &8- &7Muestra estadísticas de datos cargados'
+      safezone: '&8/&3Lands safezone &8- &7Configura una zona segura'
+      reload: '&8/&3Lands reload &8- &7Recarga configuración o mensajes'
+      about: '&8/&3Lands about &8- &7Muestra información sobre Lands'
+message:
+  no-permission: '&cNo tiene permiso para hacer esto. &8Necesitas el permiso {permission}.'
+  world-invalid: '&cEsto esta desactivado en este mundo. &7Un administrador puede añadirlo a la config. Mundo: {world}'
+  feature-disabled: '&cEsta caracteríztica fue deshabilitada por un admin. &Un admin puede activar este ajuste {setting} en config, para que puedas usar esta caracteríztica.'
+  current-war: '&cNo puedes hacer esto ahora. &7Tu land esta actualmente en una guerra &7Por favor intentalo de nuevo cuando la guerra haya ACABado.'
+  noaccess:
+    chunk: '&cNo tienes permitido hacer esto en este chunk &8(&7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Permiso para omitir esta restricción: {bypass}'
+    area: '&cNo tienes permitido hacer esto en esta área &8(&7Area:&6 {area} &7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Permiso para omitir esta restricción: {bypass}'
+    land: '&cNo tienes permitido hacer esto por esta Land &8(&7Land:&2 {land}&8)&7. &8Permiso para omitir esta restricción: {bypass}'
+    land-not-owner: '&cNo tienes permitido hacer esto por esta Land&4 {land}&c. &7Selecciona tu propia Land&8(/&3Lands edit &8<&3land&8>) &7o crea una &8(/&3Lands create &8<&3name&8>)&7. &8Permiso para omitir esta restricción: lands.admin.land_edit'
+    role-weight:
+      land: '&cNo puedes editar este jugador(a) en Land&4 {land}&c. &7El rol&6 {role} &7tiene una prioridad más alta que la del tuyo.'
+      area: '&cNo puedes editar este jugador(a) en el área&4 {area} &8(&7Land:&2 {land}&8)&c. &7El rol&6 {role} &7tiene una prioridad más alta que la del tuyo.'
+    claim: '&cNo puedes claimear Land aquí. &7Este chunk pertenece a otra administracion de plugin. Nombre: {plugin}'
+    place: '&cNo tienes permitido el colocar bloques aquí. &7Esta área pertenece a land&2 {land}&7.'
+    break: '&cNo tienes permitido el romper bloques aquí. &7Esta área pertenece a land&2 {land}&7.'
+    ignite: '&cNo tienes permitido el quemar bloques aquí. &7Esta área pertenece a land&2 {land}&7.'
+    enter: '&cNo tienes permitido el entrar al área&4 {area} &cde esta land&4 {land}&c. &7Serás transportado a tu ubicación anterior.'
+    edit: '&cNo tienes permitido el editar esta Land. &7Este chunk pertenece a land&2 {land}&7.'
+    banned: '&cNo tienes permitido el entrar a esta área. &7Has sido baneado de esta área &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. &8Permiso para omitir esta restricción: {bypass}'
+    interact:
+      general: '&cNo tienes permitido el interactuar aquí. &7Esta área pertenece a land&2 {land}&7.'
+      door: '&cNo tienes permitido el abrir puertas aquí. &7Esta área pertenece a land&2 {land}&7.'
+      mechanism: '&cNo tienes permitido el usar mecanismos aqui. &7Esta área pertenece a land&2 {land}&7.'
+      container: '&cNo tienes permitido el abrir cofres aqui. &7Esta área pertenece a land&2 {land}&7.'
+      villager: '&cNo tienes permitido el intercambiar con aldeanos. &7Esta área pertenece a land&2 {land}&7.'
+    combat:
+      animal: '&cNo tienes permitido el atacar animales aquí. &7Esta área pertenece a land&2 {land}&7.'
+      pvp:
+        attacker: '&cNo tienes permitido el atacar jugadores(as) aqui. &7Esta área pertenece a land&2 {land}&7.'
+        target: '&cTu objetivo no tiene permitido atacar jugadores(as) aqui. &7No puedes pelear con el/ellos aquí. &7Esta área pertenece a land&2 {land}&7.'
+        ally: '&cNo puedes atacar a este jugador en naturaleza, porque el es un miembro en una de tus Lands. &7Puedes hacer un Arena-fights en tu Land permitiendo el PVP en los ajustes de Rol.'
+        wilderness: '&cNo puedes atacar a este jugador, porque el está en naturaleza y tu estás en Land claimeada.'
+  event:
+    fly:
+      warning: '&7No tienes permitido el volar aquí. Modo vuelo sera deshabilitado en unos segundos. &8Permiso para omitir esta restricción: {permission}'
+      counter: '#t#&cModo-vuelo desactivando[newline]&cen &4{sec} &csegundo(s)'
+      disabled: '&cTu modo de vuelo fue desactivado. &7Te falta el permiso para volar aquí.'
+      disallowed: '&cNo tienes permitido el volar en esta land. &7Contacta al dueño de Land. &8Permiso para omitir esta restricción: lands.bypass.fly'
+      disallowed-wilderness: '&cNo tienes permitido el volar en naturaleza. &8permiso para omitir esta restricción: lands.bypass.wilderness.fly'
+    enter:
+      land: '#t#&2&l{land}[newline]&3{title}'
+      safezone: '#t#&2&l{land}[newline]{title}'
+      pvp-warning: '#a#&cHas entrado a una zona de PVP.'
+    leave:
+      land: '#t#&2&lNaturaleza[newline]&7Siente lo salvaje'
+      safezone: '#t#&2&lNaturaleza[newline]&7Siente lo salvaje'
+    teleport:
+      already: '&cNo puedes iniciar un segundo teleport, porque ya hay un teleport en progreso. &7Porfavor espera hasta que este termine.'
+      started: '&7Proceso de teleport iniciado. Teleportandote en &5 {sec} &7segundos. Favor no te muevas.'
+      cancelled: '&cTu teleport ha sido cancelado. &7Porfavor no te muevas mientras estás esperando&5 {sec} &7segundos para tu teleport.'
+      chunk: '#t#&9&lTransportado[newline]&7X: {x} Z: {z} Cost:&c ${cost}'
+      cancelled-plugins: '&cEl teleport fue cancelado por otro plugin. &7Porfavor revisa tus otros plugins. &7Este no es un problema de Land.'
+  claimblock:
+    dropped: '&cAlgunos bloques de claimeo estan en el suelo. &7No queda espacio en tu inventario.'
+    success: '&7Tienes&3 {blocks} &7bloque(s) de claimeo(s). &7Ponelos en un chunk para poder claimearlos.'
+    not-owner: '&cNo tienes permitido usar este bloque de claimeos. &7Pertenece a&3 {owner}&7.'
+  blacklist:
+    untrusted: '&cNo tienes permitido el usar este comando aqui. &7No estas confiado en esta land. &8Un admin puede cambiar esto en config.'
+    general: '&cNo tienes permitido el usar este comando en lands claimeadas. &8Un administrador puede cambiar esto en config.'
+  autoAction:
+    stopped: '&cSe detuvo tu auto-acción actual. &7Máximo de rondas alcanzadas. Nombre:&3 {name}'
+    started: '&7Tu auto-acción inició correctamente. Nombre:&3 {name}'
+    removed: '&7Tu auto-acción se detuvo correctamente. &7Nombre:&3 {name}'
+  gui:
+    chats:
+      title: '#t#&e&lEscribe nuevo[newline]&e&lTitulo en el Chat'
+      title-done: '#t#&a&lTitulo de land[newline]&7&lEstablecido correctamente.'
+      name: '#t#&e&lEscribe nuevo[newline]&e&lNombre en el Chat'
+      name-done: '#t#&2&lNombre de land[newline]&7&lEstablecido correctamente'
+      cancel: '&7escribe &bcancel &7en el chat para cancelar esta acción.'
+  chat-action:
+    cancelled: '#t#&c&lAcción de chat[newline]&c&lCancelada'
+    player: '&7Porfavor escribe el nombre del jugador(a) objetivo.'
+    role:
+      create: '&7Porfavor escribe un nuevo nombre para el rol. Puedes incluir prefijos de colores.'
+      default: '&cNo puedes eliminar este rol. &7Es el rol que está por default.'
+      delete: '&7Porfavor escribe el nombre del rol que quieres eliminar.'
+      exists: '&cUn rol con el nombre&4 {role} &cya existe. &7porfavor elige un nombre diferente.'
+      max: '&cNo puedes crear más roles para esta land. &7Haz alcanzado tu límite of&3 {max} &7roles. Permiso: lands.roles.NUMBER'
+    area:
+      create: '&7Por favor escribe un nuevo nombre para el área. Puedes incluir prefijos de colores.'
+      delete: '&7Porfavor escribe el nombre del área que deseas eliminar.'
+      exists: '&cEl area&4 {area} &cya existe en esta land &8(&7Land:&2 {land}&8)&c. &7Porfavor escoje otro nombre.'
+      max: '&cNo puedes crear mas áreas para esta land. &7Has alcanzado el limite de&3 {max} &7areas. Permiso: lands.areas.NUMBER'
+    title: '&7Porfavor escribe un nuevo título para esta Land. Puedes incluir prefijos de colores.'
+    rename: '&7Porfavor escribe un nuevo nombre para esta Land. Los espacios no estan permitidos.'
+command:
+  general:
+    land-not-exist: '&cland&2 {land} &cno existe. &7No hay land con el nombre &2 {land} &7en este mundo.'
+    area-not-exist: '&cArea&4 {area} &cNo existe en Land&4 {land}&c. &7Puedes crear una nueva área en el menu de land, sección áreas. &7Typo?'
+    role-not-exist: '&cRol&e {role} &cno existe en esta area&4 {area} &cde esta land&4 {land}&c. &7Error de tipografía?'
+    land-not-member: '&cNo estas confiado en land&4 {land}&c. &7Usa &8/&3Lands menu &7para ver Lands de las cuales eres miembro.'
+    no-edit-land: '&cAun no has seleccionado tu land a editar. &7Use &8/&3Lands edit &8<&3land&8> &7para seleccionarla.'
+    land-no-action:
+      edit: '&cNo eres miembro de ninguna land donde tengas permitido hacer esto &8(&4{setting}&8)&c. &7Usa &8/&3Land create &7para crear una.'
+      position:
+        setting: '&cNo tienes permitido el hacer esto en la land en la que estas parado ahora. &7Porfavor anda dentro de tu land. &7Setting:&3 {setting}'
+        general: '&cNo tienes permitido el hacer esto en la land en la que estas parado ahora. &7Porfavor anda dentro de tu land.'
+    name-exists: '&cEl nombre&4 {name} &cesta tomado por otra land. &7Necesitas elegir un nombre diferente.'
+    money-cost-bank: '&cNo tienes suficiente para pagar el costo. &7Necesitas&c ${cost}&7. depositar un poco de dinero en el banco de land: &8/&3Lands deposit {cost}'
+    money-cost: '&No tienes suficiente para pagar el costo. &7Necesitas&c ${cost}&7.'
+    lands-max: '&cNo puedes ser parte de ninguna land más. &7Alcansazte el máximo de&3 {max} &7lands. &8Permiso: lands.lands.NUMBER'
+    name-numbers: '&cNo puedes usar numeros en los nombres de tus Lands. &7Porfavor solo usa letras latinas.'
+    name-invalid: '&cNo puedes usar carácteres inválidos en el nombre de land. &7Se encontró un carácter inválido:&3 {invalid} &7Porfavor usa solo letras.'
+    name-length: '&cEste nombre es muy largo. &7El largo máximo es &3 {max} &7caracteres. &8Un admin puede cambiar esto en config.'
+    swear-word: '&cSe detectó una palabrota. &7Porfavor no usar lenguaje inapropiado. Word:&c {word}'
+    action-cooldown: '&cNo puedes hacer esto ahora. &7Necesitas esperar&5 {time}&7.'
+    land-none: '&cNo eres un miembro de Land. &7Usa &8/&3Lands create &7para crear una.'
+    land-no-own: '&cNo tienes una Land. &7Usa &8/&3Lands create &7para crear una.'
+    world-invalid: '&cNo puedes hacer esto en el mundo actual. &7Un admin necesita añadir&3 {world} &7a la config primero.'
+    wilderness: '&cEste chunk es naturaleza. &7Necesitas ir a un chunk claimeado. &7Puedes usar &8/&3Lands menu &7para ver tus lands.'
+    player-not-exist: '&cNo hay jugador(a) con el nombre&4 {player}&c. &7Error de tipeo?'
+    player-offline: '&cActualmente no hay un jugador(a) en línea con el nombre&4 {player}. &7Error de tipeo?'
+    player-self: '&cNo puedes hacer esto contigo mismo. &7Payaso culiao xd. :)'
+    banks-disabled: '&7Los bancos fueron deshabilitados por un admin. &8Ellos pueden volver a activarlos en config.'
+    land-not-trusted: '&cEl jugador(a)&4 {player} &7no es parte de esta land &8(&7Land:&2 {land}&8)&7. Necesitas confiar en el primero &8/&3Lands trust&7.'
+    land-max-members: '&cNo se pudo confiarte en land&2 {land}&c. &7Esta land alcanzó su máximo de&3 {members} &7miembros. &8Esta land necesita mas lands.members.NUMBER de permiso.'
+    area-not-trusted: '&cNo puedes hacer esto aqui. &7No estas confiado en este chunk &8(&7X: {x} Z: {z}&8)&7. Pertenece al área&6 {area} &7de Land&2 {land}&7.'
+    invalid-number: '&cTu entrada&4 {input} &cno es un número. &7El argumento&3 {argument} &7necesita ser un numero.'
+  help:
+    help: '&7Usa &8/&aLand help &7para ayuda.'
+    cmd-not-exist: '&cEste comando no existe. &7Comando&3 {command} &7es inválido.'
+    page-not-exist: '&cLa página&4 {page} &cno existe. &7Error de tipeo?'
+  create:
+    land-other: '&cNo tienes permitido el tener tu propia Land y ser miembro de otra Land. &7Tienes que abandonar tu land&2 {land} &7primero. &8Un admin puede desactivar esto en la config.'
+    max-own: '&cNo puedes crear ninguna land más. &7Haz alcanzado el máximo de&3 {max} &7lands propias permitidas. &8Permiso: lands.ownlands.NUMBER'
+    success: '&7Land creada correctamente&2 {land} &7para&c ${cost}&7. Puedes claimear chunks ejecutando &8/&3Lands claim&7. Además puedes usar &8/&3Lands selection&7 para claimear una selección. Establecer Land {land} como land para futuras ediciones &8(/&3Lands edit&8)&7.'
+    broadcast: '&7Land&2 {land} &7fue creada por&3 {player}&7.'
+  rename:
+    success: '&7Nuevo nombre establecido correctamente&3 {name} &7para esta land &8(&7Land:&2 {land}&8)&7. Haz pagado&c ${cost}&7.'
+  edit:
+    success: '&7Haz entrado en el modo edición para esta land &8(&7Land:&2 {land}&8)&7. Próximas acciones tales como &8/&3Lands claim &7or &8/&3Lands trust&7, serán ejecucatada para esta land.'
+  selection:
+    not-complete: '&cTu selección no esta completa. &7Porfavor asegurate que ambas posiciones estén establecidas &8(&bCLICK IZQUIERDO &7Y &9CLICK DERECHO&8)&7. Puedes alternar el modo de selección ejecutando &8/&3Lands selection&7.'
+    max: '&cTu selección tiene muchos chunks en ella. &7Tamaño:&3 {current} &7Tu máximo tamaño es&3 {max} chunks. &8Permiso: lands.selection.NUMBER'
+    enabled: '&7Haz activado el modo de selección. Usa &5CLICK IZQUIERDO &7en un bloque para seleccionar la posición primaria. Con &5CLICK DERECHO &7estableces la posición secundaria. Después de esto puedes aplicar a la selección estos comandos: &3Claim&7, &3Unclaim&7, &3Leave'
+    disabled: '#t#&5&lModo de selección[newline]&c&lDesactivado'
+    world: '&cAmbas posicisiones deben estar en el mismo mundo. &7Porfavor establece la posición uno y la posición dos en el mismo mundo.'
+    pos:
+      warn: '&cAdvertencia: &7Este chunk pertenece a la administracion de otro plugin. Nombre:&3 {plugin}'
+      cancelled: '&cNo puedes establecer una selección aquí. &7Este chunk pertenece a la administracion de otro plugin. Nombre:&b {plugin}'
+      one: '#t#&5&lSelección[newline]&b&lPos 1 &8-> &7Establecida'
+      two: '#t#&5&lSelection[newline]&b&lPos 2 &8-> &7Establecida'
+    area:
+      conflicts: '&cSe encontró&4 {conflicts} &cconflicto(s) con chunks ya asignados al area(s). &7Usa &8/&3Lands selection assign {area} confirm &7para confirmar la anulación. Los conflictos pertenecen a estas areas: {areas}'
+      assigned: '&7Asignaste satisfactoriamente&3 {chunks} &7chunks al area&6 {area} &8(&7Land:&2 {land}&8)&7.'
+    expand:
+      enabled: '&7Expandiste satisfactoriamente tu selección desde arriba hacia abajo (a todos los niveles).'
+      disabled: '&7Tu selección actual ya no se expande a todos los niveles.'
+  claim:
+    already: '&cNo puedes claimear este chunk. &7Actualmente pertenece a land&2 {land}&7.'
+    auto-create: '&7Intentando crear automáticamente una land para ti, porque no tienes ninguna en este mundo. Puedes cambiar el nombre de esta con &8/&3Lands rename&7.'
+    auto-create-fail: '&cFallo en crear automaticamente una land para ti. &7Favor lee los mensajes de arriba.'
+    near-other: '&cEsto es muy cerca de land&4 {land}&c. &7Necesitas alejarte más de esta land. El chunk de distancia mínimo es&3 {distance}&7. &8un administrador podría cambiar esto en config.'
+    far-land: '&cNo puedes claimear este chunk(s). &7Tus claims deben estar conectados a tu land &8(&7Land:&2 {land}&8)&7.'
+    success: '&7Chunk claimeado satisfactoriamente &8(&7Land:&2 {land} &7X: {x} Z: {z}&8) &7para&c ${cost}&7. El siguiente claim costará&b ${next}&7.'
+    already-claimed: '&cEn tu selección hay un chunk que actualmente ya esta claimeado y que no pertenece a tu land &8(&7X: {x} Z: {z}&8)&c. &7Pertenece a&2 {land}&7.'
+    max-chunk: '&cNo puedes claimear&4 {chunks} &cmas chunk para esta land. &7El máximo por land&2 {land} &7es&3 {max} &7chunks. &8Permiso: lands.chunks.NUMBER'
+    selection: '&7Haz claimeado correctamente&3 {chunks} &7chunks para esta land &8(&7Land:&2 {land}&8)&7. Haz pagado&c ${cost}&7.'
+  assign:
+    selection: '&cNecesitas crear una selección primero. &7Usa &8/&3Lands selection &7para crear una. Después de eso, intentalo de nuevo.'
+    size: '&cTu selección es muy pequeña. &7El tamaño mínimo es de&3 {min} &7bloques, y el tuyo es de&3 {current}&7.'
+    success: '&7Haz redimensionado satisfactoriamente esta area&6 {area} &7de esta land&2 {land}&7. Los cambios están visualizados.'
+    conflict:
+      land: '&cTu selección entra en conflicto con land&4 {land}&c. &7Porfavor ajusta tu selección.'
+      area: '&cTu selección entra en conflicto con el area&4 {area}&c. &7Porfavor ajusta tu selección.'
+  leave:
+    land-owner: '&cNo puedes dejar esta land. &7Como el &4DUEÑO&7 de esta Land necesitas eliminarla. Usa &8/&3Lands delete&7.'
+    selection: '&7Haz dejado correctamente&b {chunks} &7chunks de tu selección. Los chunks, en los cuales eras DUEÑO, han sido borrados.'
+    land:
+      success: '&7Haz dejado satisfactoriamente esta land&2 {land}&7. Ya no tendrás más acceso a esta Land nunca más.'
+    area:
+      success: '&7Haz dejado esta área satisfactoriamente &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. No tendrás acceso a ella nunca más.'
+  unclaim:
+    success: '&7Chunk des-claimeado satisfactoriamente &8(&7Land:&2 {land} &7X: {x} Z: {z}&8)&7. Tienes de vuelta&a ${back} &7de dinero.'
+    selection: '&7Haz des-claimeado satisfactoriamente esta selección. Favor tener en cuenta que los chunks en solo donde eras el %4DUEÑO&7, serán des-claimeados.'
+  delete:
+    confirm: '&cNecesitas confirmar esta acción. &7Usa &8/&3Land delete {land} confirm&7.'
+    success: '&7Land borrada satisfactoriamente &8(&7Land:&2 {land}&8)&7. Has recibido&e ${back} &7de vuelta.'
+    broadcast: '&7Land&2 {land} &7fue borrada por&3 {player}&7.'
+  trust:
+    own-land: '&cEste jugador no tiene permitido tener su propia Land y ser parte de otra land. &7Necesita dejarla primero.'
+    invited: '&cEste(a) jugador(a) ya está invitado. &7Porfavor espera mientras el acepta &8(&7Land:&2 {land}&8)&7.'
+    max-lands: '&7Jugador(a)&3 {player} &7ha alcanzado su maximo de lands en las que puede estar. &8Permission: lands.lands.NUMBER'
+    max-members: '&cNo se puedo confiar en el jugador(a)&4 {player} &cen land&4 {land}&c. &7El dueño de esta land alcanzó su máximo de&3 {members} &7jugador@s en su land.'
+    land:
+      already: '&cEste(a) jugador(a) ya esta confiado en esta Land &8(&7Land:&2 {land}&8)&7.'
+      target: '&7Jugador(a)&3 {player} &7Te ha invitado a su land&2 {land}&7. Usa &8/&3Land accept {land} &7para aceptar su invitación.'
+      success: '&7Invitación satisfactoria del jugador(a)&3 {player} &7en toda la land &8(&7Land:&2 {land}&8)&7. Porfavor espera hasta que el la acepte.'
+    area:
+      already: '&cEste jugador ya esta confiado en esta area&6 {area} &8(&7Land:&2 {land}&8)&7.'
+      target: '&7Jugador(a)&3 {player} &7te invitó a su land &8(&7Area:&6 {area} &7Land:&2 {land}&8) &7Usa &8/&3Lands accept {land} &7para aceptar su invitación.'
+      success: '&7Successfully invited player&3 {player} &7to this area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Porfavor espera hasta que acepte la invitación.'
+  untrust:
+    land:
+      already: '&cEste jugador no esta confiado en esta land &8(&7Land:&2 {land}&8)&7.'
+      inv-revoked: '&7Invitación revocada satisfactoriamente para este(a) jugador(a). &8(&7Land:&2 {land}&8)&7.'
+      success: '&7Jugador desconfiado satisfactoriamente&3 {player} &7para esta land &8(&7Land:&2 {land}&8)&7.'
+    area:
+      already: '&cEste jugador no esta confiado en esta area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      inv-revoked: '&7Invitación revocada satisfactoriamente para este(a) jugador(a). &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      success: '&7Jugador desconfiado satisfactoriamente&3 {player} &7en esta area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+  setrole:
+    not-exist: '&cEl Rol&4 {role} &cno existe. &7Error de tipeo?'
+    land:
+      visitor: '&cNo puedes establecer el &crol&4 {role}. &7Si quieres desconfiar de este jugador, porfavor usa &8/&3Lands untrust {player}&7.'
+      not-trusted: '&cEl(la) jugador(a)&4 {player} &cno esta confiado(a) en esta land &8(&7Land:&2 {land}&8)&7. Porvafor confía en el primero.'
+      success: '&7Rol establecido satisfactoriamente&3 {role} &7para el(la) jugador(a)&3 {player} &7en toda esta Land &8(&7Land:&2 {land}&8)&7.'
+    area:
+      visitor: '&cNo puedes establecer el &crol&4 {role}. &7Si quieres desconfiar de este jugador, porfavor usa &8/&3Lands untrust {player} here&7.'
+      not-trusted: '&cEl(la) jugador(a)&4 {player} &cno esta confiado(a) en esta area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Porvafor confía en el primero.'
+      success: '&7Rol establecido satisfactoriamente&3 {role} &7para el(la) jugador(a)&3 {player} &7en esta area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+  accept:
+    not-exist: '&cNo tienes invitaciones de land&4 {land} &co expiraron. &7Porfavor revisa tu entrada.'
+    own-land: '&cNo tienes permiso de tener una land y ser miembro de otras. &7Debes dejar tu propia land primero.'
+    max-lands: '&cNo puedes unirte a más lands. &7Solo puedes tener&3 {max} &7lands. &8Permiso: lands.lands.NUMBER'
+    notification: '&7Aun tienes&3 {invites} &7invitaciones de otras Lands. Usa &8/&3Land invites &7para obtener una lista de ellas.'
+    land:
+      success: '&7Invitacion de land aceptada satisfactoriamente&3 {land}&7. ahora estas confiado en toda la Land.'
+      broadcast: '&2{land} &8| &7El jugador(a)&3 {player} &7se unió a nuestra land&7.'
+    area:
+      success: '&7Invitacion de land aceptada satisfactoriamente&2 {land} &7para el area&6 {area}&7.'
+      broadcast: '&2{land} &8| &7El jugador(a)&3 {player} &7es ahora miembro del area&6 {area} &7en nuestra land&2 {land}&7.'
+  setowner:
+    confirm: '&cPorfavor confirma que quieres transferir el propietario de esta land&2 {land} &cal jugador(a)&3 {player}&c: &8/&3Lands setowner {player} confirm'
+    success: '&7Has establecido correctamente al jugador(a)&3 {player} &7como el dueño de esta land&2 {land}&7. Pagaste&c ${cost}&7.'
+  deny:
+    not-exist: '&cNo tienes una invitacion de land&4 {land} &co ha expirado. &7Error de tipeo?'
+    success: '&7Has denegado satisfactoriamente la invitación de land&2 {land}&7.'
+  teleport:
+    world-not-exist: '&cEl mundo con el nombre&4 {world} &cno existe. &7error de tipeo?'
+    chunk-not-claimed: '&cEste chunk no está claimeado &8(&7X: {x} &7Z: {z}&8)&c. &8permiso para omitir restricción: lands.bypass.wilderness.teleport'
+    not-trusted: '&cNo puedes hacer teleport allí. &7No estas confiado en land&2 {land}&7.'
+    success: '&7Teleport satisfactorio a X:&3 {x} &7Z:&3 {z} &7Claimeado: {claimed}'
+  setspawn:
+    force-land: '&cSolo puedes establecer el spawn de land en tu Land. &7Ve a tu Land&2 {land} &7primero. &8un administrador podria cambiar esto en config.'
+    successs: '#t#&a&lSpawn establecido[newline]&7&lCosto:&b&l ${cost}'
+  spawn:
+    not-exist: '&cNo hay spawn establecido para esta land&4 {land}&c. &7Alguien necesita establecerlo primero ejecutando &8/&3Land setspawn&7.'
+    not-allowed: '&cNo tienes permitido hacer teleport al spawn de esta land. &7Ellos tienen que darte el permiso para poder hacerlo &8(&7Land:&2 {land}&8)&7.'
+    chunk: '&7Land&2 {land} &7no ha establecido el spawnLand &8(&8/&3Lands setspawn&8) &7aún. &7Teleportandote al claim inicial de esta Land.'
+    successs: '&7Te has teleportado satisfactoriamente al spawn de Land&2 {land} &7Costo:&c ${cost}'
+  wild:
+    no-loc: '&cNo se pudo encontrar una locación segura que calze con lo estabecido en config. &8Porfavor establece una distancia mas alta en el teleport aleatorio en config. Además puedes bajar la distancia minima en config.'
+    searching: '#t#&6Buscando destinación[newline]&eEsperando que el teleport comienze..'
+    success: '&7Has sido transportado aleatoriamente &8(&7X: {x} Z: {z}&8)&7. has pagado&c ${cost}&7.'
+  deposit:
+    number: '&7Necesitas especificar un monto de dinero. Usa &8/&aLand deposit &8<&aAmount&8> &7o &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
+    success: '&7Has depositado con éxito&b ${cost} &7en el banco de Land. &7El nuevo balance del banco es:&b ${bank} &8(&7Land:&2 {land}&8)'
+  withdraw:
+    number: '&7Necesitas especificar un monto de dinero. Usa &8/&aLand withdraw &8<&aMonto&8> &7o &8/&aLand withdraw &8<&aLand&8> <&aMonto&8>&7.'
+    balance: '&cNo hay dinero suficiente en el banco de land. &7Hay solo&b ${bank} &7en el banco. Esperado:&3 ${take} &8(&7Land:&2 {land}&8)'
+    success: '&7Has girado satisfactoriamente&b ${cost} &7de tu banco de Land. &7Nuevo balance de banco:&b ${bank} &8(&7Land:&2 {land}&8)'
+  balance: '&7El balance es&b ${balance} &8(&7Land:&2 {land}&8)&7.'
+  ban:
+    area:
+      trusted: '&cEl(la) jugador(a)&4 {player} &cesta confiado en esta área. &7Necesitas desconfiar de el primero &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      success: '&7El(la) Jugador(a) ha sido baneado correctamente&3 {player} &7de esta área &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Ellos no podrán entrar ni teleportarse al spawn si este esta localizado en esta área.'
+      target: '&cLand&4 {land} &cte ha baneado de su area&4 {area} &cdentro de su land. &7No podrás entrar ni teleportarte al spawn, si este esta localizado en esta area.'
+    land:
+      trusted: '&cEl(la) jugador(a)&4 {player} &cesta confiado en esta land&4 {land}&c. &7Necesitas desconfiar de el primero.'
+      success: '&7El(la) Jugador(a) ha sido baneado correctamente&3 {player} &7de land&2 {land}&7. Ellos no podrán entrar ni teleportarse al spawn.'
+      target: '&cLand&4 {land} &cte ha baneado de su land&c. &7Ellos no podrán entrar ni teleportarse al spawn.'
+  unban:
+    area:
+      success: '&7El(la) Jugador(a) ha sido desbaneado correctamente&3 {player} &7de esta area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      target: '&7Land&2 {land} &7te ha desbaneado de su area&6 {area}&7.'
+    land:
+      success: '&7El(la) Jugador(a) ha sido desbaneado correctamente&3 {player} &7de land&2 {land}&7.'
+      target: '&7Land&2 {land} &7te ha desbaneado de su land.'
+  menu:
+    no-permission-other: '&cNo tienes permitido el abrir el GUIs de otro jugador(a). &7Necesitas el permiso&e lands.command.menu.others &7para hacer esto.'
+    notExist: '&cEste(a) jugador(a) actualmente no tiene datos.'
+  chat:
+    activated: '&7Chat de land activado, envía un mensaje en chat publico para chatear con tu land.'
+    deactivated: '&7Chat de land desactivado correctamente.'
+    no-land: '&cNo se encontró land para un chat de land. &7Usa &8/&3Lands chat toggle &7para desactivar el chat de land.'
+    format:
+      minecraft: '&a{land} &8| {role} &7{player} &8»&f {message}'
+      discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
+  view:
+    toggle:
+      enabled: '&7Has activado correctamente el esquema de vista de lands. &7para desactivarlo solo ejecuta el comando de nuevo.'
+      disabled: '&7Has desactivado correctamente el modo de vista de land actual.'
+list:
+  views:
+    - '&7---------<- &5&lVista de Land &7->---------'
+    - '&7Land:&a {land}'
+    - '&7Area:&6 {area}'
+    - '  &8Chunk &7X: {x} Z: {z}'
+    - '  &8Impuesto:&c ${tax}'
+    - '  &8Jugadores(as): {players}'
+    - '&7---------<- &5&lVista de Land &7->---------'
+  swear-words:
+    - fuck
+    - shit
+  wars:
+    declaration:
+      - '&6&nDeclaración de guerra:'
+      - ' '
+      - '&8- &7Atacantes:&c {attackers}'
+      - '  &7Defensores:&a {defenders}'
+      - ' '
+      - '&8- &7La guerra comenzará en'
+      - '  &5~{time}'
+    current:
+      - '&6&nActual guerra:'
+      - ' '
+      - '&8- &4Atacantes'
+      - '      &7Lands: {attackers}'
+      - '      &7Asesinatos: {att-points}'
+      - '&8- &2Defensores'
+      - '      &7Lands: {defenders}'
+      - '      &7Asesinatos: {def-points}'
+      - ' '
+      - '&8- &7La guerra va a terminar en'
+      - '  &5~{time}'
+    started:
+      attacker:
+        - '&cLa guerra ha comenenzado!'
+        - ' '
+        - '&8- &7Atacantes &8(&bUSTEDES&8)&7: {attackers}'
+        - '&7Defensores: {defenders}'
+        - ' '
+        - '&8- &7La guerra va a terminar en'
+        - '  &5~{time}'
+      defender:
+        - '&La guerra ha comenenzado!'
+        - ' '
+        - '&8- &7Atacantes: {attackers}'
+        - '&7Defensores &8(&bUSTEDES&8)&7: {defenders}'
+        - ' '
+        - '&8- &7La guerra va a terminar en'
+        - '  &5~{time}'
+    won:
+      attacker:
+        - '&6The La guerra acabó:'
+        - '&7Los atacantes &8({team}&8) &7triunfaron.'
+        - ' '
+        - '&8- &eEstadísticas'
+        - '&7Puntos de atacantes:&c {att-points}'
+        - '&7Puntos de defensores:&a {def-points}'
+        - ' '
+        - '&8- &7La guerra tomó'
+        - '  &5~{time}'
+      defender:
+        - '&6La guerra acabó:'
+        - '&7Los defensores &8({team}&8) &7triunfaron.'
+        - ' '
+        - '&8- &eEstadísticas'
+        - '&7Puntos de defensores:&a {def-points}'
+        - '&7Puntos de atacantes:&c {att-points}'
+        - ' '
+        - '&8- &7La guerra tomó'
+        - '  &5~{time}'
+wars:
+  message:
+    noaccess:
+      pillage: '&cNo puedes saquear una Land mientras no hay defensores en línea. &7porfavor espera hasta que un minimo de&b {defenders} &7defensores ingresen.'
+      action: '&cNo tienes permitido hacer esto en guerra, en esta land. &7Permiso para omitir restricción: {bypass}'
+    started:
+      broadcast: '&7La guerra entre el atacante&c {attacker} &7y el defensor&a {defender} &7comenzó. Terminará en&5 {time}&7.'
+    ended:
+      broadcast: '&7La guerra entre el atacante&c {attacker} &7y el defensor&a {defender} &7terminó. Tiempo tomado&5 {time}&7.'
+    joined:
+      attacker:
+        enemy: '&cENEMIGO &8| &6Land&2 {land} &6Se unió a los enemigos como &2defensores&6!.'
+        ally: '&2ALIADO &8| &7Land&b {land} &7se unió a utds. como &catacantes&7. Ellos pelearán de tu lado!.'
+      defender:
+        enemy: '&cENEMIGO &8| &6Land&2 {land} &6Se unieron a los enemigos como &catacantes&6!.'
+        ally: '&2ALIADO &8| &7Land&b {land} &7Se unió a utds como &2defensores&7!. Ellos pelearán de tu lado!.'
+    tribute-payed:
+      defender: '&2ALIADO &8| &7Land&b {land} &7paga&c ${tribute} &7Como un tributo para los atacantes. La guerra ha terminado.'
+      attacker: '&2ALIADO &8| &7Land&b {land} &7paga&c ${tribute} &7Como un triburo para tu land&b {attacker}&7. La guerra ha terminado.'
+    surrender:
       tribute:
-        name: '&bTribute:&c Ⓖ{tribute}'
-        lore:
-          - '&7Försvararna av land behöver'
-          - '&7betala denna summa för'
-          - '&7kapitulera.'
-          - ' '
-          - '&8- &7Maximal tribute för '
-          - '  &7detta land är&3 Ⓖ{max}&7.'
-          - '  &7En server admin kan'
-          - '  &7ändra det i inställningarna.'
-          - ' '
-          - '&cNOTE: &7Om du sätter tribute'
-          - '&7summa till 0, försvararna kan'
-          - '&7inte kapitulera.'
-        material: GOLD_INGOT
-        slot: 14
-      send-declaration:
-        name: '&aSkicka krigsförklaring '
-        lore:
-          - '&7Tryck här för sända'
-          - '&7krigsförklaring till'
-          - '&7fiende land.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19
-        slot: 27
-      abort-declaration:
-        name: '&cTa bort krigsförklaring'
-        lore:
-          - '&7Klicka här för ta bort'
-          - '&7denna krigsförklaring.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==
-        slot: 19
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e>{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-    a:
-      max-tribute:
-        name: '&4Max värde uppnåt'
-        lore:
-          - '&7Du kan inte sätta hyllning summan'
-          - '&7högre än&3 {max}&7.'
-          - ' '
-          - '&8- &7Du kan fråga en admin'
-          - '  &7för ändra det.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  admin_wilderness:
-    title: '&8Villdmark inställningar'
-    size: 9
-    s:
-      player-settings:
-        name: '&8> &6Spelar inställningar'
-        lore:
-          - '&7Ändra vad invånare'
-          - '&7ska kunda göra'
-          - '&7i vildmarken.'
-        slot: 3
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-      land-settings:
-        name: '&8> &6Land inställningar'
-        lore:
-          - '&7Här kan du ändra generella'
-          - '&7Inställningar som mob spawning.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 7
-      close:
-        name: '&cstäng'
-        lore:
-          - '&7Stäng denna meny'
-          - ' '
-          - '&8- &7Du kan öppna den igen'
-          - '  &7med &8/&3Lands admin wilderness&7.'
-        material: CHORUS_FLOWER
-        slot: 9
-        enabled: true
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-  admin_wilderness_player-settings:
-    title: '&8Spelar inställningar'
-    size: 36
-    l:
-      object:
-        name: '&6{setting}'
-        lore:
-          - '&7Status: {enabled}'
-          - ' '
-          - '&7Tryck här för tillåta'
-          - '&7eller inte tillåta players att'
-          - '&7göra detta i vildmarken.'
-          - ' '
-          - '&8Bypass: {bypass}'
-        material: STONE
-        from: 10
-        to: 27
-    f:
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 30
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 35
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 27
-        to: 36
-  admin_wilderness_land-settings:
-    title: '&8Land inställningar'
-    size: 27
-    l:
-      object:
-        name: '&6{setting}'
-        lore:
-          - '&7Status: {enabled}'
-          - ' '
-          - '&7Klicka här för slå på'
-          - '&7denna inställning.'
-        material: STONE
-        from: 10
-        to: 18
-    f:
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 21
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 25
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
-  taxes:
-    title: '&8Skatter'
-    size: 27
-    s:
-      plus-1:
-        name: '&aÖka skatten &e1{#fbe232}Ⓖ'
-        lore:
-          - '&7Klicka för'
-          - '&7öka skatten.'
-        material: GLOWSTONE_DUST
-        slot: 11
-        data:
-          value: 1.0
-      plus-2:
-        name: '&aÖka skatten &e10{#fbe232}Ⓖ'
-        lore:
-          - '&7Klicka för'
-          - '&7öka skatten.'
-        material: GLOWSTONE_DUST
-        slot: 12
-        data:
-          value: 10.0
-      plus-3:
-        name: '&aÖka skatten &e50{#fbe232}Ⓖ'
-        lore:
-          - '&7Klicka för'
-          - '&7öka skatten.'
-        material: GLOWSTONE_DUST
-        slot: 13
-        data:
-          value: 50.0
-      minus-3:
-        name: '&cSänk skatten &e50{#fbe232}Ⓖ'
-        lore:
-          - '&7Klicka för'
-          - '&7sänka skatten.'
-        material: REDSTONE
-        slot: 15
-        data:
-          value: 50.0
-      minus-2:
-        name: '&cSänk skatten &e10{#fbe232}Ⓖ'
-        lore:
-          - '&7Klicka för'
-          - '&7sänka skatten.'
-        material: REDSTONE
-        slot: 16
-        data:
-          value: 10.0
-      minus-1:
-        name: '&cSänk skatten &e1{#fbe232}Ⓖ'
-        lore:
-          - '&7Klicka för'
-          - '&7sänka skatten.'
-        material: REDSTONE
-        slot: 17
-        data:
-          value: 1.0
-    f:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-      tax_area:
-        name: '&7Du har satt skatten till &e{tax}{#fbe232}Ⓖ&7 per invånare'
-        lore:
-          - ' '
-          - '&7Om&5 {time} &7kommer ditt land'
-          - '&7ta emot&a ${revenue} &7i skatt från'
-          - '&7inbjudna invånare i denna area.'
-          - ' '
-          - '&8- &7Invånare betalar endast'
-          - '  &7skatt för areas,'
-          - '  &7dom är inbjudna i.'
-        material: GOLD_INGOT
-        slot: 14
-      tax_nation:
-        name: '&7Tax:&c ${tax}'
-        lore:
-          - ' '
-          - '&7In&5 {time} &7your nation'
-          - '&7will receive&a ${revenue} &7as taxes'
-          - '&7from the lands in this nation.'
-          - ' '
-          - '&7This value sets the tax'
-          - '&7per chunk. So bigger lands'
-          - '&7will need to pay more.'
-        material: GOLD_INGOT
-        slot: 14
-    a:
-      failure_maxValue:
-        name: '&4Du kan inte sätta skatten högre'
-        lore:
-          - '&7Du kan bara max sätta'
-          - '&7skatten på&3 {max}&7.'
-          - ' '
-          - '&7A administrator can'
-          - '&7change this in config.'
-      failure_cooldown:
-        name: '&4Du behöver vänta innan du sätter skatten.'
-        lore:
-          - '&7Du kan inte ändra skatten, så'
-          - '&7nära in på när invånare ska'
-          - '&7betala in skatt till dig.'
-          - '&7Du behöver vännta i &5{time}.'
-          - ' '
-          - '&7A administrator can'
-          - '&7change this in config.'
-      failure_noaccess:
-        name: '&4Du har inte tillåtelse ändra skatt'
-        lore:
-          - '&7Du har inte tillåtelse ändra skatt'
-          - '&7ändra skatt på denna area.'
-          - ' '
-          - '&8- &7Du har inte tillåtelse'
-          - '  &7från land ägaren att ändra detta.'
-          - '  &8Tillåtelsen du behöver: {setting}'
-          - ' '
-          - '&8Bypass permission:'
-          - '&8lands.admin.setting_edit_taxes'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
-  land_inbox:
-    title: '&8Inbox'
-    size: 36
-    f:
-      filter:
-        name: '&8> &6Filter på typ'
-        lore:
-          - '&7Tryck här för alltinera'
-          - '&7mellan olika typer av'
-          - '&7meddelanden.'
-          - ' '
-          - '&7Visar nu:&3 {type}'
-        material: HOPPER
-        slot: 32
-      page_previous:
-        name: '&9Previous Page'
-        lore:
-          - '&7Go to previous page:&9 {previous}'
-          - ' '
-          - '&8- &7Current:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 30
-      page_next:
-        name: '&aNext Page'
-        lore:
-          - '&7Go to next page:&9 {next}'
-          - ' '
-          - '&8- &7Current:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 35
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-    l:
-      object:
-        name: '&8# &6{id}'
-        lore:
-          - '{message}'
-          - ' '
-          - '&7Tryck för ta bort.'
-        material: PAPER
-        from: 10
-        to: 27
-    a:
-      failure_owner:
-        name: '&4Failure: &cNo Access'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7do this. Only the owner'
-          - '&7of the land is permitted'
-          - '&7to remove messages.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  area_players:
-    title: '&7- &8Invånare i &8{area}'
-    size: 36
-    l:
-      object_all:
-        name: '&e{player}'
-        lore:
-          - '&7Tryck på mushjulet'
-          - '&7För se info om'
-          - '&7invånare.'
-          - ' '
-          - '&7Är inbjuden i dessa areas:'
-          - '{areas}'
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-      object:
-        name: '&e{player}'
-        lore:
-          - '&7Rank: {role}'
-          - ' '
-          - '&bVänsterklick'
-          - '&7▲ upp en rank'
-          - ' '
-          - '&9Högerklick'
-          - '&7▼ ner en rank'
-          - ' '
-          - '&7Mer info:'
-          - '&7Tryck på mushjulet'
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-      no-player:
-        name: '&cDu har inga invånare'
-        lore:
-          - '&7Det är inga invånare'
-          - '&7i landet/arean.'
-          - ' '
-          - '&7Klick på den gröna knappen'
-          - '&7nedan, för att bjuda in invånare'
-          - '&7till denna area/land.'
-        material: OAK_SIGN
-        from: 10
-        to: 27
-    a:
-      failure_priority:
-        name: '&4Misslyckades: &cDu har för låg rank'
-        lore:
-          - '&7Du har inte tillåtelse'
-          - '&7ändra inställningar för denna rank.'
-          - '&7Den ranken har samma eller högre'
-          - '&7behörigheter som du.'
-          - ' '
-          - '&8Bypass: {bypass}'
-      noaccess_setrole:
-        name: '&4Misslyckades: &cDu har inte tillåtelse'
-        lore:
-          - '&7Du har inte tillåtelse göra detta.'
-          - '&7Bara land ägaren kan ge dig'
-          - '&7tillåtelse att göra detta.'
-      failure_max-players:
-        name: '&4Du har max antal invånare'
-        lore:
-          - '&7Detta land har nått taket'
-          - '&7av&3 {max} &7invånare.'
-          - ' '
-          - '&8Permission: lands.members.NUMBER'
-    f:
-      toggle:
-        name: '&8> &6Visa endast Area'
-        lore:
-          - '&7Visa endast invånare'
-          - '&7som är med i'
-          - '&7area&9 {area}&7?'
-          - ' '
-          - '&8-&6Om du slår på:'
-          - '&7Visar invånare som är med i'
-          - '&7landet. Det gör också att du'
-          - '&7kan bjuda in eller ta bort'
-          - '&7invånare bara i landet.'
-          - ' '
-          - '&7Visningsläge påslaget: {current}'
-        material: HOPPER
-        slot: 32
-      trust:
-        name: '&8>&aSänd Inbjudning'
-        lore:
-          - '&7Sänd en inbjudning till invånare'
-          - '&7för bjuda in invånaren till ditt land eller underzone.'
-          - ' '
-          - '&7Antal invånare du har i ditt land:&3 {players} &8av&c {max}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
-        slot: 31
-      untrust:
-        name: '&8> &cTa bort invånare'
-        lore:
-          - '&7Tryck här för ta bort'
-          - '&7invånare från detta land eller underzon.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        slot: 33
-      back:
-        name: '§2 ☜ Tillbaka'
-        lore:
-          - '&7Gå tillbaka till'
-          - '{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-          - '&7Gå till förgånde sida:&9 {previous}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 29
-      page_next:
-        name: '&aNästa sida'
-        lore:
-          - '&7Gå till nästa sida:&9 {next}'
-          - ' '
-          - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 35
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  role:
-    title: '&8{role}'
-    size: 36
-    f:
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Gå tillbaka till'
-          - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-      icon:
-        name: '&8> &6Icon'
-        lore:
-          - '&7Tryck här för ändra'
-          - '&7ikon på denna rank.'
-        material: STONE
-        slot: 14
-      name:
-        name: '&8> &6Ändra namn'
-        lore:
-          - '&7Ändra namn på denna rank.'
-          - '&7Nuvarande namn: {name}'
-        material: NAME_TAG
-        slot: 15
-      apply:
-        name: '&8> &6Lägg till invånare till ny areas'
-        lore:
-          - '&7Ska Invånare med denna rank'
-          - '&7automatiskt läggas till'
-          - '&7ny area med denna rank?'
-          - ' '
-          - '&7Nuvarande inställning: {apply}'
-        material: OAK_FENCE
-        slot: 24
-    s:
-      information:
-        name: '&6Information'
-        lore:
-          - '&7Visa information'
-          - '&7Om denna Land rank och'
-          - '&7ändra Land rank på invånare.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
-        slot: 11
-      members:
-        name: '&8> &6Land rank invånare'
-        lore:
-          - '&7Vissa alla invånare som har denna rank i detta land.'
-        material: PLAYER_HEAD
-        slot: 13
-      management_info:
-        name: '&6Administrering'
-        lore:
-          - '&7Här kan du ändra'
-          - '&7vad invånare har tillåtelse till i ditt land.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
-        slot: 20
-      settings:
-        name: '&8> &6Inställningar'
-        lore:
-          - '&7Ändra vad invånare kan'
-          - '&7göra i ditt land. T.ex om dom ska få'
-          - '&7öppna dörrar,bygga eller öppna kistor.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM2YjgyMWMxYWZkZDVhNWQxNGUzYjNiZDBhMzIyNjNjOGRmNWRmNWRiNmUxZTg4YmY2NWU5N2IyN2E4NTMwIn19fQ==
-        slot: 22
-      management:
-        name: '&8> &6Administrerings inställningar'
-        lore:
-          - '&7Ändra Administrering inställningar'
-          - '&7för invånare i detta land. Detta inkluderar'
-          - '&7 t.ex bjuda in invånare eller ta ut guld'
-          - '&7i banken.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZkOTZlYWM1YTcwMTY4NDM3Y2NmZmFlZTBlN2ZjNWFjNWMwMjJmNDI5ZTNlZDkyOWNkNTE4OTRhMmRkNmQ4In19fQ==
-        slot: 23
-    a:
-      no-item:
-        name: '&cDu har inget item'
-        lore:
-          - '&7Du behöver ha ett item'
-          - '&7i din hand.'
-      failure_access:
-        name: '&4Failure: &cNot allowed'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit roles in this area.'
-          - ' '
-          - '&8Bypass: {bypass}'
-      failure_priority:
-        name: '&4Failure: &cRole Priority'
-        lore:
-          - '&7You''re not allowed to'
-          - '&7edit settings of this role.'
-          - '&7It has a higher priority'
-          - '&7than yours or you''re a'
-          - '&7member of this role.'
-          - ' '
-          - '&8Bypass: {bypass}'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 36
-      placeholder_2:
-        material: BLUE_STAINED_GLASS_PANE
-        from: 12
-        to: 12
-      placeholder_3:
-        material: BLUE_STAINED_GLASS_PANE
-        from: 21
-        to: 21
-  land_claims:
-    title: '&7{land} - Claims'
-    size: 36
-    s: { }
-    f:
-      toggle:
-        name: '&7World:&3 {world}'
-        lore:
-          - '&7Click here to toggle'
-          - '&7the world.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
-        slot: 32
-      page_previous:
-        name: '&9Previous Page'
-        lore:
-          - '&7Go to previous page:&9 {previous}'
-          - ' '
-          - '&8- &7Current:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 30
-      page_next:
-        name: '&aNext Page'
-        lore:
-          - '&7Go to next page:&9 {next}'
-          - ' '
-          - '&8- &7Current:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 34
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-    l:
-      object:
-        name: '&6World: {world} X: {x} Z: {z}'
-        lore:
-          - '&7Claimed: {time} &7ago'
-          - ' '
-          - '&7Click to teleport.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        from: 10
-        to: 27
-    a:
-      failure_cooldown:
-        name: '&4Failure: &cCooldown'
-        lore:
-          - '&7You need to wait another {time}'
-          - '&7before you can do this again.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
+        received:
+          all: '&aUna Land enemiga&b {land} &ase ha rendido!. &7El tributo ha sido dividido!. Tú y tus aliados reciben&b ${tribute} &7cada uno.'
+          initial: '&aUna Land enemiga&b {land} &ase ha rendido!. &7Land&b {receiver} &7recibe el tributo de&b ${tribute}&7.'
+      end: '&7Land&b {land} &7Se ha rendido!. La guerra se acabó. Ellos pagaron&c ${tribute} &7Al enemigo.'
+    war-shield:
+      set: '&aTu nueva protección diplomática(war-shield) estará activo por&b {time}&7.'
+    kill:
+      target:
+        attackers: '&7Nuestr@ Compañer@&c {attacker} &7fue asesinad@ por el(la) defensor(a)&a {defender}&7.'
+        defenders: '&7Nuestr@ Compañer@&a {defender} &7fue asesinad@ por el(la) atacante&c {attacker}&7.'
+      killer:
+        attackers: '&7Nuestr@ Compañer@&c {attacker} &7Mató al(la) defensor(a)&a {defender}&7.'
+        defenders: '&7Nuestr@ Compañer@&a {defender} &7Mató al(la) atacante&c {attacker}&7.'
+  command:
+    general:
+      no-war: '&cTu Land&4 {land} &cNo tiene guerras activas ni próximas actualmente. &7Todo por ahora es pacífico para esta land.'
+    declare:
+      trusted: '&cNo puedes declararle la guerra a esta Land. &7Porque eres un miembro en ella. Porfavor abandona el objetivo (land) primero.'
+      war-shield: '&cActualmente no puedes declararle la guerra a esta land. &7Porque tiene una protección diplomática(war-shield) por los siguientes&a {time}&7.'
+      already:
+        war: '&cActualmente tu Land no puede unirse a una guerra. &7La guerra actual necesita terminar primero.'
+        war-defender: '&cLa otra Land está actualmente en una guerra. &7Porfavor intenta de nuevo cuando su conflicto haya finalizado.'
+        declaration: '&cTu Land ya tiene una guerra próxima. &7Puedes revisar en menu de Lands.'
+        declaration-def: '&cLa otra land ya tiene una declaración de guerra. &7Porfavor intenta de nuevo en {time}.'
+      ally: '&cNo puedes declararle la guerra a esta land, Porque es aliado de ustedes. &7Ustedes y la Land objetivo son parte de la misma nación.'
+      success: '&7Tu land&c {attacker} &7le ha declarado satisfactoriamente la guerra a land&a {defender}&7. La guerra va a comenzar en&5 ~{time}&7.'
+      target:
+        land: '&cLand&e {attacker} &cLe declaró la guerra a tu Land&e {defender}&c. &7La guerra va a comenzar en&5 {time}&7.'
+      broadcast: '&7Land&c {attacker} &7declaró la guerra contra land&a {defender}&7. Su guerra comenzará en&5 {time}&7.'
+    info:
+      peace: '&7Todo esta pacífico para&b {land}&7. &7No hay guerras en curso ni declaraciones para esta Land.'
