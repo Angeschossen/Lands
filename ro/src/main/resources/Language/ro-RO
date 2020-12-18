@@ -1,32 +1,32 @@
 ---
 general:
-  wYes: '&aIgen'
-  wNo: '&cNem'
-  none: '&cNincs'
-  now: '&aMost'
-  enabled: '&aBekapcsolva'
-  disabled: '&cKikapcsolva'
-  unlimited: '&avégtelen'
-  previous: '&8Előző'
-  offline: '&cNem elérhető'
+  wYes: '确定'
+  wNo: '取消'
+  none: '&c无'
+  now: '&a目前'
+  enabled: '&a开启'
+  disabled: '&c关闭'
+  unlimited: '&无限'
+  previous: '&8previous'
+  offline: '&c离线'
   role:
-    owner: '&4Tulaj'
-    admin: '&cAdmin'
-    member: '&eTag'
-    visitor: '&7Vándor'
+    owner: '&4领主'
+    admin: '&c副领主'
+    member: '&e成员'
+    visitor: '&7参观者'
   war:
-    defenders: '&aVédő'
-    attackers: '&cTámadó'
+    defenders: '&a防守方'
+    attackers: '&c进攻方'
 physical-Item:
   claim-block:
-    name: '&bLevédő blokk'
+    name: '&b占领方块'
     lore:
-      - '&7Ezzel a blokkal'
-      - '&7levédhetsz egy chunkot'
-      - '&7csak rakd le valahol'
+      - '&7有了这个方块'
+      - '&7你可以在荒野中'
+      - '&7占领属于你国家的区块'
       - ' '
-      - '&7Tulaj:&a {owner}'
-    material: SPONGE
+      - '&7所有者:&a {owner}'
+    material: GRASS_BLOCK
 skull:
   role:
     owner: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMzExYTRmYjljNDkzODliNGY0NThjMjllOTY4MzI0YzU4MjNiOGE5OWVhZGUxNzQ3ODY2Yzk1YjA2NGEifX19
@@ -35,37 +35,34 @@ skull:
     visitor: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
 gui:
   main:
-    title: '&8Főmenü'
+    title: '&8主菜单'
     size: 27
     s:
       lands:
-        name: '&bTelkek'
+        name: '&8> &2国家'
         lore:
-          - '&7Láthatod minden'
-          - '&7telked, amik vagy sajátok vagy tagjuk vagy.'
+          - '&7查看你所处的国家.'
+          - ' '
+          - '&8- &7这包括你所拥有的国家'
+          - '  &7或者你加入的国家'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 11
       all-lands:
-        name: '&8> &bMinden telek'
+        name: '&8> &b所有国家'
         lore:
-          - '&7Minden telek'
-          - '&7a szerveren.'
+          - '&7查看服务器中所有的国家'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
         slot: 13
       invites:
-        name: '&8> &6Meghívók'
+        name: '&8> &6邀请'
         lore:
-          - '&7Itt láthatod az'
-          - '&7összes meghívód.'
+          - '&7查看你收到的邀请'
         material: WRITABLE_BOOK
         slot: 15
       close:
-        name: '&cBezár'
+        name: '&c关闭'
         lore:
-          - '&7Bezárja ezt a menüt.'
-          - ' '
-          - '&8- &7Újra megnyitható'
-          - '  &7a &8/&aLands menu&7 paranccsal.'
+          - '&7'
         material: RED_STAINED_GLASS_PANE
         slot: 9
         enabled: true
@@ -76,48 +73,48 @@ gui:
         to: 27
     f:
       limitation:
-        name: '&8> &6Korlátozásaid'
+        name: '&8> &6当前限制'
         lore:
           - ' '
-          - '&8- &7&3 {ownlands} &7 saját telek.'
-          - '  &7lands.ownlands.NUMBER'
-          - '&8- &7&3 {chunks} &7chunk telkenként.'
-          - '  &7lands.chunks.NUMBER'
-          - '&8- &7Támogatói chunkok, amit tagság esetén odaadhatsz,'
-          - '  &7másik teleknek: &3{support-chunks}&7.'
-          - '  &7lands.chunks.support.NUMBER'
+          - '&7+ 创建&3 {ownlands} &7国家.'
+          - '  &8lands.ownlands.NUMBER'
+          - '&7+ 占领&3 {chunks} &7区块.'
+          - '  &8lands.chunks.NUMBER'
+          - '&7+ 盟国,信任你的国家'
+          - '  &7占有 &3{support-chunks} &7区块.'
+          - '  &8lands.chunks.support.NUMBER'
           - ' '
-          - '&8- &7&3 {lands} &7telekhez csatlakozhatsz.'
-          - '  &7lands.lands.NUMBER'
-          - '&8- &7telkenként&3 {members} &7tag.'
-          - '  &7lands.members.NUMBER'
+          - '&7+ 加入&3 {lands} &7国家.'
+          - '  &8lands.lands.NUMBER'
+          - '&7+ 拥有&3 {members} &7国家成员.'
+          - '  &8lands.members.NUMBER'
         material: PLAYER_HEAD
         slot: 17
   player_lands:
-    title: '&8Telkeid'
+    title: '&8你的国家'
     size: 27
     s: { }
     f:
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7Current:&3 {current}'
         material: ARROW
         slot: 21
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7Current:&3 {current}'
         material: ARROW
         slot: 25
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
@@ -125,38 +122,32 @@ gui:
       object:
         name: '&2{land}'
         lore:
-          - '&7Hozzá vagy adva a telekhez.'
+          - '&7你是这个国家的一员.'
           - ' '
-          - '&7Világ:&e {world}'
-          - '&7Méret:&e {chunks}'
+          - '&7区块:&3 {chunks} &7/&c {max-chunks}'
           - ' '
-          - '&8- &7Job kattintással'
-          - '  &7több infót'
-          - '  &7tudhatsz meg róla'
+          - '&9右键查看'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFiNDNiOGMzZDM0ZjEyNWU1YTNmOGI5MmNkNDNkZmQxNGM2MjQwMmMzMzI5ODQ2MWQ0ZDRkN2NlMmQzYWVhIn19fQ==
         from: 10
         to: 18
       own-land:
         name: '&2{land}'
         lore:
-          - '&7Saját telked.'
+          - '&7你拥有这个国家.'
           - ' '
-          - '&7Világ:&e {world}'
-          - '&7Méret:&e {chunks}'
+          - '&7区域:&3 {chunks} &7/&c {max-chunks}'
           - ' '
-          - '&8- &7Job kattintással'
-          - '  &7több infót'
-          - '  &7tudhatsz meg róla'
+          - '&9右键查看'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         from: 10
         to: 18
       no-land:
-        name: '&cNincs telek'
+        name: '&c没有国家'
         lore:
-          - '&8- &7Saját telek létrehozása:'
-          - '  &8/&aLands create &8<&aNév&8> &7paranccsal'
+          - '&8- &7To create a land execute:'
+          - '  &8/&3Lands create &8<&3name&8>'
           - ' '
-          - '&8- &7Vagy mások is hozzáadhatnak a sajátjukhoz:'
+          - '&8- &7Let other lands trust you:'
           - '  &8/&3Lands trust {player}'
         material: OAK_SIGN
         from: 10
@@ -175,71 +166,65 @@ gui:
     size: 45
     s:
       information:
-        name: '&6Információ'
+        name: '&6国家信息'
         lore:
-          - '&7Részletes infókat'
-          - '&7találsz itt a telkedről'
+          - '&7在这里你可以查看'
+          - '&7一些关于国家的详细信息'
+          - '&7记录国家发生的所有事情'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
       trusted-players:
-        name: '&8> &6Tagok'
+        name: '&8> &6国家成员'
         lore:
-          - '&7Hozzáadott tagok listája'
-          - '&7Azok is szerepelnek itt, akik'
-          - '&7csak egy részéhez vannak hozzáadva.'
+          - '&7查看收信任的成员'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 14
       invites:
-        name: '&8> &6Meghívók'
+        name: '&8> &6邀请'
         lore:
-          - '&7Visszavonhatsz kiküldött'
-          - '&7meghívókat'
-          - '&7vagy egyébb infókat'
-          - '&7tudhatsz meg róla.'
+          - '&7撤消已发送的邀请'
+          - '&7或查看一些关于他们的信息'
           - ' '
-          - '&8- &7Ezek a meghívók'
-          - '  &7az egész telekre'
-          - '  &7szólnak.'
+          - '&8- &7此邀请可以使玩家'
+          - '  &7在整个国家中都被信任'
         material: WRITABLE_BOOK
         slot: 15
       management:
-        name: '&6Kezelés'
+        name: '&8> &6管理'
         lore:
-          - '&7Telek kezelési beállítások.'
-          - '&7Hozzáadhatsz játékosokat, jogköröket állíthatsz be,'
-          - '&7adókat vethetsz ki vagy egyéb beállításokat szerkeszthetsz.'
+          - '&7管理你的国家.'
+          - '&7你可以信任玩家, 设置爵位,'
+          - '&7编辑国家设置以及税收.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 29
       land-settings:
-        name: '&8> &6Telek Beállítások'
+        name: '&8> &6国家设置'
         lore:
-          - '&7Álltalános beállítások'
-          - '&7mint pl mob spawnolás.'
+          - '&7Here you can edit general'
+          - '&7settings like mob spawning.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 31
       roles:
-        name: '&8> &6Globális jogkörök'
+        name: '&8> &6国家爵位'
         lore:
-          - '&7Globális jogkörök listája.'
+          - '&7查看国家爵位.'
           - ' '
-          - '&8- &7Globális jogkörök automatikusan'
-          - '  &7adódnak a telekhez.'
+          - '&8- &7国家爵位将会应用至各个区域'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 32
       taxes:
-        name: '&8> &6Globális adók'
+        name: '&8> &6国家税收'
         lore:
-          - '&7Globális adók listája.'
+          - '&7查看国家税收.'
           - ' '
-          - '&8- &7Globális adók olyan helyen érvényesek'
-          - '  &7ahol nincs megadott terület '
+          - '&8- &7应用至每个领域以及区块'
         material: GOLD_INGOT
         slot: 33
       various:
-        name: '&8> &6Egyéb'
+        name: '&8> &6更多设置'
         lore:
-          - '&7Telek, vagy üdvözlés'
-          - '&7átnevezése.'
+          - '&7国家重命名'
+          - '&7设置标题.等'
         material: BEACON
         slot: 34
     p:
@@ -257,68 +242,67 @@ gui:
         to: 30
     f:
       areas:
-        name: '&8> &6Területek'
+        name: '&8> &6区域'
         lore:
-          - '&7Telkeden lévő területek listázása.'
-          - '&7Vagy újakat is létrehozhatsz'
-          - '&7ebből a menüből.'
+          - '&7查看国家中的所有区域.'
+          - '&7你也可以在菜单中创建新的区域'
+          - ' '
+          - '&7大小:&3 {chunks} &7/&c {max-chunks}'
         material: OAK_FENCE
         slot: 13
       inbox:
-        name: '&8> &6Üzenetek &8(&e{amount}&8)'
+        name: '&8> &6收件箱 &8(&e{amount}&8)'
         lore:
           - ' '
           - '{inbox}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
         slot: 16
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 37
   land_areas:
-    title: '&8Területek'
+    title: '&8区域'
     size: 36
     s: { }
     f:
       create:
-        name: '&aLétrehozás'
+        name: '&a创建区域'
         lore:
-          - '&7Új terület létrehozása'
-          - '&7a telken belül.'
+          - '&7创建一个新的区域'
           - ' '
-          - '&7Elérhető:&3 {areas} &8/&c {max}'
+          - '&7剩余:&3 {areas} &8/&c {max}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
         slot: 32
       delete:
-        name: '&cTörlés'
+        name: '&c删除区域'
         lore:
-          - '&7Terület törlése'
-          - '&7a telekről.'
+          - '&7删除一个区域'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         slot: 33
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 35
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
@@ -326,52 +310,48 @@ gui:
       object:
         name: '&6{area}'
         lore:
-          - '&7Terület menü'
-          - ' '
+          - '&7打开区域菜单'
+          - '&7适用于这个区域.'
         material: OAK_FENCE
         from: 10
         to: 27
       area-setup:
-        name: '&cBeállítás:&6 {area}'
+        name: '&c设置:&6 {area}'
         lore:
-          - '&7Nincs a területhez rendelt telked még'
+          - '&7您尚未在该地区分配任何区块'
           - ' '
-          - '&7Használd a &8/&3Lands selection'
-          - '&7parancsot a kijelöléshez, majd a'
+          - '&7使用 &8/&3Lands selection'
+          - '&7来分配区块'
           - '&8/&3Lands selection assign {area}'
-          - '&7parancsot hogy a telkedhez rendeld.'
+          - '&7分配土地到这个地区.'
         material: 'ACACIA_FENCE'
         from: 10
         to: 27
       no-area:
-        name: '&cNincs terület'
+        name: '&c没有创建区域'
         lore:
-          - '&7A teleknek nincsenek'
-          - '&7belső területei.'
+          - '&7该国家还没有区域'
           - ' '
-          - '&8- &7Terület létrehozásához'
-          - '  &7kattints a hozzáadásra'
-          - '  &7lentebb.'
+          - '&8- &7创建一个新的区域'
+          - '  &7点击下面的区域添加物品.'
         material: ACACIA_FENCE
         from: 10
         to: 27
     a:
-      failure_untrusted:
-        name: '&4Megtagadva: &cNincs hozzáadva'
+      Failure_untrusted:
+        name: '&4被拒绝: &c未被信任'
         lore:
-          - '&cNem nyithatod meg ennek'
-          - '&ca területnek a menüjét.'
+          - '&c你不能打开该区域的区域菜单'
           - ' '
-          - '&8- &7A terület tagja kell'
-          - '  &7hogy legyél.'
-          - '&8- &7Kérd a telek tulaj segítségét'
-      failure_max-areas:
-        name: '&4Hiba: &cMaximum területek'
+          - '&8- &7你需要被该区域信任'
+          - '&8- &7联系国家所有者帮助'
+      Failure_max-areas:
+        name: '&4失败: &c区域已满'
         lore:
-          - '&7A telek elérte a'
-          - '&7maximum &3 {max} &7területet.'
+          - '&7达到最大区域数量限制'
+          - '&7&3 {max} &7区域.'
           - ' '
-          - '&8Permission: lands.areas.NUMBER'
+          - '&8权限: lands.areas.NUMBER'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -382,73 +362,69 @@ gui:
         from: 29
         to: 36
   area:
-    title: '&8Terület {area}'
+    title: '&8区域 {area}'
     size: 45
     f:
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 37
     s:
       information:
-        name: '&6Információk'
+        name: '&6区域信息'
         lore:
-          - '&7Területhez tartózó'
-          - '&7infókat láthatod itt'
+          - '&7查看详细信息'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
       trusted-players:
-        name: '&8> &6Hozzáadott játékosok'
+        name: '&8> &6受信任的玩家'
         lore:
-          - '&7A területhez adott játékosok listája'
+          - '&7获取成员名单'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-        slot: 14
+        slot: 13
       invites:
-        name: '&bMeghívók'
+        name: '&8> &6邀请'
         lore:
-          - '&7Meghívók visszavonása'
-          - '&7vagy információk'
-          - '&7róluk.'
+          - '&7撤销已发送的邀请'
+          - '&7或查看他们的信息'
           - ' '
-          - '&8- &7Ezek a meghívók'
-          - '  &7csak ehhez a területhez'
-          - '  &7adhatnak játékosokat.'
+          - '&8- &7该邀请'
+          - '  &7可以使玩家被'
+          - '  &7该区域信任.'
         material: WRITABLE_BOOK
-        slot: 15
+        slot: 14
       management:
-        name: '&6Kezelés'
+        name: '&8> &6管理'
         lore:
-          - '&7Itt állíthatod a'
-          - '&7hozzáadott játékosokat, beállított jogköröket'
-          - '&7egyébb telekbeállításokat és az adókat.'
+          - '&7管理区域,你可以 信任玩家'
+          - '&7设置爵位, 编辑国家设置'
+          - '&7设置该区域的税收.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 29
       land-settings:
-        name: '&8> &6Telek beállítások'
+        name: '&8> &6国家设置'
         lore:
-          - '&7Álltalános beállítások'
-          - '&7mint pl.: mob spawnolás.'
+          - '&7在这里您可以设置常规选项'
+          - '&7例如: 怪物是否生成'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 31
       roles:
-        name: '&8> &6Jobkörök'
+        name: '&8> &6爵位'
         lore:
-          - '&7terület jogkör beállításai.'
+          - '&7查看该区域的爵位.'
           - ' '
-          - '&8- &7A globális jogkörök'
-          - '  &7automatikusan bekerülnek.'
+          - '&8- &7国家爵位自动添加至该区域'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 32
       taxes:
-        name: '&8> &6Adók'
+        name: '&8> &6税收'
         lore:
-          - '&7Területre kivetett adók.'
+          - '&7查看该区域的税收.'
           - ' '
-          - '&8- &7 az adók területenként'
-          - '  &7vannak számolva.'
+          - '&8- &7税额按地区计算'
         material: GOLD_INGOT
         slot: 33
     p:
@@ -464,133 +440,39 @@ gui:
         material: BLUE_STAINED_GLASS_PANE
         from: 30
         to: 30
-  area_players:
-    title: '&8{area} &7- &8Hozzáadott játékosok'
-    size: 36
-    l:
-      object:
-        name: '&e{player}'
-        lore:
-          - '&7Jogkör: {role}'
-          - ' '
-          - '&bBAL KATT'
-          - '&7▲ Előléptet'
-          - ' '
-          - '&9JOBB KATT'
-          - '&7▼ Lefokoz'
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-      no-player:
-        name: '&cNincsenek hozzáadott játékosok'
-        lore:
-          - '&7Nincs senki még jozzáadva'
-          - ' '
-          - '&8- &7Kattints a hozzáadéás gombra'
-        material: OAK_SIGN
-        from: 10
-        to: 27
-    a:
-      failure_role-weight:
-        name: '&4Megtagadva: &cJogkör szintje'
-        lore:
-          - '&7Nem szerkesztheted a &3{role}'
-          - '&7jogkört. &7Magasabb'
-          - '&7prioritása van.'
-      noaccess_setrole:
-        name: '&4Megtagadva: &cNincs jogod'
-        lore:
-          - '&7Nincs engedélyed erre'
-          - '&7A telek tulaja adhat rá'
-      failure_max-players:
-        name: '&4Megtagadva: &cMaximum hozzáadás'
-        lore:
-          - '&7A telek elérte a maximum'
-          - '&3 {max} &7tagot.'
-          - ' '
-          - '&8Jog: lands.members.NUMBER'
-    f:
-      trust:
-        name: '&8> &aJátékos hozzáadás'
-        lore:
-          - '&7kattings egy játékos'
-          - '&7hozáadásához.'
-          - ' '
-          - '&7Elérhető:&3 {players} &8/&c {max}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
-        slot: 32
-      untrust:
-        name: '&8> &cJátékos kirúgása'
-        lore:
-          - '&7kattings egy játékos'
-          - '&7kirúgásához.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        slot: 33
-      back:
-        name: '&cVissza'
-        lore:
-          - '&7Vissza a'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-      page_previous:
-        name: '&9Előző oldal'
-        lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
-          - ' '
-          - '&8- &7Mostani:&b {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&aKövetkező oldal'
-        lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
-          - ' '
-          - '&8- &7Mostani:&b {current}'
-        material: ARROW
-        slot: 35
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
   area_invites:
-    title: '&8Meghívók'
+    title: '&8区域邀请'
     size: 36
     f:
       send:
-        name: '&aMeghívó küldése'
+        name: '&a发送邀请'
         lore:
-          - '&7Küld egy meghívót'
-          - '&7a területhez.'
+          - '&7发送邀请给玩家'
+          - '&7邀请进入该区域.'
           - ' '
-          - '&7Available:&3 {players} &8/&c {max}'
+          - '&7容量:&3 {players} &8/&c {max}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
         slot: 32
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 34
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
@@ -598,19 +480,17 @@ gui:
       object:
         name: '&6{player}'
         lore:
-          - '&7További információk'
-          - '&7vagy szerkesztés.'
+          - '&7编辑此邀请或查看玩家信息'
         material: BOOK
         from: 10
         to: 27
       no-invite:
-        name: '&cNincsenek meghívók'
+        name: '&c没有发送邀请'
         lore:
-          - '&7Nincs egyetlen'
-          - '&7küldött meghívó sem.'
+          - '&7国家尚未发送任何邀请'
           - ' '
-          - '&8- &7Hogy meghívj valakit:'
-          - '  &8/&aLands trust &8<&aPlayer&8>'
+          - '&8- &7To invite someone click'
+          - '  &7要邀请某人 - ''点击下面的邀请按钮.'
         material: OAK_SIGN
         from: 10
         to: 27
@@ -624,107 +504,100 @@ gui:
         from: 27
         to: 36
   area_invite:
-    title: '&8Meghívó &7->&a {player}'
+    title: '&8邀请 {player}'
     size: 27
     s:
       revoke:
-        name: '&bMeghívó visszavonása'
+        name: '&8> &c撤销邀请'
         lore:
-          - '&7Itt visszavonhatod'
-          - '&7ezt a meghívót.'
+          - '&7点击撤销邀请'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         slot: 12
     f:
       info:
-        name: '&8> &6Információ'
+        name: '&8> &6邀请信息'
         lore:
-          - '&7Terület:&e {area}'
-          - '&7Telek: {land}'
+          - '&7区域:&e {area}'
+          - '&7国家: {land}'
           - ' '
-          - '&7Idő:&5 {time}'
-          - '&7Küldő: {sender}'
+          - '&7时间:&5 {time}'
+          - '&7邀请人: {sender}'
         material: OAK_SIGN
         slot: 16
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     a:
-      failure_noAccess:
-        name: '&4Megtagadva: &bMeghívó visszavonása'
+      Failure_noAccess:
+        name: '&4拒绝: &b撤销申请'
         lore:
-          - '&cNem vonhatsz vissza'
-          - '&citt meghívókat'
+          - '&c你不能撤销该区域的邀请'
           - ' '
-          - '&8- &7Szükséged van a megfelelő jogokra'
-          - '  &7hogy játékost távolíthass el'
-          - '&8- &7Lépj kapcsolatba'
-          - '  &7a telek tulajával.'
+          - '&8- &7需要权限'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
   area_roles:
-    title: '&8{area} &7- &8Roles'
+    title: '&8{area} &7- &8爵位'
     size: 27
     l:
       object:
         name: '&7{role}'
         lore:
-          - '&7Kattints ide a szerkesztéshez'
+          - '&7点击编辑该爵位.'
         material: PLAYER_HEAD
         from: 10
         to: 18
     f:
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 21
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 26
       create:
-        name: '&8> &aJogkör létrehozása'
+        name: '&8> &a创建爵位'
         lore:
-          - '&7Kattints a jogkör létrehozásához'
+          - '&7点击来创建一个新的爵位'
+          - '&7将会指导您完成新的爵位设置.'
           - ' '
-          - '&7Elérhető:&3 {roles} &8/&c {max}'
+          - '&7剩余:&3 {roles} &8/&c {max}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
         slot: 23
       delete:
-        name: '&cJogkör törlése'
+        name: '&c删除一个爵位'
         lore:
-          - '&7Kattints a jogkör törléséhez'
+          - '&7'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         slot: 24
     a:
-      failure_max-roles:
-        name: '&4Megtagadva: &cMaximum jogkörök'
+      Failure_max-roles:
+        name: '&4失败: &c爵位数量已满'
         lore:
-          - '&7A telek elérte a maximum'
-          - '&3 {max} &7jogkört.'
-          - ' '
-          - '&8Jog: lands.roles.NUMBER'
+          - ''
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -735,39 +608,39 @@ gui:
         from: 19
         to: 27
   role_players:
-    title: '&8{role} &7- &8Játékosok'
+    title: '&8{role} &7- &8成员'
     size: 36
     l:
       object:
         name: '&e{player}'
         lore:
-          - '&7Ez a játékos &a{support}'
-          - '&7chunkkal egészíti ki a levédésed.'
+          - '&7该玩家支持你的玩家'
+          - '&7持有 &a{support} &7以及占领区块.'
         material: PLAYER_HEAD
         from: 10
         to: 27
     f:
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 35
     p:
@@ -780,371 +653,289 @@ gui:
         from: 29
         to: 36
   role_settings:
-    title: '&8{role} &7- &8Beállítások'
+    title: '&8{role} &7- &8Settings'
     size: 36
     s: { }
     f:
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7Current:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 34
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
     l:
       block_break:
-        name: '&bBlokk törés'
+        name: '&6方块破坏'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy blokkokat törjön?'
         material: IRON_PICKAXE
         from: 10
         to: 27
       block_place:
-        name: '&bBlokk lerakás'
+        name: '&6放置方块'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy blokkokat rakjon le?'
         material: OAK_PLANKS
         from: 10
         to: 27
       block_ignite:
-        name: '&bBlokkok felgyújtása'
+        name: '&6点燃方块'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7felgyújtson blokkokat?'
         material: FLINT_AND_STEEL
         from: 10
         to: 27
       interact_general:
-        name: '&bÁltalános használat'
+        name: '&6交互'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy használjon dolgokat?'
-          - '&7(pl.: barkácsasztal, üllő, páncél állvány)'
         material: STRING
         from: 10
         to: 27
       interact_door:
-        name: '&bAjtók nyitása'
+        name: '&6开门'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy ajtókat nyisson?'
         material: IRON_DOOR
         from: 10
         to: 27
       interact_container:
-        name: '&bTárolók megnyitása'
+        name: '&6打开容器(箱子等)'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7tárolókat nyisson meg?'
-          - '&7(pl.: láda, sütő stb.)'
         material: CHEST
         from: 10
         to: 27
       interact_mechanism:
-        name: '&bRedstone használata'
+        name: '&6使用红石'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy redstone kapcsolókat, gombokat stb.?'
-          - '&7használjon?'
         material: REDSTONE
         from: 10
         to: 27
       interact_villager:
-        name: '&6Kereskedés'
+        name: '&6与村民交易'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy falusiakkal kereskedjen?'
         material: EMERALD
         from: 10
         to: 27
       attack_player:
-        name: '&bJátékosok megtámadása'
+        name: '&6攻击玩家'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy játékosokat támadjon meg?'
           - ' '
-          - '&8- &7Csak azokat támadhatják'
-          - '  &7meg, akik őket is'
-          - '  &7megtámadhatják.'
+          - '&8- 注意,如果一名玩家在国家外袭击了'
+          - '  &7另一名玩家,那么是允许玩家在国家内进行战斗'
+          - ' '
+          - '&8- &7只有在互相都可以攻击的情况下'
+          - '&7 才允许战斗'
         material: IRON_SWORD
         from: 10
         to: 27
       attack_animal:
-        name: '&bÁllatok megtámadása'
+        name: '&6攻击动物'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy állatokat támadjon meg?'
         material: BOW
         from: 10
         to: 27
       fly:
-        name: '&6Repülés'
+        name: '&6飞行'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7a &8/&3Fly &7használatát?'
         material: FEATHER
         from: 10
         to: 27
       land_enter:
-        name: '&6Belépés'
+        name: '&6进入该区域'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7Hogy belépjen?'
         material: OAK_FENCE_GATE
         from: 10
         to: 27
-      chunk_assign:
-        name: '&6Chunkok területhez adása'
+      area_assign:
+        name: '&6分配区域'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy chunkok területeit állítsa?'
         material: OAK_FENCE
         from: 10
         to: 27
       player_trust:
-        name: '&bJátékos hozzáadása'
+        name: '&6添加成员 | 信任玩家'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy játékosokat adjon hozzá?'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
         from: 10
         to: 27
       player_setRole:
-        name: '&bJogkörök beállítása'
+        name: '&6设置爵位'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy játékosok jogkörét állítsa?'
           - ' '
-          - '&8- &7Nem tudják majd a náluk'
-          - '  &7magasabb jogkör játékosait'
-          - '  &7módosítani.'
-          - '&8- &7Emellett nem tudják majd'
-          - '  &7magasabb jogkörbe léptetni'
-          - '  &7magukat.'
+          - '&8- &7只能设置比他们等级低的'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjNmY3NzVlOGFjZmRmNmUxZGVhYzgwYThkYTFmMzdiM2I0YmE1Y2FhNGEzNTI0OWY5ZWIxNDVjY2Y0M2RhNSJ9fX0=
         from: 10
         to: 27
       player_untrust:
-        name: '&bJátékosok eltávolítása'
+        name: '&6移除成员'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy játékosokat távolítson el?'
           - ' '
-          - '&8- &7Nem tudják majd a náluk'
-          - '  &7magasabb jogkör játékosait'
-          - '  &7eltávolítani.'
+          - '&8- &7只允许等级比他们低的'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         from: 10
         to: 27
       setting_edit_land:
-        name: '&6Telek beállítások módosítása'
+        name: '&6编辑国家设置'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy telek beállításokat módosítson?'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         from: 10
         to: 27
       setting_edit_role:
-        name: '&6Jogkör beállítások módosítása'
+        name: '&6编辑爵位设定'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy jogkör beállításokat'
-          - '&7 módosítson? '
+          - '&7慎重开启'
           - ' '
-          - '&8- &7Nem tudják majd'
-          - '  &7saját jobkörüket'
-          - '  &7módosítani.'
+          - '&8- &7他们不能编辑他们所在的爵位.'
           - ' '
-          - '&8- &7CSAK olyanoknak add'
-          - '  &7akikben megbízol'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         from: 10
         to: 27
       setting_edit_advanced:
-        name: '&6Haladó jogkör beállítások'
+        name: '&6编辑高级角色设置'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7a haladó beállítások módosítását?'
-          - ' '
-          - '&8- &7CSAK olyanoknak add'
-          - '  &7akikben megbízol'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMzExYTRmYjljNDkzODliNGY0NThjMjllOTY4MzI0YzU4MjNiOGE5OWVhZGUxNzQ3ODY2Yzk1YjA2NGEifX19
         from: 10
         to: 27
       setting_edit_taxes:
-        name: '&6Adók módosítása'
+        name: '&6编辑税收'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy adókat szerkesszen?'
-          - ' '
-          - '&8- &7CSAK olyanoknak add'
-          - '  &7akikben megbízol'
         material: GOLD_INGOT
         from: 10
         to: 27
       land_claim:
-        name: '&bChunk levédés'
+        name: '&6领取区块'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7chunkokat adjon a telkedhez?'
         material: IRON_SHOVEL
         from: 10
         to: 27
       land_claim_border:
-        name: '&bLevédés a telekhatárnál'
+        name: '&6在国家边界领取区块'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy területet'
-          - '&7védjen le a tied'
-          - '&7mellett?'
         material: IRON_BARS
         from: 10
         to: 27
       spawn_set:
-        name: '&bTelek teleport pont beállítása'
+        name: '&6设置国家出生点'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy szerkessze a telek teleport pontját?'
         material: ENDER_EYE
         from: 10
         to: 27
       spawn_teleport:
-        name: '&bTeleportálás a telkre'
+        name: '&6传送至出生点'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy teleportáljon a telkedre?'
         material: ENDER_PEARL
         from: 10
         to: 27
       balance_withdraw:
-        name: '&6Telekbankból pénz kivétel'
+        name: '&6从国库中取钱'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7hogy pénzt vegyen'
-          - '&7ki a telekbankból?'
-          - ' '
-          - '&8- &7Parancs:'
+          - '&8- &7命令:'
           - '  &8/&3Lands withdraw'
         material: GOLD_NUGGET
         from: 10
         to: 27
     a:
-      failure_permission:
-        name: '&4Megtagadva: &cNincs jogod'
+      Failure_permission:
+        name: '&4失败: &c没有权限'
         lore:
-          - '&7Nincs engedélyed'
-          - '&7a beállítás szerkesztéséhez.'
-          - ' '
-          - '&8Szükséges:'
+          - '&8需要权限'
           - '&8{permission}'
-      failure_noaccess:
-        name: '&4Megtagadva: &cNincs hozzáférés'
+      Failure_noaccess:
+        name: '&4失败: &c无法访问'
         lore:
-          - '&7Nincs engedélyed'
-          - '&7a beállítás szerkesztéséhez.'
-          - ' '
-          - '&7A telek tulaja adhat'
-          - '&7az alábbi beállítással:'
-          - '&8{setting}'
-      failure_role-weight:
-        name: '&4Megtagadva: &cJogkör szint'
+          - '&8需要: {setting}'
+      Failure_role-weight:
+        name: '&4失败: &c爵位优先'
         lore:
-          - '&7Nincs engedélyed'
-          - '&7magasabb prioritású.'
-          - '&7jogkörök szerkesztésére'
+          - '&8权限: lands.admin.setting_edit_role'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1155,59 +946,48 @@ gui:
         from: 29
         to: 36
   settings_role_advanced:
-    title: '&8Advanced Settings &7-> {role}'
+    title: '&8高级设置 &7-> {role}'
     size: 27
     s: { }
     f:
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 21
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 25
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     l:
       setting_edit_various:
-        name: '&bEgyéb telek beállítások'
+        name: '&b编辑各种国家设置'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a jogkörnek'
-          - '&7az egyéb telek beállítások'
-          - '&7 módosítását? '
-          - ' '
-          - '&8- &7Mint pl.:'
-          - '  &7Teleknév, üdvözlés'
         material: NAME_TAG
         from: 10
         to: 18
     a:
-      failure_permission:
-        name: '&4Hiba: &cNincs jog'
+      Failure_permission:
+        name: '&4失败: &c无权限'
         lore:
-          - '&7Nincs jogod'
-          - '&7szerkeszteni a beállítást.'
           - ' '
-          - '&8- &7Szükséged van a'
-          - '  &e{permission}&7.'
-          - '  &7jogra.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1218,135 +998,94 @@ gui:
         from: 19
         to: 27
   area_settings:
-    title: '&8{area} &7- &8Telek beállítások'
+    title: '&8{area} &7- &8国家设定'
     size: 27
     s: { }
     f:
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 21
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 25
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     l:
       entity_griefing:
-        name: '&bSzörny rombolás'
+        name: '&6是否能破坏建筑物'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed szörnyeknek a'
-          - '&7blokkok módosítását? (pl.: Creeper, Enderman)'
         material: CREEPER_HEAD
         from: 10
         to: 18
       tnt_griefing:
-        name: '&bTNT rombolás'
+        name: '&6TNT防爆'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a TNT'
-          - '&7blokk rombolását?'
-          - ' '
-          - '&8- &cFIGYELEM: &7TNT ágyúból'
-          - '  &7kilőtt TNTre is vonatkozik'
         material: TNT
         from: 10
         to: 18
       piston_griefing:
-        name: '&bDugattyúk a vadonból'
+        name: '&6活塞是否能从荒野推动至国家'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
           - ' '
-          - '&7Engedélyezed a dugattyúkat'
-          - '&7a vadonból?'
-          - ' '
-          - '&8- &7Ha ezt engedélyezed'
-          - '  &7rombolhatnak dugattyúkkal'
-          - '  &7a telkeden a határokon'
-          - '  &7kívülről.'
         material: PISTON
         from: 10
         to: 18
       waterflow_allow:
-        name: '&bVíz befolyása a vadonból'
+        name: '&6荒野的水能否流入国家'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
-          - ' '
-          - '&7Engedélyezed víz befolyását'
-          - '&7a vadonról a telkedre?'
-          - ' '
-          - '&8- &7Ha ezt engedélyezed'
-          - '  &7rombolhatnak vízzel'
-          - '  &7a telkeden a határokon'
-          - '  &7kívülről.'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
         material: WATER_BUCKET
         from: 10
         to: 18
       monster_spawn:
-        name: '&bSzörnyek spawnolása'
+        name: '&6怪物生成'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
-          - ' '
-          - '&7Engedélyezed a szörnyek'
-          - '&7spawnolását?'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
         material: SPAWNER
         from: 10
         to: 18
       animal_spawn:
-        name: '&bÁllatok spawnolása'
+        name: '&6动物生成'
         lore:
-          - '&7Állapot: {enabled}'
-          - '&7Feloldva: {unlocked}'
-          - ' '
-          - '&7Engedélyezed az állatok'
-          - '&7spawnolását?'
-          - ' '
-          - '&8- &cFIGYELEM: &7A spawmer'
-          - '  &7kockát nem befolyásolja.'
+          - '&7状态: {enabled}'
+          - '&7已解锁: {Unlocked}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19
         from: 10
         to: 18
     a:
-      failure_permission:
-        name: '&4Hiba: &cNincs jog'
+      Failure_permission:
+        name: '&4失败: &c权限不足'
         lore:
-          - '&7Nem szerkesztheted'
-          - '&7ezeket a beállításokat.'
-          - ' '
-          - '&8- &7Szükséged van a'
-          - '  &e{permission}&7.'
-          - '  &7jogra'
-      failure_noaccess:
-        name: '&4Hiba: &cNincs hozzáférés'
+          - ''
+      Failure_noaccess:
+        name: '&4失败: &c未开启'
         lore:
-          - '&7Nincs engedélyed'
-          - '&7a beállítás szerkesztéséhez.'
-          - ' '
-          - '&7A telek tulaja adhat'
-          - '&7az alábbi beállítással:'
-          - '&8{setting}'
+          - ''
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1357,173 +1096,156 @@ gui:
         from: 19
         to: 27
   area_taxes:
-    title: '&8{area} &7- &8Adók'
+    title: '&8{area} &7- &8税收'
     size: 27
     s:
       plus-1:
-        name: '&aHozzáad $1'
+        name: '&a增加 $1'
         lore:
-          - '&7Hozzáadsz $1-t'
-          - '&7az adóhoz.'
+          - '&7增加 $1 税收值'
         material: GLOWSTONE_DUST
         slot: 11
         amount: 1
         data:
           value: 1.0
       plus-2:
-        name: '&aHozzáad $100'
+        name: '&a增加 $100'
         lore:
-          - '&7Hozzáadsz $100-t'
-          - '&7az adóhoz.'
+          - '&7增加 $100 税收值'
         material: GLOWSTONE_DUST
         slot: 12
         data:
           value: 100.0
       plus-3:
-        name: '&aHozzáad $1000'
+        name: '&a增加 $1000'
         lore:
-          - '&7Hozzáadsz $1000-t'
-          - '&7az adóhoz.'
+          - '&7增加 $1000 税收值'
         material: GLOWSTONE_DUST
         slot: 13
         data:
           value: 1000.0
       minus-3:
-        name: '&cElvesz $1000'
+        name: '&c减少 $1000'
         lore:
-          - '&7Elveszel $1000-t'
-          - '&7az adóból.'
+          - '&7&7减少 $1000 税收值'
         material: REDSTONE
         slot: 15
         data:
           value: 1000.0
       minus-2:
-        name: '&cElvesz $100'
+        name: '&c减少 $100 '
         lore:
-          - '&7Elveszel $100-t'
-          - '&7az adóból.'
+          - '&7减少 $100 税收值'
         material: REDSTONE
         slot: 16
         data:
           value: 100.0
       minus-1:
-        name: '&cElvesz $1'
+        name: '&c减少 $1'
         lore:
-          - '&7Elveszel $1-t'
-          - '&7az adóból.'
+          - '&7减少 $1 税收值'
         material: REDSTONE
         slot: 17
         data:
           value: 1.0
     f:
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
       taxes:
-        name: '&7Tax:&c ${tax}'
+        name: '&7税收:&c ${tax}'
         lore:
-          - '&7A következő beszedési idő5 {next-tax}&7.'
+          - '&7下一次税收&5 {next-tax}&7.'
           - ' '
-          - '&7Fenntartási költség beszedése&5 {next-upkeep}&7.'
-          - '&7Összege:&c ${costs}&7.'
+          - '&7下一次维护费用&5 {next-upkeep}&7.'
+          - '&7你需要支付&c ${costs}&7.'
           - ' '
-          - '&8- &3Adó'
-          - '  &7A hozzáadott'
-          - '  &7telektagok fizetik neked.'
+          - '&8- &3税收'
+          - '  &7由区域成员支付,'
+          - '  &7必须是该区域的成员.'
           - ' '
-          - '&8- &3Fenntartási költség'
-          - '  &7A telked fizeti a szervernek'
-          - '  &7hogy ne vesszen el a levédés'
+          - '&8- &3维护费用'
+          - '  &7这个是由国家支付'
           - ' '
-          - '&8- &7A tagok csak azon'
-          - '  &7területek után fizetnek,'
-          - '  &7amikhez hozzá vannak adva.'
+          - '&8- &7区域费用'
+          - '  &7所处区域所产生的费用,'
         material: GOLD_INGOT
         slot: 14
     a:
-      failure_maxValue:
-        name: '&4Maximum érték elérve'
+      Failure_maxValue:
+        name: '&4最大值'
         lore:
-          - '&7Nem állíthatsz be magasabb'
-          - '&7adót mint&b {max}&7.'
+          - '&7你可以设置税收的最大值值'
+          - '&7&3 {max} &7.'
           - ' '
-          - '&8- &7Megkérhetsz egy admint'
-          - '  &7hogy változtassa meg.'
-      failure_cooldown:
-        name: '&4Várakozási idő:&c Várnod kell még.'
+          - '&8- &7你可以要求腐竹更改此设置'
+      Failure_cooldown:
+        name: '&4冷却时间:&c 你需要等待.'
         lore:
-          - '&7Nem állíthatod a adó'
-          - '&7értékét, várnod kell'
-          - '&b{time} &7órát.'
+          - '&7目前你无法更改税值'
+          - '&7你需要等待'
+          - '&b{time} &7小时.'
           - ' '
-          - '&8- &7Megkérhetsz egy admint'
-          - '  &7hogy változtassa meg.'
-      failure_noaccess:
-        name: '&4Megtagadva:&c Nincs engedélyed'
+      Failure_noaccess:
+        name: '&4失败:&c 无法访问'
         lore:
-          - '&7Nincs engedélyed'
-          - '&7az adók szerkesztéséhez.'
-          - ' '
-          - '&7A telek tulaja adhat'
-          - '&7az alábbi beállítással:'
-          - '&8{setting}'
+          - '&7你没有编辑权限'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
   action-confirm:
-    title: '&8Művelet megerősítése'
+    title: '&8确认操作'
     size: 27
     s:
       info:
-        name: '&bBiztos vagy benne?.'
+        name: '&b请确认此操作.'
         lore:
-          - '&7Kattints az &aIgenre &7hogy elfogadd'
-          - vagy a &cNemre &7hogy elutasítsd.
+          - '&7点击 &a确认 &7来进行确认或点击'
+          - '&c中止 &7来中止操作.'
         material: OAK_SIGN
         slot: 14
     l:
       yes_chunk:
-        name: '&aIgen'
+        name: '&a确认'
         lore:
-          - '&7Művelet végrehajtása.'
+          - '&7确认此操作.'
           - ' '
-          - '&7Biztosan el akarod'
-          - '&7hagyni ezt a chunkot?'
-          - ' '
-          - '&8- &7Ha a telek tulaja'
-          - '  &7vagy, akkor'
-          - '  &7törölve lesz.'
+          - '&8- &7如果你是该区块的所有者'
+          - '  &7它将会变成荒野'
         material: LIME_STAINED_GLASS_PANE
         from: 10
         to: 13
       no_chunk:
-        name: '&cNem'
+        name: '&c中止'
         lore:
-          - '&7Művelet megszakítása.'
+          - '&7取消该操作.'
+          - ' '
+          - '&8- &7如果你是区块的所有者'
+          - '  &7它将被删除'
         material: RED_STAINED_GLASS_PANE
         from: 15
         to: 18
       yes_war-state:
-        name: '&aIgen'
+        name: '&a确认'
         lore:
-          - '&7Művelet végrehajtása.'
+          - '&7确认此操作.'
           - ' '
-          - '&4FIGYELEM: &cA telkednek'
-          - '&cHadisarcot kell fizetnie'
-          - '&cmegadáskor.'
+          - '&4需要支付战利品价值'
         material: LIME_STAINED_GLASS_PANE
         from: 10
         to: 13
       no_war-state:
-        name: '&cNem'
+        name: '&c中止'
         lore:
-          - '&7Művelet megszakítása.'
+          - '&取消该操作.'
+          - ' '
+          - '&7你真的要在这场战争中投降吗？'
         material: RED_STAINED_GLASS_PANE
         from: 15
         to: 18
@@ -1537,51 +1259,48 @@ gui:
         from: 19
         to: 27
   player_invites:
-    title: '&8Kapott meghívók'
+    title: '&8收到邀请'
     size: 36
     s: { }
     f:
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 34
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
     l:
       object:
-        name: '&8Meghívó &7->&a {land}'
+        name: '&6{land}'
         lore:
-          - '&7Szerkesztheted vagy'
-          - '&7megtekintheted a meghívót.'
+          - '&7编辑此邀请或查看一些信息'
         material: BOOK
         from: 10
         to: 27
       no-invite:
-        name: '&cNincsenek meghívóid'
+        name: '&c未收到邀请'
         lore:
-          - '&7Nincs egyetlen fogadott'
-          - '&7meghívód se.'
-          - ' '
-          - '&8- &7Játékosok meghívhatnak a:'
-          - '  &8/&aLands trust &8<&aPlayer&8>'
-          - '  &7paranccsal'
+          - '&7他还未收到任何邀请'
+          - '&8- &7该玩家可以被邀请'
+          - '  &7你可以使用指令来邀请他:'
+          - '  &8/&3Lands trust {player}'
         material: OAK_SIGN
         from: 10
         to: 27
@@ -1595,115 +1314,85 @@ gui:
         from: 27
         to: 36
   player_invite:
-    title: '&8Meghívó &7->&a {land}'
+    title: '&8邀请 {land}'
     size: 27
     f:
       info:
-        name: '&8> &6Információ'
+        name: '&8> &6信息'
         lore:
-          - '&7Terület:&6 {area}'
-          - '&7Telek: {land}'
-          - '&7Világ: {world}'
+          - '&7区域:&6 {area}'
+          - '&7国家: {land}'
           - ' '
-          - '&7Küldő:&e {sender}'
-          - '&7Fogadva:&e {time}'
+          - '&7已收到:&5 {time}'
+          - '&7邀请人: {sender}'
         material: OAK_SIGN
         slot: 14
     l:
       accept:
-        name: '&aElfogad'
+        name: '&a同意'
         lore:
-          - '&7Elfogadod a meghívót.'
+          - '&7接受该邀请.'
           - ' '
-          - '&7Adó:&c ${tax}'
+          - '&7税收值:&c ${tax}'
         material: LIME_STAINED_GLASS_PANE
         from: 10
         to: 13
       deny:
-        name: '&cElutasít'
+        name: '&c拒绝'
         lore:
-          - '&7Elutasítod a meghívót.'
+          - '&7拒绝该邀请'
+          - ' '
+          - '&7税收值:&c ${tax}'
         material: RED_STAINED_GLASS_PANE
         from: 15
         to: 18
     a:
-      failure_lands:
-        name: '&4Hiba: &bTelekszám'
+      Failure_lands:
+        name: '&4失败: &c国家数量达到最大值'
         lore:
-          - '&7Nem csatlakozhatsz'
-          - '&7mert elérted'
-          - '&7a maximális'
-          - '&7csatlakozási telekszámot'
-          - ' '
-          - '&8- &7A maximumod:&e {lands}'
-          - '&8Jog:'
-          - '&8lands.lands.NUMBER'
-      failure_inviteOwner:
-        name: '&4Hiba: &bTulaj meghívás'
+          - ''
+      Failure_inviteOwner:
+        name: '&4失败: &c玩家已是一国之主了'
         lore:
-          - '&7Nem csatlakozhatsz'
-          - '&7mert nem lehetsz másik'
-          - '&7telek tagja miközben'
-          - '&7sajátod is van'
-          - ' '
-          - '&8- &7Egy konfigurációs'
-          - '  &7beállítás'
-          - '  &7tiltja ezt,'
-      failure_notTrusted:
-        name: '&4Hiba: &bNincs végrehajtva'
+          - ''
+      Failure_notTrusted:
+        name: '&4失败: &b未完成'
         lore:
-          - '&7Nem lehetett'
-          - '&7hozzáadni téged'
-          - '&7Mert a telek tulaja'
-          - '&7elérte a maximum'
-          - '&7tagok számát.'
+          - '&7该国成员已达到最大值'
           - ' '
-          - '&8- &7Keresd fel a telek'
-          - '  &7tulaját segítségért.'
-          - ' '
-          - '&8- &7Jog:'
-          - '&8lands.members.NUMBER'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
   player_info:
-    title: '&8Játékos {player}'
+    title: '&8玩家 {player}'
     size: 27
     s:
       close:
-        name: '&cBezár'
+        name: '&c关闭'
         lore:
-          - '&7Menü bezárása.'
           - ' '
-          - '&8- &7Újra megnyitható'
-          - '  &7a &8/&aLands player&7 paranccsal'
         material: RED_STAINED_GLASS_PANE
         slot: 9
     f:
       last_seen:
-        name: '&bUtoljára látva'
+        name: '&8> &6距离上次上线'
         lore:
           - '&c{last-seen}'
         material: CLOCK
         slot: 12
       lands:
-        name: '&bTelkek &8(&7{amount}&8)'
+        name: '&8> &6国家 &8(&7{amount}&8)'
         lore:
           - '{lands}'
         material: OAK_SIGN
         slot: 16
       max-chunks:
-        name: '&8> &6Maximum chunkok'
+        name: '&8> &6最大占领区块'
         lore:
-          - '&7A játékos'
-          - '&3{chunks} &7chunkot foglalhat.'
-          - ' '
-          - '&8- &7Ha a  chunks-addition'
-          - '  &7beállítás engedélyezve van,'
-          - '  &7akkor a játékos'
-          - '  &3{chunks} &7chunkot adhat a telkedhez.'
+          - '&7玩家占领'
+          - '&3{chunks} &7区块.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ==
         slot: 14
     p:
@@ -1712,56 +1401,51 @@ gui:
         from: 1
         to: 27
   land_info:
-    title: '&8Telek {land}'
+    title: '&8国家 {land}'
     size: 45
     f:
       back:
-        name: '&cVissza'
+        name: '&cBack'
         lore:
-          - '&7Vissza a'
-          - '{back}&7.'
+          - '&7返回至'
+          - '&e{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 37
       close:
-        name: '&cBezár'
+        name: '&c关闭'
         lore:
-          - '&7Bezárja ezt a menüt.'
           - ' '
-          - '&8- &7Újra megnyitható'
-          - '  &7with &8/&3Lands info {land}&7 paranccsal.'
         material: RED_STAINED_GLASS_PANE
         slot: 9
       owner:
-        name: '&4Tulaj&3 {player}'
+        name: '&4主人&3 {player}'
         lore:
-          - '&7A telek tulaja'
-          - '&7Hozzá fordulj'
-          - '&7ha kérdésed van'
+          - '&7该国的最高统治者'
         material: PLAYER_HEAD
         slot: 12
       players:
-        name: '&8> &6Tagok &8(&7{amount}&8)'
+        name: '&8> &6成员 &8(&7{amount}&8)'
         lore:
           - ' '
           - '&e{players}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 16
       created:
-        name: '&8> &6Létrehozva'
+        name: '&8> &6已建立'
         lore:
           - '&5{date}'
         material: CLOCK
         slot: 34
       war:
-        name: '&8> &6Háborúk'
+        name: '&8> &6战争统计'
         lore:
           - ' '
-          - '&7Nyert:&7 {won}'
-          - '&7Vesztett:&7 {lost}'
-          - '  &7WLR:&3 {wlr}'
+          - '&7胜利:&7 {won}'
+          - '&7失败:&7 {lost}'
+          - '  &7平局:&3 {wlr}'
           - ' '
-          - '&7Ölések:&7 {kills}'
-          - '&7Halálok:&7 {deaths}'
+          - '&7击杀:&7 {kills}'
+          - '&7死亡:&7 {deaths}'
           - '  &7KDR:&3 {kdr}'
         material: IRON_SWORD
         slot: 23
@@ -1771,37 +1455,36 @@ gui:
         from: 1
         to: 45
   land_various:
-    title: Egyéb beállítások
+    title: '更多设定'
     size: 27
     s: { }
     f:
       name:
-        name: '&8> &6Telek neve'
+        name: '&8> &6重命名'
         lore:
-          - '&7Állíts be egy nevet'
+          - '&7设置一个新的国家名'
           - ' '
-          - '&8- &7Jelenlegi:'
+          - '&8- &7目前名称:'
           - '  &a{name}'
         material: NAME_TAG
         slot: 12
       title:
-        name: '&8> &6Üdvözlés'
+        name: '&8> &6标题信息'
         lore:
-          - '&7Üdvözlő üzenet'
-          - '&7beállítása.'
+          - '&7更改国家标题信息'
           - ' '
-          - '&8- &7Jelenlegi:'
+          - '&8- &7目前标题为:'
           - '  {title}'
           - ' '
-          - '&7Helyettesítő szövegek'
-          - '  &8> &a%owner% &8= &7Telek tulaja'
-          - '  &8> &a%player% &8= &7Belépő játékos'
+          - '&7可用的变量'
+          - '  &8> &a%owner% &8= &7国家主人'
+          - '  &8> &a%player% &8= &7加入的玩家'
         material: OAK_SIGN
         slot: 16
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
@@ -1811,107 +1494,90 @@ gui:
         from: 1
         to: 27
   global_lands:
-    title: '&8Minden telek'
+    title: '&8所有国家'
     size: 54
     s:
       close:
-        name: '&cBezár'
+        name: '&c关闭'
         lore:
-          - '&7Bezárja ezt a menüt.'
           - ' '
-          - '&8- &7Újra megnyitható a'
-          - '  &7&8/&3Lands list&7'
-          - '  &7 paranccsal'
         material: RED_STAINED_GLASS_PANE
         slot: 46
     f:
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 46
       toggle-allowed:
-        name: '&6Csak nyilvánosak?'
+        name: '&6设置为开放国家'
         lore:
-          - '&7Csak azokat a telkeket mutatja'
-          - '&7ahova a teleport engedélyezve van'
-          - '&7Kattints a váltáshoz.'
+          - '&7设置国家是否能让访客进入'
           - ' '
-          - '&7Csak nyilvánosak: {only-allowed}'
+          - '&7单击此处切换此设置.'
+          - '&7公开: {only-allowed}'
         material: ENDER_PEARL
         slot: 50
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 48
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 52
     l:
       object:
         name: '&2{land}'
         lore:
-          - '&bBAL KATT'
-          - '&7Teleportálás a telek'
-          - '&7spawnjára.'
+          - '&b鼠标左键'
+          - '&7传送至该国出生点'
           - ' '
-          - '&9JOBB KATT'
-          - '&7Telek infó menü'
+          - '&9鼠标右键'
+          - '&7查看该国家信息'
           - ' '
-          - '&7Üdvözlés:'
+          - '&7标题:'
           - '&7{title}'
         material: PLAYER_HEAD
         from: 10
         to: 45
       no-land:
-        name: '&cNincsenek telkek'
+        name: '&c找不到该国'
         lore:
-          - '&7Nincs a szűrésnek,'
-          - '&7megfelelő elem.'
           - ' '
-          - '&8- &7Telek létrehozása:'
-          - '  &8/&3Lands create &8<&3Teleknév&8>'
+          - '&8- &7创建一个国家:'
+          - '  &8/&3Lands create &8<&3name&8>'
         material: PAPER
         from: 10
         to: 45
     a:
-      failure_teleport_permission:
-        name: '&4Megtagadva: &cJog'
+      Failure_teleport_permission:
+        name: '&4拒绝: &c权限不足'
         lore:
-          - '&cNincs jogod, hogy'
-          - '&ca telekhez teleportálj.'
-      failure_admin_permission:
-        name: '&4Megtagadva: &cAdmin jog'
+          - '&c'
+      Failure_admin_permission:
+        name: '&4拒绝: &c权限不足'
         lore:
-          - '&cNincs jogod a'
-          - '&cszerkesztő menühöz.'
-      failure_no-spawn:
-        name: '&4Hiba: &cNincs spawn beállítva'
+          - ''
+      Failure_no-spawn:
+        name: '&4失败: &c未设置出生点'
         lore:
-          - '&cA teleknek nincs'
-          - '&cbeállított spawnja'
+          - '&c'
+      Failure_teleport_cost:
+        name: '&4拒绝: &c余额不足'
+        lore:
           - ' '
-          - '&8- &7Használniuk kell a'
-          - '  &8/&3Lands setspawn &7'
-          - '  &7parancsot, hogy beállítsák.'
-      failure_teleport_cost:
-        name: '&4Megtagadva: &cKöltség'
-        lore:
-          - '&cNincs elég pénzed'
-          - '&ca teleportáláshoz.'
-          - ' '
-          - '&7Szükséges&c ${costs}&7.'
+          - '&7你至少要有&c ${costs}&7.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1922,143 +1588,136 @@ gui:
         from: 36
         to: 54
   war-state:
-    title: '&8Háború'
+    title: '&8战争'
     size: 27
     s:
       close:
-        name: '&cBezár'
+        name: '&c关闭'
         lore:
-          - '&7Bezárja ezt a menüt.'
           - ' '
-          - '&8- &7Újra megnyitható a'
-          - '  &8/&3Wars menu&7.'
-          - '  &7 paranccsal'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     f:
       attackers:
-        name: '&8> &cTámadók'
+        name: '&8> &c进攻方'
         lore:
-          - '&7Támadó telkek listája'
+          - '&7查看这场战争所有进攻国家.'
           - ' '
-          - '&8- &eStatiszika'
-          - '  &7Telkek: {attackers}'
-          - '  &7Játékosok: {players}'
+          - '&8- &e统计'
+          - '  &7国家: {attackers}'
+          - '  &7成员: {players}'
           - ' '
-          - '  &7Ölések: {kills}'
-          - '  &7Halálok: {deaths}'
+          - '  &7击杀: {kills}'
+          - '  &7死亡: {deaths}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTU0OTQ3ZGU3ZjUyNTk4MjU1ZDZhZmVlOWQ3N2JlZmFkOWI0ZjI0YzBjNDY2M2QyOGJjZGY4YTY0NTdmMzQifX19
         slot: 11
       defenders:
-        name: '&8> &aVédők'
+        name: '&8> &a防守方'
         lore:
-          - '&7Védő telkek listája'
+          - '&7查看这场战争所有防守国家.'' - '' '
+          - '&8- &e统计'
+          - '  &7国家: {defenders}'
+          - '  &7成员: {players}'
           - ' '
-          - '&8- &eStatiszika'
-          - '  &7Telkek: {defenders}'
-          - '  &7Játékosok: {players}'
-          - ' '
-          - '  &7Ölések: {kills}'
-          - '  &7Halálok: {deaths}'
+          - '  &7击杀: {kills}'
+          - '  &7死亡: {deaths}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRkYmNiN2UxZmJlY2VhOWE3MzUwNDM2Y2JiZWEyYjQ5NmY3NGMyOTcyMDRmMWJiOWFjYzM4NzhkNTQyY2NiIn19fQ==
         slot: 13
       info_declaration:
-        name: '&8> &6Információk'
+        name: '&8> &6宣战信息'
         lore:
-          - '&7Háború kezdete: '
-          - '&5~{time} &7 múlva'
+          - '&7距离战争开始 '
+          - '&5~{time}'
           - ' '
-          - '&8- &7Támadók lehetőségei:'
+          - '&8- &7进攻方可以在你土地'
+          - '  &7做这些事情'
+          - '  &8(&7在Config中进行配置&8)&7:'
           - ' '
           - '{settings}'
         material: IRON_SWORD
         slot: 15
       info_war:
-        name: '&8> &6Információk'
+        name: '&8> &6战争信息'
         lore:
-          - '&7Háború vége: '
-          - '&5~{time} &7múlva'
+          - '&7距离战争结束 '
+          - '&5~{time}'
           - ' '
-          - '&8- &7Támadók lehetőségei:'
+          - '&8- &7进攻方可以在你土地'
+          - '  &7做这些事情'
+          - '  &8(&7在Config中进行配置&8)&7:'
           - ' '
           - '{settings}'
         material: IRON_SWORD
         slot: 15
       tribute_attacker:
-        name: '&8> &6Hadisarc:&a ${tribute}'
+        name: '&8> &6战利品:&a ${tribute}'
         lore:
-          - '&7Hadisarc beállítása'
+          - '&7更改战利品价值'
           - ' '
-          - '&8- &7Aki megadja magát,'
-          - '  &7ennyit kell fizessen'
-          - '  &7a megadásért.'
+          - '&8- &7如果您要投降'
+          - '  &7必须支付所设置的战利品'
+          - '  &7才允许投降.'
           - ' '
-          - '&8- &9JOBB KATT'
-          - '  &7Ha a támadók megadják maguk'
-          - '  &7fizetni fognak &c ${tribute-att} &7-t'
-          - '  &7a védőknek.'
+          - '&8- &9鼠标右键'
+          - '  &7如果进攻方想要投降'
+          - '  &7他们需要向防守方'
+          - '  &7支付&c ${tribute-att}'
+          - '  &7才可以投降.'
           - ' '
-          - '  &8- &7Ha 0,'
-          - '    &7a támadók nem adhatják'
-          - '    &7meg magukat.'
+          - '  &8- &7如果该值为 0'
+          - '    &7则不允许进攻方投降'
           - ' '
-          - '&8- &7Minden támadó részesedése:'
-          - '  &7{divide}'
+          - '&8- &7战利品将瓜分给'
+          - '  &7所有进攻者: {divide}'
         material: GOLD_INGOT
         slot: 17
       tribute_defender:
-        name: '&8> &6Megadás:&c ${tribute}'
+        name: '&8> &6投降:&c ${tribute}'
         lore:
-          - '&7Kattints, hogy megadd magad'
+          - '&7点击投降'
           - ' '
-          - '&8- &cAki megadja magát'
-          - '  &cfizetni fog &c ${tribute} &7-t'
-          - '  &caz ellenfelének.'
+          - '&8- &c投降需要支付战利品:'
+          - '  &c ${tribute}'
           - ' '
-          - '  &8- &7Ha 0,'
-          - '    &7akkor nem adhatod'
-          - '    &7meg magad.'
+          - '&8- &7如果该值为 0:'
+          - '  &7将意味着进攻方'
+          - '  &7不接受你的投降'
         material: GOLD_INGOT
         slot: 17
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 21
     a:
-      failure_permission:
-        name: '&4Megtagadva: &cNicns engedélyed'
+      Failure_permission:
+        name: '&4失败'
         lore:
-          - '&7Ezt csak az eredeti támadó telek'
-          - '&7tulaja használhatja'
-          - '&7Név:&b {owner}'
-      failure_surrender-att:
-        name: '&cHiba: &4Megadás kikapcsolva'
-        lore:
-          - '&7A támadók nem adhatják'
-          - '&7meg magukat.'
-      failure_surrender:
-        name: '&cHiba: &4Megadás elutasítva'
-        lore:
-          - '&7Az eredeti támadók nem'
-          - '&7fogadták el.'
+          - '&7禁止访问只能由发起进攻的国家'
+          - '&7所有人来进行设置'
           - ' '
-          - '&7Nem fogadnak el'
-          - '&7sarcot.'
-      failure_surrender-attacker:
-        name: '&cHiba: &4Megadás elutasítva'
+          - '&7玩家:&b {owner}'
+      Failure_surrender-att:
+        name: '&c失败: &4投降已禁用'
         lore:
-          - '&7A támadók nem adhatják'
-          - '&7meg magukat.'
-          - '&7Csak a védők.'
-      failure_surrender-cost:
-        name: '&cHiba: &4Megadás elutasítva'
+          - '&7投降已被禁用'
+      Failure_surrender:
+        name: '&c失败: &4投降被拒绝'
         lore:
-          - '&7Nincs elég pénzed'
-          - '&7a sarc kifizetésére'
-          - '&7(&c${tribute}&7).'
+          - '&7进攻方拒绝了你的投降'
+          - '&7就是要揍你'
+      Failure_surrender-attacker:
+        name: '&c失败: &4投降被拒绝'
+        lore:
+          - '&7不允许进攻方投降'
+          - '&7只允许防守方投降'
+      Failure_surrender-cost:
+        name: '&c失败: &4投降被拒绝'
+        lore:
+          - '&7你的国家没有足够的钱'
+          - '来支付战利品&c ${tribute}&7.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2069,39 +1728,38 @@ gui:
     size: 36
     f:
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 34
     l:
       object:
         name: '&2{land}'
         lore:
-          - '&7Telek információs menü'
-          - '&7megnyitása.'
+          - '&7打开国家信息'
           - ' '
-          - '&8- &eStatiszika'
-          - '  &7Összes tag:&e {players}'
+          - '&8- &e统计'
+          - '  &7总成员:&e {players}'
           - ' '
-          - '&8- &7Üdvözlés:'
+          - '&8- &7标题:'
           - '  &7{title}'
         material: PLAYER_HEAD
         from: 10
@@ -2116,113 +1774,116 @@ gui:
         from: 29
         to: 36
   war-declaration_tribute:
-    title: '&8Hadisarc'
+    title: '&8战利品'
     size: 27
     s:
       plus-1:
-        name: '&aHozzáad $1'
+        name: '&a增加 $1'
         lore:
-          - '&7Hozzáadsz $1-t'
-          - '&7a sarchoz.'
+          - '&7增加 $1 到战利品中.'
         material: GLOWSTONE_DUST
         slot: 11
         amount: 1
         data:
           value: 1.0
       plus-2:
-        name: '&aHozzáad $100'
+        name: '&a增加 $100'
         lore:
-          - '&7Hozzáadsz $100-t'
-          - '&7a sarchoz.'
+          - '&7增加 $100 到战利品中.'
         material: GLOWSTONE_DUST
         slot: 12
         data:
           value: 100.0
       plus-3:
-        name: '&aHozzáad $1000'
+        name: '&a增加 $1000'
         lore:
-          - '&7Hozzáadsz $1000-t'
-          - '&7a sarchoz.'
+          - '&7增加 $1000 到战利品中.'
         material: GLOWSTONE_DUST
         slot: 13
         data:
           value: 1000.0
       minus-3:
-        name: '&aElvesz $1000'
+        name: '&c减少 $1000'
         lore:
-          - '&7Elveszel $1000-t'
-          - '&7a sarcból.'
+          - '&7减少 $1000 到战利品中.'
         material: REDSTONE
         slot: 15
         data:
           value: 1000.0
       minus-2:
-        name: '&aElvesz $100'
+        name: '&c减少 $100'
         lore:
-          - '&7Elveszel $100-t'
-          - '&7a sarcból.'
+          - '&7减少 $100 到战利品中.'
         material: REDSTONE
         slot: 16
         data:
           value: 100.0
       minus-1:
-        name: '&aElvesz $1'
+        name: '&c减少 $1'
         lore:
-          - '&7Elveszel $1-t'
-          - '&7a sarcból.'
+          - '&7减少 $1 到战利品中.'
         material: REDSTONE
         slot: 17
         data:
           value: 1.0
       close:
-        name: '&cBezár'
+        name: '&cClose'
         lore:
-          - '&7Bezárja ezt a menüt.'
+          - '&7Close this menu.'
           - ' '
-          - '&8- &7Újra megnyitható a'
-          - '  &8/&3Wars menu&7.'
-          - '  &7 paranccsal'
+          - '&8- &7You can open it again by'
+          - '  &7executing &8/&3Wars menu&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     f:
       tribute:
-        name: '&bHadisarc:&c ${tribute}'
+        name: '&bTribute:&c ${tribute}'
         lore:
-          - '&7A védőknek ennyit kell'
-          - '&7fizetni a megadásért'
+          - '&7The defending land will need to'
+          - '&7to pay this value in order to'
+          - '&7surrender.'
           - ' '
-          - '&8- &7Megengedett legnagyobb értéke:'
-          - '  &3 ${max}'
+          - '&8- &7The maximum tribute for '
+          - '  &7this land is&3 ${max}&7.'
+          - '  &7A server administrator can'
+          - '  &7change that in the config.'
           - ' '
-          - '&cFIGYELEM: &7Ha 0-t állítasz be'
-          - '&7a védők nem adhatják meg magukat'
+          - '&cNOTE: &7If you set the tribute'
+          - '&7value to 0, the defending land'
+          - '&7won''t be able to surrender.'
         material: GOLD_INGOT
         slot: 14
       send-declaration:
-        name: '&aHadüzenet küldése'
+        name: '&aSend War Declaration'
         lore:
-          - '&7Kattints a küldéshez'
+          - '&7Click here to send this'
+          - '&7war declaration to the'
+          - '&7enemy land.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19
         slot: 27
       abort-declaration:
-        name: '&cMegszakítás'
+        name: '&cAbort War Declaration'
         lore:
-          - '&7Mégse üzensz hadat'
+          - '&7Click here to abort this'
+          - '&7war declaration.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==
         slot: 19
       back:
-        name: '&cVissza'
+        name: '&cBack'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     a:
       max-tribute:
-        name: '&4Maximum érték elérve'
+        name: '&4Max Value reached'
         lore:
-          - '&7Nem adhatsz meg nagyobb sarcot mint:'
-          - '&3 {max}'
+          - '&7You can''t set the tribute'
+          - '&7value higher than&3 {max}&7.'
+          - ' '
+          - '&8- &7You can ask an administrator'
+          - '  &7to change this.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2233,45 +1894,40 @@ gui:
     size: 27
     f:
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
-          - '{back}&7.'
+          - '&7返回至'
+          - '&e{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 37
       close:
-        name: '&cBezár'
+        name: '&c关闭'
         lore:
-          - '&7Bezárja ezt a menüt.'
-          - ' '
-          - '&8- &7Újra megnyitható a'
-          - '  &8/&3Lands info {land}'
-          - '  &7paranccsal'
+          - '&7'
         material: RED_STAINED_GLASS_PANE
         slot: 9
     s:
       lands:
-        name: '&8> &eTelkek'
+        name: '&8> &e国土'
         lore:
-          - '&7Minden telek, ami'
-          - '&7ehhez a Nemzethez tartozik'
+          - '&7查看全部国土'
+          - '&7以及国家成员'
         material: GRASS_BLOCK
         slot: 12
       war:
-        name: '&8> &eJelenlegi háború'
+        name: '&8> &e当前战争'
         lore:
-          - '&7Információ a jelenlegi'
-          - '&7háborúról.'
+          - '&7获取当前战争中的信息'
           - ' '
-          - '&7pl:'
-          - '&8- &7ellenséges nemzet'
-          - '&8- &7Nyeremény'
+          - '&7显示有关于:'
+          - '&8- &7敌国信息'
+          - '&8- &7战利品'
         material: REDSTONE_BLOCK
         slot: 14
       spawn:
-        name: '&8> &eNemzet spawnja'
+        name: '&8> &e出生点'
         lore:
-          - '&7Állítsd be a nemzeted spawnját'
+          - '&7点击传送至国家出生点'
         material: ENDER_PEARL
         slot: 16
     p:
@@ -2280,29 +1936,26 @@ gui:
         from: 1
         to: 27
   admin_wilderness:
-    title: '&8Vadon beállítások'
+    title: '&8荒野设置'
     size: 9
     s:
       player-settings:
-        name: '&8> &6Játékos beállítások'
+        name: '&8> &6玩家设置'
         lore:
-          - '&7Játékosok jogainak beállítása a vadonban'
+          - '&7设置玩家在荒野能够做什么'
         slot: 3
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
       land-settings:
-        name: '&8> &6Telek beállítások'
+        name: '&8> &6国家设置'
         lore:
-          - '&7Álltalános beálítások'
+          - '&7编辑一些常规的设置'
+          - '&7如：怪物是否生成'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 7
       close:
-        name: '&cBezár'
+        name: '&c关闭'
         lore:
-          - '&7Bezárja ezt a menüt.'
-          - ' '
-          - '&8- &7Újra megnyitható a'
-          - '  &8/&3Lands admin wilderness&7'
-          - '  &7paranccsal'
+          - '&7'
         material: RED_STAINED_GLASS_PANE
         slot: 9
         enabled: true
@@ -2312,41 +1965,42 @@ gui:
         from: 1
         to: 9
   admin_wilderness_player-settings:
-    title: '&8Játékos beállítások'
+    title: '&8玩家设置'
     size: 36
     l:
       object:
         name: '&6{setting}'
         lore:
-          - '&7Állapot: {enabled}'
+          - '&7状态: {enabled}'
           - ' '
-          - '&7Kattints a váltáshoz'
+          - '是否允许玩家在荒野这么做'
+          - '&7点击切换'
           - ' '
-          - '&8Bypass: {bypass}'
+          - '&8权限: {bypass}'
         material: STONE
         from: 10
         to: 27
     f:
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 35
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 28
@@ -2360,39 +2014,39 @@ gui:
         from: 27
         to: 36
   admin_wilderness_land-settings:
-    title: '&8Telek beállítások'
+    title: '&8国家设置'
     size: 27
     l:
       object:
         name: '&6{setting}'
         lore:
-          - '&7Állapot: {enabled}'
+          - '&7状态: {enabled}'
           - ' '
-          - '&7Kattints a váltáshoz'
+          - '&7点击切换该设置'
         material: STONE
         from: 10
         to: 18
     f:
       page_previous:
-        name: '&9Előző oldal'
+        name: '&9上一页'
         lore:
-          - '&7Vissza az előző oldalra:&9 {previous}'
+          - '&7返回上一页:&9 {previous}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 21
       page_next:
-        name: '&aKövetkező oldal'
+        name: '&a下一页'
         lore:
-          - '&7Ugrás a következő oldalra:&9 {next}'
+          - '&7进入下一页:&9 {next}'
           - ' '
-          - '&8- &7Mostani:&b {current}'
+          - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 25
       back:
-        name: '&cVissza'
+        name: '&c返回'
         lore:
-          - '&7Vissza a'
+          - '&7返回至'
           - '{back}&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
