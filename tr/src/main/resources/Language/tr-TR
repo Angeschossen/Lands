@@ -1,731 +1,535 @@
 ---
+#Here you can edit all chat messages
+#GUI strings can be found in <language>_gui.yml
+#If you encounter any issues, contact lands support.
+#Plugin page: https://www.spigotmc.org/resources/.53313
+#Discord: https://discord.gg/JVU9qd7
+################################
+#About chat message type system:
+#Does only work for messages in
+#"message" or "command" section.
+################################
+#You can use some codes to set the type
+#of a message to title, actionbar or chat.
+#How does it work:
+#For example we want to print the prefix as a title:
+#Set general.noPerm to: '#t#&cYou''re not allowed to do this.' (Set "#t#" in front of it)
+#This would just print it as a title.
+#You also can set in, stay and out fade timings in seconds:
+#Set for example general.prefix to: '#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
+#This would display this message as a title with
+#a fade in delay of 1 seconds, a stay time with 2 seconds
+#and a fade out delay of 3 seconds.
+#You also can display it as a actionbar message:
+#Just add "#a#" in front of it.
+#If you want to display it in chat, just don't set any
+#of these in front of it or use "#c#".
+#Also you can combine these modes:
+#Set for example general.prefix to: '#c#a#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
+#This would print this message as chat, actionbar and an title with an in delay (1 seconds),
+#stay time (2 seconds) and fade out delay (3 seconds)
+#For any questions or issues, please contact me on discord or via pm.
+#--------------------------
+#Translated by gbalint
 general:
-  prefix:
-    normal: '&8[&aLands&8] '
-    help: '&8[&aLands&8] &7Nutzung: '
-  wYes: '&aJa'
-  wNo: '&cNein'
-  none: '&8Keine'
-  disabled: '&cDeaktiviert'
-  wilderness: '&4Wildnis'
-  unlimited: '&aunendlich'
-  land:
-    title:
-      land: '&7Besitzer :&3 %owner%&7.'
-      safezone: '&7Du bist jetzt sicher..'
-    default-area: Standard
+  prefix: '&8[&aLands&8] '
+  wYes: '&aIgen'
+  wNo: '&cNem'
+  none: '&cNincs'
+  disabled: '&cLetiltva'
+  wilderness: '&aVadon'
+  title:
+    land: '&3 %owner%&7 telke.'
+    safezone: '&7Biztonságban vagy.'
   time:
-    days: Tag(e)
-    hours: Stunde(n)
-    minutes: Minute(n)
-    seconds: Sekunde(n)
+    days: 'nap'
+    hours: 'óra'
+    minutes: 'perc'
+    seconds: 'másodperc'
   status:
-    online: '&aOnline'
-    offline: '&cOffline'
+    online: '&aelérhető'
+    offline: '&cnem elérhető'
   top:
-    title: '&7-----<- &6Top Länder  &7->-----'
-    entry: '&c#{pos} &a{land} &8| &e{value} $ '
-    next-page: '&7Nächste Seite: &8/&2Lands top {next}'
-    last-updated: '&7Letzte Aktualisierung: {time}'
-    footer: '&7-----<- &6Top Länder &7->-----'
+    title: '&7-----<- &5Top telkek &8(&7Összes:&b {total}&8) &7->-----'
+    entry: '&c#{pos} &a{land} &7Egyenleg:&e ${value}'
+    next-page: '&7Következő oldal: &8/&2Lands top {next}'
+    last-updated: '&7Frissítve:&e {time}'
+    footer: '&7---------<- &6&lTop 10 Telkek &7->---------'
   integration:
     dynmap:
       land:
-        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br/><br /> Besitzer: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br/>Admins: <span style="font-weight: bold;">{admins}</span><br />Mitglieder: <span style="font-weight: bold;">{members}</span></div>'
-        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 120%;"><spanstyle="font-size: 120%;"><span style="color: #00ccff;">Spawnpoint</span><br/></span></span><p>Is public: {public}</p></div>'
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br /><br /> Tulaj: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br />Adminok: <span style="font-weight: bold;">{admins}</span><br />Tagok: <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 120%;"><span style="font-size: 120%;"><span style="color: #00ccff;">Spawn</span><br /></span></span><p>Publikus: {public}</p></div>'
   sign:
     topLand:
       line-1: '&c#&l{place}'
       line-2: '&8<&2 {land} &8>'
-      line-3: '&7{owner}'
-      line-4: '&e{value}$'
+      line-3: '&7Tulaj: {owner}'
+      line-4: '&7Egyenleg:&3 ${value}'
     noLand:
       line-1: ' '
-      line-2: '&cKein Land'
-      line-3: '&czum zeigen.'
+      line-2: '&cNem található'
+      line-3: '&ctelek.'
       line-4: ' '
-    rent:
-      line-2: '&6{area} Mieten'
-      line-3: '&c${cost} &8/ &5{time}'
-      line-4: '&8Max: {max}'
-    sell:
-      area:
-        line-2: '&aKaufen'
-        line-3: '&7Gebiet:&6 {area}'
-        line-4: '&c${cost}'
-      land:
-        line-2: '&aBuy'
-        line-3: '&7Land&2 {land}'
-        line-4: '&c${cost}'
-    rented:
-      line-2: '&7Gebiet&6 {area}'
-      line-3: '&7{player}'
-      line-4: '&5{time} &7übrig'
-    sold:
-      area:
-        line-2: '&7Area&6 {area}'
-        line-3: '&aVerkauft &7an'
-        line-4: '&7{player}'
-      land:
-        line-2: '&7Land&2 {land}'
-        line-3: '&aVerkauft &7an'
-        line-4: '&7{player}'
   autoAction:
-    claim: '&aChunk besetzen'
+    claim: '&aChunk foglalás'
   map:
     yours: '&a▉ '
     others: '&c▉ '
     friendly: '&5▉ '
     current-location: '&e▉ '
     wilderness: '&2▉ '
-    top: '&7-<------------<- &66Landkarte &7->------------>-'
+    top: '&7-<------------<- &6Telek Térkép &7->------------>-'
     info:
-      wilderness: ' &2▉ &7= Wildnis'
-      yours: ' &a▉ &7= Deins'
-      trusted: ' &5▉ &7= Freundlich'
-      others: ' &c▉ &7= Andere'
-      position: ' &e▉ &7= Position'
-    bottom: '&7-<------------<- &6Landkarte &7->------------>-'
-  inbox:
-    general:
-      created: '&8{0}: &7Land erstellt.'
-    member:
-      join: '&8{0}: &7{1} ist beigreten.'
-      leave: '&8{0}: &7{1} ist gegangen.'
-      ban: '&8{0}: &c{1} wurde gebannt.'
-    economy:
+      wilderness: ' &2▉ &7= Vadon'
+      yours: ' &a▉ &7= Saját'
+      trusted: ' &5▉ &7= Barát'
+      others: ' &c▉ &7= Egyéb'
+      position: ' &e▉ &7= Hely'
+    bottom: '&7-<------------<- &6Telek Térkép &7->------------>-'
+  land-inbox:
+    land:
+      created: '&2{date} | &7{land} létrehozva.'
       upkeep:
-        warning: '&8{0}: &cUnterhaltskosten von ${1} kann nicht gezahlt werden'
-        unclaimed: '&8{0}: &cUnterhaltskosten von ${1} konnten nicht gezahlt werden. Neuster Chunk (X: {2} Z: {3}) wurde gelöscht'
-        paid: '&8{0}: &7Unterhaltskosten von: ${1} wurden gezahlt.'
-      bank:
-        withdraw: '&8{0}: {1} &chat ${2} abgehoben. Neuer Kontostand = ${3}'
-        deposit: '&8{0}: {1} &7hat ${2} eingezahlt. Neuer Kontostand = ${3}'
-      taxes:
-        warning: '&8{0}: &c{1} hat die Steuer nicht gezahlt.'
-        untrusted: '&8{0}: &c{1} konnte die Steuer nicht zahlen und wurde rausgeworfen.'
-        received: '&8{0}: ${1} &7als Steuer erhalten. Kontostand: = ${2}'
+        chunk-deleted: '&2{date} | &4FIGYELEM: &cA chunkodat &8(&7X: {x} &7Z: {z}&8) &celvesztetted. Nem tudtál adót fizetni:&c ${cost}'
+        warning: '&2{date}, &cFIGYELEM: &7 Nem tudtál adót fizetni: ${cost}'
+        paid: '&2{date}, &7Megfizetted az adót: ${cost}'
+    player:
+      join: '&2{date}, &7{player} csatlakozott a telkünkhöz.'
     war:
       declaration:
-        sent: '&8{0}: &7Krieg wurde gegen {1} erklärt: &8/Wars info'
-        received: '&8{0}: &c{1} &chat uns den Krieg erklärt: &8/Wars info'
-        mutual:
-          sent: '&8{0}: &7Kriegsanfrage wurde gesendet {1}. &7Sie müssen sie zuvor akzeptieren.'
-          received: '&8{0}: &c{1} &cmöchte den Krieg. Akzeptieren: &8/&3Wars declare {2}'
+        sent: '&2{date}, &7Hadat üzentél {defender}-nek. A háború kezdete {time} múlva.'
+        received: '&2{date}, &4FIGYELEM: &c{attacker} hadat üzent neked. A háború kezdete {time} múlva.'
       surrender:
-        sent: '&8{0}: &cAufgegeben. Es musste ${1} Tribut an den Feind gezahlt werden.'
-        received: '&8{0}: &7Der Feind {1} &7hat aufgegeben. Wir erhielten ${2} Tribut.'
-      end:
-        won: '&8{0}: Wir haben dem Krieg mit {1} kills und {2} tode gewonnen.'
-        draw: '&8{0}: Der Krieg verlif unentschieden mit {1} kills und {2} toden.'
-        lost: '&8{0}: Wir haben den Krieg mit {2} toden und {1} kills verloren.'
+        sent: '&2{date}, &cMegadtad magad. Kifizettél ${tribute} hadisarcot a győztesnek.'
+        received: '&2{date}, &a{land} megadta magát. ${tribute} sarcot kaptál tőle.'
+      won:
+        attacker: '&2{date}, &aA háborúnak vége. &7A Támadók &8({team}&8) &7győztek. Pontok: Támadók: {att-points}, Védekezők: {def-points}'
+        defender: '&2{date}, &aA háborúnak vége. &7Védekezők &8({team}&8) &7győztek. Pontok: Támadók: {att-points}, Védekezők: {def-points}'
   wars:
-    nametag:
-      enemy: '&cFEIND &8| '
-      ally: '&aVERBÜNDERTER &8| '
-    object:
+    land-type:
       enemy: '&cEnemy'
       ally: '&aAlly'
-  teleportation:
-    bossbar: '&7Warte&5 {time} &7Sekunde(n) zum Teleportieren.'
+    nametag:
+      enemy: '&cELLENSÉG &8| '
+      ally: '&aBARÁT &8| '
 help:
+  general:
+    help-prefix: '&7Használat: '
+    header: '&7------------<- &5Lands Help &7Oldal&6 {page} &8/&e {pages} &7->------------'
+    page: '&7Use &8/&eLands help {next} &7for the next page. <> = needed [] = optional'
+    footer: '&7------------<- &5Lands Help &7Oldal&6 {page} &8/&e {pages} &7->------------'
   command:
-    help: '[T]&8/&3Lands help &8[&3Seite&8] - &7Erhalte Hilfe.[H]&7Klick zum Kopieren. [/H][SC]lands help[/SC][/T]'
-    edit: '[T]&8/&3Lands edit &8<&3land&8> &8- &7Verändere die Einstellungen des Landes.[H]&7Klick zum Kopieren. [/H][SC]lands edit[/SC][/T]'
-    claim: '[T]&8/&3Lands claim &8[&7auto&8] - &7Chunk besetzen.[H]&7Klick zum Kopieren. [/H][SC]lands claim[/SC][/T]'
-    create: '[T]&8/&3Lands create &8<&3Name&8> - &7Land erstellen.[H]&7Klick zum Kopieren. [/H][SC]lands create[/SC][/T]'
-    leave: '[T]&8/&3Lands leave &8[&3Land] &8- &7Chunk oder Land verlassen.[H]&7Klick zum Kopieren. [/H][SC]lands leave[/SC][/T]'
-    unclaim: '[T]&8/&3Lands unclaim &8- &7Chunk freigegeben.[H]&7Klick zum Kopieren. [/H][SC]lands unclaim[/SC][/T]'
-    delete: '[T]&8/&3Lands delete &8<&3Land&8> &8- &7Land löschen.[H]&7Klick zum Kopieren. [/H][SC]lands delete[/SC][/T]'
-    trust: '[T]&8/&3Lands trust &8<&3Spieler&8> [&3here&8] - &7Spieler vertrauen.[H]&7Klick zum Kopieren. [/H][SC]lands trust[/SC][/T]'
-    untrust: '[T]&8/&3Lands untrust &8[&3here&8] - &7Spieler nicht mehr vertrauen.[H]&7Klick zum Kopieren. [/H][SC]lands untrust[/SC][/T]'
-    setRole: '[T]&8/&3Lands setRole &8<&3Spieler&8> <&3Rolle&8> [&3here&8] - &7Rolle setzen.[H]&7Klick zum Kopieren. [/H][SC]lands setrole[/SC][/T]'
-    accept: '[T]&8/&3Lands accept &8<&3Land&8> - &7Einladung annehmen.[H]&7Klick zum Kopieren. [/H][SC]lands accept[/SC][/T]'
-    deny: '[T]&8/&3Lands deny &8<&3Land&8> - &7Einladung ablehnen.[H]&7Klick zum Kopieren. [/H][SC]lands deny[/SC][/T]'
-    view: '[T]&8/&3Lands view &8- &7Chunkgrenze anzeigen.[H]&7Klick zum Kopieren. [/H][SC]lands view[/SC][/T]'
-    menu: '[T]&8/&3Lands menu &8[&3here&8] &8- &7Öffne das Menü des Landes.[H]&7Klick zum Kopieren. [/H][SC]lands menu[/SC][/T]'
-    setSpawn: '[T]&8/&3Lands setspawn - &7Landspawn setzen.[H]&7Klick zum Kopieren. [/H][SC]lands setspawn[/SC][/T]'
-    spawn: '[T]&8/&3Lands spawn &8[&3Land&8] - &7Zum Landspawn teleportieren.[H]&7Klick zum Kopieren. [/H][SC]lands spawn[/SC][/T]'
-    wild: '[T]&8/&3Lands wild &8- &7Telepotier dich zu einem zufälligen freien Ort.[H]&7Klick zum Kopieren. [/H][SC]lands wild[/SC][/T]'
-    top: '[T]&8/&3Lands top &8[&3Seite&8] &8- &7Zeigt die Top 10 Länder.[H]&7Klick zum Kopieren. [/H][SC]lands top[/SC][/T]'
-    selection: '[T]&8/&3Lands selection &8[&3assign&8] &8- &7Länder Selektiereung aktiviert.[H]&7Klick zum Kopieren. [/H][SC]lands selection[/SC][/T]'
-    chat: '[T]&8/&3Lands chat &8[&3Land&8] <&3Nachricht&8> &8- &7Land chat.[H]&7Klick zum Kopieren. [/H][SC]lands chat[/SC][/T]'
-    rename: '[T]&8/&3Lands rename &8<&3Name&8> - &7Land umbennen.[H]&7Klick zum Kopieren. [/H][SC]lands rename[/SC][/T]'
-    teleport: '[T]&8/&3Lands teleport &8[&3world&8] <&3x&8> <&3z&8> - &7Zu Chunk telepotieren.[H]&7Klick zum Kopieren. [/H][SC]lands teleport[/SC][/T]'
-    invites: '[T]&8/&3Lands invites &8- &7Erhaltene Einladungen anzeigen.[H]&7Klick zum Kopieren. [/H][SC]lands invites[/SC][/T]'
-    info: '[T]&8/&3Lands info &8[&3Land&8] - &7Zeigt Informationen zu dem Land.[H]&7Klick zum Kopieren. [/H][SC]lands info[/SC][/T]'
-    player: '[T]&8/&3Lands player &8<&3Spieler&8> - &7Zeigt Informationen zu dem Spieler.[H]&7Klick zum Kopieren. [/H][SC]lands player[/SC][/T]'
-    map: '[T]&8/&3Lands map &8- &7Zeigt die Karte.[H]&7Klick zum Kopieren. [/H][SC]lands map[/SC][/T]'
-    balance: '[T]&8/&3Lands balance &8[&3Land&8] - &7Zeigt das Guthaben des Landes.[H]&7Klick zum Kopieren. [/H][SC]lands balance[/SC][/T]'
-    deposit: '[T]&8/&3Lands deposit &8<&3Menge&8> - &7Guthaben in das Land einzahlen.[H]&7Klick zum Kopieren. [/H][SC]lands deposit[/SC][/T]'
-    withdraw: '[T]&8/&3Lands withdraw &8<&3Menge&8> - &7Guthaben in das Land auszahlen.[H]&7Klick zum Kopieren. [/H][SC]lands withdraw[/SC][/T]'
-    list: '[T]&8/&3Lands list &8[&3world&8] - &7Liste aller Länder.[H]&7Klick zum Kopieren. [/H][SC]lands list[/SC][/T]'
-    assign: '[T]&8/&3Lands assign &8<&3Gebiet&8> - &7Weise eine Auswahl einem Gebiet zu.[H]&7Klick zum Kopieren. [/H][SC]lands assign[/SC][/T]'
-    setowner: '[T]&8/&3Lands setowner &8<&3Spieler&8> - &7Land an Spieler überschreiben.[H]&7Klick zum Kopieren. [/H][SC]lands setowner[/SC][/T]'
-    ban: '[T]&8/&3Lands ban &8<&3Spieler&8> [&3area&8] - &7Bannt den Spieler[H]&7Klick zum Kopieren. [/H][SC]lands ban[/SC][/T]'
-    unban: '[T]&8/&3Lands unban &8<&3Spieler&8> [&3area&8] - &7Entbanne den Spieler[H]&7Klick zum Kopieren. [/H][SC]lands unban[/SC][/T]'
-    taxes: '[T]&8/&3Lands taxes &8- &7Zeigt die Steuern an[H]&7Klick zum Kopieren. [/H][SC]lands taxes[/SC][/T]'
-    unstuck: '[T]&8/&3Lands unstuck &8- &7Telepotiert dich aus fallen heraus.[H]&7Klick zum Kopieren. [/H][SC]lands unstuck[/SC][/T]'
-    claims: '[T]&8/&3Lands claims &8[&3Land&8] &8- &7Zeigt eine Liste von all deinen Ländereien.[H]&7Klick zum Kopieren. [/H][SC]lands claims[/SC][/T]'
-    rent: '[T]&8/&3Lands rent &8<&3cancel | info | remove&8> &8- &7Verwaltete deine Mietverträge.[H]&7Klick zum Kopieren. [/H][SC]lands rent[/SC][/T]'
+    help: '&8/&7Lands help &8[&aPage&8] - &eSegítség menü'
+    edit: '&8/&7Lands edit &8<&aLand&8> - &eTelek szerkesztő módba helyezése'
+    claim: '&8/&7Lands claim &8[&7auto&8] - &eChunk lefoglalása'
+    create: '&8/&7Lands create &8<&aName&8> - &eTelek létrehozása'
+    leave: '&8/&7Lands leave &8[&aLand] &8- &eTelek vagy Chunk elhagyása'
+    unclaim: '&8/&7Lands unclaim &8- &eFoglalás megszüntetése'
+    delete: '&8/&7Lands delete &8<&aLand&8> &8- &eTelek törlése'
+    trust: '&8/&7Lands trust &8<&aPlayer&8> [&ahere&8] - &eJátékos meghívása a telekhez'
+    untrust: '&8/&7Lands untrust &8[&ahere&8] - &eJátékos kirúgása a telekről'
+    setRole: '&8/&7Lands setRole &8<&aPlayer&8> <&aRole&8> [&ahere&8] - &eJogkör beállítása '
+    accept: '&8/&7Lands accept &8<&aLand&8> - &eMeghívó elfogadása'
+    deny: '&8/&7Lands deny &8<&aLand&8> - &eMeghívó elutasítása'
+    view: '&8/&7Lands view &8- &eInfó a chunkról'
+    menu: '&8/&7Lands menu &8[&3here&8]&8- &eMenü megnyitás'
+    setSpawn: '&8/&7Lands setSpawn - &eTelek spawn beállítása'
+    spawn: '&8/&7Lands spawn &8[&aLand&8] - &eTelekhez teleportálás'
+    wild: '&8/&7Lands wild &8- &eRandom teleportálás'
+    top: '&8/&7Lands top &8[&3oldal&8]&8- &eTop 10 telek'
+    selection: '&8/&7Lands selection &8- &eTelekhatárok mutatása'
+    chat: '&8/&3Lands chat &8[&3telek&8] <&3üzenet&8> &8- &7Telek chat'
+    rename: '&8/&7Lands rename <&anév&8> - &eTelek átnevezése'
+    teleport: '&8/&7Lands teleport &8[&aWorld&8] <&aX&8> <&aZ&8> - &eChunkhoz teleportálás'
+    invites: '&8/&7Lands invites &8- &eMeghívók listázása'
+    info: '&8/&7Lands info &8[&aTelek&8] - &eTelek infó mutatása'
+    player: '&8/&7Lands player &8<&aPlayer&8> - &eInfó egy játékosról'
+    map: '&8/&7Lands map &8- &eTérkép mutatása'
+    balance: '&8/&3Lands balance &8[&3telek&8] - &7Telek egyenleg ellenőrzése'
+    deposit: '&8/&3Lands deposit &8<&3amount&8> - &7Pénz töltése a telek bankjába'
+    withdraw: '&8/&3Lands withdraw &8<&3amount&8> - &7Pénz lehívása a telek bankjából'
+    list: '&8/&3Lands list &8[&3világ&8] - &7Összes telek listája'
+    assign: '&8/&3Lands assign &8<&3terület&8> - &7Kijelöléshez terület rendelése'
     wars:
-      declare: '[T]&8/&3Wars declare &8<&3Land&8> - &7Krieg erklären[H]&7Klick zum Kopieren.[/H][SC]wars declare[/SC][/T]'
-      info: '[T]&8/&3Wars info - &7Zeigt die nächsten Kriege[H]&7Klick zum Kopieren.[/H][SC]wars info[/SC][/T]'
-      menu: '[T]&8/&3Wars menu &8- &7Öffnet das Kriegsmenü[H]&7Klick zum Kopieren.[/H][SC]wars menu[/SC][/T]'
-      deny: '[T]&8/&3Wars deny &8- &7Lehnt einen Krieg ab[H]&7Klick zum Kopieren.[/H][SC]wars deny[/SC][/T]'
+      declare: '&8/&3Wars declare &8<&3telek&8> - &7Hadüzenet küldése'
+      info: '&8/&3Wars info - &7Aktív és jövőbeli háborúk mutatása'
+      menu: '&8/&3Wars menu &8- &7Háború menü'
     admin:
-      admin: '[T]&8/&3Lands admin &8<&3Unterbefehle&8> &8- &7Admin Befehle[H]&7Klick zum Kopieren.[/H][SC]lands admin[/SC][/T]'
-      debug: '[T]&8/&3Lands debug &8- &7Zeigt Debug Informationen[H]&7Klick zum Kopieren.[/H][SC]lands debug[/SC][/T]'
-      safezone: '[T]&8/&3Lands safezone &8- &7Konfiguriere Safezones[H]&7Klick zum Kopieren.[/H][SC]lands safezone[/SC][/T]'
-      reload: '[T]&8/&3Lands reload &8- &7Lade das Plugin neu[H]&7Klick zum Kopieren.[/H][SC]lands reload[/SC][/T]'
-      about: '[T]&8/&3Lands about &8- &7Zeigt Informationen über das Plugin[H]&7Klick zum Kopieren.[/H][SC]lands about[/SC][/T]'
-    mod:
-      chatspy: '[T]&8/&3Lands chatspy &8[&3land&8] - &7Spioniert alle Lands Chats aus[H]&7Klick zum Kopieren.[/H][SC]lands chatspy[/SC][/T]'
+      admin: '&8/&7Lands admin &8<&aAction&8> &8- &eAdmin parancsok'
+      debug: '&8/&7Lands debug &8- &eStatisztikák mutatása'
+      safezone: '&8/&7Lands safezone &8- &eBiztonságos zónák beállítása'
+      reload: '&8/&7Lands reload &8<&aValue&8> &8- &eKonfig és üzenetek újratöltése'
+      about: '&8/&7Lands about &8- &eInfo a pluginról'
 message:
-  world-not-exist: '&cEine Welt mit dem Namen&4 {world} &cexistiert nicht. &7Tippfehler?'
-  world-invalid: '&cDies wurde in dieser Welt deaktiviert. &7Ein Administrator kann dies aktivieren. Welt: {world}'
-  feature-disabled: '&cDieser Befehl ist dekativiert. {setting} Er muss in der Config aktiviert werden um dies zu nutzen.'
-  current-war: '&cDas kannst du zur Zeit nicht tunn. &7Dein Land befindet sich zur Zeit im Krieg, bitte versuche es nach dem Krieg erneut.'
+  no-permission: '&cNincs meg a szükséges jog&7:&b {permission}&7.'
+  world-invalid: '&cKikapcsolva ebben a világban: {world}.'
+  feature-disabled: '&cA funkció egy admin által kikapcsolva. &7Az alábbi beállítást engedélyezni kell a konfigban:&b {setting} &7'
+  current-war: '&cEzt nem teheted most. &7Háborúban vagy, várd meg, amíg vége.'
   noaccess:
-    chunk: '&cDu bist nicht dazu berechtigt dies hier im Chunk zu tun &8(&7Land:&2 {land}&7X: {x} &7Z: {z}&8)&c. &8Bypass Berechtigung: {bypass}'
-    area: '&cDu darfst dies in dem Gebiet nicht tun. &8(&7Area:&6 {area} &7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Bypass Berechtigung: {bypass}'
-    land: '&cDu bist nicht dazu berechtigt dies in diesem Land zu tun &8(&7Land:&2 {land}&8)&7.&8Bypass Berechtigung: {bypass}'
-    position: '&cDir ist es nicht erlaubt dies in diesem Land&4 {land} &can deiner Position zu tun.&8Bypass Berechtigung: {bypass}'
-    land-not-owner: '&cDu bist nicht dazu berechtigt dies in diesem Land zu tun&4 {land}&c.&7Wähl dein eigenes Land aus &8(/&3Lands edit &8<&3land&8>) oder erstell dir ein Land &8(/&3Lands create &8<&3name&8>)&7. &8Bypass Berechtigung: {bypass}'
-    claim: '&cDu kannst den Chunk nicht besetzen. &7Dieser Chunk wird von einem anderen Plugin besetzt. Name: {plugin}'
-    place: '&cDu darfst hier nicht bauen. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-    break: '&cDu darfst hier nichts abbauen. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-    ignite: '&cDu darfst hier nichts anzünden. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-    enter: '&cDu darfst das Gebiet &4{area} &cvon dem Land&4 {land}&c nicht betreten.&7Du wurdest zurück teleportiert.'
-    vehicle: '&cDir ist es nicht erlaubt Fahrzeuge zu nutzen. &7Dieses Gebiet gehört zu dem Land&2 {land}&7.'
-    fly: '&cDir ist es nicht erlaubt hier zu fliegen. &7Dieses Gebiet gehört zu&2 {land}&7. &8Bypass: {bypass}'
-    edit: '&cDu darfst das Land nicht bearbeiten.'
-    banned: '&cDir ist es nicht erlaubt das Gebiet zu betreten, &7du wurdest verbannt.&8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. &8Bypass Berechtigung: {bypass}'
-    teleport: '&cDir ist es nicht erlaubt dich in das Land &4 {land}&c zu telepotieren. &7Du bist kein Vertrauter..'
+    chunk: '&cNincs hozzáférésed a chunkhoz. &8(&7Teleknév:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c.'
+    area: '&cNem hetedet meg ezt ezen a területen &8(&7Terület:&6 {area} &7Telek:&2 {land} &7X: {x} &7Z: {z}&8)&c.'
+    land: '&cNem teheted meg ezt a telken &8(&7Teleknév:&e {land}&8)&7.'
+    land-not-owner: '&cNem vagy a &4 {land}&c tulaja. &7Válaszd ki a saját telked &8(/&3Lands edit &8<&3land&8>) vagy készíts egyet &8(/&3Lands create &8<&3name&8>)&7.'
+    role-weight:
+      land: '&cNem szerkesztheted ezt a játékost itt (Telek&4 {land}&c). &7A jogkörének&6( {role} )&7magasabb prioritása van.'
+      area: '&cNem szerkesztheted ezt a játékost itt (Terület&4 {area} &cTelek&4 {land}&c). &7A jogkörének&6( {role} )&7magasabb prioritása van.'
+    claim: '&cNem foglalhatsz telket itt. &7A terület már más plugin védi.'
+    place: '&cNem rakhatsz le blokkokat itt. (Telek {land})'
+    break: '&cNem törhetsz blokkokat itt. (Telek {land})'
+    ignite: '&cNem gyújthatsz fel blokkokat itt. (Telek {land})'
+    enter: '&cNem léphetsz be a &4 {area} &cterület &4 {land}&ctelkére. &7Vissza lettél teleportálva.'
+    edit: '&cNem szerkesztheted a telket. (Telek {land})'
     interact:
-      general: '&cDu darfst hier mit nichts Interagieren. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-      door: '&cDu darfst hier keine Türen öffnen. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-      mechanism: '&cDu darfst hier kein Mechanismus auslösen. &7Dieser Chunk gehört  zu dem Land &2{land}&7.'
-      container: '&cDu darfst hier keine Truhen öffnen. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-      villager: '&cDu darfst hier mit keinen Dorfbewohnern handeln. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
+      general: '&cNem aktiválhatsz dolgokat.  (Telek {land})'
+      door: '&cNem nyithatsz ajtókat.  (Telek {land})'
+      mechanism: '&cNem használhatsz gépeket.  (Telek {land})'
+      container: '&cNem férhetsz tárolókhoz.  (Telek {land})'
+      villager: '&cNem állhatsz szóba a falusiakkal.  (Telek {land})'
     combat:
-      animal: '&cDu darfst hier keine Tiere angreifen. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
+      animal: '&cNem támadhatsz meg állatokat.'
       pvp:
-        attacker: '&cDu darfst hier keine Spieler angreifen. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-        target: '&cDein Ziel darf keine Spieler angreifen. &7Daher kannst du ihn auch nicht angreifen. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-        ally: '&cDu kannst diesen Spieler nicht angreifen, er ist ein Verbündeter! Arenakämpfe können in einem Land ausgetragen werden wenn PvP aktiviert ist.'
-        wilderness: '&cDu kannst den Spieler nicht angreifen, weil er in der Wildnis steht und du in einem Land.'
-  area:
-    exists: '&cEin Gebiet mit dem Namen&4 {area} &cexistiert bereits in dem Land&4 {land}&c.'
-    not-exist: '&cDas Gebiet&4 {area} &cexistiert in dem Land&4 {land}&c nicht.'
-    default: '&cDas kannst du nicht mit dem Standart Gebiet&4 {area} &cvon dem Land&4 {land}&c tun.'
+        attacker: '&cNem támadhatsz meg játékosokat.  (Telek {land})'
+        target: '&cA célpontod nem támadhat meg. &7Nem tudtok itt harcolni.  (Telek {land})'
+        ally: '&cNem támadhatsz meg barátot a vadonban, ha pvp-zni szeretnétek, saját területen kapcsoljátok be a telek pvp-t'
   event:
     fly:
-      counter: '#t#&cFliegen wird deaktiviert[newline]&cin &4{sec} &cSekunde(n)'
-      disabled: '&cDas Fliegen wurde deaktiviert. Du hast nicht die benötigten Rechte um hier zu fliegen.'
-    enter:
-      land: '#t#&2&l{land}[newline]&3{title}'
-      safezone: '#t#&2&l{land}[newline]{title}'
-      pvp-warning: '#a#&cDu betrittst eine PVP Zone.'
-    leave:
-      land: '#t#&2&lWildnis'
-      safezone: '#t#&2&lWildnis'
+      warning: '&7Nem repülhetsz itt, másodpercek múlva kikapcsolódik a flyod'
+      counter: '#t#&cA repülés kikapcsol[newline]&c&4{sec} &cmásodperc múlva'
+      disabled: '&cRepülés kikapcsolva nincs jogod itt repülni.'
+      disallowed: '&cNem repülhetsz itt. &7Beszélj a telek tulajával.'
+      disallowed-wilderness: '&cNem repülhetsz a vadonban'
+    lands:
+      enter: '#t#&2&l{land}[newline]&3{title}'
+      leave: '#t#&2&lVadon[newline]&7Érezd a szabadságot.'
+    safezones:
+      enter: '#t#&2&l{land}[newline]{title}'
+      leave: '#t#&2&lVadon[newline]&7Érezd a szabadságot.'
+    teleport:
+      already: '&cCsak egy folyamatban lévő teleportod lehet.'
+      started: '&7Teleportálás&5 {sec} &7másodperc múlva. Ne mozogj.'
+      cancelled: '&cTeleportálás megszakítva.'
+      chunk: '#t#&9&lElteleportáltál[newline]&7X: {x} Z: {z} Költsége:&c ${cost}'
+      cancelled-plugins: '&cEgy másik plugin letiltotta a teleportodat'
   claimblock:
-    dropped: '&cEinige Claimblocks liegen am Boden. &7Du hattest kein Platz mehr im Inventar.'
-    success: '&7Du hast&3 {blocks} &7Claimblock(s) erhalten. &7Platziere sie in einem Chunk um diesen zu besetzen.'
-    not-owner: '&cDu darfst den Claimblock nicht nutzen. &7Er gehört zu&3 {owner}&7.'
+    dropped: '&cNéhány levédőblokk a földre került. &7Nem volt nálad hely.'
+    success: '&7Van&b {blocks} &7levédő blokkod. &7Rakd le egy chunkban, hogy lefoglald.'
+    not-owner: '&cNem használhatod ezt a levédőblokkot. &7Nem a tied.&b {player}&7 tulajdona.'
   blacklist:
-    untrusted: '&cDu darfst den Befehl nicht ausführen. &7Du bist in diesem Land nicht vertraut. &8Der Landbesitzer kann dich zum Vertrauten machen.'
-    general: '&cDu darfst den Befehl nicht in einem bereits besetzten Land ausführen. &8Ein Administrator kann das in der Config ändern.'
+    untrusted: '&cNem használhatod ezt a parancsot itt. &7Nem vagy a chunkhoz adva.'
+    general: '&cLevédett területeken nem használhatod ezt a parancsot.'
   autoAction:
-    stopped: '&cDie Aktion wurde gestoppt. &7Maximale Runden erreicht. Name:&3 {name}'
-    started: '&7Die Aktion wurde gestartet. Name:&3 {name}'
-    removed: '&7Die Aktion wurde gestoppt. &7Name:&3 {name}'
-  role:
-    exists: '&cEine Rolle mit dem Namen&4 {role} &cexistiert bereits. &7Bitte wähle einen anderen Namen.'
-    not-exist: '&cDie Rolle&e {role} &cexistiert in dem Gebiet&4 {area} &cvon dem Land&4 {land}&c nicht. &7Tippfehler?'
-    max: '&cDu kannst keine weiteren Rollen für das Land erstellen. &7Du hast das Maximum von&3 {max} &7Rollen erreicht. Berechtigung: lands.roles.NUMBER'
-    player:
-      land: '&cDu kannst diese Rolle nicht in dem Land&4 {land}&c bearbeiten. &7Die Rolle&6 {role} &7hat eine höhere oder gleiche Priorität.'
-      area: '&cDu kannst diese Rolle nicht in dem Gebiet&4 {area} &8(&7Land:&2 {land}&8)&c bearbeiten. &7Die Rolle&6 {role} &7hat eine höhere oder gleiche Priorität.'
-    weight:
-      land: '&cDu kannst diesen Spieler in dem Land &7{land} &cnicht bearbeiten&c. &7Die Rolle&6 {role} &7hat eine höhere Priorität als deine.'
-      area: '&cDu kannst diesen Spieler in dem Gebiet&4 {area} &8(&7Land:&2 {land}&8)&c nicht bearbeiten.      &7Die Rolle&6 {role}&7hat eine höhere Priorität als deine.'
-    delete:
-      entry: '&cDu kannst die Einstiegsrolle nicht löschen. &7Sie wird für neue Spieler benötigt.'
-      visitor: '&cDu kannst die Besucherrolle nicht löschen. &7Sie wird für alle Besucher benötigt.'
-      owner: '&cDu kannst die Besitzerrolle nicht löschen. &7Sie wird benötigt.'
+    stopped: '&cAutomata esemény leállítva. &7Maximum elérve. Név:&b {name}'
+    started: '&7Automata esemény sikeresen elkezdve. Név:&b {name}'
+    removed: '&7Automata esemény sikeresen leállítva. &7Név:&b {name}'
+  gui:
+    chats:
+      title: '#t#&e&lÍrj be egy új üdvözlést'
+      title-done: '#t#&a&lÜdvözlés sikeresen beállítva'
+      name: '#t#&e&lÍrj be egy új nevet'
+      name-done: '#t#&2&lNév sikeresen beállítva'
+      cancel: '&7Írd be hogy &bcancel &7hogy megszakítsd a műveletet'
   chat-action:
-    cancelled: '#t#&c&lAbgebrochen[newline]&c&lChat Aktion'
-    player: '&7Bitte gib den Namen des Ziels ein.'
-    title: '&7Bitte gib einen neuen Titel ein. Du kannst auch Minecraft Farbcodes nutzen.'
-    rename: '&7Bitte gib einen neuen Namen für das Land ein. Leerzeichen sind nicht erlaubt.'
-    land: '&7Bitte gib den Namen des Landes ein.'
-    name: '&7Bitte gib den Namen im Chat ein.'
+    cancelled: '#t#&c&lMűvelet megszakítva'
+    player: '&7Írd be a játékos nevét'
+    role:
+      create: '&7Adj meg egy új jogkör nevet (A színkódokat kezeli)'
+      delete: '&7írd be a törlendő jogkört'
+      exists: '&4{role} &cjogkör már létezik, válassz másikat.'
+      max: '&cNem hozhatsz létre több jogkört. Elérted a maximális&3 {max}&7-t.'
     area:
-      create: '&7Bitte gib den Namen für das Gebiet ein. Farbcodes können genutzt werden.'
-      delete: '&7Bitte gib den Namen des Gebietes ein, das du löschen möchtest.'
-      exists: '&cDas Gebiet &4{area} &cexisitert bereits in dem Land &8(&7Land:&2 {land}&8)&c. &7Bitte nutze einen anderen Namen.'
-      max: '&cYDu kannst keine Gebiete mehr für das Land erstellen. &7Das Maximum von &3{max} &7Gebieten wurde erreicht. Permisssion: lands.areas.NUMBER'
-  teleportation:
-    already: '&cDu kannst keine zweite Teleportation durchführen. Es wird gerade eine Teleportation durchgeführt. &7Bitte warte, bis diese durchgeführt wurde.'
-    started: '&7Teleportation gestartet. Teleportieren in&5 {sec} &7Sekunden. Bitte bewege dich nicht.'
-    cancelled: '&cDeine Teleportation wurde abgebrochen. &7Bitte bewege dich nicht, während du noch&5 {sec} &7Sekunden auf die Teleportation wartest.'
-    chunk: '#t#&9&lTeleportiert[newline]&7X: {x} Z: {z} Kosten:&c ${cost}'
-    plugin: '&cDie Teleportation wurde durch ein anderes Plugin abgebrochen. &7Bitte überprüfe deine anderen Plugins. &7Das Problem liegt nicht an Lands.'
-    unsafe: '&cDas Ziel ist nicht sicher, die Teleportation wurde abgebrochen.'
-    corrected: '&7Dein originales Ziel ist unsicher. &7Du wurdest zu einem sicheren Ziel in der Nähe teleportiert.'
+      create: '&7Írd be az új terület nevét (A színkódokat kezeli)'
+      delete: '&7Írd be a törlendő terület nevét'
+      exists: '&4 {area} &cnevű terület már létezik ezen a telken &8(&7Land:&2 {land}&8)&c. &7Válassz másikat'
+      max: '&cNem hozhatsz létre több területet. Elérted a maximális&3 {max}&7-t.'
+    title: '&7Írd be a telek új üdvözlését. (A színkódokat kezeli)'
+    rename: '&7Adj meg egy új nevet a teleknek. Szóköz NEM engedélyezett'
 command:
-  rent:
-    edit: '&cDu kannst dieses Gebiet&4 {area} &cof land&4 {land}&7 nicht bearbeiten, da es an den Spieler&3 {player}&7 vermietet wurde.'
-    tenant: '&cDu hast das Gebiet &7Area&6 {area} &7of land&2 {land} &7an dieser Position nicht gemietet.'
-    none: '&cDas Gebiet&4 {area} &cof land&4 {land} &can dieser Position wurde noch nicht gemietet.'
-    status: '&cDas Gebiet&4 {area} &cof land&4 {land} &can dieser Position steht nicht zur Vermietung frei.'
-    set:
-      land: '&cDu kannst nicht das gesamte Land&4 {land} &cvermieten. &7Du kannst entweder einzelne Gebiete vermieten oder du verkaufst(line = sell) es komplett.'
-      already: '&cDu kannst dieses Gebiet nicht noch einmal vermieten. &7Das Gebiet&6 {area} &7ist bereits an Spieler&3 {player}&7 vermietet. Der Mietvertrag läuft in&5 {time}&7aus.'
-      sold: '&cDu kannst ein bereits verkauftes Gebiet nicht vermieten. &7Das Gebiet&6 {area} &7wurde von Spieler&3 {player}&7 gekauft.'
-      success: '&7Das Gebiet&6 {area} &7wurde vermietet. Der Mieter zahlt&c ${cost} &7pro&5 {time}&7.'
-      invalid: |
-        &7Your line format is invalid (line: {line})
-         &81. line:&7 Lands
-         &82. line:&7 rent
-         &83. line:&7 TIME maxTime (not required)
-         &84. line:&7 costs (example: 5 = $5)
-      info: |
-        [NoPrefix]
-        &7---------<- &5&lRent Info &7->---------
-        [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this area.[/H][C]lands view here[/C][/T]
-         &7Area:&6 {area}
-         &7Cost:&c ${cost} &7each {time}
-         &8Max time: {max}
-        &7---------<- &5&lRent Info &r&7->---------
-    rent:
-      trusted: '&cDu kannst das Gebiet&4 {area} &cof land&4 {land}&c nicht mieten. &7Du bist dort bereits Vertraut.'
-      max: '&cDu kannst den Mietvertrag nicht verlängern. &7Der Besitzer des Landes&2 {land} &7hat eine maximale Mietdauer vonf&5 {max} &7festgelegt.'
-      add: '&7Du hastd&5 {add} &7zu deinem Mietvertrag des Gebiets&6 {area} &7für&c ${cost}&7 hinzugefügt. Es läuft in&5 {time}&7 aus.'
-      success: '&7Du hast das Gebiet&6 {area} &7vom Land&2 {land} &7für&c ${cost}&7 gemietet. Es läuft in&5 {time}&7 aus.'
-      info: |
-        [NoPrefix]
-        &7---------<- &5&lRented Info &7->---------
-        [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this area.[/H][C]lands view here[/C][/T]
-         &7Area:&6 {area}
-         &7Tenant: {player}
-         &7Time left:&5 {left}
-         &8Rent: ${cost} each {time}
-        &7---------<- &5&lRented Info &r&7->---------
-    cancel:
-      success: '&7Du hast den Mietvertrag des Gebiets&6 {area}&7 aufgehoben. Du hast keinen Zugang mehr zu diesem Gebiet.'
-    remove:
-      success:
-        land: Das &7Land&2 {land} &7steht nicht länger zum Erwerb.
-        area: Das &7Gebiet&6 {area} &7of land&2 {land} &7steht nicht länger zum Erwerb.
-  sell:
-    sell:
-      rented: '&cDu kannst kein Gebiet verkaufen, welches von einem Spieler gmietet wurde. &7Das Gebiet&6 {area} &7wird beireits von&3 {player}&7 gemietet. Es läuft aus in&5 {time}&7.'
-      success:
-        area: '&7Du stellst das Gebeit&6 {area} &7zum Verkauf frei. Kosten:&c ${cost}'
-        land: '&7Du stellst das gesamte Land&2 {land} &7zum Verkauf frei. Kosten:&c ${cost}'
-      invalid: |
-        &7Your line format is invalid (line: {line})
-         &81. line:&7 Lands
-         &82. line:&7 sell
-         &83. line:&7 costs (example: 5 = $5)
-    buy:
-      success:
-        area: '&7Du hast das Gebiet&6 {area} &7vom Land&2 {land} &7für&c ${cost}&7 gekauft.'
-        land: '&7Du hast das Land&2 {land} &7für&c ${cost}&7 gekauft'
-      info:
-        area: |
-          [NoPrefix]
-          &7---------<- &5&lArea Buy &7->---------
-          [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this area.[/H][C]lands view here[/C][/T]
-           &7Area:&6 {area}
-           &7Cost:&c ${cost}
-          &7---------<- &5&lArea Buy &r&7->---------
-        land: |
-          [NoPrefix]
-          &7---------<- &5&lLand Buy &7->---------
-          [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this land.[/H][C]lands view[/C][/T]
-          &7Cost:&c ${cost}
-          &7---------<- &5&lLand Buy &r&7->---------
   general:
-    no-permission: '&cDu hast keine Berechtigung dies zu tun. &8Du brauchst: {permission}.'
-    land-not-exist: '&cDas Land&2 {land} &cexistiert nicht.'
-    area-not-exist: '&cDas Gebiet&4 {area} &cexistiert nicht in dem Land &4{land}&c. &7Tippfehler?'
-    land-not-member: '&cDu bist in dem Land&4 {land}&c nicht vertraut. &7Nutze &8/&3Lands menu &7,um zu sehen in welchen Ländern du vertraut bist.'
-    no-edit-land: '&cDu hast bisher kein Land ausgewählt. &7Nutze &8/&3Lands edit &8<&3land&8> &7um eines auszuwählen.'
-    name-exists: '&cDer Name&4 {name} &cwird bereits von einem anderen Land genutzt. &7Du musst einen anderen Namen nutzen.'
-    money-cost-bank: '&cDu hast nicht genug Geld auf der Hand. &7Du brauchst&e {cost} $ &7, um Geld in die Bank einzuzahlen zu können. Nutze: &8/&3Lands deposit {cost}'
-    money-cost: '&cDu hast nicht genug Geld. &7Du brauchst&e {cost} $&7.'
-    swear-word: '&cSchimpfwort erkannt. &7Bitte nutze keine vulgäre Sprache. Wort:&c {word}'
-    action-cooldown: '&cDu kannst das zur Zeit nicht tun. &7Du musst&5 {time}&7 warten.'
-    land-none: '&cDu bist kein Mitglied eines Landes auf dieser Welt. &7Nutze &8/&3Lands create &7, um ein Land zu erstellen.'
-    land-no-own: '&cDu hast kein Land auf dieser Welt. &7Nutze &8/&3Lands create &7, um ein Land zu erstellen.'
-    world-invalid: '&cDu kannst das in dieser Welt nicht tun. &7Ein Administrator muss die Welt &3{world} &7erst freigeben.'
-    wilderness: '&cDieser Chunk gehört der Wildnis. &7Du musst zu einem besetzten Chunk. &7Du kannst &8/&3Lands menu &7nutzen, um deine Länder zu sehen.'
-    player-not-exist: '&cDer Spieler&4 {player}&c existiert nicht. &7Tippfehler?'
-    player-offline: '&cEs ist zur Zeit kein Spieler mit dem Namen&4 {player} &conline. &7Tippfehler?'
-    player-self: '&cDas kannst du nicht mit dir selbst machen.'
-    banks-disabled: '&7Banken wurden deaktiviert. &8Ein Administrator kann dies in der Config aktivieren.'
-    land-not-trusted: '&cDer Spieler &4 {player} &7ist kein Mitglied von dem Land &8(&7Land:&2 {land}&8)&7. Du musst ihn erst vertrauen. Nutze &8/&3Lands trust&7.'
-    area-not-trusted: '&cDu kannst das hier nicht tun. Du bist nicht auf dem Chunk &8(&7X: {x} Z: {z}&8)&cvertraut. &7Es gehört zu dem Gebiet&6 {area} &7vom Land&2 {land}&7.'
-    invalid-number: '&cDeine Eingabe&4 {input} &cist keine Zahl.&3 {argument} &7muss eine Zahl sein.'
-    number: '&Deine Eingabe&4 {input} &cist keine Zahl.&3 {argument} &7muss eine Zahl sein.'
-    name:
-      character: '&cDu kannst keine ungültigen Zeichen nutzen. &7Gefundene Zeichen:&3 {invalid} &7. Bitte nutze nur Zahlen und Buchstaben.'
-      color: '&cDir ist es nicht erlaubt Farbcodes zu nutzen. &7Bitte entferne jeden Farbcode.'
-      length: '&cDer Name ist zu lang. &7Die maximale Länge beträgt:&3 {max} &7 &8(&7deine Eingabe: {input}&8)&7. &8Dies beinhaltet auch Farbcodes.'
-      empty: '&cDieser Name ist ungültig. &7Du musst mindestens ein Zeichen eingeben, Farbcodes funktionieren nicht.'
+    land-not-exist: '&cA telek &e {land} &cnem létezik ebben a világban.'
+    area-not-exist: '&e {area} &cnevű terület nem létezik&e {land}&c-n belül '
+    role-not-exist: '&e {role} &cjogkör nem létezik &4 {land}&c telek &4 {area} &területén belül'
+    land-not-member: '&cNem vagy hozzáadva ehhez a telekhez:&e {land}&c. &7Használd a &8/&aLands menu &7parancsot, hogy lekérd a telkeid.'
+    land-no-action:
+      edit: '&cNem vagy tagja teleknek, ahol ezt megtehetnéd &8(&4{setting}&8)&c. &7Használd a &8/&aLand create &7parancsot, hogy létrehozz egyet.'
+      position: '&cNem teheted ezt meg a telken, hol vagy. &7Menj a saját telkedre. &7Beállítás:&3 {setting}'
+    name-exists: '&cEz a név már le van foglalva. &7Használj egy másikat.'
+    money-cost-bank: '&cNincs elég pénzed a bankban. &7Kelleni fog:&b ${cost}&7. Fizess be pénzt: &8/&3Lands deposit {cost}'
+    money-cost: '&cNincs elég pénzed. &7Kelleni fog:&b ${cost}&7.'
+    lands-max: '&cNem lehetsz több telek tagja, elérted a maximum&3 {max}&7-t.'
+    name-numbers: '&cNe használj számokat a telek nevében, csak latin betűket.'
+    name-accent: '&cNe használj ékezetes betűket.'
+    name-length: '&ctúl hosszú név. &7A maximum &b {max} &7karakter.'
+    action-cooldown: '&cNem teheted ezt. &7Várnod kell &b {time} &7percet.'
+    land-none: '&cNem vagy egy teleknek sem tagja. &7Használd a &8/&aLands create &7parancsot, hogy létrehozz egyet.'
+    land-no-own: '&cNincs saját telked. &7Használd a &8/&aLands create &7parancsot, hogy létrehozz egyet.'
+    world-invalid: '&cEbben a világban nem teheted ezt. &7Próbálkozz egy másikban.'
+    wilderness: '&cEz a chunk a vadon része. &7Menj egy foglalt területre. &7Használd a &8/&aLands menu &7parancsot, hoogy listázd a telkeid.'
+    player-not-exist: '&e{player}&c nevű játékos nem létezik. &7Ellenőrizd a parancsot.'
+    player-not-online: '&4 {player} &cjelenleg nincs online.'
+    player-self: '&cMagaddal nem teheted ezt.'
+    banks-disabled: '&7A bankok ki vannak kapcsolva'
+    land-not-trusted: '&4 {player} &7Nem tagja ennek a teleknek &8(&7Telek:&2 {land}&8)&7. Először add hozzá: &8/&3Lands trust&7.'
+    land-max-members: '&2 {land}&ctelekhez nem lehetett hozzáadni. &7Már elérte a maximum&3 {members} &7tagot.'
+    area-not-trusted: '&cEzt nem teheted meg, nem vagy a chunkhoz adva &8(&7X: {x} Z: {z}&8)&7. &2 {land} &7telek &6 {area} &7területének része.'
+    invalid-number: '&4 {input} &cnem egy szám.&3 {argument} &7-nak számnak kell lennie.'
   help:
-    header: '[NoPrefix][T]&7----------&6<<<<&7-[H]&7Vorherige Seite.[/H][C]lands help {previous}[/C][/T] &2Lands Help &7Seite&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7Nächste Seite.[/H][C]lands help {next}[/C][/T]'
-    footer: |
-      [NoPrefix]
-      &7Drück auf die Pfeile zum navigieren,
-      [T]&7----------&6<<<<&7-[H]&7Vorherige Seite.[/H][C]lands help {previous}[/C][/T] &2Lands Help &7Seite&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7Nächste Seite.[/H][C]lands help {next}[/C][/T]
-    help: '&7Nutz &8/&aLand help &7für die Hilfe.'
-    cmd-not-exist: '&cDieser Befehl existiert nicht. &7Befehl&3 {command} &7ist ungültig.'
+    help: '&7Használd a &8/&aLand help &7parancsot segítségért.'
+    cmd-not-exist: '&cEz az al-parancs nem létezik:&b {command}'
+    page-not-exist: '&8[&eProtect&8] &cAz oldalszám&e {page} &cnem létezik. &7Elírtad?'
   create:
-    land-other: '&cDir ist es nicht erlaubt ein eigenes Land zu haben und ein Mitglied eines anderen Landes zu sein. &7Du musst&2 {land} &7erst verlassen. &8Ein Administrator kann dies in der Config ändern.'
-    max-own: '&cDu kannst kein weiteres Land erstellen. &7Du hast dein Maximum von &3{max} &7erreicht. &8Rechte: lands.ownlands.NUMBER'
-    success: '&7Das Land&2 {land} &7wurde für&e {cost} $&7 erfolgreich erstellt. Du kannst Chunks besetztem indem du &8/&3Lands claim &7eingibst. Du kannst auch &8/&3Lands &7selection durchführen, um ein Gebiet welches du besetzen willst zu markieren.'
-    broadcast: '&7Land&2 {land} &7wurde von&3 {player}&7 erstellt.'
+    land-other: '&cNem lehet saját telked, ha már tagja vagy egy másiknak. &7El kell hagyd&b {land}&7-t először. Egy admin kikapcsolhatja ezt a funkciót a konfigban.'
+    max-own: '&cNem lehet több telked. &7Elérted a maximum&b {max} &7 telket.'
+    success: '&7Sikeresen létrehoztad a&b {land} &7 nevű telket &b {cost}&7-ért. Lefoglalhatsz chunkokat a &8/&aLands claim&7 paranccsal.'
+    broadcast: '&b{land} &7létrehozva &b {player}&7 által.'
   rename:
-    success: '&7Der Name&3 {name} &7wurde erfolgreich geändert. Vorheriger Name &8(&7Land:&2 {land}&8)&7. Du hast&e {cost} $&7 gezahlt.'
+    success: '&7Sikeresen átnevezted &b {name}&7-ra/re ennél a teleknél &8(&7Teleknév:&e {land}&8)&7.&b ${cost}&7-t fizettél.'
   edit:
-    success: '&7Du hast den Bearbeitungsmodus für das Land &8(&7Land:&2 {land}&8)&7 aktiviert. Die nächsten Aktionen, wie z.b &8/&3Lands claim &7oder &8/&3Lands trust&7, werden für dieses Land  angewendet.'
+    success: '&7Beléptél a szerkesztó módba &8(&7Teleknév:&e {land}&8)&7. Műveletek, mint pl.: &8/&aLands claim &7vagy &8/&aLands trust&7, erre a telekre fognak hatni.'
   selection:
-    not-complete: '&cDeine Auswahl ist nicht komplett. &7Bitte vergewissere dich, dass beide Positionen &8(&bLinksklick &7und &9echtsklick&8)&7 gesetzt sind. Du kannst den Auswahlmodus mit &8/&3Lands selection&7 verlassen und öffnen.'
-    max: '&cDeine Auswahl hat zu viele Chunks. &7Größe:&3 {current} &7Du kannst maximal &3 {max} Chunks auswählen. &8Rechte: lands.selection.NUMBER'
-    too-far: '&cDer Block ist zu weit weg. &7Bitte nutze einen näheren.'
-    enabled: '&7Du hast den Auswahlmodus aktiviert. Nutze &5Linksklick &7um die erste Position zu setzen. Nutze &5Rechtsklick &7um die zweite Position zu setzen.'
-    disabled: '#t#&5&lAuswahlmodus[newline]&c&ldeaktiviert'
-    world: '&cBeide Positionen müssen in derselben Welt sein. &7Bitte setze beide in derselben Welt.'
-    complete: |
-      &7Deine Auswahl is komplett. Folgende Befehle kannst du ausführen:
-        &8┏
-        &8┃ &7Beanspruchen: [T]&8/&3Lands claim &8[&8CLICK&8][H]&7Klick hier zum beanspruchen.[/H][C]lands claim[/C][/T]
-        &8┃ &7Freigeben: [T]&8/&3Lands unclaim &8[&8CLICK&8][H]&7Klick hier zum freigeben.[/H][C]lands unclaim[/C][/T]
-        &8┃ &7Zuweisen zu einem Gebiet: [T]&8/&3Lands assign[H]&7Zu einem Gebiet zuweisen.[/H][SC]lands assign <area>[/SC][/T]
-        &8┗
+    not-complete: '&cA kijelölés nem teljes, bizonyosodj meg róla, hogy mindkét pont be van állítva &8(&bBAL &7és &9JOBB kattintás is&8)&7. Kijelölő mód váltható a &8/&3Lands selection&7 paranccsal.'
+    max: '&cA kijelölt terület túl sok chunkot tartalmaz. &7Méret:&b {current} &7Max megengedett:&b {max}'
+    enableds: '&7Kijelölő mód aktiválva: Válaszd ki a kezeddel egy terület &bszemben lévő sarkait &7 hogy lefoglalj &bminden chunkot &7benne.'
+    disabled: '#t#&5&lKijelölő mód[newline]&c&lkikapcsolva'
+    world: '&cMindkét pozíció egy világban kell legyen'
     pos:
-      warn: '&cDu kannst hier keine Auswahl setzen. &7Dieser Chunk wird von einem anderen Plugin besetzt. Name:&b {plugin}'
-      cancelled: '&cDu kannst hier keine Auswahl setzen. &7Dieser Chunk wird von einem anderen Plugin besetzt. Name:&b {plugin}'
-      one: '#t#&5&lAuswahl[newline]&b&lPos 1 &8-> &7gesetzt'
-      two: '#t#&5&lSelection[newline]&b&lPos 2 &8-> &7gesetzt'
+      warn: '&cFigyelem: &7A chunkot más plugin már védi'
+      cancelled: '&cA kijelölés itt nem fog menni, más plugin védi'
+      one: '#t#&5&lKijelölés[newline]&b&lPozíció 1 &8-> &7Beállítva'
+      two: '#t#&5&lKijelölés[newline]&b&lPozíció 2 &8-> &7Beállítva'
     area:
-      conflicts: '&4{conflicts} &cKonflikt(e) wurden gefunden in dem Chunk. &7Nutze  &8/&3Lands selection assgin {area} confirm &7,um das Gebiet zu überschreiben. Das Gebiet {areas} befindet sich in der Auswahl.'
-      assigned: '&7Du hast&3 {chunks} &7Chunks erfolgreich zu dem Gebiet&6 {area} &8(&7Land:&2 {land}&8)&7 hinzugefügt.'
-    expand:
-      enabled: '&7Du hast erfolgreich die Auswahl auf alle Y Ebenen( von oben nach unten) erweitert.'
-      disabled: '&7Deine Auswahl ist nicht mehr auf allen Y Ebenen.'
+      conflicts: '&4 {conflicts} &ütközés egy másik terület chunkjaival. &7Használd a &8/&3Lands selection assgin {area} confirm &7parancsot a felülíráshoz.'
+      assigned: '&7Sikeresen hozzáadtál&3 {chunks} &7chunkot a &6 {area}&7 nevű területedhez &8(&7Telek:&2 {land}&8)&7.'
   claim:
-    already: '&cDu kannst diesen Chunk nicht beanspruchen. &7Er gehört bereits zum Land&2 {land}&7.'
-    auto-create: '&7Es wird versucht automatisch ein Land in dieser Welt für dich zu erstellen. Du kannst den Namen mit &8/&3Lands rename&7 ändern.'
-    auto-create-fail: '&cEs konnte kein Land für dich erstellt werden. &7Bitte lies die Nachricht obendrüber.'
-    near-other: '&cDas ist zu nah an dem Land&4 {land}&c. &7Du musst etwas weiter weg gehen. Minimale Chunk-Distanz ist&3 {distance}&7. &8Ein Administrator kann das in der Config ändern.'
-    far-land: '&cDu kannst den Chunk nicht beanspruchen. &7Der Chunk muss direkt an deinem Land &8(&7Land:&2 {land}&8)&7 sein.'
-    success: '&7Der Chunk &8(&7Land:&2 {land} &7X: {x} Z: {z}&8) &7wurde erfolgreich beansprucht für &e{cost} $&7. Der nächste Chunk wird dich&e {next} $ &7 kosten.'
-    already-claimed: '&cIn deiner Auswahl &8(&7X: {x} Z: {z}&8) sind bereits beanspruchte Chunks von dem Land {land}&7.'
-    max-chunk: '&cDu kannst&4 {chunks} &cnicht beanspruchen. &7Das Maximum für das Land&2 {land} &7beträgt&3 {max} &7Chunks. &8Rechte: lands.chunks.NUMBER'
-    selection: '&7Du hast erfolgreich&3 {chunks} &7Chunks  für das Land&8(&7Land:&2 {land}&8)&7 beansprucht. Du hast&e {cost} $&7 gezahlt.'
+    already: '&cNem adhatod a telkedhez ezt a chunkot, már &2 {land}&c része.'
+    auto-create: '&7Automatikusan létrehoztunk egy telket neked. Átnevezheted a &8/&aLands rename&7 paranccsal.'
+    auto-create-fail: '&cNem lehetett automatikusan telket létrehozni. &7Jegyezd le a megelőző üzeneteket és lépj kapcsolatba egy adminnal.'
+    near-other: '&cTúl közel vagy egy másik telekhez:&e {land}&c. &7Minimum chunk távolság szükséges:&b {distance}&7.'
+    far-land: '&cNem foglalhatod le ezt a chunkot. &7Kell hogy legyen mellette egy már általad lefoglalt &8(&7Teleknév:&e {land}&8)&7.'
+    success: '&7Sikeresen lefoglalt chunk &8(&7Teleknév:&e {land} &7X:&e {x} &7Z:&e {z}&8) &7&b {cost}&7-ért. következő foglalás díja:&b {next}&7.'
+    already-claimed: '&cAz egyik chunk a kijelölésedben már más telkének is része: &8(&7X: {x} Z: {z}&8)&c. &7Teleknév:&2 {land}&7.'
+    max-chunk: '&cNem tudsz még &4 {chunks} &cchunkot a telkedhez adni. &7A &2 {land} &7telked maximuma:&3 {max} &7chunk.'
+    selection: '&7Sikeresen hozzáadtál&3 {chunks} &7chunkot a&2 {land}&7 nevű telkedhez. Költsége: ${cost}&7.'
   assign:
-    selection: '&cDu musst vorher eine Auswahl machen. &7Nutze &8/&3Lands selection &7, um eine Auswahl zu machen.'
-    default: '&cDu kannst die Auswahl nicht zu dem Standard Gebiet hinzufügen. &7Gebiete können im Land Menü gelöscht werden.'
-    size: '&cDeine Auswahl ist zu klein. &7Die minimale Größe beträgt&3 {min} &7Blöcke. Deine Auswahl beträgt lediglich&3 {current}&7.'
-    success: '&7Du hast erfolgreich das Gebiet&6 {area} &7von dem Land&2 {land}&7 verändert. Änderungen werden angezeigt.'
+    selection: '&cKijelölés nem aktív. &7Használd a &8/&3Lands selection &7parancsot, hogy létrehozz egyet, majd próbáld újra.'
+    size: '&cTúl kicsi kijelölés. &7A minimum &3 {min} &7kocka és csak &3 {current}&7 van kiválasztva.'
+    success: '&7Terület átméretezve. Terület:&6 {area} &7Telek: &2 {land}&7. Vizualizáció bekapcsolva.'
     conflict:
-      land: '&cDeine Auswahl hat ein Konflikt mit dem Land&4 {land}&c. &7Bitte ändere deine Auswahl.'
-      area: '&cDeine Auswahl hat ein Konflikt mit dem Gebiet&4 {area}&c. &7Bitte ändere deine Auswahl.'
+      land: '&cA kijelölésed átlóg egy másik telekre:&4 {land}&c.'
+      area: '&cA kijelölésed másik területre is belóg:&4 {area}&c.'
   leave:
-    owner: '&cDu kannst das Land nicht verlassen. &7Als Besitzer kannst du das Land löschen, oder den Besitz abtreten. Nutze &8/&3Lands delete {land} &7um    es zu löschen.'
+    land-owner: '&cNem hagyhatod el ezt a telket, mert a tulaja vagy. &7Törölnöd kell a &8/&aLands delete&7 parancs használatával.'
+    selection: '&7Sikeresen elhagytál &b {chunks} &7chunkot. Azok, ahol te voltál a tulaj, törölve lettek.'
     land:
-      success: '&7Du hast das Land&2 {land}&7 erfolgreich verlassen. Du hast keinen Zugriff mehr auf das Land.'
-      untrusted: '&7Du bist in keinem Gebiet des Landes&2 {land}&7 vertraut.'
-    area:
-      success: '&7Du hast erfolgreich das Gebiet &8(&7Gebiet:&6 {area} vom Land &7Land:&2 {land}&8)&7 verlassen. Du hast jetzt keinen Zugriff mehr.'
-      untrusted: '&7Du bist in dem Gebiet&6 {area} &7 des Landes&2 {land}&7 nicht vertraut.'
+      success: '&7Sikeresen elhagytad a telket:&b {land}&7. Nincs többé hozzáférésed a területhez.'
+    chunk:
+      success: '&7Sikeresen elhagytad a chunkot. &7Nincs többé hozzáférésed.'
   unclaim:
-    rental: '&cDu kannst den Chunk nicht freigeben, &7da er ein vermietets Gebiet/verkauftes Gebiet enthält.(&6 {area}&7. Mieter:&3 {player})'
-    connection: '&cDu kannst den Chunk nicht freigeben , da diese Aktion das Land trennen würde. &7Chunk X: {x} Z: {z} wäre nicht mehr verbunden.'
-    success: '&7Du hast den Chunk erfolgreich freigegeben &8(&7Land:&2 {land} &7X: {x} Z: {z}&8)&7. Du erhälst &e{back} $ &7zurück.'
-    selection:
-      empty: '&cDu kannst keinen Chunk freigeben , da keiner beansprucht ist oder es dir nicht erlaubt ist welche freizugeben.'
-      rental: '&cDu kannst diese Auswahl nicht freigeben&7, da es ein Gebiet enthält das verkauft oder vermietet ist. (&6{area} &7vom Land&2 {land}&7. Mieter:&3 {player})'
-      connection: '&7D hast erfolgreich {success} / {size} Chunks freigegeben.&c {failed} Konnten nicht freigegeben werden, da es das Land trennen würde. &7Du hast&c ${back} &7zurück erhalten.'
-      partly: '&7Du hast erfolgreich {success} / {size} Chunks freigegeben. Du hast&c ${back} &7zurück erhalten.'
-      success: '&7Du hast erfolgreich alle Chunks freigegeben. Du hast&c ${back} &7zurück erhalten.'
+    success: '&7Sikeresen felszabadítottad a chunkot: &8(&7X:&e {x} &7Z:&e {z}&8)&7. Még maradt&b ${back} &7darabod.'
+    selection: '&7Sikeresen felszabadítottad a kijelölésben lévő chunkokat, amiknek tulaja voltál'
   delete:
-    nation: '&cDu kannst dein Land nich löschen, da es der Hauptsitz der Nation &4 {nation}&c ist. &7Du musst die Nation löschen &8(/&3Nations delete&8) &7 oder den Hauptsitz ändern &8(/Nations setCapital&8)&7.'
-    confirm: |
-      &cZum bestätigen , unten drücken.
-
-        [T]&aBestätigen: &8[CLICK][H]&7Klicke hier um das Löschen des Landes {land} zu bestätigen.[/H][C]lands delete {land} confirm[/C][/T]
-    success: '&7Du hats das Land&8(&7Land:&2 {land}&8)&7 gelöscht.'
-    broadcast: '&7Das Land&2 {land} &7wurde von&3 {player}&7 gelöscht.'
+    confirm: '&cErősítsd meg a műveletet. &7Használd a &8/&aLand delete {land} confirm&7 parancsot.'
+    success: '&7Sikeresen törölted a telket: &8(&7Teleknév:&e {land}&8)&7.'
+    broadcast: '&7A telek &b {land} &7törölve&b {player}&7 által.'
   trust:
-    own-land: '&cDiesem Spieler ist es nicht erlaubt ein Teil eines anderen Landes zu sein. &7Er muss sein Land erst verlassen.'
-    max-lands: '&7Der Spieler&3 {player} &7hat sein Land maximum erreicht. &8Rechte: lands.lands.NUMBER'
-    max-members: '&cDer Spieler&4 {player} &ckonnte in dem Land&4 {land}&c nicht vertraut werden. &7Der Land Besitzer hat sein maximum von&3 {members} &7Mitgliedern in seinem Land erreicht.'
-    max: '&cDer Spieler&4 {player} &ckann in keine Länder mehr eintreten. &7Er hat das maximum von &3 {max} &7erreicht. &8Berechtigung: lands.lands.NUMBER'
-    area:
-      invited: '&cDer Spieler&4 {player} &c wurde bereits zu dem Gebiet&4 {area} &cdes Landes&4 {land}&c eingeladen. &7Die Einladung ist&5 {time} &7her.'
-      trusted: '&7Der Spieler&3 {player} &7ist bereits in dem Gebiet&6 {area} &7des Landes&2 {land}&7 vertraut.'
-      success: '&7Der Spieler&3 {player} &7wurde zu dem Gebiet&8(&7Area:&6 {area} &7Land:&2 {land}&8)&7 eingeladen. Bitte habe Geduld.'
-      target: |
-        [T]&7Player&3 {player} &7hat dich zu dem Gebiet&6 {area} &7 von seinem Land&2 {land}&7 eingeladen.[H]&7Klick hier zum Öffnen des Menüs.[/H][C]lands invites[/C][/T] &7Steuer:&c ${tax}
-
-          [T]&2Akzeptieren &8[&8CLICK&8][H]&7Akzeptiert die Einladung.[/H][C]lands accept {land}[/C][/T]
-          [T]&cAblehnen &8[&8CLICK&8][H]&Lehnt die Einladung ab.[/H][C]lands deny {land}[/C][/T]
+    own-land: '&cA játékosnak nem lehet saját telke miközben tagja egy másiknak. &7Először el kell hagynia.'
+    invited: '&cEz a játékos már meg van hívva, várj amíg elfogadja &8(&7Telek:&2 {land}&8)&7.'
+    max-lands: '&3 {player} &7már elérte a maximális telekszámot.'
+    max-members: '&cNem lehetett&4 {player} &chozzáadni a(z)&4 {land}&c telekhez. &7A tulaj elérte a maximális&3 {members} &7tagot.'
     land:
-      invited: '&cDer Spieler&4 {player} &cist bereits zu dem Land&4 {land}&c eingeladen. &7Die Einladung ist&5 {time} &7her.'
-      trusted: '&7Der Spieler&3 {player} &7ist bereits in dem Land&2 {land}&7 vertraut.'
-      success: '&7Der Spieler &3{player} &7 wurde zu dem Land&2 {land}&7 eingeladen. Er/Sie muss die Einladung annehmen.'
-      target: |
-        [T]&7Player&3 {player} &7hat dich zu seinem Land&2 {land}&7 eingeladen.[H]&7Klick hier zum Öffnen des Menüs.[/H][C]lands invites[/C][/T] &7Steuer:&c ${tax}
-
-          [T]&2Akzeptieren &8[&8CLICK&8][H]&7Akzeptiert die Einladung.[/H][C]lands accept {land}[/C][/T]
-          [T]&cAblehnen &8[&8CLICK&8][H]&Lehnt die Einladung ab.[/H][C]lands deny {land}[/C][/T]
+      already: '&cA játékos már tagja a teleknek &8(&7Teleknév:&e {land}&8)&7.'
+      target: '&b{player} &7meghívott a telkére:&b {land}&7. Használd a &8/&aLand accept {land} &7parancsot, hogy elfogadd.'
+      success: '&7Sikeresen meghívtad&b {player} &7-t a telkedre &8(&7Teleknév:&e {land}&8)&7. Már csak el kell fogadnia.'
+    area:
+      already: '&cA játékos már tagja a &6 {area}&c nevű területnek &8(&7Telek:&2 {land}&8)&7.'
+      target: '{player} &7Meghívott a telkére &8(&7Terület:&6 {area} &7Telek:&2 {land}&8) &7Használd a &8/&3Lands accept {land} &7parancsot, hogy elfogadd.'
+      success: '&7Sikeresen meghívtad&b {player} &7-t a telkedre  &8(&7Terület:&6 {area} &7Telek:&2 {land}&8)&7. Várj, amíg elfogadja.'
   untrust:
-    area:
-      already: '&cDer Spieler ist kein Vertrauter des Gebiest&8(&6 {area} im Land &7Land:&2 {land}&8)&7.'
-      success: '&7Der Spieler&3 {player} &7ist kein Vertrauter mehr in Gebiet&8(&6 {area} des Landes &7Land:&2 {land}&8)&7.'
-      revoke: '&7Die Einladung für das Gebiet&6 {area} in dem Land &8(&7Land:&2 {land}&8)&7 wurde erfolgreich zurückgenommen. Der Spieler wurde nicht vertraut.'
     land:
-      already: '&7Der Spieler&3 {player} &7ist in keinem Gebiet in dem Land&2 {land}&7 vertraut.'
-      revoke: '&7Der Spieler&3 {player} &7ist kein Vertrauter des Landes&2 {land}&7 mehr.'
-      success: '&7Der Spieler&3{player} &7ist kein Vertrauter des Landes&2 {land}&7 mehr.'
+      already: '&cA játékos már el lett távolítva a telekről &8(&7Teleknév:&e {land}&8)&7.'
+      inv-revoked: '&7Sikeresen visszavontad a játékos meghívását. &8(&7Telek:&2 {land}&8)&7.'
+      success: '&7Sikeresen eltávolítottad&b {player} &7-t a telekről &8(&7Teleknév:&e {land}&8)&7.'
+    area:
+      already: '&cA játékos már el lett távolítva a területről &8(&7Terület:&6 {area} &7Telek:&2 {land}&8)&7.'
+      inv-revoked: '&7Sikeresen visszavontad a játékos meghívását. &8(&7Terület:&6 {area} &7Telek:&2 {area}&8)&7.'
+      success: '&7Sikeresen eltávolítottad&b {player} &7-t a területről &8(&7Terület:&6 {area} &7Telek:&2 {area}&8)&7.'
   setrole:
-    visitor: '&cDu kannst die Rolle&4 {role} &cnicht setzen. &7Wenn du jemanden nicht mehr vertrauten möchtest, nutze &8/&3Lands untrust {player} [gebiet]&7.'
+    not-exist: '&cA jogkör &4 {role} &cNem létezik'
     land:
-      untrusted: '&cDer Spielerr&4 {player} &cist nicht im Land &4 {land}&c vertraut. &7Vertraue ihn zuerst.'
-      success: '&7Die Rolle&3 {role} &7wurde für den Spieler&3 {player} &7in dem Gebiet des Landes&2 {land}&7 ,in denen er vertraut ist, gesetzt.'
+      not-trusted: '&e{player} &c nincs még a telekhez adva &8(&7Teleknév:&e {land}&8)&7.'
+      success: '&7Jogkör sikeresen módosítva&b {role} &7-ra/re&b {player} &7-nak/nek az egész telken &8(&7Telek:&e {land}&8)&7.'
     area:
-      untrusted: '&cDer Spieler&4 {player} &cist in dem Gebieta&4 {area} &cdes Landes&4 {land}&c nicht vertraut. &7Du musst ihn zuerst vertrauen.'
-      success: '&7Die Rolle&3 {role} &7für den Spieler&3 {player} &7wurde erfolgreich in dem Gebiet&6 {area} &7des Landes&2 {land}&7 erstellt.'
+      not-trusted: '&e{player} &c nincs még a területhez adva  &8(&7Terület:&6 {area} &7Telek:&2 {land}&8)'
+      success: '&7Jogkör sikeresen módosítva&b {role} &7-ra/re&b {player} &7-nak/nek a területre &8(&7Terület:&6 {area} &7Telek:&2 {land}&8)&7.'
   accept:
-    max: '&cDu kannst keinem Land mehr beitreten. &7Du hast das Maximum von&3 {max} &7Ländern erreicht. &8Berechtigung: lands.lands.NUMBER'
-    not-exist: '&cDu hast keine Einladung von dem Land&4 {land} &coder sie ist bereits abgelaufen. &7Bitte überprüfe deine Eingabe.'
-    own-land: '&cDu hast nicht die Berechtigung, um ein Teil eines Landes zu sein und zeitgleich dein eigenes Land zu besitzen. Bitte verlasse erst dein Land.'
-    max-lands: '&cDu kannst nicht in weiteren Ländern sein. &7Du kannst nur in&3 {max} &7Ländern sein. &8Rechte: lands.lands.NUMBER'
-    notification: '&7Du hast noch&3 {invites} &7Einladungen von anderen Ländern. Nutze &8/&3Land invites &7um alle Einladungen zu sehen.'
-    area:
-      success: '&7Du hast die Einladung vom Land&2 {land} &7für das Gebiet&6{area}&7 angenommen.'
-      broadcast: '&2{land} &8| {player} &7ist nun ein Mitglied von dem Gebiet&6 {area} &7in unserem Land&2 {land}&7.'
+    not-exist: '&cNincs meghívód a &e {land} &ctelekre, vagy már lejárt.'
+    own-land: '&cNincs jogod, hogy tagja legyél egy teleknek, miközben van már sajátod. &7Hagyd el először a sajátod.'
+    max-lands: '&cNem csatlakozhatsz több telekhez. &7A maximum:&b {max}&7.'
+    notification: '&7Még van&3 {invites} &7meghívód mások telkeire. Használd a &8/&3Land invites &7parancsot, hogy listázd őket.'
     land:
-      success: '&7Du hast die Einladung zu dem Land&2 {land} &7angenommen. Du bist jetzt ein Vertrauter des Landes.'
-      broadcast: '&2{land} &8| &3{player} &7ist jetzt ein Mitglied von unserem Land.'
-  setowner:
-    confirm: '&cBitte bestätige die Besitzübergabe vom Land&2 {land} &7zu dem Spieler&3 {player}&7: &8/&3Lands setowner {player} confirm'
-    success: '&7Du hast erfolgreich&3 {player} &7 den Besitz von dem Land&2 {land}&7 übergeben.'
-    max-lands: '&cDer Spieler&4 {player} &ckann keine weitere Länder besitzen. &7Er hat das Maximum von&3 {max} &7Ländern erreicht. &8Berechtigung: lands.ownlands.NUMBER'
+      success: '&7Sikeresen elfogadtad a &b {land}&7 telek meghívóját. Mostmár hozzáférsz az egész telekhez.'
+      broadcast: '&b{land} &8|&b {player} &7csatlakozott a területünkhöz&7.'
+    area:
+      success: '&7Sikeresen elfogadtad a &b {land}&7 telek meghívóját a &6 {area}&7területhez.'
+      broadcast: '&2{land} &8| &3 {player} &7csatlakozott a &6 {area} &7területünkzöz'
   deny:
-    not-exist: '&cDu hast keine Einladung von dem Land&4 {land} &coder sie ist bereits abgelaufen. &7Tippfehler?'
-    success: '&7Du hast die Einladung von dem Land&2 {land}&7 abgelehnt.'
+    not-exist: '&cNincs meghívód a&e {land} &c telektől vagy már lejárt.'
+    success: '&7Sikeresen elutasítottad a meghívót:&b {land}&7.'
   teleport:
-    chunk-not-claimed: '&cDieser Chunk ist nicht beansprucht &8(&7X: {x} &7Z: {z}&8)&c. &8Bypass Berechtigung: lands.bypass.wilderness.teleport'
-    success: '#t#&9&lTeleportiert[newline]&7X: {x} Z: {z} Beansprucht von: {claimed}'
-    not-trusted: '&cDu kannst dich nicht dorthin teleportieren. &7Du bist kein Vertrauter von dem Land&2 {land}&7.'
+    world-not-exist: '&cNem létező világ.'
+    chunk-not-claimed: '&cA chunk nincs védve: &8(&7X: {x} &7Z: {z}&8)&c.'
+    not-trusted: '&cNem teleportálhatsz oda, mert nem vagy a telekhez adva:&2 {land}&7.'
+    success: '#t#&9&lTeleportálva[newline]&7X: {x} Z: {z} Foglalt: {claimed}'
   setspawn:
-    force-land: '&cDu kannst deinen Spawn nur in deinem Land setzen. &7Gehe in dein Land&2 {land} &7 und probiere es erneut. &8Ein Administrator kann dies in der Config ändern.'
-    successs: '#t#&a&lSpawn gesetzt[newline]&7&lPreis:&e {cost} $'
+    force-land: '&cCsak a saját területedre rakhatsz teleport pontot.'
+    success: '#t#&7Teleport pont &abeállítva&7.;;&7Ár:&b {cost}'
   spawn:
-    not-exist: '&cEs wurde kein Spawn für das Land&4 {land}&c gesetzt. &7Jemand muss zuerst den Spawn mit &8/&3Land setspawn&7 setzen.'
-    not-allowed: '&cDir ist es nicht gestattet dich zu diesem Land zu teleportieren. &7Sie müssen dir die Berechtigung dafür geben.&8(&7Land:&2 {land}&8)&7.'
-    chunk: '&7Land&2 {land} &7hat keinen Spawn gesetzt&8(&8/&3Lands setspawn&8) &7. &7Du wirst zum Anfang des Landes telepotiert.'
-    unsafe: '&cDu kannst dich nicht zu dem Land teleportieren, es ist nicht sicher. &7Es könnte zum Tod führen. Das Land muss den Spawn mit &8/&3Lands setspawn&7 neu setzen.'
-    successs: '#t#&9&lTeleportiert[newline]&7&lLand&2 {land} &7&lPreis:&e {cost} $'
+    not-exist: '&cNincs teleportálási cél beállítva:&e {land}&c. &7Valakinek be kell állítania a &8/&aLand setSpawn&7 parancs használatával.'
+    not-allowed: '&cNem teleportálhatsz a telekre. &7A tulajnak jogot kell adnia rá, vedd fel vele a kapcsolatot &8(&7Teleknév:&e {land}&8)&7.'
+    chunk: '&2 {land} &7nem állított még be spawnt &8(&8/&3Lands setspawn&8) &7. &7A legelső levédett chunkhoz lettél teleportálva.'
+    success: '#t#&7Teleportálva;;&7Teleknév&b {land};;&7Ár:&b {cost}'
   wild:
-    success: '&7Du wurdest an einen zufälligen Ort teleportiert &8(&7X: {x} Z: {z}&8)&7. Es kostet&e {cost} $&7.'
-    searching: '#t#&6Zielort wird gesucht[newline]&eWarte bis die Teleportation beginnt..'
-    no-location: '&cEs konnte kein sicherer Ort gefunden werden. &8Ein Administrator  muss den Radius der Suche einstellen und den Weltspawn setzen (/setworldspawn).'
+    no-location: '&cNem elérhető biztonságos célpont'
+    success: '&7Sikeres teleportálás: &8(&7X:&e {x} &7Z:&e {z}&8)&7Ár:&b {cost}.'
   deposit:
-    number: '&7Du musst eine Zahl angeben, die du einzahlen willst. Nutze dafür &8/&aLand deposit &8<&aAnzahl&8> &7oder &8/&aLand deposit &8<&aLand&8> <&aAnzahl&8>&7.'
-    success: '&7Du hast&e {cost} $ &7in die Landesbank eingezahlt. &7Neuer Kontostand:&e {bank} $ &8(&7Land:&a {land}&8)'
+    number: '&7Meg kell adnod egy valós értéket. Hazsnáld a &8/&aLand deposit &8<&aÖsszeg&8> &7vagy &8/&aLand deposit &8<&aTelek&8> <&aÖsszeg&8>&7 parancsot.'
+    success: '&7Sikeresen betettél&b ${cost}&7-t a telekbankba. &7Új egyenleg:&b ${bank} &8(&7Telek:&e {land}&8)'
   withdraw:
-    number: '&7Du musst eine Zahl angeben die du abheben willst. Nutze dafür &8/&aLand withdraw &8<&aAnzahl&8> &7oder &8/&aLand withdraw &8<&aLand&8> <&aAnzahl&8>&7.'
-    balance: '&7Soviel Geld ist nicht auf der Landesbank. Es sind nur&e {bank} $ &7auf der Bank. Erwartet:&e {take} $ &8(&7Land:&a {land}&8)'
-    success: '&7Du hast&e {cost} $ &7aus der Landesbank genommen. &7Neuer Kontostand:&e {bank} $ &8(&7Land:&a {land}&8)'
-  balance: '&7Kontostand:&e {balance} $ &8(&7Land:&a {land}&8)&7.'
-  ban:
-    area:
-      success: '&3{player} &7 wurde erfolgreich von dem Gebiet &7Area:&6 {area} &8(&7Land:&2 {land}&8)&7 verbannt. Dem Spieler ist es nicht mehr möglich das Gebiet zu betreten, oder sich hinein zu telepotieren.'
-      target: '&4{land} &chat dich von dem Gebiet&4 {area} &c in ihrem Land verbannt. &7Du kannst das Land nicht mehr betreten oder dich hinein teleportieren.'
-    land:
-      success: '&3{player} &7wurde erfolgreich von dem Land&2 {land}&7 verbannt. Dem Spieler ist es nicht mehr möglich das Land zu betreten.'
-      target: '&4{land} &chat dich aus dem Land verbannt. &7Dir ist es nicht mehr möglich das Land zu betreten.'
-  unban:
-    area:
-      success: '&3{player} &7kann das Gebiet: &6{area} ind dem Land &8(&7Land:&2 {land}&8)&7 wieder betreten.'
-      target: '&2{land} &7hat dich wieder für das Gebiet&6 {area}&7 friegegeben.'
-    land:
-      success: '&7Der Spieler&3 {player} &7 darf das Land&2 {land}&7 wieder betreten.'
-      target: '&7Du darfst wieder das Land&2 {land} &7betreten.'
+    number: '&7Meg kell adnod egy valós értéket. Hazsnáld a &8/&aLand withdraw &8<&aÖsszeg&8> &7vagy &8/&aLand withdraw &8<&aTelek&8> <&aÖsszeg&8>&7 parancsot.'
+    balance: '&7Nincs elég pénz a telekbankban. Egyenleg:&b ${bank} &7 &8(&7Telek:&e {land}&8)'
+    success: '&7Sikeresen kivettél&b ${cost}&7-t a telekbankból. &7Új egyenleg:&b ${bank} &8(&7Telek:&e {land}&8)'
+  balance: '&7Egyenleg:&b ${balance} &8(&7Telek:&e {land}&8)&7.'
+  menu:
+    no-permission-other: '&cNem nyithatod meg mások menüit.'
+    notExist: '&cA játékoshoz még nem tartozik adat.'
   chat:
-    activated: '&7Land Chat wurde aktiviert. Gib eine Nachricht ein um mit deinem Land zu schreiben. &5NOTE: &7Der Land Chat wird in dem /lands edit Land gesendet.'
-    deactivated: '&7Land Chat wurde deaktiviert.'
-    no-land: '&cKein Land für den Landchat gefunden. &7Use &8/&3Lands chat toggle &7um den Landchat zu deaktivieren.'
+    activated: '&7Bekapcsoltad a telek chatet. A normál üzeneteid mostantól csak telektagok látják'
+    deactivated: '&7Sikeresen kikapcsoltad a telek chatet.'
     format:
-      minecraft: '&a{land} &8| {role} &7{player} &8»&f {message}'
+      minecraft: '&a{land} &8| {role} &7{player}&8»&f {message}'
       discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
-      spy: '[NoPrefix]&8[&cChatSpy&8] &a{land} &8| {role} &7{player} &8»&f {message}'
   view:
-    disabled: '&7Du hast die Landesgrenze ausgeblendet.'
-    wilderness: '&7Landesgrenzen werden angezeigt. &7Du befindest dich jedoch zur Zeit in der Wildnis.'
-    info: |
-      [NoPrefix]
-      &7---------<- &5&lLand View &7->---------
-      [T]&7Land:&a {land} &8[&8Klick&8][H]&7Klick hier um mehr Infos über das Land anzuzeigen.[/H][C]lands info {land}[/C][/T]
-      &7Gebiet:&6 {area}
-        &8Chunk &7X: {x} Z: {z}
-        &8Steuer:&c ${tax}
-        &8Spieler:&7 {players}
-      &7---------<- &5&lLand View &r&7->---------
-    area: |
-      [NoPrefix]
-      &7---------<- &5&lArea View &7->---------
-      [T]&7Land:&a {land} &8[&8Klick&8][H]&7Klick hier um mehr Infos über das Land anzuzeigen.[/H][C]lands info {land}[/C][/T]
-      &7Gebiet:&6 {area}
-        &8Steuer:&c ${tax}
-        &8Spieler:&7 {players}
-      &7---------<- &5&lArea View &r&7->---------
-  unstuck:
-    success: '&7Erfolgreich zur nächsten freien Position teleportiert.'
-  taxes:
-    none: '&7Es gibt keine Steuern zu zahlen.'
-    upcoming:
-      header: '[NoPrefix]&7---------<- &cSteuern &7->---------'
-      entry: '[NoPrefix]&8- &7{land}: &c${tax}'
-      footer: |
-        [NoPrefix]&7Du musst ${total} in &5{next}&7 zahlen.
-        &7Guthaben: ${balance}
-        &7---------<- &cSteuern &7->---------
-    changes:
-      header: |
-        [NoPrefix]
-        &7---------<- &4Steuer Änderungen&7->---------
-        &cTaxes have been changed in some lands:
-      entry: '[NoPrefix]&8- &7{land}: {color}${tax} &8(zuvor: {previous})'
-      footer: |
-        [NoPrefix]
-        &7Zuzahlen in:&5 {next}
-        &7Guthaben: ${balance}
-        &8Mehr infos: /Lands taxes
-        &7---------<- &4Steuer Änderungen &7->---------
+    toggle:
+      enabled: '&7Bekapcsoltad a telekhatár jelző módot. Kikapcsoláshoz írd be újra a parancsot'
+      disabled: '&7Kikapcsoltad a jelző módot.'
 list:
-  swear-words: [ ]
+  views:
+    - '&7---------<- &5&lTelek Információk &7->---------'
+    - '&7Teleknév:&b {land}'
+    - '&7Area:&6 {area}'
+    - '&7Világ:&e {world}'
+    - '  &8Chunk &7X: {x} Z: {z}'
+    - '  &8Adó:&c ${tax}'
+    - '  &8Játékosok: {players}'
+    - '&7---------<- &5&lTelek Információk &7->---------'
+  wars:
+    declaration:
+      - '&6&nHadüzenet:'
+      - ' '
+      - '&8- &7Támadók:&c {attackers}'
+      - '  &7Védők:&a {defenders}'
+      - ' '
+      - '&8- &7Háború kezdete:'
+      - '  &5~{time} &7múlva'
+    current:
+      - '&6&nAktív háború:'
+      - ' '
+      - '&8- &4Támadók'
+      - '      &7Telkük: {attackers}'
+      - '      &7Öléseik: {att-points}'
+      - '&8- &2Védők'
+      - '      &7Telkük: {defenders}'
+      - '      &7Öléseik: {def-points}'
+      - ' '
+      - '&8- &7A háború végetér'
+      - '  &5~{time} &7múlva'
+    started:
+      attacker:
+        - '&cA háború elkezdődött!'
+        - ' '
+        - '&8- &7Támadók &8(&bTI&8)&7: {attackers}'
+        - '  &7Védők: {defenders}'
+        - ' '
+        - '&8- &7A háború végetér'
+        - '  &5~{time} &7múlva'
+      defender:
+        - '&cA háború elkezdődött!'
+        - ' '
+        - '&8- &7Támadók: {attackers}'
+        - '  &7Védők &8(&bTI&8)&7: {defenders}'
+        - ' '
+        - '&8- &7A háború végetér'
+        - '  &5~{time} &7múlva'
+    won:
+      attacker:
+        - '&6A háborúnak vége:'
+        - '&7Ti nyertetek &8({team}&8).'
+        - ' '
+        - '&8- &eEredmény:'
+        - '  &7Támadó pontok:&c {att-points}'
+        - '  &7Védő pontok:&a {def-points}'
+        - ' '
+        - '&8- &7A háború összideje:'
+        - '  &5~{time}'
+      defender:
+        - '&6A háborúnak vége:'
+        - '&7Ti nyertetek &8({team}&8).'
+        - ' '
+        - '&8- &eEredmény:'
+        - '  &7Támadó pontok:&c {att-points}'
+        - '  &7Védő pontok:&a {def-points}'
+        - ' '
+        - '&8- &7A háború összideje:'
+        - '  &5~{time}'
 wars:
   message:
     noaccess:
-      pillage: '&cDu kannst kein Land plündern während kein Verteidiger online ist. &7Warte bitte bis mindestens&b {defenders} &7 Verteidiger online ist.'
-      action: '&cDir ist es nicht erlaubt dies während eines Krieges in diesem Land zu tun. &8Flag: {flag} &8Bypass Berechtigung: {bypass}'
-    start:
-      broadcast: '&7Der Krieg zwischen {attacker} &7und {defender} &7ist gestartet. Er wird in&5 {time}&7 enden.'
-      participants: |
-        &4Der Krieg hat begonnen:
-
-        &7Angreifer: {attacker} &8({team_1}&8)
-        &Verteidiger: {defender} &8({team_2}&8)
-
-        &7Der Krieg endet in:
-        &5~{time}
-    end:
-      broadcast: '&7Der Krieg zwischen {attacker} &7und {defender} &7hat geendet. Er dauerte&5 {time}&7.'
-      surrender: '{object} &7hat aufgegeben. Der Krieg ist vorbei und es mussten&c ${tribute} &7an den Sieger {enemy}&7 gezahlt werden.'
-      draw: '&7Der Krieg zwischen {attacker} &7und {defender} &7endete mit einem Unentschieden. Er dauerte&5 {time}&7.'
-      won: |
-        &aDer Krieg ist zu Ende:
-        &7Die Angreifer &8({team}&8) &7haben gewonnen.
-
-        &8- &7Stats
-            &7Angreifer kills:&3 {att-points}
-            &7Verteidiger kills:&3 {def-points}
-
-        &7Der Krieg dauerte:
-        &5~{time}
+      pillage: '&cNem rombolhatsz amíg nincsenek védők online. &7Legalább &b {defenders} &7 védő játékban kell legyen.'
+      action: '&cNem teheted ezt meg ezen a hadmezőn'
+    started:
+      broadcast: '&7A háború&c {attacker} &7és&a {defender} &7között elkezdődött. &5 {time} &7múlva lesz vége.'
+    ended:
+      broadcast: '&7A háború&c {attacker} &7és&a {defender} &7között végetért. összideje:&5 {time}&7.'
+    joined:
+      attacker:
+        enemy: '&cELLENSÉG &8|&e {land} &6csatlakozott az ellenséghez mint &2védő&6.'
+        ally: '&2BARÁT &8|&b {land} &7csatlakozott hozzánk mint &ctámadó&7. Velünk vannak.'
+      defender:
+        enemy: '&cELLENSÉG &8|&e {land} &6csatlakozott az ellenséghez mint &ctámadó&6.'
+        ally: '&2BARÁT &8|&b {land} &7csatlakozott hozzánk mint &2defender&7. Velünk vannak.'
+    tribute-payed:
+      defender: '&2BARÁT &8|&b {land} &7megfizetett &c ${tribute} &7hadisarcként. A háborúnak vége'
+      attacker: '&2BARÁT &8|&b {land} &7megfizetett &c ${tribute} &7hadisarcként. A háborúnak vége'
+    surrender:
+      tribute:
+        received:
+          all: '&b {land} &amegadta magát. &7a hadisarc elosztásra került, mindenki kapott &b ${tribute}&7.'
+          single: '&b {land} &amegadta magát.&b {land} &7így kapott &b ${tribute}&7 hadisarcot.'
+      end: '&b {land} &7megadta magát. A háborúnak vége. Fizetniük kellett &c ${tribute} &7az ellenségnek.'
     war-shield:
-      set: '&aDein Kriegsschild, gegen feindliche Angriffe, ist aktiv für &b {time}&7.'
+      set: '&aVédve leszel a háborúktól eddig: &b {time}&7.'
     kill:
       target:
-        attackers: '&c{attacker} &7wurde von &a{defender}&7 getötet.'
-        defenders: '&a{defender} &7wurde von &c{attacker}&7 getötet.'
+        attackers: '&7Bajtársadat,&c {attacker} &7-t megölte &a {defender}&7.'
+        defenders: '&7Bajtársadat,&a {defender} &7-t megölte &c {attacker}&7.'
       killer:
-        attackers: '&c{attacker} &7hat &a {defender}&7 getötet.'
-        defenders: '&a{defender} &7hat &c {attacker}&7 getötet.'
+        attackers: '&7Bajtársunkat,&c {attacker} &7-t megölte &a {defender}&7.'
+        defenders: '&7Bajtársunkat,&a {defender} &7-t megölte &c {attacker}&7.'
   command:
     general:
-      no-war: '&cDein Land&e {land} &chat zur Zeit keine aktiven oder bevorstehenden Kriege.      &7Zur Zeit ist es im Land friedlich.'
+      no-war: '&cTerületed (&e {land} &c) nem érinti háború. &7Békés időszakban vagy.'
     declare:
-      not-allowed: '&cDir ist es nicht erlaubt einen Krieg gegen {object}&c zu führen. &7Der Anführer von {object} &7muss den Krieg beginnen.'
-      member: '&cDu kannst keinen Krieg gegen {object}&c führen, da du ein Mitglied des Landes bist. &7Du musst das Land erst verlassen.'
-      war-shield: '&cDu kannst dem Land keinen Krieg erklären. &7Der Kriegsschild ist noch für&a {time}&7 aktiv.'
-      no-nation: '&cDu kannst das Land&4 {land}&c nicht angreifen. &7Es muss ein Mitglied einer Nation sein, um den Krieg anzufangen.'
-      no-target: '&cEs gibt kein Land/keine Nation mit dem Namen&4 {target}&c. &7Tippfehler?'
-      ally: '&cDu kannst keinen Krieg gegen deine Verbündeten führen. &7Dein Land und das Ziel sind in derselben Nation&9 {nation}&7.'
-      balance: '&cKrieg konnte nicht erklärt werden. &7Die Angreifer {object} &7brauchen mind.&c ${min} &7,um einen Krieg zu starten.'
-      broadcast: '&7Das Land&c {attacker} &7hat dem Land&a {defender}&7 den Krieg erklärt. Der Krieg startet in&5 {time}&7.'
-      confirm: '&cBist du dir sicher, dass du den Krieg gegen {object}&c anfangen möchtest? &7Bitte bestätige die Aktion mit &8/&3Wars declare {input} &7.'
-      target: '&7Der Feind {attacker} &7hat den Krieg gegen {defender} &8(&7DU&8)&7 akzeptiert. Der Krieg beginnt in&5 {time}&7.'
-      mutual:
-        success: |
-          &7Du &8({attacker}&8) &7hast {defender} den Krieg erklärt&7.
-           &7Sie müssen nurnoch annehmen ober ablehenen, damit der Krieg beginnt.
-           &7Wenn die Verteidiger aufgeben, müssen sie&c ${tribute} &7an die Angreifer zahlen.
-        target: |
-          &7Der Feind {attacker} &7 hat {defender} &8(&7DU&8)&7 den Krieg erklärt.
-           &7Wenn die Verteidiger aufgeben, müssen sie&c ${tribute} &7an die Angreifer zahlen.
-
-           [T]&aAkzeptieren: &8/&3Wars declare {input} &8[&8Klick&8][H]&7Klick zum annehmen des Krieges.[/H][C]Wars declare {input}[/C][/T]
-           [T]&cAblehnen: &8/&3Wars deny &8[&8Klick&8][H]&7Klick zum ablehnen des Krieges.[/H][C]Wars deny[/C][/T]
+      trusted: '&cNem mehetsz háborúba ellenük, mert tagja vagy a célpontnak, lépj előbb ki onnan'
+      war-shield: '&cNem mehetsz háborúba ellenük, mert védve vannak ellene még eddig: &a {time}&7.'
       already:
-        attacker: '&cDu kannst keinem weiteren Krieg beitreten. &7Der herrschende Krieg {object} &7muss erst enden.'
-        defender: '&cDu kannst zur Zeit dem Land kein Krieg erklären. &7Das Ziel {object}&7befindet sich bereits im Krieg.'
-      min-players:
-        attacker: '&cDu kannst keinen Krieg erklären, weil du nicht genug Mitglieder in dem Land&4 {land}&c hast. &7Das Minimum liegt bei&3 {min} &7Spielern um einen Krieg anzufangen. &8Ein Administrator kann das in der Config ändern.'
-        defender: '&cDu kannst dem Land &4{land} keinen Krieg erklären, weil sie nicht genug Mitglieder haben. &7Das Minimum liegt bei&3 {min} &7Spielern um einen Krieg anzufangen. &8Ein Administrator kann das in der Config ändern.'
-      success: '&7Du &8({attacker}&8) &7hast {defender}&7 erfolgreich den Krieg erklärt. Der Krieg beginnt in&5 {time}&7.'
-    deny:
-      ongoing: '&cDu kannst den herrschenden Krieg gegen {enemy}&c nicht Ablehnen. &7Du kannst den Krieg nur für {object}&7 ablehnen.'
-      success: '&7Du hast den Krieg von {object} &7 abgewendet. Der Gegner {enemy}&7 kann nicht angreifen.'
-      attacker: '&cAngreifer können ihre Kriegserklärung nicht zurückziehen. &7Lediglich der Verteidiger kann den Krieg ablehnen..'
-    menu:
-      mutual: '&cDu kannst das Kriegsmenü zur Zeit nicht öffnen. &7Der Krieg gegen {object} &7wurde nooch nicht angenommen.'
+        war: '&cNem csatlakozhatsz mégegy háborúba. &7A jelenleginek véget kell még érnie.'
+        war-defender: '&cA másik fél háborúban van még. &7Próbáld újra, amint végeztek.'
+        declaration: '&cMár van egy közelgő háborúd. &7A telek menüben megtalálod.'
+        declaration-def: '&cA másik félnek már van közelgő háborúja. &7próbáld újra {time} múlva.'
+      ally: '&cNem mehetsz háborúba ellenük, mert barátaid. &7Egy nemzet része vagytok.'
+      success: '&7&c {attacker} &7sikeresen háborút hírdetett&a {defender}&7 ellen. Kezdete&5 ~{time}&7 múlva.'
+      target:
+        land: '&e {attacker} &cháborút hírdetett ellened&e( {defender})&c. Kezdete&5 ~{time}&7 múlva.'
+      broadcast: '&c {attacker} &7háborút hirdetett &a {defender}&7 ellen. Kezdete&5 ~{time}&7 múlva.'
     info:
-      war: |
-        &4Herrschender Krieg:
-
-        &8- &7Angreifer
-            &7Name: {attacker}
-            &7Kills: {att-points}
-
-        &8- &7Verteidiger
-            &7Name: {defender}
-            &7Kills: {def-points}
-
-        &7Der Krieg endet in:
-        &5~{time}
-      declaration:
-        normal: |
-          &4Kriegserklärung:
-
-          &7Angreifer: {attacker}
-          &7Verteidiger: {defender}
-
-          &7Der Krieg endet in:
-          &5~{time}
-        mutual:
-          defender: |
-            &4Kriegserklärung:
-
-            &7Angreifer: {attacker}
-            &7Verteidiger: {defender}
-
-            &7Wenn die Vertreidiger aufegeben
-            &7müssen sie:&c ${tribute} &rzahlen
-
-            [T]&7Akzeptieren: &8/&3Wars declare {input} &8[&8Klick&8][H]&7Klick zum annehmen des Krieges.[/H][C]Wars declare {input}[/C][/T]
-            [T]&7Ablehnen: &8/&3Wars deny &8[&8Klick&8][H]&7Klick zum ablehnen des Krieges.[/H][C]Wars deny[/C][/T]
-          attacker: |-
-            &4Kriegserklärung: &7Angreifer: {attacker} &7Verteidiger: {defender}
-            &7Wenn die Vertreidiger aufegeben &7müssen sie:&c ${tribute} &rzahlen
-            &cDie Verteidiger haben &cnoch nicht angenommen.
+      peace: '&7Minden nyugodt &b {land}&7 körül. &7Se aktív háború, se közelgő.'
