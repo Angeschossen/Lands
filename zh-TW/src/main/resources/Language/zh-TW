@@ -1,738 +1,319 @@
 ---
+#Mọi tin nhắn đều có thể chỉnh sửa ở đây
+#Để chỉnh sửa GUI, có thể vào tệp <language>_gui.yml
+#Nếu bạn gặp vấn đề, hãy yêu cầu hỗ trợ.
+#Trang của lands: https://www.spigotmc.org/resources/.53313
+#Discord: https://discord.gg/JVU9qd7
+################################
+#Lưu ý về các loại chat:
+#Chúng sẽ không hoạt động được trong mục "message" và "command".
+################################
+#Tại đây bạn có thể tùy chỉnh loại chat
+#bao gồm: title, actionbar và chat.
+#Cách mà nó hoạt động như sau:
+#Giả sử bạn muốn in tiền tố bằng title:
+#Chỉnh general.noPerm thành: '#t#&cYou''re not allowed to do this.' (Thêm "#t#" vào trước)
+#Bạn cũng có thể thiết đặt thời gian hiện, giữ và ẩn theo đơn vị giây:
+#Chỉnh general.prefix thành: '#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
+#Tin nhắn đó sẽ được gửi cho người chơi thông qua một title
+#hiện 1 giây, giữ lại 2 giây rồi ẩn đi trong 3 giây
+#Bạn cũng có thể gửi tin nhắn qua actionbar:
+#Chỉ cần thêm "#a#" vào trước.
+#Nếu bạn muốn gửi qua hộp chat, hoặc không thêm gì cả
+#hoặc là thêm "#c#" vào trước.
+#Ngoài ra bạn cũng có thể kết hợp các loại chat:
+#Chẳng hạn đặt general.prefix thành: '#c#a#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
+#Điều này sẽ gửi tin nhắn qua chat, qua actionbar lẫn qua title với thời gian hiện (1 giây),
+#thời gian giữ (2 giây) và thời gian ẩn đi (3 giây)
+#Nếu có đề xuất hoặc cần báo lỗi, hãy liên hệ tôi qua Discord hoặc p.m.
+#Discord: https://discord.gg/JVU9qd7
+#--------------------------
+#Được dịch bởi anhcraft
 general:
-  prefix:
-    normal: '&8[&aLands&8] '
-    help: '&8[&aLands&8] &7Usage: '
-  wYes: '&aJa'
-  wNo: '&cNej'
-  none: '&8Ingen'
-  disabled: '&cAvstängd'
-  wilderness: '&aVildmark'
+  wYes: '&aCó'
+  wNo: '&cKhông'
+  none: '&cKhông'
+  wilderness: '&aNơi hoang dã'
   time:
-    days: dag(s)
-    hours: timme(s)
-    minutes: minute(s)
-    seconds: sekund(s)
+    days: 'ngày'
+    hours: 'giờ'
+    minutes: 'phút'
+    seconds: 'giây'
   status:
-    online: '&aonline'
-    offline: '&coffline'
+    online: '&atrực tuyến'
+    offline: '&cngoại tuyến'
+  role:
+    owner: '&4Chủ sở hữu'
+    admin: '&cQuản trị viên'
+    member: '&eThành viên'
+    visitor: '&5Khách'
   top:
-    title: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
-    entry: '&c#{pos} &a{land} &7Balance:&6 {value} {#fbe232}Ⓖ'
-    next-page: '&7Nästa sida: &8/&2Lands top {next}'
-    last-updated: '&7Senast uppdaterad: {time} &7sen'
-    footer: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
+    title: '&7---------<- &6&lTop 10 Vùng đất &7->---------'
+    land: '&7#&5{pos}&7: &b{land} &7Kích thước:&e {size}'
+    last-updated: '&7LCập nhật gần nhất:&e {time}'
+    footer: '&7---------<- &6&lTop 10 Vùng đất &7->---------'
   integration:
     dynmap:
-      land:
-        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br /><br /> Ägare: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br />Members: <span style="font-weight: bold;">{members}</span></div>'
-        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 120%;"><span style="font-size: 120%;"><span style="color: #00ccff;">Spawnpoint</span><br /></span></span><p>Is public: {public}</p></div>'
+      chunk:
+        description: '<div class="infowindow"><span style="font-size:200%;">{land}</span><br/>X: {x} Z: {z}</span><br/> Chủ sở hữu: <span style="font-weight:bold;">{owner}</span><br/>Quản trị viên: <span style="font-weight:bold;">{admins}</span><br/>Thành viên: <span style="font-weight:bold;">{members}</span><br/></div>'
   sign:
     topLand:
-      line-1: '&c#&l{place}'
-      line-2: '&8<&2 {land} &8>'
-      line-3: '&7Ägs av {owner}'
-      line-4: '&cchunks {value}'
+      line-1: '&6#&e{place}'
+      line-2: '&5{owner}'
+      line-3: '&2Vùng đất &a{land}'
+      line-4: '&9Kích thước:&b {size}'
     noLand:
       line-1: ' '
-      line-2: '&cInget land'
-      line-3: '&cVisa.'
+      line-2: '&cKhông có vùng đất'
+      line-3: '&cnào để hiện.'
       line-4: ' '
-    rent:
-      line-2: '&6Hyra {area}'
-      line-3: '&c${cost} &8/ &5{time}'
-      line-4: '&8Antal dagar: {max}'
-    sell:
-      area:
-        line-2: '&aKöp'
-        line-3: '&7Underzone&6 {area}'
-        line-4: '&c${cost}'
-      land:
-        line-2: '&aKöp'
-        line-3: '&7Land&2 {land}'
-        line-4: '&c${cost}'
-    rented:
-      line-2: '&7Area&6 {area}'
-      line-3: '&7{player}'
-      line-4: '&5{time} &7left'
-    sold:
-      area:
-        line-2: '&7Area&6 {area}'
-        line-3: '&aSåld &7av'
-        line-4: '&7{player}'
-      land:
-        line-2: '&7Land&2 {land}'
-        line-3: '&aSåld &7till'
-        line-4: '&7{player}'
   autoAction:
-    claim: '&aÖverta chunk'
+    claim: '&aChiếm chunk'
   map:
     yours: '&a▉ '
     others: '&c▉ '
     friendly: '&5▉ '
     current-location: '&e▉ '
     wilderness: '&2▉ '
-    top: '&7-<------------<- &6Lands Karta &7->------------>-'
-    info:
-      wilderness: ' &2▉ &7= Vildmarken'
-      yours: ' &a▉ &7= Din'
-      trusted: ' &5▉ &7= Vänn'
-      others: ' &c▉ &7= Andras'
-      position: ' &e▉ &7= Position'
-    bottom: '&7-<------------<- &6Lands Karta &7->------------>-'
-  wars:
-    nametag:
-      enemy: '&cFiende &8| '
-      ally: '&aAllierad &8| '
-    object:
-      enemy: '&cEnemy'
-      ally: '&aAlly'
-  land:
-    title:
-      land: ' &7Ägd av&3 %owner%&7.'
-      safezone: ''
-    default-area: Default
-  teleportation:
-    bossbar: '&7Vänta&3 {time} &7Second(s) innan du teleportera igen.'
-  inbox:
-    general:
-      created: '&3{0}: &7Land skapad.'
-    member:
-      join: '&3{0}: &aInvånare &b{1} &agick med.'
-      leave: '&3{0}: &aInvånare &b{1} &clämnat.'
-      ban: '&3{0}: &cInvånare &4{1} &cfick stå i skamvrån (avhyst).'
-    economy:
-      upkeep:
-        warning: '&3{0}: &cKunde inte betala underhållskostnad till servern: ${1}'
-        unclaimed: '&3{0}: &cDu kunde inte betala&6 {1} {#fbe232}Ⓖ &6. Sista inmutade chunk (X: {2} Z: {3}) är borttagen.'
-        paid: '&8{0}: &7Du betalade &6{1} {#fbe232}Ⓖ&7 i underhåll till servern'
-      bank:
-        withdraw: '&3{0}: &cInvånare &9{1} &ctog ut &6{2} {#fbe232}Ⓖ &7kvar i banken &6{3} {#fbe232}Ⓖ'
-        deposit: '&3{0}: &7Invånare &9{1} &7satte in &6{2} {#fbe232}Ⓖ &7summa efter i banken &6{3} {#fbe232}Ⓖ'
-      taxes:
-        warning: '&4{0}: &cInvånare &3{1} betalade inte skatt i landet.'
-        untrusted: '&4{0}: &cInvånare &3{1} betalade inte skatt. Han är nu borttagen från landet.'
-        received: '&3{0}: &7Du motog totalt &6{1} {#fbe232}Ⓖ &7i skatt från lands ivånare summa på banken &6{2} {#fbe232}Ⓖ'
-    war:
-      declaration:
-        sent: '&8{0}: &7Du förklarade krig mot {1},för mer info med kommandot &8/wars info'
-        received: '&8{0}: &c{1} &cförklarade krig mot oss,&7mer info med komandot &8/Wars info'
-        mutual:
-          sent: '&8{0}: &7Sänt kriksförklaring till {1}. &7Det behöver accptera det.'
-          received: '&8{0}: &c{1} &char sänt en krigsförfrågan. Acceptera med komandot: &8/&3Wars declare {2}'
-      surrender:
-        sent: '&8{0}: &cGav upp. betallade &6{1}{#fbe232}Ⓖ&c i gåva till fienden.'
-        received: '&8{0}: &7Fienden {1} &7gav upp. Motag &6{2}{#fbe232}ⒼⒼ&7 i gåva.'
-      end:
-        won: '&8{0}: vi vann kriget med {1} dödade.'
-        lost: '&8{0}: vi förlorade kriget med {1} döda.'
-        draw: '&8{0}: The war ended in a draw with {1} kills and {2} deaths.'
-  unlimited: '&aunlimited'
 help:
+  general:
+    prefix: '&8[&aLands&8] &7Cách sử dụng: '
+    header: '&7------------<- &5Hưỡng dẫn Lands &7Trang&6 {page} &8/&e {pages} &7->------------'
+    page: '&7Sử dụng &8/&dLands help {next} &7để sang trang tiếp theo. <> = bắt buộc [] = tùy chọn'
+    footer: '&7------------<- &5Hưỡng dẫn Lands &7Trang&6 {page} &8/&e {pages} &7->------------'
   command:
-    help: '&8/&3Lands help &8[&3page&8] - &7Här hittar du information om kommandon'
-    edit: '&8/&3Lands edit &8<&3land&8> &8- &7Skriv namnet på det land du vill t.ex inmuta eller anförtro spelare i'
-    claim: '&8/&3Lands claim &8[&3area, auto&8] - &7Inmuta chunk'
-    create: '&8/&3Lands create &8<&3name&8> - &7Skapa land'
-    leave: '&8/&3Lands leave &8[&3land] &8- &7Lämna chunk eller land'
-    unclaim: '&8/&3Lands unclaim &8- &7Ta bort inmutning av chunk'
-    delete: '&8/&3Lands delete &8<&3land&8> &8- &7Ta bort land'
-    trust: '&8/&3Lands trust &8<&3player&8> [&3here&8] - &7Bjud in spelare'
-    untrust: '&8/&3Lands untrust &8[&3here&8] - &7sätt upp spelare på lista för opålitliga'
-    setRole: '&8/&3Lands setRole &8<&3player&8> <&3role&8> [&3here&8] - &7Sätt roll'
-    accept: '&8/&3Lands accept &8<&3land&8> - &7Acceptera inbjudan'
-    deny: '&8/&3Lands deny &8<&3land&8> - &7Neka inbjudan'
-    view: '&8/&3Lands view &8- &7Information om land och inmutad chunk, samt se gränser för land och subzoner'
-    menu: '&8/&3Lands menu &8[&3here&8] &8- &7öppna land / area meny'
-    setSpawn: '&8/&3Lands setspawn - &7Sätter landsspawn punkt'
-    spawn: '&8/&3Lands spawn &8[&3land&8] - &7Teleoportera till land'
-    wild: '&8/&3Lands wild &8- &7Teleoportera till slumpmässig plats'
-    top: '&8/&3Lands top &8[&3page&8] &8- &7Visa top 10 lands'
-    selection: '&8/&3Lands selection &8- &7för att markera yta antingen för inmuta stor yta land eller markera ut underzoner (OBS!!! underzoner måste du räkna med höjd så spelaren kan bygga).'
-    chat: '&8/&3Lands chat &8[&3land&8] <&3message&8> &8- &7Land chat'
-    rename: '&8/&3Lands rename &8<&3name&8> - &7Döp om land'
-    teleport: '&8/&3Lands teleport &8[&3world&8] <&3x&8> <&3z&8> - &7Teleoportera till chunk'
-    invites: '&8/&3Lands invites &8- &7Visa motagna Inbjudningar'
-    info: '&8/&3Lands info &8[&3land&8] - &7Visa information om landet'
-    player: '&8/&3Lands player &8<&3player&8> - &7Visa information om spelare'
-    map: '&8/&3Lands map &8- &7Visa karta över närmaste land '
-    balance: '&8/&3Lands balance &8[&3land&8] - &7Kolla lands konto'
-    deposit: '&8/&3Lands deposit &8<&3amount&8> - &7Insätting av guld till lands bank'
-    withdraw: '&8/&3Lands withdraw &8<&3amount&8> - &7Ta ut guld från lands bank'
-    list: '&8/&3Lands list &8[&3world&8] - &7Lista alla lands'
-    assign: '&8/&3Lands selection assign &8<&3area&8> - &7Tilldela markerningen du gjort med selection till en area du gjort i ditt lands GUI i underzoner'
-    setowner: '&8/&3Lands setowner &8<&3player&8> - &7Överför Ägande av ditt land'
-    ban: '&8/&3Lands ban &8<&3player&8> - &7Hindra spelare komma in i ditt land'
-    unban: '&8/&3Lands unban &8<&3player&8> - &7Ta bort ban för spelare i ditt land'
-    wars:
-      declare: '&8/&3Wars declare &8<&3land or nation&8> - &7Förklara krig'
-      info: '&8/&3Wars info - &7Visar info nuvarande krig eller kommande krig'
-      menu: '&8/&3Wars menu &8- &7Öppna meny för krig'
-      deny: '&8/&3Wars deny &8- &7Necka en krigsförklaring'
+    help: '&8/&7Lands help &8[&aPage&8] - &eTrợ giúp'
+    edit: '&8/&7Lands edit &8<&aLand&8> - &eTham gia chế độ chỉnh sửa'
+    claim: '&8/&7Lands claim &8[&7auto&8] - &eChiếm chunk'
+    create: '&8/&7Lands create &8<&aName&8> - &eTạo vùng đất'
+    leave: '&8/&7Lands leave &8[&aLand] &8- &eRời bỏ chunk hoặc vùng đất'
+    unclaim: '&8/&7Lands unclaim &8- &eTrả chunk về nơi hoang dã'
+    delete: '&8/&7Lands delete &8<&aLand&8> &8- &eXóa vùng đất'
+    trust: '&8/&7Lands trust &8<&aPlayer&8> [&ahere&8] - &eMời người chơi vào vùng đất'
+    untrust: '&8/&7Lands untrust &8[&ahere&8] - &eSút người chơi ra khỏi vùng đất'
+    setRole: '&8/&7Lands setRole &8<&aPlayer&8> <&aRole&8> [&ahere&8] - &eĐặt vai trò người chơi'
+    accept: '&8/&7Lands accept &8<&aLand&8> - &eĐồng ý lời mời'
+    deny: '&8/&7Lands deny &8<&aLand&8> - &eHủy lời mời'
+    view: '&8/&7Lands view &8- &eThông tin về chunk'
+    menu: '&8/&7Lands menu &8- &eMở menu'
+    setSpawn: '&8/&7Lands setSpawn - &eĐặt điểm hồi sinh của vùng đất'
+    spawn: '&8/&7Lands spawn &8[&aLand&8] - &eDịch chuyển tới vùng đất'
+    wild: '&8/&7Lands wild &8- &eDịch chuyển tới nơi ngẫu nhiên'
+    top: '&8/&7Lands top &8- &eHiển thị Top 10 vùng đất'
+    selection: '&8/&7Lands selection &8- &eBật lựa chọn'
+    chat: '&8/&7Lands chat &8[&aLand&8] <&aMessage&8>'
+    rename: '&8/&7Lands rename <&aName&8> - &eĐổi tên vùng đất'
+    teleport: '&8/&7Lands teleport &8[&aWorld&8] <&aX&8> <&aZ&8> - &eDịch chuyển tới chunk'
+    invites: '&8/&7Lands invites &8- &eHiển thị lời mời nhận được'
+    info: '&8/&7Lands info &8[&aLand&8] - &eXem thông tin về vùng đất'
+    player: '&8/&7Lands player &8<&aPlayer&8> - &eXem thông tin người chơi'
+    map: '&8/&7Lands map &8- &eXem bản đồ'
+    balance: '&8/&7Lands balance &8[&aLand&8] - &eKiểm tra số tiền hiện có trong vùng đất'
+    deposit: '&8/&7Lands deposit &8<&aAmount&8> - &eGửi tiền vào ngân hàng của vùng đất'
+    withdraw: '&8/&7Lands withdraw &8<&aAmount&8> - &eLấy tiền từ ngân hàng của vùng đất'
     admin:
-      debug: '&8/&3Lands debug &8- &7Shows loaded data stats'
-      safezone: '&8/&3Lands safezone &8- &7Configure safezone'
-      reload: '&8/&3Lands reload &8- &7Reload config or messages'
-      about: '&8/&3Lands about &8- &7Show information about Lands'
-      admin: '&8/&3Lands admin &8<&3sub-command&8> &8- &7Admin commands'
-    taxes: '&8/&3Lands taxes &8- &7Visar kommande betalningar'
-    unstuck: '&8/&3Lands unstuck &8- &7Teleport om du fastnar'
-    mod:
-      chatspy: '&8/&3Lands chatspy &8[&aland&8] - &7Listen to land chat'
-    claims: '[T]&8/&3Lands claims &8[&3land&8] &8- &7List claims of your land[H]&7This command will show you all /Lands claim''s of your land. &7Click to copy.[/H][SC]lands claims[/SC][/T]'
-    rent: '[T]&8/&3Lands rent &8<&3cancel | info | remove&8> &8- &7Manage rental[H]&7With this command you can manage your rent at your current position. &7Click to copy.[/H][SC]lands rent[/SC][/T]'
+      admin: '&8/&7Lands admin &8<&aAction&8> &8- &eHiển thị lệnh dành cho quản trị viên'
+      debug: '&8/&7Lands debug &8- &eHiển thị thống kê về dữ liệu đã nạp'
+      safezone: '&8/&7Lands safezone &8- &eTùy chỉnh vùng an toàn'
+      reload: '&8/&7Lands reload &8<&aValue&8> &8- &eNạp lại cấu hình và tin nhắn'
+      about: '&8/&7Lands about &8- &eHiển thị thông tin về Lands'
 message:
-  world-invalid: '&cDetta är avaktiverat i denna värld. &7Admin behöver ändra det i config, Värld: {world}'
-  feature-disabled: '&cDenna funtion är avslagen av Admin. &8Det behöver aktivera {setting} i config, För du ska kunna använda denna funtion.'
-  current-war: '&cDu kan inte göra det nu. &7Ditt land &2{land} &7är med i ett krig. &7Försök igen när kriget är över.'
+  no-permission: '&8[&aLands&8] &cBạn không có quyền để làm điều này. &7Bạn cần quyền&b {permission}&7.'
+  world-invalid: '&8[&aLands&8] &cThứ này đã bị tắt.'
+  feature-disabled: '&8[&aLands&8] &cTính năng này đã bị tắt bởi quản trị viên. &7Họ cần bật&b {setting} &7trong cấu hình để cho phép bạn sử dụng.'
   noaccess:
-    chunk: '&cDu har inte tillåtelse gå in i &8(&7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Bypass permission: {bypass}'
-    area: '&cDu har inte tillåtlse att bryta block i denna area &8(&7Area:&6 {area} &7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Bypass permission: {bypass}'
-    land: '&cDu har inte tillåtesle till att göra detta i &8(&7Land:&2 {land}&8)&7. &8Bypass permission: {bypass}'
-    land-not-owner: '&cDu kan inte göra detta i land&4 {land}&c. &7Markera ditt eget land &8(/&3Lands edit &8<&3land&8>) eller skapa ett land &8(/&3Lands create &8<&3name&8>)&7. &8Bypass permission: lands.admin.land_edit'
-    claim: '&cDu kan inte inmuta land här. &7denna chunk hanteras av annat pluggins skydd. Name: {plugin}'
-    place: '&cDu har inte tillåtelse att placera block här. &7Denna area tillhör land&2 {land}&7.'
-    break: '&cDu har inte tillåtelse förstöra block här. &7DEnna area tillhör land&2 {land}&7.'
-    ignite: '&cDu har inte tillåtelse tända eld på block här. &7Denna area Tillhör land&2 {land}&7.'
-    enter: '&cDu har inte tillåtelse at gå in i area&4 {area} &cav land&4 {land}&c. &7Du 7Du teleoporteras till din senaste position.'
-    edit: '&cDu har inte tillåtelse till ändra detta land. &7Denna chunk tillhör land&2 {land}&7.'
-    interact:
-      general: '&cDu har inte tillåtelse interagera här. &7Denna area tillhör land&2 {land}&7.'
-      door: '&cDu har inte tillåtelse öppna dörrar här. &7Denna area tillhör land&2 {land}&7.'
-      mechanism: '&cDu har inte tillåtelse att använda knappar,spakar här. &7Denna area tillhör land&2 {land}&7.'
-      container: '&cDu har inte tillåtelse öppna kistor,hoppers här. &7Denna area tillhör land&2 {land}&7.'
-      villager: '&cDu har inte tillåtelse att trade med bybor här. &7Denna area tillhör land&2 {land}&7.'
-    combat:
-      animal: '&cDu har inte tillåtelse att skada djur här. &7Denna area tillhör land&2 {land}&7.'
-      pvp:
-        attacker: '&cDu har inte tillåtelse att attackera spelares här. &7Denna area tillhör land&2 {land}&7.'
-        target: '&cDu kan inte anfalla spelare, det är inte tillåtet attackera spelares här. &7du kan inte slåss med dom här. &7DEnna area tillhör land&2 {land}&7.'
-        ally: '&cDu kan inte attackera denna spelare i vildmarken, för han är invånare i en av dina lands. &7Slåss i en arena kan du göra i ditt land om du aktiverar PVP i roll-inställningar.'
-        wilderness: '&cDu kan inte anfalla denna spelare, för han står i vildmarken och du står i inmutad land.'
-    banned: '&cDu har inte tillåtelse gi in i denna area. &7Du har blivit bannlyst från denna area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. &8Bypass permission: {bypass}'
-    vehicle: '&cDu har inte tillåtelse använda gruvvagnar och hästar här. &7Denna area tillhör land&2 {land}&7.'
-    fly: '&cDu har inte flyga här. &7Denna area tillhör land&2 {land}&7.'
-    teleport: '&cDu har inte tillåtelse använda detta item för teleportera in i detta land&4 {land}&c. &7Du är inte invånare i detta land land.'
-    position: '&cYou''re not allowed to do this for the land&4 {land} &cat your current position. &8Bypass permission: {bypass}'
-  event:
-    fly:
-      counter: '#t#&cFly stängs av {newline}&com &4{sec} &csecond(s)'
-      disabled: '&cFlyg avstängd. &7Du saknar premissions för flyga här.'
-    enter:
-      land: '#a#&2&l{land} &3{title}'
-      safezone: '#t#&2&l{land}'
-      pvp-warning: ''
-    leave:
-      land: '#a#&l&9Du är ute i vildmarken'
-      safezone: '#a#&l&9Du är ute i vildmarken'
-  claimblock:
-    dropped: '&cNågra inmutblock ligger på marken&7Ditt Inventarie var fullt'
-    success: '&7Du fick&3 {blocks} &7inmutblock(s). &7Placera dom i en chunk för inmuta.'
-    not-owner: '&cDu har inte tillåtelse använda inmutablock. &7Det tillhör&3 {owner}&7.'
-  blacklist:
-    untrusted: '&cDu har inte tillåtelse använda detta kommando här. &7Du är inte betrodd i detta land. &8En Admin kan ändra det i config.'
-    general: '&ccDu har inte tillåtelse använda detta kommando i inmutat land. &8En Admin kan ändra det i config.'
-  autoAction:
-    stopped: '&cStopade din nuvarnde automatisk åtgärd. &7Nådde max omgång. Namn:&3 {name}'
-    started: '&7Startade automatisk åtgärd. Namn:&3 {name}'
-    removed: '&7Stopade automatisk åtgärd. &7Namn:&3 {name}'
-  chat-action:
-    cancelled: '#t#&c&lAvbruten{newline}&c&lchatt åtgärd.'
-    player: '&7Skriv in namnet på spelaren.'
-    area:
-      create: '&7Skriv in namnet för nya arean. Du kan ta med färgkoder.'
-      delete: '&7skriv in namnet på arean du vill ta bort.'
-      exists: '&carena&4 {area} &cExisterar i detta land &8(&7Land:&2 {land}&8)&c. &7Välj ett annat namn.'
-      max: '&cDu kan inte skapa mer areas för detta land. &7Du har nått gränsen av&3 {max} &7areas. Permisssion: lands.areas.NUMBER'
-    title: '&7Skriv in ny title för detta land. Du kan använda färgkoder.'
-    rename: '&7Skriv in namnet för detta land. Mellanslag går inte använda.'
-    land: '&7Skriv in namnet på landet.'
-    name: '&7Please enter the name in chat.'
-  world-not-exist: '&cDenna värld med namnet&4 {world} &c existerar inte. &7Misstag?'
-  area:
-    exists: '&cArea med detta namn&4 {area} &cFinns redan i land&4 {land}&c.'
-    not-exist: '&cArea&4 {area} &cFinns inte i land&4 {land}&c.'
-    default: '&cDu kan inte göra detta i area&4 {area} &cav land&4 {land}&c.'
-  role:
-    exists: '&cRank med detta namn&4 {role} &cfinns redan. &7Välj ett annat namn.'
-    not-exist: '&cRank&e {role} &cfinns inte i denna area. &7Misstag?'
-    max: '&cDu kan inte skapa mer ranker för detta land. &7Du har nått gränsen av&3 {max} &7ranker. Permisssion: lands.roles.NUMBER'
+    chunk: '&8[&aLands&8] &cBạn không có quyền trong chunk. &8(&7Vùng đất:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c.'
+    land: '&8[&aLands&8] &cBạn không được phép để làm điều đó trong vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
+    role-weight: '&8[&aLands&8] &cBạn không thể chỉnh vai trò của người chơi này. &7Người đó có vai trò cao hơn bạn. Liên hệ chủ vùng đất để được nhận trợ giúp.'
+    claim: '&8[&aLands&8] &cBạn không thể chiếm chunk này. &7Nó hiện đang thuộc một vùng đất khác.'
+    place: '&8[&aLands&8] &cBạn không được phép đặt khối trong chunk này.'
+    break: '&8[&aLands&8] &cBạn không được phép phá khối trong chunk này.'
+    interact: '&8[&aLands&8] &cBạn không được phép tương tác trong chunk này.'
+    ignite: '&8[&aLands&8] &cBạn không được phép đốt khối trong chunk này.'
+    edit: '&8[&aLands&8] &cBạn không được phép chỉnh sửa chunk này.'
     player:
-      land: '&cDu kan inte ändra invånare i land&4 {land}&c. &7Ranken&6 {role} &7har högre befogenheter än din rank eller ni har samma befogenheter.'
-      area: '&cDu kan inte ändra invånare i area&4 {area} &8(&7Land:&2 {land}&8)&c. &7Ranken&6 {role} &7har högre befogenheter än din rank eller ni har samma befogenheter.'
-    weight:
-      land: '&cDu kan inte ändra rank&4 {role} &cav land&4 {land}&c. &7Ranken har högre befogenheter än din rank eller ni har samma befogenheter.'
-      area: '&cDu kan inte ändra rank&4 {roel} &cav area&4 {area} &8(&7Land:&2 {land}&8)&c. &7Den Ranken har högre befogenheter än din rank eller ni har samma befogenheter.'
-    delete:
-      owner: '&cDu kan inte ta bort ägar ranken i ditt land. &7Denna ranken måste finnas kvar.'
-      entry: '&cDu kan inte ta bort orginal rankerna i ditt land. &7Dom behövs för nya invånare.'
-      visitor: '&cDu kan inte ta bort gäst i ditt land. &7Den behövs för invånare som besöker landet.'
-  teleportation:
-    already: '&cYou can''t start a second teleportation. There''s already a teleportation in progress. &7Please wait until it''s done.'
-    started: '&7Teleportation process started. Teleporting in&5 {sec} &7seconds. Please don''t move.'
-    cancelled: '&cYour teleportation has been cancelled. &7Please don''t move while you''re waiting&5 {sec} &7seconds for teleportation.'
-    chunk: '#t#&9&lTeleported{newline}&7X: {x} Z: {z} Cost:&c ${cost}'
-    plugin: '&cTeleportation has been cancelled by a 3rd party plugin. &7Please check your other plugins. &7This is not a Lands issue.'
-    unsafe: '&cTeleportation has been cancelled, because the destination is not safe.'
-    corrected: '&7The original teleport destination was unsafe. &7Your final destination has been corrected to a safe location.'
+      chunk-trust: '&8[&aLands&8] &cBạn không được phép mời người chơi vào chunk này &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      chunk-setRole: '&8[&aLands&8] &cBạn không được phép chỉnh vai trò trong chunk này &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      chunk-untrust: '&8[&aLands&8] &cBạn không đuợc phép sút người chơi khỏi chunk này &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
+      land-trust: '&8[&aLands&8] &cBạn không được phép mời người chơi vào vùng đất này &8(&7Vùng đất: &e{land}&8)&c.'
+      land-untrust: '&8[&aLands&8] &cBạn không đuợc phép sút người chơi khỏi vùng đất này &8(&7Vùng đất: &e{land}&8)&c.'
+      land-setrole: '&8[&aLands&8] &cBạn không được phép chỉnh vai trò trong vùng đất này &8(&7Vùng đất: &e{land}&8)&c.'
+    combat:
+      animal: '&8[&aLands&8] &cBạn không được phép tấn công động vật.'
+      pvp-attacker: '&8[&aLands&8] &cBạn không được phép tấn công người chơi.'
+      pvp-target: '&8[&aLands&8] &cĐối thủ của bạn không được phép tấn công người chơi.'
+    fly:
+      warning: '&8[&aLands&8] &7Bạn không được phép bay ở đây. Chế độ bay sẽ bị tắt trong vài giây nữa. Quyền hạn để vượt qua:&b {permission}'
+      count: '#t#&cChế độ bay sẽ bị tắt trong;;&e{sec} &cgiây'
+      disabled: '&8[&aLands&8] &cChế độ bay của bạn đã bị tắt. &7Bạn không được phép bay ở đây.'
+  disallowWilderness:
+    break: '&8[&aLands&8] &cBạn không được phép phá khối ở nơi hoang dã. &7Bạn chỉ có thể làm điều đó trong vùng đất.'
+    place: '&8[&aLands&8] &cBạn không được phép đặt khối ở nơi hoang dã. &7Bạn chỉ có thể làm điều đó trong vùng đất.'
+    interact: '&8[&aLands&8] &cBạn không được phép tương tác ở nơi hoang dã. &7Bạn chỉ có thể làm điều đó trong vùng đất.'
+  claimblock:
+    cmdDisabled: '&8[&aLands&8] &cBạn chỉ có thể chiếm chunk thông qua khối claim. &7Lệnh này đã bị tắt.'
+    dropped: '&8[&aLands&8] &cMột vài khối claim đã bị rớt. &7Không còn khoảng trống trong túi đồ của bạn.'
+    notOwner: '&8[&aLands&8] &cBạn không được phép sử dụng khối claim này. &7Nó không phải của bạn. Khối này thuộc về&b {player}&7.'
+    noLeft: '&8[&aLands&8] &cBạn không còn khối claim nào. &7Liên hệ quản trị viên để nhận trợ giúp.'
+    success: '&8[&aLands&8] &7Bạn có&b {blocks} &7khối claim. &7Đặt chúng trên chunk bạn muốn để chiếm nó.'
+  blacklist:
+    untrusted: '&8[&aLands&8] &cBạn không được phép sử dụng lệnh tại đây. &7Bạn không có quyền trong vùng đất này.'
+    general: '&8[&aLands&8] &cBạn không được phép sử dụng lệnh này trong các vùng đất.'
+  autoAction:
+    stopped: '&8[&aLands&8] &cĐã dừng hành động tự động của bạn. &7Đã đạt số vòng tối đa. Tên:&b {name}'
+    started: '&8[&aLands&8] &7Bắt đầu hành động tự động thành công. Tên:&b {name}'
+    removed: '&8[&aLands&8] &7Dừng hành động tự động thành công. &7Tên:&b {name}'
 command:
   general:
-    land-not-exist: '&cLand&2 {land} &cExisterar inte. &7Det är inget land med namnet&2 {land} &7i denna värld.'
-    area-not-exist: '&cArea&4 {area} &cExisterar inte detta land&4 {land}&c. &7Du kan skapa ny area i ditt land menu i areas sektion. &7Misstag?'
-    land-not-member: '&cDu är inte betrodd i detta land&4 {land}&c. &7använd &8/&3Lands menu &7för att se land du är invånare i.'
-    no-edit-land: '&cDu har inte valt ditt land än. &7Use &8/&3Lands edit &8<&3land&8> &7För att välja ditt land.'
-    name-exists: '&cdetta namn&4 {name} &cÄr redan tagen av annat land. &7Du behöver välja annat namn.'
-    money-cost-bank: '&cDu har inte tillräckligt med guld. &7Du behöver &6{cost}{#fbe232}Ⓖ&7. Sätt in Guld i din lands bank med komandot: &8/&3Lands deposit {cost}'
-    money-cost: '&cDu har inte tillräckligt med guld. &7Du behöver &6{cost}{#fbe232}Ⓖ&7.'
-    action-cooldown: '&cDu kan inte göra det nu. &7Du behöver vänta:&5 {time}&7.'
-    land-none: '&cDu är inte invånare av detta land. &7använd &8/&3Lands create &7För skapa en egen.'
-    land-no-own: '&cDu äger inget land. &7Använd &8/&3Lands create &7För skapa en egen.'
-    world-invalid: '&cDu kan inte göra det i denna värld. &7En Admin Behöver lägga till world&3 {world} &7till config först.'
-    wilderness: '&cDenna chunk är vildmark. &7Du behöver gå till inmutad chunck. &7Du kan använda &8/&3Lands menu &7För se dina lands.'
-    player-not-exist: '&cDet finns inte en spelare med namn&4 {player}&c. &7Misstag?'
-    player-self: '&cDu kan inte göra det med dig själv. &7You''re funny. :)'
-    banks-disabled: '&7Bank är avstängt av Admin. &8Admin kan slå på det i config.'
-    land-not-trusted: '&cSpelare&4 {player} &7Är inte del av detta land &8(&7Land:&2 {land}&8)&7. Du behöver betro han först, använd &8/&3Lands trust&7.'
-    area-not-trusted: '&cDu kan inte göra det här. &7du är inte betrodd i detta chunk &8(&7X: {x} Z: {z}&8)&7. DEt tillhör area&6 {area} &7av land&2 {land}&7.'
-    invalid-number: '&cDin inmatning&4 {input} &cÄr inte ett nummer. &7Det&3 {argument} &7måste vara ett nummer.'
-    swear-word: '&cAnvänd inte svärord. &7Andvänd vårdat språk. Word:&c {word}'
-    player-offline: '&cDet är inte någon spelare med detta namn&4 {player} &conline. &7Misstag?'
-    no-permission: '&cDu har inte tillåtelse att göra detta. du behöver denna tillåtelse {permission}.'
-    name:
-      character: '&cDu kan inte använnda ogiltiga tecken för namnet. &7Använd bara bokstäver och nummer. &7Hittade ogiltigt tecken:&3 {invalid}'
-      length: '&cDetta namn är för långt. &7Maximal längd är&3 {max} &7tecken &8(&7du skrev: {input}&8)&7. &8detta inkludera färgkoder.'
-      empty: '&cdetta namn är ogiltigt. &7Du måste minst ta med ett tecken, måste vara mer än färgkoder.'
-      color: '&cYou''re not allowed to use color codes for this name. &7Please remove any color codes from your input.'
-    number: '&cYour input&4 {input} &cisn''t a number. &7The&3 {argument} &7argument needs to be a number.'
+    land-not-exist: '&8[&aLands&8] &cVùng đất&e {land} &ckhông tồn tại. &7Không có vùng đất với tên&b {land} &7trong thế giới này.'
+    land-not-member: '&8[&aLands&8] &cBạn không có quyền trong vùng đất&e {land}&c. &7Dùng &8/&aLands menu &7để xem vùng đất mà bạn đang tham gia.'
+    land-not-trusted: '&8[&aLands&8] &cBạn không thể làm điều đó. &7Người chơi&b {player} &7không thuộc vùng đất này &8(&7Vùng đất:&e {land}&8)&7. Bạn cần mời người đó bằng lệnh &8/&aLands trust&7.'
+    land-no-action: '&8[&aLands&8] &cBạn không phải là thành viên của vùng đất nào cả. &7Dùng &8/&aLand create &7để tạo mới.'
+    name-exists: '&8[&aLands&8] &cTên này đã được chọn bởi vùng đất khác. &7Hãy chọn một cái tên khác.'
+    money-cost-bank: '&8[&aLands&8] &cBạn không có đủ tiền để chi trả. &7Bạn cần&b ${cost}&7.'
+    lands-max: '&8[&aLands&8] &cBạn không thể gia nhập thêm vùng đất nào nữa. &7Tối đa:&b {max} &7vùng đất.'
+    name-numbers: '&8[&aLands&8] &cTên vùng đất không thể chứa số. &7Vui lòng chỉ dùng kí tự latin.'
+    name-accent: '&8[&aLands&8] &cTên vùng đất không thể chứa dấu. &7Vui lòng chỉ dùng kí tự latin.'
+    name-length: '&8[&aLands&8] &cTên quá dài. &7Tối đa&b {max} &7kí tự.'
+    action-cooldown: '&8[&aLands&8] &cBạn không thể làm điều này ngay bây giờ. &7Bạn phải chờ&b {time} &7phút.'
+    land-none: '&8[&aLands&8] &cHình như bạn chưa phải là thành viên của bất kỳ vùng đất nào trên thế giới này. &7Dùng &8/&aLands create &7để tạo mới.'
+    land-no-own: '&8[&aLands&8] &cBạn không sở hữu vùng đất nào trên thế giới này. &7Dùng &8/&aLands create &7để tạo mới.'
+    world-invalid: '&8[&aLands&8] &cBạn không thể làm điều đó trên thế giới này. &7Bạn cần sang thế giới khác.'
+    wilderness: '&8[&aLands&8] &cChunk này thuộc về nơi hoang dã. &7Bạn cần đi đến một chunk đã được sở hữu. &7Sử dụng &8/&aLands menu &7để xem các vùng đất mà bạn hiện có.'
+    player-not-exist: '&8[&aLands&8] &cKhông có người chơi nào có tên là&e {player}&c. &7Vui lòng kiểm tra lại.'
+    player-offline: '&8[&aLands&8] &cHiện không có người chơi trực tuyến nào tên là&e {player}. &7Vui lòng kiểm tra lại.'
+    role-weight: '&8[&aLands&8] &cBạn không thể sửa vai trò này. &7Nó là một vai trò cao hơn hoặc ngang bằng &8(&7Vai trò:&e {role}&8) &7so với vai trò của bạn &8(&7Vùng đất:&e {land}&8)&7.'
+    player-self: '&8[&aLands&8] &cBạn không thể làm điều đó với chính bạn.'
+    cooldown: '&8[&aLands&8] &cBạn không thể làm điều đó ngay bây giờ. &7Bạn cần chờ thêm&b {time} &7phút.'
+    chunk-is-claimed: '&8[&aLands&8] &cBạn không thể chiếm chunk này. &7Nó hiện thuộc về vùng đất&b {land}&7.'
+    banks-disabled: '&8[&aLands&8] &7Ngân hàng đã bị tắt bởi quản trị viên. &7Liên hệ họ để trợ giúp. Thiết đặt: taxes.banks'
   help:
-    help: '&7Använd &8/&aLand help &7för hjälp.'
-    cmd-not-exist: '&cDetta kommando existerar inte. &7Kommand&3 {command} &7Är inte gilltigt.'
-    header: '[NoPrefix][T]&7----------&6<<<<&7-[H]&7Tryck här för komma till förgånde sida.[/H][C]lands help {previous}[/C][/T] &2Lands Help &7Page&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7Tryck här för komma till nästa sida.[/H][C]lands help {next}[/C][/T]'
-    footer: |
-      [NoPrefix]
-      &7Tryck på pilarna nedan för byta sida.
-      [T]&7----------&6<<<<&7-[H]&7Tryck här för komma till förgånde sida.[/H][C]lands help {previous}[/C][/T] &2Lands Help &7Page&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7Tryck här för komma till nästa sida.[/H][C]lands help {next}[/C][/T]
+    help: '&8[&aLands&8] &7Dùng &8/&aLand help &7để nhận trợ giúp.'
+    cmd-not-exist: '&8[&aLands&8] &cLệnh &b{command} không tồn tại.'
+    page-not-exist: '&8[&eProtect&8] &cTrang&e {page} &ckhông tồn tại.'
   create:
-    land-other: '&cDu har inte tillåtelse ha eget land och vara invånare av annat land. &7Du behöver lämna &2 {land} &7först. &8En Admin kan stänga av det i config.'
-    max-own: '&cDu kan inte skapa mer lands. &7Du har nått maximalt av&3 {max} &7egna lands. &8Permission: lands.ownlands.NUMBER'
-    success: '&7Du skapa ett land&2 {land} &7för&6{cost} {#fbe232}Ⓖ&7.Du kan inmuta Chunks med  kommandot &8/&3Lands claim&7. Du kan också använda komandot /Lands selection för Inmuta en selektion (zon). Sätt ett land {land} som ditt land,så kan du ändra det för framtida åtgärder &8(/&3Lands edit&8)&7.'
-    broadcast: '&7Land&2 {land} &7var skapad av&3 {player}&7.'
+    land-other: '&8[&aLands&8] &cBạn không được phép vừa sở hữu vùng đất riêng, vừa là thành viên của vùng đất khác. &7Bạn cần rời khỏi vùng đất&b {land} &7trước. Bạn có thể yêu cầu quản trị viên tắt tính năng này.'
+    max-own: '&8[&aLands&8] &cBạn không thể tự sở hữu thêm vùng đất được nữa. &7Tối đa:&b {max} &7vùng đất.'
+    success: '&8[&aLands&8] &7Đã tạo thành công vùng đất&b {land} &7với giá&b {cost}&7. Bạn có thể chiếm chunk bằng lệnh &8/&aLands claim&7.'
+    broadcast: '&8[&aLands&8] &7Vùng đất&b {land} &7đã được thành lập bởi&b {player}&7.'
   rename:
-    success: '&7Du satte ett nytt namn&3 {name} &7för detta land&8(&7Land:&2 {land}&8)&7.Du betalade&6 {cost}{#fbe232}Ⓖ&7.'
+    success: '&8[&aLands&8] &7Đã đặt tên mới (&b{name}) &7cho vùng đất &e{land}. Bạn đã chi&b ${cost}&7.'
   edit:
-    success: '&7Du gick in i edit läget för detta land&8(&7Land:&2 {land}&8)&7. Nästa åtgärd, som &8/&3Lands claim &7eller &8/&3Lands trust&7, kommer att användas för detta land.'
+    success: '&8[&aLands&8] &7Bạn đã tham gia chế độ chỉnh sửa &8(&7Vùng đất:&e {land}&8)&7. Những hành động trong tương lai như &8/&aLands claim &7hay &8/&aLands trust&7, sẽ dành cho vùng đất này.'
   selection:
-    not-complete: '&cDin selektion är inte färdig. &7Är du säker du markerat båda positionerna &8(&bLEFT CLICK &7och &9RIGHT CLICK&8)&7.Du kan aktivera selection med kommandot &8/&3Lands selection&7.'
-    max: '&cDin selektion har för många chunk. &7Den här storleken:&3 {current} &7går över din maximala storlek som är&3 {max} chunks. &8Permission: lands.selection.NUMBER'
-    disabled: '#t#&5&lSelektion{newline}&c&lär avstängt'
-    world: '&cBåda positionerna måste vara i samma värld. &7Sätt sätt position ett och position två i samma värld.'
-    pos:
-      warn: '&cWarning: &7Detta chunk tillhör annat plugin. Namn:&3 {plugin}'
-      cancelled: '&cDu kan inte göra en selektion här. &7Detta chunk tillhör annat plugin. Namn:&b {plugin}'
-      one: '#t#&5&lSelection{newline}&b&lPos 1 &8-> &7Set'
-      two: '#t#&5&lSelection{newline}&b&lPos 2 &8-> &7Set'
-    area:
-      conflicts: '&cHittade&4 {conflicts} &csom krockar med chuncks som redan är tilldelad till area(s). &7Använd &8/&3Lands selection assgin {area} confirm &7För att bekräfta en överskrivning. Konflikt tillhör dessa areas: {areas}'
-      assigned: '&7Du har tilldelas:&3 {chunks} &7chunks till area&6 {area} &8(&7Land:&2 {land}&8)&7.'
-    enabled: '&7Du har slagit på så du kan markera ut area. Använd &5Vänsterknapp &7på ett block för sätta positon ett. Med &5högerknapp &7så sätter du positon två. Efter du har satt två punkter på motsatt sida så kan du använda dessa kommandon (använd /lands först): &3Claim&7, &3Unclaim&7, &3Leave'
-    expand:
-      enabled: '&7Du har nu förstorat den markering från botten till toppen (i alla nivåer).'
-      disabled: '&7Din markering täcker nu inte alla nivåer från botten till toppen.'
-    too-far: '&cDet block du tittar på, är för långt borta. &7Flytta dig närmare blocket.'
-    complete: |
-      &7Din markering är klar. Dessa komandon kan du göra:
-        &8┏
-        &8┃ &7Inmuta: &8/&3Lands claim
-        &8┃ &7Ta bort inmutning: &8/&3Lands unclaim
-        &8┃ &7Addera till underzon: &8/&3Lands assign
-        &8┗
+    disabled-config: '&8[&aLands&8] &cTính năng này đã bị tắt bởi quản trị viên. &7Hãy bật nó trong cấu hình: &bland.selection.enabled&7.'
+    enabled: '&8[&aLands&8] &7Chế độ lựa chọn đã bật: Dùng tay lựa chọn &bcả hai góc &7trong một vùng bất kỳ để &bchiếm mọi chunk &7bên trong vùng đó.'
+    disabled: '#t#!!1!!1!!1!!&7Lựa chọn:;;&cTắt'
+    pos-left: '#t#&7Vị trí;;&b1'
+    pos-right: '#t#&7Vị trí;;&b2'
+    max: '&8[&aLands&8] &cVùng lựa chọn của bạn có quá nhiều chunk. &7Đã chọn:&b {current} &7Tối đa:&b {max}'
+    same-world: '&8[&aLands&8] &cHai vị trí phải ở trong cùng một thế giới.'
+    claimed: '&8[&aLands&8] &7Đã chiếm thành công&b {chunks} &7chunk &8(&7Vùng đất:&e {land}&8)&7. Bạn đã chi&b ${cost}&7.'
+    left: '&8[&aLands&8] &7Đã từ bỏ thành công&b {chunks} &7chunk &8(&7Vùng đất:&e {land}&8)&7.'
+    unclaimed: '&8[&aLands&8] &7Đã trả&b {chunks} &7chunk về nơi hoang dã &8(&7Vùng đất:&e {land}&8)&7.'
   claim:
-    already: '&cDu kan inte inmuta detta chunk. &7Det tillhör land&2 {land}&7.'
-    auto-create: '&7Skapar ett land automatiskt för dig, för du har inget i denna värld. Du kan ändra namn med komandot &8/&3Lands rename&7.'
-    auto-create-fail: '&cMisslyckades att automatisk skapa ett land för dig. &7Läs meddelandet ovanför.'
-    near-other: '&cDEtta är för nära till land&4 {land}&c. &7Du behöver flytta Längre bort ifrån det landet. Minimum chunk avstånd är&3 {distance}&7. &8En Admin kan ändra det i config.'
-    far-land: '&cDu kan inte inmuta detta chunk(s). &7Dinna inmutningar ska ansluta till ditt land &8(&7Land:&2 {land}&8)&7.'
-    success: '&7Inmutade detta chunk &8(&7Land:&2 {land} &7X: {x} Z: {z}&8) &7for&6 {cost} {#fbe232}Ⓖ&7. Nästa inmutning kommer kosta&b {next} {#fbe232}Ⓖ&7.'
-    already-claimed: '&cI din selektion är det chunk som är inmutade och tillhör inte ditt land &8(&7X: {x} Z: {z}&8)&c. &7Det tillhör land&2 {land}&7.'
-    max-chunk: '&cDu kan inte inmuta&4 {chunks} &cfler chunks för detta land. &7du har nått maximalt för land&2 {land} &7is&3 {max} &7chunks. &8Permission: lands.chunks.NUMBER'
-    selection: '&7Du unmutade&3 {chunks} &7chunks för detta land &8(&7Land:&2 {land}&8)&7. Du betalade&6 {cost} {#fbe232}Ⓖ&7.'
-  assign:
-    selection: '&cDu behöver skapa en selektion först. &7Använd &8/&3Lands selection &7för skapa en.Sen provar du igen.'
-    size: '&cDin selektion är för liten. &7Minimum storlek är&3 {min} &7blocks och din är&3 {current}&7.'
-    success: '&7Du ändrade storlek på area&6 {area} &7av land&2 {land}&7. Ändringar visualiseras.'
-    conflict:
-      land: '&cDin selektion krockar med land&4 {land}&c. &7Ändra din selektion.'
-      area: '&cDin selektion krockar med area&4 {area}&c. &7Ändra din selektion.'
-    default: '&cYou can''t assign the selection to a default area. &7Areas can be deleted in the areas menu of the land.'
+    max-chunks: '&8[&aLands&8] &cBạn không thể chiếm thêm chunk nữa. &7Tối đa:&b {max} &7chunk.'
+    auto-create: '&8[&aLands&8] &7Đang thử tạo vùng đất mới cho bạn bởi vì bạn chưa hề có trên thế giới này. Bạn có thể đổi tên thông qua lệnh &8/&aLands rename&7.'
+    auto-create-fail: '&8[&aLands&8] &cKhông thể tự tạo vùng đất cho bạn. &7Hãy đọc tin nhắn trên và gửi cho quản trị viên.'
+    near-other: '&8[&aLands&8] &cQuá gần vùng đất&e {land}&c. &7Bạn cần phải giữ khoảng cách tối thiểu là&b {distance}&7.'
+    far-land: '&8[&aLands&8] &cBạn không thể chiếm chunk này. &7Nó cần phải sát với vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
+    success: '&8[&aLands&8] &7Đã chiếm chunk này thành công &8(&7Vùng đất:&e {land} &7X:&e {x} &7Z:&e {z}&8) &7với giá&b {cost}&7. Lần chiếm chunk tiếp theo sẽ tốn&b {next}&7.'
   leave:
-    land:
-      success: '&7Du lämnade land&2 {land}&7. Du har inte tillgång till detta land.'
-      untrusted: '&7Du är inte inåvare i någon area av detta land&2 {land}&7.'
-    area:
-      success: '&7Du lämnade area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Du har inte tillgång till arean.'
-      untrusted: '&7Du är inte invånare i denna area&6 {area} &7av detta land&2 {land}&7.'
-    owner: '&cDu kan inte lämna detta land. &7Som ägare av detta land du kan endast ta bort det eller ge ägarrätten till annan spelare. Använd &8/&3Lands delete {land} &7för ta bort land .'
+    land-owner: '&8[&aLands&8] &cBạn không thể rời bỏ vùng đất này. &7Vì bạn là chủ sở hữu, bạn chỉ có thể xóa nó. Dùng &8/&aLands delete&7.'
+    land-success: '&8[&aLands&8] &7Đã rời khỏi&b {land}&7 thành công. Bạn không còn thuộc về vùng đất đó nữa.'
+    chunk-success: '&8[&aLands&8] &7Đã rời khỏi chunk. Bạn không còn thuộc về chunk này nữa.'
   unclaim:
-    success: '&7Du tog bort denna inmutning av detta chunk &8(&7Land:&2 {land} &7X: {x} Z: {z}&8)&7. Du fick&6 {back} {#fbe232}Ⓖ&7tillbaka.'
-    selection:
-      empty: '&cDu tog inte bort några chunks, för du inte markerat någon chunk än eller du har inte tillåtelse ta bort chunks.'
-      connection: '&7Du har tagit bort {success} / {size} chunks för denna markering, &cmen {failed} kunde inte ta bort chunks för det skulle resultera i landet inte sitta ihop längre.'
-      partly: '&7Du har tagit bort {success} / {size} chunks av denna markering. &8Notera endast chuncks, som du har tillåtelse att ta bort, blir borttagna.'
-      success: '&7Du har tagit bort alla chunks, som du markerat.'
-      rental: '&cDu kan inte ta bort denna markering&7, För den inerhåller hyrd/såld area&6 {area} &7i land&2 {land}&7. Hyresgäst:&3 {player}'
-    connection: '&cDu kan inte ta bort den här chuncken, eftersom detta skulle orsaka att landet kopplas ifrån dom andra chunck du äger. &7Chunk X: {x} Z: {z} skulle inte vara kopplad med ditt land längre.'
-    rental: '&cDu kan inte ta bort denna chunckk&7, för den är uthyrd/såld area&6 {area}&7. Hyresgäst:&3 {player}'
+    success: '&8[&aLands&8] &7Đã trả chunk này về nơi hoang dã &8(&7X:&e {x} &7Z:&e {z}&8)&7. Bạn được hoàn lại&b ${back}.'
   delete:
-    confirm: '&cDu behöver bekräfta denna åtgärd. &7Använd &8/&3Land delete {land} confirm&7.'
-    success: '&7Du tog bort ditt land &8(&7Land:&2 {land}&8)&7. Du fick tillbaka:&6 {back} {#fbe232}Ⓖ &7.'
-    broadcast: '&7Detta land&2 {land} &7var borttaget av&3 {player}&7.'
-    nation: '&cDu kan inte ta bort ditt land, eftersom det är nationens huvudstad&4 {nation}&c. &7Du kan antingen ta bort nationen med &8(/&3Nations delete&8) &7 eller flytta ägare med &8(/Nations setCapital&8)&7.'
+    confirm: '&8[&aLands&8] &cBạn cần chấp nhận hành động này. &7Dùng &8/&aLand delete {land} confirm&7.'
+    success: '&8[&aLands&8] &7Đã xóa vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
+    broadcast: '&8[&aLands&8] &7Vùng đất&b {land} &7đã bị xóa bởi&b {player}&7.'
   trust:
-    own-land: '&cDenna spelare har inte tillåtelse att ha eget land och gå med i annat land. &7Han måste lämna först.'
-    max-lands: '&7Spelare&3 {player} &7Har nätt maximalt antal lands. &8Permission: lands.lands.NUMBER'
-    max-members: '&cKunde inte bjuda in invånaree&4 {player} &ci detta land land&4 {land}&c. &7Ägaren av detta land nått gränsen av&3 {members} &7invånare.'
-    area:
-      invited: '&cInvånaren&4 {player} &cär redan inbjuden till area&4 {area} &cav land&4 {land}&c. &7Inbjudan skickades den:&5 {time}'
-      trusted: '&7Invånaren&3 {player} &7är redan med i denna area&6 {area} &7av land&2 {land}&7.'
-      success: '&7Bjöd in spelare&3 {player} &7till denna area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Vänta tills han accepterar inbjudan.'
-      target: |
-        [T]&7Du blev inbjuden av&3 {player} &7till underzon med namnet:&6 {area} &7i landet:&2 {land}&7.Använd &8/&3Lands accept {land} &7för acceptera deras inbjudan.[H]&7Tryck på texten för öppna inbjudningsmenyn.[/H][C]lands invites[/C][/T]
-
-        &7Skatt i underzon:&6 {tax}{#fbe232}Ⓖ
-
-        [T]&2Accept &8[&8CLICK&8][H]&7Tryck här för acceptera inbjudan.[/H][C]lands accept {land}[/C][/T]
-        [T]&cDeny &8[&8CLICK&8][H]&7Tryck här för ta bort inbjudan.[/H][C]lands deny {land}[/C][/T]
-    max: '&cSpelaren&4 {player} &ckan inte gå med i fler lands. &7Han har nått maximalt av &3 {max} &7lands att gå med i. &8Permission: lands.lands.NUMBER'
-    land:
-      invited: '&cInvånaren&4 {player} &cär redan inbjuden till landet&4 {land}&c. &7Inbjudan skickades den&5 {time}'
-      trusted: '&7Invånaren&3 {player} &7har redan gått med i land&2 {land}&7.'
-      success: '&7Du skickade  till Invånaren&3 {player} &7en inbjudan till detta land&2 {land}&7. Han kan nu acceptera din injudan.'
-      target: |
-        [T]&7Du blev inbjuden av&3 {player} &7till landet&2 {land}&7. använd kommandot &8/&3Lands invites &7för titta på inbjudan.[H]&7Tryck på texten för öppna inbjudningsmenyn..[/H][C]lands invites[/C][/T]
-
-          &7Skatt i landet:&6 {tax}{#fbe232}Ⓖ
-
-          [T]&2Accept &8[&8CLICK&8][H]&7Tryck här för acceptera inbjudan.[/H][C]lands accept {land}[/C][/T]
-          [T]&cDeny &8[&8CLICK&8][H]&7Tryck här för ta bort inbjudan.[/H][C]lands deny {land}[/C][/T]
+    own-land: '&8[&aLands&8] &cNgười chơi này không được phép vừa sở hữu vùng đất riêng, vừa là thành viên của vùng đất khác. &7Người đó cần rời bỏ vùng đất của mình trước.'
+    land-already: '&8[&aLands&8] &cNgười chơi này đã tham gia vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
+    chunk-already: '&8[&aLands&8] &cNgười chơi này đã tham gia chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    invited: '&8[&aLands&8] &cNgười chơi này đã được mời. &7Vui lòng chờ đến khi người đó đồng ý &8(&7Vùng đất:&e {land}&8)&7.'
+    land-target: '&8[&aLands&8] &7Người chơi&b {player} &7đã mời bạn tham gia vùng đất&b {land}&7. Dùng &8/&aLand accept {land} &7để đồng ý.'
+    lands-max: '&8[&aLands&8] &7Người chơi&b {player} &7đã có quá nhiều vùng đất. Liên hệ quản trị viên để cho phép người đó có thêm nhiều vùng đất nữa.'
+    land-fail: '&8[&aLands&8] &cKhông thể mời&e {player} &cvào vùng đất&e {land}&c. &7Chủ sở hữu của vùng đất đã đạt giới hạn số lượng thành viên:&b {members}&7.'
+    max-members: '&8[&aLands&8] &cKhông thể mời&e {player} &cvào&e {chunks} &cchunk. &7Chủ sở hữu của vùng đất đã đạt giới hạn số lượng thành viên:&b {members}&7 người.'
+    chunk-max-members: '&8[&aLands&8] &cKhông thể mời&e {player} &cvào chunk này. &7Chủ sở hữu của vùng đất đã đạt giới hạn số lượng thành viên:&b {members}&7 người.'
+    chunk-target: '&8[&aLands&8] &7Người chơi&b {player} &7đã mời bạn vào chunk &8(&7X:&e {x} &7Z:&e {z}) &7Dùng &8/&aLands accept {land} &7để đồng ý.'
+    chunk-success: '&8[&aLands&8] &7Đã mời người chơi&b {player} &7vào chunk này &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-success: '&8[&aLands&8] &7Đã mời người chơi&b {player} &7vào vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
   untrust:
-    area:
-      already: '&cDenna invånare är inte betrodd i denna area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
-      success: '&7Du har tagit bort förtrondet för invånare&3 {player} &7i area &8(&7Area:&6 {area} &7Land:&2 {area}&8)&7.'
-      revoke: '&7Du har nu tagit bort injudan för invånare&3 {player} &7i area&6 {area} &8(&7Land:&2 {land}&8)&7. Invånaren är inte invånare i arean längre.'
-      rental: '&cDu kan inte ta bort hyresgästen&4 {player} &ci area&4 {area}&c. &7För ta bort area för uthyrning, Använd &8/&3Lands rent remove &7När du står i arean du vill ta bort.'
-    land:
-      already: '&7Denna invånare&3 {player} &7är inte betrodd i någon area i detta land&2 {land} &7 och har inte fått någon inbjudan.'
-      revoke: '&7Du har nu tagit bort injudan för invånare&3 {player} &7för hela landet&2 {land}&7. Invånaren är inte invånare någon arean.'
-      success: '&7Du har avhyst invånare&3 {player} &7i ditt land&2 {land}&7.'
-  setrole:
-    visitor: '&cDu kan inte sätta denna roll&4 {role}&c. &7Om du vill avhysa denna spelare, använd kommandot &8/&3Lands untrust {player} [area]&7.'
-    land:
-      untrusted: '&cSpelare&4 {player} &cär inte invånare i land&4 {land}&c. &7Du mmåste bjuda in han först.'
-      success: '&7Du satte roll&3 {role} &7för invånare&3 {player} &7i area av landet&2 {land}&7,där dom är injudna.'
-    area:
-      untrusted: '&cInvånare &4 {player} &cÄr inte inte med i area&4 {area} &ci land&4 {land}&c. &7Du får bjuda in först.'
-      success: '&7Du satte roll&3 {role} &7för invånare&3 {player} &7i area&6 {area} &7i land&2 {land}&7.'
+    land-already: '&8[&aLands&8] &cNgười chơi đó đã rời khỏi vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
+    chunk-already: '&8[&aLands&8] &cNgười chơi đó đã rời khỏi chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    invite-removed: '&8[&aLands&8] &7Đã hủy lời mời. &8(&7Vùng đất:&e {land}&8)&7.'
+    chunk-success: '&8[&aLands&8] &7Đã sút thành công người chơi&b {player} &7ra khỏi chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-success: '&8[&aLands&8] &7Đã sút thành công người chơi&b {player} &7ra khỏi vùng đất &8(&7Vùng đất:&e {land}&8)&7.'
+  setRole:
+    role-not-exist: '&8[&aLands&8] &cVai trò&e {role} &ckhông tồn tại. &7Lỗi đánh máy? &8(&aHiện có: &cAdmin&7, &eMember&8)'
+    land-not-trusted: '&8[&aLands&8] &cNgười chơi&e {player} &cchưa tham gia vùng đất này &8(&7Vùng đất:&e {land}&8)&7. Vui lòng kiểm tra lại.'
+    chunk-max-members: '&8[&aLands&8] &cKhông thể chỉnh vài trò trong chunk này. &7Chủ sở hữu vùng đất đã đạt giới hạn thành viên:&b {members}&7 người.'
+    max-members: '&8[&aLands&8] &cKhông thể chỉnh vai trò trong&e {chunks} &cchunk. &7Chủ sở hữu vùng đất đã đạt giới hạn thành viên:&b {members}&7 người.'
+    chunk-success: '&8[&aLands&8] &7Đã đặt vai trò&b {role} &7cho người chơi&b {player} &7trong chunk này &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    part-success: '&8[&aLands&8] &7Người chơi&b {player} &7chưa là thành viên của vùng đất. Đã đặt vai trò trong các chunk người đó tham gia &8(&7Vùng đất:&e {land}&8)&7.'
+    land-success: '&8[&aLands&8] &7Đã đặt vai trò&b {role} &7cho người chơi&b {player} &8(&7Vùng đất:&e {land}&8)&7.'
   accept:
-    not-exist: '&cDu har inte en inbjudan från detta land&4 {land} &celler så har tiden gått ut. &7 kontrollera stavningen.'
-    own-land: '&cDu har inte premission för att äga ett land och vara invånare i annat land. &7Du behöver lämna ditt eget land först.'
-    max-lands: '&cdu kan inte gå med i fler lands. &7Du har&3 {max} &7lands. &8Permission: lands.lands.NUMBER'
-    notification: |
-      [T]&7Du har&a {invites} &7inbjudningar från andra lands.[H]Tryck för komma till alla inbjudningar du kan ta bort eller acceptera dessa[/H][C]lands invites[/C][/T]
-      [T]&7Använd &8/&2Land invites .&7För att få en lista på inbjudningar eller tryck på texten.[H]Tryck för komma till alla inbjudningar du kan ta bort eller acceptera dessa[/H][C]lands invites[/C][/T]
-    area:
-      success: '&7Accepterade inbjudningen från land&2 {land} &7för area&6 {area}&7.'
-      broadcast: '&2{land} &8| &7spelare&3 {player} &7är nu invånare i area&6 {area} &7i ditt land&2 {land}&7.'
-    max: '&cDu kan inte gå med i mer lands. &7Du har bara &3 {max} &7lands att gå med i. &8Permission: lands.lands.NUMBER'
-    land:
-      success: '&7Du har accepterat inbjudan från land&2 {land} &7Du är nu invånare i landet.'
-      broadcast: '&2{land} &8| &7Spelare&3 {player} &7Är nu invånare i ditt land.'
-  setowner:
-    confirm: '&cBekräfta att du vill byta ägare över ditt land&2 {land} &7till spelare&3 {player}&7: &8/&3Lands setowner {player} confirm'
-    success: '&7Du har nu satt spelare&3 {player} &7som ny ägare av land&2 {land}&7. Du betalade&6 {cost} {#fbe232}Ⓖ&7.'
-    max-lands: '&cInvånaren&4 {player} &char inte tillåtelse att äga fler lands. &7Han har redan nått maximalt&3 {max} &7av egna lands. &8Permission: lands.ownlands.NUMBER'
+    not-exist: '&8[&aLands&8] &cBạn chưa có lời mời nào từ vùng đất&e {land} &choặc là lời mời đã bị hết hạn. &7Vui lòng kiểm tra lại.'
+    own-land: '&8[&aLands&8] &cBạn không có quyền để vừa sở hữu vùng đất riêng, vừa là thành viên của vùng đất khác. &7Bạn cần rời khỏi vùng đất của bạn trước.'
+    max-reached: '&8[&aLands&8] &cBạn không thể tham gia thêm vùng đất khác nữa. &7Tối đa:&b {max} &7vùng đất.'
+    land-tax-confirm: '&8[&aLands&8] &cChủ của vùng đất này muốn bạn trả&e {tax} &7để tham gia vùng đất này. &7Chấp nhận bằng lệnh &8/&aLands accept {land} confirm&7.'
+    chunk-tax-confirm: '&8[&aLands&8] &7Chủ của vùng đất này muốn bạn trả&b {tax} &7để tham gia chunk này. &7Chấp nhận bằng lệnh &8/&aLand accept {land} confirm&7.'
+    land-fail: '&8[&aLands&8] &cBạn không thể tham gia vùng đất&e {land}&c. &7Chủ sở hữu của vùng đất đã đạt giới hạn&b {members} &7thành viên.'
+    max-members: '&8[&aLands&8] &cBạn không thể tham gia trong&e {chunks} &cchunk. &7Chủ sở hữu của vùng đất đã đạt giới hạn&b {members} &7thành viên.'
+    chunk-max-members: '&8[&aLands&8] &cKhông thể đặt vai trò trong chunk này. &7Chủ sở hữu của vùng đất đã đạt giới hạn&b {members} &7thành viên.'
+    land-success: '&8[&aLands&8] &7Đã chấp nhận lời mời từ vùng đất&b {land}&7. Bạn đã có quyền trên toàn bộ chunk.'
+    chunk-success: '&8[&aLands&8] &7Đã chấp nhận lời mời từ vùng đất&b {land} &7cho chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    chunk-broadcast: '&8[&aLands&8] &b{land} &8| &7Người chơi&b {player} &7đã là thành viên của một chunk trong vùng đất của chúng ta &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    land-broadcast: '&8[&aLands&8] &b{land} &8| &7Người chơi&b {player} &7đã tham gia vùng đất của chúng ta&7.'
+    notification: '&8[&aLands&8] &7Bạn vẫn còn&b {invites} &7lời mời từ các vùng đất khác. Dùng &8/&aLand invites &7để xem.'
   deny:
-    not-exist: '&cDu har inte en inbjudan från detta land&4 {land} &celler så har tiden gått ut. &7Misstag?'
-    success: '&7Du har tackat nej till inbjudan för land&2 {land}&7.'
+    not-exist: '&8[&aLands&8] &cBạn chưa có lời mời nào từ vùng đất&e {land} &choặc là lời mời đã bị hết hạn. &7Vui lòng kiểm tra lại.'
+    land-success: '&8[&aLands&8] &7Đã từ chối thành công lời mời gia nhập vùng đất&b {land}&7.'
+    chunk-success: '&8[&aLands&8] &7Đã từ chối thành công lời mời gia nhập chunk &8(X:&e {x} &7Z:&e {z}&8)&7 thuộc vùng đất&b {land}&7.'
   teleport:
-    chunk-not-claimed: '&cDetta chunck är inte inmutat&8(&7X: {x} &7Z: {z}&8)&c. &8Bypass permission: lands.bypass.wilderness.teleport'
-    not-trusted: '&cDu kan inte teleoportera hit. &7Du är inte betrod i land&2 {land}&7.'
-    success: '&7Du teleport till X:&3 {x} &7Z:&3 {z} &7inmutat: {claimed}'
-  setspawn:
-    force-land: '&cDu kan bara sätta land spawn i ditt eget land. &7Gå till ditt land&2 {land} &7först. &8En Admin kan ändra det i config.'
-    successs: '#t#&a&lSpawn har satts{newline}&7&lKostnad: &6{cost}{#fbe232}Ⓖ'
+    world-not-exist: '&8[&aLands&8] &cThế giới này không tồn tại.'
+    chunk-not-exist: '&8[&aLands&8] &cChunk này không tồn tại. &7Vui lòng kiểm tra lại.'
+    success: '&8[&aLands&8] &7Đã dịch chuyển tới chunk &8(&7X:&e {x} &7Z:&e {z} &7Tình trạng sở hữu: {claimed}&8)&7.'
+  setSpawn:
+    force-land: '&8[&aLands&8] &cBạn chỉ có thể chỉnh điểm hồi sinh tại vùng đất của bạn. &7Vui lòng vào vùng đất của bạn trước.'
+    success: '#t#&7Vị trí hồi sinh &ađã đặt&7.;;&7Chi phí:&b ${cost}'
   spawn:
-    not-exist: '&cDet är ingen spawn satt för land&4 {land}&c. &7Någon behöver sätta det först, med komandot: &8/&3Land setspawn&7.'
-    not-allowed: '&cDu har inte tillåtelse att teleoportera till spawn av detta land. &7Ägaren eller borgmästaren behöver ge dig premission för göra det för &8(&7Land:&2 {land}&8)&7.'
-    chunk: '&7Land&2 {land} &7har inte satt land spawn&8(&8/&3Lands setspawn&8). &7Du teleoporteras till första claimade chunk av &3{land}.'
-    successs: '&7Du teleoporterades till spawn av land&2 {land} &7Kostnad:&6{cost} {#fbe232}Ⓖ'
-    unsafe: '&cYou can''t teleport to this spawn, because it was detected as being unsafe for teleportation. &7Teleporting there might result into dying. They need to adjust the spawn by using &8/&3Lands setspawn&7.'
+    not-exist: '&8[&aLands&8] &cChưa hề có điểm hồi sinh cho vùng đất&e {land}&c. &7Ai đó cần thiết lập nó bằng lệnh &8/&aLand setSpawn&7.'
+    not-allowed: '&8[&aLands&8] &cBạn không được phép dịch chuyển tới vùng đất này. &7Chủ sở hữu cần phải cho phép bạn làm điều này. Liên lạc với họ để được giúp đỡ &8(&7Vùng đất:&e {land}&8)&7.'
+    success: '#t#&7Đã dịch chuyển tới;;&7vùng đất&b {land}'
   wild:
-    success: '&7Du har nu slumpmässig teleporterat till &8(&7X: {x} Z: {z}&8)&7. Du betalade&6 {cost}{#fbe232}Ⓖ&7.'
-    searching: '#t#&6Searching Destination{newline}&eWaiting for Teleportation to start..'
-    no-location: '&cCouldnt find a safe location for you that matches the filter in config. &8Please adjust your max and min distance settings and set the world spawn (/setworldspawn).'
-  deposit:
-    number: '&7Du behöver ange specifik belopp. Använd &8/&aLand deposit &8<&aAmount&8> &7eller &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
-    success: '&7Du har nu satt in&6 {cost} {#fbe232}Ⓖ &7i lands bank. &7Nytt belopp är: &b {bank} {#fbe232}Ⓖ &8(&7I land:&a {land}&8)'
-  withdraw:
-    number: '&7Du behöver ange specifik belopp. Använd &8/&aLand withdraw &8<&aAmount&8> &7eller &8/&aLand withdraw &8<&aLand&8> <&aAmount&8>&7.'
-    balance: '&7Det är inte tillräckligt med guld i din lands bank. Det är endast&6 {bank} {#fbe232}Ⓖ &7i lands bank. Summa du ville ta ut:&6 {take} &c{#fbe232}Ⓖ &8(&7i land:&e {land}&8)'
-    success: '&7Du tog ut&6 {cost} {#fbe232}Ⓖ &7från din lands bank. &7Ny summa på banken: &b{bank} &c{#fbe232}Ⓖ &8(&7I land:&a {land}&8)'
-  balance: '&7Summa på banken är &6{balance} {#fbe232}Ⓖ &8(&7I land:&e {land}&8)&7.'
-  chat:
-    activated: '&7Aktivera land chat. Skicka meddelande offentlig chatt till chatt med ditt land.'
-    deactivated: '&7Avaktiverade land chatt.'
-    no-land: '&cInget land hittades för land chatt. &7Använd &8/&3Lands chat toggle &7för avaktivera lands chatt.'
-    format:
-      minecraft: '&a{land} &8| {role} &7{player} &8»&f {message}'
-      discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
-      spy: '[NoPrefix]&8[&cChatSpy&8] &a{land} &8| {role} &7{player} &8»&f {message}'
+    searching: '#t#&7Đang tìm kiếm:;;&dĐịa điểm ngẫu nhiên'
+    loc-unsafe: '&8[&aLands&8] &cKhông thể tìm thấy vị trí nào an toàn cho bạn. &7Vui lòng thử lại hoặc liên hệ quản trị viên.'
+    success: '&8[&aLands&8] &7Bạn đã dịch chuyển ngẫu nhiên tới &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
   view:
-    disabled: '&7Du stängde av &8/&3Lands view &7visualisering.'
-    wilderness: '&7Enabled visualization of claims. &7Your current position is wilderness.'
-    info: |
-      [NoPrefix]
-      &7---------<- &5&lLand översikt &7->---------
-      [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för mer information om detta land.[/H][C]lands info {land}[/C][/T]
-      &7Area:&6 {area}
-        &8Chunk &7X: {x} Z: {z}
-        &8Skatt:&6 {tax} {#fbe232}Ⓖ
-        &8Invånare: {players}
-      &7---------<- &5&lLand översikt &r&7->---------
-    area: |
-      [NoPrefix]
-      &7---------<- &5&lArea View &7->---------
-      [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to get more information about this land.[/H][C]lands info {land}[/C][/T]
-      &7Area:&6 {area}
-        &8Tax:&c ${tax}
-        &8Players:&7 {players}
-      &7---------<- &5&lArea View &r&7->---------
-  ban:
-    area:
-      success: '&7Du har avhyst invånare&3 {player} &7från denna area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.invånaren kommer inte kunna gå in i landet eller teleportera till spawn, om det ligger i detta area.'
-      target: '&cLand&4 {land} &cavhyst dig från deras area&4 {area} &cinne i deras land. &7Du kommer inte kunna gå in i landet eller teleportera till spawn, om det ligger i detta area.'
-    land:
-      success: '&7Du har avhyst invånare&3 {player} &7från land&2 {land}&7. invånaren kommer inte kunna gå in eller teleportera till spawn.'
-      target: '&cLand&4 {land} &cavhyst från deras land&c. &7Du kommer inte kunna gå in i landet eller teleportera till spawn.'
-  unban:
-    area:
-      success: '&7Invånare&3 {player} &7har nu blivit av med sin avhysning från area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
-      target: '&7Land&2 {land} &7tog bort avhysning från area&6 {area}&7.'
-    land:
-      success: '&7Invånare&3 {player} &7har nu blivit av med sin avhysning från land&2 {land}&7.'
-      target: '&7Land&2 {land} &7tog bort avhysning från land.'
-  taxes:
-    none: '&7Det finns inga kommande skattebetalningar för dig.'
-    upcoming:
-      header: '[NoPrefix]&7---------<- &cKommande betalningar&7->---------'
-      entry: '[NoPrefix]&8- &7{land}: &6{tax} {#fbe232}Ⓖ'
-      footer: |
-        [NoPrefix]&7Du behöver betala totalt&6 {total} {#fbe232}Ⓖ&7 om &3{next}&7.
-        &7På banken: ${balance} {#fbe232}Ⓖ
-        &7---------<- &cKommande betalningar &7->---------
-    changes:
-      header: |
-        [NoPrefix]
-        &7---------<- &4Hyran har ändras &7->---------
-        &cHyran har blivit ändrad i ett land:
-      entry: '[NoPrefix]&8- &7{land}: {color} {tax} {#fbe232}Ⓖ&7 &8(previously: {previous})'
-      footer: |
-        [NoPrefix]
-        &7Betalar om:&3 {next}
-        &7På banken: {balance} {#fbe232}Ⓖ
-        &8Mer info: /Lands taxes
-        &7---------<- &4Hyran har ändrase &7->---------
-  unstuck:
-    success: '&7Du har blivit teleporterad till närmaste posetion som inte är inmutad.'
-  rent:
-    edit: '&cDu kan inte ändra Underzonen&4 {area} &cav land&4 {land}&7, på grund av det är uthyrt/sålt till invånare&3 {player}&7.'
-    tenant: '&cDu har inte hyrt denna Underzonen som du står på nu. &7Area&6 {area} &7av land&2 {land} &7är inte hyrd av dig.'
-    none: '&cUnderzonen&4 {area} &cav land&4 {land} &cpå din nuvarande plats är inte hyrd av någon.'
-    status: '&cUnderzonen&4 {area} &cav land&4 {land} &cpå nuvarande plats är inte uthyrd eller till salu.'
-    set:
-      land: '&cDu kan inte hyra ut hela ditt land&4 {land} &cför att hyra ut. &7Du kan antingen skapa en underzon och hyra eller sälja (skriv på första raden= sell) hela landet.'
-      already: '&cDu kan inte nu sätta denna underzonen för uthyrning igen. &7Underzonen&6 {area} &7är uthyrd till&3 {player}&7.Uthyrningen går ut om &3 {time}&7.'
-      sold: '&cDu kan inte placera en underzone, som blivt såld och sen hyra ut den. &7Underzonen&6 {area} &7Köpte spelare&6 {player}&7.'
-      success: '&7Du satte underzonen&6 {area} &7till uthyrning. Hyresgästen betalar&6 {cost} {#fbe232}Ⓖ &7varje&3 {time}&7.'
-      invalid: |
-        &7Ditt format är inte korrekt på skylten, använd (line: {line})
-         &81. line:&7 Lands
-         &82. line:&7 rent
-         &83. line:&7 TIME maxTime (not required)
-         &84. line:&7 kostnad (exempel: 5 =&6 5 {#fbe232}Ⓖ)
-      info: |
-        [NoPrefix]
-        &7---------<- &e&lRent Info &7->---------
-        [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för visa den underzone du är i[/H][C]lands view here[/C][/T]
-         &7Underzon:&6 {area}
-         &7Kostnad:&6 {cost} {#fbe232}Ⓖ&7varje {time}
-         &8Max tid: {max}
-        &7---------<- &e&lRent Info &r&7->---------
-    rent:
-      trusted: '&cDu kan inte hyra area&4 {area} &ci land&4 {land}&c. &7Du är redan invånare i denna area.'
-      max: '&cDu kan inte hyra den längre än &3 {max} totalt. &7Ägare av land land&2 {land} &7har ställt in max &3 {max} &7total tid.'
-      add: '&7Du la till&6 {add} &7till hyreskostnad på underzon&6 {area} &7nya kostnaden&6 {cost} {#fbe232}Ⓖ&7. den går ut om&3 {time}&7.'
-      success: '&7Du hyr nu underzon&6 {area} &7i land&2 {land} &7för&6 {cost} {#fbe232}Ⓖ&7. Den går ut om&3 {time}&7.'
-      info: |
-        [NoPrefix]
-        &7---------<- &e&lHyr Info &7->---------
-        [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för visa den underzone som du hyr.[/H][C]lands view here[/C][/T]
-         &7Underzon:&6 {area}
-         &7Hyrs av:&2 {player}
-         &7Tid kvar:&3 {left}
-         &8kostnad: {cost} {#fbe232}Ⓖ&7varje {time}
-        &7---------<- &e&lHyr Info &r&7->---------
-    cancel:
-      success: '&7Du avbröt uthyrning av underzon&6 {area}&7. Du har inte tillgång till denna underzon.'
-    remove:
-      success:
-        land: '&7Land&2 {land} &7går inte längre att köpa.'
-        area: '&7Underzon&6 {area} &7av land&2 {land} &7går inte längre hyra eller köpa. &7Nuvarande hyresgäster stannar tills tiden gått ut.'
-  sell:
-    sell:
-      rented: '&cDu kan inte sälja underzonen, som är hyrd av en hyresgäst. &7 underzonen&6 {area} &7är hyrd av&3 {player}&7. den går ut om &3 {time}&7.'
-      success:
-        area: '&7Du satte ut underzon&6 {area} &7till försäljning. Kostnad:&6 {cost} {#fbe232}Ⓖ'
-        land: '&7Du satte ut hela landet&2 {land} &7till försäljning. Kostnad:&6 {cost} {#fbe232}Ⓖ'
-      invalid: |
-        &7Ditt format är inte korrekt på skylten, använd (line: {line})
-         &81. line:&7 Lands
-         &82. line:&7 sell
-         &83. line:&7 kostnad (exempel: 5 =&6 5 {#fbe232}Ⓖ)
-    buy:
-      success:
-        area: '&7You bought area&6 {area} &7of land&2 {land} &7for&c ${cost}&7.'
-        land: '&7You bought the land&2 {land} &7for&c ${cost}&7.'
-      info:
-        area: |
-          [NoPrefix]
-          &7---------<- &b&lUnderzon att köpa &7->---------
-          [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för visa den underzone som du står i.[/H][C]lands view here[/C][/T]
-           &7Underzon:&6 {area}
-           &7Kostnad:&6 {cost} {#fbe232}Ⓖ
-          &7---------<- &e&lUnderzon att köpa &r&7->---------
-        land: |
-          [NoPrefix]
-          &7---------<- &b&lLand att köpa &7->---------
-          [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för visa land som du står i.[/H][C]lands view[/C][/T]
-          &7Kostnad:&6 {cost} {#fbe232}Ⓖ
-          &7---------<- &a&lLand att köpa &r&7->---------
+    show-outline: '&8[&aLands&8] &7Đang hiển thị biên giới của vùng đất. Di chuyển xung quanh để xem.'
+  deposit:
+    number: '&8[&aLands&8] &7Bạn cần phải chỉ ra số tiền. Dùng &8/&aLand deposit &8<&aAmount&8> &7hoặc &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
+    success: '&8[&aLands&8] &7Bạn đã gửi thành công&b ${cost} &7vào ngân hàng của vùng đất. &7Số tiền mà ngân hàng hiện có:&b ${bank} &8(&7Vùng đất:&e {land}&8)'
+  withdraw:
+    number: '&8[&aLands&8] &7Bạn cần phải chỉ ra số tiền. Dùng &8/&aLand withdraw &8<&aAmount&8> &7hoặc &8/&aLand withdraw &8<&aLand&8> <&aAmount&8>&7.'
+    balance: '&8[&aLands&8] &7Không có đủ tiền trong ngân hàng. Hiện chỉ có&b ${bank}&7 so với yêu cầu là&b ${take} &8(&7Vùng đất:&e {land}&8)'
+    success: '&8[&aLands&8] &7Bạn đã rút thành công&b ${cost} &7khỏi ngân hàng. &7Số tiền mà ngân hàng hiện có:&b ${bank} &8(&7Vùng đất:&e {land}&8)'
+  balance: '&8[&aLands&8] &7Số tiền mà ngân hàng hiện có là&b ${balance} &8(&7Vùng đất:&e {land}&8)&7.'
+  menu:
+    no-permission-other: '&8[&aLands&8] &cBạn không được phép mở GUI của người khác. &7Bạn cần có quyền&e lands.command.menu.others &7để làm điều đó.'
+    notExist: '&8[&aLands&8] &cKhông có dữ liệu về người chơi này.'
+  chat:
+    format: '&8[&aLands&8] [&d{land}&8] {role} &7{player}&8:&f {message}'
+  map:
+    header: '&7----------------------'
+    info: '&7Của bạn: &a▉ &7Nơi hoang dã: &2▉ &7Của người khác: &c▉ &7Thân thiện: &5▉ &7Vị trí: &e▉'
+    footer: ' '
 list:
-  swear-words:
-    - fuck
-    - shit
-    - hora
-    - bög
-wars:
-  message:
-    noaccess:
-      action: '&cDu har inte tillåtelse att göra detta under ett krig med detta land. &7Bypass permission: {bypass}'
-      pillage: '&cDu kan inte plundra ett land när inga försvarare är online. &7 Vänta tills minst&b {defenders} försvarare loggat in.'
-    war-shield:
-      set: '&aDin nya sköld kommer vara aktiv för&b {time}&7.'
-    kill:
-      target:
-        attackers: '&7Din lagkamrat&c {attacker} &7blev dödad av försvararna&a {defender}&7.'
-        defenders: '&7Din lagkamrat&a {defender} &7blev dödad av anfallarna&c {attacker}&7.'
-      killer:
-        attackers: '&7Din lagkamrat&c {attacker} &7blev dödad av försvararna&a {defender}&7.'
-        defenders: '&7Din lagkamrat&a {defender} &7blev dödad av anfallarna&c {attacker}&7.'
-    start:
-      broadcast: '&7Kriget mellan {attacker} &7och {defender} &7startat. Det kommer avslutas:&5 {time}&7.'
-      participants: |
-        &4Kriget har startat:
-
-        &7Anfallare: {attacker} &8({team_1}&8)
-        &7Försvarare: {defender} &8({team_2}&8)
-
-        &7Kriget tar slut om:
-        &3~{time}
-    end:
-      broadcast: '&7Kriget mellan {attacker} &7och {defender} &7avslutas. Det tog:&3 {time}&7.'
-      surrender: '{object} &7Ena landet Kapitulera. Kriget är över och det betala&c ${tribute} &7till fienden {enemy}&7.'
-      draw: '&7Kriget mellan {attacker} &7och {defender} &7slutade oavgjort. det tog&3 {time}&7.'
-      won: |
-        &aKriget är över:
-        &7Anfallarna &8({team}&8) &7vann.
-
-        &8- &7Stats
-            &7Anfallare döda:&3 {att-points}
-            &7Försvarare döda:&3 {def-points}
-
-        &7The war took:
-        &5~{time}
-  command:
-    general:
-      no-war: '&cDitt land&e {land} &char inte några aktiva eller komande krig. &7För närvarande är det fred i landet.'
-    declare:
-      war-shield: '&cDu kan för tillfället inte starta ett krig emot detta land. &7Det har en sköld tills tiden gått ut om:&3 {time}&7.'
-      already:
-        attacker: '&cDitt land&4 {land} &ckan inte gå med i yttrligare krig. &7Nuvarande krig måste ta slut först.'
-        defender: '&cDu kan inte anfalla detta land. &7Landet&2 {land} &7är redan i krig.'
-      success: '&7Ditt land&c {attacker} &7Har förklarat krig emot land&a {defender}&7. Kriget startar om&5 ~{time}&7.'
-      target: { }
-      broadcast: '&7Land&c {attacker} &7Har förklarat krig emot land&a {defender}&7. Kriget startar om&5 {time}&7.'
-      min-players:
-        attacker: '&cDu kan inte delta i ett krig, eftersom du behöver fler betrodda invånare i land &4 {land} &c.&7 För en anfallare ska kunna skicka en krigsdeklaration behövs minst&3{min} &7invånare. &8Admin kan ändra det i config.'
-        defender: '&cDu kan inte förklara krig mot land&4 {land}&c, eftersom de måste ha mer invånare i sitt land. &7Det minsta antalet försvarare att ta emot en krigsdeklaration är&3 {min} &7invånare. &8Admin kan ändra det i config.'
-      ally: '&cDu kan inte förklara krig emot detta land, för att det är dina allierade. &7Ditt och det lan du ska attakera tillhör samma nation&9 {nation}&7.'
-      no-nation: '&cDu kan inte anfalla detta land. &7Landet&2 {land} &7måste vara en del av en nation för att kunna vara med i ett krig.'
-      no-target: '&cDet är inte något land eller nation med detta namn&4 {target}&c. &7Misstag?'
-      confirm: { }
-      not-allowed: '&cDu har inte tillåtelse starta ett krig för {object}&c. &7Ledaren av {object} &7kan bara göra det.'
-      member: '&cDu kan inte starta ett krig emot {object}&c, pågrund av du är invånare i landet. &7Du måste lämna landet först.'
-      mutual:
-        success: '&7Du &8(&a{attacker}&8) &7 har skickat krigsdeklaration till {&cdefender&7}. Dom måste acceptera det innan kriget kan starta.'
-        target: '&7Fienden &c{attacker} &7har skickat sent krigsdeklaration mot &a{defender}&7. annvänd &8/&3Wars declare {input} &7för acceptera det.'
-      balance: '&cDu kan inte skicka krigsdeklaration. &7Anfallarna &a{object} &7behöver minst ha&6 {min} {#fbe232}Ⓖ &7på banken.&7 För att kunna starta ett krig.'
-    deny:
-      ongoing: '&cDu kan inte neka pågånde krig emot &4{enemy}&c. &7Du kan endast necka krigsdeklaration för &a{object}&7.'
-      success: '&7Du har nu nekat krigsdeklaration för &a{object}, &7emot &c{enemy}&7.'
-      attacker: '&cAnfallarna kan inte necka deras egen krigsdeklaration. &7endast försvararna kan göra det.'
-    menu:
-      mutual: '&cDu kan inte öppna krigsmenyn nu. &7Krigsdeklarationen till &a{object} &7Har inte blivit accepterad än.'
-    info:
-      war: |
-        &4Pågånde krig:
-
-        &8- &4Anfallare
-            &7Namn:&4 {attacker}
-            &7Döda:&c {att-points}
-
-        &8- &aFörsvarare
-            &7Namn:&a {defender}
-            &7Döda:&c {def-points}
-
-        &7Kriget tar slut om:
-        &3~{time}
-      declaration:
-        normal: |
-          &4Krigsdeklaration:
-
-          &cAnfallare:&6 {attacker}
-          &aFörsvarare:&6 {defender}
-
-          &7Kriget startar om:
-          &3~{time}
-        mutual:
-          defender: |
-            &4Krigsdeklaration:
-
-            &cAnfallare:&6 {attacker}
-            &aFörsvarare:&6 {defender}
-
-            &7Om försvararna ger upp under kriget:
-            &7Betalar:&6 {tribute} {#fbe232}Ⓖ
-
-            [T]&7Accetpera: &8/&3Wars declare {input} &8[&8CLICK&8][H]&7Tryck här för att aceptera krigsförklaring.[/H][C]Wars declare {input}[/C][/T]
-            [T]&7Necka: &8/&3Wars deny &8[&8CLICK&8][H]&7Tryck här för att necka krigsförklaring.[/H][C]Wars deny[/C][/T]
-          attacker: |
-            &4Krigsdeklaration:
-
-            &7Anfallare:&6 {attacker}
-            &7Försvarare:&6 {defender}
-
-            &7Om försvararna ger upp under kriget:
-            &7Betalar:&6 {tribute} {#fbe232}Ⓖ
-
-            &cFörsvarararna har inte accepterat
-            &ckrigsdeklarationen än.
+  view:
+    - '&7---------<- &5&lXem vùng đất &7->---------'
+    - '&7Vùng đất:&b {land}'
+    - '&7Thuế -> Chung:&b {tax-land} &7Tại đây:&b {tax-chunk}'
+    - '&7Thế giới:&e {world} &7X:&e {x} &7Z:&e {z}'
+    - '&4Chủ sở hữu:&7 {owner}'
+    - '&7Quản trị viên:&7 {admins}'
+    - '&7Thành viên:&7 {members}'
+    - '&7---------<- &5&lXem vùng đất &7->---------'
