@@ -1,299 +1,546 @@
 ---
-#Here you can edit all chat messages
-#GUI strings can be found in <language>_gui.yml
-#If you encounter any issues, contact lands support.
-#Plugin page: https://www.spigotmc.org/resources/.53313
-#Discord: https://discord.gg/JVU9qd7
-################################
-#About chat message type system:
-#Does only work for messages in
-#"message" or "command" section.
-################################
-#You can use some codes to set the type
-#of a message to title, actionbar or chat.
-#How does it work:
-#For example we want to print the prefix as a title:
-#Set general.noPerm to: '#t#&cYou''re not allowed to do this.' (Set "#t#" in front of it)
-#This would just print it as a title.
-#You also can set in, stay and out fade timings in seconds:
-#Set for example general.prefix to: '#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
-#This would display this message as a title with
-#a fade in delay of 1 seconds, a stay time with 2 seconds
-#and a fade out delay of 3 seconds.
-#You also can display it as a actionbar message:
-#Just add "#a#" in front of it.
-#If you want to display it in chat, just don't set any
-#of these in front of it or use "#c#".
-#Also you can combine these modes:
-#Set for example general.prefix to: '#c#a#t#!!1!!2!!3!!&cYou''re not allowed to do this.'
-#This would print this message as chat, actionbar and an title with an in delay (1 seconds),
-#stay time (2 seconds) and fade out delay (3 seconds)
-#For any questions or issues, please contact me on discord or via pm.
-#--------------------------
-#Translated by MiniMoro
 general:
+  prefix: '&8[&aLands&8] '
   wYes: '&aSi'
   wNo: '&cNo'
-  none: '&cNessuna'
-  wilderness: '&aNatura selvaggia'
+  none: '&8Ningun'
+  disabled: '&cDesactivado'
+  wilderness: '&aNaturaleza'
+  land:
+    title:
+      land: '&7Propiedad de&3 %owner%&7.'
+      safezone: '&7Estas seguro ahora.'
+    global-area: 'Global'
   time:
-    days: 'giorni'
-    hours: 'ore'
-    minutes: 'minuti'
-    seconds: 'secondi'
+    days: 'dia(s)'
+    hours: 'hora(s)'
+    minutes: 'minuto(s)'
+    seconds: 'segundo(s)'
   status:
-    online: '&aonline'
-    offline: '&coffline'
-  role:
-    owner: '&4Proprietario'
-    admin: '&cAmministratore'
-    member: '&eMembro'
-    visitor: '&5Visitatore'
+    online: '&aen linea'
+    offline: '&cdesconectado'
   top:
-    title: '&7---------<- &6&lClassifica Top 10 &7->---------'
-    land: '&7#&5{pos}&7: &b{land} &7Dimensione:&e {size}'
-    last-updated: '&7Ultimo aggiornamento:&e {time}'
-    footer: '&7---------<- &6&lClassifica Top 10 &7->---------'
+    title: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
+    entry: '&c#{pos} &a{land} &7Balance:&e ${value}'
+    next-page: '&7Next page: &8/&2Lands top {next}'
+    last-updated: '&7Última actualización: {time} &7ago'
+    footer: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
   integration:
     dynmap:
-      chunk:
-        description: '<div class="infowindow"><span style="font-size:200%;">{land}</span><br/>X: {x} Z: {z}</span><br/> Proprietario: <span style="font-weight:bold;">{owner}</span><br/>Amministratore: <span style="font-weight:bold;">{admins}</span><br/>Membri: <span style="font-weight:bold;">{members}</span><br/></div>'
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br /><br /> Owner: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br />Admins: <span style="font-weight: bold;">{admins}</span><br />Members: <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<p><span style="font-size: 120%; color: #339966;"><span style="font-size: 120%;">Spawnpoint</span></span></p><p>Open to visitors: {public}</p>'
   sign:
     topLand:
-      line-1: '&6#&e{place}'
-      line-2: '&5{owner}'
-      line-3: '&2Territorio &a{land}'
-      line-4: '&9Dimensione:&b {size}'
+      line-1: '&c#&l{place}'
+      line-2: '&8<&2 {land} &8>'
+      line-3: '&7by {owner}'
+      line-4: '&7Balance:&3 ${value}'
     noLand:
       line-1: ' '
-      line-2: '&cNessun territoriod'
-      line-3: '&cda mostrare.'
+      line-2: '&cSin land'
+      line-3: '&cpara mostrar.'
       line-4: ' '
   autoAction:
-    claim: '&aChunk claimato'
+    claim: '&aClaimeo de Chunk'
   map:
-    yours: '&a|||| '
-    others: '&c|||| '
-    friendly: '&e|||| '
-    current-location: '&e|||| '
-    wilderness: '&2|||| '
+    yours: '&a▉ '
+    others: '&c▉ '
+    friendly: '&5▉ '
+    current-location: '&e▉ '
+    wilderness: '&2▉ '
+    top: '&7-<------------<- &6Lands Map &7->------------>-'
+    info:
+      wilderness: ' &2▉ &7= Naturaleza'
+      yours: ' &a▉ &7= Tuyo(a)'
+      trusted: ' &5▉ &7= Amigables'
+      others: ' &c▉ &7= Otros'
+      position: ' &e▉ &7= Posición'
+    bottom: '&7-<------------<- &6Lands Map &7->------------>-'
+  land-inbox:
+    land:
+      created: '&2{date}h &7Land {land} creada.'
+      upkeep:
+        chunk-deleted: '&2{date}h &4ADVERTENCIA: &cUltimo chunk claimeado &8(&7X: {x} &7Z: {z}&8) &cdes-claimeado. No se puedo pagar el costo de mantenimiento:&c ${cost}'
+        warning: '&2{date}h &cADVERTENCIA: &7No se puedo pagar el costo de mantenimiento: ${cost}'
+        paid: '&2{date}h &7Costo de mantenimiento pagado: ${cost}'
+    player:
+      join: '&2{date}h &7Jugador(a) {player} Se unió a tu Land.'
+    wars:
+      declaration:
+        sent: '&2{date}h &7Se declara la Guerra contra Land {defender}. La guerra comienza en {time}.'
+        received: '&2{date}h &4ADVERTENCIA: &cLand {attacker} le ha declarado la Guerra a tu Land la guerra comienza en {time}.'
+      surrender:
+        sent: '&2{date}h &cRendirse en Guerra. Tienes que pagar ${tribute} de tributo al enemigo.'
+        received: '&2{date}h &aEl enemigo de la land {land} se ha rendido. Tributo de ${tribute} recibido.'
+      won:
+        attacker: '&2{date}h &aLa guerra se acabó. &7Los atacantes &8({team}&8) &7han ganado. Atacantes: {att-points} Defensores: {def-points}'
+        defender: '&2{date}h &aLa guerra se acabó. &7Los defensores &8({team}&8) &7han ganado. Atacantes: {att-points} Defensores: {def-points}'
+  wars:
+    land-type:
+      enemy: '&cEnemigo'
+      ally: '&aAliado'
+    nametag:
+      enemy: '&cENEMIGO &8| '
+      ally: '&aALIADO &8| '
+  teleportation:
+    bossbar: '&7Espera&5 {time} &7Segundo(s) hasta teletransportarte.'
 help:
   general:
-    prefix: '&8[&aLands&8] &7Usage: '
-    header: '&7------------<- &5Lands Help &7Pagina&6 {page} &8/&e {pages} &7->------------'
-    page: '&7Usa &8/&dLands help {next} &7per la prossima pagina.'
-    footer: '&7------------<- &5Lands Help &7Pagina&6 {page} &8/&e {pages} &7->------------'
+    help-prefix: '&7Usa: '
+    header: '&7------------<- &5Ayuda &aLands &7Página&6 {page} &8/&e {pages} &7->------------'
+    page: '&7Usa &8/&dLands help {next} &7para la próxima página. <> = necesario [] = opcional'
+    footer: '&7------------<- &5Ayuda &aLands &7Página&6 {page} &8/&e {pages} &7->------------'
   command:
-    help: '&8/&7Lands help &8[&aPage&8] - &eOttieni aiuto'
-    edit: '&8/&7Lands edit &8<&aLand&8> - &eInserisci la modalità di modifica'
-    claim: '&8/&7Lands claim &8[&7auto&8] - &eClaima un chunk'
-    create: '&8/&7Lands create &8<&aName&8> - &eCrea un territorio'
-    leave: '&8/&7Lands leave &8[&aLand] &8- &eRimuovi chunk o territorio'
-    unclaim: '&8/&7Lands unclaim &8- &eRimuovi il claim da un chunk'
-    delete: '&8/&7Lands delete &8<&aLand&8> &8- &eElimina territorio'
-    trust: '&8/&7Lands trust &8<&aPlayer&8> [&ahere&8] - &eInvita giocatore'
-    untrust: '&8/&7Lands untrust &8[&ahere&8] - &eRimuovi giocatore'
-    setRole: '&8/&7Lands setRole &8<&aPlayer&8> <&aRole&8> [&ahere&8] - &eImposta regola'
-    accept: '&8/&7Lands accept &8<&aLand&8> - &eAccetta invito'
-    deny: '&8/&7Lands deny &8<&aLand&8> - &eRifiuta invito'
-    view: '&8/&7Lands view &8- &eInformazioni del chunk'
-    menu: '&8/&7Lands menu &8- &eApri menù'
-    setSpawn: '&8/&7Lands setSpawn - &eImposta lo spawn del territorio'
-    spawn: '&8/&7Lands spawn &8[&aLand&8] - &eTeletrasportati al tuo territorio'
-    wild: '&8/&7Lands wild &8- &eTeletrasportati in un luogo random'
-    top: '&8/&7Lands top &8- &eMostra la classifica dei primi 10 territori'
-    selection: '&8/&7Lands selection &8- &eAbilita selezione claim'
-    chat: '&8/&7Lands chat &8[&aLand&8] <&aMessage&8>'
-    rename: '&8/&7Lands rename <&aName&8> - &eRinomina territorio'
-    teleport: '&8/&7Lands teleport &8[&aWorld&8] <&aX&8> <&aZ&8> - &eTeletrasportati al chunk'
-    invites: '&8/&7Lands invites &8- &eControlla se hai ricevuto inviti'
-    info: '&8/&7Lands info &8[&aLand&8] - &eGuarda le informazioni del tuo territorio'
-    player: '&8/&7Lands player &8<&aPlayer&8> - &eGuarda le informazioni del giocatore'
-    map: '&8/&7Lands map &8- &eGuarda la mappa'
+    help: '&8/&3Lands help &8[&3page&8] - &7Obtén ayuda'
+    edit: '&8/&3Lands edit &8<&3land&8> &8- &7Entra en el modo edición de Land'
+    claim: '&8/&3Lands claim &8[&3area, auto&8] - &7Claimea un chunk'
+    create: '&8/&3Lands create &8<&3nombre&8> - &7Create una Land'
+    leave: '&8/&3Lands leave &8[&3land] &8- &7Abandona un Chunk o Land'
+    unclaim: '&8/&3Lands unclaim &8- &7Des-claimea un Chunk'
+    delete: '&8/&3Lands delete &8<&3land&8> &8- &7Elimina tu Land'
+    trust: '&8/&3Lands trust &8<&3player&8> [&3here&8] - &7Invita a un jugador(a)'
+    untrust: '&8/&3Lands untrust &8[&3here&8] - &7Expulsa a un jugador'
+    setRole: '&8/&3Lands setRole &8<&3jugador(a)&8> <&3rol&8> [&3here&8] - &7Establece un rol'
+    accept: '&8/&3Lands accept &8<&3land&8> - &7Aceptar invitación'
+    deny: '&8/&3Lands deny &8<&3land&8> - &7Denegar invitación'
+    view: '&8/&3Lands view &8- &7Información sobre tu chunk'
+    menu: '&8/&3Lands menu &8[&3here&8] &8- &7Abre el menu Land/area '
+    setSpawn: '&8/&3Lands setspawn - &7Establece el spawn de land'
+    spawn: '&8/&3Lands spawn &8[&3land&8] - &7Haz teleport a Land'
+    wild: '&8/&3Lands wild &8- &7Haz teleport a una ubicación aleatoria'
+    top: '&8/&3Lands top &8[&3page&8] &8- &7Muestra el top10 de lands'
+    selection: '&8/&3Lands selection &8[&3assign&8, &3expand&8] &8- &7Activa la selección de claim'
+    chat: '&8/&3Lands chat &8[&3land&8] <&3mensaje&8> &8- &7Land chat'
+    rename: '&8/&3Lands rename &8<&3name&8> - &7Renombra tu land'
+    teleport: '&8/&3Lands teleport &8[&3world&8] <&3x&8> <&3z&8> - &7Teleport al chunk'
+    invites: '&8/&3Lands invites &8- &7Muestra las invitaciones recibidas'
+    info: '&8/&3Lands info &8[&3land&8] - &7Vista de información sobre tu Land'
+    player: '&8/&3Lands player &8<&3jugador(a)&8> - &7Vista de información sobre jugador(a)'
+    map: '&8/&3Lands map &8- &7Vista de mapa de Lands'
+    balance: '&8/&3Lands balance &8[&3land&8] - &7Revisa el balance de Land'
+    deposit: '&8/&3Lands deposit &8[&3land&8] <&3amount&8> - &7Deposita dinero al banco de Land'
+    withdraw: '&8/&3Lands withdraw &8[&3land&8] <&3Monto&8> - &7Gira dinero desde el banco de Land'
+    list: '&8/&3Lands list &8[&3world&8] - &7Lista de todas las Land'
+    assign: '&8/&3Lands assign &8<&3area&8> - &7Asigna la selección al área'
+    setowner: '&8/&3Lands setowner &8<&3jugador(a)&8> - &7Transfiere la propiedad'
+    ban: '&8/&3Lands ban &8<&3player&8> - &7Ban a un jugador(a)'
+    unban: '&8/&3Lands unban &8<&3player&8> - &7Desbanea un jugador(a)'
+    wars:
+      declare: '&8/&3Wars declare &8<&3land&8> - &7Declara una Guerra'
+      info: '&8/&3Wars info - &7Muestra la actual o venidera Guerra'
+      menu: '&8/&3Wars menu &8- &7Abre el menu de Guerra'
     admin:
-      admin: '&8/&7Lands admin &8<&aAction&8> &8- &eComandi amministratore'
-      debug: '&8/&7Lands debug &8- &eMostra le statistiche dei dati caricate'
-      safezone: '&8/&7Lands safezone &8- &eConfigure safezone'
-      reload: '&8/&7Lands reload &8<&aValue&8> &8- &eRicarica config o messaggi'
-      about: '&8/&7Lands about &8- &eMostra informazioni del territorio'
+      admin: '&8/&3Lands admin &8<&3sub-command&8> &8- &7Admin commands'
+      debug: '&8/&3Lands debug &8- &7Muestra estadísticas de datos cargados'
+      safezone: '&8/&3Lands safezone &8- &7Configura una zona segura'
+      reload: '&8/&3Lands reload &8- &7Recarga configuración o mensajes'
+      about: '&8/&3Lands about &8- &7Muestra información sobre Lands'
 message:
-  no-permission: '&8[&aLands&8] &cNon hai il permesso. &7{permission}.'
-  world-invalid: '&8[&aLands&8] &cFunzione disattivata in questo mondo.'
-  feature-disabled: '&8[&aLands&8] &7Bisogna abilitare l''impostazione&b {setting} &7nel config.'
+  no-permission: '&cNo tiene permiso para hacer esto. &8Necesitas el permiso {permission}.'
+  world-invalid: '&cEsto esta desactivado en este mundo. &7Un administrador puede añadirlo a la config. Mundo: {world}'
+  feature-disabled: '&cEsta caracteríztica fue deshabilitada por un admin. &Un admin puede activar este ajuste {setting} en config, para que puedas usar esta caracteríztica.'
+  current-war: '&cNo puedes hacer esto ahora. &7Tu land esta actualmente en una guerra &7Por favor intentalo de nuevo cuando la guerra haya ACABado.'
   noaccess:
-    chunk: '&8[&aLands&8] &cNon hai accesso a questo chunk. &8(&7Territorio:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c.'
-    land: '&8[&aLands&8] &cHai hai l''accesso per fare questo. &8(&7Territorio:&e {land}&8)&7.'
-    role-weight: '&8[&aLands&8] &cNon puoi modificare questo giocatore. &7Ha un ruolo più alto di te.'
-    claim: '&8[&aLands&8] &cNon puoi claimare qui.'
-    place: '&8[&aLands&8] &cNon ti è permesso piazzare blocchi qui.'
-    break: '&8[&aLands&8] &cNon sei autorizzato a rompere i blocchi qui.'
-    interact: '&8[&aLands&8] &cNon puoi interagire in questo chunk.'
-    ignite: '&8[&aLands&8] &cNon ti è permesso incendiare blocchi qui.'
-    edit: '&8[&aLands&8] &cNon sei autorizzato a modificare questo territorio.'
-    player:
-      chunk-trust: '&8[&aLands&8] &cNon hai il permesso di aggiungere un giocatore in questo chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
-      chunk-setRole: '&8[&aLands&8] &cNon ti è permesso impostare regole in questo chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
-      chunk-untrust: '&8[&aLands&8] &cNon ti è permesso rimuovere un giocatore in questo chunk &8(&7X:&e {x} &7Z:&e {z}&8)&c.'
-      land-trust: '&8[&aLands&8] &cNon ti è permesso aggiungere un giocatore nel territorio &8(&7Land: &e{land}&8)&c.'
-      land-untrust: '&8[&aLands&8] &cNon ti è permesso rimuovere un giocatore nel territorio &8(&7Land: &e{land}&8)&c.'
-      land-setrole: '&8[&aLands&8] &cNon ti è permesso impostare regole nel territorio &8(&e{&7Land: land}&8)&c.'
+    chunk: '&cNo tienes permitido hacer esto en este chunk &8(&7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Permiso para omitir esta restricción: {bypass}'
+    area: '&cNo tienes permitido hacer esto en esta área &8(&7Area:&6 {area} &7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Permiso para omitir esta restricción: {bypass}'
+    land: '&cNo tienes permitido hacer esto por esta Land &8(&7Land:&2 {land}&8)&7. &8Permiso para omitir esta restricción: {bypass}'
+    land-not-owner: '&cNo tienes permitido hacer esto por esta Land&4 {land}&c. &7Selecciona tu propia Land&8(/&3Lands edit &8<&3land&8>) &7o crea una &8(/&3Lands create &8<&3name&8>)&7. &8Permiso para omitir esta restricción: lands.admin.land_edit'
+    role-weight:
+      land: '&cNo puedes editar este jugador(a) en Land&4 {land}&c. &7El rol&6 {role} &7tiene una prioridad más alta que la del tuyo.'
+      area: '&cNo puedes editar este jugador(a) en el área&4 {area} &8(&7Land:&2 {land}&8)&c. &7El rol&6 {role} &7tiene una prioridad más alta que la del tuyo.'
+    claim: '&cNo puedes claimear Land aquí. &7Este chunk pertenece a otra administracion de plugin. Nombre: {plugin}'
+    place: '&cNo tienes permitido el colocar bloques aquí. &7Esta área pertenece a land&2 {land}&7.'
+    break: '&cNo tienes permitido el romper bloques aquí. &7Esta área pertenece a land&2 {land}&7.'
+    ignite: '&cNo tienes permitido el quemar bloques aquí. &7Esta área pertenece a land&2 {land}&7.'
+    enter: '&cNo tienes permitido el entrar al área&4 {area} &cde esta land&4 {land}&c. &7Serás transportado a tu ubicación anterior.'
+    edit: '&cNo tienes permitido el editar esta Land. &7Este chunk pertenece a land&2 {land}&7.'
+    banned: '&cNo tienes permitido el entrar a esta área. &7Has sido baneado de esta área &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. &8Permiso para omitir esta restricción: {bypass}'
+    interact:
+      general: '&cNo tienes permitido el interactuar aquí. &7Esta área pertenece a land&2 {land}&7.'
+      door: '&cNo tienes permitido el abrir puertas aquí. &7Esta área pertenece a land&2 {land}&7.'
+      mechanism: '&cNo tienes permitido el usar mecanismos aqui. &7Esta área pertenece a land&2 {land}&7.'
+      container: '&cNo tienes permitido el abrir cofres aqui. &7Esta área pertenece a land&2 {land}&7.'
+      villager: '&cNo tienes permitido el intercambiar con aldeanos. &7Esta área pertenece a land&2 {land}&7.'
     combat:
-      animal: '&8[&aLands&8] &cNon ti è permesso attaccare gli animali qui.'
-      pvp-attacker: '&8[&aLands&8] &cNon sei autorizzato ad attaccare i giocatori qui.'
-      pvp-target: '&8[&aLands&8] &cIl tuo obiettivo non è autorizzato ad attaccare i giocatori qui.'
-  disallowWilderness:
-    break: '&8[&aLands&8] &cNon ti è permesso di rompere blocchi nella natura selvaggia. &7Puoi farlo solo in un territorio claimato.'
-    place: '&8[&aLands&8] &cNon ti è permesso di piazzare blocchi nella natura selvaggia. &7Puoi farlo solo in un territorio claimato.'
-    interact: '&8[&aLands&8] &cNon ti è permesso interagire nella natura selvaggia. &7Puoi farlo solo in un territorio claimato.'
+      animal: '&cNo tienes permitido el atacar animales aquí. &7Esta área pertenece a land&2 {land}&7.'
+      pvp:
+        attacker: '&cNo tienes permitido el atacar jugadores(as) aqui. &7Esta área pertenece a land&2 {land}&7.'
+        target: '&cTu objetivo no tiene permitido atacar jugadores(as) aqui. &7No puedes pelear con el/ellos aquí. &7Esta área pertenece a land&2 {land}&7.'
+        ally: '&cNo puedes atacar a este jugador en naturaleza, porque el es un miembro en una de tus Lands. &7Puedes hacer un Arena-fights en tu Land permitiendo el PVP en los ajustes de Rol.'
+        wilderness: '&cNo puedes atacar a este jugador, porque el está en naturaleza y tu estás en Land claimeada.'
+  event:
+    fly:
+      warning: '&7No tienes permitido el volar aquí. Modo vuelo sera deshabilitado en unos segundos. &8Permiso para omitir esta restricción: {permission}'
+      counter: '#t#&cModo-vuelo desactivando[newline]&cen &4{sec} &csegundo(s)'
+      disabled: '&cTu modo de vuelo fue desactivado. &7Te falta el permiso para volar aquí.'
+      disallowed: '&cNo tienes permitido el volar en esta land. &7Contacta al dueño de Land. &8Permiso para omitir esta restricción: lands.bypass.fly'
+      disallowed-wilderness: '&cNo tienes permitido el volar en naturaleza. &8permiso para omitir esta restricción: lands.bypass.wilderness.fly'
+    enter:
+      land: '#t#&2&l{land}[newline]&3{title}'
+      safezone: '#t#&2&l{land}[newline]{title}'
+      pvp-warning: '#a#&cHas entrado a una zona de PVP.'
+    leave:
+      land: '#t#&2&lNaturaleza[newline]&7Siente lo salvaje'
+      safezone: '#t#&2&lNaturaleza[newline]&7Siente lo salvaje'
+    teleport:
+      already: '&cNo puedes iniciar un segundo teleport, porque ya hay un teleport en progreso. &7Porfavor espera hasta que este termine.'
+      started: '&7Proceso de teleport iniciado. Teleportandote en &5 {sec} &7segundos. Favor no te muevas.'
+      cancelled: '&cTu teleport ha sido cancelado. &7Porfavor no te muevas mientras estás esperando&5 {sec} &7segundos para tu teleport.'
+      chunk: '#t#&9&lTransportado[newline]&7X: {x} Z: {z} Cost:&c ${cost}'
+      cancelled-plugins: '&cEl teleport fue cancelado por otro plugin. &7Porfavor revisa tus otros plugins. &7Este no es un problema de Land.'
   claimblock:
-    cmdDisabled: '&8[&aLands&8] &cPuoi claimare solo attraverso i claimblock piazzati. &7Questo comando è disabilitato.'
-    dropped: '&8[&aLands&8] &cAlcuni claimblock si trovano a terra. &7Non cè spazio nel tuo inventario.'
-    notOwner: '&8[&aLands&8] &cNon sei autorizzato a utilizzare questo claimblock. &7Non è tuo. Questo blocco appartiene a&b {player}&7.'
-    noLeft: '&8[&aLands&8] &cNon hai nessun claimblock sinistro.'
-    success: '&8[&aLands&8] &7Hai&b {blocks} &7claimblocks. &7Piazzali su un blocco per claimare.'
+    dropped: '&cAlgunos bloques de claimeo estan en el suelo. &7No queda espacio en tu inventario.'
+    success: '&7Tienes&3 {blocks} &7bloque(s) de claimeo(s). &7Ponelos en un chunk para poder claimearlos.'
+    not-owner: '&cNo tienes permitido usar este bloque de claimeos. &7Pertenece a&3 {owner}&7.'
   blacklist:
-    untrusted: '&8[&aLands&8] &cNon sei autorizzato a usare questo comando qui. &7Non appartieni a questo territorio.'
-    general: '&8[&aLands&8] &cNon sei autorizzato a usare questo comando nei territori claimati.'
+    untrusted: '&cNo tienes permitido el usar este comando aqui. &7No estas confiado en esta land. &8Un admin puede cambiar esto en config.'
+    general: '&cNo tienes permitido el usar este comando en lands claimeadas. &8Un administrador puede cambiar esto en config.'
   autoAction:
-    stopped: '&8[&aLands&8] &cInterrotto l''azione automatica corrente. &7Raggiunti turni massimi. Name:&b {name}'
-    started: '&8[&aLands&8] &7Avviata con successo l''azione automatica. Nome:&b {name}'
-    removed: '&8[&aLands&8] &7Arresto automatico riuscito. &7Nome:&b {name}'
+    stopped: '&cSe detuvo tu auto-acción actual. &7Máximo de rondas alcanzadas. Nombre:&3 {name}'
+    started: '&7Tu auto-acción inició correctamente. Nombre:&3 {name}'
+    removed: '&7Tu auto-acción se detuvo correctamente. &7Nombre:&3 {name}'
+  gui:
+    chats:
+      title: '#t#&e&lEscribe nuevo[newline]&e&lTitulo en el Chat'
+      title-done: '#t#&a&lTitulo de land[newline]&7&lEstablecido correctamente.'
+      name: '#t#&e&lEscribe nuevo[newline]&e&lNombre en el Chat'
+      name-done: '#t#&2&lNombre de land[newline]&7&lEstablecido correctamente'
+      cancel: '&7escribe &bcancel &7en el chat para cancelar esta acción.'
+  chat-action:
+    cancelled: '#t#&c&lAcción de chat[newline]&c&lCancelada'
+    player: '&7Porfavor escribe el nombre del jugador(a) objetivo.'
+    role:
+      create: '&7Porfavor escribe un nuevo nombre para el rol. Puedes incluir prefijos de colores.'
+      default: '&cNo puedes eliminar este rol. &7Es el rol que está por default.'
+      delete: '&7Porfavor escribe el nombre del rol que quieres eliminar.'
+      exists: '&cUn rol con el nombre&4 {role} &cya existe. &7porfavor elige un nombre diferente.'
+      max: '&cNo puedes crear más roles para esta land. &7Haz alcanzado tu límite of&3 {max} &7roles. Permiso: lands.roles.NUMBER'
+    area:
+      create: '&7Por favor escribe un nuevo nombre para el área. Puedes incluir prefijos de colores.'
+      delete: '&7Porfavor escribe el nombre del área que deseas eliminar.'
+      exists: '&cEl area&4 {area} &cya existe en esta land &8(&7Land:&2 {land}&8)&c. &7Porfavor escoje otro nombre.'
+      max: '&cNo puedes crear mas áreas para esta land. &7Has alcanzado el limite de&3 {max} &7areas. Permiso: lands.areas.NUMBER'
+    title: '&7Porfavor escribe un nuevo título para esta Land. Puedes incluir prefijos de colores.'
+    rename: '&7Porfavor escribe un nuevo nombre para esta Land. Los espacios no estan permitidos.'
 command:
   general:
-    land-not-exist: '&8[&aLands&8] &cil territorio&e {land} &cnon esiste. &7Non c''è un territorio di nome&b {land} &7in questo mondo.'
-    land-not-member: '&8[&aLands&8] &cNon fai parte del territorio&e {land}&c. &7Usa &8/&aLands menu &7per vedere di quali territori sei membro.'
-    land-not-trusted: '&8[&aLands&8] &cNon puoi farlo. &7Il giocatore&b {player} &7non fa parte del territorio &8(&7Territorio:&e {land}&8)&7. Devi aggiungerlo con il comando: &8/&aLands trust&7.'
-    land-no-action: '&8[&aLands&8] &cNon sei membro di un territorio dove ti è permesso farlo. &7Use &8/&aLand create &7per crearne uno.'
-    name-exists: '&8[&aLands&8] &cQuesto nome è già stato preso da un altro territorio. &7Devi sceglierne uno diverso.'
-    money-cost-bank: '&8[&aLands&8] &cNon hai abbastanza soldi per pagarne il costo. &7Hai bisogno di&b ${cost}&7.'
-    lands-max: '&8[&aLands&8] &cNon puoi far parte di altri territori. &7Hai raggiunto il massimo di&b {max} &7territori.'
-    name-numbers: '&8[&aLands&8] &cNon puoi usare numeri nel nome del territorio.'
-    name-accent: '&8[&aLands&8] &cNon puoi usare accenti nel tuo nome.'
-    name-length: '&8[&aLands&8] &cIl nome è troppo lungo. &7Lunghezza massima&b {max} &7caratteri.'
-    action-cooldown: '&8[&aLands&8] &cNon puoi farlo ora. &7Devi aspettare&b {time} &7minuti.'
-    land-none: '&8[&aLands&8] &cSembra che tu non sia un membro di un territorio. &7Usa &8/&aLands create &7per crearne uno.'
-    land-no-own: '&8[&aLands&8] &cNon sei proprietario di un territorio. &7Usa &8/&aLands create &7per crearne uno.'
-    world-invalid: '&8[&aLands&8] &cNon puoi farlo nel mondo attuale. &7Devi andare in un altro mondo.'
-    wilderness: '&8[&aLands&8] &cQuesto chunk è nella natura selvaggia. &7Devi andare in un chunk claimato. &7Puoi usare &8/&aLands menu &7per vedere i tuoi territori.'
-    player-not-exist: '&8[&aLands&8] &cNon c''è nessun giocatore con il nome&e {player}&c. &7Si prega di verificare l''inserimento.'
-    role-weight: '&8[&aLands&8] &cNon puoi modificare questo ruolo. &7È un ruolo più alto o uguale &8(&7Ruolo:&e {role}&8) &7al tuo &8(&7Territorio:&e {land}&8)&7.'
-    player-self: '&8[&aLands&8] &cNon puoi farlo con te stesso.'
-    cooldown: '&8[&aLands&8] &cNon puoi farlo nuovamente. &7Devi aspettare altri&b {time} &7minuti.'
-    chunk-is-claimed: '&8[&aLands&8] &cNon puoi claimare questo chunk. &7Appartiene già al territorio&b {land}&7.'
+    land-not-exist: '&cland&2 {land} &cno existe. &7No hay land con el nombre &2 {land} &7en este mundo.'
+    area-not-exist: '&cArea&4 {area} &cNo existe en Land&4 {land}&c. &7Puedes crear una nueva área en el menu de land, sección áreas. &7Typo?'
+    role-not-exist: '&cRol&e {role} &cno existe en esta area&4 {area} &cde esta land&4 {land}&c. &7Error de tipografía?'
+    land-not-member: '&cNo estas confiado en land&4 {land}&c. &7Usa &8/&3Lands menu &7para ver Lands de las cuales eres miembro.'
+    no-edit-land: '&cAun no has seleccionado tu land a editar. &7Use &8/&3Lands edit &8<&3land&8> &7para seleccionarla.'
+    land-no-action:
+      edit: '&cNo eres miembro de ninguna land donde tengas permitido hacer esto &8(&4{setting}&8)&c. &7Usa &8/&3Land create &7para crear una.'
+      position:
+        setting: '&cNo tienes permitido el hacer esto en la land en la que estas parado ahora. &7Porfavor anda dentro de tu land. &7Setting:&3 {setting}'
+        general: '&cNo tienes permitido el hacer esto en la land en la que estas parado ahora. &7Porfavor anda dentro de tu land.'
+    name-exists: '&cEl nombre&4 {name} &cesta tomado por otra land. &7Necesitas elegir un nombre diferente.'
+    money-cost-bank: '&cNo tienes suficiente para pagar el costo. &7Necesitas&c ${cost}&7. depositar un poco de dinero en el banco de land: &8/&3Lands deposit {cost}'
+    money-cost: '&No tienes suficiente para pagar el costo. &7Necesitas&c ${cost}&7.'
+    lands-max: '&cNo puedes ser parte de ninguna land más. &7Alcansazte el máximo de&3 {max} &7lands. &8Permiso: lands.lands.NUMBER'
+    name-numbers: '&cNo puedes usar numeros en los nombres de tus Lands. &7Porfavor solo usa letras latinas.'
+    name-invalid: '&cNo puedes usar carácteres inválidos en el nombre de land. &7Se encontró un carácter inválido:&3 {invalid} &7Porfavor usa solo letras.'
+    name-length: '&cEste nombre es muy largo. &7El largo máximo es &3 {max} &7caracteres. &8Un admin puede cambiar esto en config.'
+    swear-word: '&cSe detectó una palabrota. &7Porfavor no usar lenguaje inapropiado. Word:&c {word}'
+    action-cooldown: '&cNo puedes hacer esto ahora. &7Necesitas esperar&5 {time}&7.'
+    land-none: '&cNo eres un miembro de Land. &7Usa &8/&3Lands create &7para crear una.'
+    land-no-own: '&cNo tienes una Land. &7Usa &8/&3Lands create &7para crear una.'
+    world-invalid: '&cNo puedes hacer esto en el mundo actual. &7Un admin necesita añadir&3 {world} &7a la config primero.'
+    wilderness: '&cEste chunk es naturaleza. &7Necesitas ir a un chunk claimeado. &7Puedes usar &8/&3Lands menu &7para ver tus lands.'
+    player-not-exist: '&cNo hay jugador(a) con el nombre&4 {player}&c. &7Error de tipeo?'
+    player-offline: '&cActualmente no hay un jugador(a) en línea con el nombre&4 {player}. &7Error de tipeo?'
+    player-self: '&cNo puedes hacer esto contigo mismo. &7Payaso culiao xd. :)'
+    banks-disabled: '&7Los bancos fueron deshabilitados por un admin. &8Ellos pueden volver a activarlos en config.'
+    land-not-trusted: '&cEl jugador(a)&4 {player} &7no es parte de esta land &8(&7Land:&2 {land}&8)&7. Necesitas confiar en el primero &8/&3Lands trust&7.'
+    land-max-members: '&cNo se pudo confiarte en land&2 {land}&c. &7Esta land alcanzó su máximo de&3 {members} &7miembros. &8Esta land necesita mas lands.members.NUMBER de permiso.'
+    area-not-trusted: '&cNo puedes hacer esto aqui. &7No estas confiado en este chunk &8(&7X: {x} Z: {z}&8)&7. Pertenece al área&6 {area} &7de Land&2 {land}&7.'
+    invalid-number: '&cTu entrada&4 {input} &cno es un número. &7El argumento&3 {argument} &7necesita ser un numero.'
   help:
-    help: '&8[&aLands&8] &7Usa &8/&aLand help &7per ottenere aiuto.'
-    cmd-not-exist: '&8[&aLands&8] &cQuesto sub-comando non esiste. &7Il comando&b {command} &7non è stato trovato.'
-    page-not-exist: '&8[&eProtect&8] &cLa pagina&e {page} &cnon esiste. &7Errore di battitura?'
+    help: '&7Usa &8/&aLand help &7para ayuda.'
+    cmd-not-exist: '&cEste comando no existe. &7Comando&3 {command} &7es inválido.'
+    page-not-exist: '&cLa página&4 {page} &cno existe. &7Error de tipeo?'
   create:
-    land-other: '&8[&aLands&8] &cNon ti è permesso avere un territorio ed essere membro di un altro territorio. &7Devi prima lasciare il territorio&b {land}&7.'
-    max-own: '&8[&aLands&8] &cNon puoi creare altri territori. &7Hai raggiunto il massimo di&b {max} &7territori di cui sei proprietario.'
-    success: '&8[&aLands&8] &7Territorio&b {land} &7creato con successo per&b {cost}&7. Puoi claimare chunk usando &8/&aLands claim&7.'
-    broadcast: '&8[&aLands&8] &7Il territorio&b {land} &7è stato creato da&b {player}&7.'
+    land-other: '&cNo tienes permitido el tener tu propia Land y ser miembro de otra Land. &7Tienes que abandonar tu land&2 {land} &7primero. &8Un admin puede desactivar esto en la config.'
+    max-own: '&cNo puedes crear ninguna land más. &7Haz alcanzado el máximo de&3 {max} &7lands propias permitidas. &8Permiso: lands.ownlands.NUMBER'
+    success: '&7Land creada correctamente&2 {land} &7para&c ${cost}&7. Puedes claimear chunks ejecutando &8/&3Lands claim&7. Además puedes usar &8/&3Lands selection&7 para claimear una selección. Establecer Land {land} como land para futuras ediciones &8(/&3Lands edit&8)&7.'
+    broadcast: '&7Land&2 {land} &7fue creada por&3 {player}&7.'
   rename:
-    success: '&8[&aLands&8] &7Il nome&b {name} &7è stato cambiato con successo per il territorio &8(&7Territorio:&e {land}&8)&7. Hai pagato&b ${cost}&7.'
+    success: '&7Nuevo nombre establecido correctamente&3 {name} &7para esta land &8(&7Land:&2 {land}&8)&7. Haz pagado&c ${cost}&7.'
   edit:
-    success: '&8[&aLands&8] &7Sei entrato nella modalità di modifica della lands &8(&7Land:&e {land}&8)&7. Da adesso potrai eseguire i comandi &8/&aLands claim &7e/o &8/&aLands trust&7 su questo territorio'
+    success: '&7Haz entrado en el modo edición para esta land &8(&7Land:&2 {land}&8)&7. Próximas acciones tales como &8/&3Lands claim &7or &8/&3Lands trust&7, serán ejecucatada para esta land.'
   selection:
-    disabled-config: '&8[&aLands&8] &cQuesta funzione è stata disabilitata in configurazione da un amministratore. &7È necessario abilitare l''impostazioni &bland.selection.enabled&7.'
-    enabled: '&8[&aLands&8] &7Modalità di selezione abilitata: selezionare solo con le mani &bentrambi gli angoli &7della regione per &bclaimare tutti i chunks &7di essa.'
-    disabled: '#t#!!1!!1!!1!!&7Selezione:;;&cDisabilitata'
-    pos-left: '#t#&7Posizione;;&b1'
-    pos-right: '#t#&7Posizione;;&b2'
-    max: '&8[&aLands&8] &cLa tua selezione ha molti chunk in essa. &7Dimensione:&b {current} &7Dimensione consentita:&b {max}'
-    same-world: '&8[&aLands&8] &cEntrambe le posizioni devono essere nello stesso mondo.'
-    claimed: '&8[&aLands&8] &7Claim effettuato con successo nel chunk&b {chunks} &7per il territorio &8(&7Territorio:&e {land}&8)&7. Hai pagato&b ${cost}&7.'
-    left: '&8[&aLands&8] &7Sinistra di successo il chunk&ab {chunks} &7del territorio &8(&7Territorio:&e {land}&8)&7.'
-    unclaimed: '&8[&aLands&8] &7Claim rimosso con successo nel chunk&ab {chunks} &7del territorio &8(&7Territorio:&e {land}&8)&7.'
+    not-complete: '&cTu selección no esta completa. &7Porfavor asegurate que ambas posiciones estén establecidas &8(&bCLICK IZQUIERDO &7Y &9CLICK DERECHO&8)&7. Puedes alternar el modo de selección ejecutando &8/&3Lands selection&7.'
+    max: '&cTu selección tiene muchos chunks en ella. &7Tamaño:&3 {current} &7Tu máximo tamaño es&3 {max} chunks. &8Permiso: lands.selection.NUMBER'
+    enabled: '&7Haz activado el modo de selección. Usa &5CLICK IZQUIERDO &7en un bloque para seleccionar la posición primaria. Con &5CLICK DERECHO &7estableces la posición secundaria. Después de esto puedes aplicar a la selección estos comandos: &3Claim&7, &3Unclaim&7, &3Leave'
+    disabled: '#t#&5&lModo de selección[newline]&c&lDesactivado'
+    world: '&cAmbas posicisiones deben estar en el mismo mundo. &7Porfavor establece la posición uno y la posición dos en el mismo mundo.'
+    pos:
+      warn: '&cAdvertencia: &7Este chunk pertenece a la administracion de otro plugin. Nombre:&3 {plugin}'
+      cancelled: '&cNo puedes establecer una selección aquí. &7Este chunk pertenece a la administracion de otro plugin. Nombre:&b {plugin}'
+      one: '#t#&5&lSelección[newline]&b&lPos 1 &8-> &7Establecida'
+      two: '#t#&5&lSelection[newline]&b&lPos 2 &8-> &7Establecida'
+    area:
+      conflicts: '&cSe encontró&4 {conflicts} &cconflicto(s) con chunks ya asignados al area(s). &7Usa &8/&3Lands selection assign {area} confirm &7para confirmar la anulación. Los conflictos pertenecen a estas areas: {areas}'
+      assigned: '&7Asignaste satisfactoriamente&3 {chunks} &7chunks al area&6 {area} &8(&7Land:&2 {land}&8)&7.'
+    expand:
+      enabled: '&7Expandiste satisfactoriamente tu selección desde arriba hacia abajo (a todos los niveles).'
+      disabled: '&7Tu selección actual ya no se expande a todos los niveles.'
   claim:
-    max-chunks: '&8[&aLands&8] &cNon puoi claimare altri chunk. &7Il massimo è di &b {max} &7chunk.'
-    auto-create: '&8[&aLands&8] &7Cercando di creare automaticamente un territorio, perché non ne hai nessuno in questo mondo. Puoi cambiarne il nome eseguendo il comando &8/&aLands rename&7.'
-    auto-create-fail: '&8[&aLands&8] &cImpossibile creare automaticamente un territorio. &7Si prega di contattare un amministratore.'
-    near-other: '&8[&aLands&8] &cQuesto è vicino al territorio&e {land}&c. &7Devi mantenere la distanza da questo territorio. Distanza minima di chunk:&b {distance}&7.'
-    far-land: '&8[&aLands&8] &cNon puoi claimare questo chunk. &7Deve adattarsi al tuo territorio &8(&7Territorio:&e {land}&8)&7.'
-    success: '&8[&aLands&8] &7Chunk claimato con successo &8(&7Territorio:&e {land} &7X:&e {x} &7Z:&e {z}&8) &7per&b {cost}&7. Il prossimo claim ti costerà&b {next}&7.'
+    already: '&cNo puedes claimear este chunk. &7Actualmente pertenece a land&2 {land}&7.'
+    auto-create: '&7Intentando crear automáticamente una land para ti, porque no tienes ninguna en este mundo. Puedes cambiar el nombre de esta con &8/&3Lands rename&7.'
+    auto-create-fail: '&cFallo en crear automaticamente una land para ti. &7Favor lee los mensajes de arriba.'
+    near-other: '&cEsto es muy cerca de land&4 {land}&c. &7Necesitas alejarte más de esta land. El chunk de distancia mínimo es&3 {distance}&7. &8un administrador podría cambiar esto en config.'
+    far-land: '&cNo puedes claimear este chunk(s). &7Tus claims deben estar conectados a tu land &8(&7Land:&2 {land}&8)&7.'
+    success: '&7Chunk claimeado satisfactoriamente &8(&7Land:&2 {land} &7X: {x} Z: {z}&8) &7para&c ${cost}&7. El siguiente claim costará&b ${next}&7.'
+    already-claimed: '&cEn tu selección hay un chunk que actualmente ya esta claimeado y que no pertenece a tu land &8(&7X: {x} Z: {z}&8)&c. &7Pertenece a&2 {land}&7.'
+    max-chunk: '&cNo puedes claimear&4 {chunks} &cmas chunk para esta land. &7El máximo por land&2 {land} &7es&3 {max} &7chunks. &8Permiso: lands.chunks.NUMBER'
+    selection: '&7Haz claimeado correctamente&3 {chunks} &7chunks para esta land &8(&7Land:&2 {land}&8)&7. Haz pagado&c ${cost}&7.'
+  assign:
+    selection: '&cNecesitas crear una selección primero. &7Usa &8/&3Lands selection &7para crear una. Después de eso, intentalo de nuevo.'
+    size: '&cTu selección es muy pequeña. &7El tamaño mínimo es de&3 {min} &7bloques, y el tuyo es de&3 {current}&7.'
+    success: '&7Haz redimensionado satisfactoriamente esta area&6 {area} &7de esta land&2 {land}&7. Los cambios están visualizados.'
+    conflict:
+      land: '&cTu selección entra en conflicto con land&4 {land}&c. &7Porfavor ajusta tu selección.'
+      area: '&cTu selección entra en conflicto con el area&4 {area}&c. &7Porfavor ajusta tu selección.'
   leave:
-    land-owner: '&8[&aLands&8] &cNon puoi abbandonare questo territorio. &7Come proprietario del terreno è necessario eliminarlo. Usa &8/&aLands delete&7.'
-    land-success: '&8[&aLands&8] &7Hai lasciato il territorio&b {land}&7. Non hai più accesso al territorio e ai suoi chunk.'
-    chunk-success: '&8[&aLands&8] &7Hai lasciato questo chunk. &7Non hai più accesso a questo chunk.'
+    land-owner: '&cNo puedes dejar esta land. &7Como el &4DUEÑO&7 de esta Land necesitas eliminarla. Usa &8/&3Lands delete&7.'
+    selection: '&7Haz dejado correctamente&b {chunks} &7chunks de tu selección. Los chunks, en los cuales eras DUEÑO, han sido borrados.'
+    land:
+      success: '&7Haz dejado satisfactoriamente esta land&2 {land}&7. Ya no tendrás más acceso a esta Land nunca más.'
+    area:
+      success: '&7Haz dejado esta área satisfactoriamente &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. No tendrás acceso a ella nunca más.'
   unclaim:
-    success: '&8[&aLands&8] &7Claim rimosso al chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7. Hai ricevuto&b ${back} &7.'
+    success: '&7Chunk des-claimeado satisfactoriamente &8(&7Land:&2 {land} &7X: {x} Z: {z}&8)&7. Tienes de vuelta&a ${back} &7de dinero.'
+    selection: '&7Haz des-claimeado satisfactoriamente esta selección. Favor tener en cuenta que los chunks en solo donde eras el %4DUEÑO&7, serán des-claimeados.'
   delete:
-    confirm: '&8[&aLands&8] &cDevi confermare questa azione. &7Usa &8/&aLand delete {land} confirm&7.'
-    success: '&8[&aLands&8] &7Territorio eliminato con successo &8(&7Territorio:&e {land}&8)&7.'
-    broadcast: '&8[&aLands&8] &7Il territorio&b {land} &7è stato cancellato dal proprietario&b {player}&7.'
+    confirm: '&cNecesitas confirmar esta acción. &7Usa &8/&3Land delete {land} confirm&7.'
+    success: '&7Land borrada satisfactoriamente &8(&7Land:&2 {land}&8)&7. Has recibido&e ${back} &7de vuelta.'
+    broadcast: '&7Land&2 {land} &7fue borrada por&3 {player}&7.'
   trust:
-    own-land: '&8[&aLands&8] &cA questo giocatore non è permesso avere un territorio e far parte di un altro territorio. &7Deve prima abbandonarlo.'
-    land-already: '&8[&aLands&8] &cQuesto giocatore fa già parte del territorio &8(&7Territorio:&e {land}&8)&7.'
-    chunk-already: '&8[&aLands&8] &cQuesto giocatore fa già parte di questo chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    invited: '&8[&aLands&8] &cQuesto giocatore è già invitato. &7Per favore aspetta mentre lo accetta &8(&7Territorio:&e {land}&8)&7.'
-    land-target: '&8[&aLands&8] &7Il giocatore&b {player} &7ti ha inviato nel territorio&b {land}&7. Usa &8/&aLand accept {land} &7per accettare l''invito.'
-    chunk-target: '&8[&aLands&8] &7Il giocatore&b {player} &7ti ha invitato nel chunk &8(&7X:&e {x} &7Z:&e {z}) &7Usa &8/&aLands accept {land} &7per accettare l''invito.'
-    chunk-success: '&8[&aLands&8] &7Invito inviato con successo a&b {player} &7nel chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    land-success: '&8[&aLands&8] &7Invito inviato con successo a&b {player} &7nel territorio &8(&7Territorio:&e {land}&8)&7. Ha solo bisogno di accettare l''invito.'
+    own-land: '&cEste jugador no tiene permitido tener su propia Land y ser parte de otra land. &7Necesita dejarla primero.'
+    invited: '&cEste(a) jugador(a) ya está invitado. &7Porfavor espera mientras el acepta &8(&7Land:&2 {land}&8)&7.'
+    max-lands: '&7Jugador(a)&3 {player} &7ha alcanzado su maximo de lands en las que puede estar. &8Permission: lands.lands.NUMBER'
+    max-members: '&cNo se puedo confiar en el jugador(a)&4 {player} &cen land&4 {land}&c. &7El dueño de esta land alcanzó su máximo de&3 {members} &7jugador@s en su land.'
+    land:
+      already: '&cEste(a) jugador(a) ya esta confiado en esta Land &8(&7Land:&2 {land}&8)&7.'
+      target: '&7Jugador(a)&3 {player} &7Te ha invitado a su land&2 {land}&7. Usa &8/&3Land accept {land} &7para aceptar su invitación.'
+      success: '&7Invitación satisfactoria del jugador(a)&3 {player} &7en toda la land &8(&7Land:&2 {land}&8)&7. Porfavor espera hasta que el la acepte.'
+    area:
+      already: '&cEste jugador ya esta confiado en esta area&6 {area} &8(&7Land:&2 {land}&8)&7.'
+      target: '&7Jugador(a)&3 {player} &7te invitó a su land &8(&7Area:&6 {area} &7Land:&2 {land}&8) &7Usa &8/&3Lands accept {land} &7para aceptar su invitación.'
+      success: '&7Successfully invited player&3 {player} &7to this area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Porfavor espera hasta que acepte la invitación.'
   untrust:
-    land-already: '&8[&aLands&8] &cQuesto giocatore è già stato rimosso dal territorio &8(&7Territorio:&e {land}&8)&7.'
-    chunk-already: '&8[&aLands&8] &cQuesto giocatore è già stato rimosso dal chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    invite-removed: '&8[&aLands&8] &7Invito revocato con successo per questo giocatore &8(&7Territorio:&e {land}&8)&7.'
-    chunk-success: '&8[&aLands&8] &7Il giocatore&b {player} &7è stato rimosso con successo in questo chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    land-success: '&8[&aLands&8] &7Il giocatore&b {player} &7è stato rimosso con successo in questo territorio &8(&7Territorio:&e {land}&8)&7.'
-  setRole:
-    role-not-exist: '&8[&aLands&8] &cIl ruolo {role} &cnon esiste. &7Errore di battitura? &8(&aA disposizione di: &cAmministratori&7, &eMembri&8)'
-    land-not-trusted: '&8[&aLands&8] &cIl giocatore {player} &cnon fa parte di questo territorio &8(&7LTerritorio:&e {land}&8)&7. Per favore controlla l''inserimento.'
-    chunk-max-members: '&8[&aLands&8] &cNon potrei impostare il ruolo in questo chunk. &7Il proprietario della terra ha raggiunto il suo massimo di&b {members} &7membri in questo chunk.'
-    max-members: '&8[&aLands&8] &cNon puoi impostare il ruolo in&e {chunks} &cchunk. &7Il proprietario della terra ha raggiunto il suo massimo di&b {members} &7membri in questo chunk.'
-    chunk-success: '&8[&aLands&8] &7Ruolo impostato con successo&b {role} &7per il giocatore&b {player} &7nel chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    part-success: '&8[&aLands&8] &7Il giocatore&b {player} &7non fa parte del tuo territorio. Imposta il ruolo in tutti i chunk in cui è aggiunto &8(&7Territorio:&e {land}&8)&7.'
-    land-success: '&8[&aLands&8] &7Ruolo&b {role} &7impostato con successo a&b {player} &7in tutto il territorio &8(&7Territorio:&e {land}&8)&7.'
+    land:
+      already: '&cEste jugador no esta confiado en esta land &8(&7Land:&2 {land}&8)&7.'
+      inv-revoked: '&7Invitación revocada satisfactoriamente para este(a) jugador(a). &8(&7Land:&2 {land}&8)&7.'
+      success: '&7Jugador desconfiado satisfactoriamente&3 {player} &7para esta land &8(&7Land:&2 {land}&8)&7.'
+    area:
+      already: '&cEste jugador no esta confiado en esta area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      inv-revoked: '&7Invitación revocada satisfactoriamente para este(a) jugador(a). &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      success: '&7Jugador desconfiado satisfactoriamente&3 {player} &7en esta area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+  setrole:
+    not-exist: '&cEl Rol&4 {role} &cno existe. &7Error de tipeo?'
+    land:
+      visitor: '&cNo puedes establecer el &crol&4 {role}. &7Si quieres desconfiar de este jugador, porfavor usa &8/&3Lands untrust {player}&7.'
+      not-trusted: '&cEl(la) jugador(a)&4 {player} &cno esta confiado(a) en esta land &8(&7Land:&2 {land}&8)&7. Porvafor confía en el primero.'
+      success: '&7Rol establecido satisfactoriamente&3 {role} &7para el(la) jugador(a)&3 {player} &7en toda esta Land &8(&7Land:&2 {land}&8)&7.'
+    area:
+      visitor: '&cNo puedes establecer el &crol&4 {role}. &7Si quieres desconfiar de este jugador, porfavor usa &8/&3Lands untrust {player} here&7.'
+      not-trusted: '&cEl(la) jugador(a)&4 {player} &cno esta confiado(a) en esta area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Porvafor confía en el primero.'
+      success: '&7Rol establecido satisfactoriamente&3 {role} &7para el(la) jugador(a)&3 {player} &7en esta area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
   accept:
-    not-exist: '&8[&aLands&8] &cNon hai inviti per il territorio&e {land} &co è scaduto. &7Per favore controlla l''inserimento.'
-    own-land: '&8[&aLands&8] &cNon hai il permesso di possedere un territorio ed essere membro di altri territori. &7Devi prima lasciare il tuo territorio.'
-    max-reached: '&8[&aLands&8] &cNon puoi unirti ad altri territori. &7Puoi avere solo&b {max} &7territori.'
-    land-tax-confirm: '&8[&aLands&8] &cIl proprietario di questo territorio vuole che tu paghi&e {tax} &7per accedere al territorio. &7Si prega di confermare questa azione eseguendo &8/&aLands accept {land} confirm&7.'
-    chunk-tax-confirm: '&8[&aLands&8] &7Il proprietario di questo territorio vuole che tu paghi&b {tax} &7per accedere a questo chunk. &7Si prega di confermare questa azione eseguendo &8/&aLand accept {land} confirm&7.'
-    land-fail: '&8[&aLands&8] &cNon puoi essere aggiunto al territorio&e {land}&c. &7Il proprietario del territorio ha raggiunto il suo massimo di&b {members} &7membri in questo chunk.'
-    max-members: '&8[&aLands&8] &cNon puoi essere aggiunto nel territorio&e {chunks} &c. &7Il proprietario del territorio ha raggiunto il suo massimo di&b {members} &7membri in questo territorio.'
-    chunk-max-members: '&8[&aLands&8] &cNon puoi impostare il ruolo in questo chunk. &7Il proprietario del territorio ha raggiunto il suo massimo di&b {members} &7membri in questo chunk.'
-    land-success: '&8[&aLands&8] &7Invito accettato con successo per il territorio&b {land}&7. Ora hai accesso a tutto il territorio.'
-    chunk-success: '&8[&aLands&8] &7Invito accettato con successo per il territorio&b {land} &7per il chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    chunk-broadcast: '&8[&aLands&8] &b{land} &8| &7Il giocatore&b {player} &7è un nuovo membro del chunk &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
-    land-broadcast: '&8[&aLands&8] &b{land} &8| &7Il giocatore&b {player} &7è entrato a far parte del nostro territorio&7.'
-    notification: '&8[&aLands&8] &7Hai ancora&b {invites} &7inviti per altri territori. Use &8/&aLand invites &7per ottenere la lista.'
+    not-exist: '&cNo tienes invitaciones de land&4 {land} &co expiraron. &7Porfavor revisa tu entrada.'
+    own-land: '&cNo tienes permiso de tener una land y ser miembro de otras. &7Debes dejar tu propia land primero.'
+    max-lands: '&cNo puedes unirte a más lands. &7Solo puedes tener&3 {max} &7lands. &8Permiso: lands.lands.NUMBER'
+    notification: '&7Aun tienes&3 {invites} &7invitaciones de otras Lands. Usa &8/&3Land invites &7para obtener una lista de ellas.'
+    land:
+      success: '&7Invitacion de land aceptada satisfactoriamente&3 {land}&7. ahora estas confiado en toda la Land.'
+      broadcast: '&2{land} &8| &7El jugador(a)&3 {player} &7se unió a nuestra land&7.'
+    area:
+      success: '&7Invitacion de land aceptada satisfactoriamente&2 {land} &7para el area&6 {area}&7.'
+      broadcast: '&2{land} &8| &7El jugador(a)&3 {player} &7es ahora miembro del area&6 {area} &7en nuestra land&2 {land}&7.'
+  setowner:
+    confirm: '&cPorfavor confirma que quieres transferir el propietario de esta land&2 {land} &cal jugador(a)&3 {player}&c: &8/&3Lands setowner {player} confirm'
+    success: '&7Has establecido correctamente al jugador(a)&3 {player} &7como el dueño de esta land&2 {land}&7. Pagaste&c ${cost}&7.'
   deny:
-    not-exist: '&8[&aLands&8] &cNon hai inviti per il territorio&e {land} &co è scaduto. &7Per favore controlla l''inserimento.'
-    land-success: '&8[&aLands&8] &7Invito rifiutato con successo per il territorio&b {land}&7.'
-    chunk-success: '&8[&aLands&8] &7Invito rifiutato con successo per il territorio&b {land} &7per il chunk &8(X:&e {x} &7Z:&e {z}&8)&7.'
+    not-exist: '&cNo tienes una invitacion de land&4 {land} &co ha expirado. &7Error de tipeo?'
+    success: '&7Has denegado satisfactoriamente la invitación de land&2 {land}&7.'
   teleport:
-    world-not-exist: '&8[&aLands&8] &cQuesto mondo non esiste.'
-    chunk-not-exist: '&8[&aLands&8] &cQuesto chunk non esiste. &7Per favore controlla l''inserimento.'
-    success: '&8[&aLands&8] &7Ti sei teletrasportato con successo al chunk &8(&7X:&e {x} &7Z:&e {z} &7Claimato: {claimed}&8)&7.'
-  setSpawn:
-    force-land: '&8[&aLands&8] &cPuoi solo impostare lo spawn nel tuo territorio. &7Vai prima nel tuo territorio.'
-    success: '#t#&7Spawn &aimpostato&7.;;&7Al costo:&b {cost}'
+    world-not-exist: '&cEl mundo con el nombre&4 {world} &cno existe. &7error de tipeo?'
+    chunk-not-claimed: '&cEste chunk no está claimeado &8(&7X: {x} &7Z: {z}&8)&c. &8permiso para omitir restricción: lands.bypass.wilderness.teleport'
+    not-trusted: '&cNo puedes hacer teleport allí. &7No estas confiado en land&2 {land}&7.'
+    success: '&7Teleport satisfactorio a X:&3 {x} &7Z:&3 {z} &7Claimeado: {claimed}'
+  setspawn:
+    force-land: '&cSolo puedes establecer el spawn de land en tu Land. &7Ve a tu Land&2 {land} &7primero. &8un administrador podria cambiar esto en config.'
+    successs: '#t#&a&lSpawn establecido[newline]&7&lCosto:&b&l ${cost}'
   spawn:
-    not-exist: '&8[&aLands&8] &cNon ci sono set di spawn per il territorio&e {land}&c. &7Qualcuno deve prima impostarlo eseguendo &8/&aLand setSpawn&7.'
-    not-allowed: '&8[&aLands&8] &cNon sei autorizzato a teletrasportarti allo spawn di questo territorio. &7Il proprietario deve darti il permesso di farlo. &8(&7Territorio:&e {land}&8)&7.'
-    success: '#t#&7Teletrasporto;;&7Al territorio&b {land}'
+    not-exist: '&cNo hay spawn establecido para esta land&4 {land}&c. &7Alguien necesita establecerlo primero ejecutando &8/&3Land setspawn&7.'
+    not-allowed: '&cNo tienes permitido hacer teleport al spawn de esta land. &7Ellos tienen que darte el permiso para poder hacerlo &8(&7Land:&2 {land}&8)&7.'
+    chunk: '&7Land&2 {land} &7no ha establecido el spawnLand &8(&8/&3Lands setspawn&8) &7aún. &7Teleportandote al claim inicial de esta Land.'
+    successs: '&7Te has teleportado satisfactoriamente al spawn de Land&2 {land} &7Costo:&c ${cost}'
   wild:
-    searching: '#t#&7Searching:;;&dPosizione random'
-    loc-unsafe: '&8[&aLands&8] &cNon trovo un luogo sicuro. &7Per favore prova più tardi.'
-    success: '&8[&aLands&8] &7Sei stato teletrasportato casualmente &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
+    no-loc: '&cNo se pudo encontrar una locación segura que calze con lo estabecido en config. &8Porfavor establece una distancia mas alta en el teleport aleatorio en config. Además puedes bajar la distancia minima en config.'
+    searching: '#t#&6Buscando destinación[newline]&eEsperando que el teleport comienze..'
+    success: '&7Has sido transportado aleatoriamente &8(&7X: {x} Z: {z}&8)&7. has pagado&c ${cost}&7.'
+  deposit:
+    number: '&7Necesitas especificar un monto de dinero. Usa &8/&aLand deposit &8<&aAmount&8> &7o &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
+    success: '&7Has depositado con éxito&b ${cost} &7en el banco de Land. &7El nuevo balance del banco es:&b ${bank} &8(&7Land:&2 {land}&8)'
+  withdraw:
+    number: '&7Necesitas especificar un monto de dinero. Usa &8/&aLand withdraw &8<&aMonto&8> &7o &8/&aLand withdraw &8<&aLand&8> <&aMonto&8>&7.'
+    balance: '&cNo hay dinero suficiente en el banco de land. &7Hay solo&b ${bank} &7en el banco. Esperado:&3 ${take} &8(&7Land:&2 {land}&8)'
+    success: '&7Has girado satisfactoriamente&b ${cost} &7de tu banco de Land. &7Nuevo balance de banco:&b ${bank} &8(&7Land:&2 {land}&8)'
+  balance: '&7El balance es&b ${balance} &8(&7Land:&2 {land}&8)&7.'
+  ban:
+    area:
+      trusted: '&cEl(la) jugador(a)&4 {player} &cesta confiado en esta área. &7Necesitas desconfiar de el primero &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      success: '&7El(la) Jugador(a) ha sido baneado correctamente&3 {player} &7de esta área &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. Ellos no podrán entrar ni teleportarse al spawn si este esta localizado en esta área.'
+      target: '&cLand&4 {land} &cte ha baneado de su area&4 {area} &cdentro de su land. &7No podrás entrar ni teleportarte al spawn, si este esta localizado en esta area.'
+    land:
+      trusted: '&cEl(la) jugador(a)&4 {player} &cesta confiado en esta land&4 {land}&c. &7Necesitas desconfiar de el primero.'
+      success: '&7El(la) Jugador(a) ha sido baneado correctamente&3 {player} &7de land&2 {land}&7. Ellos no podrán entrar ni teleportarse al spawn.'
+      target: '&cLand&4 {land} &cte ha baneado de su land&c. &7Ellos no podrán entrar ni teleportarse al spawn.'
+  unban:
+    area:
+      success: '&7El(la) Jugador(a) ha sido desbaneado correctamente&3 {player} &7de esta area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7.'
+      target: '&7Land&2 {land} &7te ha desbaneado de su area&6 {area}&7.'
+    land:
+      success: '&7El(la) Jugador(a) ha sido desbaneado correctamente&3 {player} &7de land&2 {land}&7.'
+      target: '&7Land&2 {land} &7te ha desbaneado de su land.'
   menu:
-    no-permission-other: '&8[&aLands&8] &cNon ti è permesso aprire le GUI di altri giocatori. &Hai bisogno del permesso&e lands.command.menu.others &7per farlo.'
-    notExist: '&8[&aLands&8] &cQuesto giocatore attualmente non ha dati.'
+    no-permission-other: '&cNo tienes permitido el abrir el GUIs de otro jugador(a). &7Necesitas el permiso&e lands.command.menu.others &7para hacer esto.'
+    notExist: '&cEste(a) jugador(a) actualmente no tiene datos.'
   chat:
-    format: '&8[&aTerritorio&8] [&d{land}&8] {role} &7{player}&8:&f {message}'
-  map:
-    header: '&7----------------------'
-    info: |
-      &7Posizione: &e||||'
-    footer: '&7----------------------'
-list:
+    activated: '&7Chat de land activado, envía un mensaje en chat publico para chatear con tu land.'
+    deactivated: '&7Chat de land desactivado correctamente.'
+    no-land: '&cNo se encontró land para un chat de land. &7Usa &8/&3Lands chat toggle &7para desactivar el chat de land.'
+    format:
+      minecraft: '&a{land} &8| {role} &7{player} &8»&f {message}'
+      discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
   view:
-    - '&7---------<- &5&lTerritorio globale &7->---------'
-    - '&7Territorio:&b {land}'
-    - '&7Tasse -> Globali:&b {tax-land} &7Qui:&b {tax-chunk}'
-    - '&7Mondo:&e {world} &7X:&e {x} &7Z:&e {z}'
-    - '&4Proprietario:&7 {owner}'
-    - '&7Aministratore:&7 {admins}'
-    - '&7Membri:&7 {members}'
-    - '&7---------<- &5&lLand View &7->---------'
+    toggle:
+      enabled: '&7Has activado correctamente el esquema de vista de lands. &7para desactivarlo solo ejecuta el comando de nuevo.'
+      disabled: '&7Has desactivado correctamente el modo de vista de land actual.'
+list:
+  views:
+    - '&7---------<- &5&lVista de Land &7->---------'
+    - '&7Land:&a {land}'
+    - '&7Area:&6 {area}'
+    - '  &8Chunk &7X: {x} Z: {z}'
+    - '  &8Impuesto:&c ${tax}'
+    - '  &8Jugadores(as): {players}'
+    - '&7---------<- &5&lVista de Land &7->---------'
+  swear-words:
+    - fuck
+    - shit
+  wars:
+    declaration:
+      - '&6&nDeclaración de guerra:'
+      - ' '
+      - '&8- &7Atacantes:&c {attackers}'
+      - '  &7Defensores:&a {defenders}'
+      - ' '
+      - '&8- &7La guerra comenzará en'
+      - '  &5~{time}'
+    current:
+      - '&6&nActual guerra:'
+      - ' '
+      - '&8- &4Atacantes'
+      - '      &7Lands: {attackers}'
+      - '      &7Asesinatos: {att-points}'
+      - '&8- &2Defensores'
+      - '      &7Lands: {defenders}'
+      - '      &7Asesinatos: {def-points}'
+      - ' '
+      - '&8- &7La guerra va a terminar en'
+      - '  &5~{time}'
+    started:
+      attacker:
+        - '&cLa guerra ha comenenzado!'
+        - ' '
+        - '&8- &7Atacantes &8(&bUSTEDES&8)&7: {attackers}'
+        - '&7Defensores: {defenders}'
+        - ' '
+        - '&8- &7La guerra va a terminar en'
+        - '  &5~{time}'
+      defender:
+        - '&La guerra ha comenenzado!'
+        - ' '
+        - '&8- &7Atacantes: {attackers}'
+        - '&7Defensores &8(&bUSTEDES&8)&7: {defenders}'
+        - ' '
+        - '&8- &7La guerra va a terminar en'
+        - '  &5~{time}'
+    won:
+      attacker:
+        - '&6The La guerra acabó:'
+        - '&7Los atacantes &8({team}&8) &7triunfaron.'
+        - ' '
+        - '&8- &eEstadísticas'
+        - '&7Puntos de atacantes:&c {att-points}'
+        - '&7Puntos de defensores:&a {def-points}'
+        - ' '
+        - '&8- &7La guerra tomó'
+        - '  &5~{time}'
+      defender:
+        - '&6La guerra acabó:'
+        - '&7Los defensores &8({team}&8) &7triunfaron.'
+        - ' '
+        - '&8- &eEstadísticas'
+        - '&7Puntos de defensores:&a {def-points}'
+        - '&7Puntos de atacantes:&c {att-points}'
+        - ' '
+        - '&8- &7La guerra tomó'
+        - '  &5~{time}'
+wars:
+  message:
+    noaccess:
+      pillage: '&cNo puedes saquear una Land mientras no hay defensores en línea. &7porfavor espera hasta que un minimo de&b {defenders} &7defensores ingresen.'
+      action: '&cNo tienes permitido hacer esto en guerra, en esta land. &7Permiso para omitir restricción: {bypass}'
+    started:
+      broadcast: '&7La guerra entre el atacante&c {attacker} &7y el defensor&a {defender} &7comenzó. Terminará en&5 {time}&7.'
+    ended:
+      broadcast: '&7La guerra entre el atacante&c {attacker} &7y el defensor&a {defender} &7terminó. Tiempo tomado&5 {time}&7.'
+    joined:
+      attacker:
+        enemy: '&cENEMIGO &8| &6Land&2 {land} &6Se unió a los enemigos como &2defensores&6!.'
+        ally: '&2ALIADO &8| &7Land&b {land} &7se unió a utds. como &catacantes&7. Ellos pelearán de tu lado!.'
+      defender:
+        enemy: '&cENEMIGO &8| &6Land&2 {land} &6Se unieron a los enemigos como &catacantes&6!.'
+        ally: '&2ALIADO &8| &7Land&b {land} &7Se unió a utds como &2defensores&7!. Ellos pelearán de tu lado!.'
+    tribute-payed:
+      defender: '&2ALIADO &8| &7Land&b {land} &7paga&c ${tribute} &7Como un tributo para los atacantes. La guerra ha terminado.'
+      attacker: '&2ALIADO &8| &7Land&b {land} &7paga&c ${tribute} &7Como un triburo para tu land&b {attacker}&7. La guerra ha terminado.'
+    surrender:
+      tribute:
+        received:
+          all: '&aUna Land enemiga&b {land} &ase ha rendido!. &7El tributo ha sido dividido!. Tú y tus aliados reciben&b ${tribute} &7cada uno.'
+          initial: '&aUna Land enemiga&b {land} &ase ha rendido!. &7Land&b {receiver} &7recibe el tributo de&b ${tribute}&7.'
+      end: '&7Land&b {land} &7Se ha rendido!. La guerra se acabó. Ellos pagaron&c ${tribute} &7Al enemigo.'
+    war-shield:
+      set: '&aTu nueva protección diplomática(war-shield) estará activo por&b {time}&7.'
+    kill:
+      target:
+        attackers: '&7Nuestr@ Compañer@&c {attacker} &7fue asesinad@ por el(la) defensor(a)&a {defender}&7.'
+        defenders: '&7Nuestr@ Compañer@&a {defender} &7fue asesinad@ por el(la) atacante&c {attacker}&7.'
+      killer:
+        attackers: '&7Nuestr@ Compañer@&c {attacker} &7Mató al(la) defensor(a)&a {defender}&7.'
+        defenders: '&7Nuestr@ Compañer@&a {defender} &7Mató al(la) atacante&c {attacker}&7.'
+  command:
+    general:
+      no-war: '&cTu Land&4 {land} &cNo tiene guerras activas ni próximas actualmente. &7Todo por ahora es pacífico para esta land.'
+    declare:
+      trusted: '&cNo puedes declararle la guerra a esta Land. &7Porque eres un miembro en ella. Porfavor abandona el objetivo (land) primero.'
+      war-shield: '&cActualmente no puedes declararle la guerra a esta land. &7Porque tiene una protección diplomática(war-shield) por los siguientes&a {time}&7.'
+      already:
+        war: '&cActualmente tu Land no puede unirse a una guerra. &7La guerra actual necesita terminar primero.'
+        war-defender: '&cLa otra Land está actualmente en una guerra. &7Porfavor intenta de nuevo cuando su conflicto haya finalizado.'
+        declaration: '&cTu Land ya tiene una guerra próxima. &7Puedes revisar en menu de Lands.'
+        declaration-def: '&cLa otra land ya tiene una declaración de guerra. &7Porfavor intenta de nuevo en {time}.'
+      ally: '&cNo puedes declararle la guerra a esta land, Porque es aliado de ustedes. &7Ustedes y la Land objetivo son parte de la misma nación.'
+      success: '&7Tu land&c {attacker} &7le ha declarado satisfactoriamente la guerra a land&a {defender}&7. La guerra va a comenzar en&5 ~{time}&7.'
+      target:
+        land: '&cLand&e {attacker} &cLe declaró la guerra a tu Land&e {defender}&c. &7La guerra va a comenzar en&5 {time}&7.'
+      broadcast: '&7Land&c {attacker} &7declaró la guerra contra land&a {defender}&7. Su guerra comenzará en&5 {time}&7.'
+    info:
+      peace: '&7Todo esta pacífico para&b {land}&7. &7No hay guerras en curso ni declaraciones para esta Land.'
