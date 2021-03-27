@@ -1,3 +1,6 @@
+# Wiki Page (configuration): https://github.com/Angeschossen/Lands/wiki/Wars-Config
+# Explanation for players: https://github.com/Angeschossen/Lands/wiki/Wars
+
 # Enable wars? (Command: /Wars)
 # NOTE: This setting requires server reload / restart.
 enabled: true
@@ -20,7 +23,7 @@ declaration:
   # Should a broadcast message be sent to the whole server?
   # You can edit the message in your language file.
   broadcast: true
-  # Should war declarations need a mutual acception?
+  # Should war declarations need a mutual acceptation?
   # If enabled, the defender land needs to confirm the declaration before the war can start. They need to do this by executing /Wars declare <attacker>
   # They can deny a war declaration by executing /Wars deny
   # NOTE: This setting requires server reload / restart.
@@ -34,18 +37,32 @@ declaration:
 
 # War status message interval. This message appears while the war is running. This is very useful to inform players, which might have been offline for some time, that their land is participating in a war.
 status-interval: 15m
-# Set the max time a war can hold on.
+
+# Set the max time a war can hold on. When this time is over the team with the most kills will win. If both teams have the same amount of kills, it will end in a draw and no team will be rewarded.
 # Default: 1,5 days
 duration: 36h
 
+# Should players, which are engaged in a war, be hidden from dynmap?
+# NOTE: It's currently not possible to do that with BlueMap.
+hide-player: false
+
+# Here you can define a list of commands, which shouldn't get executed while a player is engaged in a war.
+cmd-blacklist: []
+
+# Here you can enable natural flags during a war.
+# List of available land-flags: https://github.com/Angeschossen/Lands/wiki/Land-Flags
+land-flags_list: []
+
 # Allow players doing the following things in the enemy land (only during war).
-# Available actions: https://github.com/Angeschossen/LandsAPI/blob/master/src/main/java/me/angeschossen/lands/api/role/enums/RoleSetting.java
-# NOTE: PLACE_SCAFFOLDING is only available in spigot 1.14.x or higher.
+# Available actions: https://github.com/Angeschossen/Lands/wiki/Roles-and-their-Flags#action-flags
+# NOTE: Adding BLOCK_PLACE or BLOCK_BREAK to this list will allow invaders to break, place ALL blocks. If you want to specify blocks, please use the lists below.
 role-settings_list:
+  - ITEM_PICKUP
   - ATTACK_PLAYER
   - LAND_ENTER
 
 # Allow the placement of specific blocks if the land part of a war.
+# NOTE: This is only needed if BLOCK_PLACE is not in the role-settings_list above.
 # Values: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
 block-place_list:
   - LADDER
@@ -53,6 +70,7 @@ block-place_list:
   - SCAFFOLDING
 
 # Allow breaking of specific blocks if the land part of a war.
+# NOTE: This is only needed if BLOCK_BREAK is NOT in the role-settings_list above.
 # Values: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
 block-break_list:
   - LADDER
