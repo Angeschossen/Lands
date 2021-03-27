@@ -1,0 +1,51 @@
+# This feature is still work in progress. Please report any issues to us via Discord or private message on the forums.
+# Feel free to send us some feedback/suggestions in the Discord server. :)
+
+# Enable nations? (Command: /Nations)
+# NOTE: This setting requires server reload / restart.
+enabled: false
+
+# Customize the creation
+creation:
+  # Set the creation cost
+  costs: 20000.0
+
+# /Nations rename options
+rename:
+  costs_2: 10000.0
+  cooldown: 15m
+
+# Let lands, which are part of a nation pay taxes.
+# If a land is member of a nation they won't pay taxes to the server anymore. Instead
+# they will pay taxes to the nation. To prevent abuse of this, it's recommended enabling nations upkeep,
+# so the nation needs to pay upkeep to the server depending on their size.
+# NOTE: This option is bound to the upkeep option from config.yml. Upkeep needs to be enabled in config.yml.
+taxes:
+  # Set the maximum tax value the nation should be able to set PER CHUNK of their lands?
+  # NOTE: Final payment would be for each land: land size (chunks) * cost
+  max-value: 75.0
+  # Use the configured land upkeep as the minimum amount
+  # Should a land be removed from the nation, if it can't pay the tax?
+  remove-land: true
+  # Set the minimum time between a player's attempt to change the tax for their nation and the time of the next tax.
+  # NOTE: This option should be lower than interval_2 from config.yml (interval of upkeep).
+  change-cooldown: 2d
+
+# Let a nation pay money to the server in order to keep it up.
+upkeep:
+  enabled_4: true
+  # Set the upkeep costs for a nation per chunk
+  cost:  50.0
+  # Should a nation get deleted if it can't pay the upkeep costs?
+  # NOTE: This does not delete any lands.
+  delete-nation: true
+  # Interval of payment
+  # TimeUnits:
+  # Seconds: s
+  # Minutes: m
+  # Hours: h
+  # Days: d
+  interval_2: 15d
+  # Exclude nation from upkeep, if it was recently created?
+  # This excludes nations from their first upkeep payment, if they're younger than x time.
+  nopay-time: 2h
