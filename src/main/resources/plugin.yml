@@ -7,12 +7,13 @@ website: 'https://www.spigotmc.org/resources/53313'
 api-version: '1.13'
 load: POSTWORLD
 
-softdepend: [Vault, dynmap, HolographicDisplays, WorldGuard, WorldEdit, PlaceholderAPI, MythicMobs, Residence, GriefPrevention]
+softdepend: [Vault, dynmap, BlueMap, HolographicDisplays, CMI, WorldGuard, WorldEdit, PlaceholderAPI, MythicMobs, Residence, GriefPrevention, Pl3xMap]
 
 commands:
   lands:
-    aliases: [land, l]
-    description: 'Manage your land.'
+    aliases: [l, land]
+    description: 'Claim your land and manage it in a useful GUI menu.'
+
   claim:
     description: 'Shortcut of /Lands claim'
   assign:
@@ -31,10 +32,13 @@ commands:
     description: 'Shortcut of /Lands view'
   chat:
     description: 'Shortcut of /Lands chat'
-
+  selection:
+    description: 'Shortcut of /Lands selection'
   wars:
-    aliases: [war, w]
     description: 'Lands war command.'
+  nations:
+    description: 'Lands nations command'
+
 
 permissions:
   lands.*:
@@ -57,19 +61,22 @@ permissions:
         description: Set max members in a land
         default: op
       lands.selection.NUMBER:
-        description: Set max chunks in selection (/Lands selection)
+        description: Set max chunks in selection (/Lands selection). Default is 1000.
         default: op
       lands.chunks.max.NUMBER:
-        description: ONLY NEEDED IF OPTION PLAYTIME REWARDS IS ENABLED Set max chunks a player can get through playtime rewards
-        default: op
-      lands.lands.max.NUMBER:
-        description: ONLY NEEDED IF OPTION PLAYTIME REWARDS IS ENABLED Set max lands a player can get through playtime rewards
-        default: op
-      lands.members.max.NUMBER:
-        description: ONLY NEEDED IF OPTION PLAYTIME REWARDS IS ENABLED Set max members the players land can have through playtime rewards
+        description: The player wont be able to get any chunks rewarded if his current lands.chunks.NUMBER permission is equal or higher.
         default: op
       lands.ownlands.max.NUMBER:
-        description: ONLY NEEDED IF OPTION PLAYTIME REWARDS IS ENABLED Set max lands a player can own through playtime rewards
+        description: The player wont be able to get any land creations rewarded if his current lands.ownlands.NUMBER permission is equal or higher.
+        default: op
+      lands.lands.max.NUMBER:
+        description: The player wont be able to get any land joins rewarded if his current lands.lands.NUMBER permission is equal or higher.
+        default: op
+      lands.members.max.NUMBER:
+        description: The player wont be able to get any member limit rewarded if his current lands.members.NUMBER permission is equal or higher.
+        default: op
+      lands.chunks.support.max.NUMBER:
+        description: The player wont be able to get any support chunks rewarded if his current lands.chunks.support.NUMBER permission is equal or higher.
         default: op
       lands.free.*:
         description: Player doesn't need to pay claim and land creation costs
@@ -183,6 +190,10 @@ permissions:
           lands.command.rent:
             description: /Lands rent
             default: op
+            children:
+              lands.command.rent.removeTenant:
+                description: Forcefully remove tenants from their area.
+                default: op
 
 
       lands.bypass.*:
@@ -318,6 +329,13 @@ permissions:
                 description: Bypass chunk-distance option from config.
                 default: op
 
+          lands.bypass.cmd.untrusted.*:
+            description: Bypass blacklisted commands for untrusted players from config.yml. Use lands.bypass.cmd.untrusted.COMMAND to specify a command.
+            default: op
+          lands.bypass.cmd.general.*:
+            description: Bypass blacklisted commands for untrusted and trusted players from config.yml. Use lands.bypass.cmd.general.COMMAND to specify a command.
+            default: op
+
 
       lands.setting.*:
         description: Access to land settings
@@ -346,6 +364,12 @@ permissions:
             default: op
           lands.setting.leaf_decay:
             description: Allow to toggle leaf decay
+            default: op
+          lands.setting.plant_growth:
+            description: Allow to toggle plant growth
+            default: op
+          lands.setting.snow_melt:
+            description: Allow to toggle snow melt
             default: op
 
       lands.role.*:
@@ -538,3 +562,45 @@ permissions:
             description: Access to /Wars menu
             default: op
 
+
+  nations.*:
+    description: Access to all Nations actions
+    default: op
+    children:
+      nations.command.*:
+        description: Access to all Nations commands.
+        default: op
+        children:
+          nations.command.accept:
+            description: /Nations accept
+            default: op
+          nations.command.create:
+            description: /Nations create
+            default: op
+          nations.command.delete:
+            description: /Nations delete
+            default: op
+          nations.command.deny:
+            description: /Nations deny
+            default: op
+          nations.command.leave:
+            description: /Nations leave
+            default: op
+          nations.command.menu:
+            description: /Nations menu
+            default: op
+          nations.command.rename:
+            description: /Nations rename
+            default: op
+          nations.command.setcapital:
+            description: /Nations setcapital
+            default: op
+          nations.command.spawn:
+            description: /Nations spawn
+            default: op
+          nations.command.trust:
+            description: /Nations trust
+            default: op
+          nations.command.untrust:
+            description: /Nations untrust
+            default: op
