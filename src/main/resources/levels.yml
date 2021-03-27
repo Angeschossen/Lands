@@ -1,0 +1,77 @@
+# In this file you can edit/add default land and nation levels.
+# Please note that each config section (level section) name and level name must be unique.
+# You must insert valid YAML format. To verify your format, you can paste the content of this file here: https://yaml-online-parser.appspot.com
+
+# Default land levels. You can also add your own levels.
+# The order of the roles is ascending (lowest level -> highest).
+
+land:
+  # Enable land levels?
+  enabled: true
+  levels:
+    1:
+      # Set the name of the level.
+      name: 'Settlement'
+      # Required members to get this level assigned.
+      members: 0
+      # These values are only active if the land isn't a member of any nation.
+      values:
+        # Modify the chunks amount by x amount. This also supports negative values.
+        chunks: 0
+        # Modify upkeep by x percent. This also supports negative values.
+        upkeep: 0
+    2:
+      name: 'Village'
+      members: 4
+      values:
+        chunks: 1
+        upkeep: 5
+    3:
+      name: 'Town'
+      members: 8
+      values:
+        chunks: 2
+        upkeep: 10
+    4:
+      name: 'City'
+      members: 14
+      values:
+        chunks: 4
+        upkeep: 25
+    5:
+      name: 'Land'
+      members: 24
+      values:
+        chunks: 8
+        upkeep: 30
+
+
+nation:
+  # Enable nation levels?
+  enabled: true
+  levels:
+    1:
+      # Set the name of the level.
+      name: 'Federation'
+      # Required members (total players) to get this level assigned.
+      members: 0
+      values:
+        # Give each land of the nation x amount of additional chunks.
+        chunks: 0
+        # Modify upkeep by x percent. This also supports negative values.
+        # The nation pays the upkeep to the server.
+        upkeep: 0
+    2:
+      name: 'Nation'
+      members: 42
+      values:
+        chunks: 20
+        upkeep: 20
+    3:
+      name: 'Empire'
+      members: 64
+      values:
+        chunks: 30
+        upkeep: 30
+
+
