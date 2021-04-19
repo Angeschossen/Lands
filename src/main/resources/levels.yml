@@ -8,12 +8,16 @@
 land:
   # Enable land levels?
   enabled: true
+  # Here you can edit existing or add new levels.
   levels:
     1:
       # Set the name of the level.
       name: 'Settlement'
-      # Required members to get this level assigned.
-      members: 0
+      requirements:
+        # Required members to get this level assigned.
+        members: 0
+        # Required chunks to get this level assigned.
+        chunks: 0
       # These values are only active if the land isn't a member of any nation.
       values:
         # Modify the chunks amount by x amount. This also supports negative values.
@@ -22,25 +26,33 @@ land:
         upkeep: 0
     2:
       name: 'Village'
-      members: 4
+      requirements:
+        members: 4
+        chunks: 0
       values:
         chunks: 1
         upkeep: 5
     3:
       name: 'Town'
-      members: 8
+      requirements:
+        members: 8
+        chunks: 0
       values:
         chunks: 2
         upkeep: 10
     4:
       name: 'City'
-      members: 14
+      requirements:
+        members: 14
+        chunks: 0
       values:
         chunks: 4
         upkeep: 25
     5:
       name: 'Land'
-      members: 24
+      requirements:
+        members: 24
+        chunks: 0
       values:
         chunks: 8
         upkeep: 30
@@ -49,12 +61,19 @@ land:
 nation:
   # Enable nation levels?
   enabled: true
+  # How should the levels be determinated?
+  # Available: MEMBERS, CHUNKS
+  requirement: 'MEMBERS'
+  # Here you can edit existing or add new levels.
   levels:
     1:
       # Set the name of the level.
       name: 'Federation'
-      # Required members (total players) to get this level assigned.
-      members: 0
+      requirements:
+        # Required members (total players) to get this level assigned.
+        members: 0
+        # Required chunks to get this level assigned.
+        chunks: 0
       values:
         # Give each land of the nation x amount of additional chunks.
         chunks: 0
@@ -63,15 +82,17 @@ nation:
         upkeep: 0
     2:
       name: 'Nation'
-      members: 42
+      requirements:
+        members: 1
+        chunks: 0
       values:
         chunks: 20
         upkeep: 20
     3:
       name: 'Empire'
-      members: 64
+      requirements:
+        members: 64
+        chunks: 0
       values:
         chunks: 30
         upkeep: 30
-
-
