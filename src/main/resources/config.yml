@@ -3,7 +3,7 @@
 
 # If you encounter any issues, please report them
 # to the Discord support server or through a private message.
-# Bugs or problems are usually fixed within a few hours.
+# Bugs or problems are usually fixed at the next update, if you report them.
 # You can ignore the IDs in some setting names (_Number).
 
 
@@ -11,7 +11,7 @@
 general:
   # English (en-US)
   # PRE configured languages:
-  # Please note that these rely on community contributions and my not be up to date.
+  # Please note that these rely on community contributions and may not be up to date.
   # French (fr-FR) by Mina, Kolsark, Kittle
   # German (de-DE) by Cryper
   # Hungarian (hu-HU) by gbalint
@@ -23,7 +23,8 @@ general:
   # Vietnamese (vi-VN) by anhcraft
   # Chinese (zh-CN) by Ruii
   # Taiwanese (zh-TW) by FallingEagle96
-  # Portuguese - Brazil (pt_BR) by Yamamot00 and Splashwax
+  # Portuguese - Brazil (pt-BR) by Yamamot00, Splashwax
+  # Turkish (tr-TR) by SurvivorsDev
   language: 'en-US'
 
   # Date format
@@ -43,16 +44,12 @@ general:
     inbox: 'MM/dd hh'
 
   # Worlds where players should be able to claim.
-  # This setting requires server reload / restart.
+  # NOTE: This setting requires server reload / restart.
+  # This list also supports setting the player claims height per world.
+  # Example: world:30:256 -> this will configure the world 'world' with a claim height from 30 to 256.
+  # NOTE: The claim height of admin lands will always be maxed out.
   claim-worlds_list:
-    - world
-
-  # Should safezones stay in the cache and not be unloaded when no players are around?
-  # NOTE: This is recommended if you use safezones for world spawns.
-  keep-safezone: true
-
-  # Should players be protected from damage caused by monsters in safezones?
-  safezone-invincible: true
+    - 'world'
 
   # Edit the land you're standing in instead of the land from /Lands edit?
   # For /Lands claim you will still need to set the claim land with /Land edit.
@@ -447,7 +444,7 @@ top-lands:
     # Set an item, which should appear over the hologram.
     # You can set this to AIR, if you want to disable this.
     # NOTE: It may take up to two minutes to update the item.
-    item: 'GOLDEN_HELMET'
+    item: 'DIAMOND_HELMET'
   # Exclude lands from being in top lists from players
   # with these UUIDs. Get UID from player name: https://mcuuid.net/
   # NOTE: Changes to this option might take a few minutes to take effect.
@@ -534,6 +531,10 @@ visualization:
     # Duration of land view.
     # Time unit is seconds. You can make this permanent by setting the value to -1
     duration_9: 60
+    # Should the border visualization stay at the initial height (y-block)?
+    # If false: The border will follow the players position up and downwards.
+    # NOTE: This is a default. Players can still toggle it by executing /Lands view stay.
+    y-lock: false
 
   # Should only the corners of AREAS be visualized?
   # NOTE: This does NOT affect LAND borders.
@@ -612,6 +613,10 @@ random-teleport:
   # NOTE: World names are case-sensitive. If you don't enter them correctly, issues might occur.
   wild-worlds_list:
     - world
+
+  # Should permissions for random teleportation be per world based instead of just lands.command.wild?
+  # Example: world 'A': lands.command.wild.a, world 'B': lands.command.wild.b
+  world-perms: false
 
   distance:
     # Max distance from world spawn
@@ -758,7 +763,7 @@ integration:
         # Default colors, if the land name has no color set or from-name option is disabled.
         # Color picker: https://www.google.com/search?q=color+picker
         land_2: '#00ff00'
-        safezone_2: '#ffff00'
+        admin: '#ffff00'
     border:
       # Opactiy of the land border. Needs to be between 0 and 255
       # NOTE: Recommended value for BlueMap, Pl3xMap: 255 Dynmap: 85
@@ -770,4 +775,11 @@ integration:
       # Color picker: https://www.google.com/search?q=color+picker
       color:
         land_3: '#009933'
-        safezone_3: '#ffcc00'
+        admin_2: '#ffcc00'
+
+
+logging:
+  # Should Lands log cancellations of events from the Lands API. This happens if 3rd party plugins cancel these events.
+  # For example they can cancel claiming (/Lands claim), which results in no response from the command (unless they send one).
+  # By having this option enabled, you can always check if a 3rd party plugin cancelled the action.
+  api-events: true
