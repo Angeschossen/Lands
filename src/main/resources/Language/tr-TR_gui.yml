@@ -1,0 +1,3151 @@
+---
+#Resource page: https://www.spigotmc.org/resources/authors/315463/
+#Discord: https://discord.gg/B4MAJVk
+#If you encounter any issues, please report them
+#to discord support server or via pm.
+#Bugs or issues are mostly fixed within hours.
+#Here you can edit the whole GUI.
+#You can set GUI titles, the size and
+#item names, lores, materials and slots.
+#Don't remove any values or keys.
+#You also can add new items to your GUI.
+#This can be done under gui.<GUI>.s.<YourItemName>
+#The name needs to be unique in this section.
+#Example:
+#gui:
+#lands:
+#title: '&8Your Lands'
+#size: 27
+#s:
+#close:
+#name: '&cClose'
+#lore:
+#- '&7Close this menu.'
+#- ' '
+#- '&8- &7You can open it again'
+#- '  &7with &8/&3Lands menu&7.'
+#material: 'RED_STAINED_GLASS_PANE'
+#slot: 9
+#Please note: You need to set all values
+#otherwise Lands will auto generate values.
+#Also you can't set items where list items
+#are configured. Means if for example the
+#list in the Lands GUI goes from slot
+#10 - 12 you can set any items with
+#the slot 10, 11, 12. They will be ignored.
+#You also can apply new placeholders.
+#This can be done under gui.<GUI>.p.<YourItemName>
+#The name needs to be unique in this section.
+#Example:
+#gui:
+#lands:
+#p:
+#placeholder_1:
+#material: 'GRAY_STAINED_GLASS_PANE'
+#from: 1
+#to: 9
+#Please note: You need to set all values
+#otherwise Lands will auto generate values.
+#Also you can't set items where list items
+#are configured. Means if for example the
+#list in the Lands GUI goes from slot
+#10 - 12 you can set any items with
+#the slot 10, 11, 12. They will be ignored.
+#Added enabled: false to a item to disable it.
+#You can set every item as a custom head:
+#Visit /https://minecraft-heads.com/custom-heads
+#Then copy the 'value:' and paste it at 'material:'
+#If you encounter any issues or you simply have
+#some questions, contact me via PM or Discord.
+#Discord: https://discord.gg/B4MAJVk
+general:
+  wYes: '&aEvet'
+  wNo: '&cHayır'
+  none: '&cYok'
+  now: '&aŞimdi'
+  enabled: '&aEtkin'
+  disabled: '&cDevre dışı'
+  unlimited: '&aSınırsız'
+  previous: '&8önceki'
+  offline: '&cÇevrim dışı'
+  all: '&aHerşey'
+  inbox-filter:
+    members: '&eÜyeler'
+    economy: '&cEkonomi'
+    war: '&4Savaş'
+  war:
+    defenders: '&aSavunmacılar'
+    attackers: '&cSaldırganlar'
+    name:
+      land: '&2Arazi '
+      nation: '&9Ulus '
+physical-Item:
+  claim-block:
+    name: '&7Talep Bloğu'
+    lore:
+      - '&7Bu bloğu vahşi doğaya'
+      - '&7yerleştirerek bir parça'
+      - '&7talep edebilirsiniz.'
+      - ' '
+      - '&7Sahibi:&3 {owner}'
+    material: GRASS_BLOCK
+  selection:
+    name: '&eHak Talebi Aracı'
+    lore:
+      - '&7Bir seçim oluşturmak ve üzerinde hak'
+      - '&7talebinde bulunmak için bu aracı kullanın:'
+      - '&8/&3Lands claim'
+    material: GOLDEN_HOE
+skull:
+  area:
+    default: DARK_OAK_FENCE
+    sub: OAK_FENCE
+gui:
+  main:
+    title: '&8Ana Menü'
+    size: 27
+    s:
+      lands:
+        name: '&8> &2Araziler'
+        lore:
+          - '&7Tüm topraklarınızı görüntüleyin.'
+          - ' '
+          - '&8- &7Bu, sadece üye olduğunuz'
+          - '  &7kendi topraklarınızı ve'
+          - '  &7topraklarınızı içerir.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 11
+      all-lands:
+        name: '&8> &9Tüm Araziler'
+        lore:
+          - '&7Bu sunucuda oluşturulan'
+          - '&7tüm arazileri görüntüleyin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
+        slot: 13
+      invites:
+        name: '&8> &6Davetler'
+        lore:
+          - '&7Aldığınız tüm'
+          - '&7davetleri görüntüleyin.'
+        material: WRITABLE_BOOK
+        slot: 15
+      close:
+        name: '&cKapat'
+        lore:
+          - '&7Bu menüyü kapatın.'
+          - ' '
+          - '&8- &7Ana menüyü &8/&3Lands menu main'
+          - '  &7kullanarak tekrar açabilirsiniz.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+        enabled: true
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+    f:
+      limitation:
+        name: '&8> &6Sınırlamalarınız'
+        lore:
+          - ' '
+          - '&7+ &3{ownlands} &7araziler oluşturun.'
+          - '  &8lands.ownlands.NUMBER'
+          - '&7+ Arazi başına&3 {chunks} &7parça talep edin.'
+          - '  &8lands.chunks.NUMBER'
+          - '&7+ Her arazi için&3 {support-chunks} &7parça'
+          - '  &7ile güvendiğiniz arazileri destekleyin.'
+          - '  &8lands.chunks.support.NUMBER'
+          - ' '
+          - '&7+&3 {lands} &7arazilerine katılın.'
+          - '  &8lands.lands.NUMBER'
+          - '&7+ Arazi başına&3 {members} &7üyeye sahip olun.'
+          - '  &8lands.members.NUMBER'
+        material: PLAYER_HEAD
+        slot: 17
+  player_lands:
+    title: '&8Arazileriniz'
+    size: 27
+    s: { }
+    f:
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 25
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    l:
+      object:
+        name: '&2{land}'
+        lore:
+          - '&7Bu araziye güvendin.'
+          - ' '
+          - '&7Parçalar:&3 {chunks} &7/&c {max-chunks}'
+          - ' '
+          - '&9SAĞ TIK'
+          - '&7Bu arazi hakkında bazı'
+          - '&7genel bilgileri'
+          - '&7görüntüleyin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFiNDNiOGMzZDM0ZjEyNWU1YTNmOGI5MmNkNDNkZmQxNGM2MjQwMmMzMzI5ODQ2MWQ0ZDRkN2NlMmQzYWVhIn19fQ==
+        from: 10
+        to: 18
+      own-land:
+        name: '&2{land}'
+        lore:
+          - '&7Bu arazinin sahibisiniz.'
+          - ' '
+          - '&7Parçalar:&3 {chunks} &7/&c {max-chunks}'
+          - ' '
+          - '&9SAĞ TIK'
+          - '&7Bu arazi hakkında bazı'
+          - '&7genel bilgileri'
+          - '&7görüntüleyin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        from: 10
+        to: 18
+      no-land:
+        name: '&cHenüz arazin yok'
+        lore:
+          - '&8- &7Bir arazi oluşturmak için:'
+          - '  &8/&3Lands create &8<&3arazi-adı&8>'
+          - ' '
+          - '&8- &7Diğer arazilerin size güvenmesine izin verin:'
+          - '  &8/&3Lands trust {player}'
+        material: OAK_SIGN
+        from: 10
+        to: 18
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  land:
+    title: '&8{level} {land}'
+    size: 45
+    s:
+      information:
+        name: '&6Bilgi'
+        lore:
+          - '&7Bu satırda araziniz hakkında'
+          - '&7bazı detaylı bilgileri görüntüleyebilirsiniz.'
+          - '&7Bu, ülkenizdeki tüm olayları'
+          - '&7takip etmenize yardımcı'
+          - '&7olur.'
+          - ' '
+          - '&7Başlangıç alanına ışınlanmak'
+          - '&7için bu öğeye tıklayın.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      trusted:
+        name: '&8> &6Güvenilir Oyuncular'
+        lore:
+          - '&7Hangi alanlarda güvenilir olursa'
+          - '&7olsun tüm güvenilir oyuncuların'
+          - '&7bir listesini alın.'
+          - ' '
+          - '&bSHIFT + SOL TIKLAMA'
+          - '&7Tüm arazinin yasaklı'
+          - '&7oyuncularını yönetin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 14
+      invites:
+        name: '&8> &6Davetler'
+        lore:
+          - '&7Gönderilen davetleri iptal edin'
+          - '&7veya sadece onlar hakkında'
+          - '&7bazı bilgileri görüntüleyin.'
+        material: WRITABLE_BOOK
+        slot: 15
+      management:
+        name: '&6Yönetim'
+        lore:
+          - '&7Bu hatta arazinizi yönetebilirsiniz.'
+          - '&7Oyunculara güvenebilir, roller atayabilir, arazi'
+          - '&7bayraklarını düzenleyebilir veya vergileri belirleyebilirsiniz.'
+          - ' '
+          - '&7Başlangıç alanına ışınlanmak'
+          - '&7için bu öğeye tıklayın.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 29
+      various:
+        name: '&8> &6Kozmetik Ayarlar'
+        lore:
+          - '&7Arazi adını düzenleyin'
+          - '&7ve mesajı girin.'
+        material: BEACON
+        slot: 35
+    f:
+      land-settings:
+        name: '&8> &6Arazi Bayrakları'
+        lore:
+          - '&6{area} &7alanının doğal'
+          - '&7bayraklarını düzenleyin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 31
+      roles:
+        name: '&8> &6Roller'
+        lore:
+          - '&7Alanın&6 {area} &7rollerini'
+          - '&7görüntüleyin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 32
+      taxes:
+        name: '&8> &6Vergiler'
+        lore:
+          - '&6{area} &7alanının vergilerini'
+          - '&7görüntüleyin.'
+        material: GOLD_INGOT
+        slot: 33
+      areas:
+        name: '&8> &6Alanlar'
+        lore:
+          - '&7Bu arazinin tüm alanlarını görüntüleyin.'
+          - '&7Ayrıca bu menüde yeni'
+          - '&7alanlar da oluşturabilirsiniz.'
+          - ' '
+          - '&7Alanlar:&3 {areas} &7/&c {max-areas}'
+          - '&7Parçalar:&3 {chunks} &7/&c {max-chunks}'
+        material: OAK_FENCE
+        slot: 13
+      inbox:
+        name: '&8> &6Gelen kutusu &8(&7{amount}&8)'
+        lore:
+          - '&7Gelişmiş görünümü açmak için tıklayın.'
+          - ' '
+          - '&7Alınan mesajlar:'
+          - '{inbox}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
+        slot: 16
+      stats:
+        name: '&8> &6İstatistikler'
+        lore:
+          - '&7Konum: {0}, x={1}, z={2}'
+          - ' '
+          - '&7Ulus: {3}'
+          - '&7Hak talepleri: {4} / {5}'
+          - '&7Üyeler: {6} / {7}'
+          - ' '
+          - '&7Seviye: {8}'
+          - '&7Daha fazla bilgi için tıklayınız.'
+          - ' '
+          - '&7Ekonomi'
+          - '&8- &7Arazi'
+          - '  &7Bakiye: ${9}'
+          - '  &7Sonraki hak talebi maliyeti: ${10}'
+          - '  &c${11} &7için bakım:'
+          - '  &7{12}'
+          - ' '
+          - '&8- &4Sen'
+          - '  &7Bakiye: ${13}'
+          - '  &c${14} &7için vergiler:'
+          - '  &7{15}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
+        slot: 17
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 37
+    a:
+      failure_teleport_permission:
+        name: '&4Reddedildi: &cİzin'
+        lore:
+          - '&cHerhangi bir arazi doğma noktasına'
+          - '&cışınlanmanıza izin verilmez.'
+          - ' '
+          - '&8İzin:'
+          - '&8{permission}'
+      failure_no-spawn:
+        name: '&4Başarısız: &cDoğma noktası ayarlanmadı'
+        lore:
+          - '&7Bu arazide henüz doğma'
+          - '&7noktası yok. Önce bir arazi'
+          - '&7belirmeleri gerekiyor:'
+          - ' '
+          - '&7Arazi doğma noktasını belirlemek'
+          - '&7için &8/&3Lands setspawn &7kullanın.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 45
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 30
+        to: 30
+  land_areas:
+    title: '&8Alanlar'
+    size: 36
+    s: { }
+    f:
+      create:
+        name: '&aAlan Oluştur'
+        lore:
+          - '&7Bu arazi için yeni bir'
+          - '&7alan oluşturun.'
+          - ' '
+          - '&7Mevcut:&3 {areas} &8/&c {max}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
+        slot: 32
+      delete:
+        name: '&cAlanı Sil'
+        lore:
+          - '&7Bu arazinin bir'
+          - '&7alanını silin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 33
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 35
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&6{area}'
+        lore:
+          - '&7Bu alan için'
+          - '&7menüyü açın.'
+          - ' '
+          - '&7Açıklama:'
+          - '{description}'
+        material: OAK_FENCE
+        from: 10
+        to: 27
+      area-setup:
+        name: '&cKurulum:&6 {area}'
+        lore:
+          - '&7Henüz bu bölgeye'
+          - '&7arazi tahsis etmediniz.'
+          - ' '
+          - '&7Arazi seçim, yapmak için &8/&3Lands selection'
+          - '&7kullanın ve ardından &8/&3Lands selection {area}&7,'
+          - '&7ile bu alana arazi atamak'
+          - '&7için kullanın.'
+        material: ACACIA_FENCE
+        from: 10
+        to: 27
+    a:
+      failure_rental:
+        name: '&4Başarısız: &cKiralama'
+        lore:
+          - '&7Bu alanı kiralanırken/satılırken'
+          - '&7düzenleyemezsiniz.'
+          - '&7Kiracı:&3 {player}'
+      failure_untrusted:
+        name: '&4Reddedildi: &cGüvenilir değil'
+        lore:
+          - '&cBu alan için menüyü açmanıza'
+          - '&cizin verilmiyor.'
+          - ' '
+          - '&8- &7Bu alanda'
+          - '  &7güvenilmeniz gerekir.'
+          - '&8- &7Yardım için arazi sahibiyle'
+          - '  &7iletişime geçin.'
+      failure_max-areas:
+        name: '&4Başarısız: &cMaksimum Alanlar'
+        lore:
+          - '&7Bu arazi maksimum'
+          - '&3{max} &7alan sayısına ulaştı.'
+          - ' '
+          - '&8İzin: lands.areas.NUMBER'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  land_claims:
+    title: '&7{land} - Hak Talepleri'
+    size: 36
+    s: { }
+    f:
+      toggle:
+        name: '&7Dünya:&3 {world}'
+        lore:
+          - '&7Dünyayı değiştirmek'
+          - '&7için burayı tıklayın.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
+        slot: 32
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&6Dünya: {world} X: {x} Z: {z}'
+        lore:
+          - '&7Hak talebinde bulunulan: {time} &7önce'
+          - ' '
+          - '&7Işınlamak için tıklayın.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        from: 10
+        to: 27
+    a:
+      failure_cooldown:
+        name: '&4Başarısız: &cSakin ol'
+        lore:
+          - '&7Bunu tekrar yapmadan önce bir {time}'
+          - '&7daha beklemelisin.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  inbox:
+    title: '&8Gelen Kutusu'
+    size: 36
+    f:
+      filter:
+        name: '&8> &6Türe göre filtrele'
+        lore:
+          - '&7Mesaj türleri arasında geçiş yapmak'
+          - '&7için burayı tıklayın.'
+          - ' '
+          - '&7Mevcut:&3 {type}'
+        material: HOPPER
+        slot: 32
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 35
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&8# &7{id}'
+        lore:
+          - '{message}'
+          - ' '
+          - '&7Kaldırmak için tıklayın.'
+        material: PAPER
+        from: 10
+        to: 27
+    a:
+      failure_owner:
+        name: '&4Başarısız: &cErişim Yok'
+        lore:
+          - '&7Bunu yapmana izin yok.'
+          - '&7Yalnızca sahibin mesajları'
+          - '&7kaldırmasına izin verilir.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area:
+    title: '&8Alan {area}'
+    size: 45
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 37
+    s:
+      information:
+        name: '&6Bilgi'
+        lore:
+          - '&7Burada bu alanla ilgili'
+          - '&7bazı ayrıntılı bilgileri görüntüleyebilirsiniz.'
+          - '&7Bu, bu alandaki her şeyi'
+          - '&7takip etmeye yardımcı'
+          - '&7olur.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      trusted:
+        name: '&8> &6Güvenilir Oyuncular'
+        lore:
+          - '&7Bu özel alanda güvenilen tüm'
+          - '&7oyuncuların bir listesini alın.'
+          - ' '
+          - '&bSHIFT + SOL TIKLAMA'
+          - '&7Bu alandaki yasaklı'
+          - '&7oyuncuları yönetin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 13
+      invites:
+        name: '&8> &6Davetler'
+        lore:
+          - '&7Gönderilen davetleri iptal edin'
+          - '&7veya sadece onlar hakkında'
+          - '&7bazı bilgileri görüntüleyin.'
+          - ' '
+          - '&8- &7Bu davetler'
+          - '  &7bu alandaki oyunculara'
+          - '  &7güvenebilir.'
+        material: WRITABLE_BOOK
+        slot: 14
+      management:
+        name: '&6Yönetim'
+        lore:
+          - '&7Buradan bu alanı yönetebilirsiniz. Oyunculara güvenebilir,'
+          - '&7roller atayabilir, arazi bayraklarını düzenleyebilir'
+          - '&7veya bu alan için vergiler belirleyebilirsiniz.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 29
+      land-settings:
+        name: '&8> &6Arazi Bayrakları'
+        lore:
+          - '&7Burada canavar yetiştirme gibi'
+          - '&7doğal bayrakları düzenleyebilirsiniz.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 31
+      roles:
+        name: '&8> &6Roller'
+        lore:
+          - '&7Bu alandaki rolleri görüntüleyin.'
+          - ' '
+          - '&8- &7Global roller bu alana'
+          - '  &7otomatik olarak eklenir.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 32
+      taxes:
+        name: '&8> &6Vergiler'
+        lore:
+          - '&7Bu bölgenin vergilerini görüntüleyin.'
+          - ' '
+          - '&7Alan başına vergiler'
+          - '&7alınır.'
+        material: GOLD_INGOT
+        slot: 33
+      various:
+        name: '&8> &6Çeşitli Ayarlar'
+        lore:
+          - '&7Alan adını ve'
+          - '&7açıklamasını düzenleyin.'
+        material: BEACON
+        slot: 35
+    a:
+      failure_rental:
+        name: '&4Başarısız:&cKiralama'
+        lore:
+          - '&7Bu alan kiralanırken/satılırken'
+          - '&7vergi belirleyemezsiniz.'
+          - '&7Kiracı:&3 {player}'
+      failure_access:
+        name: '&4Başarısız: &cİzin verilmedi'
+        lore:
+          - '&7Bu alanda bunu yapmanıza'
+          - '&7izin verilmiyor.'
+          - ' '
+          - '&8Bayrak: {flag}'
+          - '&8Bypass: {bypass}'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 45
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 30
+        to: 30
+  area_players:
+    title: '&8{area} &7- &8Güvenilir Oyuncular'
+    size: 36
+    l:
+      object_all:
+        name: '&e{player}'
+        lore:
+          - '&7Orta tıklama:'
+          - '&7Daha fazla bilgi alın.'
+          - ' '
+          - '&7Şu alanlarda güvenilir:'
+          - '{areas}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      object:
+        name: '&e{player}'
+        lore:
+          - '&7Rol: {role}'
+          - ' '
+          - '&bSOL TIK'
+          - '&7▲ Yükselt'
+          - ' '
+          - '&9SAĞ TIK'
+          - '&7▼ Düşür'
+          - ' '
+          - '&7Orta tıklama:'
+          - '&7Daha fazla bilgi'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    a:
+      failure_priority:
+        name: '&4Başarısız: &cRol Önceliği'
+        lore:
+          - '&7Bu rolün ayarlarını düzenlemenize'
+          - '&7izin verilmiyor.'
+          - '&7Sizinkinden daha yüksek'
+          - '&7bir önceliğe sahip veya siz'
+          - '&7bu rolün bir üyesisiniz.'
+          - ' '
+          - '&8Bypass: {bypass}'
+      noaccess_setrole:
+        name: '&4Başarısız: &cİzin verilmedi'
+        lore:
+          - '&7Bunu yapmana izin yok.'
+          - '&7Arazi sahibi bunu yapmanıza'
+          - '&7izin verebilir.'
+      failure_max-players:
+        name: '&4Başarısız: &cMaksimum güvenilen Oyuncu'
+        lore:
+          - '&7Bu arazi maksimum'
+          - '&3{max} &7üye sayısına ulaştı.'
+          - ' '
+          - '&8İzin: lands.members.NUMBER'
+    f:
+      toggle:
+        name: '&8> &6Yalnızca Alanı Görüntüle'
+        lore:
+          - '&7Yalnızca bu alanda'
+          - '&8(&6{area}&8) &7güvenilen oyuncular'
+          - '&7gösterilsin mi?'
+          - ' '
+          - '&7Devre dışı bırakılırsa:'
+          - '&7Tüm arazinin oyuncularını görüntüler.'
+          - '&7Ayrıca tüm arazi oyunculara'
+          - '&7güvenmenize / güvenmemenize'
+          - '&7izin verir.'
+          - ' '
+          - '&7Mevcut: {current}'
+        material: HOPPER
+        slot: 32
+      trust:
+        name: '&8> &aOyuncuya Güven'
+        lore:
+          - '&7Bu alandaki bir oyuncuya'
+          - '&7güvenmek için burayı tıklayın.'
+          - ' '
+          - '&7Mevcut:&3 {players} &8/&c {max}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
+        slot: 31
+      untrust:
+        name: '&8> &cGüvenilmez Oyuncu'
+        lore:
+          - '&7Bu alandaki bir oyuncuya'
+          - '&7güvenmemek için burayı tıklayın.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 33
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 29
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 35
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area_banned:
+    title: '&8{area} &7- &8Yasaklı Oyuncular'
+    size: 36
+    l:
+      object_all:
+        name: '&e{player}'
+        lore:
+          - '&7Bu alanlarda yasaklandı:'
+          - '{areas}'
+          - ' '
+          - '&7Orta tıklama:'
+          - '&7Daha fazla bilgi alın.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      object:
+        name: '&e{player}'
+        lore:
+          - '&7Oyuncu bu alanda'
+          - '&7yasaklanmıştır.'
+          - ' '
+          - '&7Orta tıklama:'
+          - '&7Daha fazla bilgi alın.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    f:
+      toggle:
+        name: '&8> &6Yalnızca Alanı Görüntüle'
+        lore:
+          - '&7Yalnızca bu alanda'
+          - '&8(&6{area}&8) &7yasaklanmış oyuncular'
+          - '&7gösterilsin mi?'
+          - ' '
+          - '&7Devre dışı bırakılmışsa:'
+          - '&7Tüm arazinin yasaklarını görüntüler.'
+          - '&7Ayrıca tüm arazi'
+          - '&7oyuncuları banlamanıza/engellemenize'
+          - '&7izin verir.'
+          - ' '
+          - '&7Mevcut: {current}'
+        material: HOPPER
+        slot: 32
+      ban:
+        name: '&8> &cOyuncuyu Yasakla'
+        lore:
+          - '&7Bu alandaki bir oyuncuyu'
+          - '&7yasaklamak için buraya tıklayın.'
+          - ' '
+          - '&7Yasaklanan oyuncular'
+          - '&7içeri giremez veya'
+          - '&7ışınlanamaz.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 31
+      unban:
+        name: '&8> &aOyuncunun Yasağını Kaldır'
+        lore:
+          - '&7Bu alandaki bir oyuncunun'
+          - '&7yasağını kaldırmak için burayı tıklayın.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
+        slot: 33
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 29
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 35
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area_invites:
+    title: '&8{area} &7- &8Davetler'
+    size: 36
+    f:
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&e{player}'
+        lore:
+          - '&7Bu daveti iptal edin veya'
+          - '&7sadece bilgileri görüntüleyin.'
+          - ' '
+          - '&7Bu davet onlara'
+          - '&6{area} &7alanına güvenecek.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      object_land:
+        name: '&e{player}'
+        lore:
+          - '&7Bu daveti iptal edin veya'
+          - '&7sadece bilgileri görüntüleyin.'
+          - ' '
+          - '&7Bu davet, oyuncunun tüm'
+          - '&7araziye güvenmesini'
+          - '&7sağlayacaktır.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      no-invite:
+        name: '&cDavet gönderilmedi'
+        lore:
+          - '&7Araziniz henüz'
+          - '&7davet göndermedi.'
+          - ' '
+          - '&7Üyeler menüsünden'
+          - '&7davet gönderebilirsiniz.'
+        material: OAK_SIGN
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  area_invite:
+    title: '&8{player} Davet et'
+    size: 27
+    s:
+      revoke:
+        name: '&8> &cDaveti İptal Et'
+        lore:
+          - '&7Bu daveti iptal etmek için'
+          - '&7burayı tıklayın.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 12
+    f:
+      info:
+        name: '&8> &6Bilgi'
+        lore:
+          - '&7Onlara&6 {area}'
+          - '&7alanına güveniyor.'
+          - ' '
+          - '&7Gönderildi:&5 {time}'
+          - '&7Gönderen: {sender}'
+        material: OAK_SIGN
+        slot: 16
+      info_land:
+        name: '&8> &6Bilgi'
+        lore:
+          - '&7Onlara tüm&6 {area}'
+          - '&7arazisine güveniyor.'
+          - ' '
+          - '&7Gönderildi:&5 {time}'
+          - '&7Gönderen: {sender}'
+        material: OAK_SIGN
+        slot: 16
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      failure_noAccess:
+        name: '&4Reddedildi: &bDaveti İptal Et'
+        lore:
+          - '&cBu alandaki davetleri'
+          - '&cgeri almanıza izin'
+          - '&cverilmiyor.'
+          - ' '
+          - '&8- &7Bu alandaki oyunculara'
+          - '  &7güvenmemek için izne ihtiyacınız'
+          - '  &7var.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  area_roles:
+    title: '&8{area} &7- &8Roller'
+    size: 27
+    l:
+      object:
+        name: '&7{role}'
+        lore:
+          - '&7Bu rolü düzenlemek için burayı tıklayın.'
+          - ' '
+          - '&bSHIFT + SOL TIKLAMA'
+          - '&7Daha yüksek öncelik'
+          - ' '
+          - '&9SHIFT + SAĞ TIKLAMA'
+          - '&7Daha düşük öncelik'
+        material: PLAYER_HEAD
+        from: 10
+        to: 18
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 26
+      create:
+        name: '&8> &aRol Oluşturun'
+        lore:
+          - '&7Yeni bir rol oluşturmak'
+          - '&7için burayı tıklayın.'
+          - ' '
+          - '&7Mevcut:&3 {roles} &8/&c {max}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
+        slot: 23
+      delete:
+        name: '&cRolü Sil'
+        lore:
+          - '&7Bu alanın bir'
+          - '&7rolünü silin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 24
+    a:
+      failure_max-roles:
+        name: '&4Başarısız: &cMaksimum Roller'
+        lore:
+          - '&7Bu arazi maksimum'
+          - '&3{max} &7rol sayısına ulaştı.'
+          - ' '
+          - '&8İzin: {permission}'
+      failure_priority:
+        name: '&4Başarısız: &cRol Önceliği'
+        lore:
+          - '&7Bu rolün ayarlarını düzenlemenize'
+          - '&7izin verilmiyor.'
+          - '&7Sizinkinden daha yüksek'
+          - '&7bir önceliğe sahip veya'
+          - '&7siz bu rolün bir üyesisiniz.'
+          - ' '
+          - '&8Bypass: {bypass}'
+      failure_access:
+        name: '&4Başarısız: &cİzin verilmedi'
+        lore:
+          - '&7Bu alandaki rolleri düzenlemenize'
+          - '&7izin verilmiyor.'
+          - ' '
+          - '&8Bypass: {bypass}'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  role:
+    title: '&8{role}'
+    size: 36
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      icon:
+        name: '&8> &6Simge'
+        lore:
+          - '&7Bu rol simgesini değiştirmek'
+          - '&7için burayı tıklayın.'
+        material: STONE
+        slot: 14
+      name:
+        name: '&8> &6Adını değiştir'
+        lore:
+          - '&7Bu rolü yeniden adlandırın.'
+          - '&7Mevcut: {name}'
+        material: NAME_TAG
+        slot: 15
+      apply:
+        name: '&8> &6Yeni Alanlara Üye Ekleyin'
+        lore:
+          - '&7Bu rolün üyeleri bu rolle'
+          - '&7yeni alanlara otomatik'
+          - '&7olarak eklenmeli mi?'
+          - ' '
+          - '&7Mevcut: {apply}'
+        material: OAK_FENCE
+        slot: 24
+    s:
+      information:
+        name: '&6Bilgi'
+        lore:
+          - '&7Bu rolle ilgili bazı'
+          - '&7bilgileri görüntüleyin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      members:
+        name: '&8> &6Rol Üyeleri'
+        lore:
+          - '&7Tüm rol üyelerini görüntüleyin.'
+        material: PLAYER_HEAD
+        slot: 13
+      management_info:
+        name: '&6Rol Bayraklarını Değiştir'
+        lore:
+          - '&7İki tür bayrak vardır:'
+          - '  &7&nEylem: &7Bunlar blok kırma vb.'
+          - '  &7Gibi fiziksel eylemlerdir.'
+          - '  &7&nYönetim: &7Bunlar, oyunculara güvenme,'
+          - '  &7hak iddia etme vb. Gibi yönetici bayraklarıdır.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 20
+      settings:
+        name: '&8> &6Eylem Bayrakları'
+        lore:
+          - '&7Blok kırma vb.'
+          - '&7Gibi eylem bayraklarını değiştirin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM2YjgyMWMxYWZkZDVhNWQxNGUzYjNiZDBhMzIyNjNjOGRmNWRmNWRiNmUxZTg4YmY2NWU5N2IyN2E4NTMwIn19fQ==
+        slot: 22
+      management:
+        name: '&8> &6Yönetim Bayrakları'
+        lore:
+          - '&7Oyunculara güvenmek, hak iddia etmek vb.'
+          - '&7Gibi yönetici bayraklarını değiştirin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZkOTZlYWM1YTcwMTY4NDM3Y2NmZmFlZTBlN2ZjNWFjNWMwMjJmNDI5ZTNlZDkyOWNkNTE4OTRhMmRkNmQ4In19fQ==
+        slot: 23
+    a:
+      failure_owner:
+        name: '&cSahibi düzenlenemez'
+        lore:
+          - '&7Sahipler kendi bayraklarını'
+          - '&7düzenleyemez. Bu yalnızca sunucu'
+          - '&7yöneticileri tarafından kontrol'
+          - '&7edilebilir.'
+      no-item:
+        name: '&cElinizde bir eşya yok'
+        lore:
+          - '&7Ana elinizde bir eşyaya'
+          - '&7ihtiyacınız var.'
+      failure_access:
+        name: '&4Başarısız: &cİzin verilmedi'
+        lore:
+          - '&7Bu alandaki rolleri düzenlemenize'
+          - '&7izin verilmiyor.'
+          - ' '
+          - '&8Bypass: {bypass}'
+      failure_priority:
+        name: '&4Başarısız: &cRol Önceliği'
+        lore:
+          - '&7Bu rolün ayarlarını düzenlemenize'
+          - '&7izin verilmiyor.'
+          - '&7Sizinkinden daha yüksek'
+          - '&7bir önceliğe sahip veya'
+          - '&7siz bu rolün bir üyesisiniz.'
+          - ' '
+          - '&8Bypass: {bypass}'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 36
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 21
+        to: 21
+  role_players:
+    title: '&8{role} &7- &8Oyuncular'
+    size: 36
+    l:
+      object:
+        name: '&e{player}'
+        lore:
+          - '&7Bu oyuncu arazinizi&a {support}'
+          - '&7ek hak talebiyle destekliyor.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 35
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  role_settings:
+    title: '&8{role} &7- &8Bayraklar'
+    size: 36
+    s: { }
+    f:
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      general:
+        name: '&6{flag}'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Açıklama:'
+          - '{desc}'
+        material: NAME_TAG
+        from: 10
+        to: 27
+      block_break:
+        name: '&6Blokları Kırma'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün blokları kırmasına'
+          - '&7izin verilsin mi?'
+        material: IRON_PICKAXE
+        from: 10
+        to: 27
+      block_place:
+        name: '&6Blokları Yerleştirme'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün bloklar yerleştirmesine'
+          - '&7izin verilsin mi?'
+        material: OAK_PLANKS
+        from: 10
+        to: 27
+      block_ignite:
+        name: '&6Blokları Ateşleme'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün blokları ateşlemesine'
+          - '&7izin verilsin mi?'
+        material: FLINT_AND_STEEL
+        from: 10
+        to: 27
+      interact_general:
+        name: '&6Genel Etkileşim'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün etkileşim kurmasına'
+          - '&7izin verilsin mi?'
+        material: STRING
+        from: 10
+        to: 27
+      interact_door:
+        name: '&6Kapıları aç'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün kapıları açmasına'
+          - '&7izin verilsin mi?'
+        material: IRON_DOOR
+        from: 10
+        to: 27
+      interact_container:
+        name: '&6Konteynerleri Aç'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün kapsayıcıları açmasına'
+          - '&7izin verilsin mi?'
+        material: CHEST
+        from: 10
+        to: 27
+      interact_mechanism:
+        name: '&6Kızıl taş kullanımı'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün şalter vb.'
+          - '&7Kullanmasına izin verilsin mi.?'
+        material: REDSTONE
+        from: 10
+        to: 27
+      interact_villager:
+        name: '&6Köylülerle Ticaret'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün köylülerle ticaret'
+          - '&7yapmasına izin verilsin mi?'
+        material: EMERALD
+        from: 10
+        to: 27
+      attack_player:
+        name: '&6Oyunculara Saldırı'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün oyunculara'
+          - '&7saldırmasına izin verilsin mi?'
+          - ' '
+          - '&8- &7Lütfen unutmayın ki, eğer bir'
+          - '  &7oyuncu arazi dışında başka bir'
+          - '  &7oyuncuya saldırırsa, savaş günlüğü'
+          - '  &7nedeniyle araziniz içinde savaşmanız'
+          - '  &7mümkün olabilir.'
+          - ' '
+          - '&8- &7Sadece kendilerine'
+          - '  &7saldırabilecek oyunculara'
+          - '  &7saldırabilirler.'
+        material: IRON_SWORD
+        from: 10
+        to: 27
+      attack_animal:
+        name: '&6Hayvanlara Saldırı'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün hayvanlara'
+          - '&7saldırmasına izin verilsin mi?'
+        material: BOW
+        from: 10
+        to: 27
+      attack_monster:
+        name: '&6Canavarlara Saldırı'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün canavarlara'
+          - '&7saldırmasına izin verilsin mi?'
+          - ' '
+          - '&8- &7Devre dışı bırakılırsa,'
+          - '  &7canavarlar da onlara'
+          - '  &7saldıramaz.'
+        material: ZOMBIE_HEAD
+        from: 10
+        to: 27
+      vehicle_use:
+        name: '&6Vagonları Kullan'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün vagonları'
+          - '&7kullanmasına izin verilsin mi?'
+        material: MINECART
+        from: 10
+        to: 27
+      fly:
+        name: '&6Uçma'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün &8/&3Fly'
+          - '&7kullanmasına izin verilsin mi?'
+        material: FEATHER
+        from: 10
+        to: 27
+      land_enter:
+        name: '&6Bu Alana Girin'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün bu alana'
+          - '&7girmesine izin verilsin mi?'
+        material: OAK_FENCE_GATE
+        from: 10
+        to: 27
+      item_pickup:
+        name: '&6Eşyaları Toplama'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün yerdeki eşyaları'
+          - '&7toplamasına izin verilsin mi?'
+        material: HOPPER
+        from: 10
+        to: 27
+      ender_pearl:
+        name: '&6Ender İncileri Kullanın'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Ender inciler ve koro meyveleri'
+          - '&7kullanarak bu rolün'
+          - '&7arazinizde ışınlanmasına'
+          - '&7izin verin?'
+        material: ENDER_PEARL
+        from: 10
+        to: 27
+      area_assign:
+        name: '&6Alan Ata'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün alanlar yaratmasına ve ona'
+          - '&7arazi tahsis etmesine izin verilsin mi?'
+        material: OAK_FENCE
+        from: 10
+        to: 27
+      player_trust:
+        name: '&6Oyunculara Güven'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün diğer oyunculara'
+          - '&7güvenmesine izin verilsin mi?'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
+        from: 10
+        to: 27
+      player_setrole:
+        name: '&6Rolleri Ayarla'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün oyuncular için rol'
+          - '&7belirlemesine izin verilsin mi?'
+          - ' '
+          - '&8- &7Kendilerininkinden daha'
+          - '  &7yüksek önceliğe sahip'
+          - '  &7rolleri düzenleyemezler.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjNmY3NzVlOGFjZmRmNmUxZGVhYzgwYThkYTFmMzdiM2I0YmE1Y2FhNGEzNTI0OWY5ZWIxNDVjY2Y0M2RhNSJ9fX0=
+        from: 10
+        to: 27
+      player_untrust:
+        name: '&6Güvenilmeyen Oyuncular'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu role güvenmeyen oyunculara'
+          - '&7izin verilsin mi?'
+          - ' '
+          - '&8- &7Daha yüksek bir role'
+          - '  &7sahip oyunculara'
+          - '  &7güvenemeyecekler.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        from: 10
+        to: 27
+      player_ban:
+        name: '&6Yasakları Yönet'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün oyuncuları yasaklamasına veya'
+          - '&7engellemesini kaldırmasına izin verilsin mi?'
+          - ' '
+          - '&8- &7Daha yüksek bir role'
+          - '  &7sahip oyuncuları'
+          - '  &7yasaklayamazlar.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2VkMWFiYTczZjYzOWY0YmM0MmJkNDgxOTZjNzE1MTk3YmUyNzEyYzNiOTYyYzk3ZWJmOWU5ZWQ4ZWZhMDI1In19fQ==
+        from: 10
+        to: 27
+      setting_edit_land:
+        name: '&6Arazi Bayraklarını Düzenle'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün arazi bayraklarını'
+          - '&7düzenlemesine izin verilsin mi?'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        from: 10
+        to: 27
+      setting_edit_various:
+        name: '&6Çeşitli Ayarları düzenleyin'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün arazi / alan adı gibi'
+          - '&7çeşitli ayarları düzenlemesine'
+          - '&7izin verilsin mi?'
+        material: NAME_TAG
+        from: 10
+        to: 27
+      setting_edit_role:
+        name: '&6Rol Bayraklarını Düzenle'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün rol ayarlarını düzenlemesine'
+          - '&7ve yeni roller oluşturmasına'
+          - '&7izin verilsin mi?'
+          - ' '
+          - '&8- &7Kendi rol'
+          - '  &7bayraklarını'
+          - '  &7düzenleyemezler.'
+          - ' '
+          - '&8- &7Bu izni yalnızca'
+          - '  &7çok güvenilir oyunculara'
+          - '  &7vermelisiniz.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        from: 10
+        to: 27
+      war_manage:
+        name: '&6Savaşı Yönet'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün araziniz için savaş'
+          - '&7ilan etmesine ve yönetmesine'
+          - '&7izin verilsin mi?'
+        material: IRON_SWORD
+        from: 10
+        to: 27
+      setting_edit_taxes:
+        name: '&6Vergileri Düzenle'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün vergileri düzenlemesine'
+          - '&7izin verilsin mi?'
+          - ' '
+          - '&8- &7Bu izni yalnızca'
+          - '  &7çok güvenilir oyunculara'
+          - '  &7vermelisiniz.'
+        material: GOLD_INGOT
+        from: 10
+        to: 27
+      land_claim:
+        name: '&6Hak talebinde bulun ve talep etmekten vazgeç'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün bu arazilerden bir parça talep'
+          - '&7etmesine ve ayrıca hak talebinde'
+          - '&7bulunmasına izin verilsin mi?'
+        material: IRON_SHOVEL
+        from: 10
+        to: 27
+      land_claim_border:
+        name: '&6Sınırda Arazi Talep Edin'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün doğrudan'
+          - '&7sınırınızdaki araziler için'
+          - '&7parça talep etmesine'
+          - '&7izin verilsin mi?'
+        material: IRON_BARS
+        from: 10
+        to: 27
+      spawn_set:
+        name: '&6Doğuşu Ayarla'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün arazi doğma noktasını'
+          - '&7düzenlemesine izin verilsin mi?'
+        material: ENDER_EYE
+        from: 10
+        to: 27
+      spawn_teleport:
+        name: '&6Doğmaya Işınlanma'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün doğma noktasına'
+          - '&7ışınlanmasına izin verilsin mi?'
+        material: ENDER_EYE
+        from: 10
+        to: 27
+      balance_withdraw:
+        name: '&6Emlak Bankasından Para Çekme'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bu rolün emlak bankasından'
+          - '&7para çekmesine'
+          - '&7izin verilsin mi?'
+          - ' '
+          - '&8- &7Komut:'
+          - '  &8/&3Lands withdraw'
+        material: GOLD_NUGGET
+        from: 10
+        to: 27
+    a:
+      failure_permission:
+        name: '&4Başarısız: &cİzin verilmedi'
+        lore:
+          - '&7Bu bayrağı değiştirmenize'
+          - '&7izin verilmiyor.'
+          - ' '
+          - '&8İzin'
+          - '&8{permission}'
+      failure_access:
+        name: '&4Başarısız: &cİzin verilmedi'
+        lore:
+          - '&7Bu alandaki rolleri düzenlemenize'
+          - '&7izin verilmiyor.'
+          - ' '
+          - '&8Bypass: {bypass}'
+      failure_priority:
+        name: '&4Başarısız: &cRol Önceliği'
+        lore:
+          - '&7Bu rolün ayarlarını düzenlemenize'
+          - '&7izin verilmiyor.'
+          - '&7Sizinkinden daha yüksek'
+          - '&7bir önceliğe sahip veya'
+          - '&7siz bu rolün bir üyesisiniz.'
+          - ' '
+          - '&8Bypass: {bypass}'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area_settings:
+    title: '&8{area} &7- &8Arazi Bayrakları'
+    size: 36
+    s: { }
+    f:
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      general:
+        name: '&6{flag}'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Açıklama:'
+          - '{desc}'
+        material: NAME_TAG
+        from: 10
+        to: 27
+      entity_griefing:
+        name: '&6Creeper patlaması'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Creeper blokların patlamasına'
+          - '&7izin verilsin mi?'
+          - ' '
+          - '&8Etkinleştirilirse:'
+          - '&8Varlıklar binalarınızı'
+          - '&8yok edebilir.'
+        material: CREEPER_HEAD
+        from: 10
+        to: 27
+      tnt_griefing:
+        name: '&6TNT Blok Hasarı'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7TNT bloklarının bloklara zarar'
+          - '&7vermesine izin verilsin mi?'
+          - ' '
+          - '&8Etkinleştirilirse: Oyuncular'
+          - '&8TNT''yi patlatmak için arazinize'
+          - '&8atabilecekler.'
+        material: TNT
+        from: 10
+        to: 27
+      piston_griefing:
+        name: '&6Vahşi Pistonlar'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Pistonların vahşi doğadan arazinize'
+          - '&7girmesine izin verilsin mi?'
+          - ' '
+          - '&8Etkinleştirilirse: Oyuncular,'
+          - '&8vahşi doğadan pistonlar kullanarak'
+          - '&8arazinizden blok çekebilirler.'
+        material: PISTON
+        from: 10
+        to: 27
+      waterflow_allow:
+        name: '&6Su akışı'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Vahşi doğadan veya diğer'
+          - '&7hak taleplerinden gelen suyun'
+          - '&7arazinize akmasına izin verin?'
+          - ' '
+          - '&8Etkinleştirilirse: Oyuncular,'
+          - '&8arazinizi vahşi doğadan bozmak'
+          - '&8için su kullanabilecekler.'
+        material: WATER_BUCKET
+        from: 10
+        to: 27
+      monster_spawn:
+        name: '&6Canavar Doğması'
+        lore:
+          - '&7Status: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Canavarların ortaya'
+          - '&7çıkmasına izin verilsin mi?'
+          - ' '
+          - '&8Çıkma yerleri bu'
+          - '&8ayardan etkilenmez.'
+        material: SPAWNER
+        from: 10
+        to: 27
+      animal_spawn:
+        name: '&6Hayvan Doğma'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Hayvanların doğmasına'
+          - '&7izin verilsin mi?'
+          - ' '
+          - '&8Doğma yerleri bu'
+          - '&8ayardan etkilenmez.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19
+        from: 10
+        to: 27
+      fire_spread:
+        name: '&6Ateş Yayılması'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Arazinizin içinde ateşin'
+          - '&7yayılmasına izin verilsin mi?'
+          - ' '
+          - '&8Vahşi doğadan gelen'
+          - '&8ateş arazinize giremez.'
+        material: FLINT_AND_STEEL
+        from: 10
+        to: 27
+      leaf_decay:
+        name: '&6Yaprak Çürümesi'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Arazinizde yapraklar'
+          - '&7çürümeli mi?'
+        material: OAK_LEAVES
+        from: 10
+        to: 27
+      plant_growth:
+        name: '&6Bitki Büyümesi'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Bitkiler büyüyebilmeli mi?'
+        material: VINE
+        from: 10
+        to: 27
+      snow_melt:
+        name: '&6Kar erimesi'
+        lore:
+          - '&7Durum: {enabled}'
+          - '&7Kilitsiz: {unlocked}'
+          - ' '
+          - '&7Kar ve buz erimeli mi?'
+        material: SNOWBALL
+        from: 10
+        to: 27
+    a:
+      failure_permission:
+        name: '&4Başarısız: &cİzin verilmedi'
+        lore:
+          - '&7Bu ayarı düzenlemenize'
+          - '&7izin verilmiyor.'
+          - ' '
+          - '&8İzin:'
+          - '&8{permission}'
+      failure_priority:
+        name: '&4Başarısız: &cRol Önceliği'
+        lore:
+          - '&7Bu alandaki rolleri düzenlemenize'
+          - '&7izin verilmiyor.'
+          - '&7Sizinkinden daha yüksek'
+          - '&7bir önceliğe sahip veya'
+          - '&7siz bu rolün bir üyesisiniz.'
+          - ' '
+          - '&8Bypass: {bypass}'
+      failure_access:
+        name: '&4Başarısız: &cİzin verilmedi'
+        lore:
+          - '&7Bu alandaki rolleri düzenlemenize'
+          - '&7izin verilmiyor.'
+          - ' '
+          - '&8Bypass: {bypass}'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  taxes:
+    title: '&8{holder} &7- &8Vergiler'
+    size: 27
+    s:
+      plus-1:
+        name: '&aEkle $1'
+        lore:
+          - '&7Vergi değerine'
+          - '&7$1 ekleyin.'
+        material: GLOWSTONE_DUST
+        slot: 11
+        data:
+          value: 1.0
+      plus-2:
+        name: '&aEkle $50'
+        lore:
+          - '&7Vergi değerine'
+          - '&7$50 ekleyin.'
+        material: GLOWSTONE_DUST
+        slot: 12
+        data:
+          value: 50.0
+      plus-3:
+        name: '&aEkle $500'
+        lore:
+          - '&7Vergi değerine'
+          - '&7$500 ekleyin.'
+        material: GLOWSTONE_DUST
+        slot: 13
+        data:
+          value: 500.0
+      minus-3:
+        name: '&cKaldır $500'
+        lore:
+          - '&7$500''ı vergi'
+          - '&7değerinden kaldırın.'
+        material: REDSTONE
+        slot: 15
+        data:
+          value: 500.0
+      minus-2:
+        name: '&cKaldır $50'
+        lore:
+          - '&7$50''ı vergi'
+          - '&7değerinden kaldırın.'
+        material: REDSTONE
+        slot: 16
+        data:
+          value: 50.0
+      minus-1:
+        name: '&cKaldır $1'
+        lore:
+          - '&7$1''ı vergi'
+          - '&7değerinden kaldırın.'
+        material: REDSTONE
+        slot: 17
+        data:
+          value: 1.0
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      tax_area:
+        name: '&7Vergi:&c ${tax}'
+        lore:
+          - ' '
+          - '&5{time} &7içinde araziniz bu'
+          - '&7alandaki güvenilir üyelerden'
+          - '&7vergi olarak&a ${revenue} &7alacak.'
+          - ' '
+          - '&8- &7Oyuncular yalnızca'
+          - '  &7güvendikleri alanlar için'
+          - '  &7vergi ödüyorlar.'
+        material: GOLD_INGOT
+        slot: 14
+      tax_nation:
+        name: '&7Vergi:&c ${tax}'
+        lore:
+          - ' '
+          - '&5{time} &7içinde ulusunuz bu'
+          - '&7ulustaki arazilerden vergi'
+          - '&7olarak&a ${revenue} &7alacak.'
+          - ' '
+          - '&7Bu değer, parça başına vergiyi belirler.'
+          - '&7Yani daha büyük arazilerin daha'
+          - '&7fazla ödeme yapması gerekecek.'
+        material: GOLD_INGOT
+        slot: 14
+    a:
+      failure_maxValue:
+        name: '&4Maksimum Değere ulaşıldı'
+        lore:
+          - '&7Vergi değerini&3 {max}'
+          - '&7üzerinde ayarlayamazsınız.'
+          - ' '
+          - '&7Bir sunucu yöneticisi bunu'
+          - '&7yapılandırmada değiştirebilir.'
+      failure_cooldown:
+        name: '&4Sakin ol:&c Beklemeniz gerekiyor.'
+        lore:
+          - '&7Şu anda vergi değerini'
+          - '&7değiştiremezsiniz.'
+          - '&5{time} &7beklemelisin.'
+          - ' '
+          - '&7Bir yönetici bunu config''de'
+          - '&7değiştirebilir.'
+      failure_noaccess:
+        name: '&4Başarısız: &cErişim Yok'
+        lore:
+          - '&7Bu alanın vergilerini düzenlemenize'
+          - '&7izin verilmiyor.'
+          - ' '
+          - '&8- &7Arazi sahibinden bunu'
+          - '  &7yapmak için izniniz yok.'
+          - ' '
+          - '&8Ayar: {setting}'
+          - '&8Bypass izin:'
+          - '&8lands.admin.setting_edit_taxes'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  action-confirm:
+    title: '&8Lütfen bu Eylemi onaylayın'
+    size: 27
+    s:
+      info:
+        name: '&8> &6Bu Eylemi Onaylayın'
+        lore:
+          - ' '
+          - '&7Onaylamak için &aOnayla&7''yı veya bu'
+          - '&7eylemi iptal etmek için &cİptal&7''i tıklayın.'
+        material: OAK_SIGN
+        slot: 14
+    l:
+      yes_surrender:
+        name: '&aOnayla'
+        lore:
+          - '&7Bu eylemi onaylayın.'
+          - ' '
+          - '&cNOT: &7Arazinizin teslim'
+          - '&7olmak için bir haraç'
+          - '&7ödemesi gerekebilir.'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      no_surrender:
+        name: '&cİptal'
+        lore:
+          - '&7Bu eylemi iptal edin.'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  player_invites:
+    title: '&8Alınan Davetler'
+    size: 36
+    s: { }
+    f:
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya dön:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&6{land}'
+        lore:
+          - '&7Bu daveti reddedin veya'
+          - '&7bazı bilgileri görüntüleyin.'
+        material: BOOK
+        from: 10
+        to: 27
+      no-invite:
+        name: '&cHiç Davet alınmadı'
+        lore:
+          - '&7Henüz alınmış'
+          - '&7bir davet yok.'
+          - ' '
+          - '&8- &7Oyuncular şunları'
+          - '  &7yaparak sizi davet edebilir:'
+          - '  &8/&3Lands trust {player}'
+        material: OAK_SIGN
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  player_invite:
+    title: '&8{land} Davet et'
+    size: 27
+    f:
+      info:
+        name: '&8> &6Bilgi'
+        lore:
+          - '&7Alan:&6 {area}'
+          - '&7Arazi: {land}'
+          - ' '
+          - '&7Alınan:&5 {time}'
+          - '&7Gönderen: {sender}'
+        material: OAK_SIGN
+        slot: 14
+    l:
+      accept:
+        name: '&aKabul et'
+        lore:
+          - '&7Bu daveti kabul edin.'
+          - ' '
+          - '&7Vergi değeri:&c ${tax}'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      deny:
+        name: '&cReddet'
+        lore:
+          - '&7Bu daveti reddedin.'
+          - ' '
+          - '&7Vergi değeri:&c ${tax}'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
+    a:
+      failure_lands:
+        name: '&4Başarısız: &cMaksimum Araziler'
+        lore:
+          - '&7Başka bir arazilere katılamazsınız,'
+          - '&7çünkü parçası olabileceğiniz'
+          - '&7maksimum&7 {max} &7arazi miktarına'
+          - '&7ulaştınız.'
+          - ' '
+          - '&8İzin:'
+          - '&8{permission}'
+      failure_inviteOwner:
+        name: '&4Başarısız: &cSahibi Davet Et'
+        lore:
+          - '&7Bu arazilere katılamazsınız,'
+          - '&7çünkü kendi arazinize'
+          - '&7sahip olmanıza ve başka'
+          - '&7bir arazinin parçası'
+          - '&7olmanıza izin verilmiyor.'
+      failure_members:
+        name: '&4Başarısız: &cTamamlanmadı'
+        lore:
+          - '&7Maksimum&3 {max} &7üye'
+          - '&7sayısına ulaştıkları'
+          - '&7için&2 {land} &7arazisinde'
+          - '&7size güvenemedim.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  player_info:
+    title: '&8Player {player}'
+    size: 27
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '&e{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      last_seen:
+        name: '&8> &6Son görülen'
+        lore:
+          - '&5{last-seen}'
+        material: CLOCK
+        slot: 11
+      max-chunks:
+        name: '&8> &6Maksimum Parça Hak Talebi'
+        lore:
+          - '&7Bu oyuncu&3 {chunks}'
+          - '&7parça talep edebilir.'
+          - ' '
+          - '&8- &7Yapılandırmada seçenek parça'
+          - '  &7ekleme etkinleştirilmişse, bu'
+          - '  &7oyuncu arazinizi&3 {chunks} &7ek'
+          - '  &7parça hak talepleriyle destekleyebilir.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ==
+        slot: 13
+      lands:
+        name: '&8> &6Araziler &8(&7{amount}&8)'
+        lore:
+          - '{lands}'
+        material: OAK_SIGN
+        slot: 15
+      areas:
+        name: '&8> &6Güvenilir Alanlar &8(&7{amount}&8)'
+        lore:
+          - '&7Bu oyuncuya şu arazi'
+          - '&7alanlarında güveniliyor&2 {land}&7:'
+          - ' '
+          - '{areas}'
+        slot: 17
+        material: OAK_FENCE
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  land_info:
+    title: '&8{land}'
+    size: 27
+    s:
+      close:
+        name: '&cKapat'
+        lore:
+          - '&7Bu menüyü kapatın.'
+          - ' '
+          - '&8- &7Tekrar açabilirsiniz'
+          - '  &8/&3Lands info &7kullanın.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '&e{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      created:
+        name: '&8> &6Oluşturuldu'
+        lore:
+          - '&5{date}'
+        material: CLOCK
+        slot: 11
+      players:
+        name: '&8> &6Oyuncular &8(&7{amount}&8)'
+        lore:
+          - ' '
+          - '&e{players}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 13
+      levels:
+        name: '&8> &6Seviye'
+        lore:
+          - '&7Bu değerler, yalnızca arazi veya'
+          - '&7herhangi bir ulusun üyesi'
+          - '&7değilse etkindir.'
+          - ' '
+          - '&7{0}'
+          - '&7{1}% bakım maliyeti'
+          - '&7{2} parçalar'
+          - ' '
+          - '&7Sonraki: {3}'
+          - '&{4}% bakım maliyeti'
+          - '&a{5} - hak talepleri'
+          - ' '
+          - ' &8> &7Gereksinimler:'
+          - '   &7{6} üyeler'
+          - '   &7{7} parçalar'
+        material: BEACON
+        slot: 15
+      war:
+        name: '&8> &6Savaş İstatistikleri'
+        lore:
+          - '&7Kazanılan&7 {won}'
+          - '&7Kaybedilen:&7 {lost}'
+          - '  &7Kazanma Oranı:&3 {wlr}'
+          - ' '
+          - '&7Öldürmeler:&7 {kills}'
+          - '&7Ölümler:&7 {deaths}'
+          - '  &7Kaybetme Oranı:&3 {kdr}'
+        material: IRON_SWORD
+        slot: 17
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  land_various:
+    title: Çeşitli Ayarlar
+    size: 9
+    a:
+      failure_noaccess:
+        name: '&4Başarısız: &cErişim Yok'
+        lore:
+          - '&7Bu arazi için bu seçenekleri'
+          - '&7düzenlemenize izin verilmiyor.'
+          - ' '
+          - '&7Sadece arazi sahibinin'
+          - '&7bunu yapmasına izin verilir.'
+          - ' '
+          - '&8Bypass izin: {bypass}'
+    s: { }
+    f:
+      name:
+        name: '&8> &6Arazi Adı'
+        lore:
+          - '&7Araziniz için yeni bir isim belirleyin.'
+          - ' '
+          - '&7Mevcut:'
+          - '&7{name}'
+        material: NAME_TAG
+        slot: 3
+      title:
+        name: '&8> &6Mesaj Girin'
+        lore:
+          - '&7Bu mesaj, arazinize giren'
+          - '&7oyunculara görünür.'
+          - ' '
+          - '&7Mevcut:'
+          - '{title}'
+          - ' '
+          - '&7Kullanılabilir placeholders'
+          - '  &8> &3%owner% &8= &7Sahip'
+          - '  &8> &3%level% &8= &7Seviye'
+          - '  &8> &3%nation% &8= &7Ulus'
+          - '  &8> &3%player% &8= &7Oyuncu giriyor'
+          - ' '
+          - '&9SAĞ TIK'
+          - '&7Ekran başlığı: {show}'
+        material: OAK_SIGN
+        slot: 7
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 1
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+  area_various:
+    title: Çeşitli Ayarlar
+    size: 27
+    f:
+      name:
+        name: '&8> &6Adı'
+        lore:
+          - '&7Bu alanı yeniden adlandırın.'
+          - ' '
+          - '&7Mevcut:'
+          - '{name}'
+        material: NAME_TAG
+        slot: 11
+      description:
+        name: '&8> &6Açıklama'
+        lore:
+          - '&7Bu alanın açıklamasını'
+          - '&7değiştirin.'
+          - ' '
+          - '&7Mevcut:'
+          - '{description}'
+        material: OAK_SIGN
+        slot: 14
+      icon:
+        name: '&8> &6Simge'
+        lore:
+          - '&7Bu alanın simgesini'
+          - '&7değiştirin.'
+          - ' '
+          - '&7Bu, alanlar menüsünde alan'
+          - '&7aramanıza yardımcı olur.'
+        material: OAK_FENCE
+        slot: 17
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      no-item:
+        name: '&cElinizde bir eşya yok'
+        lore:
+          - '&7Ana elinizde bir eşyaya'
+          - '&7ihtiyacınız var.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  global_lands:
+    title: '&8Tüm Araziler'
+    size: 54
+    s:
+      close:
+        name: '&cKapat'
+        lore:
+          - '&7Bu menüyü kapatın.'
+          - ' '
+          - '&8- &8/&3Lands list &7komutunu'
+          - '  &7kullanarak tekrar açabilirsiniz.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 46
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 46
+      toggle-allowed:
+        name: '&6Yalnızca halka açık Araziler gösterilsin mi?'
+        lore:
+          - '&7Yalnızca girmenize izin verilen'
+          - '&7araziler ve ortaya çıkan arazi'
+          - '&7parçasına ışınlanma mı gösterilsin?'
+          - ' '
+          - '&7Bu ayarı değiştirmek için burayı tıklayın.'
+          - '&7Yalnızca herkese açık: {only-allowed}'
+        material: HOPPER
+        slot: 50
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 48
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 52
+    l:
+      object:
+        name: '&2{land}'
+        lore:
+          - '&bSOL TIK'
+          - '&7Bu arazideki doğma'
+          - '&7noktasına ışınlanın.'
+          - ' '
+          - '&9SAĞ TIK'
+          - '&7Bu arazinin arazi bilgileri'
+          - '&7menüsünü açın.'
+          - ' '
+          - '&7Başlık:'
+          - '&7{title}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 45
+      no-land:
+        name: '&cArazi bulunamadı'
+        lore:
+          - '&7Filtrenizle eşleşen'
+          - '&7oluşturulmuş arazi yok.'
+          - ' '
+          - '&8- &7Bir arazi oluşturmak için:'
+          - '  &8/&3Lands create &8<&3arazi-adı&8>'
+        material: PAPER
+        from: 10
+        to: 45
+    a:
+      failure_teleport_permission:
+        name: '&4Reddedildi: &cİzin'
+        lore:
+          - '&cHerhangi bir arazi doğma noktasına'
+          - '&cışınlanmanıza izin verilmez.'
+          - ' '
+          - '&8İzin:'
+          - '&8{permission}'
+      failure_no-spawn:
+        name: '&4Başarısız: &cDoğma noktası ayarlanmadı'
+        lore:
+          - '&7Bu arazide henüz doğma'
+          - '&7noktası yok. Önce bir arazi'
+          - '&7belirmeleri gerekiyor.'
+          - ' '
+          - '&8- &7Arazi doğma noktasını'
+          - '  &7belirlemek için'
+          - '  &8/&3Lands setspawn &7kullanın.'
+      failure_teleport_cost:
+        name: '&4Reddedildi: &cMaliyetler'
+        lore:
+          - '&cBu arazide doğmayı'
+          - '&cgöze alamazsınız.'
+          - ' '
+          - '&c${costs} &7ihtiyacınız var.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 36
+        to: 54
+  war-state:
+    title: '&8Savaş'
+    size: 27
+    f:
+      attackers:
+        name: '&8> &cSaldırganlar'
+        lore:
+          - '&7Bu savaşın tüm saldıran'
+          - '&7arazilerini görüntüleyin.'
+          - ' '
+          - '&8- &7{attacker}'
+          - '  &7Toplam oyuncular: {players}'
+          - ' '
+          - '  &7Öldürmeler: {kills}'
+          - '  &7Ölümler: {deaths}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTU0OTQ3ZGU3ZjUyNTk4MjU1ZDZhZmVlOWQ3N2JlZmFkOWI0ZjI0YzBjNDY2M2QyOGJjZGY4YTY0NTdmMzQifX19
+        slot: 11
+      defenders:
+        name: '&8> &aSavunmacılar'
+        lore:
+          - '&7Bu savaşın tüm savunan'
+          - '&7arazilerini görüntüleyin.'
+          - ' '
+          - '&8- &7{defender}'
+          - '  &7Toplam oyuncular: {players}'
+          - ' '
+          - '  &7Öldürmeler: {kills}'
+          - '  &7Ölümler: {deaths}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRkYmNiN2UxZmJlY2VhOWE3MzUwNDM2Y2JiZWEyYjQ5NmY3NGMyOTcyMDRmMWJiOWFjYzM4NzhkNTQyY2NiIn19fQ==
+        slot: 13
+      info_declaration:
+        name: '&8> &6Bilgi'
+        lore:
+          - '&7Savaş başlıyor '
+          - '&5~{time}'
+          - ' '
+          - '&7Düşman, ulusunuzda'
+          - '&7şunları yapabilir:'
+          - ' '
+          - '{settings}'
+        material: IRON_SWORD
+        slot: 15
+      info_war:
+        name: '&8> &6Bilgi'
+        lore:
+          - '&7Savaş bitiyor '
+          - '&5~{time}'
+          - ' '
+          - '&7Düşman, ulusunuzda'
+          - '&7şunları yapabilir:'
+          - ' '
+          - '{settings}'
+        material: IRON_SWORD
+        slot: 15
+      tribute_attacker:
+        name: '&8> &6Haraç:&c ${tribute}'
+        lore:
+          - '&7Bu savaşın haraç değerini'
+          - '&7değiştirin.'
+          - ' '
+          - '&7Savunmacılar teslim olursa:'
+          - '&7Savunucuların size&c ${tribute}'
+          - '&7ödemesi gerekiyor. Haraç $0''a eşitse,'
+          - '&7savunmacılar teslim olamaz.'
+          - ' '
+          - '&9SAĞ TIK'
+          - '&7Saldırganlar teslim'
+          - '&7olmak isterse, savunanlara'
+          - '&c${tribute-att} &7ödemeleri'
+          - '&7gerekecek.'
+        material: GOLD_INGOT
+        slot: 17
+      tribute_attacker_mutual:
+        name: '&8> &6Haraç:&c ${tribute}'
+        lore:
+          - '&7Saldırgan olarak teslim olun:'
+          - '&7Saldırganların, savunanlara&c ${tribute-att}'
+          - '&7ödemesi gerekir.'
+          - ' '
+          - '&7Savunmacılar teslim olursa:'
+          - '&7Savunucuların size&c ${tribute}'
+          - '&7ödemesi gerekiyor. Haraç $0''a eşitse,'
+          - '&7savunmacılar teslim olamaz.'
+        material: GOLD_INGOT
+        slot: 17
+      tribute_defender:
+        name: '&8> &6Teslim:&c ${tribute}'
+        lore:
+          - '&7Bu savaşta teslim olmak için buraya'
+          - '&7tıklayın. Savunanların, saldırganlara'
+          - '&c${tribute} &7haraç ödemeleri'
+          - '&7gerekecek.'
+          - ' '
+          - '&7Haraç $0''a eşitse:'
+          - '&7Bu, saldırganların teslim olmayı'
+          - '&7kabul etmediği anlamına gelir.'
+        material: GOLD_INGOT
+        slot: 17
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      close:
+        name: '&cKapat'
+        lore:
+          - '&7Bu menüyü kapatın.'
+          - ' '
+          - '&8- &7Tekrar açabilirsiniz'
+          - '  &8/&3Wars menu &7kullanın.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+    a:
+      failure_permission:
+        name: '&4Başarısız: &cErişim Yok'
+        lore:
+          - '&8({Object}&8) &7için bunu'
+          - '&7yapma izniniz yok.'
+          - ' '
+          - '&8Ayar: {flag}'
+          - '&8Bypass: {bypass}'
+      failure_surrender:
+        name: '&4Başarısız: &cTeslim reddedildi'
+        lore:
+          - '&7Düşman teslim olmanıza'
+          - '&7izin vermiyor.'
+          - ' '
+          - '&7Bunun nedeni, bir haraç'
+          - '&7belirlememiş olmalarıdır.'
+          - '&7Bunu savaş menülerinde yapabilirler.'
+      failure_attacker:
+        name: '&4Başarısız: &cİzin verilmedi'
+        lore:
+          - '&7Saldırganların teslim'
+          - '&7olmasına izin verilmez.'
+          - ' '
+          - '&8Bu, config''de'
+          - '&8yapılandırılmıştır.'
+      failure_cost:
+        name: '&4Başarısız: &cYetersiz bakiye'
+        lore:
+          - '&7Siz &8({object}&8)&7,&c ${tribute}'
+          - '&7haraçını ödeyecek kadar'
+          - '&7bakiyen yok.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  war_lands:
+    title: '&8{type}'
+    size: 36
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 34
+    l:
+      object:
+        name: '&2{land}'
+        lore:
+          - '&7Bu arazinin arazi bilgileri'
+          - '&7menüsünü açın.'
+          - ' '
+          - '&7Toplam oyuncular: {players}'
+          - '&7Başlık: {title}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  war-declaration_tribute:
+    title: '&8Haraç'
+    size: 27
+    s:
+      plus-1:
+        name: '&aEkle $1'
+        lore:
+          - '&7Haraç değerine'
+          - '&7$1 ekleyin.'
+        material: GLOWSTONE_DUST
+        slot: 11
+        amount: 1
+        data:
+          value: 1.0
+      plus-2:
+        name: '&aEkle $100'
+        lore:
+          - '&7Haraç değerine'
+          - '&7$100 ekleyin.'
+        material: GLOWSTONE_DUST
+        slot: 12
+        data:
+          value: 100.0
+      plus-3:
+        name: '&aEkle $1000'
+        lore:
+          - '&7Haraç değerine'
+          - '&7$1000 ekleyin.'
+        material: GLOWSTONE_DUST
+        slot: 13
+        data:
+          value: 1000.0
+      minus-3:
+        name: '&cKaldır $1000'
+        lore:
+          - '&7Haraç değerinden'
+          - '&7$1000 kaldırın.'
+        material: REDSTONE
+        slot: 15
+        data:
+          value: 1000.0
+      minus-2:
+        name: '&cKaldır $100'
+        lore:
+          - '&7Haraç değerinden'
+          - '&7$100 kaldırın.'
+        material: REDSTONE
+        slot: 16
+        data:
+          value: 100.0
+      minus-1:
+        name: '&cKaldır $1'
+        lore:
+          - '&7Haraç değerinden'
+          - '&7$1 kaldırın.'
+        material: REDSTONE
+        slot: 17
+        data:
+          value: 1.0
+    f:
+      tribute:
+        name: '&7Haraç:&c ${tribute}'
+        lore:
+          - '&7Savunan arazisi teslim'
+          - '&7olabilmesi için bu değeri'
+          - '&7ödemesi gerekecek.'
+          - ' '
+          - '&8- &7Bu arazi için maksimum '
+          - '  &7haraç &3 ${max}&7.'
+          - '  &7Bir sunucu yöneticisi bunu'
+          - '  &7yapılandırmada değiştirebilir.'
+          - ' '
+          - '&cNOT: &7Vergi değerini 0 olarak'
+          - '&7ayarlarsanız, savunan arazi'
+          - '&7teslim olamaz.'
+        material: GOLD_INGOT
+        slot: 14
+      send-declaration:
+        name: '&aSavaş Bildirisi Gönder'
+        lore:
+          - '&7Bu savaş ilanını düşmana'
+          - '&7göndermek için buraya'
+          - '&7tıklayın.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19
+        slot: 27
+      abort-declaration:
+        name: '&cSavaş Bildirgesini İptal Et'
+        lore:
+          - '&7Bu savaş ilanını iptal etmek'
+          - '&7için buraya tıklayın.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==
+        slot: 19
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      max-tribute:
+        name: '&4Maksimum Değere ulaşıldı'
+        lore:
+          - '&7Haraç değerini&3 {max}'
+          - '&7üzerinde ayarlayamazsınız.'
+          - ' '
+          - '&8- &7Bir yöneticiden bunu değiştirmesini'
+          - '  &7isteyebilirsiniz.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  nation:
+    title: '&8{level} {nation}'
+    size: 36
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '&e{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      close:
+        name: '&cKapat'
+        lore:
+          - '&7Bu menüyü kapatın.'
+          - ' '
+          - '&8- &7Tekrar açabilirsiniz'
+          - '  &8/&3Nation menu &7kullanın.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+      war:
+        name: '&8> &cMevcut Savaş'
+        lore:
+          - '&7Mevcut savaş hakkında'
+          - '&7biraz bilgi edinin.'
+          - ' '
+          - '&7Aşağıdakilerle ilgili bilgileri göster:'
+          - '&8- &7Düşman ulus'
+          - '&8- &7Ödül fiyatı'
+        material: IRON_SWORD
+        slot: 15
+      no-war:
+        name: '&8> &aBarışçıl'
+        lore:
+          - '&7Ulusunuz herhangi'
+          - '&7bir savaşa girmiyor.'
+          - '&7Her şey barışçıl.'
+        material: WOODEN_SWORD
+        slot: 15
+      inbox:
+        name: '&8> &6Gelen kutusu &8(&7{amount}&8)'
+        lore:
+          - '&7Gelişmiş görünümü açmak için tıklayın.'
+          - ' '
+          - '&7Alınan mesajlar:'
+          - '{inbox}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
+        slot: 16
+      stats:
+        name: '&8> &6İstatistikler'
+        lore:
+          - '&7Toplam üyeler: {0}'
+          - ' '
+          - '&7Seviye'
+          - '&7Mevcut: {1}'
+          - ' &7Her arazi için {2} &7hak talebi'
+          - ' '
+          - '&7Sonraki: {3} &7({4} üyeler)'
+          - ' &aHer arazi için {5} &ahak talebi'
+          - ' '
+          - '&7Ekonomi'
+          - '&8- &7Ulus'
+          - '  &7Bakiyen: ${6}'
+          - '  &7Ulus,  &7{8}  &7için&c ${7} &7bakım'
+          - '  &7masrafı ödüyor.'
+          - ' '
+          - '&8- &4Araziniz &8({9})'
+          - '  &7{11} &7içinde ulusa'
+          - '  &c${10} &7bakım masrafı.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
+        slot: 17
+    s:
+      information:
+        name: '&6Bilgi'
+        lore:
+          - '&7Burada ulusunuz hakkında bazı'
+          - '&7ayrıntılı bilgileri görüntüleyebilirsiniz.'
+          - '&7Bu, ulusunuzdaki tüm olayları'
+          - '&7takip etmenize yardımcı'
+          - '&7olur.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      lands:
+        name: '&8> &2Araziler'
+        lore:
+          - '&7Bu ulusa üye olan tüm'
+          - '&7arazileri görüntüleyin.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 13
+      spawn:
+        name: '&8> &6Doğma'
+        lore:
+          - '&7Ortaya çıkan başkentlere'
+          - '&7ışınlanmak için burayı tıklayın.'
+        material: ENDER_PEARL
+        slot: 14
+      management:
+        name: '&6Yönetim'
+        lore:
+          - '&7Burada ulusunuzu yönetebilirsiniz.'
+          - '&7Ulus vergileri ayarlayabilir, arazi bayraklarını'
+          - '&7düzenleyebilir veya vergileri ayarlayabilirsiniz.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 20
+      taxes:
+        name: '&8> &6Vergiler'
+        lore:
+          - '&7Ulusunuzun arazileri'
+          - '&7için vergileri yapılandırın.'
+        material: GOLD_INGOT
+        slot: 22
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 36
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 21
+        to: 21
+  nation_lands:
+    title: '&8Ulus Üyeleri'
+    size: 36
+    f:
+      back:
+        name: '&cGeri'
+        lore:
+          - '&7Geri dön'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Önceki Sayfa'
+        lore:
+          - '&7Önceki sayfaya git:&9 {previous}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aSonraki Sayfa'
+        lore:
+          - '&7Sonraki sayfaya git:&9 {next}'
+          - ' '
+          - '&8- &7Mevcut:&3 {current}'
+        material: ARROW
+        slot: 35
+      trust:
+        name: '&8> &aAraziye Davet Et'
+        lore:
+          - '&7Ulusunuza katılacak bir araziye'
+          - '&7güvenmek için burayı tıklayın.'
+          - ' '
+          - '&7Mevcut:&3 {lands} &8/&c {max}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
+        slot: 32
+      untrust:
+        name: '&8> &cGüvenilmeyen Arazi'
+        lore:
+          - '&7Ulusunuzdan bir araziye'
+          - '&7güvenmemek için burayı tıklayın.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 33
+    l:
+      object:
+        name: '&2{level} {land}'
+        lore:
+          - '&7Bu arazinin arazi bilgileri'
+          - '&7menüsünü açın.'
+          - ' '
+          - '&9SAĞ TIK'
+          - '&7Bu arazi hakkında'
+          - '&7daha fazla bilgi alın.'
+          - ' '
+          - '&8- &7Başlık:'
+          - '  &7{title}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      capital:
+        name: '&4Başkent {land}'
+        lore:
+          - '&7Bu arazinin arazi bilgileri'
+          - '&7menüsünü açın.'
+          - ' '
+          - '&9SAĞ TIK'
+          - '&7Bu arazi hakkında'
+          - '&7daha fazla bilgi alın.'
+          - ' '
+          - '&8- &7Başlık:'
+          - '  &7{title}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36

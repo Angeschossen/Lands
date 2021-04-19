@@ -402,7 +402,7 @@ gui:
         - '&7area&6 {area}&7.'
         material: GOLD_INGOT
         slot: 33
-      stat:
+      stats:
         name: '&8> &6Statistics'
         lore:
         - '&6&lAdministration'
@@ -410,19 +410,17 @@ gui:
         - '&7 {0}, x={1}, z={2}'
         - ' '
         - '&7Nation: {3}'
-        - '&7Inmutningar:&a {4} &7/ &c{5} &7+ {6} &8(nation)'
-        - '&7Invånare:&a {7} &7/&c {8}'
+        - '&7Inmutningar:&a {4} &7/ &c{5}'
+        - '&7Invånare:&a {6} &7/&c {7}'
         - ' '
-        - '&3- &eRank {level}'
-        - '  &7Nästa rank: {level_next}'
-        - '  &8(antal invånare {members_next})'
-        - '&7Tryck för mer info.'
+        - '&3- &eRank:&a {8}'
+        - '&7   Tryck för mer info.'
         - ' '
         - '&6&lEkonomi'
         - ''
         - '&3- &e&lDitt land'
         - '  &7På banken: &6 {9} {#fbe232}Ⓖ'
-        - '  &7Nästa chunk du inmutar kostar: {10} {#fbe232}Ⓖ'
+        - '  &7Nästa chunk du inmutar kostar:&6 {10} {#fbe232}Ⓖ'
         - '  &7Land betalar:&6&c {11} {#fbe232}Ⓖ'
         - '  &7till servern om: &b{12}&7.'
         - ' '
@@ -1124,20 +1122,6 @@ gui:
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
         from: 10
         to: 27
-      player_setRole:
-        name: '&6Land rank'
-        lore:
-        - '&7Status: {enabled}'
-        - '&7Upplåst: {unlocked}'
-        - ' '
-        - '&7Tillåt invånare att ändra rank'
-        - '&7på andra invånare i ditt land?'
-        - ' '
-        - '&8- &7De kan inte ändra rank, på dom'
-        - '  &7som har en högre rank än de själva'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjNmY3NzVlOGFjZmRmNmUxZGVhYzgwYThkYTFmMzdiM2I0YmE1Y2FhNGEzNTI0OWY5ZWIxNDVjY2Y0M2RhNSJ9fX0=
-        from: 10
-        to: 27
       player_untrust:
         name: '&6Avhysa invånare'
         lore:
@@ -1307,21 +1291,6 @@ gui:
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2VkMWFiYTczZjYzOWY0YmM0MmJkNDgxOTZjNzE1MTk3YmUyNzEyYzNiOTYyYzk3ZWJmOWU5ZWQ4ZWZhMDI1In19fQ==
         from: 10
         to: 27
-      attack_monsters:
-        name: '&6Attackera Monster'
-        lore:
-        - '&7Status: {enabled}'
-        - '&7Unlocked: {unlocked}'
-        - ' '
-        - '&7Tillåt denna rank att'
-        - '&7Attackera monsters?'
-        - ' '
-        - '&6- &7Om det är avstängt'
-        - '  &7moster kan inte skada'
-        - '  &7invånare i ditt land.'
-        material: BOW
-        from: 10
-        to: 27
       ender_pearl:
         name: '&6Använda Ender Pearls'
         lore:
@@ -1333,6 +1302,59 @@ gui:
         - '&7land med ender pearls'
         - '&7och chorus fruits?'
         material: ENDER_PEARL
+        from: 10
+        to: 27
+      attack_monster:
+        name: '&6Attack Monsters'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Tillåt denna rank att'
+        - '&7attackera monster?'
+        - ' '
+        - '&8- &7Om du slår av, monster'
+        - '  &7kommer inte kunna'
+        - '  &7attackera invånare heller.'
+        material: ZOMBIE_HEAD
+        from: 10
+        to: 27
+      general:
+        name: '&6{flag}'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Description:'
+        - '{desc}'
+        material: NAME_TAG
+        from: 10
+        to: 27
+      player_setrole:
+        name: '&6Set Roles'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Allow this role to'
+        - '&7set roles for players?'
+        - ' '
+        - '&8- &7They won''t be able to'
+        - '  &7edit roles, which have a'
+        - '  &7higher priority than theirs.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjNmY3NzVlOGFjZmRmNmUxZGVhYzgwYThkYTFmMzdiM2I0YmE1Y2FhNGEzNTI0OWY5ZWIxNDVjY2Y0M2RhNSJ9fX0=
+        from: 10
+        to: 27
+      setting_edit_various:
+        name: '&6Edit various Settings'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Allow this role to edit'
+        - '&7miscellaneous settings, like'
+        - '&7the land / area name?'
+        material: NAME_TAG
         from: 10
         to: 27
     a:
@@ -1370,7 +1392,7 @@ gui:
         to: 36
   area_settings:
     title: '&9&lInställningar zon:&4 {area}'
-    size: 27
+    size: 36
     s: {}
     f:
       page_previous:
@@ -1380,7 +1402,7 @@ gui:
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 21
+        slot: 30
       page_next:
         name: '&aNästa sida'
         lore:
@@ -1388,14 +1410,14 @@ gui:
         - ' '
         - '&8- &7Nuvarande:&3 {current}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 25
+        slot: 34
       back:
         name: §2 ☜ Tillbaka
         lore:
         - '&7Gå tillbaka till'
         - '&e{back}&7.'
         material: CHORUS_FLOWER
-        slot: 19
+        slot: 28
     l:
       entity_griefing:
         name: '&6Föremål Griefing'
@@ -1411,7 +1433,7 @@ gui:
         - '  &7förstöra dina byggnader.'
         material: CREEPER_HEAD
         from: 10
-        to: 18
+        to: 27
       tnt_griefing:
         name: '&6TNT Griefing'
         lore:
@@ -1427,7 +1449,7 @@ gui:
         - '  &7land med TNT cannons.'
         material: TNT
         from: 10
-        to: 18
+        to: 27
       piston_griefing:
         name: '&6Tillåt Pistons från vildmarken.'
         lore:
@@ -1443,7 +1465,7 @@ gui:
         - '  &7i ditt land.'
         material: PISTON
         from: 10
-        to: 18
+        to: 27
       waterflow_allow:
         name: '&6Tillåt vatten från vildmarken'
         lore:
@@ -1459,7 +1481,7 @@ gui:
         - ' &7vatten.'
         material: WATER_BUCKET
         from: 10
-        to: 18
+        to: 27
       monster_spawn:
         name: '&6Monster Spawning'
         lore:
@@ -1473,7 +1495,7 @@ gui:
         - '&7påverkade av denna inställning.'
         material: SPAWNER
         from: 10
-        to: 18
+        to: 27
       animal_spawn:
         name: '&6Djur Spawning'
         lore:
@@ -1487,7 +1509,7 @@ gui:
         - '&7påverkade av denna inställning.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19
         from: 10
-        to: 18
+        to: 27
       fire_spread:
         name: '&6Eld spridning'
         lore:
@@ -1501,7 +1523,7 @@ gui:
         - '&7inte komma in i ditt land.'
         material: FLINT_AND_STEEL
         from: 10
-        to: 18
+        to: 27
       leaf_decay:
         name: '&6Om löv ska vissna'
         lore:
@@ -1512,7 +1534,7 @@ gui:
         - '&7inne i ditt land.'
         material: OAK_LEAVES
         from: 10
-        to: 18
+        to: 27
       plant_growth:
         name: '&6Om växter ska gro'
         lore:
@@ -1523,7 +1545,7 @@ gui:
         - '&7växa i ditt land?'
         material: VINE
         from: 10
-        to: 18
+        to: 27
       snow_melt:
         name: '&6Snow Melt'
         lore:
@@ -1532,6 +1554,17 @@ gui:
         - ' '
         - '&7Should snow and ice melt?'
         material: SNOWBALL
+        from: 10
+        to: 27
+      general:
+        name: '&6{flag}'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Description:'
+        - '{desc}'
+        material: NAME_TAG
         from: 10
         to: 27
     a:
@@ -1564,8 +1597,8 @@ gui:
         to: 9
       placeholder_2:
         material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
+        from: 28
+        to: 36
   action-confirm:
     title: '&8Bekräfta åtgärd'
     size: 27
@@ -1819,20 +1852,24 @@ gui:
         - '  &7KDR:&3 {kdr}'
         material: IRON_SWORD
         slot: 17
-      level:
+      levels:
         name: '&8> &6Level'
         lore:
         - '&7Dessa ranker är bara aktiva'
         - '&7om landet inte är medlem'
         - '&7i någon nation.'
         - ' '
-        - '&3- &e&l{level}'
-        - '&7{upkeep}% kostnad land.'
-        - '&7{chunks} extra chunks.'
+        - '&3- &2&lRank: &e&l{0}'
+        - '&a{1}%&7 kostnad land.'
+        - '&a{2} extra inmutningar.'
         - ' '
-        - '&3- &2&lNästa rank:&e&l {level_next}'
-        - '&c{upkeep_next}% kostnad land.'
-        - '&a{chunks_next} extra inmutningar.'
+        - '&3- &2&lNästa rank:&e&l {3}'
+        - '&c{4}% kostnad land.'
+        - '&a{5} extra inmutningar.'
+        - ''
+        - '&3- &2&lKrav för nästa rank:'
+        - '   &a{6}&7 Invånare.'
+        - '   &a{7}&7 inmutningar.'
         material: BEACON
         slot: 15
     p:
@@ -1872,24 +1909,27 @@ gui:
         material: CHORUS_FLOWER
         slot: 19
       title:
-        name: '&8> &6Enter Message'
+        name: '&8>          &6Beträder land'
         lore:
-        - '&7This message appears to players,'
-        - '&7which enter your land.'
+        - '&7Detta meddelande kommer upp när,'
+        - '&7spelare går in i ditt land.'
+        - ''
+        - '&7Använd %player% för den som'
+        - '&7beräder, får upp sitt eget namn.'
         - ' '
-        - '&7Current:'
+        - '&7Nuvarande text:'
         - '{title}'
         - ' '
-        - '&7Available placeholders'
-        - '  &8> &3%owner% &8= &7Owner'
+        - '&7Tillgänliga placeholders'
+        - '  &8> &3%owner% &8= &7Ägare'
         - '  &8> &3%level% &8= &7Level'
         - '  &8> &3%nation% &8= &7Nation'
-        - '  &8> &3%player% &8= &7Entering player'
+        - '&8  > &3%player% &8= &7spelare'
         - ' '
-        - '&9RIGHT CLICK'
-        - '&7Display title: {show}'
+        - '&9Högerklicka för visa:'
+        - '&7Visa titel: {show}'
         material: OAK_SIGN
-        slot: 7
+        slot: 16
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2344,137 +2384,6 @@ gui:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
-  admin_wilderness:
-    title: '&8Villdmark inställningar'
-    size: 9
-    s:
-      player-settings:
-        name: '&8> &6Spelar inställningar'
-        lore:
-        - '&7Ändra vad invånare'
-        - '&7ska kunda göra'
-        - '&7i vildmarken.'
-        slot: 3
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
-      land-settings:
-        name: '&8> &6Land inställningar'
-        lore:
-        - '&7Här kan du ändra generella'
-        - '&7Inställningar som mob spawning.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 7
-      close:
-        name: '&cstäng'
-        lore:
-        - '&7Stäng denna meny'
-        - ' '
-        - '&8- &7Du kan öppna den igen'
-        - '  &7med &8/&3Lands admin wilderness&7.'
-        material: CHORUS_FLOWER
-        slot: 9
-        enabled: true
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-  admin_wilderness_player-settings:
-    title: '&8Spelar inställningar'
-    size: 36
-    l:
-      object:
-        name: '&6{setting}'
-        lore:
-        - '&7Status: {enabled}'
-        - ' '
-        - '&7Tryck här för tillåta'
-        - '&7eller inte tillåta players att'
-        - '&7göra detta i vildmarken.'
-        - ' '
-        - '&8Bypass: {bypass}'
-        material: STONE
-        from: 10
-        to: 27
-    f:
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-        - '&7Gå till förgånde sida:&9 {previous}'
-        - ' '
-        - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 30
-      page_next:
-        name: '&aNästa sida'
-        lore:
-        - '&7Gå till nästa sida:&9 {next}'
-        - ' '
-        - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 35
-      back:
-        name: §2 ☜ Tillbaka
-        lore:
-        - '&7Gå tillbaka till'
-        - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 28
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 27
-        to: 36
-  admin_wilderness_land-settings:
-    title: '&8Land inställningar'
-    size: 27
-    l:
-      object:
-        name: '&6{setting}'
-        lore:
-        - '&7Status: {enabled}'
-        - ' '
-        - '&7Klicka här för slå på'
-        - '&7denna inställning.'
-        material: STONE
-        from: 10
-        to: 18
-    f:
-      page_previous:
-        name: '&9Föregående sida'
-        lore:
-        - '&7Gå till förgånde sida:&9 {previous}'
-        - ' '
-        - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzJmZjhhYWE0YjJlYzMwYmM1NTQxZDQxYzg3ODIxOTliYWEyNWFlNmQ4NTRjZGE2NTFmMTU5OWU2NTRjZmM3OSJ9fX0=
-        slot: 21
-      page_next:
-        name: '&aNästa sida'
-        lore:
-        - '&7Gå till nästa sida:&9 {next}'
-        - ' '
-        - '&8- &7Nuvarande:&3 {current}'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWFiOTVhODc1MWFlYWEzYzY3MWE4ZTkwYjgzZGU3NmEwMjA0ZjFiZTY1NzUyYWMzMWJlMmY5OGZlYjY0YmY3ZiJ9fX0=
-        slot: 25
-      back:
-        name: §2 ☜ Tillbaka
-        lore:
-        - '&7Gå tillbaka till'
-        - '&e{back}&7.'
-        material: CHORUS_FLOWER
-        slot: 19
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 19
-        to: 27
   taxes:
     title: '&4Hyra i zon:&9 {holder}               '
     size: 27
@@ -2821,6 +2730,13 @@ gui:
         - '&7som du försöker ändra.'
         - ' '
         - '&8Bypass: {bypass}'
+      failure_owner:
+        name: '&cCan''t edit Owner'
+        lore:
+        - '&7Owners can''t edit their'
+        - '&7own flags. This can only'
+        - '&7be controlled by server'
+        - '&7admins.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -3275,7 +3191,7 @@ gui:
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         slot: 31
       unban:
-        name: '&8> &ata bort ban invånare'
+        name: '&8> &aTa bort banade invånare'
         lore:
         - '&7Tryck för ta bort ban för'
         - '&7invånaren från denna underzon.'

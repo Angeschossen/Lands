@@ -44,11 +44,13 @@ general:
     online: '&aonline'
     offline: '&coffline'
   top:
-    title: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
-    entry: '&c#{pos} &a{land} &7Balance:&6 {value} {#fbe232}Ⓖ'
-    next-page: '&7Nästa sida: &8/&2Lands top {next}'
-    last-updated: '&7Senast uppdaterad: {time} &7sen'
-    footer: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
+    entry:
+      balance: '&c#{pos} &a{land} &På banken:&e {value} {#fbe232}Ⓖ'
+      members: '&c#{pos} &a{land} &7Invånare:&e {value}'
+      chunks: '&c#{pos} &a{land} &7Chunks:&e {value}'
+    hologram:
+      title: '&7-----------&6<<<<&7- &5Top 10 Lands &8(&7Total: {total}&8) &7-&6>>>>&7-----------'
+      footer: '&7-----------&6<<<<&7- &5Top 10 Lands &8(&7Total: {total}&8) &7-&6>>>>&7-----------'
   integration:
     dynmap:
       land:
@@ -125,10 +127,13 @@ general:
     object:
       enemy: '&cFiende'
       ally: '&aAllierad'
+    state:
+      preparation: '&aPreparation'
+      fight: '&cFight'
   land:
     title:
       land: ' &7Ägd av&3 %owner%&7.'
-      safezone: ''
+      admin: '&7This land belongs to the server.'
     default-area: Standard
   teleportation:
     bossbar: '&7Vänta&3 {time} &7Second(s) innan du teleportera igen.'
@@ -285,7 +290,6 @@ help:
         in i chaten.[/H][SC]wars deny[/SC][/T]'
     admin:
       debug: '&8/&3Lands debug &8- &7Shows loaded data stats'
-      safezone: '&8/&3Lands safezone &8- &7Configure safezone'
       reload: '&8/&3Lands reload &8- &7Reload config or messages'
       about: '&8/&3Lands about &8- &7Show information about Lands'
       admin: '&8/&3Lands admin &8<&3sub-command&8> &8- &7Admin commands'
@@ -320,6 +324,10 @@ help:
         leave[/SC][/T]'
       spawn: '[T]&8/&3Nations spawn &8- &7Teleoportera till huvudstaden[H]&7Tryck
         för kopiera.[/H][SC]nations spawn[/SC][/T]'
+      rename: '[T]&8/&3Nations rename &8- &7Rename nation[H]&7Click to copy.[/H][SC]nations
+        rename[/SC][/T]'
+      setcapital: '[T]&8/&3Nations setcapital &8- &7Set capital[H]&7Click to copy.[/H][SC]nations
+        setcapital[/SC][/T]'
 message:
   world-invalid: '&cDetta är avaktiverat i denna värld. &7Admin behöver ändra det
     i config, Värld: {world}'
@@ -328,8 +336,6 @@ message:
   current-war: '&cDu kan inte göra det nu. &7Ditt land &2{land} &7är med i ett krig.
     &7Försök igen när kriget är över.'
   noaccess:
-    chunk: '&cDu har inte tillåtelse gå in i &8(&7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c.
-      &8Bypass permission: {bypass}'
     area: '&cDu har inte tillåtlse att bryta block i denna area &8(&7Area:&6 {area}
       &7Land:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8Bypass permission: {bypass}'
     land: '&cDu har inte tillåtesle till att göra detta i &8(&7Land:&2 {land}&8)&7.
@@ -339,64 +345,32 @@ message:
       &8<&3name&8>)&7. &8Bypass permission: lands.admin.land_edit'
     claim: '&cDu kan inte inmuta land här. &7denna chunk hanteras av annat pluggins
       skydd. Name: {plugin}'
-    place: '&cDu har inte tillåtelse att placera block här. &7Denna area tillhör land&2
-      {land}&7.'
-    break: '&cDu har inte tillåtelse förstöra block här. &7DEnna area tillhör land&2
-      {land}&7.'
-    ignite: '&cDu har inte tillåtelse tända eld på block här. &7Denna area Tillhör
-      land&2 {land}&7.'
-    enter: '&cDu har inte tillåtelse at gå in i area&4 {area} &cav land&4 {land}&c.
-      &7Du 7Du teleoporteras till din senaste position.'
-    edit: '&cDu har inte tillåtelse till ändra detta land. &7Denna chunk tillhör land&2
-      {land}&7.'
-    interact:
-      general: '&cDu har inte tillåtelse interagera här. &7Denna area tillhör land&2
-        {land}&7.'
-      door: '&cDu har inte tillåtelse öppna dörrar här. &7Denna area tillhör land&2
-        {land}&7.'
-      mechanism: '&cDu har inte tillåtelse att använda knappar,spakar här. &7Denna
-        area tillhör land&2 {land}&7.'
-      container: '&cDu har inte tillåtelse öppna kistor,hoppers här. &7Denna area
-        tillhör land&2 {land}&7.'
-      villager: '&cDu har inte tillåtelse att trade med bybor här. &7Denna area tillhör
-        land&2 {land}&7.'
     combat:
-      animal: '&cDu har inte tillåtelse att skada djur här. &7Denna area tillhör land&2
-        {land}&7.'
-      pvp:
-        attacker: '&cDu har inte tillåtelse att attackera spelares här. &7Denna area
-          tillhör land&2 {land}&7.'
-        target: '&cDu kan inte anfalla spelare, det är inte tillåtet attackera spelares
-          här. &7du kan inte slåss med dom här. &7DEnna area tillhör land&2 {land}&7.'
-        ally: '&cDu kan inte attackera denna spelare i vildmarken, för han är invånare
-          i en av dina lands. &7Slåss i en arena kan du göra i ditt land om du aktiverar
-          PVP i roll-inställningar.'
-        wilderness: '&cDu kan inte anfalla denna spelare, för han står i vildmarken
-          och du står i inmutad land.'
-    banned: '&cDu har inte tillåtelse gi in i denna area. &7Du har blivit bannlyst
+      attacker: '&cDu har inte tillåtelse attackera spelare här. &7Denna area tillhör
+        land&2 {land}&7.'
+      target: '&cDen du attackerar har inte tillåtelse att attackera spelare här.
+        &7Du kan inte slåss med dom här. &7Denna area tillhör land&2 {land}&7.'
+      ally: '&cDu kan inte attackera denna spelare i wildmarken, för han är medlem
+        i ett av dina lands. &7Arena PVP kan göras i ditt land genom tillåta pvp i
+        rank inställningar.'
+      wilderness: '&cDu kan inte attackera denna spelare, för han är i vildmarken
+        och du står i ett inmutat land.'
+    banned: '&cDu har inte tillåtelse gå in i denna area. &7Du har blivit bannlyst
       från denna area &8(&7Area:&6 {area} &7Land:&2 {land}&8)&7. &8Bypass permission:
       {bypass}'
-    vehicle: '&cDu har inte tillåtelse använda gruvvagnar och hästar här. &7Denna
-      area tillhör land&2 {land}&7.'
-    fly: '&cDu har inte flyga här. &7Denna area tillhör land&2 {land}&7.'
-    position: '&cDu får inte göra detta för land &4 {land} &c vid din nuvarande position.
-      & 8Bypass-permission: {bypass} '
-    ender_pearl: '&cDu har inte tillåtelse använda detta item för teleoportera in
-      i arean&6 {area} &7i land&4 {land}&c.'
-    spawn: '&cDu har inte tillåtelse teloportera till spawn av land&4 {land}&c. &7Dom
-      kan ändra deras rank inställningar för tillåta dig att teloportera till deras
-      spawn.'
+    wilderness: '&cDu har inte tilltelse göra detta i vildmarken. &8Ändra denna {flag}
+      för få tillåtlse.'
   event:
     fly:
       counter: '#t#&cFly stängs av {newline}&com &4{sec} &csecond(s)'
       disabled: '&cFlyg avstängd. &7Du saknar premissions för flyga här.'
     enter:
       land: '#a#&2&l{land} &3{title}'
-      safezone: '#t#&2&l{land}'
       pvp-warning: ''
+      admin: '#t#&2&l{land}[newline]{title}'
     leave:
       land: '#a#&l&9Du är ute i vildmarken'
-      safezone: '#a#&l&9Du är ute i vildmarken'
+      admin: '#t#&2&lWilderness[newline]&7Feel the wild'
   claimblock:
     dropped: '&cNågra inmutblock ligger på marken&7Ditt Inventarie var fullt'
     success: '&7Du fick&3 {blocks} &7inmutblock(s). &7Placera dom i en chunk för inmuta.'
@@ -472,6 +446,41 @@ message:
       säker plats.'
     cmd: '&cDu kan inte använda några kommandon när du blir teleporterad. &7Vänta
       i&6 {sec} sekunder &7så kan du använda kommandon igen.'
+  flags:
+    block_place: '&cDu har inte tillåtelse placera block här (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    block_break: '&cDu har inte tillåtelse förstöra block här (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    block_ignite: '&cDu har inte tillåtelse sätta eld på block här (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &8Flag: {flag}'
+    interact_general: '&cDu har inte tillåtelse att interagera här (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &8Flag: {flag}'
+    interact_door: '&cDu har inte tillåtelse att öppna dörrar här (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &8Flag: {flag}'
+    interact_mechanism: '&cDu får inte använda knappar,spakar här (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &8Flag: {flag}'
+    interact_container: '&cDu har inte tillåtelse att öppna kistor/tunnor här (&cArea:&4
+      {area} &cLand:&4 {land}&c). &8Flag: {flag}'
+    interact_villager: '&cDu får inte handla med bybor här (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    fly: '&cDu har inte tillåtelse att flyga här (&cArea:&4 {area} &cLand:&4 {land}&c).
+      &8Flag: {flag}'
+    spawn_teleport: '&cDu får inte teleportera till landets spawn i land&4 {land}&c.
+      &7De kan justera sina rankinställningar för att tillåta spelare teleportera
+      till deras spawn. &8Flag: {flag}'
+    land_enter: '&cYou''re not allowed to enter the area&4 {area} &cof land&4 {land}&c
+      (&cArea:&4 {area} &cLand:&4 {land}&c). &7You were teleported to your previous
+      location. &8Flag: {flag}'
+    vehicle_use: '&cDu har inte tillåtelse att anända båtar/minecart här (&cArea:&4
+      {area} &cLand:&4 {land}&c). &8Flag: {flag}'
+    item_pickup: '&cDu har inte tillåtelse att plocka upp items här (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &8Flag: {flag}'
+    ender_pearl: '&cDu har inte tillåtelse att anända detta item för teleportera in
+      i area&6 {area} &7of land&4 {land}&c. &8Flag: {flag}'
+    attack_animal: '&cDu har inte tillåtelse att attackera djur här (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &8Flag: {flag}'
+    attack_monster: '&cDu har inte tillåtelse att attackera monster här (&cArea:&4
+      {area} &cLand:&4 {land}&c). &7Dom inte inte heller anfalla dig. &8Flag: {flag}'
 command:
   general:
     land-not-exist: '&cLand&2 {land} &cExisterar inte. &7Det är inget land med namnet&2
@@ -574,8 +583,6 @@ command:
       conflicts: '&cHittade&4 {conflicts} &csom krockar med chuncks som redan är tilldelad
         till area(s). &7Använd &8/&3Lands selection assgin {area} confirm &7För att
         bekräfta en överskrivning. Konflikt tillhör dessa areas: {areas}'
-      assigned: '&7Du har tilldelas:&3 {chunks} &7chunks till area&6 {area} &8(&7Land:&2
-        {land}&8)&7.'
     enabled: |
       &7Du har slagit på så du kan markera ut area.
        &8┏
@@ -757,6 +764,8 @@ command:
       broadcast: '&2{land} &8| &7Spelare&3 {player} &7Är nu invånare i ditt land.'
     war: '&cYou currently can''t join land&4 {land}&c, because it is engaged in a
       war against {object}&c. &7Try again when their war is over.'
+    max-members: '&cYou currently can''t join land&4 {land}&c. &7They reached their
+      maximum of&3 {members} &7members in their land.'
   setowner:
     confirm: '&cBekräfta att du vill byta ägare över ditt land&2 {land} &7till spelare&3
       {player}&7: &8/&3Lands setowner {player} confirm'
@@ -795,6 +804,8 @@ command:
     searching: '#t#&6Söker en destination {newline}&evänta på Teleportation ska starta..'
     no-location: '&cKunde hitta säker plats att teleoportera dig till, admin kan behöva
       ändra inställningar. &8Ändra max and min distans och sätt world spawn rätt (/setworldspawn).'
+    perm: '&cYou''re not allowed to use random teleportation in the world&4 {world}&c.
+      &8You''re missing the permission {perm} for this world.'
   deposit:
     number: '&7Du behöver ange specifik belopp. Använd &8/&aLand deposit &8<&aMängd
       guld&8> &7eller &8/&aLand deposit &8<&aLand&8> <&aMängd guld&8>&7.'
@@ -842,6 +853,11 @@ command:
         &3Invånare:&7 {players}
         &3Beskrivning av&6 {area}&3:&r {description}
       &7---------<- &5&lUnderzon översikt &r&7->---------
+    y-lock:
+      enabled: '&cToggled y-lock mode: &7The land borders will no longer follow your
+        position up and downwards.'
+      disabled: '&aToggled y-lock mode: &7The land borders will follow your position
+        up and downwards.'
   ban:
     area:
       success: '&7Du har avhyst invånare&3 {player} &7från denna area &8(&7Area:&6
@@ -997,6 +1013,18 @@ command:
   map:
     header: '&7-<------------<- &6Lands Map &7->------------>-[newline]'
     footer: '[newline]&7-<------------<- &6Lands Map &7->------------>-'
+  top:
+    mode: '&cDin inmatning&4 {input} &cÄr inte tillåtet sortering ordning. &7Tillgängliga
+      sortering: {modes}'
+    title: '[NoPrefix][T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Tryck
+      här för visa förgånde sida.[/H][/T] &5Top Lands [T]&7-&6>>>>&7-----------[C]lands
+      top {mode} {next}[/C][H]&7Tryck här för visa nästa sida.[/H][/T]'
+    footer: |
+      [NoPrefix]
+      &7Tryck på pilarna nedan för navigera.
+      [T]&7På banken &8[CLICK],[H]&7Tryck här för sortera på hur mycket varje land har på banken.[/H][C]lands top balance[/C][/T] [T]&7Chunks &8[CLICK],[H]&7Tryck för sortera hur många chunks varje land har i storlek.[/H][C]lands top chunks[/C][/T] [T]&7Invånare &8[CLICK][H]&7Tryck här för sortera på antal invånare varje land har.[/H][C]lands top members[/C][/T]
+      &7Total antal lands: {total} &8| &7Senast uppdaterad: {time} .
+      [T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Tryck här för visa förgånde sida.[/H][/T] &5Top Lands [T]&7-&6>>>>&7-----------[C]lands top {mode} {next}[/C][H]&7Tryck här för visa nästa sida.[/H][/T]
 list:
   swear-words:
   - fuck
@@ -1008,8 +1036,10 @@ wars:
     noaccess:
       pillage: '&cDu kan inte plundra ett land när inga försvarare är online. &7 Vänta
         tills minst&b {defenders} försvarare loggat in.'
-      general: '&cYou''re not allowed to do this in the land&4 {land}&c. &7You''re
-        currently engaged in a war against this land.'
+      general: '&cDu har inte tillåtelse göra detta i {land}&c. &7Du är i krig emot
+        detta land.'
+      wilderness: '&cDu har inte tillåtelse göra detta i vildmarken när du har pågånde
+        krig. &8Fflagga: {flag} &8Bypass: {bypass}'
     war-shield:
       set: '&aDin nya sköld kommer vara aktiv för&b {time}&7.'
     kill:
@@ -1157,6 +1187,7 @@ nations:
           [T]&7Skapa egen nation: &8/&3Nations create[H]&7Klicka för att kopiera.[/H][SC]nations create[/SC][/T]
       noaccess: '&cDu får inte göra detta för nationen&4 {nation}&c. &8Flaga: {flag}
         &8Bypass: {bypass}'
+      not-trusted: '&cThe land&4 {land} &cisn''t a member of your nation&4 {nation}&c.'
     create:
       already: '&cDitt land &4 {land} &c är redan en del av nationen & 4 {nation}
         & c. & 7Ditt land måste lämna det först genom att köra &8/&3Nations leave&7.'
@@ -1165,6 +1196,8 @@ nations:
         menu[/C][/T]'
       war: '&cDu kan inte skapa en nation med land&4 {land} &cnär huvudstaden är med
         i ett krig emot&4 {object}&c. &7Du kan göra det efter kriget är över.'
+      level: '&cYou currently can''t create a nation. &7Your land&2 {land} &7needs
+        to be at least level&3 {level} &8(&7current: {current}&8)&7.'
     trust:
       already: '&cLandet &4 {land} &c är redan en del av nationen &4 {nation} &c.
         &7De måste lämna det först med &8/&3Nations leave&7.'
@@ -1210,3 +1243,15 @@ nations:
         &7Bekräfta att du vill lämna nationen&9 {nation} &7med land&2 {land}&7.
 
           [T]&7Bekräfta: &8[CLICK][H]&7Klicka här för att bekräfta att du vill lämna nationen.[/H][C]nations leave confirm[/C][/T]
+    rename:
+      success: '&7Successfully set the new name&3 {name} &7for this nation &8(&7Nation:&9
+        {nation}&8)&7. You paid&c ${cost}&7.'
+    setcapital:
+      confirm: |
+        &cBekräfta att du vill sätta land&4 {land} &csom ny huvudstad av nationen&4 {nation}&c.
+        &cDu kanske förlorar all administrering möjligheter i nation.
+         [T]&aConfirm: &8[CLICK][H]&7Tryck här för bekräfta.[/H][C]nations setcapital {land} confirm[/C][/T]
+      success: '&7Du har nu satt land&2 {land} &7som den nya huvudstaden i nationen&9
+        {nation}&7.'
+      level: '&cDu kan inte sätta land&4 {land} &csom ny huvudstad av nationen&4 {nation}&c.
+        &7Den behöver vara minst level&3 {level} &8(&7nuvarande: {current}&8)&7.'

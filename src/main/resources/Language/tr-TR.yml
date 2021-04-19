@@ -1,0 +1,922 @@
+---
+#Here you can edit all chat messages
+#GUI items and menus can be found in <language>_gui.yml
+#If you encounter any issues or have questions, contact plugin support.
+#Plugin page: https://www.spigotmc.org/resources/authors/315463/
+#Discord: https://discord.gg/B4MAJVk
+################################
+#About chat message type system:
+#Does only work for messages in
+#"message" or "command" section.
+################################
+#You can use some codes to set the type
+#of a message to title, actionbar or chat.
+#How does it work:
+#For example we want to print a message as a title:
+#Set message to: '#t#Title[newline]Subtitle'(Set "#t#" in front of it; use [newline] to set the subtitle)
+#You also send a message at the actionbar:
+#Set message to: '#a#This is a actionbar message.'
+#(Set #a# in front of it.)
+#More information: https://github.com/Angeschossen/General/wiki/Messages
+general:
+  prefix:
+    normal: '&8[&aLands&8] '
+    help: '&8[&aLands&8] &7Kullanım: '
+  wYes: '&aEvet'
+  wNo: '&cHayır'
+  none: '&8Yok'
+  disabled: '&cDevre dışı'
+  wilderness: '&aVahşi doğa'
+  unlimited: '&aSınırsız'
+  land:
+    title:
+      land: '&7%level% &8/&3 %owner%&7.'
+      admin: '&7Bu arazi sunucuya aittir.'
+    default-area: Varsayılan
+  area:
+    description:
+      default: '&7Yeni hak talepleri bu alana ait olacaktır.'
+      sub: '&7Bu, özel bayraklara ve üyelere sahip olabilen bir alt alandır.'
+      rented: '&7Bu alan, oyuncu {player} tarafından kiralanmıştır.'
+      sold: '&7Bu alan {player} oyuncusuna satılmıştır.'
+  time:
+    days: gün
+    hours: saat
+    minutes: dakika
+    seconds: saniye
+  status:
+    online: '&aÇevrimiçi'
+    offline: '&cÇevrim dışı'
+  top:
+    entry:
+      balance: '&c#{pos} &a{land} &7Bakiye:&e ${value}'
+      chunks: '&c#{pos} &a{land} &7Parçalar:&e {value}'
+      members: '&c#{pos} &a{land} &7Üyeler:&e {value}'
+    hologram:
+      title: '&7-----------&6<<<<&7- &5İlk 10 Arazi &8(&7Toplam: {total}&8) &7-&6>>>>&7-----------'
+      footer: '&7-----------&6<<<<&7- &5İlk 10 Arazi &8(&7Toplam: {total}&8) &7-&6>>>>&7-----------'
+  integration:
+    dynmap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}</div> <br/> <div class="\&quot;infowindow\&quot;">Ulus: {nation}<br />Üyerler: <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<p><span style="font-size: 120%; color: #339966;"><span style="font-size: 120%;">Doğma noktası</span></span></p><p>Ziyaretçilere açık: {public}</p>'
+  sign:
+    topLand:
+      line-1: '&c#&l{place}'
+      line-2: '&8<&2 {land} &8>'
+      line-3: '&7Sahibi, {owner}'
+      line-4: '&7Bakiye:&3 ${value}'
+    noLand:
+      line-1: ' '
+      line-2: '&cGösterilecek'
+      line-3: '&carazi yok.'
+      line-4: ' '
+    rent:
+      line-2: '&6Kiralık {area}'
+      line-3: '&c${cost} &8/ &5{time}'
+      line-4: '&8Maksimum: {max}'
+    sell:
+      area:
+        line-2: '&aSatın Al'
+        line-3: '&7Alan&6 {area}'
+        line-4: '&c${cost}'
+      land:
+        line-2: '&aSatın Al'
+        line-3: '&7Arazi&2 {land}'
+        line-4: '&c${cost}'
+    rented:
+      line-2: '&7Alan&6 {area}'
+      line-3: '&7{player}'
+      line-4: '&5{time} &7ayrıldı'
+    sold:
+      area:
+        line-2: '&7Alan&6 {area}'
+        line-3: '&aŞuna satıldı'
+        line-4: '&7{player}'
+      land:
+        line-2: '&7Arazi&2 {land}'
+        line-3: '&aŞuna satıldı'
+        line-4: '&7{player}'
+  autoAction:
+    claim: Parça hak talebi
+  map:
+    yours: '&a▉ '
+    others: '&c▉ '
+    friendly: '&5▉ '
+    current-location: '&e▉ '
+    wilderness: '&2▉ '
+    info:
+      wilderness: ' &2▉ &7= Vahşi doğa'
+      yours: ' &a▉ &7= Senin'
+      trusted: ' &5▉ &7= Arkadaş canlısı'
+      others: ' &c▉ &7= Diğerleri'
+      position: ' &e▉ &7= Konum'
+    hover:
+      wilderness: '&7Bu parça vahşi doğada. Talep etmek için tıklayın.'
+      yours: '&7Bu arazi size aittir. Arazi&3 {land} &7hakkında bilgi görüntülemek için tıklayın.'
+      trusted: '&7Bu arazi güvendin. &7Arazi&3 {land} &7ile ilgili bilgileri görüntülemek için tıklayın.'
+      others: '&7Bu arazilerde güvenilmezsin. Arazi&3 {land} &7hakkında bilgi görüntülemek için tıklayın.'
+      position: '&7Bu sizin şu anki konumunuz.'
+  inbox:
+    general:
+      created: '&8{0}: &7Arazi oluşturuldu.'
+    member:
+      join: '&8{0}: &7Oyuncu {1} katıldı.'
+      leave: '&8{0}: &7Oyuncu {1} ayrıldı.'
+      ban: '&8{0}: &cOyuncu {1} yasaklandı.'
+    economy:
+      upkeep:
+        warning: '&8{0}: &cBakım maliyeti ödenemedi:${1}'
+        unclaim: '&8{0}: &c${1} &ctutarının tam bakım maliyeti ödenemedi. Talep edilen son {2} parça talep edilmedi.'
+        paid: '&8{0}: &7Ödenen bakım maliyeti: ${1}'
+        nation: '&8{0}: &7Ulus {1}, ${2}''ın bakım masrafını ödeyemedi ve silindi.'
+      bank:
+        withdraw: '&8{0}: &cOyuncu {1} ${2} -> bakiye = ${3} çekti'
+        deposit: '&8{0}: &cOyuncu {1} ${2} -> bakiye = ${3} yatırdı'
+      taxes:
+        warning: '&8{0}: &cOyuncu {1} vergi ödeyemedi.'
+        untrusted: '&8{0}: &cOyuncu {1} vergi ödeyemedi. Artık güvenilmezler.'
+        received: '&8{0}: &7Arazi üyelerinden toplam ${1} vergi alındı -> bakiye = ${2}'
+    war:
+      declaration:
+        sent: '&8{0}: &7{1} ile savaş ilan edildi: &8/Wars info'
+        received: '&8{0}: &c{1} &cbize karşı savaş ilan etti: &8/&3Wars info'
+        mutual:
+          sent: '&8{0}: &7{1}''e savaş isteği gönderildi. &7Kabul etmeleri gerekiyor.'
+          received: '&8{0}: &c{1} &cbir savaş isteği gönderdi. Kabul etmek için: &8/&3Wars declare {2}'
+      surrender:
+        sent: '&8{0}: &cSavaşta teslim oldu. Düşmana ${1} haraç ödedi.'
+        received: '&8{0}: &7Düşman {1} &7teslim oldu. ${2} haraç aldı.'
+      end:
+        won: '&8{0}: Savaşı {1} öldürme ve {2} ölümle kazandık.'
+        draw: '&8{0}: Savaş, {1} ölüm ve {2} ölümle berabere sonuçlandı.'
+        lost: '&8{0}: Savaşı {2} ölüm ve {1} ölümle kaybettik.'
+    nation:
+      general:
+        created: '&8{0}: &7Ulus oluşturuldu.'
+      member:
+        join: '&8{0}: &7Arazi {1} katıldı.'
+        leave: '&8{0}: &7Arazi {1} ayrıldı.'
+      economy:
+        upkeep:
+          warning: '&8{0}: &cBakım maliyeti ödenemedi:${1}'
+          paid: '&8{0}: &7Ödenen bakım maliyeti: ${1}'
+        taxes:
+          warning: '&8{0}: &cArazi {1} vergi ödeyemedi.'
+          untrusted: '&8{0}: &cArazi {1} vergi ödeyemedi. Kaldırıldılar.'
+          received: '&8{0}: &7Arazi üyelerinden toplam ${1} vergi alındı -> bakiye = ${2}'
+  wars:
+    object:
+      enemy: '&cDüşman'
+      ally: '&aMüttefik'
+    nametag:
+      enemy: '&cDÜŞMAN &8| '
+      ally: '&aMÜTTEFİK &8| '
+    state:
+      preparation: '&aHazırlık'
+      fight: '&cSavaş'
+  teleportation:
+    bossbar: '&7Işınlanmak için&5 {time} &7saniye bekleyin.'
+help:
+  command:
+    help: '[T]&8/&3Lands help &8[&3page&8] - &7Yardım almak için[H]&7Kopyalamak için tıklayın.[/H][SC]lands help[/SC][/T]'
+    edit: '[T]&8/&3Lands edit &8<&3land&8> &8- &7Arazi için düzenleme moduna girin[H]&7Düzenleme alanı, /Lands claim gibi komutlar için kullanılır. &7Kopyalamak için tıklayın.[/H][SC]lands edit[/SC][/T]'
+    claim: '[T]&8/&3Lands claim &8[&3land | auto&8] - &7Parça talep edin[H]&7Mevcut konumunuzdaki parçayı talep edin. Bu talebin gitmesi gereken bir arazi de belirtebilirsiniz. &7Kopyalamak için tıklayın.[/H][SC]lands claim[/SC][/T]'
+    create: '[T]&8/&3Lands create &8<&3name&8> - &7Arazi oluştur[H]&7Kopyalamak için tıklayın.[/H][SC]lands create[/SC][/T]'
+    leave: '[T]&8/&3Lands leave &8[&3land&8] &8- &7Bir arazi veya alan bırakın.[H]&7Bir arazi belirtmezseniz, alanı mevcut konumunuzda terk edersiniz. &7Kopyalamak için tıklayın.[/H][SC]lands leave[/SC][/T]'
+    unclaim: '[T]&8/&3Lands unclaim &8- &7Parça talebini geri alma[H]&7Bu aynı zamanda /Lands selection seçimini de destekler. &7Kopyalamak için tıklayın.[/H][SC]lands unclaim[/SC][/T]'
+    delete: '[T]&8/&3Lands delete &8<&3land&8> &8- &7Araziyi sil[H]&7Kopyalamak için tıklayın.[/H][SC]lands delete[/SC][/T]'
+    trust: '[T]&8/&3Lands trust &8<&3player&8> [&3area&8] - &7Oyuncuya güven[H]&7Oyuncuya tüm araziye güvenmek için alan adı olarak * kullanın. &7Kopyalamak için tıklayın.[/H][SC]lands trust[/SC][/T]'
+    untrust: '[T]&8/&3Lands untrust &8[&3area&8] - &7Oyuncuya güveni geri al[H]&7Oyuncuya tüm araziye güvenmemek için alan adı olarak * kullanın. &7Kopyalamak için tıklayın.[/H][SC]lands untrust[/SC][/T]'
+    setRole: '[T]&8/&3Lands setrole &8<&3player&8> &8<&3area&8> <&3role&8> - &7Rol belirleyin[H]&7Kopyalamak için tıklayın.[/H][SC]lands setrole[/SC][/T]'
+    accept: '[T]&8/&3Lands accept &8<&3land&8> - &7Daveti kabul et[H]&7/Lands invites gerçekleştirerek alınan tüm davetleri görüntüleyebilirsiniz. &7Kopyalamak için tıklayın.[/H][SC]lands accept[/SC][/T]'
+    deny: '[T]&8/&3Lands deny &8<&3land&8> - &7Daveti reddet[H]&7Kopyalamak için tıklayın.[/H][SC]lands deny[/SC][/T]'
+    view: '[T]&8/&3Lands view &8[&3disable&8] &8- &7Hak talepleri ile ilgili bilgiler[H]&7Bu komut yakındaki talepleri de görselleştirecektir. &7Kopyalamak için tıklayın.[/H][SC]lands view[/SC][/T]'
+    menu: '[T]&8/&3Lands menu &8[&3here&8] &8- &7Arazi / alan menüsünü aç[H]&7Kopyalamak için tıklayın.[/H][SC]lands menu[/SC][/T]'
+    setSpawn: '[T]&8/&3Lands setspawn - &7Arazi doğma noktası ayarla[H]&7Kopyalamak için tıklayın.[/H][SC]lands setspawn[/SC][/T]'
+    spawn: '[T]&8/&3Lands spawn &8[&3land&8] - &7Araziye Işınla[H]&7Kopyalamak için tıklayın.[/H][SC]lands spawn[/SC][/T]'
+    wild: '[T]&8/&3Lands wild &8[&3world&8] &8[&3player&8] &8- &7Rastgele yere ışınlanma[H]&7Kopyalamak için tıklayın.[/H][SC]lands wild[/SC][/T]'
+    top: '[T]&8/&3Lands top &8[&3mode&8] [&3page&8] &8- &7İlk 10 araziyi gösterir[H]&7Kopyalamak için tıklayın.[/H][SC]lands top[/SC][/T]'
+    selection: '[T]&8/&3Lands selection &8[&3assign &8| &3expand &8| &3pos1 &8| &3pos2&8] &8- &7Seçim modu[H]&7Bu komutla bir alt alanı yeniden boyutlandırabilir veya seçiminizi sonsuz y düzeyine genişletebilirsiniz. &7Kopyalamak için tıklayın.[/H][SC]lands selection[/SC][/T]'
+    chat: '[T]&8/&3Lands chat &8[&3land&8] <&3message&8> &8- &7Arazi sohbeti[H]&7Kopyalamak için tıklayın.[/H][SC]lands chat[/SC][/T]'
+    rename: '[T]&8/&3Lands rename &8<&3name&8> - &7Araziyi yeniden adlandır[H]&7Kopyalamak için tıklayın.[/H][SC]lands rename[/SC][/T]'
+    teleport: '[T]&8/&3Lands teleport &8[&3world&8] <&3x&8> <&3z&8> - &7Parçalara ışınla[H]&7Kopyalamak için tıklayın.[/H][SC]lands teleport[/SC][/T]'
+    invites: '[T]&8/&3Lands invites &8- &7Alınan davetleri göster[H]&7Kopyalamak için tıklayın.[/H][SC]lands invites[/SC][/T]'
+    info: '[T]&8/&3Lands info &8[&3land&8] - &7Arazi ile ilgili bilgileri görüntüleyin[H]&7Kopyalamak için tıklayın.[/H][SC]lands info[/SC][/T]'
+    player: '[T]&8/&3Lands player &8<&3player&8> - &7Oyuncu hakkındaki bilgileri görüntüleyin[H]&7Kopyalamak için tıklayın.[/H][SC]lands player[/SC][/T]'
+    map: '[T]&8/&3Lands map &8- &7Haritayı incele[H]&7Kopyalamak için tıklayın.[/H][SC]araziler haritası[/SC][/T]'
+    balance: '[T]&8/&3Lands balance &8[&3land&8] - &7Bakiye kontrol[H]&7Kopyalamak için tıklayın.[/H][SC]lands balance[/SC][/T]'
+    deposit: '[T]&8/&3Lands deposit &8[&3land&8] <&3amount&8> - &7Bakiye yatır[H]&7Kopyalamak için tıklayın.[/H][SC]lands deposit[/SC][/T]'
+    withdraw: '[T]&8/&3Lands withdraw &8[&3land&8] <&3amount&8> - &7Bakiye çek[H]&7Kopyalamak için tıklayın.[/H][SC]lands withdraw[/SC][/T]'
+    list: '[T]&8/&3Lands list &8[&3world&8] - &7Tüm arazileri listeleyin[H]&7Kopyalamak için tıklayın.[/H][SC]lands list[/SC][/T]'
+    assign: '[T]&8/&3Lands assign &8<&3area&8> - &7Seçimi alana ata[H]&7Kopyalamak için tıklayın.[/H][SC]lands assign[/SC][/T]'
+    setowner: '[T]&8/&3Lands setowner &8<&3player&8> - &7Sahipliği aktar[H]&7Kopyalamak için tıklayın.[/H][SC]lands setowner[/SC][/T]'
+    ban: '[T]&8/&3Lands ban &8<&3player&8> [&3area&8] - &7Oyuncuyu yasakla[H]&7Kopyalamak için tıklayın.[/H][SC]lands ban[/SC][/T]'
+    unban: '[T]&8/&3Lands unban &8<&3player&8> [&3area&8] - &7Oyuncunun yasağını kaldır[H]&7Kopyalamak için tıklayın.[/H][SC]lands unban[/SC][/T]'
+    taxes: '[T]&8/&3Lands taxes &8- &7Yaklaşan vergi ödemelerini göster[H]&7Kopyalamak için tıklayın.[/H][SC]lands taxes[/SC][/T]'
+    unstuck: '[T]&8/&3Lands unstuck &8- &7Tuzaklardan ışınlanma[H]&7Bir arazide sıkışıp kalmanız durumunda. &7Kopyalamak için tıklayın.[/H][SC]lands unstuck[/SC][/T]'
+    claims: '[T]&8/&3Lands claims &8[&3land&8] &8- &7Arazinizin hak taleplerini listeleyin[H]&7/Lands claims Bu komut size tüm arazileri gösterecektir. &7Kopyalamak için tıklayın.[/H][SC]lands claims[/SC][/T]'
+    rent: '[T]&8/&3Lands rent &8<&3cancel &8| &3info &8| &3removeOffer &8| &3removeTenant&8> &8- &7Kiralamayı yönet[H]&7Bu komut ile mevcut konumunuzdaki kiranızı yönetebilirsiniz. &7Kopyalamak için tıklayın.[/H][SC]lands rent[/SC][/T]'
+    wars:
+      declare: '[T]&8/&3Wars declare &8<&3land or nation&8> - &7Savaş ilan et[H]&7Kopyalamak için tıklayın.[/H][SC]wars declare[/SC][/T]'
+      info: '[T]&8/&3Wars info - &7Mevcut veya yaklaşan savaşı göster[H]&7Kopyalamak için tıklayın.[/H][SC]wars info[/SC][/T]'
+      menu: '[T]&8/&3Wars menu &8- &7Savaş menüsünü aç[H]&7Kopyalamak için tıklayın.[/H][SC]wars menu[/SC][/T]'
+      deny: '[T]&8/&3Wars deny &8- &7Karşılıklı savaş ilanını reddet[H]&7Kopyalamak için tıklayın.[/H][SC]wars deny[/SC][/T]'
+    nations:
+      trust: '[T]&8/&3Nations trust &8<&3land&8> - &7Araziye davet et[H]&7Kopyalamak için tıklayın.[/H][SC]nations trust[/SC][/T]'
+      untrust: '[T]&8/&3Nations untrust &8<&3land&8> - &7Araziden kaldır[H]&7Kopyalamak için tıklayın.[/H][SC]nations untrust[/SC][/T]'
+      accept: '[T]&8/&3Nations accept &8<&3nation&8> - &7Daveti kabul et[H]&7Kopyalamak için tıklayın.[/H][SC]nations accept[/SC][/T]'
+      deny: '[T]&8/&3Nations deny &8<&3nation&8> - &7Daveti reddet[H]&7Kopyalamak için tıklayın.[/H][SC]nations deny[/SC][/T]'
+      menu: '[T]&8/&3Nations menu &8- &7Menü[H]&7Kopyalamak için tıklayın.[/H][SC]nations menu[/SC][/T]'
+      create: '[T]&8/&3Nations create &8[&3name&8] - &7Ulus oluştur[H]&7Kopyalamak için tıklayın.[/H][SC]nations create[/SC][/T]'
+      delete: '[T]&8/&3Nations delete &8<&3nation&8> &8- &7Ulusu sil[H]&7Kopyalamak için tıklayın.[/H][SC]nations delete[/SC][/T]'
+      leave: '[T]&8/&3Nations leave &8- &7Ulusdan ayrıl[H]&7Kopyalamak için tıklayın.[/H][SC]nations leave[/SC][/T]'
+      spawn: '[T]&8/&3Nations spawn &8- &7Başkent doğma noktası[H]&7Kopyalamak için tıklayın.[/H][SC]nations spawn[/SC][/T]'
+      rename: '[T]&8/&3Nations rename &8- &7Ulusu yeniden adlandır[H]&7Kopyalamak için tıklayın.[/H][SC]nations rename[/SC][/T]'
+      setcapital: '[T]&8/&3Nations setcapital &8- &7Başkenti ayarlayın[H]&7Kopyalamak için tıklayın.[/H][SC]nations setcapital[/SC][/T]'
+    admin:
+      admin: '[T]&8/&3Lands admin &8<&3sub-command&8> &8- &7Yönetici komutları[H]&7Kopyalamak için tıklayın.[/H][SC]lands admin[/SC][/T]'
+      debug: '[T]&8/&3Lands debug &8- &7Yüklenen veri istatistiklerini gösterir[H]&7Kopyalamak için tıklayın.[/H][SC]lands debug[/SC][/T]'
+      reload: '[T]&8/&3Lands reload &8- &7Yapılandırmayı ve mesajları yeniden yükle[H]&7Kopyalamak için tıklayın.[/H][SC]lands reload[/SC][/T]'
+      about: '[T]&8/&3Lands about &8- &7Araziler hakkında bilgi göster[H]&7Kopyalamak için tıklayın.[/H][SC]lands about[/SC][/T]'
+    mod:
+      chatspy: '[T]&8/&3Lands chatspy &8[&3land&8] - &7Arazi sohbeti dinleyin[H]&7Kopyalamak için tıklayın.[/H][SC]lands chatspy[/SC][/T]'
+message:
+  world-not-exist: '&4{world} &cadında bir dünya yok. &7Yazım hatası mı?'
+  world-invalid: '&cBu, bu dünyada devre dışı bırakıldı. &7Bir yöneticinin bunu yapılandırmaya eklemesi gerekir. Dünya: {world}'
+  feature-disabled: '&cBu özellik bir yönetici tarafından devre dışı bırakıldı. &8Bu özelliği kullanmanıza izin vermek için yapılandırmadaki ''{setting}'' ayarını etkinleştirmeleri gerekir.'
+  current-war: '&cBunu şimdi yapamazsınız. &7Araziniz&2 {land} &7şu anda {object} &7ile savaş halinde. &7Lütfen savaş bittikten sonra tekrar deneyin.'
+  flags:
+    block_place: '&cBuraya blok yerleştirme izniniz yok (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    block_break: '&cBurada blokları kırmana izin yok (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    block_ignite: '&cBurada blokları tutuşturmana izin yok (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    interact_general: '&cBurada etkileşime girme izniniz yok (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    interact_door: '&cBurada kapı açmana izin yok (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    interact_mechanism: '&cBurada mekanizmaları kullanma izniniz yok (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    interact_container: '&cBurada konteyner açmanıza izin verilmiyor (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    interact_villager: '&cBurada köylülerle ticaret yapmanıza izin verilmiyor. (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    fly: '&cBuraya uçmana izin yok (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    spawn_teleport: '&cArazi&4 {land}&c''nin doğma noktasına ışınlanmanıza izin verilmiyor. &7Rol ayarlarını, sizin için doğma noktası ışınlanmaya izin verecek şekilde ayarlayabilirler. &8Bayrak: {flag}'
+    land_enter: '&cArazinin&4 {area} &calanına&4 {land} &c(&cAlan:&4 {area} &cArazi:&4 {land}&c) &cgirmenize izin verilmiyor. &7Önceki konumunuza ışınlandınız. &8Bayrak: {flag}'
+    vehicle_use: '&cBurada araç kullanma izniniz yok (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    item_pickup: '&cBuradan eşya almanıza izin verilmiyor (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    ender_pearl: '&cArazinin&4 {land}&c,&6 {area} &calanına ışınlanmak için bu eşyayı kullanmanıza izin verilmiyor. &8Bayrak: {flag}'
+    attack_animal: '&cBurada hayvanlara saldırmanıza izin yok (&cAlan:&4 {area} &cArazi:&4 {land}&c). &8Bayrak: {flag}'
+    attack_monster: '&cBurada canavarlara saldırmanıza izin yok (&cAlan:&4 {area} &cArazi:&4 {land}&c). &7Ayrıca size saldıramayacaklar. &8Bayrak: {flag}'
+  noaccess:
+    wilderness: '&cVahşi doğada bunu yapmanıza izin verilmiyor. &8Bayrak: {flag}'
+    area: '&cBu alanda bunu yapmana izin yok &8(&7Alan:&6 {area} &7Arazi:&2 {land})&c. &8Baypas izni: {bypass}'
+    land: '&cBunu bu araziler için yapmana izin yok&8(&7Arazi:&2 {land}&8)&c. &7Bir arazi oluşturmak için &8/&3Lands create &8<&3name&8> &7kullanın.'
+    land-not-owner: '&cArazi&4 {land} &ciçin bunu yapmanıza izin verilmiyor. &7Kendi arazinizi seçin &8(/&3Lands edit &8<&3land&8>) &7veya bir tane oluşturun &8(/&3Lands create &8<&3name&8>)&7. &8Baypas izni: lands.admin.land_edit'
+    claim: '&cBurada arazi talep edemezsiniz. &7Bu parça başka bir yönetim eklentisine aittir. Adı: {plugin}'
+    banned: '&cBu alana girmenize izin verilmiyor. &7Bu alandan yasaklandınız &8(&7Alan:&6 {area} &7Arazi:&2 {land}&8)&7. &8Baypas izni: {bypass}'
+    combat:
+      attacker: '&cBurada oyunculara saldırma izniniz yok. &7Bu alan arazi&2 {land} &7aittir.'
+      target: '&cHedefinizin burada oyunculara saldırmasına izin verilmiyor. &7Onlarla burada savaşamazsınız. &7Bu alan arazi&2{land} &7aittir.'
+      ally: '&cBu oyuncuya vahşi doğada saldıramazsınız çünkü o sizin arazilerinden birinin üyesi. &7Rol ayarlarında pvp''ye izin vererek arazinizde arena dövüşleri yapılabilir.'
+      wilderness: '&cBu oyuncuya saldıramazsınız çünkü o vahşi doğada ve siz hak talep edilen arazide duruyorsunuz.'
+  area:
+    exists: '&4{area} &cadında bir alan,&4 {land} &carazisinde zaten var.'
+    not-exist: '&4{area} &calanı,&4 {land} &carazisinde mevcut değil.'
+    default: '&cBunu&4 {land} &carazisinin varsayılan alanı&4 {area} &cile yapamazsınız.'
+  event:
+    fly:
+      counter: '#t#&cUçuş Modu devre dışı bırakılıyor[newline]&4{sec} &csaniye içinde'
+      disabled: '&cUçuş modunuz devre dışı bırakıldı. &7Buraya uçma izniniz yok.'
+    enter:
+      land: '#t#&2&l{land}[newline]&3{title}'
+      admin: '#t#&2&l{land}[newline]{title}'
+      pvp-warning: '#a#&cBir pvp bölgesine girdiniz.'
+    leave:
+      land: '#t#&2&lVahşi doğa[newline]&7Vahşi doğayı hisset'
+      admin: '#t#&2&lVahşi doğa[newline]&7Vahşi doğayı hisset'
+  teleportation:
+    already: '&cİkinci bir ışınlanma başlatamazsınız. Zaten devam eden bir ışınlanma var. &7Lütfen bitene kadar bekleyin.'
+    started: '&7Işınlanma süreci başladı. &5{sec} &7saniye içinde ışınlanıyor. Lütfen hareket etmeyin.'
+    cmd: '&cIşınlanırken herhangi bir komut kullanamazsınız. &7Işınlanma bitene kadar lütfen&5 {sec} &7saniye daha bekleyin.'
+    cancelled: '&cIşınlamanız iptal edildi. &7Lütfen ışınlanma için&5 {sec} &7saniye beklerken hareket etmeyin.'
+    chunk: '#t#&9&lIşınlanıldı[newline]&7X: {x} Z: {z} Maliyet:&c ${cost}'
+    plugin: '&cIşınlanma bir 3. taraf eklenti tarafından iptal edildi.&7Lütfen diğer eklentilerinizi kontrol edin. &7Bu bir Lands sorunu değil.'
+    unsafe: |
+      &cHedef güvenli olmadığı için ışınlanma iptal edildi.
+
+       [T]&7Yine de ışınlanma: &8[CLICK][H]&7Uyarı: Işınlanma hedefi güvenli değil ve sizin için tehlikeli olabilir.[/H][C]{cmd}[/C][/T]
+    corrected: '&7Orijinal ışınlanma hedefi güvensizdi. &7Son varış noktanız güvenli bir konuma düzeltildi.'
+  claimblock:
+    dropped: '&cBazı hak talebi blokları yere düştü. &7Envanterinizde yer kalmadı.'
+    success: '&3{blocks} &7hak talebi bloğu var. &7Talep etmek için onları bir parça içine koyun.'
+    not-owner: '&cBu hak talebi bloğunu kullanmanıza izin verilmiyor. &3{owner}&7''a aittir.'
+  blacklist:
+    untrusted: '&cBu komutu burada kullanmanıza izin verilmiyor. &2{land}&7,&6 {area} &7alanında güvenilmezsiniz. &8Baypas izni: {permission}'
+    general: '&cSahip olunan arazilerde bu komutu kullanmanıza izin verilmiyor. &8Baypas izni: {permission}'
+    war: '&cBir savaş içindeyken bu komutu kullanmanıza izin verilmez. &8Baypas izni: {permission}'
+  autoAction:
+    stopped: '&cMevcut otomatik eyleminizi durdurdu. &7Maksimum tura ulaşıldı. Adı:&3 {name}'
+    started: '&7Otomatik işlem başarıyla başlatıldı. Adı:&3 {name}'
+    removed: '&7Otomatik işlem başarıyla durduruldu. &7Adı:&3 {name}'
+  role:
+    exists: '&4{role} &cadında bir rol zaten var. &7Lütfen farklı bir ad seçin.'
+    not-exist: '&e{role} &crolü bu alanda mevcut değil. &7Yazım hatası mı?'
+    max: '&cBu arazi için daha fazla rol oluşturamazsınız. &3{max} &7rol sınırınıza ulaştınız. İzin: lands.roles.NUMBER'
+    player:
+      land: '&cBu oyuncuyu&4 {land} arazisinde düzenleyemezsiniz. &6{role} &7rolü sizinkinden daha yüksek veya eşit bir önceliğe sahip.'
+      area: '&cBu oyucuyu &8(&7Arazi:&2 {land}&8)&4 {area} &calanında düzenleyemezsiniz. &6{role} &7rolü sizinkinden daha yüksek veya eşit bir önceliğe sahip.'
+    weight:
+      land: '&cArazi&4 {land}&c,&4 {role} &crolünü düzenleyemezsiniz. &7Rollerin önceliği sizinkinden daha yüksek veya ona eşit.'
+      area: '&4{area} &calanının &8(&7Arazi:&2 {land}&8)&4 {role} &crolünü düzenleyemezsiniz. &7Rollerin önceliği sizinkinden daha yüksek veya ona eşit.'
+    delete:
+      role: '&cArazinizin rolünü&4 {role} &csilemezsiniz. &7Bu rol gereklidir.'
+      entry: '&cArazinizin giriş rolünü silemezsiniz. &7Yeni oyuncular için gereklidir.'
+      visitor: '&cArazinizin ziyaretçi rolünü silemezsiniz. &7Ziyaretçi girişi için gereklidir.'
+  chat-action:
+    cancelled: '#t#&c&lİptal edildi[newline]&c&lSohbet Eylemi'
+    player: '&7Lütfen hedef oyuncunun adını girin.'
+    land: '&7Lütfen arsanın adını giriniz.'
+    title: '&7Lütfen bu arazi için yeni bir başlık girin.'
+    rename: '&7Lütfen bu arazi için yeni bir ad girin. Boşluklara izin verilmez.'
+    name: '&7Lütfen sohbette adı girin.'
+    area:
+      create: '&7Lütfen yeni alan için bir ad girin.'
+      delete: '&7Lütfen silmek istediğiniz alanın adını girin.'
+      exists: '&4{area} &calanı bu arazide zaten var &8(&7Arazi:&2 {land}&8)&c. &7Lütfen farklı bir ad seçin.'
+      max: '&cBu arazi için daha fazla alan oluşturamazsınız. &3{max} &7alan sınırınıza ulaştınız. İzin: lands.areas.NUMBER'
+command:
+  rent:
+    edit: '&3{player} &coyuncusuna kiralanmış/satılmış olduğundan,&4 {land} &carazisinin&4 {area} &calanını şu anda düzenleyemezsiniz.'
+    tenant: '&cŞu anki konumunuzda alanı kiralamadınız. &2{land} &7arazisinin&6 {area} &7alanı sizin tarafınızdan kiralanmamaktadır.'
+    none: '&cMevcut konumunuzdaki arazi&4 {land}&c,&4 {area} &calanı kiralanmamış veya kimse tarafından satın alınmamıştır.'
+    status: '&cMevcut konumunuzdaki&4 {land} &carazisinin&4 {area} &calanı, kira veya satış için ayarlanmamıştır.'
+    confirm: |
+      &cLütfen onu kaldırmak için kiracıya&4 {player} &ctazminat olarak&4 {cost}$ &cödemek istediğinizi onaylayın:
+        [T]&aOnayla: &8[CLICK][H]&7Bu eylemi ve ödemeyi onaylamak için burayı tıklayın.[/H][C]lands rent removetenant confirm[/C][/T]
+    set:
+      land: '&cTüm araziyi&4 {land} &ckiralık olarak ayarlayamazsınız. &7Ya kiraya vermek için alt alanlar oluşturabilir ya da tamamen satarsınız (satır = satarsınız).'
+      already: '&cŞu anda bu alanı tekrar kiralık olarak ayarlayamazsınız. &6{area} &7alanı şu anda&3 {player} &7tarafından kiralanmaktadır. &5{time} &7içinde süresi dolacak.'
+      sold: '&cSatılmış bir alanı kiralık olarak ayarlayamazsınız. &6{area} &7alanı,&3 {player} &7oyuncusu tarafından satın alındı.'
+      success: '&7Kiralık alanı&6 {area} &7belirlediniz. Kiracı her&5 {time}&7,&c ${cost} &7ödeyecektir.'
+      invalid: |
+        &7Satır formatınız geçersiz (satır: {line})
+         &81. satır:&7 Araziler
+         &82. satır:&7 kira
+         &83. satır:&7 SÜRE maksimumSüre (gerekli değil)
+         &84. satır:&7 maliyetler (örnek: 5 = 5 TL)
+      info: |2
+        [NoPrefix]
+        &7---------<- &5&lKiralık Alan &7->---------
+        [T]&7Arazi:&a {land} &8[&8TIKLAYIN&8][H]&7Bu alanı görselleştirmek için burayı tıklayın.[/H][C]lands view here[/C][/T]
+         &7Alan:&6 {area}
+         &7Maliyet:&c ${cost} &7her biri {time}
+         &8Maksimum süre: {max}
+        &7---------<- &5&lKiralık Alan &r&7->---------
+    rent:
+      trusted: '&cArazinin&4 {area} &calanını&4 {land} &ckiralayamazsınız. &7Bu alanda zaten güvenilirsin.'
+      expire: '&4{area} &calanını kiralamanıza daha fazla zaman ekleyemezsiniz. &7Arazi&2 {land} &7kiralama için kaldırdı. &5{time} &7içinde süresi dolacak.'
+      max: '&4{area} &calanının kiralamanıza daha fazla zaman ekleyemezsiniz. &7Arazi&2 {land} &7toplamda maksimum&5 {max} &7yapılandırdı.'
+      add: '&c${cost} &7karşılığında&6 {area} &7bölgesindeki kiralamanıza&5 {add} &7eklediniz. &5{time} &7içinde süresi dolacak.'
+      success: '&c${cost} &7karşılığında&2 {land} &7arazisinin&6 {area} &7alanını kiraladınız. &5{time} &7içinde süresi dolacak.'
+      info: |2
+        [NoPrefix]
+        &7---------<- &5&lKiralanan Bilgi &7->---------
+        [T]&7Arazi:&a {land} &8[&8TIKLAYIN&8][H]&7Bu alanı görselleştirmek için burayı tıklayın.[/H][C]lands view here[/C][/T]
+         &7Alan:&6 {area}
+         &7Kiracı: {player}
+         &7Kalan zaman:&5 {left}
+         &8Kira: ${cost} her biri {time}
+        &7---------<- &5&lKiralanan Bilgi &r&7->---------
+    cancel:
+      success: '&6{area} &7alanının kiralanmasını iptal ettiniz. Artık bu alana erişiminiz yok.'
+    remove:
+      offer:
+        success:
+          land: '&7Arazi&2 {land} &7artık satın alınamaz.'
+          area: '&2{land} &7arazisinin&6 {area} &7alanı artık kiralanamaz veya satın alınamaz.'
+      tenant:
+        success: '&7Kiracıyı&3 {player}&7, arazinin&2 {land} &7alanından&6 {area} &7alanından çıkardınız ve tazminat olarak&c {cost}$&7 ödediniz.'
+  sell:
+    sell:
+      rented: '&cBir oyuncu tarafından kiralanan bir alanı satamazsınız. &6{area} &7alanı şu anda&3 {player} &7tarafından kiralanmaktadır. &5{time} &7içinde süresi dolacak.'
+      success:
+        area: '&7Satılık&6 {area} &7alanı belirlediniz. Maliyet:&c ${cost}'
+        land: '&7Tüm araziyi&2 {land} &7satılık olarak ayarladınız. Maliyet:&c ${cost}'
+      invalid: |
+        &7Satır formatınız geçersiz (satır: {line})
+         &81. satır:&7 Araziler
+         &82. satır:&7 sat
+         &83. satır:&7 maliyetler (örnek: 5 = $5)
+    buy:
+      success:
+        area: '&c${cost} &7karşılığında&2 {land} &7arazisinin&6 {area} &7alanını satın aldınız.'
+        land: '&2{land} &7arazisini&c ${cost} &7karşılığında satın aldınız.'
+      info:
+        area: |2
+          [NoPrefix]
+          &7---------<- &5&lAlanı Satın Al &7->---------
+          [T]&7Arazi:&a {land} &8[&8TIKLAYIN&8][H]&7Bu alanı görselleştirmek için burayı tıklayın.[/H][C]lands view here[/C][/T]
+           &7Alan:&6 {area}
+           &7Maliyet:&c ${cost}
+          &7---------<- &5&lAlanı Satın Al &7->---------
+        land: |
+          [NoPrefix]
+          &7---------<- &5&lAraziyi Satın Al &7->---------
+          [T]&7Arazi:&a {land} &8[&8TIKLAYIN&8][H]&7Bu araziyi görselleştirmek için buraya tıklayın.[/H][C]lands view[/C][/T]
+          &7Maliyet:&c ${cost}
+          &7---------<- &5&lAraziyi Satın Al &7->---------
+    sold: |2
+      [NoPrefix]
+      &7---------<- &5&lSatılan Alan &7->---------
+      [T]&7Arazi:&a {land} &8[&8TIKLAYIN&8][H]&7Bu alanı görselleştirmek için burayı tıklayın.[/H][C]lands view here[/C][/T]
+       &7Alan:&6 {area}
+       &c${cost} &7karşılığında&3 {player} &7satıldı.
+      &7---------<- &5&lSatılan Alan &7->---------
+  general:
+    no-permission: '&cBunu yapma izniniz yok. &8{permission} iznine ihtiyacınız var.'
+    land-not-exist: '&cArazi&2 {land} &cmevcut değil. &7Bu adda arazi yok.'
+    area-not-exist: '&4{area} &calanı,&4 {land} &carazisinde mevcut değil. &7Alanlar bölümünde arazi menünüzde yeni bir alan oluşturabilirsiniz. &7Yazım hatası mı?'
+    land-not-member: '&cArazi&4 {land} &ciçin güvenilmezsin. &7Üyesi olduğunuz arazileri görmek için &8/&3Lands menu &7kullanın.'
+    no-edit-land: '&cHenüz düzenleme alanınızı seçmediniz. &7Seçmek için &8/&3Lands edit &8<&3land&8> &7kullanın.'
+    name-exists: '&4{name} &cadı zaten başka bir arazi veya ulus tarafından alınmış. &7Farklı bir tane seçmeniz gerekiyor.'
+    money-cost-bank: '&cBedelini ödeyecek kadar bakiyeniz yok. &c${cost} &7ihtiyacınız var. Emlak bankanıza biraz bakiye yatırın: &8/&3Lands deposit {cost}'
+    money-cost: '&cBedelini ödeyecek kadar paranız yok. &c${cost} &7ihtiyacınız var.'
+    swear-word: '&cBir küfür algıladı. &7Lütfen olgun dil kullanmayın. Kelime:&c {word}'
+    action-cooldown: '&cBunu şimdi yapamazsınız. &5{time} &7beklemelisin. &8Bypas: {bypass}'
+    land-no-own: '&cAraziniz yok. &7Bir tane oluşturmak için: &8/&3Lands create &7kullanın.'
+    world-invalid: '&cBunu mevcut dünyanızda yapamazsınız. &7Bir yöneticinin önce yapılandırmaya dünya&3 {world} &7eklemesi gerekir.'
+    wilderness: '&cMevcut konumunuzda hak talep edilen arazi yok. &7Lütfen bu eylemi gerçekleştirmek için önce arazinize gidin. &7Arazilerinizi görmek için: &8/&3Lands menu &7kullanın.'
+    player-not-exist: '&4{player} &cadında bir oyuncu yok. &7Yazım hatası mı?'
+    player-offline: '&cŞu anda çevrimiçi&4 {player} &cadında bir oyuncu yok. &7Yazım hatası mı?'
+    player-self: '&cBunu kendin yapamazsın. &7Komiksin. :)'
+    banks-disabled: '&7Bankalar bir yönetici tarafından devre dışı bırakıldı. &8Yapılandırmada etkinleştirebilirler.'
+    land-not-trusted: '&cOyuncu&4 {player} &cbu arazinin bir parçası değil &8(&7Arazi:&2 {land}&8)&c. Önce ona güvenmelisin &8/&3Lands trust&7.'
+    area-not-trusted: '&cBunu burada yapamazsınız. &7Arazi&2 {land}&7,&6 {area} &7alanında güvenilmezsiniz.'
+    invalid-number: '&cGirişiniz&4 {input} &cbir sayı değil. &3{argument} &7bağımsız değişkeninin bir sayı olması gerekir.'
+    number: '&cGirişiniz&4 {input} &cbir sayı değil. &3{argument} &7bağımsız değişkeninin bir sayı olması gerekir.'
+    none: |
+      &cHerhangi bir arazinin üyesi değilsiniz.
+
+        &7Herhangi bir arazi sizi davet edebilir: &8/&3Lands trust
+        [T]&7Kendi arazinizi oluşturun: &8/&3Lands create[H]&7Kopyalamak için tıklayın.[/H][SC]lands create[/SC][/T]
+    name:
+      number: '&cBu ad için numara kullanmanıza izin verilmiyor. &7Lütfen yalnızca harfleri kullanın. Bulunan numara:&3 {invalid}'
+      character: '&cAd için geçersiz karakterler kullanamazsınız. &7Lütfen yalnızca harf ve rakam kullanın. &7Geçersiz karakter bulundu:&3 {invalid}'
+      color: '&cBu ad için renk kodlarını kullanmanıza izin verilmiyor. &7Lütfen girişinizdeki tüm renk kodlarını kaldırın.'
+      length: '&cBu ad çok uzun. &7Maksimum uzunluk&3 {max} &7karakterdir. &8(&7senin: {input}&8)&7. &8Bu, renk kodlarını içerir.'
+      empty: '&cBu ad geçersiz. &7Renk kodları dışında en az bir karakter girmeniz gerekiyor.'
+  help:
+    header: '[NoPrefix][T]&7----------&6<<<<&7-[H]&7Önceki sayfaya gitmek için burayı tıklayın.[/H][C]{cmd} help {previous}[/C][/T] &2Lands Yardımı &7Sayfa&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7Sonraki sayfaya gitmek için burayı tıklayın.[/H][C]{cmd} help {next}[/C][/T]'
+    footer: |
+      [NoPrefix]
+      &7Gezinmek için aşağıdaki okları tıklayın.
+      [T]&7----------&6<<<<&7-[H]&7Önceki sayfaya gitmek için burayı tıklayın.[/H][C]{cmd} help {previous}[/C][/T] &2Lands Yardımı &7Sayfa&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7Sonraki sayfaya gitmek için burayı tıklayın.[/H][C]{cmd} help {next}[/C][/T]
+    help: '&7Yardım için &8/&a{cmd} help &7kullanın.'
+    cmd-not-exist: '&cBu komut mevcut değil. &7Komut&3 {command} &7geçersizdir.'
+  create:
+    land-other: '&cKendi arazinize sahip olmanıza ve başka bir arazinin üyesi olmanıza izin verilmiyor. &7Önce arazi&2 {land} 7ayrılmanız gerekir. &8Bir yönetici bunu config: invite-owner içinde devre dışı bırakabilir.'
+    max-own: '&cDaha fazla arazi oluşturamasınız. &7Maksimum&3 {max} &7kendi arazinize ulaştınız. &8İzin: lands.ownlands.NUMBER'
+    success: '&c${cost} &7karşılığında&2 {land} &7arazi başarıyla oluşturuldu. &8/&3Lands claim &7kullanarak parça talep edebilirsiniz. Bir seçimi talep etmek için &8/&3Lands selection &7de kullanabilirsiniz. Araziyi {land} gelecekteki eylemler için düzenleme araziniz olarak ayarlayın &8(/&3Lands edit&8)&7.'
+    broadcast: '&7Arazi&2 {land}&7,&3 {player} &7tarafından oluşturuldu.'
+  rename:
+    success: '&7Bu arazi için yeni adı&3 {name} &7başarıyla ayarladınız &8(&7Arazi:&2 {land}&8)&7. &c${cost} &7ödediniz.'
+  edit:
+    success: '&7Bu arazi için düzenleme moduna girdiniz &8(&7Arazi:&2 {land}&8)&7. Bu arazi için 8/&3Lands claim &7veya &8/&3Lands trust&7 gibi sonraki eylemler kullanabilirsiniz.'
+  top:
+    mode: '&cGirişiniz &4{input} &cieçerli bir sıralama modu değil. &7Geçerli sıralama modları: {modes}'
+    title: '[NoPrefix][T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Önceki sayfayı görmek için buraya tıklayın.[/H][/T] &5En İyi Araziler [T]&7-&6>>>>&7-----------[C]lands top {mode} {next}[/C][H]&7Önceki sayfayı görmek için buraya tıklayın.[/H][/T]'
+    footer: |
+      [NoPrefix]
+      &7Gezinmek için aşağıdaki okları tıklayın.
+      &7Göre sırala [T]&7Bakiye &8[CLICK],[H]&7Emlak bankası bakiyesine göre sıralamak için tıklayın.[/H][C]lands top balance[/C][/T] [T]&7Chunks &8[CLICK],[H]&7Arazi parçalarının miktarına (boyutuna) göre sıralamak için tıklayın..[/H][C]lands top chunks[/C][/T] [T]&7Üyeler &8[CLICK][H]&7Arazi üyelerinin miktarına göre sıralamak için tıklayın.[/H][C]lands top members[/C][/T]
+      &7Toplam araziler: {total} &8| &7Son güncelleme: {time} &7önce.
+      [T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Önceki sayfayı görmek için buraya tıklayın.[/H][/T] &5En İyi Araziler [T]&7-&6>>>>&7-----------[C]lands top {mode} {next}[/C][H]&7Önceki sayfayı görmek için buraya tıklayın.[/H][/T]
+  selection:
+    not-complete: '&cSeçiminiz tamamlanmadı. &7Lütfen her iki konumun da ayarlandığından emin olun &8(&bSOL TIKLAMA &7ve &9SAĞ TIKLAMA&8)&7. &8/&3Lands selection &7gerçekleştirerek seçim modunu değiştirebilirsiniz.'
+    max: '&cSeçiminizde çok fazla parça var. &7Boyut:&3 {current} &7Maksimum boyutunuz&3 {max} parçadır. &8İzin: lands.selection.NUMBER'
+    too-far: '&cBaktığınız blok çok uzakta. &7Lütfen ona yaklaşın.'
+    enabled: '&7Seçim modunu etkinleştirdiniz. Birinci konumu ayarlamak için bir blokta &bSOL TIKLAMA&7''yı ve ikinci konumu ayarlamak için &9SAĞ TIKLAMA&7''yı kullanın.'
+    disabled: '#t#&5Seçim[newline]&cMod devre dışı bırakıldı'
+    world: '&cHer iki pozisyon da aynı dünyada olmalıdır. &7Lütfen aynı dünyada birinci ve ikinci konumu belirleyin.'
+    complete: |
+      &7Seçiminiz tamamlandı. Aşağıdaki eylemler kullanılabilir:
+        &8┏
+        &8┃ &7Hak talebi: [T]&8/&3Lands claim &8[&8TIKLAYIN&8][H]&7Bu seçimi talep etmek için burayı tıklayın.[/H][C]lands claim[/C][/T]
+        &8┃ &7Hak talebi iptal: [T]&8/&3Lands unclaim &8[&8TIKLAYIN&8][H]&7Bu seçimin hak talebini iptal etmek için burayı tıklayın.[/H][C]lands unclaim[/C][/T]
+        &8┃ &7Alt alana atayın: [T]&8/&3Lands assign[H]&7Bu seçimi bir alt alana atayın.[/H][SC]lands assign <area>[/SC][/T]
+        &8┗
+    pos:
+      warn: '&cUyarı: &7Bu parça başka bir yönetim eklentisine aittir. Adı:&3 {plugin}'
+      cancelled: '&cBurada bir seçim yapamazsınız. &7Bu parça başka bir yönetim eklentisine aittir. Adı:&3 {plugin}'
+      one: '#t#&5&lSeçim[newline]&b&lKonum 1 &8-> &7Ayarlandı'
+      two: '#t#&5&lSeçim[newline]&b&lKonum 2 &8-> &7Ayarlandı'
+    area:
+      conflicts: '&cZaten alana atanmış parçalarla&4 {conflicts} &cçakışma bulundu. &7Geçersiz kılmayı onaylamak için &8/&3Lands selection assgin {area} confirm &7kullanın. Çatışmalar şu alanlara aittir: {areas}'
+    expand:
+      enabled: '&7Seçiminizi alttan üste (müttefik seviyelerine) başarıyla genişletti.'
+      disabled: '&7Mevcut seçiminiz artık müttefik seviyelerine genişletilmiyor.'
+  claim:
+    already: '&cBu parçayı talep edemezsiniz. &7Zaten araziye ait&2 {land}&7.'
+    initial-world: '&cArazi&4 {land} &ciçin yalnızca ilk arazi oluşturma dünyasında&4 {world} &ctalep edebilirsiniz. &7Şu anda bulunduğunuz dünya için başka bir arazi oluşturmak isteyebilirsiniz ({current}): &8/&3Lands create &8<&3name&8>'
+    auto-create: '&7Sizin için otomatik olarak bir arazi oluşturmaya çalışıyorum çünkü araziniz yok. &8/&3Lands rename &7kullanarak adını değiştirebilirsiniz.'
+    auto-create-fail: '&cSizin için otomatik olarak arazi oluşturulamadı. &7Lütfen yukarıdaki mesajları okuyun.'
+    near-other: '&cBu&4 {land} &cçok yakın. &7Bu araziden uzaklaşmanız gerekiyor. Minimum parça mesafesi&3 {distance}&7''dır. &8Bir yönetici bunu yapılandırmada değiştirebilir.'
+    far-land: '&cBu parçayı talep edemezsiniz. &7Parça arazinizle bağlantılı olması gerekir. &8(&7Arazi:&2 {land}&8)&7.'
+    success: '&7Bu parça başarıyla talep edildi &8(&7Arazi:&2 {land} &7X: {x} Z: {z}&8) &7için&c ${cost}&7. Sonraki hak talebinin maliyeti&c ${next} &7olacak.'
+    already-claimed: '&cSeçiminizde zaten talep edilmiş olan ve arazinize ait olmayan bir parça var &8(&7X: {x} Z: {z}&8)&c. &7&7Bu alan&2 {land} &7araziye aittir.'
+    max-chunk: '&cBu arazi için&4 {chunks} &cparça daha talep edemezsiniz. &7Arazi&2 {land} &7için maksimum&3 {max} &7parçadır. &8İzin: lands.chunks.NUMBER'
+    selection: '&7Bu arazi için başarıyla&3 {chunks} &7parça talep ettiniz &8(&7Arazi:&2 {land}&8)&7. &c${cost} &7ödediniz.'
+  assign:
+    selection: '&cÖnce bir seçim oluşturmanız gerekir. &7Bir tane oluşturmak için &8/&3Lands selection &7kullanın. Bundan sonra tekrar deneyin.'
+    default: '&cSeçimi varsayılan bir alana atayamazsınız. &7Arazinin alanlar menüsünde alanlar silinebilir.'
+    size: '&cSeçiminiz çok küçük. &7Minimum boyut&3 {min} &7blok ve sizinki&3 {current}&7.'
+    success: '&2{land} &7arazisinin&6 {area} &7alanını başarıyla yeniden boyutlandırdınız. Değişiklikler görselleştirilir.'
+    conflict:
+      land: '&cSeçiminiz arazi&4 {land} &cile çakışıyor. &7Lütfen seçiminizi ayarlayın.'
+      area: '&cSeçiminiz&4 {area} &calanıyla çakışıyor. &7Lütfen seçiminizi ayarlayın.'
+  leave:
+    owner: |
+      &cBu araziyi terk edemezsin. &7Bir arazinin sahibi olarak sadece onu silebilir veya mülkiyetini devredebilirsiniz. Bu araziyi silmek için &8/&3Lands delete {land} &7kullanın.
+    land:
+      untrusted: '&2{land} &7arazinin hiçbir alanında güvenilmezsiniz.'
+      success: '&7Tüm araziyi başarıyla terk etti&2 {land}&7.'
+    area:
+      untrusted: '&7Arazi&2 {land}&7,&6 {area} &7alanında güvenilmezsiniz.'
+      success: '&7Arazinin&6 {area} &7alanından&2 {land} &7başarıyla ayrıldı.'
+  unclaim:
+    rental: '&cKiralanan/satılan alanı&6 {area} &ciçerdiği için bu parçanın hak talebini geri alamazsınız. Kiracı:&3 {player}'
+    split: '&cBu parçanın hak talebini geri alamazsınız çünkü bu, arazinizin parçalara ayrılmasına neden olur &8(bir yönetici bunu yapılandırmada devre dışı bırakabilir)&7. Ayrılacak parçalar artık görselleştirildi.'
+    success: '&7Bu parçanın hak talebinden başarıyla vazgeçildi &8(&7Arazi:&2 {land} &7X: {x} Z: {z}&8)&7. &c${back} &7geri aldınız.'
+    selection:
+      empty: '&cHiçbir parça üzerinde hak talebinde bulunmadınız, çünkü bunlar talep edilmiyor veya hiçbirini talep etmeme izniniz yok.'
+      rental: '&cArazinin&2 {land} &7kiralanan/satılan alanını&6 {area} &7içerdiği için bu seçim talebini geri alamazsınız. Kiracı:&3 {player}'
+      split: '&7Bu seçimin {success} / {size} parçasını sahiplenmediniz, ancak arazinizin parçalara ayrılmasına neden olacağından&c {failed} için hak talebinde bulunulamadı &8(bir yönetici bunu yapılandırmada devre dışı bırakabilir)&7. Ayrılacak parçalar artık görselleştirildi.&c ${back} geri aldınız.'
+      partly: '&7Bu seçimin {success} / {size} parçasını başarıyla geri aldınız. &c${back} &7geri aldınız.'
+      success: '&7Bu seçimin tüm parçalarını başarıyla geri aldınız. &c${back} &7geri aldınız.'
+  delete:
+    nation: '&cAranizi silemezsiniz, çünkü burası ulusun başkenti&4 {nation}&c. &7Önce ulusu silmeniz gerekir: &8/&3Nations delete'
+    confirm: |
+      &cBu işlemi onaylamak için lütfen aşağıyı tıklayın.
+
+        [T]&aOnayla: &8[CLICK][H]&7Arazinin {land} silinmesini onaylamak için burayı tıklayın.[/H][C]lands delete {land} confirm[/C][/T]
+    success: '&7Bu arazi başarıyla silindi &8(&7Arazi:&2 {land}&8)&7. &e${back} &7geri aldınız.'
+    broadcast: '&7Arazi&2 {land}&7,&3 {player} &7tarafından silindi.'
+  trust:
+    own-land: '&cOyuncu&4 {player} &cbaşka bir araziye katılmaya davet edilemez. &7Kendi arazilerine sahip olmalarına ve aynı anda başka bir araziye üye olmalarına izin verilmiyor. Önce kendi arazilerini&2 {land} &7silmeleri gerekir.'
+    max-lands: '&7Oyuncu&3 {player} &7zaten maksimum arazi miktarına ulaştı. &8İzin: lands.lands.NUMBER'
+    max-members: '&4{land} &carazisinde&4 {player} &coyuncuya güvenilemedi. &7Arazilerinde maksimum&3 {members} &7üyelerine ulaştılar.'
+    max: '&cOyuncu&4 {player} &cdaha fazla araziye katılamaz. &7Katılmak için maksimum&3 {max} &7alana ulaştılar. &8İzin: lands.lands.NUMBER'
+    area:
+      invited: '&4{player} &coyuncusu,&4 {land} &carazisinin&4 {area} &calanına zaten davet edildi. &7Davet&5 {time} &7önce gönderildi.'
+      trusted: '&3{player} &7oyuncusu,&2 {land} &7arazisinin&6 {area} &7alanında zaten güveniliyor.'
+      success: '&3{player} &7oyuncusu,&2 {land} &7arazisinin&6 {area} &7alanına başarıyla davet edildi. Artık davetinizi kabul edebilirler.'
+      target: |
+        [T]&7Oyuncu&3 {player} &7sizi arazinin&2 {land}&7,&6 {area} &7alanına katılmaya davet etti.[H]&7Davetler menünüzü açmak için tıklayın.[/H][C]lands invites[/C][/T] &7Vergiler:&c ${tax}
+
+          [T]&2Kabul et &8[&8TIKLAYIN&8][H]&7Bu daveti kabul etmek için burayı tıklayın.[/H][C]lands accept {land}[/C][/T]
+          [T]&cReddet &8[&8TIKLAYIN&8][H]&7Bu daveti reddetmek için burayı tıklayın.[/H][C]lands deny {land}[/C][/T]
+    land:
+      invited: '&4{player} &coyuncusu,&4 {land} &carazisinin tamamına zaten davet edildi. &7Davet&5 {time} &7önce gönderildi.'
+      trusted: '&e{player} &7oyuncusu,&2 {land} &7arazisinde zaten güveniliyor.'
+      success: '&7Oyuncu&3 {player} &7başarıyla arazi&2 {land} &7davet edildi. Artık davetinizi kabul edebilirler.'
+      target: |
+        [T]&7Oyuncu&3 {player} &7sizi arazi&2 {land} &7katılmaya davet etti.[H]&7Davetler menünüzü açmak için tıklayın.[/H][C]lands invites[/C][/T] &7Vergiler:&c ${tax}
+
+          [T]&2Kabul et &8[&8TIKLAYIN&8][H]&7Bu daveti kabul etmek için burayı tıklayın.[/H][C]lands accept {land}[/C][/T]
+          [T]&cReddet &8[&8TIKLAYIN&8][H]&7Bu daveti reddetmek için burayı tıklayın.[/H][C]lands deny {land}[/C][/T]
+  untrust:
+    area:
+      already: '&7Oyuncu&3 {player}&7,&6 {area} &8(&7Arazi:&2 {land}&8) &7alanında güvenilmiyor ve bir davetiye almadı.'
+      revoke: '&6{area} &7alanında &8(&7Arazi:&2 {land}&8)&3 {player} &7oyuncusu için davet başarıyla iptal edildi. Oyuncuya güvenilmiyor.'
+      success: '&6{area} &7alanında &8(&7Arazi:&2 {land}&8) &7başarılı bir şekilde güvenilmeyen oyuncu&3 {player}&7.'
+      rental: '&4{area} &calanının kiracısına&4 {player} &cgüvenemezsiniz. &7Kiralanacak alanı kaldırmak için, alan üzerinde dururken &8/&3Lands rent remove &7ile kaldırın.'
+    land:
+      already: '&7Oyuncu&3 {player}&7,&2 {land} &7arazisinin hiçbir alanında güvenilmiyor ve herhangi bir davetiye almadı.'
+      revoke: '&7Tüm arazi&2 {land} &7için&3 {player} &7oyuncusu daveti başarıyla iptal edildi. Oyuncuya hiçbir alanda güvenilmiyor.'
+      success: '&7Oyuncu&3 {player}&7, kiraladıkları/satın aldıkları alanlar dışında,&2 {land} &7arazisinin tamamında başarılı bir şekilde güvenilmez oldu.'
+  setrole:
+    visitor: '&4{role} &crolünü ayarlayamazsınız. &7Bu oyuncuya güvenmemek istiyorsanız, lütfen &8/&3Lands trust {player} [area]&7''yı kullanın.'
+    land:
+      untrusted: '&cOyuncu&4 {player}&c,&4 {land} &carazisinde güvenilmez. &7Lütfen önce onlara güvenin.'
+      success: '&7Güvenilir oldukları arazi&2 {land} &7alanlarında oyuncu&3 {player} &7için başarıyla&3 {role} &7rolü belirlendi.'
+    area:
+      untrusted: '&cOyuncu&4 {player}&c,&4 {land} &carazisinin&4 {area} &calanında güvenilmez. &7Lütfen önce onlara güvenin.'
+      success: '&2{land} &7arazisinin&6 {area} &7alanında&3 {player} &7oyuncusu için&3 {role} &7rolü başarıyla ayarlandı.'
+  accept:
+    max: '&cDaha fazla arazinin parçası olamazsın. &7Maksimum&3 {max} &7arazinize ulaştınız. &8İzin: lands.lands.NUMBER'
+    not-exist: '&4{land} &carazisinden davet almadınız veya süresi doldu. &7Lütfen girişinizi kontrol edin.'
+    own-land: '&cBaşka bir araziye katılamazsınız. &7Kendi arazinize sahip olmanıza ve aynı zamanda başka bir arazinin üyesi olmanıza izin verilmez. &7Önce kendi arazinizi&2 {land} &7silmeniz gerekir.'
+    max-lands: '&cDaha fazla araziye katılamazsınız. &7Yalnızca&3 {max} &7araziniz olabilir. &8İzin: lands.lands.NUMBER'
+    max-members: '&cŞu anda&4 {land} &carazisine katılamazsınız. &7Arazide maksimum&3 {members} &7üyelerine ulaştılar.'
+    war: '&cŞu anda&4 {land} &carazisine katılamazsınız, çünkü&c {object} &cile savaş halinde. &7Savaşları bittiğinde tekrar dene.'
+    notification: '&7Hala diğer arazilerden&3 {invites} &7davetiniz var. Bunların bir listesini almak için: &8/&3Land invites &7kullanın.'
+    area:
+      success: '&6{area} &7alanı için&2 {land} &7arazisinden davet başarıyla kabul edildi.'
+      broadcast: '&2{land} &8| &7Oyuncu&3 {player} &7artık arazinizdeki&6 {area} &7alanının bir üyesi.'
+    land:
+      success: '&7Tüm arazilerde güvenilmek için&2 {land} &7gelen davet başarıyla kabul edildi.'
+      broadcast: '&2{land} &8| &7Oyuncu&3 {player} &7artık arazinin bir üyesi.'
+  setowner:
+    max-lands: '&cOyuncu&4 {player} &cdaha fazla araziye sahip olmasına izin verilmiyor. &7Zaten maksimum&3 {max} &7kendi arazisine ulaştı. &8İzin: lands.ownlands.NUMBER'
+    confirm: '&cLütfen&2 {land} &carazisinin sahipliğini&3 {player} &coyuncusuna devretmek istediğinizi onaylayın: &8/&3Lands setowner {player} confirm'
+    success: '&7Başarıyla&3 {player} &7oyuncusunu&2 {land} &7arazisinin yeni sahibi olarak ayarladınız. &c${cost} &7ödediniz.'
+  deny:
+    not-exist: '&4{land} &carazisinden davet almadınız veya süresi doldu. &7Yazım hatası mı?'
+    success: '&2{land} &7arazisinden gelen daveti başarıyla reddettiniz.'
+  teleport:
+    chunk-not-claimed: '&cBu parça talep edilmemiştir &8(&7X: {x} &7Z: {z}&8)&c. &8Baypas izni: lands.bypass.wilderness.teleport'
+    not-trusted: '&cOraya ışınlanamazsınız. &7Arazi&2 {land} &7için güvenilmezsin.'
+    success: '&7X:&3 {x} &7Z:&3 {z} &7Başarıyla ışınlandı. Hak talebinde bulunuldu: {claimed}'
+  setspawn:
+    force-land: '&cSadece kendi arazinizdeki doğma noktası parçasını ayarlayabilirsiniz. &7Önce arazi&2 {land} &7gidin. &8Bir yönetici bunu yapılandırmada değiştirebilir.'
+    success: '#t#&7Doğma noktası ayarlandı[newline]&7Maliyet:&c ${cost}'
+  spawn:
+    not-exist: '&4{land} &cbir doğma notkası yok. &7Bir doğma noktası için &8/&3Land setspawn &7kullanın.'
+    not-allowed: '&cBu arazinin doğma noktasına ışınlanmanıza izin verilmiyor. &7Bunu yapman için sana izin vermeleri gerekiyor &8(&7Arazi:&2 {land}&8)&7.'
+    chunk: '&7Arazi&2 {land} &7henüz bir arazi doğma noktası belirlenmedi. Belirlemek için &8(&8/&3Lands setspawn&8) &7kullanın. &7Sizi bu arazinin ilk talebine ışınladı.'
+    unsafe: '&cBu doğma noktasına ışınlanamazsınız çünkü ışınlanma için güvenli olmadığı tespit edildi. &7Oraya ışınlanmak ölümle sonuçlanabilir. &8/&3Lands setspawn &7kullanarak doğma noktasını ayarlamaları gerekiyor.'
+    success: '&7Arazinin doğma noktasına başarıyla ışınlandı&2 {land} &7Maliyet:&c ${cost}'
+  wild:
+    perm: '&4{world} &cdünyasında rastgele ışınlanma kullanmanıza izin verilmiyor. &8Bu dünya için {perm} iznini kaçırıyorsunuz.'
+    no-location: '&cYapılandırmadaki filtreyle eşleşen, sizin için güvenli bir yer bulamadık. &8Lütfen maksimum ve minimum mesafe ayarlarınızı yapın ve dünya doğma noktasını (/setworldspawn) ayarlayın.'
+    searching: '#t#&6Hedef Aranıyor[newline]&eIşınlanmanın başlaması bekleniyor..'
+    success: '&7Rastgele ışınlandın &8(&7X: {x} Z: {z}&8)&7. &c${cost} &7Ödedin.'
+  deposit:
+    number: '&7Bir miktar bakiye belirtmeniz gerekiyor. &8/&3Lands deposit &8<&3amount&8> &7veya &8/&3Lands deposit &8<&3land&8> <&3amount&8> &7kullanın.'
+    success: '&7Emlak bankasına başarıyla&3 ${cost} &7yatırdınız. &7Yeni banka bakiyesi:&3 ${bank} &8(&7Arazi:&2 {land}&8)'
+  withdraw:
+    number: '&7Bir miktar bakiye belirtmeniz gerekiyor. &8/&3Lands withdraw &8<&3amount&8> &7veya &8/&3Lands withdraw &8<&3land&8> <&3amount&8> &7kullanın.'
+    balance: '&cEmlak bankasında yeterli bakiye yok. &7Yalnızca&3 ${bank} &7kullanılabilir. Beklenen:&3 ${take} &8(&7Arazi:&2 {land}&8)'
+    success: '&7Emlak bankasından başarıyla&3 ${cost} &7aldınız. &7Yeni banka bakiyesi:&3 ${bank} &8(&7Arazi:&2 {land}&8)'
+  balance: '&7Bakiye&3 ${balance} &8(&7Arazi:&2 {land}&8)&7.'
+  ban:
+    area:
+      success: '&2{land} &7arazisinin&6 {area} &7alanından&3 {player} &7oyuncusu başarıyla yasaklandı. Bu alanda bulunuyorsa, oraya giremezler veya doğma noktasına ışınlanamazlar.'
+      target: '&cArazi&4 {land} &csizin kendi arazi&4 {area} &calanında yasakladı. &7Bu alanda bulunuyorsa, oraya giremez veya doğma noktasına ışınlanamazsınız.'
+    land:
+      success: '&7Oyuncu&3 {player}&7,&2 {land} &7arazisinin tamamından başarıyla yasaklandı. Herhangi bir alana giremezler veya doğma noktasına ışınlanamazlar.'
+      target: '&cArazi&4 {land} &csizi bütün arazilerinde yasakladı. &7Herhangi bir alanına giremeyecek veya doğma noktasına ışınlanamayacaksınız.'
+  unban:
+    area:
+      success: '&7Oyuncu&3 {player} &7adlı oyuncunun bu alandaki engeli başarıyla kaldırıldı &8(&7Alan:&6 {area} &7Arazi:&2 {land}&8)&7.'
+      target: '&7Arazi&2 {land}&7, sizi&6 {area} &7alanından yasağı kaldırıldı.'
+    land:
+      success: '&7Oyuncu&3 {player}&7,&2 {land} &7arazisinden yasağı başarıyla kaldırıldı.'
+      target: '&7Arazi&2 {land}&7, sizi arazi yasağından kaldırdı.'
+  chat:
+    activated: '&7Arazi sohbeti etkinleştirildi. Arazinizle sohbet etmek için genel sohbette mesaj gönderin.'
+    deactivated: '&7Arazi sohbeti başarıyla devre dışı bırakıldı.'
+    no-land: '&cArazi sohbeti için arazi bulunamadı. &7Arazi sohbetini devre dışı bırakmak için &8/&3Lands chat toggle &7kullanın.'
+    format:
+      minecraft: '[NoPrefix]&a{land} &8| {role} &7{player} &8»&f {message}'
+      discord: '[NoPrefix]&a{land} &8| &9Discord &7{player} &8»&f {message}'
+      spy: '[NoPrefix]&8[&cGizli Sohbet&8] &a{land} &8| {role} &7{player} &8»&f {message}'
+  view:
+    disabled: '&7Mevcut &8/&3Lands view &7arazi sınırlarını görselleştirmesini başarıyla devre dışı bıraktınız.'
+    wilderness: '&7Hak taleplerinin görselleştirilmesi etkinleştirildi. &7Şu anki konumunuz vahşi doğa.'
+    y-lock:
+      enabled: '&cGeçişli y-kilidi modu: &7Arazi sınırları artık konumunuzu yukarı ve aşağı takip etmeyecek.'
+      disabled: '&cGeçişli y-kilidi modu: &7Arazi sınırları, pozisyonunuzu yukarı ve aşağı takip edecek.'
+    info: |2
+      [NoPrefix]
+      &7---------<- &5&lArazi Görünüm &7->---------
+      [T]&7Arazi: &a{land} &8[&8TIKLAYIN&8][H]&7Bu arazi hakkında daha fazla bilgi almak için buraya tıklayın.[/H][C]lands info {land}[/C][/T]
+      &7Seviye: {level}
+      &7Ulus: {nation}
+      &7Parça &7X: {x} Z: {z}
+      &7Alan:&6 {area}
+       &8Vergi:&c ${tax}
+       &8Oyuncular:&7 {players}
+       &8Açıklama:&r {description}
+      &7---------<- &5&lArazi Görünüm &r&7->---------
+    area: |2
+      [NoPrefix]
+      &7---------<- &5&lAlan Görünüm &7->---------
+      [T]&7Arazi: &a{land} &8[&8TIKLAYIN&8][H]&7Bu arazi hakkında daha fazla bilgi almak için buraya tıklayın.[/H][C]lands info {land}[/C][/T]
+      &7Seviye: {level}
+      &7Alan:&6 {area}
+       &8Vergi:&c ${tax}
+       &8Oyuncular:&7 {players}
+       &8Açıklama:&r {description}
+      &7---------<- &5&lAlan Görünüm &r&7->---------
+  map:
+    header: '&7-<------------<- &6Araziler Haritası &7->------------>-[newline]'
+    footer: '[newline]&7-<------------<- &6Araziler Haritası &7->------------>-'
+  unstuck:
+    success: '&7En yakın sahipsiz konuma başarıyla ışınlandı.'
+  taxes:
+    none: '&7Sizin için yaklaşan herhangi bir vergi ödemesi yoktur.'
+    upcoming:
+      header: '[NoPrefix]&7---------<- &cYaklaşan Vergiler &7->---------'
+      entry: '[NoPrefix]&8- &7{land}: &c${tax}'
+      footer: |
+        [NoPrefix]&5{next} &7için toplam&7 ${total} &7ödemeniz gerekiyor.
+        &7Bakiye: ${balance}
+        &7---------<- &cYaklaşan Vergiler &7->---------
+    changes:
+      header: |
+        [NoPrefix]
+        &7---------<- &4Vergi Değişikliği &7->---------
+        &cVergiler bazı arazilerde değiştirildi:
+      entry: '[NoPrefix]&8- &7{land}: {color}${tax} &8(önceden: {previous})'
+      footer: |
+        [NoPrefix]
+        &7Ödeme:&5 {next}
+        &7Bakiye: ${balance}
+        &8Daha fazla bilgi: /Lands taxes
+        &7---------<- &4Vergi Değişikliği &7->---------
+list:
+  swear-words: [ ]
+wars:
+  message:
+    noaccess:
+      wilderness: '&cBir savaşa girerken bunu vahşi doğada yapmanıza izin verilmez. &8Bayrak: {flag} &8Bypas: {bypass}'
+      general: '&cBunu&4 {land} &carazisinde yapmanıza izin verilmiyor. &7Şu anda bu araziye karşı bir savaş içindesiniz.'
+      pillage: '&cYeterli sayıda savunucu çevrimiçiyken&4 {land} &cyağmalayamazsınız. &7Lütfen minimum&3 {defenders} &7arazi savunucusu&2 {land} &7çevrimiçi olana kadar bekleyin.'
+    start:
+      broadcast: '&7{attacker} &7ve&7 {defender} &7arasındaki savaş başladı. &5{time} &7içinde bitecek.'
+      participants: |
+        &4Savaş başladı:
+
+        &7Saldırganlar: {attacker} &8({team_1}&8)
+        &7Savunmacılar: {defender} &8({team_2}&8)
+
+        &7Savaş sona erecek:
+        &5~{time}
+    end:
+      broadcast: '&7{attacker} &7ve&7 {defender} &7arasındaki savaş sona erdi. &5{time} &7sürdü.'
+      surrender: '{object} &7surrendered. &7Savaş sona erdi ve&7 {enemy} &7düşmanlarına&c ${tribute} &7ödediler.'
+      draw: '&7{attacker} &7ve&7 {defender} &7arasındaki savaş berabere sonuçlandı. &5{time} &7sürdü.'
+      won:
+        attackers: |
+          &aSavaş bitti:
+          &7Saldırganlar&8({team}&8) &7kazandı.
+
+          &8- &7İstatistikler
+              &7Saldırganlar öldürme:&3 {att-points}
+              &7Savunmacılar öldürme:&3 {def-points}
+
+              &7Savaş şunları aldı:
+              &5~{time}
+        defenders: |
+          &aSavaş bitti:
+          &7Savunmacılar &8({team}&8) &7kazandı.
+
+          &8- &7İstatistikler
+              &7Saldırganlar öldürme:&3 {att-points}
+              &7Savunmacılar öldürme&3 {def-points}
+
+              &7Savaş şunları aldı:
+              &5~{time}
+    war-shield:
+      set: '&7{object} için yeni savaş kalkanı&5 {time} &7boyunca aktif olacak.'
+    kill:
+      target:
+        attackers: '&7Takım arkadaşımız&a {attacker}&7, savunmacı&c {defender} &7tarafından öldürüldü.'
+        defenders: '&7Takım arkadaşımız&a {defender} &7saldırgan&c {attacker} &7tarafından öldürüldü.'
+      killer:
+        attackers: '&7Takım arkadaşımız&a {attacker}&7, savunmacıyı&c {defender} &7öldürdü.'
+        defenders: '&7Takım arkadaşımız&a {defender} &7saldırganı&c {attacker} &7öldürdü.'
+  command:
+    general:
+      no-war: '&c{object} &ciçin yaklaşan veya aktif savaş yok. &7Her şey barışçıl.'
+    declare:
+      not-allowed: '&cSen {object} &ciçin bir savaş başlatmak için izin yok. &7{object}&7lideri bunu yapmak gerekiyor.'
+      member: '&c{object} &ckarşı savaş ilan edemezsiniz. &7Sen ya da düşman lideri ortak arazilerin ve/veya bir ulus güvenilir.'
+      war-shield: '&c{object} &cşu anda savaş ilan edemezsiniz. &7Önümüzdeki&5 {time} &7için bir savaş kalkanları var.'
+      no-nation: '&cArazi&4 {land} &csaldıramazsın. &7Savaşa girmeleri için bir ulusun parçası olmaları gerekir.'
+      no-target: '&4{target} &cadında bir arazi veya ulus yok. &7Yazım hatası mı?'
+      ally: '&9{nation} &csavaş ilan edemezsin. &c{object} &7aynı ulusun üyesidir.'
+      balance: '&cBu beyanı gönderemezsiniz. &7Saldırganlar {object}&7, savaş başlatmak için minimum&c ${min} &7bakiyeye ihtiyaç duyuyor.'
+      broadcast: '&7Düşman {attacker}&7, {defender}&7''a savaş ilan etti. Savaşları&5 {time} &7içinde başlayacak.'
+      success: '&7Siz &8({attacker}&8)&7, {defender}''&7a karşı başarıyla savaş ilan ettiniz. Savaş&5 {time} &7içinde başlayacak.'
+      target: '&7Düşman {attacker}&7, {defender} &8(&7SİZE&8) &7savaş ilan etti. Savaş&5 {time} &7içinde başlayacak.'
+      confirm: |
+        &c{object}&c'ye savaş ilan etmek istediğinizden emin misiniz?
+
+         [T]&7Onayla: &8[CLICK][H]&7Bütün bir ulusa savaş ilan etmek istediğinizi onaylamak için burayı tıklayın.[/H][C]wars declare {input} confirm[/C][/T]
+      mutual:
+        success: |
+          &7Siz &8({attacker}&8)&7, {defender}&7'a başarıyla bir savaş bildirisi gönderdiniz.
+           &7Savaşın başlayabilmesi için şimdi bunu kabul etmeleri veya reddetmeleri gerekiyor.
+           &7Savunanlar savaş sırasında teslim olurlarsa, saldırganlara ${tribute} haraç ödemeleri gerekecek.
+        target: |
+          &7Düşman&7 {attacker}&7,&7 {defender} &8(&7SEN&8) &7karşı bir savaş ilanı gönderdi.
+           &7Savunanlar savaş sırasında teslim olurlarsa, saldırganlara &c ${tribute} &7ödemeleri gerekecek.
+
+           [T]&7Kabul et: &8/&3Wars declare {input} &8[&8TIKLAYIN&8][H]&7Savaş ilanını kabul etmek için buraya tıklayın.[/H][C]Wars declare {input}[/C][/T]
+           [T]&7Reddet: &8/&3Wars deny &8[&8TIKLAYIN&8][H]&7Savaş ilanını reddetmek için buraya tıklayın.[/H][C]Wars deny[/C][/T]
+      already:
+        attacker: '&cBaşka bir savaşa katılamazsın. &7Mevcut {object} &7savaşı önce bitmeli.'
+        defender: '&cŞu anda onlara karşı savaş ilan edemezsiniz. &7Hedef {object} &7zaten bir savaşa girmiş durumda.'
+      min-players:
+        attacker: '&cSavaşa giremezsiniz çünkü&c {object} &cdaha fazla güvenilir oyuncuya ihtiyaç duyar. &7Saldırganların savaş ilan etmesi için gereken minimum sayı&3 {min} &7oyuncudur.'
+        defender: '&cDaha fazla güvenilir oyuncuya ihtiyaç duydukları için,&c {object} &c, nesnesine savaş ilan edemezsiniz. &7Savunucuların bir savaş ilanı alması için gereken minimum sayı&3 {min} &7oyuncudur.'
+    deny:
+      attacker: '&cSaldırganlar kendi savaş ilanlarını inkar edemezler. &7Bunu sadece savunma oyuncusu yapabilir.'
+      ongoing: '&c{enemy} &ca karşı devam eden savaşı inkar edemezsiniz. &7Yalnızca&7 {object} &7için savaş bildirimlerini reddedebilirsiniz.'
+      success: '&7Düşmana&7 {enemy} &7karşı &7{object} &7için savaş ilanını başarıyla reddettiniz.'
+    menu:
+      mutual: '&cŞu anda savaş menüsünü açamazsınız. &7{object} &7için savaş ilanı henüz kabul edilmedi.'
+    info:
+      war: |
+        &4Mevcut Savaş:
+
+        &8- &7Saldırganlar
+            &7Adı: {attacker}
+            &7Öldürmler: {att-points}
+
+        &8- &7Savunmacılar
+            &7Adı: {defender}
+            &7Öldürmeler: {def-points}
+
+        &7Savaş sona erecek:
+        &5~{time}
+      declaration:
+        normal: |
+          &4Savaş Bildirisi:
+
+          &7Saldırganlar: {attacker}
+          &7Savunmacılar: {defender}
+
+          &7Savaş başlayacak:
+          &5~{time}
+        mutual:
+          defender: |
+            &4Savaş Bildirisi:
+
+            &7Saldırganlar: {attacker}
+            &7Savunmacılar: {defender}
+
+            &7Savunanlar savaş sırasında teslim olursa:
+            &7Haraç:&c ${tribute}
+
+            [T]&7Kabul et: &8/&3Wars declare {input} &8[&8TIKLAYIN&8][H]&7Savaş ilanını kabul etmek için buraya tıklayın.[/H][C]Wars declare {input}[/C][/T]
+            [T]&7Reddet: &8/&3Wars deny &8[&8TIKLAYIN&8][H]&7Savaş ilanını reddetmek için burayı tıklayın.[/H][C]Wars deny[/C][/T]
+          attacker: |
+            &4Savaş Bildirisi:
+
+            &7Saldırganlar: {attacker}
+            &7Savunmacılar: {defender}
+
+            &7Savunanlar savaş sırasında teslim olursa:
+            &7Haraç:&c ${tribute}
+
+            &cSavunucu beyanı henüz
+            &ckabul etmedi.
+nations:
+  message:
+    current-war: '&cBunu şimdi yapamazsınız. &7Ulusunuz&9 {nation} &7şu anda bir savaşta. &7Lütfen savaş bittikten sonra tekrar deneyin.'
+  command:
+    general:
+      not-exist: '&cUlus&9 {nation} &7mevcut değil. &7Bu adda bir ulus yok.'
+      none: |
+        &cAraziniz&4 {land} &cherhangi bir ulusun parçası değil.
+
+          &7Arazinize herhangi bir ulus davet edebilir: &8/&3Nations trust
+          [T]&7Kendi ulusunu oluştur: &8/&3Nations create[H]&7Kopyalamak için tıklayın.[/H][SC]nations create[/SC][/T]
+      noaccess: '&cUlus&4 {nation} &ciçin bunu yapma izniniz yok. &8Bayrak: {flag} &8Bypas: {bypass}'
+      not-trusted: '&cArazi&4 {land}&c, ulusunuzun&4 {nation} &cbir üyesi değil.'
+    create:
+      already: '&cArazi&4 {land} &czaten&4 {nation} &culusun bir parçası. &7İlk önce ayrılmanız gerekir &8/&3Nations leave&7.'
+      war: '&cBaşkent olarak arazi&4 {land} &colan bir ulus,&4 {object} &cile savaş halindeyken yaratılamaz. &7Lütfen savaş bittikten sonra tekrar deneyin.'
+      level: '&cŞu anda bir ulus oluşturamazsınız. &7Araziniz&2 {land} &7en az seviye&3 {level} &7olmalıdır &8(&7mevcut: {current}&8)&7.'
+      success: '&7Başkent olarak arazi&2 {land} &7olan ulusu&9 {nation} &7başarıyla yarattınız.[T]&7Menüyü açmak için burayı tıklayın.[H]&7Menüyü açın.[/H][C]nations menu[/C][/T]'
+    trust:
+      already: '&cArazi&4 {land} &czaten&4 {nation} &culusun bir parçası. &7İlk önce ayrılmanız gerekir &8/&3Nations leave&7.'
+      added: '&7Araziniz&2 {land}&7, ulusunuzun&9 {nation} &7üyesi olarak başarıyla eklediniz.'
+      success: '&2{land} &7arazisini ulusunuza&9 {nation} &7katılmaya başarıyla davet ettiniz. Bir ulus davetini kabul etmek için &8/&3Nations accept {nation} &7kullanın.'
+      target: |
+        &7Ulus&9 {nation} &7arazi&2 {land} &7kendilerine katılmaya davet etti.
+
+         [T]&2Kabul et &8[&8TIKLAYIN&8][H]&7Bu daveti kabul etmek için burayı tıklayın.[/H][C]nations accept {nation}[/C][/T]
+         [T]&cReddet &8[&8TIKLAYIN&8][H]&7Bu daveti reddetmek için burayı tıklayın.[/H][C]nations deny {nation}[/C][/T]
+    accept:
+      war: '&cŞu anda bu ulusa katılamazsınız. &7Ulus&9 {nation} &7şu anda&7 {object} &7ile savaş halinde. Lütfen savaşları bitince tekrar deneyin.'
+      none: '&cAraziniz&4 {land}&c,&9 {nation} &culustan herhangi bir davet almadı. &7Arazinize güvenerek ederek davet edebilirler &8/&3Nations trust&7.'
+      already: '&cArazi&4 {land} &czaten&4 {nation} &culusun bir parçası. &7İlk önce ayrılmanız gerekir &8/&3Nations leave&7.'
+      broadcast: '&7Arazi&2 {land} &7artık ulusumuzun&9 {nation} &7bir üyesi.'
+    deny:
+      success: '&9{nation} &7ulusundan gelen daveti başarıyla reddettiniz.'
+    untrust:
+      capital: '&cBu araziyi kaldıramazsınız. &7Arazi&2 {land} &7ulusun başkentidir&9 {nation}&7.'
+      success: '&2{land} &7arazisini&9 {nation} &7ulusundan başarıyla kaldırdınız.'
+    delete:
+      war: '&cŞu anda ulusu silemezsiniz. &7Ulus&9 {nation} &7şu anda&7 {object} &7ile savaş halinde. Lütfen savaş bittiğinde tekrar deneyin.'
+      confirm: |
+        &cLütfen ulusu&4 {nation} &csilmek istediğinizi onaylayın.
+          [T]&7Onayla: &8[CLICK][H]&7Ulusun silinmesini onaylamak için buraya tıklayın&9 {nation}&7.[/H][C]nations delete {nation} confirm[/C][/T]
+      success: '&7Bu ulus başarıyla silindi &8(&7Ulus:&2 {nation}&8)&7.'
+    leave:
+      capital: '&cArazi&4 {land} &culustan&4 {nation} &4cayrılamaz, çünkü arazi bu ulusun başkentidir. &7Ulusunu silmek için uygula &8/&3Nations delete&7.'
+      war: '&cŞu anda bu ulustan ayrılamazsın. &7Ulus&9 {nation} &7şu anda&7 {object} &7ile savaş halinde. &7Savaşınız&5 {time} &7içinde bitecek.'
+      success: '&7Ulus&9 {nation} &7ile arazi&2 {land} &7ile başarıyla terk ettin.'
+      confirm: |
+        &9 {nation}&7,&2 {land} &7Lütfen ulusdan ayrılmak istediğinizi onaylayın.
+
+          [T]&7Onayla: &8[CLICK][H]&7Bu eylemi onaylamak için burayı tıklayın.[/H][C]nations leave confirm[/C][/T]
+    rename:
+      success: '&7Bu ulus için yeni adı&3 {name} &7başarıyla belirlendi &8(&7Ulus:&9 {nation}&8)&7. &c${cost} &7ödediniz.'
+    setcapital:
+      level: '&cUlusun&4 {nation} &cyeni başkenti&4 {land} &colarak belirleyemezsiniz. &7En azından seviye&3 {level} &8(&7şimdiki: {current}&8)&7 olması gerekir.'
+      confirm: |
+        &cLütfen&4 {land} &carazisini&4 {nation} &culusun yeni başkenti olarak ayarlamak istediğinizi onaylayın.
+        &cUlus için tüm yönetici haklarını kaybedebilirsiniz.
+         [T]&aOnayla: &8[CLICK][H]&7Bu eylemi onaylamak için burayı tıklayın.[/H][C]nations setcapital {land} confirm[/C][/T]
+      success: '&2{land} &7arazisi&9 {nation} &7ulusun yeni başkenti olarak başarıyla belirledi.'

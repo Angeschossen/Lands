@@ -284,17 +284,16 @@ gui:
           - '{inbox}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
         slot: 16
-      stat:
+      stats:
         name: '&8> &6Statistics'
         lore:
           - '&7Location: {0}, x={1}, z={2}'
           - ' '
           - '&7Nation: {3}'
-          - '&7Claims: {4} / {5} &7+ {6} (nation)'
-          - '&7Members: {7} / {8}'
+          - '&7Claims: {4} / {5}'
+          - '&7Members: {6} / {7}'
           - ' '
-          - '&7{level}'
-          - '&7Next: {level_next} &8({members_next} members)'
+          - '&7Level: {8}'
           - '&7Click for more information.'
           - ' '
           - '&7Economy'
@@ -1190,6 +1189,13 @@ gui:
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZkOTZlYWM1YTcwMTY4NDM3Y2NmZmFlZTBlN2ZjNWFjNWMwMjJmNDI5ZTNlZDkyOWNkNTE4OTRhMmRkNmQ4In19fQ==
         slot: 23
     a:
+      failure_owner:
+        name: '&cCan''t edit Owner'
+        lore:
+          - '&7Owners can''t edit their'
+          - '&7own flags. This can only'
+          - '&7be controlled by server'
+          - '&7admins.'
       no-item:
         name: '&cNo Item in Hand'
         lore:
@@ -1524,7 +1530,7 @@ gui:
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
         from: 10
         to: 27
-      player_setRole:
+      player_setrole:
         name: '&6Set Roles'
         lore:
           - '&7Status: {enabled}'
@@ -1580,6 +1586,18 @@ gui:
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         from: 10
         to: 27
+      setting_edit_various:
+        name: '&6Edit various Settings'
+        lore:
+          - '&7Status: {enabled}'
+          - '&7Unlocked: {unlocked}'
+          - ' '
+          - '&7Allow this role to edit'
+          - '&7miscellaneous settings, like'
+          - '&7the land / area name?'
+        material: NAME_TAG
+        from: 10
+        to: 27
       setting_edit_role:
         name: '&6Edit Role Flags'
         lore:
@@ -1628,13 +1646,14 @@ gui:
         from: 10
         to: 27
       land_claim:
-        name: '&6Claim Land'
+        name: '&6Claim and unclaim'
         lore:
           - '&7Status: {enabled}'
           - '&7Unlocked: {unlocked}'
           - ' '
-          - '&7Allow this role to'
-          - '&7claim chunks for this land?'
+          - '&7Allow this role to claim'
+          - '&7and also unclaim chunks'
+          - '&7of this land?'
         material: IRON_SHOVEL
         from: 10
         to: 27
@@ -2304,20 +2323,24 @@ gui:
           - '&e{players}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 13
-      level:
+      levels:
         name: '&8> &6Level'
         lore:
           - '&7These values are only active'
           - '&7if the land isn''t a member of'
           - '&7any nation.'
           - ' '
-          - '&7{level}'
-          - '&7{upkeep}% upkeep cost'
-          - '&7{chunks} chunks'
+          - '&7{0}'
+          - '&7{1}% upkeep cost'
+          - '&7{2} chunks'
           - ' '
-          - '&7Next: {level_next}'
-          - '&c{upkeep_next}% upkeep cost'
-          - '&a{chunks_next} claims'
+          - '&7Next: {3}'
+          - '&c{4}% upkeep cost'
+          - '&a{5} claims'
+          - ' '
+          - ' &8> &7Requirements:'
+          - '   &7{6} members'
+          - '   &7{7} chunks'
         material: 'BEACON'
         slot: 15
       war:
@@ -3076,134 +3099,4 @@ gui:
       placeholder_2:
         material: GRAY_STAINED_GLASS_PANE
         from: 29
-        to: 36
-
-  admin_wilderness:
-    title: '&8Wilderness Flags'
-    size: 9
-    s:
-      player-settings:
-        name: '&8> &6Action Flags'
-        lore:
-          - '&7Edit action flags like'
-          - '&7block breaking etc.'
-        slot: 3
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM2YjgyMWMxYWZkZDVhNWQxNGUzYjNiZDBhMzIyNjNjOGRmNWRmNWRiNmUxZTg4YmY2NWU5N2IyN2E4NTMwIn19fQ==
-      player-management:
-        name: '&8> &6Management Flags'
-        lore:
-          - '&7Edit administratoral flags'
-          - '&7from 3rd party plugins, that'
-          - '&7are toggleable in wilderness.'
-        slot: 5
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZkOTZlYWM1YTcwMTY4NDM3Y2NmZmFlZTBlN2ZjNWFjNWMwMjJmNDI5ZTNlZDkyOWNkNTE4OTRhMmRkNmQ4In19fQ==
-      land-settings:
-        name: '&8> &6Land Flags'
-        lore:
-          - '&7Here you can edit natural'
-          - '&7flags like mob spawning etc.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
-        slot: 7
-      close:
-        name: '&cClose'
-        lore:
-          - '&7Close this menu.'
-          - ' '
-          - '&8- &7You can open it again'
-          - '  &7with &8/&3Lands admin wilderness&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 9
-        enabled: true
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-
-  admin_wilderness_player-settings:
-    title: '&8Player Flags'
-    size: 36
-    l:
-      object:
-        name: 'Ignore'
-        lore: [ ]
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-    f:
-      page_previous:
-        name: '&9Previous Page'
-        lore:
-          - '&7Go to previous page:&9 {previous}'
-          - ' '
-          - '&8- &7Current:&3 {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&aNext Page'
-        lore:
-          - '&7Go to next page:&9 {next}'
-          - ' '
-          - '&8- &7Current:&3 {current}'
-        material: ARROW
-        slot: 35
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 27
-        to: 36
-
-  admin_wilderness_land-settings:
-    title: '&8Land Flags'
-    size: 36
-    l:
-      object:
-        name: 'Ignore'
-        lore: []
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-    f:
-      page_previous:
-        name: '&9Previous Page'
-        lore:
-          - '&7Go to previous page:&9 {previous}'
-          - ' '
-          - '&8- &7Current:&3 {current}'
-        material: ARROW
-        slot: 30
-      page_next:
-        name: '&aNext Page'
-        lore:
-          - '&7Go to next page:&9 {next}'
-          - ' '
-          - '&8- &7Current:&3 {current}'
-        material: ARROW
-        slot: 35
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 27
         to: 36
