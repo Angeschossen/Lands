@@ -1,4 +1,4 @@
-Lands features a war system which allows other lands to fight against each other. This page only explains the basic options you should start with configuring. There are even more options in the wars.yml file. They're all self explaining (with comments) in the wars.yml file located in your Lands folder.
+Landss features a war system which allows other lands to fight against each other. This page only explains the basic options you should start with configuring. There are even more options in the wars.yml file. They're all self explaining (with comments) in the wars.yml file located in your Lands folder.
 The full file can be viewed here: https://github.com/Angeschossen/Lands/blob/master/src/main/resources/wars.yml
 
 
