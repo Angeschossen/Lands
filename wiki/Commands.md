@@ -1,3 +1,5 @@
+> Some missing command for example...
+
 >`/Lands help [page]`\
 `Permission: lands.command.help`\
 Description: Display command usages of Lands
