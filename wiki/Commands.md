@@ -1,55 +1,55 @@
 >`/Lands help [page]`\
 `Permission: lands.command.help`\
-Description: Display command usages of Lands
+Description: Display command usages of Lands.
 
 >`/Lands claim`\
 `Permission: lands.command.claim`\
-Description: Claim chunks
+Description: Claim chunks.
 
 >`/Lands create`\
 `Permission: lands.command.create`\
-Description: Create a land
+Description: Create a land.
 
->`/Lands accept <land>`\
+>`/Lands accept [land]`\
 `Permission: lands.command.accept`\
-Description: Accept invites
+Description: Accept invites.
 
 >`/Lands chat [land] <message>`\
 `Permission: lands.command.chat`\
-Description: Chat with land
+Description: Chat with land.
 
 >`/Lands delete`\
 `Permission: lands.command.delete`\
-Description: Delete your land
+Description: Delete your land.
 
 >`/Lands deny`\
 `Permission: lands.command.deny`\
-Description: Deny invite
+Description: Deny invite.
 
 >`/Lands deposit [land] <amount>`\
 `Permission: lands.command.deposit`\
-Description: Deposit money to land bank
+Description: Deposit money to land bank.
 
->`/Lands edit <land>`\
+>`/Lands edit [land]`\
 `Permission: lands.command.edit`\
-Description: Enter edit mode for a land. Actions like /Lands claim will be executed for this land.
-
+Description: Enter edit mode for a land.\
+Actions like /Lands claim will be executed for this land.
 
 >`/Lands info [land]`\
 `Permission: lands.command.info`\
-Description: Show information about a land
+Description: Show information about a land.
 
 >`/Lands invites`\
 `Permission: lands.command.invites`\
-Description: Open received invites GUI
+Description: Open received invites GUI.
 
->`/Lands leave <Land>`\
+>`/Lands leave [land]`\
 `Permission: lands.command.leave`\
-Description: Leave a land
+Description: Leave a land.
 
 > `/Lands map`\
 `Permission: lands.command.map`\
-Description: Show lands map
+Description: Show lands map.
 
 >`/Lands menu`\
 `Permission: lands.command.menu`\
@@ -59,15 +59,15 @@ for the chunk you're standing in.
 
 >`/Lands menu here`\
 `Permission: lands.command.menu`\
-Description: Open Lands GUI for the chunk you're standing in.\
+Description: Open Lands GUI for the chunk you're standing in.
 
 >`/Lands rename [land] <new name>`\
 `Permission: lands.command.rename`\
-Description: Rename land
+Description: Rename land.
 
 > `/Lands selection`\
 `Permission: lands.command.selection`\
-Description: Select a region for actions like /Lands claim\
+Description: Select a region for actions like /Lands claim.\
 Possible actions:\
 /Lands claim\
 /Lands unclaim\
@@ -82,19 +82,19 @@ The area parameter defines a sub area of the land.
 
 > `/Lands setspawn`\
 `Permission: lands.command.setspawn`\
-Description: Set spawn for land
+Description: Set spawn for land.
       
 > `/Lands spawn [land]`\
 `Permission: lands.command.spawn`\
-Description: Teleport to land spawn
+Description: Teleport to land spawn.
 
 > `/Lands teleport <x> <z>`\
 `Permission: lands.command.teleport`\
-Description: Teleport to a claimed land chunk
+Description: Teleport to a claimed land chunk.
 
 > `/Lands top`\
 `Permission: lands.command.top`\
-Description: Show top ten lands  
+Description: Show top ten lands.
 
 > `/Lands trust <player> [area,*]`\
 `Permission: lands.command.trust`\
@@ -103,7 +103,7 @@ Area parameter is optional.
 
 > `/Lands unclaim`\
 `Permission: lands.command.unclaim`\
-Description: Unclaim a chunk
+Description: Unclaim a chunk.
 
 > `/Lands untrust <player> [area,*]`\
 `Permission: lands.command.untrust`\
@@ -112,89 +112,89 @@ Area parameter is optional.
 
 > `/Lands view`\
 `Permission: lands.command.view`\
-Description: Visualise land borders
+Description: Visualise land borders.
 
 > `/Lands wild`\
-`lands.command.wild`\
+`Permission: lands.command.wild`\
 Description: Teleport to random location.\
 You can set options for this in config.
 
 > `/Lands withdraw [land] <amount>`\
 `Permission: lands.command.withdraw`\
-Description: Withdraw money from land bank
+Description: Withdraw money from land bank.
 
 > `/Lands taxes`\
-`lands.command.taxes`\
-Description: View upcoming tax payments.\
+`Permission: lands.command.taxes`\
+Description: View upcoming tax payments.
 
 > `/Lands rent`\
-`lands.command.rent`\
+`Permission: lands.command.rent`\
 Description: [Manage rentals.](https://github.com/Angeschossen/Lands/wiki/Rent-System)
 
 
 ### Nations
 > `/Nations create`\
-`nations.command.create`\
+`Permission: nations.command.create`\
 Description: Create a nation.
 
 > `/Nations accept`\
-`nations.command.accept`\
+`Permission: nations.command.accept`\
 Description: Accept invite.
 
 > `/Nations delete`\
-`nations.command.delete`\
+`Permission: nations.command.delete`\
 Description: Delete nation.
 
 > `/Nations deny`\
-`nations.command.deny`\
+`Permission: nations.command.deny`\
 Description: Deny invite.
 
 > `/Nations leave`\
-`nations.command.leave`\
+`Permission: nations.command.leave`\
 Description: Leave nation.
 
 > `/Nations menu`\
-`nations.command.menu`\
+`Permission: nations.command.menu`\
 Description: Open nation menu.
 
 > `/Nations rename`\
-`nations.command.rename`\
+`Permission: nations.command.rename`\
 Description: Rename nation.
 
 > `/Nations menu`\
-`nations.command.menu`\
+`Permission: nations.command.menu`\
 Description: Open nation menu.
 
 > `/Nations setcapital`\
-`nations.command.setcapital`\
+`Permission: nations.command.setcapital`\
 Description: Set capital of nation.
 
 > `/Nations spawn`\
-`nations.command.spawn`\
+`Permission: nations.command.spawn`\
 Description: Teleport to nation spawn.
 
 > `/Nations trust`\
-`nations.command.trust`\
+`Permission: nations.command.trust`\
 Description: Add land.
 
 > `/Nations untrust`\
-`nations.command.untrust`\
+`Permission: nations.command.untrust`\
 Description: Remove land.
 
 
 ### Wars
 > `/Wars declare`\
-`wars.command.declare`\
+`Permission: wars.command.declare`\
 Description: Declare war against a land or nation.
 
 > `/Wars deny`\
-`wars.command.deny`\
+`Permission: wars.command.deny`\
 Description: Deny mutual war declaration.
 
 > `/Wars info`\
-`wars.command.info`\
+`Permission: wars.command.info`\
 Description: Info about current war.
 
 > `/Wars menu`\
-`wars.command.menu`\
+`Permission: wars.command.menu`\
 Description: Open menu for current war.
