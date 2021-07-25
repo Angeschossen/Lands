@@ -35,7 +35,7 @@ Description: Deposit money to land bank.
 Description: Enter edit mode for a land.\
 Actions like /Lands claim will be executed for this land.
 
->`/Lands info <land>`\
+>`/Lands info [land]`\
 `Permission: lands.command.info`\
 Description: Show information about a land.
 
