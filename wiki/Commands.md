@@ -10,7 +10,7 @@ Description: Claim chunks.
 `Permission: lands.command.create`\
 Description: Create a land.
 
->`/Lands accept [land]`\
+>`/Lands accept <land>`\
 `Permission: lands.command.accept`\
 Description: Accept invites.
 
@@ -30,12 +30,12 @@ Description: Deny invite.
 `Permission: lands.command.deposit`\
 Description: Deposit money to land bank.
 
->`/Lands edit [land]`\
+>`/Lands edit <land>`\
 `Permission: lands.command.edit`\
 Description: Enter edit mode for a land.\
 Actions like /Lands claim will be executed for this land.
 
->`/Lands info [land]`\
+>`/Lands info <land>`\
 `Permission: lands.command.info`\
 Description: Show information about a land.
 
@@ -43,7 +43,7 @@ Description: Show information about a land.
 `Permission: lands.command.invites`\
 Description: Open received invites GUI.
 
->`/Lands leave [land]`\
+>`/Lands leave <land>`\
 `Permission: lands.command.leave`\
 Description: Leave a land.
 
