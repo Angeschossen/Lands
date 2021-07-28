@@ -1,7 +1,8 @@
-### IMPORTANT NOTICE
-1. **If you're using Featherboard, you'll need to use  {placeholderapi_PLACEHOLDER}.**
+## Placeholders with Featherboard
+If you're using Featherboard, you'll need to use `{placeholderapi_PLACEHOLDER}`.
 
-2. **You can even display the placeholders for you current location, by just appending "_here" to it.**
+## Display placeholders for the players current location
+You can even display the placeholders for you current location, by just appending `_here` to it.
 
 ## General
 > **`%lands_next_tax%`**\
@@ -55,6 +56,9 @@
 > **`%lands_land_level%`**\
 > `Description: Current level of the land`
 
+> **`%lands_land_level_next%`**\
+> `Description: Next level of the land`
+
 
 ## Nation
 > **`%lands_nation_name%`**\
@@ -62,6 +66,9 @@
 
 > **`%lands_nation_level%`**\
 > `Description: Current level of the nation`
+
+> **`%lands_nation_level_next%`**\
+> `Description: Next level of the nation`
 
 
 ## War

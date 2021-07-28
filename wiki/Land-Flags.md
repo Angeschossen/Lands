@@ -1,4 +1,5 @@
-You can configure these flags inside your config.yml file. Options: default_list, display_list
+You can configure these flags inside your config.yml file. Options: default_list, display_list\
+Wilderness flags can be edited in the `/lands admin wilderness` menu.
 
 * **ENTITY_GRIEFING**\
 Allow entities to grief blocks?

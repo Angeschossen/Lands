@@ -1,5 +1,6 @@
 Lands has a feature packed role system which allows each land to adjust flags for each role and create new roles for your land.
-You as a administrator can edit/add default roles.
+You as a administrator can edit/add default roles. Wilderness flags can be edited in the `/lands admin wilderness` menu.
+
 
 ***
 Whenever a new flag is added to Lands, all existing Lands will apply the flag, if specified by the flag author.              
@@ -133,6 +134,8 @@ Use ender pearls
 Attack monsters\
 If disabled: Monsters also won't be able to damage the players of the role.
 
+* **NO_DAMAGE**\
+Players won't get any damage from any damage cause.
 
 ## Management Flags
 > Management flags will allow players to edit flags and options for the land.
@@ -176,9 +179,6 @@ The players will be able to claim directly near your land, ignoring the chunk di
 
 * **SPAWN_SET**\
 Allow the players of the role to change the spawn.
-
-* **LAND_RENAME**\
-Allow setting a new name for the land.
 
 * **BALANCE_WITHDRAW**\
 Withdraw balance from the land bank (/Lands withdraw).

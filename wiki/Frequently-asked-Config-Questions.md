@@ -1,6 +1,6 @@
-**Q: How can I disallow block breaking, pvp etc. in wilderness?**\
-A: This will open a menu where you can toggle wilderness flags:\
-`/Lands admin wilderness`
+**Q: Where can I toggle wilderness flags or convert regular lands into admin/server lands?**\
+A: This will open a menu where you can toggle wilderness flags and convert regular lands into admin/server lands:\
+`/Lands admin menu`
 
 ***
 
@@ -75,3 +75,17 @@ A: Toggle this option in config.yml. You can configure the item material etc. in
 **Q: How can I deny / allow claiming in specific WorldGuard areas?**\
 A: `/region flag [region] lands-claim deny/allow`\
 By default this flag will be set to deny.
+
+***
+
+**Q: How can I set claim (permission) limits per world?**\
+A: Toggle the `claim-limits-per-world` option in config.
+Example: If you set the permission lands.chunks.5 for your players,\
+they will be able to claim 5 chunks in each claim world instead of 5 chunks in general.\
+This then can be combined with your permissions plugin per world permissions, which would allow you to set different claim limits per world.\
+NOTE: This only applies for claim permissions: lands.chunks.NUMBER, lands.ownlands.NUMBER
+
+***
+
+**Q: How can I prevent swear words to be taken for land, role or area names?**\
+A: Edit the 'swear-words' list in your language file.
