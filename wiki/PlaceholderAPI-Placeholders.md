@@ -81,6 +81,10 @@ You can even display the placeholders for you current location, by just appendin
 > **`%lands_war_state%`**\
 > `Description: The current state of the war (preparation or fight).`
 
+## Relation Placeholders
+Placeholders that involve more than one player.
+> **`%rel_lands_war_relation%`**\
+> Description: Displays either the ally or enemy string from your language file depending on the current war and the players relation in this war.
 
 ## Top Lands 
 %lands_top_balance_NUMBER_name%\
