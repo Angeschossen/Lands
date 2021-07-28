@@ -92,12 +92,6 @@ general:
     name:
       land: '&2land '
       nation: '&9Nação '
-  rentables:
-    buy: '&aComprar'
-    rent: '&eAlugar'
-    cost: '&cCusto'
-    size: '&eTamanho'
-    price_blocks_ratio: '&aPrice-blocks ratio'
 physical-Item:
   claim-block:
     name: '&7Claimblocks'
@@ -115,13 +109,6 @@ physical-Item:
     - '&7seleção de área e protege-la:'
     - '&8/&3Lands claim'
     material: GOLDEN_HOE
-  info:
-    name: '&eFerramenta de Informação'
-    lore:
-    - '&7Use esta ferramenta para obter'
-    - '&7informações sobre a land'
-    - '&7que você está apontando.'
-    material: FEATHER
 skull:
   area:
     default: DARK_OAK_FENCE
@@ -176,17 +163,17 @@ gui:
         lore:
         - ' '
         - '&7+ Pode criar&3 {ownlands} &7lands.'
-        - '  &8lands.ownlands.NUMBER'
+        - '  &8lands.ownlands.<number>'
         - '&7+ Pode proteger&3 {chunks} &7chunks por land.'
-        - '  &8lands.chunks.NUMBER'
+        - '  &8lands.chunks.<number>'
         - '&7+ Pode Suportar lands no qual você é confiável.'
         - '  &7com &3{support-chunks} &7chunks por land.'
-        - '  &8lands.chunks.support.NUMBER'
+        - '  &8lands.chunks.support.<number>'
         - ' '
         - '&7+ Pode entrar&3 {lands} &7lands.'
-        - '  &8lands.lands.NUMBER'
+        - '  &8lands.lands.<number>'
         - '&7+ Pode ter&3 {members} &7membros por land.'
-        - '  &8lands.members.NUMBER'
+        - '  &8lands.members.<number>'
         material: PLAYER_HEAD
         slot: 17
   player_lands:
@@ -518,7 +505,7 @@ gui:
         - '&7Nessa land tem o máximo'
         - '&7de&3 {max} &7Areas.'
         - ' '
-        - '&8Permission: lands.areas.NUMBER'
+        - '&8Permission: lands.areas.<number>'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -817,7 +804,7 @@ gui:
         - '&7Este terreno atingiu sua máxima'
         - '&7quantia de&3 {max} &7membros.'
         - ' '
-        - '&8Permission: lands.members.NUMBER'
+        - '&8Permission: lands.members.<number>'
     f:
       toggle:
         name: '&8> &6Visualizar somente Área'
@@ -1777,32 +1764,10 @@ gui:
         - '&7Status: {enabled}'
         - '&7Desbloqueado: {unlocked}'
         - ' '
-        - '&7Permitir que este cargo edite'
+        - '&7Permitir que esta função edite'
         - '&7configurações diversas, como'
         - '&7o nome de land / areas?'
         material: NAME_TAG
-        from: 10
-        to: 27
-      trample_farmland:
-        name: '&6Pisar Farmland'
-        lore:
-        - '&7Status: {enabled}'
-        - '&7Desbloqueado: {unlocked}'
-        - ' '
-        - '&7Permitir este cargo para pisar'
-        - '&7farmland?'
-        material: FARMLAND
-        from: 10
-        to: 27
-      interact_trapdoor:
-        name: '&6Abrir alçapão'
-        lore:
-        - '&7Status: {enabled}'
-        - '&7Desbloqueado: {unlocked}'
-        - ' '
-        - '&7Permitir este cargo para interagir'
-        - '&7com alçapão?'
-        material: OAK_TRAPDOOR
         from: 10
         to: 27
     a:
@@ -3049,7 +3014,7 @@ gui:
         - ' &a{5} protecoes para cada land'
         - ' '
         - '&7Economia'
-        - '&8- &7Nação'
+        - '&8- &7Nation'
         - '  &7Saldo: ${6}'
         - '  &7Nação paga&c ${7} &7manutenção'
         - '  &7em {8}.'
@@ -3183,88 +3148,6 @@ gui:
         - ' '
         - '&8- &7Title:'
         - '  &7{title}'
-        material: PLAYER_HEAD
-        from: 10
-        to: 27
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 9
-      placeholder_2:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 29
-        to: 36
-  rentables:
-    title: '&8Rentáveis'
-    size: 36
-    f:
-      page_previous:
-        name: '&9Página anterior'
-        lore:
-        - '&7Vá para a página anterior:&9 {previous}'
-        - '&7Atual:&3 {current}'
-        material: ARROW
-        slot: 30
-      sort:
-        name: '&7Ordenar por {mode}'
-        lore:
-        - '&7Clique para alternar o'
-        - '&7modo de classificação.'
-        material: HOPPER
-        slot: 32
-      type:
-        name: '&7Tipo: {type}'
-        lore:
-        - '&7Clique para especificar'
-        - '&7se você quer alugar'
-        - '&7ou comprar.'
-        material: COMPARATOR
-        slot: 33
-      page_next:
-        name: '&aPróxima página'
-        lore:
-        - '&7Vá para a próxima página:&9 {next}'
-        - '&7Atual:&3 {current}'
-        material: ARROW
-        slot: 35
-      back:
-        name: '&cVoltar'
-        lore:
-        - '&7Voltar para'
-        - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 28
-    l:
-      area_rent:
-        name: '&eAlugar:&6 {area}'
-        lore:
-        - '&7Tamanho: {size} blocos'
-        - '&7Preco:&c ${costs} &7por &5{time}'
-        - ' &8┗ &7Tempo maximo: {max}'
-        - ' '
-        - '&7Land: {land}'
-        - '&7Clique para se teletransportar.'
-        material: OAK_FENCE
-        from: 10
-        to: 27
-      area_buy:
-        name: '&aComprar: &6{area}'
-        lore:
-        - '&7Tamanho: {size} blocks'
-        - '&7Preco:&c ${costs}'
-        - ' '
-        - '&7Land: {land}'
-        - '&7Clique para se teletransportar.'
-        material: OAK_FENCE
-        from: 10
-        to: 27
-      land_buy:
-        name: '&aComprar land:&2 {land}'
-        lore:
-        - '&7Custa:&c ${costs}'
-        - ' '
-        - '&7Clique para se teletransportar.'
         material: PLAYER_HEAD
         from: 10
         to: 27

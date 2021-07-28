@@ -98,55 +98,7 @@ general:
       trusted: '&7盟友领土,点击查看相关信息&3 {land}&7.'
       others: '&7他人领土,点击查看相关信息&3 {land}&7.'
       position: '&7目前位置.'
-  inbox:
-    general:
-      created: '&8{0}: &7部落已创建.'
-    member:
-      join: '&8{0}: &7成员 {1} 睡醒了.'
-      leave: '&8{0}: &7成员 {1} 睡着了.'
-      ban: '&8{0}: &c成员 {1} 遭到了封禁.'
-    economy:
-      upkeep:
-        warning: '&8{0}: &c无法支付维护费: ${1}'
-        unclaimed: '&8{0}: &c无法支付维护费 ${1}. 前次所占领土 (X: {2} Z: {3}) 已成荒野.'
-        paid: '&8{0}: &7已缴纳维护费: ${1}'
-        nation: '&8{0}: &7Nation {1} failed to pay the upkeep of ${2} and has been
-          deleted.'
-      bank:
-        withdraw: '&8{0}: &c成员 {1} 取款 ${2} -> 金币 = ${3}'
-        deposit: '&8{0}: &7成员 {1} 存款 ${2} -> 金币 = ${3}'
-      taxes:
-        warning: '&8{0}: &c成员 {1} 未缴税.'
-        untrusted: '&8{0}: &c成员 {1} 未缴税,已被踢出部落.'
-        received: '&8{0}: &7已获得 &3{1} &7税收 -> 金币 = {2}'
-    war:
-      declaration:
-        sent: '&8{0}: &7已向 {1} 宣战: &8/Wars info'
-        received: '&8{0}: &c{1} &c已向我方宣战: &8/Wars info'
-        mutual:
-          sent: '&8{0}: &7向 {1} 发送了战争请求. &7需对方接受.'
-          received: '&8{0}: &c{1} &c向我方发送了战争请求. 接受: &8/&3Wars declare {2}'
-      surrender:
-        sent: '&8{0}: &c对敌方投降,已向敌方支付赔偿金 ${1}'
-        received: '&8{0}: &7敌方部落 {1} &7已投降. 收到 ${2} 赔偿金.'
-      end:
-        won: '&8{0}: 战争胜利,统计: 击杀 {1} , 死亡 {2}'
-        draw: '&8{0}: 战争结束,统计: 击杀 {1} , 死亡 {2}'
-        lost: '&8{0}: 战争失败,统计: 死亡 {2} , 击杀 {1}'
-    nation:
-      general:
-        created: '&8{0}: &7联盟首府.'
-      member:
-        join: '&8{0}: &7部落 {1} 已加入.'
-        leave: '&8{0}: &7部落 {1} 已退出.'
-      economy:
-        upkeep:
-          warning: '&8{0}: &c无法支付维护费: ${1}'
-          paid: '&8{0}: &7已支付维护费: ${1}'
-        taxes:
-          warning: '&8{0}: &c部落 {1} 无法缴纳税金.'
-          untrusted: '&8{0}: &c部落 {1} 因无法缴纳税金,已被踢出联盟.'
-          received: '&8{0}: &7共收到税金 {1} -> 金库余额&3 {2}'
+
   wars:
     object:
       enemy: '&c敌对'
@@ -159,14 +111,14 @@ general:
 help:
   command:
     help: '[T]&8/&3Lands help &8[&3页&8] - &7查看帮助[H]&7点击复制.[/H][SC]lands help[/SC][/T]'
-    edit: '[T]&8/&3Lands edit &8<&3部落&8> &8- &7编辑模式[H]&7编辑区域 类似于/Lands claim. &7点击复制.[/H][SC]lands
+    edit: '[T]&8/&3Lands edit &8<&3部落&8> &8- &7编辑模式[H]&7编辑区域 类似于/lands claim. &7点击复制.[/H][SC]lands
       edit[/SC][/T]'
     claim: '[T]&8/&3Lands claim &8[&3部落 | 不填&8] - &7土地占领[H]&7占领当前位置的土地,也可以指定某个部落所有.
       &7点击复制.[/H][SC]lands claim[/SC][/T]'
     create: '[T]&8/&3Lands create &8<&3名称&8> - &7创建部落[H]&7点击复制.[/H][SC]lands create[/SC][/T]'
     leave: '[T]&8/&3Lands leave &8[&3部落&8] &8- &7退出部落或区域.[H]&7若未指定目标,则默认指定当前位置所属目标.
       &7点击复制.[/H][SC]lands leave[/SC][/T]'
-    unclaim: '[T]&8/&3Lands unclaim &8- &7取消占领[H]&7支持 /Lands selection. &7点击复制.[/H][SC]lands
+    unclaim: '[T]&8/&3Lands unclaim &8- &7取消占领[H]&7支持 /lands selection. &7点击复制.[/H][SC]lands
       unclaim[/SC][/T]'
     delete: '[T]&8/&3Lands delete &8<&3部落&8> &8- &7删除部落[H]&7点击复制.[/H][SC]lands delete[/SC][/T]'
     trust: '[T]&8/&3Lands trust &8<&3玩家&8> [&3区域&8] - &7邀请玩家[H]&7若使用 * 作为区域名,则该玩家拥有所有区域权限.
@@ -175,7 +127,7 @@ help:
       &7点击复制.[/H][SC]lands untrust[/SC][/T]'
     setRole: '[T]&8/&3Lands setrole &8<&3玩家&8> &8<&3区域&8> <&3职位&8> - &7设置职位[H]&7点击复制.[/H][SC]lands
       setrole[/SC][/T]'
-    accept: '[T]&8/&3Lands accept &8<&3部落&8> - &7接受邀请[H]&7你已经使用"/Lands invites"命令查看所有邀请.
+    accept: '[T]&8/&3Lands accept &8<&3部落&8> - &7接受邀请[H]&7你已经使用"/lands invites"命令查看所有邀请.
       &7点击复制.[/H][SC]lands accept[/SC][/T]'
     deny: '[T]&8/&3Lands deny &8<&3部落&8> - &7拒绝邀请[H]&7点击复制.[/H][SC]lands deny[/SC][/T]'
     view: '[T]&8/&3Lands view &8[&3disable-关闭&8] &8- &7领土边幅[H]&7这个命令也会显示附近的领土边幅. &7点击复制.[/H][SC]lands
@@ -461,7 +413,7 @@ command:
       &8/&3Lands trust&7.'
     area-not-trusted: '&c无法在该区域操作. &7你并不是该区域的成员. &8( &7部落&2 {land} &7中区域&6 {area}
       &8)'
-    invalid-number: '&你输入的&4 {input} &c并不是数字. &7参数&3 {argument} &7必须为数字.'
+    number: '&你输入的&4 {input} &c并不是数字. &7参数&3 {argument} &7必须为数字.'
     number: '&c你输入的 {input} &c并不是数字. &7参数&3 {argument} &7必须为数字.'
     name:
       number: '&c请勿使用数字. &7请使用字母 数字:&3 {invalid}'
@@ -488,7 +440,7 @@ command:
     land-other: '&c无法拥有部落的同时加入他人部落. &7你必须先离开部落&2 {land} &7. &8若有不妥请联系管理员 功能: invite-owner'
     max-own: '&c无法创建更多部落. &7部落上限&3 {max} &7. &8所需权限: lands.ownlands.值'
     success: '&7已成功创建部落&2 {land} &7花费&c ${cost}&7. 占领土地命令 &8/&3Lands claim&7. 使用命令&3
-      "/Lands selection" &7可选择区域. &7若要编辑部落&2 {land} &7,请输入&3 "/Lands edit"&7 进入编辑模式.'
+      "/lands selection" &7可选择区域. &7若要编辑部落&2 {land} &7,请输入&3 "/lands edit"&7 进入编辑模式.'
     broadcast: '&7玩家&3 {player} &7已创建部落&2 {land} &7.'
   rename:
     success: '&7已成功修改名称为&3 {name} &8(&7部落:&2 {land}&8)&7. 花费&c ${cost}&7.'
@@ -735,7 +687,7 @@ command:
         [NoPrefix]
         &7下次缴税:&5 {next}
         &7金币: ${balance}
-        &8更多信息: /Lands taxes
+        &8更多信息: /lands taxes
         &7---------<- &4Tax Change &7->---------
 list:
   swear-words: []

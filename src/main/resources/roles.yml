@@ -16,6 +16,7 @@ land:
     - INTERACT_GENERAL
     - INTERACT_CONTAINER
     - INTERACT_DOOR
+    - INTERACT_TRAPDOOR
     - INTERACT_MECHANISM
     - INTERACT_VILLAGER
     - ATTACK_PLAYER
@@ -49,7 +50,7 @@ land:
   # Whenever a new flag is added to Lands, all existing Lands will apply the flag, if specified by the flag author.              #
   # But for future land creations you need to configure it correctly here. Lands will always send you a popup in console and on  #
   # admin ingame accounts, if there is a new flag available.                                                                     #
-  # You can force sync / reset flag(s) by using /Lands admin land <land | *> resetFlag <flag | all>                              #
+  # You can force sync / reset flag(s) by using /lands admin land <land | *> resetFlag <flag | all>                              #
   ################################################################################################################################
   roles:
     # NOTE: The owner role can not be deleted.
@@ -58,39 +59,8 @@ land:
       # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
       icon: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMzExYTRmYjljNDkzODliNGY0NThjMjllOTY4MzI0YzU4MjNiOGE5OWVhZGUxNzQ3ODY2Yzk1YjA2NGEifX19'
       # Default flag values. Please note that these only apply to new land creations. The flags of the owner role can only be toggled by server administrators.
-      default:
-        - BLOCK_PLACE
-        - BLOCK_BREAK
-        - BLOCK_IGNITE
-        - INTERACT_GENERAL
-        - INTERACT_CONTAINER
-        - INTERACT_DOOR
-        - INTERACT_MECHANISM
-        - INTERACT_VILLAGER
-        - ATTACK_PLAYER
-        - ATTACK_ANIMAL
-        - ATTACK_MONSTER
-        - FLY
-        - SPAWN_TELEPORT
-        - ENDER_PEARL
-        - LAND_ENTER
-        - VEHICLE_USE
-        - ITEM_PICKUP
-        - TRAMPLE_FARMLAND
-        - LAND_CLAIM
-        - LAND_CLAIM_BORDER
-        - SPAWN_SET
-        - BALANCE_WITHDRAW
-        - AREA_ASSIGN
-        - WAR_MANAGE
-        - PLAYER_TRUST
-        - PLAYER_SETROLE
-        - PLAYER_UNTRUST
-        - PLAYER_BAN
-        - SETTING_EDIT_LAND
-        - SETTING_EDIT_ROLE
-        - SETTING_EDIT_TAXES
-        - SETTING_EDIT_VARIOUS
+      # Using ALL instead of a list will give this role all player flags. Flags which are only for admin lands won't be set for this role.
+      default: 'ALL'
 
     admin:
       name: '&cAdmin'
@@ -104,6 +74,7 @@ land:
         - BLOCK_BREAK
         - INTERACT_GENERAL
         - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
         - INTERACT_CONTAINER
         - INTERACT_MECHANISM
         - INTERACT_VILLAGER
@@ -136,6 +107,7 @@ land:
         - BLOCK_BREAK
         - INTERACT_GENERAL
         - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
         - INTERACT_CONTAINER
         - INTERACT_MECHANISM
         - INTERACT_VILLAGER

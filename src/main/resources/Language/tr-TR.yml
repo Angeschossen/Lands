@@ -1,23 +1,3 @@
----
-#Here you can edit all chat messages
-#GUI items and menus can be found in <language>_gui.yml
-#If you encounter any issues or have questions, contact plugin support.
-#Plugin page: https://www.spigotmc.org/resources/authors/315463/
-#Discord: https://discord.gg/B4MAJVk
-################################
-#About chat message type system:
-#Does only work for messages in
-#"message" or "command" section.
-################################
-#You can use some codes to set the type
-#of a message to title, actionbar or chat.
-#How does it work:
-#For example we want to print a message as a title:
-#Set message to: '#t#Title[newline]Subtitle'(Set "#t#" in front of it; use [newline] to set the subtitle)
-#You also send a message at the actionbar:
-#Set message to: '#a#This is a actionbar message.'
-#(Set #a# in front of it.)
-#More information: https://github.com/Angeschossen/General/wiki/Messages
 general:
   prefix:
     normal: '&8[&aLands&8] '
@@ -117,54 +97,7 @@ general:
       trusted: '&7Bu arazi güvendin. &7Arazi&3 {land} &7ile ilgili bilgileri görüntülemek için tıklayın.'
       others: '&7Bu arazilerde güvenilmezsin. Arazi&3 {land} &7hakkında bilgi görüntülemek için tıklayın.'
       position: '&7Bu sizin şu anki konumunuz.'
-  inbox:
-    general:
-      created: '&8{0}: &7Arazi oluşturuldu.'
-    member:
-      join: '&8{0}: &7Oyuncu {1} katıldı.'
-      leave: '&8{0}: &7Oyuncu {1} ayrıldı.'
-      ban: '&8{0}: &cOyuncu {1} yasaklandı.'
-    economy:
-      upkeep:
-        warning: '&8{0}: &cBakım maliyeti ödenemedi:${1}'
-        unclaim: '&8{0}: &c${1} &ctutarının tam bakım maliyeti ödenemedi. Talep edilen son {2} parça talep edilmedi.'
-        paid: '&8{0}: &7Ödenen bakım maliyeti: ${1}'
-        nation: '&8{0}: &7Ulus {1}, ${2}''ın bakım masrafını ödeyemedi ve silindi.'
-      bank:
-        withdraw: '&8{0}: &cOyuncu {1} ${2} -> bakiye = ${3} çekti'
-        deposit: '&8{0}: &cOyuncu {1} ${2} -> bakiye = ${3} yatırdı'
-      taxes:
-        warning: '&8{0}: &cOyuncu {1} vergi ödeyemedi.'
-        untrusted: '&8{0}: &cOyuncu {1} vergi ödeyemedi. Artık güvenilmezler.'
-        received: '&8{0}: &7Arazi üyelerinden toplam ${1} vergi alındı -> bakiye = ${2}'
-    war:
-      declaration:
-        sent: '&8{0}: &7{1} ile savaş ilan edildi: &8/Wars info'
-        received: '&8{0}: &c{1} &cbize karşı savaş ilan etti: &8/&3Wars info'
-        mutual:
-          sent: '&8{0}: &7{1}''e savaş isteği gönderildi. &7Kabul etmeleri gerekiyor.'
-          received: '&8{0}: &c{1} &cbir savaş isteği gönderdi. Kabul etmek için: &8/&3Wars declare {2}'
-      surrender:
-        sent: '&8{0}: &cSavaşta teslim oldu. Düşmana ${1} haraç ödedi.'
-        received: '&8{0}: &7Düşman {1} &7teslim oldu. ${2} haraç aldı.'
-      end:
-        won: '&8{0}: Savaşı {1} öldürme ve {2} ölümle kazandık.'
-        draw: '&8{0}: Savaş, {1} ölüm ve {2} ölümle berabere sonuçlandı.'
-        lost: '&8{0}: Savaşı {2} ölüm ve {1} ölümle kaybettik.'
-    nation:
-      general:
-        created: '&8{0}: &7Ulus oluşturuldu.'
-      member:
-        join: '&8{0}: &7Arazi {1} katıldı.'
-        leave: '&8{0}: &7Arazi {1} ayrıldı.'
-      economy:
-        upkeep:
-          warning: '&8{0}: &cBakım maliyeti ödenemedi:${1}'
-          paid: '&8{0}: &7Ödenen bakım maliyeti: ${1}'
-        taxes:
-          warning: '&8{0}: &cArazi {1} vergi ödeyemedi.'
-          untrusted: '&8{0}: &cArazi {1} vergi ödeyemedi. Kaldırıldılar.'
-          received: '&8{0}: &7Arazi üyelerinden toplam ${1} vergi alındı -> bakiye = ${2}'
+
   wars:
     object:
       enemy: '&cDüşman'
@@ -180,16 +113,16 @@ general:
 help:
   command:
     help: '[T]&8/&3Lands help &8[&3page&8] - &7Yardım almak için[H]&7Kopyalamak için tıklayın.[/H][SC]lands help[/SC][/T]'
-    edit: '[T]&8/&3Lands edit &8<&3land&8> &8- &7Arazi için düzenleme moduna girin[H]&7Düzenleme alanı, /Lands claim gibi komutlar için kullanılır. &7Kopyalamak için tıklayın.[/H][SC]lands edit[/SC][/T]'
+    edit: '[T]&8/&3Lands edit &8<&3land&8> &8- &7Arazi için düzenleme moduna girin[H]&7Düzenleme alanı, /lands claim gibi komutlar için kullanılır. &7Kopyalamak için tıklayın.[/H][SC]lands edit[/SC][/T]'
     claim: '[T]&8/&3Lands claim &8[&3land | auto&8] - &7Parça talep edin[H]&7Mevcut konumunuzdaki parçayı talep edin. Bu talebin gitmesi gereken bir arazi de belirtebilirsiniz. &7Kopyalamak için tıklayın.[/H][SC]lands claim[/SC][/T]'
     create: '[T]&8/&3Lands create &8<&3name&8> - &7Arazi oluştur[H]&7Kopyalamak için tıklayın.[/H][SC]lands create[/SC][/T]'
     leave: '[T]&8/&3Lands leave &8[&3land&8] &8- &7Bir arazi veya alan bırakın.[H]&7Bir arazi belirtmezseniz, alanı mevcut konumunuzda terk edersiniz. &7Kopyalamak için tıklayın.[/H][SC]lands leave[/SC][/T]'
-    unclaim: '[T]&8/&3Lands unclaim &8- &7Parça talebini geri alma[H]&7Bu aynı zamanda /Lands selection seçimini de destekler. &7Kopyalamak için tıklayın.[/H][SC]lands unclaim[/SC][/T]'
+    unclaim: '[T]&8/&3Lands unclaim &8- &7Parça talebini geri alma[H]&7Bu aynı zamanda /lands selection seçimini de destekler. &7Kopyalamak için tıklayın.[/H][SC]lands unclaim[/SC][/T]'
     delete: '[T]&8/&3Lands delete &8<&3land&8> &8- &7Araziyi sil[H]&7Kopyalamak için tıklayın.[/H][SC]lands delete[/SC][/T]'
     trust: '[T]&8/&3Lands trust &8<&3player&8> [&3area&8] - &7Oyuncuya güven[H]&7Oyuncuya tüm araziye güvenmek için alan adı olarak * kullanın. &7Kopyalamak için tıklayın.[/H][SC]lands trust[/SC][/T]'
     untrust: '[T]&8/&3Lands untrust &8[&3area&8] - &7Oyuncuya güveni geri al[H]&7Oyuncuya tüm araziye güvenmemek için alan adı olarak * kullanın. &7Kopyalamak için tıklayın.[/H][SC]lands untrust[/SC][/T]'
     setRole: '[T]&8/&3Lands setrole &8<&3player&8> &8<&3area&8> <&3role&8> - &7Rol belirleyin[H]&7Kopyalamak için tıklayın.[/H][SC]lands setrole[/SC][/T]'
-    accept: '[T]&8/&3Lands accept &8<&3land&8> - &7Daveti kabul et[H]&7/Lands invites gerçekleştirerek alınan tüm davetleri görüntüleyebilirsiniz. &7Kopyalamak için tıklayın.[/H][SC]lands accept[/SC][/T]'
+    accept: '[T]&8/&3Lands accept &8<&3land&8> - &7Daveti kabul et[H]&7/lands invites gerçekleştirerek alınan tüm davetleri görüntüleyebilirsiniz. &7Kopyalamak için tıklayın.[/H][SC]lands accept[/SC][/T]'
     deny: '[T]&8/&3Lands deny &8<&3land&8> - &7Daveti reddet[H]&7Kopyalamak için tıklayın.[/H][SC]lands deny[/SC][/T]'
     view: '[T]&8/&3Lands view &8[&3disable&8] &8- &7Hak talepleri ile ilgili bilgiler[H]&7Bu komut yakındaki talepleri de görselleştirecektir. &7Kopyalamak için tıklayın.[/H][SC]lands view[/SC][/T]'
     menu: '[T]&8/&3Lands menu &8[&3here&8] &8- &7Arazi / alan menüsünü aç[H]&7Kopyalamak için tıklayın.[/H][SC]lands menu[/SC][/T]'
@@ -215,7 +148,7 @@ help:
     unban: '[T]&8/&3Lands unban &8<&3player&8> [&3area&8] - &7Oyuncunun yasağını kaldır[H]&7Kopyalamak için tıklayın.[/H][SC]lands unban[/SC][/T]'
     taxes: '[T]&8/&3Lands taxes &8- &7Yaklaşan vergi ödemelerini göster[H]&7Kopyalamak için tıklayın.[/H][SC]lands taxes[/SC][/T]'
     unstuck: '[T]&8/&3Lands unstuck &8- &7Tuzaklardan ışınlanma[H]&7Bir arazide sıkışıp kalmanız durumunda. &7Kopyalamak için tıklayın.[/H][SC]lands unstuck[/SC][/T]'
-    claims: '[T]&8/&3Lands claims &8[&3land&8] &8- &7Arazinizin hak taleplerini listeleyin[H]&7/Lands claims Bu komut size tüm arazileri gösterecektir. &7Kopyalamak için tıklayın.[/H][SC]lands claims[/SC][/T]'
+    claims: '[T]&8/&3Lands claims &8[&3land&8] &8- &7Arazinizin hak taleplerini listeleyin[H]&7/lands claims Bu komut size tüm arazileri gösterecektir. &7Kopyalamak için tıklayın.[/H][SC]lands claims[/SC][/T]'
     rent: '[T]&8/&3Lands rent &8<&3cancel &8| &3info &8| &3removeOffer &8| &3removeTenant&8> &8- &7Kiralamayı yönet[H]&7Bu komut ile mevcut konumunuzdaki kiranızı yönetebilirsiniz. &7Kopyalamak için tıklayın.[/H][SC]lands rent[/SC][/T]'
     wars:
       declare: '[T]&8/&3Wars declare &8<&3land or nation&8> - &7Savaş ilan et[H]&7Kopyalamak için tıklayın.[/H][SC]wars declare[/SC][/T]'
@@ -223,6 +156,7 @@ help:
       menu: '[T]&8/&3Wars menu &8- &7Savaş menüsünü aç[H]&7Kopyalamak için tıklayın.[/H][SC]wars menu[/SC][/T]'
       deny: '[T]&8/&3Wars deny &8- &7Karşılıklı savaş ilanını reddet[H]&7Kopyalamak için tıklayın.[/H][SC]wars deny[/SC][/T]'
     nations:
+      chat: '[T]&8/&3Nations chat &8[&3nation&8] <&3message&8> &8- &7Ulus sohbeti[H]&7Kopyalamak için tıklayın.[/H][SC]nations chat[/SC][/T]'
       trust: '[T]&8/&3Nations trust &8<&3land&8> - &7Araziye davet et[H]&7Kopyalamak için tıklayın.[/H][SC]nations trust[/SC][/T]'
       untrust: '[T]&8/&3Nations untrust &8<&3land&8> - &7Araziden kaldır[H]&7Kopyalamak için tıklayın.[/H][SC]nations untrust[/SC][/T]'
       accept: '[T]&8/&3Nations accept &8<&3nation&8> - &7Daveti kabul et[H]&7Kopyalamak için tıklayın.[/H][SC]nations accept[/SC][/T]'
@@ -317,7 +251,7 @@ message:
   role:
     exists: '&4{role} &cadında bir rol zaten var. &7Lütfen farklı bir ad seçin.'
     not-exist: '&e{role} &crolü bu alanda mevcut değil. &7Yazım hatası mı?'
-    max: '&cBu arazi için daha fazla rol oluşturamazsınız. &3{max} &7rol sınırınıza ulaştınız. İzin: lands.roles.NUMBER'
+    max: '&cBu arazi için daha fazla rol oluşturamazsınız. &3{max} &7rol sınırınıza ulaştınız. İzin: lands.roles.<number>'
     player:
       land: '&cBu oyuncuyu&4 {land} arazisinde düzenleyemezsiniz. &6{role} &7rolü sizinkinden daha yüksek veya eşit bir önceliğe sahip.'
       area: '&cBu oyucuyu &8(&7Arazi:&2 {land}&8)&4 {area} &calanında düzenleyemezsiniz. &6{role} &7rolü sizinkinden daha yüksek veya eşit bir önceliğe sahip.'
@@ -339,7 +273,7 @@ message:
       create: '&7Lütfen yeni alan için bir ad girin.'
       delete: '&7Lütfen silmek istediğiniz alanın adını girin.'
       exists: '&4{area} &calanı bu arazide zaten var &8(&7Arazi:&2 {land}&8)&c. &7Lütfen farklı bir ad seçin.'
-      max: '&cBu arazi için daha fazla alan oluşturamazsınız. &3{max} &7alan sınırınıza ulaştınız. İzin: lands.areas.NUMBER'
+      max: '&cBu arazi için daha fazla alan oluşturamazsınız. &3{max} &7alan sınırınıza ulaştınız. İzin: lands.areas.<number>'
 command:
   rent:
     edit: '&3{player} &coyuncusuna kiralanmış/satılmış olduğundan,&4 {land} &carazisinin&4 {area} &calanını şu anda düzenleyemezsiniz.'
@@ -448,7 +382,6 @@ command:
     banks-disabled: '&7Bankalar bir yönetici tarafından devre dışı bırakıldı. &8Yapılandırmada etkinleştirebilirler.'
     land-not-trusted: '&cOyuncu&4 {player} &cbu arazinin bir parçası değil &8(&7Arazi:&2 {land}&8)&c. Önce ona güvenmelisin &8/&3Lands trust&7.'
     area-not-trusted: '&cBunu burada yapamazsınız. &7Arazi&2 {land}&7,&6 {area} &7alanında güvenilmezsiniz.'
-    invalid-number: '&cGirişiniz&4 {input} &cbir sayı değil. &3{argument} &7bağımsız değişkeninin bir sayı olması gerekir.'
     number: '&cGirişiniz&4 {input} &cbir sayı değil. &3{argument} &7bağımsız değişkeninin bir sayı olması gerekir.'
     none: |
       &cHerhangi bir arazinin üyesi değilsiniz.
@@ -471,7 +404,7 @@ command:
     cmd-not-exist: '&cBu komut mevcut değil. &7Komut&3 {command} &7geçersizdir.'
   create:
     land-other: '&cKendi arazinize sahip olmanıza ve başka bir arazinin üyesi olmanıza izin verilmiyor. &7Önce arazi&2 {land} 7ayrılmanız gerekir. &8Bir yönetici bunu config: invite-owner içinde devre dışı bırakabilir.'
-    max-own: '&cDaha fazla arazi oluşturamasınız. &7Maksimum&3 {max} &7kendi arazinize ulaştınız. &8İzin: lands.ownlands.NUMBER'
+    max-own: '&cDaha fazla arazi oluşturamasınız. &7Maksimum&3 {max} &7kendi arazinize ulaştınız. &8İzin: lands.ownlands.<number>'
     success: '&c${cost} &7karşılığında&2 {land} &7arazi başarıyla oluşturuldu. &8/&3Lands claim &7kullanarak parça talep edebilirsiniz. Bir seçimi talep etmek için &8/&3Lands selection &7de kullanabilirsiniz. Araziyi {land} gelecekteki eylemler için düzenleme araziniz olarak ayarlayın &8(/&3Lands edit&8)&7.'
     broadcast: '&7Arazi&2 {land}&7,&3 {player} &7tarafından oluşturuldu.'
   rename:
@@ -489,7 +422,7 @@ command:
       [T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Önceki sayfayı görmek için buraya tıklayın.[/H][/T] &5En İyi Araziler [T]&7-&6>>>>&7-----------[C]lands top {mode} {next}[/C][H]&7Önceki sayfayı görmek için buraya tıklayın.[/H][/T]
   selection:
     not-complete: '&cSeçiminiz tamamlanmadı. &7Lütfen her iki konumun da ayarlandığından emin olun &8(&bSOL TIKLAMA &7ve &9SAĞ TIKLAMA&8)&7. &8/&3Lands selection &7gerçekleştirerek seçim modunu değiştirebilirsiniz.'
-    max: '&cSeçiminizde çok fazla parça var. &7Boyut:&3 {current} &7Maksimum boyutunuz&3 {max} parçadır. &8İzin: lands.selection.NUMBER'
+    max: '&cSeçiminizde çok fazla parça var. &7Boyut:&3 {current} &7Maksimum boyutunuz&3 {max} parçadır. &8İzin: lands.selection.<number>'
     too-far: '&cBaktığınız blok çok uzakta. &7Lütfen ona yaklaşın.'
     enabled: '&7Seçim modunu etkinleştirdiniz. Birinci konumu ayarlamak için bir blokta &bSOL TIKLAMA&7''yı ve ikinci konumu ayarlamak için &9SAĞ TIKLAMA&7''yı kullanın.'
     disabled: '#t#&5Seçim[newline]&cMod devre dışı bırakıldı'
@@ -509,7 +442,7 @@ command:
     area:
       conflicts: '&cZaten alana atanmış parçalarla&4 {conflicts} &cçakışma bulundu. &7Geçersiz kılmayı onaylamak için &8/&3Lands selection assgin {area} confirm &7kullanın. Çatışmalar şu alanlara aittir: {areas}'
     expand:
-      enabled: '&7Seçiminizi alttan üste (müttefik seviyelerine) başarıyla genişletti.'
+      enabled: '&7Seçiminizi alttan üste başarıyla genişletti (minimum ve maksimum talep yüksekliği).'
       disabled: '&7Mevcut seçiminiz artık müttefik seviyelerine genişletilmiyor.'
   claim:
     already: '&cBu parçayı talep edemezsiniz. &7Zaten araziye ait&2 {land}&7.'
@@ -520,7 +453,7 @@ command:
     far-land: '&cBu parçayı talep edemezsiniz. &7Parça arazinizle bağlantılı olması gerekir. &8(&7Arazi:&2 {land}&8)&7.'
     success: '&7Bu parça başarıyla talep edildi &8(&7Arazi:&2 {land} &7X: {x} Z: {z}&8) &7için&c ${cost}&7. Sonraki hak talebinin maliyeti&c ${next} &7olacak.'
     already-claimed: '&cSeçiminizde zaten talep edilmiş olan ve arazinize ait olmayan bir parça var &8(&7X: {x} Z: {z}&8)&c. &7&7Bu alan&2 {land} &7araziye aittir.'
-    max-chunk: '&cBu arazi için&4 {chunks} &cparça daha talep edemezsiniz. &7Arazi&2 {land} &7için maksimum&3 {max} &7parçadır. &8İzin: lands.chunks.NUMBER'
+    max-chunk: '&cBu arazi için&4 {chunks} &cparça daha talep edemezsiniz. &7Arazi&2 {land} &7için maksimum&3 {max} &7parçadır. &8İzin: lands.chunks.<number>'
     selection: '&7Bu arazi için başarıyla&3 {chunks} &7parça talep ettiniz &8(&7Arazi:&2 {land}&8)&7. &c${cost} &7ödediniz.'
   assign:
     selection: '&cÖnce bir seçim oluşturmanız gerekir. &7Bir tane oluşturmak için &8/&3Lands selection &7kullanın. Bundan sonra tekrar deneyin.'
@@ -559,9 +492,9 @@ command:
     broadcast: '&7Arazi&2 {land}&7,&3 {player} &7tarafından silindi.'
   trust:
     own-land: '&cOyuncu&4 {player} &cbaşka bir araziye katılmaya davet edilemez. &7Kendi arazilerine sahip olmalarına ve aynı anda başka bir araziye üye olmalarına izin verilmiyor. Önce kendi arazilerini&2 {land} &7silmeleri gerekir.'
-    max-lands: '&7Oyuncu&3 {player} &7zaten maksimum arazi miktarına ulaştı. &8İzin: lands.lands.NUMBER'
+    max-lands: '&7Oyuncu&3 {player} &7zaten maksimum arazi miktarına ulaştı. &8İzin: lands.lands.<number>'
     max-members: '&4{land} &carazisinde&4 {player} &coyuncuya güvenilemedi. &7Arazilerinde maksimum&3 {members} &7üyelerine ulaştılar.'
-    max: '&cOyuncu&4 {player} &cdaha fazla araziye katılamaz. &7Katılmak için maksimum&3 {max} &7alana ulaştılar. &8İzin: lands.lands.NUMBER'
+    max: '&cOyuncu&4 {player} &cdaha fazla araziye katılamaz. &7Katılmak için maksimum&3 {max} &7alana ulaştılar. &8İzin: lands.lands.<number>'
     area:
       invited: '&4{player} &coyuncusu,&4 {land} &carazisinin&4 {area} &calanına zaten davet edildi. &7Davet&5 {time} &7önce gönderildi.'
       trusted: '&3{player} &7oyuncusu,&2 {land} &7arazisinin&6 {area} &7alanında zaten güveniliyor.'
@@ -599,10 +532,10 @@ command:
       untrusted: '&cOyuncu&4 {player}&c,&4 {land} &carazisinin&4 {area} &calanında güvenilmez. &7Lütfen önce onlara güvenin.'
       success: '&2{land} &7arazisinin&6 {area} &7alanında&3 {player} &7oyuncusu için&3 {role} &7rolü başarıyla ayarlandı.'
   accept:
-    max: '&cDaha fazla arazinin parçası olamazsın. &7Maksimum&3 {max} &7arazinize ulaştınız. &8İzin: lands.lands.NUMBER'
+    max: '&cDaha fazla arazinin parçası olamazsın. &7Maksimum&3 {max} &7arazinize ulaştınız. &8İzin: lands.lands.<number>'
     not-exist: '&4{land} &carazisinden davet almadınız veya süresi doldu. &7Lütfen girişinizi kontrol edin.'
     own-land: '&cBaşka bir araziye katılamazsınız. &7Kendi arazinize sahip olmanıza ve aynı zamanda başka bir arazinin üyesi olmanıza izin verilmez. &7Önce kendi arazinizi&2 {land} &7silmeniz gerekir.'
-    max-lands: '&cDaha fazla araziye katılamazsınız. &7Yalnızca&3 {max} &7araziniz olabilir. &8İzin: lands.lands.NUMBER'
+    max-lands: '&cDaha fazla araziye katılamazsınız. &7Yalnızca&3 {max} &7araziniz olabilir. &8İzin: lands.lands.<number>'
     max-members: '&cŞu anda&4 {land} &carazisine katılamazsınız. &7Arazide maksimum&3 {members} &7üyelerine ulaştılar.'
     war: '&cŞu anda&4 {land} &carazisine katılamazsınız, çünkü&c {object} &cile savaş halinde. &7Savaşları bittiğinde tekrar dene.'
     notification: '&7Hala diğer arazilerden&3 {invites} &7davetiniz var. Bunların bir listesini almak için: &8/&3Land invites &7kullanın.'
@@ -613,7 +546,7 @@ command:
       success: '&7Tüm arazilerde güvenilmek için&2 {land} &7gelen davet başarıyla kabul edildi.'
       broadcast: '&2{land} &8| &7Oyuncu&3 {player} &7artık arazinin bir üyesi.'
   setowner:
-    max-lands: '&cOyuncu&4 {player} &cdaha fazla araziye sahip olmasına izin verilmiyor. &7Zaten maksimum&3 {max} &7kendi arazisine ulaştı. &8İzin: lands.ownlands.NUMBER'
+    max-lands: '&cOyuncu&4 {player} &cdaha fazla araziye sahip olmasına izin verilmiyor. &7Zaten maksimum&3 {max} &7kendi arazisine ulaştı. &8İzin: lands.ownlands.<number>'
     confirm: '&cLütfen&2 {land} &carazisinin sahipliğini&3 {player} &coyuncusuna devretmek istediğinizi onaylayın: &8/&3Lands setowner {player} confirm'
     success: '&7Başarıyla&3 {player} &7oyuncusunu&2 {land} &7arazisinin yeni sahibi olarak ayarladınız. &c${cost} &7ödediniz.'
   deny:
@@ -624,7 +557,7 @@ command:
     not-trusted: '&cOraya ışınlanamazsınız. &7Arazi&2 {land} &7için güvenilmezsin.'
     success: '&7X:&3 {x} &7Z:&3 {z} &7Başarıyla ışınlandı. Hak talebinde bulunuldu: {claimed}'
   setspawn:
-    force-land: '&cSadece kendi arazinizdeki doğma noktası parçasını ayarlayabilirsiniz. &7Önce arazi&2 {land} &7gidin. &8Bir yönetici bunu yapılandırmada değiştirebilir.'
+    wilderness: '&cSadece kendi arazinizdeki alanın parçasını ayarlayabilirsiniz. &7Arazinize ya yukarı ya da aşağı hareket etmelisiniz.&2 {land}&7.'
     success: '#t#&7Doğma noktası ayarlandı[newline]&7Maliyet:&c ${cost}'
   spawn:
     not-exist: '&4{land} &cbir doğma notkası yok. &7Bir doğma noktası için &8/&3Land setspawn &7kullanın.'
@@ -662,7 +595,7 @@ command:
   chat:
     activated: '&7Arazi sohbeti etkinleştirildi. Arazinizle sohbet etmek için genel sohbette mesaj gönderin.'
     deactivated: '&7Arazi sohbeti başarıyla devre dışı bırakıldı.'
-    no-land: '&cArazi sohbeti için arazi bulunamadı. &7Arazi sohbetini devre dışı bırakmak için &8/&3Lands chat toggle &7kullanın.'
+    none: '&cArazi sohbeti için arazi bulunamadı. &7Arazi sohbetini devre dışı bırakmak için [T]&8/&3Lands chat toggle &8[&8TIKLAYIN&8][H]&7Sohbet modunu devre dışı bırakmak için burayı tıklayın.[/H][C]lands chat toggle[/C][/T] &7kullanın.'
     format:
       minecraft: '[NoPrefix]&a{land} &8| {role} &7{player} &8»&f {message}'
       discord: '[NoPrefix]&a{land} &8| &9Discord &7{player} &8»&f {message}'
@@ -670,6 +603,7 @@ command:
   view:
     disabled: '&7Mevcut &8/&3Lands view &7arazi sınırlarını görselleştirmesini başarıyla devre dışı bıraktınız.'
     wilderness: '&7Hak taleplerinin görselleştirilmesi etkinleştirildi. &7Şu anki konumunuz vahşi doğa.'
+    y-level: '&7Şu anki konumunuz vahşi doğada, ancak bu parça zaten farklı bir y düzeyinde arazi&2 {land} &7tarafından talep ediliyor.'
     y-lock:
       enabled: '&cGeçişli y-kilidi modu: &7Arazi sınırları artık konumunuzu yukarı ve aşağı takip etmeyecek.'
       disabled: '&cGeçişli y-kilidi modu: &7Arazi sınırları, pozisyonunuzu yukarı ve aşağı takip edecek.'
@@ -719,7 +653,7 @@ command:
         [NoPrefix]
         &7Ödeme:&5 {next}
         &7Bakiye: ${balance}
-        &8Daha fazla bilgi: /Lands taxes
+        &8Daha fazla bilgi: /lands taxes
         &7---------<- &4Vergi Değişikliği &7->---------
 list:
   swear-words: [ ]
@@ -864,8 +798,17 @@ nations:
   message:
     current-war: '&cBunu şimdi yapamazsınız. &7Ulusunuz&9 {nation} &7şu anda bir savaşta. &7Lütfen savaş bittikten sonra tekrar deneyin.'
   command:
+    chat:
+      activated: '&7Ulus sohbeti etkinleştirildi. Ulusunuzla sohbet etmek için herkese açık sohbette bir mesaj gönderin.'
+      deactivated: '&7Ulus sohbeti başarıyla devre dışı bırakıldı.'
+      none: '&cUlus sohbeti için ulus bulunamadı. &7Ulus sohbetini devre dışı bırakmak için [T]&8/&3Nations chat toggle &8[&8TIKLAYIN&8][H]&7Sohbet modunu devre dışı bırakmak için burayı tıklayın.[/H][C]nations chat toggle[/C][/T] &7kullanın.'
+      format:
+        minecraft: '[NoPrefix]&9Ulus {nation} &8| &7{player} &8»&f {message}'
+        discord: '[NoPrefix]&9Ulus {nation} &8| &9Discord &7{player} &8»&f {message}'
+        spy: '[NoPrefix]&8[&cGizli Sohbet&8] &9Ulus {nation} &8| &7{player} &8»&f {message}'
     general:
       not-exist: '&cUlus&9 {nation} &7mevcut değil. &7Bu adda bir ulus yok.'
+      no-member: '&cBu ulusun bir üyesi değilsin.&c. &7Arazilerinizden hiçbiri ulusun bir parçası değil&9 {nation}&7.'
       none: |
         &cAraziniz&4 {land} &cherhangi bir ulusun parçası değil.
 

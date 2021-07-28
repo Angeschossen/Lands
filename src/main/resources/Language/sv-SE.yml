@@ -1,27 +1,27 @@
 # Here you can edit all chat messages
 # GUI items and menus can be found in <language>_gui.yml
-# 
+#
 # If you encounter any issues or have questions, contact plugin support.
 # Plugin page: https://www.spigotmc.org/resources/authors/315463/
 # Discord: https://discord.gg/B4MAJVk
-# 
+#
 # ###############################
 # About chat message type system:
 # Does only work for messages in
 # "message" or "command" section.
 # ###############################
-# 
+#
 # You can use some codes to set the type
 # of a message to title, actionbar or chat.
 # How does it work:
-# 
+#
 # For example we want to print a message as a title:
 # Set message to: '#t#Title[newline]Subtitle'(Set "#t#" in front of it; use [newline] to set the subtitle)
-# 
+#
 # You also send a message at the actionbar:
 # Set message to: '#a#This is a actionbar message.'
 # (Set #a# in front of it.)
-# 
+#
 # More information: https://github.com/Angeschossen/General/wiki/Messages
 
 
@@ -132,70 +132,69 @@ general:
       fight: '&cFight'
   land:
     title:
-      land: ' &7Ägd av&3 %owner%&7.'
+      land: '&7Ägd av&3 %owner%&7.'
       admin: '&7This land belongs to the server.'
     default-area: Standard
   teleportation:
     bossbar: '&7Vänta&3 {time} &7Second(s) innan du teleportera igen.'
   inbox:
     general:
-      created: '&3{0}: &7Land skapad.'
+      created: '&7Land skapad.'
     member:
-      join: '&3{0}: &aInvånare &b{1} &agick med.'
-      leave: '&3{0}: &aInvånare &b{1} &clämnat.'
-      ban: '&3{0}: &cInvånare &4{1} &cfick stå i skamvrån (avhyst).'
+      join: '&aInvånare &b{0} &agick med.'
+      leave: '&aInvånare &b{0} &clämnat.'
+      ban: '&cInvånare &4{0} &cfick stå i skamvrån (avhyst).'
     economy:
       upkeep:
-        warning: '&3{0}: &cKunde inte betala underhållskostnad till servern: ${1}'
-        paid: '&8{0}: &7Du betalade &6{1} {#fbe232}Ⓖ&7 i underhåll till servern'
-        nation: '&8{0}: &7Nation {1} kunde inte betala &6{2} {#fbe232}Ⓖ&7 och har
-          blivit borttaget.'
-        unclaim: '&8{0}: &cKunde inte betala hela kostnaden av&6{1} {#fbe232}Ⓖ&7.
-          Sista {2} inmutade chunks har tagits bort.'
+        warning: '&cKunde inte betala underhållskostnad till servern: {0} {#fbe232}Ⓖ&7'
+        paid: '&7Du betalade &6{0} {#fbe232}Ⓖ&7 i underhåll till servern'
+        nation: '&7Nation {0} kunde inte betala &6{1} {#fbe232}Ⓖ&7 och har blivit
+          borttaget.'
+        unclaim: '&cKunde inte betala hela kostnaden av&6{0} {#fbe232}Ⓖ&7. Sista {1}
+          inmutade chunks har tagits bort.'
       bank:
-        withdraw: '&3{0}: &cInvånare &9{1} &ctog ut &6{2} {#fbe232}Ⓖ &7kvar i banken
-          &6{3} {#fbe232}Ⓖ'
-        deposit: '&3{0}: &7Invånare &9{1} &7satte in &6{2} {#fbe232}Ⓖ &7summa efter
-          i banken &6{3} {#fbe232}Ⓖ'
+        withdraw: '&cInvånare &9{0} &ctog ut &6{1} {#fbe232}Ⓖ &7kvar i banken &6{2}
+          {#fbe232}Ⓖ'
+        deposit: '&7Invånare &9{0} &7satte in &6{1} {#fbe232}Ⓖ &7summa efter i banken
+          &6{2} {#fbe232}Ⓖ'
       taxes:
-        warning: '&4{0}: &cInvånare &3{1} betalade inte skatt i landet.'
-        untrusted: '&4{0}: &cInvånare &3{1} betalade inte skatt. Han är nu borttagen
-          från landet.'
-        received: '&3{0}: &7Du motog totalt &6{1} {#fbe232}Ⓖ &7i skatt från lands
-          ivånare summa på banken &6{2} {#fbe232}Ⓖ'
+        warning: '&cInvånare &3{0} betalade inte skatt i landet.'
+        untrusted: '&cInvånare &3{0} betalade inte skatt. Han är nu borttagen från
+          landet.'
+        received: '&7Du motog totalt &6{0} {#fbe232}Ⓖ &7i skatt från lands ivånare
+          summa på banken &6{1} {#fbe232}Ⓖ'
     war:
       declaration:
-        sent: '&8{0}: &7Du förklarade krig mot {1},för mer info med kommandot &8/wars
+        sent: '&7Du förklarade krig mot {0},för mer info med kommandot &8/wars info'
+        received: '&c{0} &cförklarade krig mot oss,&7mer info med komandot &8/Wars
           info'
-        received: '&8{0}: &c{1} &cförklarade krig mot oss,&7mer info med komandot
-          &8/Wars info'
         mutual:
-          sent: '&8{0}: &7Sänt kriksförklaring till {1}. &7Det behöver accptera det.'
-          received: '&8{0}: &c{1} &char sänt en krigsförfrågan. Acceptera med komandot:
-            &8/&3Wars declare {2}'
+          sent: '&7Sänt kriksförklaring till {0}. &7Det behöver accptera det.'
+          received: '&c{0} &char sänt en krigsförfrågan. Acceptera med komandot: &8/&3Wars
+            declare {1}'
       surrender:
-        sent: '&8{0}: &cGav upp. betallade &6{1}{#fbe232}Ⓖ&c i gåva till fienden.'
-        received: '&8{0}: &7Fienden {1} &7gav upp. Motag &6{2}{#fbe232}ⒼⒼ&7 i gåva.'
+        sent: '&cGav upp. betallade &6{0}{#fbe232}Ⓖ&c i gåva till fienden.'
+        received: '&7Fienden {0} &7gav upp. Motag &6{1} {#fbe232}ⒼⒼ&7 i gåva.'
       end:
-        won: '&8{0}:&7 vi vann kriget med {1} dödade.'
-        lost: '&8{0}:&7 vi förlorade kriget med {1} döda.'
-        draw: '&8{0}:&7 Kriget slutade oavgjort med {1} döda och {2} dödade.'
+        won: '&7 vi vann kriget med {0} dödade.'
+        lost: '&7 vi förlorade kriget med {0} döda.'
+        draw: '&7 Kriget slutade oavgjort med {0} döda och {1} dödade.'
     nation:
       general:
-        created: '&8{0}: &7Nation skapad.'
+        created: '&7Nation skapad.'
       member:
-        join: '&8{0}: &7Land {1} gick med.'
-        leave: '&8{0}: &7Land {1} lämnade.'
+        join: '&7Land {0} gick med.'
+        leave: '&7Land {0} lämnade.'
       economy:
         upkeep:
-          warning: '&8{0}: &cKunde inte betala {1} {#fbe232}Ⓖ&8 till servern.'
-          paid: '&8{0}: &7Betalat till servern: {1} {#fbe232}Ⓖ'
+          warning: '&cKunde inte betala {0} {#fbe232}Ⓖ&8 till servern.'
+          paid: '&7Betalat till servern: {0} {#fbe232}Ⓖ'
         taxes:
-          warning: '&8{0}: &cLand {1} kunde inte betala hyran.'
-          untrusted: '&8{0}: &cLand {1} kunde inte betala hyran, det är nu borttagen
-            från nationen.'
-          received: '&8{0}: &7Motog totalt {1} {#fbe232}Ⓖ&7 i hyra från lands -> på
-            banken = {2} {#fbe232}Ⓖ'
+          warning: '&cLand {0} kunde inte betala hyran.'
+          untrusted: '&cLand {0} kunde inte betala hyran, det är nu borttagen från
+            nationen.'
+          received: '&7Motog totalt {0} {#fbe232}Ⓖ&7 i hyra från lands -> på banken
+            = {1} {#fbe232}Ⓖ'
   unlimited: '&aObegränsat'
   area:
     description:
@@ -299,9 +298,6 @@ help:
       in i chaten.[/H][SC]lands unstuck[/SC][/T]'
     mod:
       chatspy: '&8/&3Lands chatspy &8[&aland&8] - &7Listen to land chat'
-    claims: '[T]&8/&3Lands claims &8[&3land&8] &8- &7Lista på inmutningar i ditt land[H]&7Detta
-      kommando visar alla Lands inmutningar av ditt land. &7Tryck för kopiera.[/H][SC]lands
-      claims[/SC][/T]'
     rent: '[T]&8/&3Lands rent &8<&3avbryt | info | ta bort&8> &8- &7Hantera uthyrning[H]&7Med
       det här kommandot kan du hantera din hyra på din nuvarande position. &7Tryck
       för kopiera.[/H][SC]lands rent[/SC][/T]'
@@ -324,10 +320,17 @@ help:
         leave[/SC][/T]'
       spawn: '[T]&8/&3Nations spawn &8- &7Teleoportera till huvudstaden[H]&7Tryck
         för kopiera.[/H][SC]nations spawn[/SC][/T]'
-      rename: '[T]&8/&3Nations rename &8- &7Rename nation[H]&7Click to copy.[/H][SC]nations
+      rename: '[T]&8/&3Nations rename &8- &7Rename nation[H]&7Tryck för kopiera.[/H][SC]nations
         rename[/SC][/T]'
-      setcapital: '[T]&8/&3Nations setcapital &8- &7Set capital[H]&7Click to copy.[/H][SC]nations
+      setcapital: '[T]&8/&3Nations setcapital &8- &7Sätt huvudland[H]&7Tryck för kopiera.[/H][SC]nations
         setcapital[/SC][/T]'
+      chat: '[T]&8/&3Nations chat &8[&3nation&8] <&3message&8> &8- &7Nation chat[H]&7Tryck
+        för kopiera.[/H][SC]nations chat[/SC][/T]'
+    claimlist: '[T]&8/&3Lands claimlist &8[&3land&8] &8- &7Lista på antalet inmutningar
+      i ditt land[H]&7Detta kommer visa alla inmutningar /Lands claim''s av ditt land.
+      &7Tryck för köra kommandot.[/H][C]lands claimlist[/C][/T]'
+    rentlist: '[T]&8/&3Lands rentlist&8- &7Visa hyres lista.[H]&7Visa areas och lands
+      som du kan hyra eller köpa. &7Tryck för köra kommandot.[/H][C]lands rentlist[/C][/T]'
 message:
   world-invalid: '&cDetta är avaktiverat i denna värld. &7Admin behöver ändra det
     i config, Värld: {world}'
@@ -360,6 +363,8 @@ message:
       {bypass}'
     wilderness: '&cDu har inte tilltelse göra detta i vildmarken. &8Ändra denna {flag}
       för få tillåtlse.'
+    position: '&cDu har inte tillåtlse göra detta för land&4 {land} &cpå din nuvarande
+      positon. &8Flag: {flag}'
   event:
     fly:
       counter: '#t#&cFly stängs av {newline}&com &4{sec} &csecond(s)'
@@ -371,6 +376,9 @@ message:
     leave:
       land: '#a#&l&9Du är ute i vildmarken'
       admin: '#t#&2&lWilderness[newline]&7Feel the wild'
+    level:
+      up: '#t#{object}[newline]&7level upp: {level}'
+      down: '#t#{object}[newline]&7level ner till: {level}'
   claimblock:
     dropped: '&cNågra inmutblock ligger på marken&7Ditt Inventarie var fullt'
     success: '&7Du fick&3 {blocks} &7inmutblock(s). &7Placera dom i en chunk för inmuta.'
@@ -382,25 +390,6 @@ message:
       Admin kan ändra det i config.'
     war: '&cDu har inte tillåtelse att använda detta kommando under pågånde krig.
       &8Bypass permission: {permission}'
-  autoAction:
-    stopped: '&cStopade din nuvarnde automatisk åtgärd. &7Nådde max omgång. Namn:&3
-      {name}'
-    started: '&7Startade automatisk åtgärd. Namn:&3 {name}'
-    removed: '&7Stopade automatisk åtgärd. &7Namn:&3 {name}'
-  chat-action:
-    cancelled: '#t#&c&lAvbruten{newline}&c&lchatt åtgärd.'
-    player: '&7Skriv in namnet på spelaren.'
-    area:
-      create: '&7Skriv in namnet för nya arean. Du kan ta med färgkoder.'
-      delete: '&7skriv in namnet på arean du vill ta bort.'
-      exists: '&carena&4 {area} &cExisterar i detta land &8(&7Land:&2 {land}&8)&c.
-        &7Välj ett annat namn.'
-      max: '&cDu kan inte skapa mer areas för detta land. &7Du har nått gränsen av&3
-        {max} &7areas. Permisssion: lands.areas.NUMBER'
-    title: '&7Skriv in ny title för detta land. Du kan använda färgkoder.'
-    rename: '&7Skriv in namnet för detta land. Mellanslag går inte använda.'
-    land: '&7Skriv in namnet på landet.'
-    name: '&7Skriv in namnet i chaten eller en beskrivning.'
   world-not-exist: '&cDenna värld med namnet&4 {world} &c existerar inte. &7Misstag?'
   area:
     exists: '&cArea med detta namn&4 {area} &cFinns redan i land&4 {land}&c.'
@@ -468,9 +457,8 @@ message:
     spawn_teleport: '&cDu får inte teleportera till landets spawn i land&4 {land}&c.
       &7De kan justera sina rankinställningar för att tillåta spelare teleportera
       till deras spawn. &8Flag: {flag}'
-    land_enter: '&cYou''re not allowed to enter the area&4 {area} &cof land&4 {land}&c
-      (&cArea:&4 {area} &cLand:&4 {land}&c). &7You were teleported to your previous
-      location. &8Flag: {flag}'
+    land_enter: '&cDu har inte tillåtelse gå in i denna area&4 {area} &cav land&4 {land}&c
+      (&cArea:&4 {area} &cLand:&4 {land}&c). &7Du blir teleporterad till din förgånde plats &8Inställning: {flag}'
     vehicle_use: '&cDu har inte tillåtelse att anända båtar/minecart här (&cArea:&4
       {area} &cLand:&4 {land}&c). &8Flag: {flag}'
     item_pickup: '&cDu har inte tillåtelse att plocka upp items här (&cArea:&4 {area}
@@ -481,6 +469,19 @@ message:
       &cLand:&4 {land}&c). &8Flag: {flag}'
     attack_monster: '&cDu har inte tillåtelse att attackera monster här (&cArea:&4
       {area} &cLand:&4 {land}&c). &7Dom inte inte heller anfalla dig. &8Flag: {flag}'
+  auto-action:
+    started:
+      claim: '&7Du har nu startat automatisk inmutning. Flytta runt för inmuta chunks medans du går runt.'
+    stopped:
+      claim: '&7automatisk inmutning har stoppas.'
+  chat-input:
+    cancelled: '#t#&c&lAvbryt [newline]&c&lChat Action'
+    type:
+      player: '&7Skriv in namnet av spelaren.'
+      land: '&7Skriv in namnet av landed.'
+      title: '&7Skriv in ny titel för detta land. Mellansag är tillåtet.'
+      rename: '&7Skriv in nytt namn för detta land land. Mellansag är inte tillåtet.'
+      name: '&7Skriv in namnet i chaten.'
 command:
   general:
     land-not-exist: '&cLand&2 {land} &cExisterar inte. &7Det är inget land med namnet&2
@@ -493,9 +494,6 @@ command:
       &7För att välja ditt land.'
     name-exists: '&cdetta namn&4 {name} &cÄr redan tagen av annat land. &7Du behöver
       välja annat namn.'
-    money-cost-bank: '&cDu har inte tillräckligt med guld. &7Du behöver &6{cost}{#fbe232}Ⓖ&7.
-      Sätt in Guld i din lands bank med komandot: &8/&3Lands deposit {cost}'
-    money-cost: '&cDu har inte tillräckligt med guld. &7Du behöver &6{cost}{#fbe232}Ⓖ&7.'
     action-cooldown: '&cDu kan inte göra det nu. &7Du behöver vänta:&5 {time}&7.'
     none: '&cDu är inte invånare av detta land. &7använd &8/&3Lands create &7För skapa
       en egen.'
@@ -512,8 +510,6 @@ command:
       {land}&8)&7. Du behöver betro han först, använd &8/&3Lands trust&7.'
     area-not-trusted: '&cDu kan inte göra det här. &7du är inte betrodd i detta chunk
       &8(&7X: {x} Z: {z}&8)&7. DEt tillhör area&6 {area} &7av land&2 {land}&7.'
-    invalid-number: '&cDin inmatning&4 {input} &cÄr inte ett nummer. &7Det&3 {argument}
-      &7måste vara ett nummer.'
     swear-word: '&cAnvänd inte svärord. &7Andvänd vårdat språk. Word:&c {word}'
     player-offline: '&cDet är inte någon spelare med detta namn&4 {player} &conline.
       &7Misstag?'
@@ -532,6 +528,17 @@ command:
         bokstäver.hittade nummer i texten: &3 {invalid} '
     number: '&cDin input &4 {input} &c är inte ett nummer. & 7Det & 3 {argument} &7argument
       måste vara ett nummer.'
+    money:
+      fallback: '&7Notis:&c {cost} {#fbe232}Ⓖ &7Har tagits från ditt personliga konto,
+        på grund av land&2 {land} &7inte har tillräkligt med pengar i banken. För
+        sätta in pengar: [T]&8[CLICK][H]&7Tryck här för sätta in pengar i landet {land}.[/H][SC]{cmd}[/SC][/T]'
+      failure:
+        bank: '&cDu har inte tillräkligt för betala kostnaden. &7Du behöver &c {cost}
+          {#fbe232}Ⓖ&7. Sätt in pengar på din lands bank: [T]&8/&3Lands deposit {cost}
+          &8[CLICK][H]&7Tryck här för sätta in {cost} {#fbe232}Ⓖ&7 i din bank.[/H][C]lands
+          deposit {cost}[/C][/T]'
+        personal: '&cDu har inte tillräkligt på ditt personliga konto för betala kostnaden.
+          &7Du behöver &c {cost} {#fbe232}Ⓖ&7.'
   help:
     help: '&7Använd &8/&aLand help &7för hjälp.'
     cmd-not-exist: '&cDetta kommando existerar inte. &7Kommand&3 {command} &7Är inte
@@ -607,10 +614,6 @@ command:
         &8┗
   claim:
     already: '&cDu kan inte inmuta detta chunk. &7Det tillhör land&2 {land}&7.'
-    auto-create: '&7Skapar ett land automatiskt för dig, för du har inget i denna
-      värld. Du kan ändra namn med komandot &8/&3Lands rename&7.'
-    auto-create-fail: '&cMisslyckades att automatisk skapa ett land för dig. &7Läs
-      meddelandet ovanför.'
     near-other: '&cDEtta är för nära till land&4 {land}&c. &7Du behöver flytta Längre
       bort ifrån det landet. Minimum chunk avstånd är&3 {distance}&7. &8En Admin kan
       ändra det i config.'
@@ -628,6 +631,11 @@ command:
       världen &4 {världen} &c.&7Du kanske vill skapa ett annat land för den värld
       du är för närvarande i &3({current})&7,&7använd kommandot: &8 /&3Lands create
       &8<&3name&8>'
+    auto-land: '&7Automatiskt skapaade ett land&2 {land}&7, för du hade inget lannd
+      tidigare. Du kan ändra namnet med &8/&3Lands rename &8<&3name&8>&7.'
+    radius:
+      success: '&7Du har nu inmutat&3 {chunks} &7chunks i en rade av&7 {radius} &7chunks
+        runt dig för land&2 {land}&7.'
   assign:
     selection: '&cDu behöver skapa en selektion först. &7Använd &8/&3Lands selection
       &7för skapa en.Sen provar du igen.'
@@ -783,9 +791,9 @@ command:
     not-trusted: '&cDu kan inte teleoportera hit. &7Du är inte betrod i land&2 {land}&7.'
     success: '&7Du teleport till X:&3 {x} &7Z:&3 {z} &7inmutat: {claimed}'
   setspawn:
-    force-land: '&cDu kan bara sätta land spawn i ditt eget land. &7Gå till ditt land&2
-      {land} &7först. &8En Admin kan ändra det i config.'
     success: '#t#&7Spawnpoint är satt[newline]&7Kostnad:&6 {cost} {#fbe232}Ⓖ&7'
+    wilderness: '&cYou can only set the land spawn on your land. &7You either need
+      to move up or down into your land&2 {land}&7.'
   spawn:
     not-exist: '&cDet är ingen spawn satt för land&4 {land}&c. &7Någon behöver sätta
       det först, med komandot: &8/&3Land setspawn&7.'
@@ -824,12 +832,13 @@ command:
     activated: '&7Aktivera land chat. Skicka meddelande offentlig chatt till chatt
       med ditt land.'
     deactivated: '&7Avaktiverade land chatt.'
-    no-land: '&cInget land hittades för land chatt. &7Använd &8/&3Lands chat toggle
-      &7för avaktivera lands chatt.'
     format:
       minecraft: '&a{land} &8| {role} &7{player} &8»&f {message}'
       discord: '&a{land} &8| &9Discord &7{player} &8»&f {message}'
       spy: '[NoPrefix]&8[&cChatSpy&8] &a{land} &8| {role} &7{player} &8»&f {message}'
+    none: '&cIngent land hittades för land chat.&7Använd [T]&8/&3Lands chat toggle
+      &8[&8TRYCK&8][H]&7Tryck här för avaktivera chaten.[/H][C]lands chat toggle[/C][/T]
+      &7För att avaktivera lands chat.'
   view:
     disabled: '&7Du stängde av &8/&3Lands view &7visualisering.'
     wilderness: '&7Aktivera visualisering av inmutningar. &7Din nuvarande position
@@ -837,7 +846,7 @@ command:
     info: |
       [NoPrefix]
       &7---------<- &5&lLand översikt &7->---------
-      [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för mer information om detta land.[/H][C]lands info {land}[/C][/T]
+      [T]&7Land:&a {land} &8[&8TRYCK&8][H]&7Tryck här för mer information om detta land.[/H][C]lands info {land}[/C][/T]
       &2Underzon:&6 {area}
         &3Chunk &7X: {x} Z: {z}
         &3Skatt:&6 {tax} {#fbe232}Ⓖ
@@ -847,7 +856,7 @@ command:
     area: |
       [NoPrefix]
       &7---------<- &5&lUnderzon översikt &7->---------
-      [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Tryck här för mer information om detta land.[/H][C]lands info {land}[/C][/T]
+      [T]&7Land:&a {land} &8[&8TRYCK&8][H]&7Tryck här för mer information om detta land.[/H][C]lands info {land}[/C][/T]
       &2Underzon:&6 {area}
         &3Hyra:&6 {tax} {#fbe232}Ⓖ
         &3Invånare:&7 {players}
@@ -858,6 +867,11 @@ command:
         position up and downwards.'
       disabled: '&aToggled y-lock mode: &7The land borders will follow your position
         up and downwards.'
+    y-level: '&7Your current position is wilderness, but this chunk is already claimed
+      by land&2 {land} &7at a different y-level.'
+    tool: '&7Din position du pekar på är vildmarken. [T]&7Tryck här för ta denna chunk.
+      &8[CLICK][H]&7Tryck för inmuta chunk du pekar på.[/H][C]lands claim mlc {world}
+      {x} {z}[/C][/T]'
   ban:
     area:
       success: '&7Du har avhyst invånare&3 {player} &7från denna area &8(&7Area:&6
@@ -1016,15 +1030,16 @@ command:
   top:
     mode: '&cDin inmatning&4 {input} &cÄr inte tillåtet sortering ordning. &7Tillgängliga
       sortering: {modes}'
-    title: '[NoPrefix][T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Tryck
-      här för visa förgånde sida.[/H][/T] &5Top Lands [T]&7-&6>>>>&7-----------[C]lands
-      top {mode} {next}[/C][H]&7Tryck här för visa nästa sida.[/H][/T]'
     footer: |
       [NoPrefix]
       &7Tryck på pilarna nedan för navigera.
       [T]&7På banken &8[CLICK],[H]&7Tryck här för sortera på hur mycket varje land har på banken.[/H][C]lands top balance[/C][/T] [T]&7Chunks &8[CLICK],[H]&7Tryck för sortera hur många chunks varje land har i storlek.[/H][C]lands top chunks[/C][/T] [T]&7Invånare &8[CLICK][H]&7Tryck här för sortera på antal invånare varje land har.[/H][C]lands top members[/C][/T]
       &7Total antal lands: {total} &8| &7Senast uppdaterad: {time} .
       [T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Tryck här för visa förgånde sida.[/H][/T] &5Top Lands [T]&7-&6>>>>&7-----------[C]lands top {mode} {next}[/C][H]&7Tryck här för visa nästa sida.[/H][/T]
+    header: '[NoPrefix][T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Tryck
+      här för för gå till förgånde sida.[/H][/T] &5Top Lands &7Page&3 {page} &8/&3
+      {pages} [T]&7-&6>>>>&7-----------[C]lands top {mode} {next}[/C][H]&7Tryck här
+      för gå till nästa sida.[/H][/T]'
 list:
   swear-words:
   - fuck
@@ -1187,7 +1202,9 @@ nations:
           [T]&7Skapa egen nation: &8/&3Nations create[H]&7Klicka för att kopiera.[/H][SC]nations create[/SC][/T]
       noaccess: '&cDu får inte göra detta för nationen&4 {nation}&c. &8Flaga: {flag}
         &8Bypass: {bypass}'
-      not-trusted: '&cThe land&4 {land} &cisn''t a member of your nation&4 {nation}&c.'
+      not-trusted: '&cDetta land&4 {land} &cär inte medlem i denna nation&4 {nation}&c.'
+      no-member: '&cDu är inte medlem i denna nation&c. &7Ingen av dina lands är del
+        ev denna nation&9 {nation}&7.'
     create:
       already: '&cDitt land &4 {land} &c är redan en del av nationen & 4 {nation}
         & c. & 7Ditt land måste lämna det först genom att köra &8/&3Nations leave&7.'
@@ -1255,3 +1272,13 @@ nations:
         {nation}&7.'
       level: '&cDu kan inte sätta land&4 {land} &csom ny huvudstad av nationen&4 {nation}&c.
         &7Den behöver vara minst level&3 {level} &8(&7nuvarande: {current}&8)&7.'
+    chat:
+      activated: '&7Aktiverade nation chat. Skicka medelande i din Nations chat.'
+      deactivated: '&7Avaktiverade nation chat.'
+      format:
+        minecraft: '[NoPrefix]&9Nation {nation} &8| &7{player} &8»&f {message}'
+        discord: '[NoPrefix]&9Nation {nation} &8| &9Discord &7{player} &8»&f {message}'
+        spy: '[NoPrefix]&8[&cChatSpy&8] &9{nation} &8| &7{player} &8»&f {message}'
+      none: '&cIngen nation hittades för denna nation chat. &7Använd [T]&8/&3Nations
+        chat toggle &8[&8KLICKA&8][H]&7Tryck här för avaktivera chaten.[/H][C]nations
+        chat toggle[/C][/T] &7För att avaktivera nation chat.'

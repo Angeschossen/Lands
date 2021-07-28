@@ -19,7 +19,7 @@ general:
     online: '&a在線'
     offline: '&c離線'
   top:
-    title: '&7-----<- &5國家排名 &8(&7國家:&b {total}&8) &7->-----'
+    header: '&7-----<- &5國家排名 &8(&7國家:&b {total}&8) &7->-----'
     entry: '&c#{pos} &a{land} &7Balance:&e ${value}'
     next-page: '&7下一頁: &8/&2Lands top {next}'
     last-updated: '&7最後更新: {time} &'
@@ -61,28 +61,7 @@ general:
       others: ' &c▉ &7= 別人的國家'
       position: ' &e▉ &7= 坐標'
     bottom: '&7-<------------<- &6國家 地圖 &7->------------>-'
-  land-inbox:
-    land:
-      created: '&7{land} 已創建 &2{date} &7.'
-      upkeep:
-        chunk-deleted: '&2{date}h &4警告: &c你所認領的區塊 &8(&7X: {x} &7Z: {z}&8) &c已取消認領.
-          因為你無法支付維護費用:&c ${cost}'
-        warning: '&2{date}h &c警告: &7無法支付維護費用: ${cost}'
-        paid: '&2{date} &7支付維護費用: ${cost}'
-    player:
-      join: '&2{date} &7玩家 {player} 加入了國家.'
-    wars:
-      declaration:
-        sent: '&2{date}h &7宣戰 {defender}. 戰爭將在 {time} 後爆發.'
-        received: '&2{date} &4警告: &c國家 {attacker} 對你的國家進行宣戰. 戰爭將在 {time} 後爆發.'
-      surrender:
-        sent: '&2{date}h &c在戰爭中投降. 支付 ${tribute} 作為戰利品給敵國.'
-        received: '&2{date} &a敵國 {land} 已投降. 支付 ${tribute} 作為戰利品.'
-      won:
-        attacker: '&2{date}h &a戰爭已結束. &7進攻方 &8({team}&8) &7勝利. 進攻方點數: {att-points}
-          防守方點數: {def-points}'
-        defender: '&2{date}h &a戰爭已技術. &7防守方 &8({team}&8) &7勝利. 進攻方點數: {att-points}
-          防守方點數: {def-points}'
+
   wars:
     land-type:
       enemy: '&c敵國'
@@ -226,12 +205,12 @@ message:
       default: '&c你不能刪除該爵位,這是默認爵位.'
       delete: '&7請輸入你要刪除的爵位名稱'
       exists: '&c存在名稱為&4 {role} &c的爵位. &7請重新命名'
-      max: '&c無法創建更多的爵位. &7已達到爵位數量上限最大為&3 {max} &7爵位. 權限: lands.roles.NUMBER'
+      max: '&c無法創建更多的爵位. &7已達到爵位數量上限最大為&3 {max} &7爵位. 權限: lands.roles.<number>'
     area:
       create: '&7請輸入新的區域名稱.'
       delete: '&7請輸入你要刪除的區域名稱'
       exists: '&c區域&4 {area} &c已存在 &8(&7國家:&2 {land}&8)&c. &7請輸入重新命名.'
-      max: '&c你無法在該國家創建更多的區域了. &7你已經達到最大限制&3 {max} &7區域. 權限: lands.areas.NUMBER'
+      max: '&c你無法在該國家創建更多的區域了. &7你已經達到最大限制&3 {max} &7區域. 權限: lands.areas.<number>'
     title: '&7請輸入新的國家標題'
     rename: '&7重命名國家 (不允許使用空格)'
 command:
@@ -250,7 +229,7 @@ command:
     money-cost-bank: '&c你沒有足夠的錢來支付費用. &7你需要&c ${cost}&7. 存一些錢到國庫: &8/&3Lands deposit
       {cost}'
     money-cost: '&c你沒有足夠的錢來支付費用. &7你需要&c ${cost}&7.'
-    lands-max: '&c你不能再加入其他國家了. &7已達到上限&3 {max} &7國家. &8Permission: lands.lands.NUMBER'
+    lands-max: '&c你不能再加入其他國家了. &7已達到上限&3 {max} &7國家. &8Permission: lands.lands.<number>'
     invalid-character: '&c你不能使用無效字符作為名稱. &7發現無效字符:&3 {invalid} &7請僅使用字母和數字.'
     name-length: '&c名稱過長. &7最大長度為&3 {max} &7字符.'
     swear-word: '&c檢測到一個禁用詞,請修改它 內容:&c {word}'
@@ -267,7 +246,7 @@ command:
     land-max-members: '&c無法繼續增加成員了&2 {land}&c. &7已達到最大成員數 of&3 {members} &7.'
     area-not-trusted: '&c你不能在這裡使用該指令. &7你未被區塊信任 &8(&7X: {x} Z: {z}&8)&7. 它屬於該區域&6
       {area} &7國家&2 {land}&7.'
-    invalid-number: '&c您輸入的&4 {input} &c不是數字. &3 {argument} &7必須為數字.'
+    number: '&c您輸入的&4 {input} &c不是數字. &3 {argument} &7必須為數字.'
     player-offline: '&cThere''s currently no player with the name&4 {player} &conline.
       &7Typo?'
   help:
@@ -276,9 +255,9 @@ command:
     page-not-exist: '&c該頁面不存在&4 {page}'
   create:
     land-other: '&c您不能擁有自己的國家然後還想加入其他國家 &7你必須得離開國家&2 {land} &7. .'
-    max-own: '&c您無法再創建任何土地. &7你已達到最大創建數量&3 {max} &7. &8Permission: lands.ownlands.NUMBER'
+    max-own: '&c您無法再創建任何土地. &7你已達到最大創建數量&3 {max} &7. &8Permission: lands.ownlands.<number>'
     success: '&7成功創建國家&2 {land} &7花費&c ${cost}&7. 你現在可以開始占領區塊了 &8/&3Lands claim&7.
-      你也可以使用 /Lands selection 來選擇區塊. 國家 {land} 的設置可以使用 &8(/&3Lands edit&8)&7.'
+      你也可以使用 /lands selection 來選擇區塊. 國家 {land} 的設置可以使用 &8(/&3Lands edit&8)&7.'
     broadcast: '&7國家&2 {land} &7已創建, 所有者:&3 {player}&7.'
   rename:
     success: '&7成功設置國家新名稱&3 {name} &8(&7國家:&2 {land}&8)&7. 花費&c ${cost}&7.'
@@ -288,7 +267,7 @@ command:
   selection:
     not-complete: '&c您的選擇不完整. &7請確保兩個位置都已設置 &8(&b左鍵 &7和 &9右鍵&8)&7. 你可以通過指令來切換選擇模式
       &8/&3Lands selection&7.'
-    max: '&c您的選擇已超過最大限制. &7大小:&3 {current} &7最大可設置&3 {max} 區塊. &8Permission: lands.selection.NUMBER'
+    max: '&c您的選擇已超過最大限制. &7大小:&3 {current} &7最大可設置&3 {max} 區塊. &8Permission: lands.selection.<number>'
     enabled: '&7你開啟了選擇模式. 使用 &5鼠標左鍵 &7來選擇第一個點.  &5鼠標右鍵 &7來設置第二個點. 之後,您可以將選擇應用於這些指令:
       &3Claim&7, &3Unclaim&7, &3Leave'
     disabled: '#t#&5&l選擇[newline]&c&l模式 已關閉'
@@ -315,7 +294,7 @@ command:
     success: '&7成功認領該區塊 &8(&7國家:&2 {land} &7X: {x} Z: {z}&8) &7花費&c ${cost}&7. 下次認領將會花費&b
       ${next}&7.'
     already-claimed: '&c選擇中有已被認領的區塊 &8(&7X: {x} Z: {z}&8)&c. &7I它屬於國家&2 {land}&7.'
-    max-chunk: '&c你不能認領&4 {chunks} &c更多的區塊了 &8Permission: lands.chunks.NUMBER'
+    max-chunk: '&c你不能認領&4 {chunks} &c更多的區塊了 &8Permission: lands.chunks.<number>'
     selection: '&7你已成功認領&3 {chunks} &7區塊 &8(&7國家:&2 {land}&8)&7. 花費&c ${cost}&7.'
   assign:
     selection: '&c您需要先創建一個選擇. &7使用 &8/&3Lands selection &7去創建一個並且重試.'
@@ -341,7 +320,7 @@ command:
   trust:
     own-land: '&c不允許玩家擁有自己的國家還加入其他國家'
     invited: '&c該玩家已被邀請. &7請等待接受邀請 &8(&7國家:&2 {land}&8)&7.'
-    max-lands: '&7玩家&3 {player} &7達到最大國家數量. &8Permission: lands.lands.NUMBER'
+    max-lands: '&7玩家&3 {player} &7達到最大國家數量. &8Permission: lands.lands.<number>'
     max-members: '&c無法信任玩家&4 {player} &c國家&4 {land} &7成員達到了最大限制&3 {members} &7'
     land:
       already: '&c該玩家已獲得國家信任 &8(&7國家:&2 {land}&8)&7.'
@@ -378,7 +357,7 @@ command:
   accept:
     not-exist: '&c你沒有來自國家&4 {land} &c的邀請或者邀請已過期. &7請檢查你的輸入.'
     own-land: '&c你無權創建國家並成為其他國家的成員. &7你需要先離開自己的國家.'
-    max-lands: '&c你不能加入更多的國家了. &7你最大只能加入&3 {max} &7國家. &8Permission: lands.lands.NUMBER'
+    max-lands: '&c你不能加入更多的國家了. &7你最大只能加入&3 {max} &7國家. &8Permission: lands.lands.<number>'
     notification: '&7你仍然還有&3 {invites} &7個邀請來自其他國家. 使用 &8/&3Land invites &7來獲得列表.'
     land:
       success: '&7成功接受來自國家&3 {land}&7 的邀請.'
@@ -391,7 +370,7 @@ command:
       confirm'
     success: '&7成功將國家轉讓給&3 {player} &7現在它是國家&2 {land}&7 的所有者. 花費&c ${cost}&7.'
     max-lands: '&cThe player&4 {player} &cisn''t allowed to own any more lands. &7He
-      already reached his maximum of&3 {max} &7own lands. &8Permission: lands.ownlands.NUMBER'
+      already reached his maximum of&3 {max} &7own lands. &8Permission: lands.ownlands.<number>'
   deny:
     not-exist: '&c你沒有來自&4 {land} &c的邀請或不存在'
     success: '&7你成功拒絕了國家&2 {land}&7 的邀請.'

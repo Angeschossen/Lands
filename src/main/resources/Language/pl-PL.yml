@@ -65,16 +65,7 @@ general:
       others: ' &c▉ &7= Innych'
       position: ' &e▉ &7= Aktualna pozycja'
     bottom: '&7-<------------<- &6Mapa Działek &7->------------>-'
-  land-inbox:
-    land:
-      created: '&e{date} &7Stworzyłeś swoją działkę&b {land}&7.'
-      upkeep:
-        chunk-deleted: '&e{date} &Ostatni zajęty chunk &8(&7X:&b {x} &7Z:&b {z}&8)
-          &7został usunięty ponieważ nie byłeś w stanie go opłacić. Koszt:&c ${cost}'
-        warning: '&e{date} &7Nie możesz zapłacić kosztów utrzymania działki. Koszt:&c {cost}'
-        paid: '&e{date} &7Twoja działka została opłacona. Koszt:&c {cost}'
-    player:
-      join: '&e{date} &7Gracz&b {player} &7Dołączył do działki'
+
 help:
   general:
     help-prefix: '&7Stosowanie: '
@@ -254,7 +245,7 @@ command:
     limit&b {members} &7członków.'
     chunk-not-trusted: '&cNie możesz tego tutaj zrobić. &7Nie jesteś dodany do tego chunku.
       &8(&7X:&e {x} &7Z:&e {z}&8)&7. It belongs to land&b {land}&7.'
-    invalid-number: '&cNie jest to poprawny numer. &b {argument} &7wartośc musi być liczbą.'
+    number: '&cNie jest to poprawny numer. &b {argument} &7wartośc musi być liczbą.'
   help:
     help: '&7Użyj &8/&aLand help &7aby uzyskać pomoc.'
     cmd-not-exist: '&cTa komenda nie istnieje. &7Komenda&b {command} &7Nie została odnaleziona.'
@@ -365,7 +356,7 @@ command:
     selection: '&7Pomyślnie zaprosiłeś gracza&b {player} &7do zaznaczenia.
       &8(&7Land:&e {land}&8)&7. Please note that they will get only trusted in chunks
       in which you have permission to trust players. This action only does changes
-      to your selected land (/Lands edit): {land}'
+      to your selected land (/lands edit): {land}'
   setRole:
     role-not-exist: '&cRola&e {role} &cnie istnieje. &7Typo? &8(&aAvailable:
       &cAdmin&7, &eMember&8)'
@@ -377,13 +368,13 @@ command:
     &8(&7Land:&e {land}&8)&7.'
     selection: '&7Pomyślnie ustawiłeś rolę {role} &7dla gracza&b {player} &7w tym zaznaczeniu  Należy pamiętać, że rola dotyczyła tylko części tam, gdzie się znajdują
       zaufany i gdzie masz uprawnienia do ustawienia roli &8(&7Land:&e {land}&8)&7.
-      Ta akcja powoduje jedynie zmianę wybranego obszaru (/Lands edit): {land}'
+      Ta akcja powoduje jedynie zmianę wybranego obszaru (/lands edit): {land}'
   accept:
     not-exist: '&cNie masz zaproszenia z działki&e {land} &cor wygasło. &7Sprawdź swoje dane wejściowe.'
     own-land: '&cNie masz pozwolenia na posiadanie działki i członkostwo innych działek.
       &7Najpierw musisz opuścić swoją działke.'
     max-reached: '&cNie możesz dołączyć do większej ilości działek &7Możesz mieć tylko&b {max} &7działek.
-      Permission: &blands.lands.NUMBER'
+      Permission: &blands.lands.<number>'
     land-tax-confirm: '&cWłaściciel chce, byś zapłacił&e {tax} &7aby dołączyć do chunka &7Potwierdź akcję wykonując &8/&aLands accept {land}
       confirm&7.'
     chunk-tax-confirm: '&7Właściciel chce, byś zapłacił&b {tax} &7aby dołączyć do chunka &7Potwierdź akcje &8/&aLand accept {land} confirm&7.'

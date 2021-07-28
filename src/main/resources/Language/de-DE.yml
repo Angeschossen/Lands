@@ -1,3 +1,31 @@
+# Here you can edit all chat messages
+# GUI items and menus can be found in <language>_gui.yml
+# 
+# If you encounter any issues or have questions, contact plugin support.
+# Plugin page: https://www.spigotmc.org/resources/authors/315463/
+# Discord: https://discord.gg/B4MAJVk
+# 
+# ###############################
+# About chat message type system:
+# Does only work for messages in
+# "message" or "command" section.
+# ###############################
+# 
+# You can use some codes to set the type
+# of a message to title, actionbar or chat.
+# How does it work:
+# 
+# For example we want to print a message as a title:
+# Set message to: '#t#Title[newline]Subtitle'(Set "#t#" in front of it; use [newline] to set the subtitle)
+# 
+# You also send a message at the actionbar:
+# Set message to: '#a#This is a actionbar message.'
+# (Set #a# in front of it.)
+# 
+# More information: https://github.com/Angeschossen/General/wiki/Messages
+
+
+
 general:
   prefix:
     normal: '&8[&aLands&8] '
@@ -11,7 +39,7 @@ general:
   land:
     title:
       land: '&7Besitzer :&3 %owner%&7.'
-      safezone: '&7Du bist jetzt sicher..'
+      admin: '&7Dieses Land gehört dem Server.'
     default-area: Standard
   time:
     days: Tag(e)
@@ -22,11 +50,13 @@ general:
     online: '&aOnline'
     offline: '&cOffline'
   top:
-    title: '&7-----<- &6Top Länder  &7->-----'
-    entry: '&c#{pos} &a{land} &8| &e{value} $ '
-    next-page: '&7Nächste Seite: &8/&2Lands top {next}'
-    last-updated: '&7Letzte Aktualisierung: {time}'
-    footer: '&7-----<- &6Top Länder &7->-----'
+    entry:
+      balance: '&c#{pos} &a{land} &7Balance:&e ${value}'
+      chunks: '&c#{pos} &a{land} &7Chunks:&e {value}'
+      members: '&c#{pos} &a{land} &7Members:&e {value}'
+    hologram:
+      title: '&7-----------&6<<<<&7- &5Top 10 Lands &8(&7Total: {total}&8) &7-&6>>>>&7-----------'
+      footer: '&7-----------&6<<<<&7- &5Top 10 Lands &8(&7Total: {total}&8) &7-&6>>>>&7-----------'
   integration:
     dynmap:
       land:
@@ -83,50 +113,22 @@ general:
     friendly: '&5▉ '
     current-location: '&e▉ '
     wilderness: '&2▉ '
-    top: '&7-<------------<- &66Landkarte &7->------------>-'
     info:
       wilderness: ' &2▉ &7= Wildnis'
       yours: ' &a▉ &7= Deins'
       trusted: ' &5▉ &7= Freundlich'
       others: ' &c▉ &7= Andere'
       position: ' &e▉ &7= Position'
-    bottom: '&7-<------------<- &6Landkarte &7->------------>-'
-  inbox:
-    general:
-      created: '&8{0}: &7Land erstellt.'
-    member:
-      join: '&8{0}: &7{1} ist beigreten.'
-      leave: '&8{0}: &7{1} ist gegangen.'
-      ban: '&8{0}: &c{1} wurde gebannt.'
-    economy:
-      upkeep:
-        warning: '&8{0}: &cUnterhaltskosten von ${1} kann nicht gezahlt werden'
-        unclaimed: '&8{0}: &cUnterhaltskosten von ${1} konnten nicht gezahlt werden.
-          Neuster Chunk (X: {2} Z: {3}) wurde gelöscht'
-        paid: '&8{0}: &7Unterhaltskosten von: ${1} wurden gezahlt.'
-      bank:
-        withdraw: '&8{0}: {1} &chat ${2} abgehoben. Neuer Kontostand = ${3}'
-        deposit: '&8{0}: {1} &7hat ${2} eingezahlt. Neuer Kontostand = ${3}'
-      taxes:
-        warning: '&8{0}: &c{1} hat die Steuer nicht gezahlt.'
-        untrusted: '&8{0}: &c{1} konnte die Steuer nicht zahlen und wurde rausgeworfen.'
-        received: '&8{0}: ${1} &7als Steuer erhalten. Kontostand: = ${2}'
-    war:
-      declaration:
-        sent: '&8{0}: &7Krieg wurde gegen {1} erklärt: &8/Wars info'
-        received: '&8{0}: &c{1} &chat uns den Krieg erklärt: &8/Wars info'
-        mutual:
-          sent: '&8{0}: &7Kriegsanfrage wurde gesendet {1}. &7Sie müssen sie zuvor
-            akzeptieren.'
-          received: '&8{0}: &c{1} &cmöchte den Krieg. Akzeptieren: &8/&3Wars declare
-            {2}'
-      surrender:
-        sent: '&8{0}: &cAufgegeben. Es musste ${1} Tribut an den Feind gezahlt werden.'
-        received: '&8{0}: &7Der Feind {1} &7hat aufgegeben. Wir erhielten ${2} Tribut.'
-      end:
-        won: '&8{0}: Wir haben dem Krieg mit {1} kills und {2} tode gewonnen.'
-        draw: '&8{0}: Der Krieg verlif unentschieden mit {1} kills und {2} toden.'
-        lost: '&8{0}: Wir haben den Krieg mit {2} toden und {1} kills verloren.'
+    hover:
+      wilderness: '&7Dieser Chunk ist Wildnis, klicke um ihn zu claimen.'
+      yours: '&7This land is owned by you. Click to show information about land&3
+        {land}&7.'
+      trusted: '&7You''re trusted in this land. Click to show information about land&3
+        {land}&7.'
+      others: '&7You''re not trusted in this land. Click to show information about
+        land&3 {land}&7.'
+      position: '&7This is your current position.'
+
   wars:
     nametag:
       enemy: '&cFEIND &8| '
@@ -134,8 +136,17 @@ general:
     object:
       enemy: '&cEnemy'
       ally: '&aAlly'
+    state:
+      preparation: '&aPreparation'
+      fight: '&cFight'
   teleportation:
     bossbar: '&7Warte&5 {time} &7Sekunde(n) zum Teleportieren.'
+  area:
+    description:
+      default: '&7New claims will belong to this area.'
+      sub: '&7This is a sub area, which can have special flags and members.'
+      rented: '&7This area is rented by player {player}.'
+      sold: '&7This area is sold to player {player}.'
 help:
   command:
     help: '[T]&8/&3Lands help &8[&3Seite&8] - &7Erhalte Hilfe.[H]&7Klick zum Kopieren.
@@ -228,8 +239,6 @@ help:
         zum Kopieren.[/H][SC]lands admin[/SC][/T]'
       debug: '[T]&8/&3Lands debug &8- &7Zeigt Debug Informationen[H]&7Klick zum Kopieren.[/H][SC]lands
         debug[/SC][/T]'
-      safezone: '[T]&8/&3Lands safezone &8- &7Konfiguriere Safezones[H]&7Klick zum
-        Kopieren.[/H][SC]lands safezone[/SC][/T]'
       reload: '[T]&8/&3Lands reload &8- &7Lade das Plugin neu[H]&7Klick zum Kopieren.[/H][SC]lands
         reload[/SC][/T]'
       about: '[T]&8/&3Lands about &8- &7Zeigt Informationen über das Plugin[H]&7Klick
@@ -237,6 +246,28 @@ help:
     mod:
       chatspy: '[T]&8/&3Lands chatspy &8[&3land&8] - &7Spioniert alle Lands Chats
         aus[H]&7Klick zum Kopieren.[/H][SC]lands chatspy[/SC][/T]'
+    nations:
+      trust: '[T]&8/&3Nations trust &8<&3land&8> - &7Invite land[H]&7Click to copy.[/H][SC]nations
+        trust[/SC][/T]'
+      untrust: '[T]&8/&3Nations untrust &8<&3land&8> - &7Remove land[H]&7Click to
+        copy.[/H][SC]nations untrust[/SC][/T]'
+      accept: '[T]&8/&3Nations accept &8<&3nation&8> - &7Accept invite[H]&7Click to
+        copy.[/H][SC]nations accept[/SC][/T]'
+      deny: '[T]&8/&3Nations deny &8<&3nation&8> - &7Deny invite[H]&7Click to copy.[/H][SC]nations
+        deny[/SC][/T]'
+      menu: '[T]&8/&3Nations menu &8- &7Menu[H]&7Click to copy.[/H][SC]nations menu[/SC][/T]'
+      create: '[T]&8/&3Nations create &8[&3name&8] - &7Create nation[H]&7Click to
+        copy.[/H][SC]nations create[/SC][/T]'
+      delete: '[T]&8/&3Nations delete &8<&3nation&8> &8- &7Delete nation[H]&7Click
+        to copy.[/H][SC]nations delete[/SC][/T]'
+      leave: '[T]&8/&3Nations leave &8- &7Leave nation[H]&7Click to copy.[/H][SC]nations
+        leave[/SC][/T]'
+      spawn: '[T]&8/&3Nations spawn &8- &7Capital spawn[H]&7Click to copy.[/H][SC]nations
+        spawn[/SC][/T]'
+      rename: '[T]&8/&3Nations rename &8- &7Rename nation[H]&7Click to copy.[/H][SC]nations
+        rename[/SC][/T]'
+      setcapital: '[T]&8/&3Nations setcapital &8- &7Set capital[H]&7Click to copy.[/H][SC]nations
+        setcapital[/SC][/T]'
 message:
   world-not-exist: '&cEine Welt mit dem Namen&4 {world} &cexistiert nicht. &7Tippfehler?'
   world-invalid: '&cDies wurde in dieser Welt deaktiviert. &7Ein Administrator kann
@@ -246,56 +277,28 @@ message:
   current-war: '&cDas kannst du zur Zeit nicht tunn. &7Dein Land befindet sich zur
     Zeit im Krieg, bitte versuche es nach dem Krieg erneut.'
   noaccess:
-    chunk: '&cDu bist nicht dazu berechtigt dies hier im Chunk zu tun &8(&7Land:&2
-      {land}&7X: {x} &7Z: {z}&8)&c. &8Bypass Berechtigung: {bypass}'
     area: '&cDu darfst dies in dem Gebiet nicht tun. &8(&7Area:&6 {area} &7Land:&2
       {land} &7X: {x} &7Z: {z}&8)&c. &8Bypass Berechtigung: {bypass}'
     land: '&cDu bist nicht dazu berechtigt dies in diesem Land zu tun &8(&7Land:&2
       {land}&8)&7.&8Bypass Berechtigung: {bypass}'
-    position: '&cDir ist es nicht erlaubt dies in diesem Land&4 {land} &can deiner
-      Position zu tun.&8Bypass Berechtigung: {bypass}'
     land-not-owner: '&cDu bist nicht dazu berechtigt dies in diesem Land zu tun&4
       {land}&c.&7Wähl dein eigenes Land aus &8(/&3Lands edit &8<&3land&8>) oder erstell
       dir ein Land &8(/&3Lands create &8<&3name&8>)&7. &8Bypass Berechtigung: {bypass}'
     claim: '&cDu kannst den Chunk nicht besetzen. &7Dieser Chunk wird von einem anderen
       Plugin besetzt. Name: {plugin}'
-    place: '&cDu darfst hier nicht bauen. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-    break: '&cDu darfst hier nichts abbauen. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-    ignite: '&cDu darfst hier nichts anzünden. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-    enter: '&cDu darfst das Gebiet &4{area} &cvon dem Land&4 {land}&c nicht betreten.&7Du
-      wurdest zurück teleportiert.'
-    vehicle: '&cDir ist es nicht erlaubt Fahrzeuge zu nutzen. &7Dieses Gebiet gehört
-      zu dem Land&2 {land}&7.'
-    fly: '&cDir ist es nicht erlaubt hier zu fliegen. &7Dieses Gebiet gehört zu&2
-      {land}&7. &8Bypass: {bypass}'
-    edit: '&cDu darfst das Land nicht bearbeiten.'
     banned: '&cDir ist es nicht erlaubt das Gebiet zu betreten, &7du wurdest verbannt.&8(&7Area:&6
       {area} &7Land:&2 {land}&8)&7. &8Bypass Berechtigung: {bypass}'
-    teleport: '&cDir ist es nicht erlaubt dich in das Land &4 {land}&c zu telepotieren.
-      &7Du bist kein Vertrauter..'
-    interact:
-      general: '&cDu darfst hier mit nichts Interagieren. &7Dieser Chunk gehört zu
-        dem Land &2{land}&7.'
-      door: '&cDu darfst hier keine Türen öffnen. &7Dieser Chunk gehört zu dem Land
-        &2{land}&7.'
-      mechanism: '&cDu darfst hier kein Mechanismus auslösen. &7Dieser Chunk gehört  zu
-        dem Land &2{land}&7.'
-      container: '&cDu darfst hier keine Truhen öffnen. &7Dieser Chunk gehört zu dem
-        Land &2{land}&7.'
-      villager: '&cDu darfst hier mit keinen Dorfbewohnern handeln. &7Dieser Chunk
-        gehört zu dem Land &2{land}&7.'
     combat:
-      animal: '&cDu darfst hier keine Tiere angreifen. &7Dieser Chunk gehört zu dem
-        Land &2{land}&7.'
-      pvp:
-        attacker: '&cDu darfst hier keine Spieler angreifen. &7Dieser Chunk gehört
-          zu dem Land &2{land}&7.'
-        target: '&cDein Ziel darf keine Spieler angreifen. &7Daher kannst du ihn auch
-          nicht angreifen. &7Dieser Chunk gehört zu dem Land &2{land}&7.'
-        ally: '&cDu kannst diesen Spieler nicht angreifen, er ist ein Verbündeter!
-          Arenakämpfe können in einem Land ausgetragen werden wenn PvP aktiviert ist.'
-        wilderness: '&cDu kannst den Spieler nicht angreifen, weil er in der Wildnis
-          steht und du in einem Land.'
+      attacker: '&cYou''re not allowed to attack players here. &7This area belongs
+        to land&2 {land}&7.'
+      target: '&cYour target isn''t allowed to attack players here. &7You can''t fight
+        with them here. &7This area belongs to land&2 {land}&7.'
+      ally: '&cYou can''t attack this player in wilderness, because he is a member
+        in one of your lands. &7Arena fights can be done in your land by allowing
+        pvp in the role settings.'
+      wilderness: '&cYou can''t attack this player, because he''s in wilderness and
+        you''re standing in claimed land.'
+    wilderness: '&cYou''re not allowed to do this in the wilderness. &8Flag: {flag}'
   area:
     exists: '&cEin Gebiet mit dem Namen&4 {area} &cexistiert bereits in dem Land&4
       {land}&c.'
@@ -309,11 +312,11 @@ message:
         um hier zu fliegen.'
     enter:
       land: '#t#&2&l{land}[newline]&3{title}'
-      safezone: '#t#&2&l{land}[newline]{title}'
       pvp-warning: '#a#&cDu betrittst eine PVP Zone.'
+      admin: '#t#&2&l{land}[newline]{title}'
     leave:
       land: '#t#&2&lWildnis'
-      safezone: '#t#&2&lWildnis'
+      admin: '#t#&2&lWildnis[newline]&7Fühle die Wildnis'
   claimblock:
     dropped: '&cEinige Claimblocks liegen am Boden. &7Du hattest kein Platz mehr im
       Inventar.'
@@ -325,6 +328,8 @@ message:
       vertraut. &8Der Landbesitzer kann dich zum Vertrauten machen.'
     general: '&cDu darfst den Befehl nicht in einem bereits besetzten Land ausführen.
       &8Ein Administrator kann das in der Config ändern.'
+    war: '&cYou''re not allowed to use this command while you''re engaged in a war.
+      &8Bypass permission: {permission}'
   autoAction:
     stopped: '&cDie Aktion wurde gestoppt. &7Maximale Runden erreicht. Name:&3 {name}'
     started: '&7Die Aktion wurde gestartet. Name:&3 {name}'
@@ -335,7 +340,7 @@ message:
     not-exist: '&cDie Rolle&e {role} &cexistiert in dem Gebiet&4 {area} &cvon dem
       Land&4 {land}&c nicht. &7Tippfehler?'
     max: '&cDu kannst keine weiteren Rollen für das Land erstellen. &7Du hast das
-      Maximum von&3 {max} &7Rollen erreicht. Berechtigung: lands.roles.NUMBER'
+      Maximum von&3 {max} &7Rollen erreicht. Berechtigung: lands.roles.<number>'
     player:
       land: '&cDu kannst diese Rolle nicht in dem Land&4 {land}&c bearbeiten. &7Die
         Rolle&6 {role} &7hat eine höhere oder gleiche Priorität.'
@@ -352,7 +357,8 @@ message:
         benötigt.'
       visitor: '&cDu kannst die Besucherrolle nicht löschen. &7Sie wird für alle Besucher
         benötigt.'
-      owner: '&cDu kannst die Besitzerrolle nicht löschen. &7Sie wird benötigt.'
+      role: '&cYou can''t delete the role&4 {role} &cof your land. &7This role is
+        required.'
   chat-action:
     cancelled: '#t#&c&lAbgebrochen[newline]&c&lChat Aktion'
     player: '&7Bitte gib den Namen des Ziels ein.'
@@ -369,7 +375,7 @@ message:
       exists: '&cDas Gebiet &4{area} &cexisitert bereits in dem Land &8(&7Land:&2
         {land}&8)&c. &7Bitte nutze einen anderen Namen.'
       max: '&cYDu kannst keine Gebiete mehr für das Land erstellen. &7Das Maximum
-        von &3{max} &7Gebieten wurde erreicht. Permission: lands.areas.NUMBER'
+        von &3{max} &7Gebieten wurde erreicht. Permission: lands.areas.<number>'
   teleportation:
     already: '&cDu kannst keine zweite Teleportation durchführen. Es wird gerade eine
       Teleportation durchgeführt. &7Bitte warte, bis diese durchgeführt wurde.'
@@ -383,6 +389,43 @@ message:
     unsafe: '&cDas Ziel ist nicht sicher, die Teleportation wurde abgebrochen.'
     corrected: '&7Dein originales Ziel ist unsicher. &7Du wurdest zu einem sicheren
       Ziel in der Nähe teleportiert.'
+    cmd: '&cYou can''t use any commands while being teleported. &7Please wait another&5
+      {sec} seconds &7until the teleportation has been finished.'
+  flags:
+    block_place: '&cYou''re not allowed to place blocks here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    block_break: '&cYou''re not allowed to break blocks here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    block_ignite: '&cYou''re not allowed to ignite blocks here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    interact_general: '&cYou''re not allowed to interact here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    interact_door: '&cYou''re not allowed to open doors here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    interact_mechanism: '&cYou''re not allowed to use mechanisms here (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &8Flag: {flag}'
+    interact_container: '&cYou''re not allowed to open containers here (&cArea:&4
+      {area} &cLand:&4 {land}&c). &8Flag: {flag}'
+    interact_villager: '&cYou''re not allowed to trade with villagers here (&cArea:&4
+      {area} &cLand:&4 {land}&c). &8Flag: {flag}'
+    fly: '&cYou''re not allowed to fly here (&cArea:&4 {area} &cLand:&4 {land}&c).
+      &8Flag: {flag}'
+    spawn_teleport: '&cYou''re not allowed to teleport to the spawn of land&4 {land}&c.
+      &7They can adjust their role settings to allow teleportation to their spawn
+      for you. &8Flag: {flag}'
+    land_enter: '&cYou''re not allowed to enter the area&4 {area} &cof land&4 {land}&c
+      (&cArea:&4 {area} &cLand:&4 {land}&c). &7You were teleported to your previous
+      location. &8Flag: {flag}'
+    vehicle_use: '&cYou''re not allowed to use vehicles here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    item_pickup: '&cYou''re not allowed to pickup items here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    ender_pearl: '&cYou''re not allowed to use this item to teleport into the area&6
+      {area} &7of land&4 {land}&c. &8Flag: {flag}'
+    attack_animal: '&cYou''re not allowed to attack animals here (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &8Flag: {flag}'
+    attack_monster: '&cYou''re not allowed to attack monsters here (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &7They also won''t be able to attack you. &8Flag: {flag}'
 command:
   rent:
     edit: '&cDu kannst dieses Gebiet&4 {area} &cof land&4 {land}&7 nicht bearbeiten,
@@ -435,13 +478,23 @@ command:
          &7Time left:&5 {left}
          &8Rent: ${cost} each {time}
         &7---------<- &5&lRented Info &r&7->---------
+      expire: '&cYou can''t add any more time to your rental of area&4 {area}&c. &7The
+        land&2 {land} &7removed it for rental. It will expire in&5 {time}&7.'
     cancel:
       success: '&7Du hast den Mietvertrag des Gebiets&6 {area}&7 aufgehoben. Du hast
         keinen Zugang mehr zu diesem Gebiet.'
     remove:
-      success:
-        land: Das &7Land&2 {land} &7steht nicht länger zum Erwerb.
-        area: Das &7Gebiet&6 {area} &7of land&2 {land} &7steht nicht länger zum Erwerb.
+      offer:
+        success:
+          land: '&7Land&2 {land} &7is no longer able to be purchased.'
+          area: '&7Area&6 {area} &7of land&2 {land} &7is no longer able to be rented
+            or purchased.'
+      tenant:
+        success: '&7You removed the tenant&3 {player} &7from area&6 {area} &7of land&2
+          {land} &7and paid&c {cost}$ &7as compensation.'
+    confirm: |
+      &cPlease confirm that you want to pay&4 {cost}$ &cas compensation to the tenant&4 {player} &cin order to remove him:
+        [T]&aConfirm: &8[CLICK][H]&7Click here to confirm this action and payment.[/H][C]lands rent removetenant confirm[/C][/T]
   sell:
     sell:
       rented: '&cDu kannst kein Gebiet verkaufen, welches von einem Spieler gmietet
@@ -475,6 +528,13 @@ command:
           [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this land.[/H][C]lands view[/C][/T]
           &7Cost:&c ${cost}
           &7---------<- &5&lLand Buy &r&7->---------
+    sold: |
+      [NoPrefix]
+      &7---------<- &5&lArea Sold &7->---------
+      [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this area.[/H][C]lands view here[/C][/T]
+       &7Area:&6 {area}
+       &7Sold to&3 {player} &7for&c ${cost}&7.
+      &7---------<- &5&lArea Sold &7->---------
   general:
     no-permission: '&cDu hast keine Berechtigung dies zu tun. &8Du brauchst: {permission}.'
     land-not-exist: '&cDas Land&2 {land} &cexistiert nicht.'
@@ -511,10 +571,9 @@ command:
     area-not-trusted: '&cDu kannst das hier nicht tun. Du bist nicht auf dem Chunk
       &8(&7X: {x} Z: {z}&8)&cvertraut. &7Es gehört zu dem Gebiet&6 {area} &7vom Land&2
       {land}&7.'
-    invalid-number: '&cDeine Eingabe&4 {input} &cist keine Zahl.&3 {argument} &7muss
+    number: '&cDeine Eingabe&4 {input} &cist keine Zahl.&3 {argument} &7muss
       eine Zahl sein.'
-    number: '&Deine Eingabe&4 {input} &cist keine Zahl.&3 {argument} &7muss eine Zahl
-      sein.'
+
     name:
       character: '&cDu kannst keine ungültigen Zeichen nutzen. &7Gefundene Zeichen:&3
         {invalid} &7. Bitte nutze nur Zahlen und Buchstaben.'
@@ -524,6 +583,8 @@ command:
         Eingabe: {input}&8)&7. &8Dies beinhaltet auch Farbcodes.'
       empty: '&cDieser Name ist ungültig. &7Du musst mindestens ein Zeichen eingeben,
         Farbcodes funktionieren nicht.'
+      number: '&cYou''re not allowed to use numbers for this name. &7Please use only
+        letters. Found number:&3 {invalid}'
   help:
     header: '[NoPrefix][T]&7----------&6<<<<&7-[H]&7Vorherige Seite.[/H][C]lands help
       {previous}[/C][/T] &2Lands Help &7Seite&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7Nächste
@@ -539,7 +600,7 @@ command:
       eines anderen Landes zu sein. &7Du musst&2 {land} &7erst verlassen. &8Ein Administrator
       kann dies in der Config ändern.'
     max-own: '&cDu kannst kein weiteres Land erstellen. &7Du hast dein Maximum von
-      &3{max} &7erreicht. &8Rechte: lands.ownlands.NUMBER'
+      &3{max} &7erreicht. &8Rechte: lands.ownlands.<number>'
     success: '&7Das Land&2 {land} &7wurde für&e {cost} $&7 erfolgreich erstellt. Du
       kannst Chunks besetztem indem du &8/&3Lands claim &7eingibst. Du kannst auch
       &8/&3Lands &7selection durchführen, um ein Gebiet welches du besetzen willst
@@ -557,7 +618,7 @@ command:
       dass beide Positionen &8(&bLinksklick &7und &9echtsklick&8)&7 gesetzt sind.
       Du kannst den Auswahlmodus mit &8/&3Lands selection&7 verlassen und öffnen.'
     max: '&cDeine Auswahl hat zu viele Chunks. &7Größe:&3 {current} &7Du kannst maximal
-      &3 {max} Chunks auswählen. &8Rechte: lands.selection.NUMBER'
+      &3 {max} Chunks auswählen. &8Rechte: lands.selection.<number>'
     too-far: '&cDer Block ist zu weit weg. &7Bitte nutze einen näheren.'
     enabled: '&7Du hast den Auswahlmodus aktiviert. Nutze &5Linksklick &7um die erste
       Position zu setzen. Nutze &5Rechtsklick &7um die zweite Position zu setzen.'
@@ -582,8 +643,6 @@ command:
       conflicts: '&4{conflicts} &cKonflikt(e) wurden gefunden in dem Chunk. &7Nutze  &8/&3Lands
         selection assgin {area} confirm &7,um das Gebiet zu überschreiben. Das Gebiet
         {areas} befindet sich in der Auswahl.'
-      assigned: '&7Du hast&3 {chunks} &7Chunks erfolgreich zu dem Gebiet&6 {area}
-        &8(&7Land:&2 {land}&8)&7 hinzugefügt.'
     expand:
       enabled: '&7Du hast erfolgreich die Auswahl auf alle Y Ebenen( von oben nach
         unten) erweitert.'
@@ -605,9 +664,12 @@ command:
     already-claimed: '&cIn deiner Auswahl &8(&7X: {x} Z: {z}&8) sind bereits beanspruchte
       Chunks von dem Land {land}&7.'
     max-chunk: '&cDu kannst&4 {chunks} &cnicht beanspruchen. &7Das Maximum für das
-      Land&2 {land} &7beträgt&3 {max} &7Chunks. &8Rechte: lands.chunks.NUMBER'
+      Land&2 {land} &7beträgt&3 {max} &7Chunks. &8Rechte: lands.chunks.<number>'
     selection: '&7Du hast erfolgreich&3 {chunks} &7Chunks  für das Land&8(&7Land:&2
       {land}&8)&7 beansprucht. Du hast&e {cost} $&7 gezahlt.'
+    initial-world: '&cFor land&4 {land} &cyou can only claim in its initial land creation
+      world&4 {world}&c. &7You may want to create another land for the world you''re
+      currently in ({current}): &8/&3Lands create &8<&3name&8>'
   assign:
     selection: '&cDu musst vorher eine Auswahl machen. &7Nutze &8/&3Lands selection
       &7, um eine Auswahl zu machen.'
@@ -638,8 +700,6 @@ command:
   unclaim:
     rental: '&cDu kannst den Chunk nicht freigeben, &7da er ein vermietets Gebiet/verkauftes
       Gebiet enthält.(&6 {area}&7. Mieter:&3 {player})'
-    connection: '&cDu kannst den Chunk nicht freigeben , da diese Aktion das Land
-      trennen würde. &7Chunk X: {x} Z: {z} wäre nicht mehr verbunden.'
     success: '&7Du hast den Chunk erfolgreich freigegeben &8(&7Land:&2 {land} &7X:
       {x} Z: {z}&8)&7. Du erhälst &e{back} $ &7zurück.'
     selection:
@@ -648,13 +708,17 @@ command:
       rental: '&cDu kannst diese Auswahl nicht freigeben&7, da es ein Gebiet enthält
         das verkauft oder vermietet ist. (&6{area} &7vom Land&2 {land}&7. Mieter:&3
         {player})'
-      connection: '&7D hast erfolgreich {success} / {size} Chunks freigegeben.&c {failed}
-        Konnten nicht freigegeben werden, da es das Land trennen würde. &7Du hast&c
-        ${back} &7zurück erhalten.'
       partly: '&7Du hast erfolgreich {success} / {size} Chunks freigegeben. Du hast&c
         ${back} &7zurück erhalten.'
       success: '&7Du hast erfolgreich alle Chunks freigegeben. Du hast&c ${back} &7zurück
         erhalten.'
+      split: '&7You unclaimed {success} / {size} chunks of this selection, &cbut {failed}
+        could not be unclaimed because it would result in your land being split up
+        into parts &8(a admin can disable this in config)&7. Parts that would split
+        up are now visualized. You got&c ${back} &7back.'
+    split: '&cYou can''t unclaim this chunk, because this would cause your land to
+      split up into parts &8(a admin can disable this in config)&7. Parts that would
+      split up are now visualized.'
   delete:
     nation: '&cDu kannst dein Land nich löschen, da es der Hauptsitz der Nation &4
       {nation}&c ist. &7Du musst die Nation löschen &8(/&3Nations delete&8) &7 oder
@@ -669,12 +733,12 @@ command:
     own-land: '&cDiesem Spieler ist es nicht erlaubt ein Teil eines anderen Landes
       zu sein. &7Er muss sein Land erst verlassen.'
     max-lands: '&7Der Spieler&3 {player} &7hat sein Land maximum erreicht. &8Rechte:
-      lands.lands.NUMBER'
+      lands.lands.<number>'
     max-members: '&cDer Spieler&4 {player} &ckonnte in dem Land&4 {land}&c nicht vertraut
       werden. &7Der Land Besitzer hat sein maximum von&3 {members} &7Mitgliedern in
       seinem Land erreicht.'
     max: '&cDer Spieler&4 {player} &ckann in keine Länder mehr eintreten. &7Er hat
-      das maximum von &3 {max} &7erreicht. &8Berechtigung: lands.lands.NUMBER'
+      das maximum von &3 {max} &7erreicht. &8Berechtigung: lands.lands.<number>'
     area:
       invited: '&cDer Spieler&4 {player} &c wurde bereits zu dem Gebiet&4 {area} &cdes
         Landes&4 {land}&c eingeladen. &7Die Einladung ist&5 {time} &7her.'
@@ -706,6 +770,9 @@ command:
         {area} des Landes &7Land:&2 {land}&8)&7.'
       revoke: '&7Die Einladung für das Gebiet&6 {area} in dem Land &8(&7Land:&2 {land}&8)&7
         wurde erfolgreich zurückgenommen. Der Spieler wurde nicht vertraut.'
+      rental: '&cYou can''t untrust the tenant&4 {player} &cof area&4 {area}&c. &7To
+        remove the area for rental, use &8/&3Lands rent remove &7while standing on
+        the area.'
     land:
       already: '&7Der Spieler&3 {player} &7ist in keinem Gebiet in dem Land&2 {land}&7
         vertraut.'
@@ -728,13 +795,13 @@ command:
         in dem Gebiet&6 {area} &7des Landes&2 {land}&7 erstellt.'
   accept:
     max: '&cDu kannst keinem Land mehr beitreten. &7Du hast das Maximum von&3 {max}
-      &7Ländern erreicht. &8Berechtigung: lands.lands.NUMBER'
+      &7Ländern erreicht. &8Berechtigung: lands.lands.<number>'
     not-exist: '&cDu hast keine Einladung von dem Land&4 {land} &coder sie ist bereits
       abgelaufen. &7Bitte überprüfe deine Eingabe.'
     own-land: '&cDu hast nicht die Berechtigung, um ein Teil eines Landes zu sein
       und zeitgleich dein eigenes Land zu besitzen. Bitte verlasse erst dein Land.'
     max-lands: '&cDu kannst nicht in weiteren Ländern sein. &7Du kannst nur in&3 {max}
-      &7Ländern sein. &8Rechte: lands.lands.NUMBER'
+      &7Ländern sein. &8Rechte: lands.lands.<number>'
     notification: '&7Du hast noch&3 {invites} &7Einladungen von anderen Ländern. Nutze
       &8/&3Land invites &7um alle Einladungen zu sehen.'
     area:
@@ -746,13 +813,17 @@ command:
       success: '&7Du hast die Einladung zu dem Land&2 {land} &7angenommen. Du bist
         jetzt ein Vertrauter des Landes.'
       broadcast: '&2{land} &8| &3{player} &7ist jetzt ein Mitglied von unserem Land.'
+    max-members: '&cYou currently can''t join land&4 {land}&c. &7They reached their
+      maximum of&3 {members} &7members in their land.'
+    war: '&cYou currently can''t join land&4 {land}&c, because it is engaged in a
+      war against {object}&c. &7Try again when their war is over.'
   setowner:
     confirm: '&cBitte bestätige die Besitzübergabe vom Land&2 {land} &7zu dem Spieler&3
       {player}&7: &8/&3Lands setowner {player} confirm'
     success: '&7Du hast erfolgreich&3 {player} &7 den Besitz von dem Land&2 {land}&7
       übergeben.'
     max-lands: '&cDer Spieler&4 {player} &ckann keine weitere Länder besitzen. &7Er
-      hat das Maximum von&3 {max} &7Ländern erreicht. &8Berechtigung: lands.ownlands.NUMBER'
+      hat das Maximum von&3 {max} &7Ländern erreicht. &8Berechtigung: lands.ownlands.<number>'
   deny:
     not-exist: '&cDu hast keine Einladung von dem Land&4 {land} &coder sie ist bereits
       abgelaufen. &7Tippfehler?'
@@ -764,10 +835,9 @@ command:
     not-trusted: '&cDu kannst dich nicht dorthin teleportieren. &7Du bist kein Vertrauter
       von dem Land&2 {land}&7.'
   setspawn:
-    force-land: '&cDu kannst deinen Spawn nur in deinem Land setzen. &7Gehe in dein
-      Land&2 {land} &7 und probiere es erneut. &8Ein Administrator kann dies in der
-      Config ändern.'
     success: '#t#&a&lSpawn gesetzt[newline]&7&lPreis:&e {cost} $'
+    wilderness: '&cYou can only set the land spawn on your land. &7You either need
+      to move up or down into your land&2 {land}&7.'
   spawn:
     not-exist: '&cEs wurde kein Spawn für das Land&4 {land}&c gesetzt. &7Jemand muss
       zuerst den Spawn mit &8/&3Land setspawn&7 setzen.'
@@ -785,6 +855,8 @@ command:
     searching: '#t#&6Zielort wird gesucht[newline]&eWarte bis die Teleportation beginnt..'
     no-location: '&cEs konnte kein sicherer Ort gefunden werden. &8Ein Administrator  muss
       den Radius der Suche einstellen und den Weltspawn setzen (/setworldspawn).'
+    perm: '&cYou''re not allowed to use random teleportation in the world&4 {world}&c.
+      &8You''re missing the permission {perm} for this world.'
   deposit:
     number: '&7Du musst eine Zahl angeben, die du einzahlen willst. Nutze dafür &8/&aLand
       deposit &8<&aAnzahl&8> &7oder &8/&aLand deposit &8<&aLand&8> <&aAnzahl&8>&7.'
@@ -849,6 +921,13 @@ command:
         &8Steuer:&c ${tax}
         &8Spieler:&7 {players}
       &7---------<- &5&lArea View &r&7->---------
+    y-level: '&7Your current position is wilderness, but this chunk is already claimed
+      by land&2 {land} &7at a different y-level.'
+    y-lock:
+      enabled: '&cToggled y-lock mode: &7The land borders will no longer follow your
+        position up and downwards.'
+      disabled: '&aToggled y-lock mode: &7The land borders will follow your position
+        up and downwards.'
   unstuck:
     success: '&7Erfolgreich zur nächsten freien Position teleportiert.'
   taxes:
@@ -870,8 +949,23 @@ command:
         [NoPrefix]
         &7Zuzahlen in:&5 {next}
         &7Guthaben: ${balance}
-        &8Mehr infos: /Lands taxes
+        &8Mehr infos: /lands taxes
         &7---------<- &4Steuer Änderungen &7->---------
+  top:
+    mode: '&cYour input&4 {input} &cisn''t a valid sort mode. &7Valid sort modes:
+      {modes}'
+    title: '[NoPrefix][T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Click
+      here to view the previous page.[/H][/T] &5Top Lands [T]&7-&6>>>>&7-----------[C]lands
+      top {mode} {next}[/C][H]&7Click here to view the next page.[/H][/T]'
+    footer: |
+      [NoPrefix]
+      &7Click on the arrows below to navigate.
+      &7Sort by [T]&7Balance &8[CLICK],[H]&7Click to sort by land bank balance.[/H][C]lands top balance[/C][/T] [T]&7Chunks &8[CLICK],[H]&7Click to sort by land chunks amount (size).[/H][C]lands top chunks[/C][/T] [T]&7Members &8[CLICK][H]&7Click to sort by land members amount.[/H][C]lands top members[/C][/T]
+      &7Total lands: {total} &8| &7Last updated: {time} &7ago.
+      [T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Click here to view the previous page.[/H][/T] &5Top Lands [T]&7-&6>>>>&7-----------[C]lands top {mode} {next}[/C][H]&7Click here to view the next page.[/H][/T]
+  map:
+    header: '&7-<------------<- &6Lands Map &7->------------>-[newline]'
+    footer: '[newline]&7-<------------<- &6Lands Map &7->------------>-'
 list:
   swear-words: []
 wars:
@@ -879,8 +973,10 @@ wars:
     noaccess:
       pillage: '&cDu kannst kein Land plündern während kein Verteidiger online ist.
         &7Warte bitte bis mindestens&b {defenders} &7 Verteidiger online ist.'
-      action: '&cDir ist es nicht erlaubt dies während eines Krieges in diesem Land
-        zu tun. &8Flag: {flag} &8Bypass Berechtigung: {bypass}'
+      wilderness: '&cYou''re not allowed to do this in the wilderness while being
+        engaged in a war. &8Flag: {flag} &8Bypass: {bypass}'
+      general: '&cYou''re not allowed to do this in your current war against land&4
+        {land}&c. &8Flag: {flag} &8Bypass: {bypass}'
     start:
       broadcast: '&7Der Krieg zwischen {attacker} &7und {defender} &7ist gestartet.
         Er wird in&5 {time}&7 enden.'
@@ -899,16 +995,27 @@ wars:
         ${tribute} &7an den Sieger {enemy}&7 gezahlt werden.'
       draw: '&7Der Krieg zwischen {attacker} &7und {defender} &7endete mit einem Unentschieden.
         Er dauerte&5 {time}&7.'
-      won: |
-        &aDer Krieg ist zu Ende:
-        &7Die Angreifer &8({team}&8) &7haben gewonnen.
+      won:
+        attackers: |
+          &aThe War is over:
+          &7The attackers &8({team}&8) &7won.
 
-        &8- &7Stats
-            &7Angreifer kills:&3 {att-points}
-            &7Verteidiger kills:&3 {def-points}
+          &8- &7Stats
+              &7Attacker kills:&3 {att-points}
+              &7Defender kills:&3 {def-points}
 
-        &7Der Krieg dauerte:
-        &5~{time}
+              &7The war took:
+              &5~{time}
+        defenders: |
+          &aThe War is over:
+          &7The defenders &8({team}&8) &7won.
+
+          &8- &7Stats
+              &7Attacker kills:&3 {att-points}
+              &7Defender kills:&3 {def-points}
+
+              &7The war took:
+              &5~{time}
     war-shield:
       set: '&aDein Kriegsschild, gegen feindliche Angriffe, ist aktiv für &b {time}&7.'
     kill:
@@ -1016,3 +1123,86 @@ wars:
             &4Kriegserklärung: &7Angreifer: {attacker} &7Verteidiger: {defender}
             &7Wenn die Vertreidiger aufegeben &7müssen sie:&c ${tribute} &rzahlen
             &cDie Verteidiger haben &cnoch nicht angenommen.
+nations:
+  message:
+    current-war: '&cYou can''t do this right now. &7Your nation&9 {nation} &7is currently
+      engaged in a war. &7Please try again after the war is over.'
+  command:
+    general:
+      not-exist: '&cThe nation&9 {nation} &cdoesn''t exist. &7There''s no nation with
+        this name.'
+      none: |
+        &cYour land&4 {land} &cisn't part of any nation.
+
+          &7Any nation can invite your land: &8/&3Nations trust
+          [T]&7Create your own nation: &8/&3Nations create[H]&7Click to copy.[/H][SC]nations create[/SC][/T]
+      noaccess: '&cYou''re not allowed to do this for nation&4 {nation}&c. &8Flag:
+        {flag} &8Bypass: {bypass}'
+      not-trusted: '&cThe land&4 {land} &cisn''t a member of your nation&4 {nation}&c.'
+    create:
+      already: '&cYour land&4 {land} &cis already part of the nation&4 {nation}&c.
+        &7Your land needs to leave it first by executing &8/&3Nations leave&7.'
+      war: '&cYou can''t create a nation with land&4 {land} &cas the capital while
+        it is engaged in a war against&4 {object}&c. &7Please try again after the
+        war is over.'
+      level: '&cYou currently can''t create a nation. &7Your land&2 {land} &7needs
+        to be at least level&3 {level} &8(&7current: {current}&8)&7.'
+      success: '&7You successfully created the nation&9 {nation} &7with the land&2
+        {land} &7as the capital. [T]&7Click here to open the menu.[H]&7Open the menu.[/H][C]nations
+        menu[/C][/T]'
+    trust:
+      already: '&cThe land&4 {land} &cis already part of the nation&4 {nation}&c.
+        &7They need to leave it first by using &8/&3Nations leave&7.'
+      added: '&7You successfully added your land&2 {land} &7as a member of your nation&9
+        {nation}&7.'
+      success: '&7You successfully invited land&2 {land} &7to join your nation&9 {nation}&7.
+        They can accept the invite by executing &8/&3Nations accept {nation}&7.'
+      target: |
+        &7Nation&9 {nation} &7invited your land&2 {land} &7to join them.
+
+         [T]&2Accept &8[&8CLICK&8][H]&7Click here to accept this invite.[/H][C]nations accept {nation}[/C][/T]
+         [T]&cDeny &8[&8CLICK&8][H]&7Click here to deny this invite.[/H][C]nations deny {nation}[/C][/T]
+    accept:
+      war: '&cYou can''t join this nation right now. &7Nation&9 {nation} &7is currently
+        engaged in a war against {object}&7. Please try again once their war is over.'
+      none: '&cYour land&4 {land} &cdidn''t receive any invite from nation&9 {nation}&c.
+        &7They can invite your land by executing &8/&3Nations trust&7.'
+      already: '&cYour land&4 {land} &cis already part of nation&4 {nation}&c. &7You
+        need to leave it first by executing &8/&3Nations leave&7.'
+      broadcast: '&7Land&2 {land} &7is now a member of our nation&9 {nation}&7.'
+    deny:
+      success: '&7You successfully denied the invite from nation&9 {nation}&7.'
+    untrust:
+      capital: '&cYou can''t remove this land. &7Land&2 {land} &7is the capital of
+        nation&9 {nation}&7.'
+      success: '&7You successfully removed land&2 {land} &7from nation&9 {nation}&7.'
+    delete:
+      war: '&cYou currently can''t delete your nation. &7Nation&9 {nation} &7is currently
+        engaged in a war against {object}&7. Please try again when the war is over.'
+      confirm: |
+        &cPlease confirm that you want to delete nation&4 {nation}&c.
+          [T]&7Confirm: &8[CLICK][H]&7Click here to confirm the deletion of nation&9 {nation}&7.[/H][C]nations delete {nation} confirm[/C][/T]
+      success: '&7Successfully deleted this nation &8(&7Nation:&2 {nation}&8)&7.'
+    leave:
+      capital: '&cYour land&4 {land} &ccan''t leave nation&4 {nation}&c, because the
+        land is the capital of this nation. &7To delete your nation, execute &8/&3Nations
+        delete&7.'
+      war: '&cYou can''t leave this nation right now. &7Nation&9 {nation} &7is currently
+        engaged in a war against {object}&7. Your war will be over in&5 {time}&7.'
+      success: '&7You successfully left nation&9 {nation} &7with land&2 {land}&7.'
+      confirm: |
+        &7Please confirm that you want to leave nation&9 {nation} &7with land&2 {land}&7.
+
+          [T]&7Confirm: &8[CLICK][H]&7Click here to confirm this action.[/H][C]nations leave confirm[/C][/T]
+    rename:
+      success: '&7Successfully set the new name&3 {name} &7for this nation &8(&7Nation:&9
+        {nation}&8)&7. You paid&c ${cost}&7.'
+    setcapital:
+      level: '&cYou can''t set the land&4 {land} &cas the new capital of nation&4
+        {nation}&c. &7It needs to be at least level&3 {level} &8(&7current: {current}&8)&7.'
+      confirm: |
+        &cPlease confirm that you want to set land&4 {land} &cas the new capital of the nation&4 {nation}&c.
+        &cYou may lose all administrator rights for the nation.
+         [T]&aConfirm: &8[CLICK][H]&7Click here to confirm this action.[/H][C]nations setcapital {land} confirm[/C][/T]
+      success: '&7Successfully set the land&2 {land} &7as the new capital of nation&9
+        {nation}&7.'

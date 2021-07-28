@@ -47,7 +47,7 @@ duration: 36h
 hide-player: false
 
 # Here you can define a list of commands, which shouldn't get executed while a player is engaged in a war.
-cmd-blacklist: []
+cmd-blacklist_list: []
 
 # Here you can enable natural flags during a war.
 # List of available land-flags: https://github.com/Angeschossen/Lands/wiki/Land-Flags
@@ -150,37 +150,22 @@ shield:
 start:
   # Should a message be broadcasted to the whole server?
   # You can edit the message in your language file.
-  broadcast: true
+  broadcast_2: true
 
 # Configure what happens when a land wins a war.
 end:
-  # Execute a command when a land wins.
+  # Execute a command when a land wins or looses.
   # Placeholders:
-  # %winner% - Name of the winner land
-  # %loser% - Name of the loser land
-  # %winner-owner% - Owner of the winner land
-  # %loser-owner% - Owner of the loser land
+  # {winner} - Name of the winner land
+  # {loser} - Name of the loser land
+  # {winner_owner} - Owner of the winner land
+  # {loser_owner} - Owner of the loser land
+  # Set a command to [] in order to disable it.
   winner:
-    # Set a command to '' in order to disable it.
-    command:
-      # Command for the initial attacker (/defender) land.
-      initial: ''
-      # Command for allies of the winner land.
-      # Aditional placeholders:
-      # %ally% - Name of the ally land
-      # %ally-owner% - Name of the owner of the ally land
-      allies: ''
+    winner-cmds_list: []
 
   loser:
-    # Set a command to '' in order to disable it.
-    command:
-      # Command for the initial defender (/attacker) land.
-      initial: ''
-      # Command for allies of the loser land.
-      # Aditional placeholders:
-      # %ally% - Name of the ally land
-      # %ally-owner% - Name of the owner of the ally land
-      allies: ''
+    loser-cmds_list: []
 
   # The looser will pay a specific amount of money to the attackers when the war ends.
   # Set the reward mode.

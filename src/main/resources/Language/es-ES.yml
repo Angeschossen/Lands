@@ -61,34 +61,6 @@ general:
       others: ' &c▉ &7= Otros'
       position: ' &e▉ &7= Posición'
     bottom: '&7-<------------<- &6Lands Map &7->------------>-'
-  land-inbox:
-    land:
-      created: '&2{date}h &7Land {land} creada.'
-      upkeep:
-        chunk-deleted: '&2{date}h &4ADVERTENCIA: &cUltimo chunk claimeado &8(&7X:
-          {x} &7Z: {z}&8) &cdes-claimeado. No se puedo pagar el costo de mantenimiento:&c
-          ${cost}'
-        warning: '&2{date}h &cADVERTENCIA: &7No se puedo pagar el costo de mantenimiento:
-          ${cost}'
-        paid: '&2{date}h &7Costo de mantenimiento pagado: ${cost}'
-    player:
-      join: '&2{date}h &7Jugador(a) {player} Se unió a tu Land.'
-    wars:
-      declaration:
-        sent: '&2{date}h &7Se declara la Guerra contra Land {defender}. La guerra
-          comienza en {time}.'
-        received: '&2{date}h &4ADVERTENCIA: &cLand {attacker} le ha declarado la Guerra
-          a tu Land la guerra comienza en {time}.'
-      surrender:
-        sent: '&2{date}h &cRendirse en Guerra. Tienes que pagar ${tribute} de tributo
-          al enemigo.'
-        received: '&2{date}h &aEl enemigo de la land {land} se ha rendido. Tributo
-          de ${tribute} recibido.'
-      won:
-        attacker: '&2{date}h &aLa guerra se acabó. &7Los atacantes &8({team}&8) &7han
-          ganado. Atacantes: {att-points} Defensores: {def-points}'
-        defender: '&2{date}h &aLa guerra se acabó. &7Los defensores &8({team}&8) &7han
-          ganado. Atacantes: {att-points} Defensores: {def-points}'
   wars:
     land-type:
       enemy: '&cEnemigo'
@@ -274,14 +246,14 @@ message:
       exists: '&cUn rol con el nombre&4 {role} &cya existe. &7porfavor elige un
         nombre diferente.'
       max: '&cNo puedes crear más roles para esta land. &7Haz alcanzado tu límite
-        of&3 {max} &7roles. Permiso: lands.roles.NUMBER'
+        of&3 {max} &7roles. Permiso: lands.roles.<number>'
     area:
       create: '&7Por favor escribe un nuevo nombre para el área. Puedes incluir prefijos de colores.'
       delete: '&7Porfavor escribe el nombre del área que deseas eliminar.'
       exists: '&cEl area&4 {area} &cya existe en esta land &8(&7Land:&2 {land}&8)&c.
         &7Porfavor escoje otro nombre.'
       max: '&cNo puedes crear mas áreas para esta land. &7Has alcanzado el limite
-        de&3 {max} &7areas. Permiso: lands.areas.NUMBER'
+        de&3 {max} &7areas. Permiso: lands.areas.<number>'
     title: '&7Porfavor escribe un nuevo título para esta Land. Puedes incluir prefijos de colores.'
     rename: '&7Porfavor escribe un nuevo nombre para esta Land. Los espacios no estan permitidos.'
 command:
@@ -310,7 +282,7 @@ command:
       depositar un poco de dinero en el banco de land: &8/&3Lands deposit {cost}'
     money-cost: '&No tienes suficiente para pagar el costo. &7Necesitas&c ${cost}&7.'
     lands-max: '&cNo puedes ser parte de ninguna land más. &7Alcansazte el máximo
-      de&3 {max} &7lands. &8Permiso: lands.lands.NUMBER'
+      de&3 {max} &7lands. &8Permiso: lands.lands.<number>'
     name-numbers: '&cNo puedes usar numeros en los nombres de tus Lands. &7Porfavor solo usa
       letras latinas.'
     name-invalid: '&cNo puedes usar carácteres inválidos en el nombre de land. &7Se encontró
@@ -336,11 +308,11 @@ command:
     land-not-trusted: '&cEl jugador(a)&4 {player} &7no es parte de esta land &8(&7Land:&2
       {land}&8)&7. Necesitas confiar en el primero &8/&3Lands trust&7.'
     land-max-members: '&cNo se pudo confiarte en land&2 {land}&c. &7Esta land alcanzó
-      su máximo de&3 {members} &7miembros. &8Esta land necesita mas lands.members.NUMBER
+      su máximo de&3 {members} &7miembros. &8Esta land necesita mas lands.members.<number>
       de permiso.'
     area-not-trusted: '&cNo puedes hacer esto aqui. &7No estas confiado en este chunk
       &8(&7X: {x} Z: {z}&8)&7. Pertenece al área&6 {area} &7de Land&2 {land}&7.'
-    invalid-number: '&cTu entrada&4 {input} &cno es un número. &7El argumento&3 {argument}
+    number: '&cTu entrada&4 {input} &cno es un número. &7El argumento&3 {argument}
       &7necesita ser un numero.'
   help:
     help: '&7Usa &8/&aLand help &7para ayuda.'
@@ -351,7 +323,7 @@ command:
       &7Tienes que abandonar tu land&2 {land} &7primero. &8Un admin puede desactivar esto en
       la config.'
     max-own: '&cNo puedes crear ninguna land más. &7Haz alcanzado el máximo de&3
-      {max} &7lands propias permitidas. &8Permiso: lands.ownlands.NUMBER'
+      {max} &7lands propias permitidas. &8Permiso: lands.ownlands.<number>'
     success: '&7Land creada correctamente&2 {land} &7para&c ${cost}&7. Puedes claimear
       chunks ejecutando &8/&3Lands claim&7. Además puedes usar &8/&3Lands selection&7 para
       claimear una selección. Establecer Land {land} como land para futuras ediciones &8(/&3Lands
@@ -369,7 +341,7 @@ command:
       posiciones estén establecidas &8(&bCLICK IZQUIERDO &7Y &9CLICK DERECHO&8)&7. Puedes alternar el
       modo de selección ejecutando &8/&3Lands selection&7.'
     max: '&cTu selección tiene muchos chunks en ella. &7Tamaño:&3 {current} &7Tu máximo
-      tamaño es&3 {max} chunks. &8Permiso: lands.selection.NUMBER'
+      tamaño es&3 {max} chunks. &8Permiso: lands.selection.<number>'
     enabled: '&7Haz activado el modo de selección. Usa &5CLICK IZQUIERDO &7en un bloque para seleccionar
       la posición primaria. Con &5CLICK DERECHO &7estableces la posición secundaria. Después de esto puedes aplicar
       a la selección estos comandos: &3Claim&7, &3Unclaim&7, &3Leave'
@@ -409,7 +381,7 @@ command:
     already-claimed: '&cEn tu selección hay un chunk que actualmente ya esta claimeado y que
       no pertenece a tu land &8(&7X: {x} Z: {z}&8)&c. &7Pertenece a&2 {land}&7.'
     max-chunk: '&cNo puedes claimear&4 {chunks} &cmas chunk para esta land. &7El máximo
-      por land&2 {land} &7es&3 {max} &7chunks. &8Permiso: lands.chunks.NUMBER'
+      por land&2 {land} &7es&3 {max} &7chunks. &8Permiso: lands.chunks.<number>'
     selection: '&7Haz claimeado correctamente&3 {chunks} &7chunks para esta land &8(&7Land:&2
       {land}&8)&7. Haz pagado&c ${cost}&7.'
   assign:
@@ -451,7 +423,7 @@ command:
     invited: '&cEste(a) jugador(a) ya está invitado. &7Porfavor espera mientras el acepta
       &8(&7Land:&2 {land}&8)&7.'
     max-lands: '&7Jugador(a)&3 {player} &7ha alcanzado su maximo de lands en las que puede estar.
-      &8Permission: lands.lands.NUMBER'
+      &8Permission: lands.lands.<number>'
     max-members: '&cNo se puedo confiar en el jugador(a)&4 {player} &cen land&4 {land}&c. &7El dueño
       de esta land alcanzó su máximo de&3 {members} &7jugador@s en su land.'
     land:
@@ -501,7 +473,7 @@ command:
     own-land: '&cNo tienes permiso de tener una land y ser miembro de otras.
       &7Debes dejar tu propia land primero.'
     max-lands: '&cNo puedes unirte a más lands. &7Solo puedes tener&3 {max} &7lands.
-      &8Permiso: lands.lands.NUMBER'
+      &8Permiso: lands.lands.<number>'
     notification: '&7Aun tienes&3 {invites} &7invitaciones de otras Lands. Usa &8/&3Land
       invites &7para obtener una lista de ellas.'
     land:

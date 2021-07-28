@@ -2,8 +2,8 @@
 # Please note that each config section (level section) name and level name must be unique.
 # You must insert valid YAML format. To verify your format, you can paste the content of this file here: https://yaml-online-parser.appspot.com
 
-# Default land levels. You can also add your own levels.
-# The order of the roles is ascending (lowest level -> highest).
+# Default land and nation levels. You can also add your own levels.
+# The order of the levels is ascending (lowest level -> highest).
 
 land:
   # Enable land levels?
@@ -13,11 +13,6 @@ land:
     1:
       # Set the name of the level.
       name: 'Settlement'
-      requirements:
-        # Required members to get this level assigned.
-        members: 0
-        # Required chunks to get this level assigned.
-        chunks: 0
       # These values are only active if the land isn't a member of any nation.
       values:
         # Modify the chunks amount by x amount. This also supports negative values.
@@ -27,53 +22,73 @@ land:
     2:
       name: 'Village'
       requirements:
+        # Required members to get this level assigned.
         members: 4
+        # Required chunks to get this level assigned.
         chunks: 0
+        # Required bank balance to get this level assigned (/lands balance).
+        balance: 7500
       values:
         chunks: 1
         upkeep: 5
+      # Execute console commands, if the land reaches this level or gets downgraded from this level to the previous one.
+      # Available placeholders:
+      # {level}: Name of the level
+      # {land}: Name of the land
+      # {owner}: The player name of the land owner.
+      # {member}: The player name a land member.
+      # If the command contains the {member} placeholder, the command will be executed for each player that is trusted in the land.
+      commands:
+        # When a land reaches this level.
+        reached: []
+        # When a land gets downgraded from this level to the previous one.
+        down: []
     3:
       name: 'Town'
       requirements:
         members: 8
         chunks: 0
+        balance: 17000
       values:
         chunks: 2
         upkeep: 10
+      commands:
+        reached: []
+        down: []
     4:
       name: 'City'
       requirements:
         members: 14
         chunks: 0
+        balance: 30000
       values:
         chunks: 4
         upkeep: 25
+      commands:
+        reached: []
+        down: []
     5:
       name: 'Land'
       requirements:
         members: 24
         chunks: 0
+        balance: 55000
       values:
         chunks: 8
         upkeep: 30
+      commands:
+        reached: []
+        down: []
 
 
 nation:
   # Enable nation levels?
   enabled: true
-  # How should the levels be determinated?
-  # Available: MEMBERS, CHUNKS
-  requirement: 'MEMBERS'
-  # Here you can edit existing or add new levels.
+  # Here you can edit existing or add new nation levels.
   levels:
     1:
       # Set the name of the level.
       name: 'Federation'
-      requirements:
-        # Required members (total players) to get this level assigned.
-        members: 0
-        # Required chunks to get this level assigned.
-        chunks: 0
       values:
         # Give each land of the nation x amount of additional chunks.
         chunks: 0
@@ -83,16 +98,45 @@ nation:
     2:
       name: 'Nation'
       requirements:
-        members: 1
+        # Required members (total unique players) to get this level assigned.
+        members: 32
+        # Required total chunks to get this level assigned.
         chunks: 0
+        # Required total balance (the balance of all lands) to get this level assigned.
+        balance: 100000
       values:
         chunks: 20
         upkeep: 20
+      # Execute console commands, if the nation reaches this level or gets downgraded from this level to the previous one.
+      # Available placeholders:
+      # {level}: Name of the level
+      # {nation}: Name of the nation
+      # {owner}: The player name of nation owner.
+      # {land}: Name of a land that is part of the nation.
+      # If the command contains the {land} placeholder, the command will be executed for each land, which is part of the nation.
+      commands:
+        # When a nation reaches this level.
+        reached: []
+        # When a nation gets downgraded from this level to the previous one.
+        down: []
     3:
       name: 'Empire'
       requirements:
         members: 64
         chunks: 0
+        balance: 250000
       values:
         chunks: 30
         upkeep: 30
+      commands:
+        reached: []
+        down: []
+
+
+# You can disable sounds by setting them to ''
+sound:
+  # Played to each player of the land or nation on level up.
+  up: 'BLOCK_BELL_USE'
+  # Played to each player of the land or nation on level down.
+  down: 'BLOCK_ANVIL_DESTROY'
+
