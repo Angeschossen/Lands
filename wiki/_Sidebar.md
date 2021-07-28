@@ -33,7 +33,7 @@
 * [Administrator](https://github.com/Angeschossen/Lands/wiki/Permissions#administrator-permissions)
 * [Playtime MAX Reward](https://github.com/Angeschossen/Lands/wiki/Permissions#playtime-max-rewards)
 
-### [Commands](https://github.com/Angeschossen/Lands/wiki/Permissions#command-permissions)
+### [Commands](https://github.com/Angeschossen/Lands/wiki/Commands)
 
 ### [Moderation Tools](https://github.com/Angeschossen/Lands/wiki/Moderation-Tools)
 
