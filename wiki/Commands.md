@@ -153,10 +153,6 @@ Description: Deny invite.
 `Permission: nations.command.leave`\
 Description: Leave nation.
 
-> `/Nations menu`\
-`Permission: nations.command.menu`\
-Description: Open nation menu.
-
 > `/Nations rename`\
 `Permission: nations.command.rename`\
 Description: Rename nation.
