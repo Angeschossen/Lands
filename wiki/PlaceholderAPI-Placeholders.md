@@ -59,6 +59,9 @@ placeholder with lands_nation_name being priorized.
 > **`%lands_land_level_next%`**\
 > Description: Next level of the land
 
+> **`%lands_land_shield%`**\
+> Description: Get remaining shield time.
+
 
 ## Nation
 > **`%lands_nation_name%`**\
@@ -69,6 +72,9 @@ placeholder with lands_nation_name being priorized.
 
 > **`%lands_nation_level_next%`**\
 > Description: Next level of the nation
+
+> **`%lands_nation_shield%`**\
+> Description: Get remaining shield time.
 
 
 ## War
