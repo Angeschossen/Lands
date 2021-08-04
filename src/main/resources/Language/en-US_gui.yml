@@ -29,7 +29,7 @@ general:
       land: '&2Land '
       nation: '&9Nation '
 
-physical-Item:
+physical-item:
   claim-block:
     name: '&7Claimblock'
     lore:
@@ -41,15 +41,17 @@ physical-Item:
     material: GRASS_BLOCK
 
   selection:
-    name: '&eClaim Tool'
+    name: '&2Claim Tool'
     lore:
-      - '&7Use this tool to create a'
-      - '&7selection and claim it:'
-      - '&8/&3Lands claim'
+      - '&7Use this tool to create a selection.'
+      - '&7Selections can be used for:'
+      - ' &8- &e/claim'
+      - ' &8- &e/unclaim'
+      - ' &8- &e/assign'
     material: GOLDEN_HOE
 
   info:
-    name: '&eInfo Tool'
+    name: '&2Info Tool'
     lore:
       - '&7Use this tool to get'
       - '&7information about the claim'
@@ -97,7 +99,7 @@ gui:
           - '&7Close this menu.'
           - ''
           - '&7You can open it again by'
-          - '&7executing &8/&3Lands menu main&7.'
+          - '&7executing &e/lands menu main&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 9
         enabled: true
@@ -110,13 +112,13 @@ gui:
       limitation:
         name: '&8> &6Your Limitations'
         lore:
-          - '&7+ Create&3 {ownlands} &7lands.'
-          - '&7+ Claim&3 {chunks} &7chunks per land.'
-          - '&7+ Have&3 {members} &7members per land.'
-          - ''
-          - '&7+ Support lands, in which you''re trusted,'
-          - '  &7with &3{support-chunks} &7chunks per land.'
-          - '&7+ Join&3 {lands} &7lands.'
+          - '&7● Create&3 {ownlands} &7lands.'
+          - '&7● Claim&3 {chunks} &7chunks per land.'
+          - '&7● Have&3 {members} &7members per land.'
+          - ' '
+          - '&7● Join&3 {lands} &7lands.'
+          - '&7● Support lands, in which you''re trusted,'
+          - '  &7with &3{support-chunks} &7additional claims.'
         material: PLAYER_HEAD
         slot: 17
   player_lands:
@@ -176,10 +178,10 @@ gui:
         name: '&cNo Lands yet'
         lore:
           - '&7To create a land simply execute:'
-          - '&8/&3Lands create &8<&3name&8>.'
+          - '&e/lands create &8<&ename&8>.'
           - ''
           - '&7Other lands can invite you by'
-          - '&7executing &8/&3Lands trust {player}&7.'
+          - '&7executing &e/lands trust {player}&7.'
         material: OAK_SIGN
         from: 10
         to: 18
@@ -234,22 +236,22 @@ gui:
         lore:
           - '&7In this line you can manage your land.'
           - '&7You can trust players, assign roles,'
-          - '&7edit land flags or set taxes.'
+          - '&7edit natural flags or set taxes.'
           - ''
           - '&7Click this item to teleport to'
           - '&7the spawn.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 29
       various:
-        name: '&8> &6Cosmetical Settings'
+        name: '&8> &6Miscellaneous Settings'
         lore:
-          - '&7Edit the land name'
-          - '&7and enter message.'
+          - '&7Edit the land name and'
+          - '&7enter message.'
         material: BEACON
         slot: 35
     f:
       land-settings:
-        name: '&8> &6Land Flags'
+        name: '&8> &6Natural Flags'
         lore:
           - '&7Edit natural flags'
           - '&7of the area&6 {area}&7.'
@@ -337,7 +339,7 @@ gui:
           - '&7set yet. They need to'
           - '&7set a land spawn first:'
           - ''
-          - '&7Execute &8/&3Lands setspawn'
+          - '&7Execute &e/lands setspawn'
           - '&7to set the lands spawn.'
     p:
       placeholder_1:
@@ -412,9 +414,9 @@ gui:
           - '&7You haven''t assigned'
           - '&7any land to this area yet.'
           - ''
-          - '&7Use &8/&3Lands selection'
+          - '&7Use &e/lands selection'
           - '&7to make a selection and then'
-          - '&8/&3Lands selection assign {area}'
+          - '&e/lands selection assign {area}'
           - '&7to assign land to this area.'
         material: ACACIA_FENCE
         from: 10
@@ -451,7 +453,7 @@ gui:
         from: 29
         to: 36
   land_claims:
-    title: '&7{land} - Claims'
+    title: '&8Claims'
     size: 36
     s: { }
     f:
@@ -570,7 +572,7 @@ gui:
         from: 29
         to: 36
   area:
-    title: '&8Area {area}'
+    title: '&8{area}'
     size: 45
     f:
       back:
@@ -617,12 +619,12 @@ gui:
         name: '&6Management'
         lore:
           - '&7Here you can manage this area. You can'
-          - '&7trust players, assign roles, edit land flags'
-          - '&7or set taxes for this area.'
+          - '&7trust players, assign roles,'
+          - '&7edit natural flags or set taxes for this area.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 29
       land-settings:
-        name: '&8> &6Land Flags'
+        name: '&8> &6Natural Flags'
         lore:
           - '&7Here you can edit natural'
           - '&7flags like mob spawning.'
@@ -647,10 +649,10 @@ gui:
         material: GOLD_INGOT
         slot: 33
       various:
-        name: '&8> &6Various Settings'
+        name: '&8> &6Miscellaneous Settings'
         lore:
-          - '&7Edit the area name'
-          - '&7and description.'
+          - '&7Edit the area name and'
+          - '&7description.'
         material: BEACON
         slot: 35
     a:
@@ -667,7 +669,6 @@ gui:
           - '&7in this area.'
           - ''
           - '&8Flag: {flag}'
-          - '&8Bypass: {bypass}'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -682,7 +683,7 @@ gui:
         from: 30
         to: 30
   area_players:
-    title: '&8{area} &7- &8Trusted Players'
+    title: '&8{area} &7> &8Trusted Players'
     size: 36
     l:
       object_all:
@@ -720,8 +721,6 @@ gui:
           - '&7It has a higher priority'
           - '&7than yours or you''re a'
           - '&7member of this role.'
-          - ''
-          - '&8Bypass: {bypass}'
       noaccess_setrole:
         name: '&4Failure: &cNot permitted'
         lore:
@@ -799,7 +798,7 @@ gui:
         from: 29
         to: 36
   area_banned:
-    title: '&8{area} &7- &8Banned Players'
+    title: '&8{area} &7> &8Banned Players'
     size: 36
     l:
       object_all:
@@ -890,7 +889,7 @@ gui:
         from: 29
         to: 36
   area_invites:
-    title: '&8{area} &7- &8Invites'
+    title: '&8{area} &7> &8Invites'
     size: 36
     f:
       page_previous:
@@ -959,7 +958,7 @@ gui:
         from: 27
         to: 36
   area_invite:
-    title: '&8Invite {player}'
+    title: '{player}'
     size: 27
     s:
       revoke:
@@ -1014,7 +1013,7 @@ gui:
         from: 1
         to: 27
   area_roles:
-    title: '&8{area} &7- &8Roles'
+    title: '&8{area} &7> &8Roles'
     size: 27
     l:
       object:
@@ -1085,15 +1084,11 @@ gui:
           - '&7It has a higher priority'
           - '&7than yours or you''re a'
           - '&7member of this role.'
-          - ''
-          - '&8Bypass: {bypass}'
       failure_access:
         name: '&4Failure: &cNot allowed'
         lore:
           - '&7You''re not allowed to'
           - '&7edit roles in this area.'
-          - ''
-          - '&8Bypass: {bypass}'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1194,8 +1189,6 @@ gui:
         lore:
           - '&7You''re not allowed to'
           - '&7edit roles in this area.'
-          - ''
-          - '&8Bypass: {bypass}'
       failure_priority:
         name: '&4Failure: &cRole Priority'
         lore:
@@ -1204,8 +1197,6 @@ gui:
           - '&7It has a higher priority'
           - '&7than yours or you''re a'
           - '&7member of this role.'
-          - ''
-          - '&8Bypass: {bypass}'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1220,14 +1211,14 @@ gui:
         from: 21
         to: 21
   role_players:
-    title: '&8{role} &7- &8Players'
+    title: '&8Players'
     size: 36
     l:
       object:
         name: '&e{player}'
         lore:
           - '&7This player supports your land'
-          - '&7with &a{support} &7additional claims.'
+          - '&7with &3{support} &7additional claims.'
         material: PLAYER_HEAD
         from: 10
         to: 27
@@ -1263,7 +1254,7 @@ gui:
         from: 29
         to: 36
   role_settings:
-    title: '&8{role} &7- &8Flags'
+    title: '&8Flags'
     size: 36
     s: { }
     f:
@@ -1462,7 +1453,7 @@ gui:
           - '&7Unlocked: {unlocked}'
           - ''
           - '&7Allow this role to'
-          - '&7use &8/&3Fly &7here?'
+          - '&7use &e/fly &7here?'
         material: FEATHER
         from: 10
         to: 27
@@ -1579,18 +1570,18 @@ gui:
         from: 10
         to: 27
       setting_edit_land:
-        name: '&6Edit Land Flags'
+        name: '&6Edit Natural Flags'
         lore:
           - '&7Status: {enabled}'
           - '&7Unlocked: {unlocked}'
           - ''
           - '&7Allow this role to'
-          - '&7edit land flags?'
+          - '&7edit natural flags?'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         from: 10
         to: 27
       setting_edit_various:
-        name: '&6Edit various Settings'
+        name: '&6Edit miscellaneous Settings'
         lore:
           - '&7Status: {enabled}'
           - '&7Unlocked: {unlocked}'
@@ -1703,7 +1694,7 @@ gui:
           - '&7withdraw money from'
           - '&7the land bank?'
           - ''
-          - '&7Command: &8/&3Lands withdraw'
+          - '&7Command: &e/lands withdraw'
         material: GOLD_NUGGET
         from: 10
         to: 27
@@ -1721,8 +1712,6 @@ gui:
         lore:
           - '&7You''re not allowed to'
           - '&7edit roles in this area.'
-          - ''
-          - '&8Bypass: {bypass}'
       failure_priority:
         name: '&4Failure: &cRole Priority'
         lore:
@@ -1731,8 +1720,6 @@ gui:
           - '&7It has a higher priority'
           - '&7than yours or you''re a'
           - '&7member of this role.'
-          - ''
-          - '&8Bypass: {bypass}'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1743,7 +1730,7 @@ gui:
         from: 29
         to: 36
   area_settings:
-    title: '&8{area} &7- &8Land Flags'
+    title: '&8{area} &7> &8Natural Flags'
     size: 36
     s: { }
     f:
@@ -1933,15 +1920,11 @@ gui:
           - '&7It has a higher priority'
           - '&7than yours or you''re a'
           - '&7member of this role.'
-          - ''
-          - '&8Bypass: {bypass}'
       failure_access:
         name: '&4Failure: &cNot allowed'
         lore:
           - '&7You''re not allowed to'
           - '&7edit roles in this area.'
-          - ''
-          - '&8Bypass: {bypass}'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1952,7 +1935,7 @@ gui:
         from: 27
         to: 36
   taxes:
-    title: '&8{holder} &7- &8Taxes'
+    title: '&8Taxes'
     size: 27
     s:
       plus-1:
@@ -2067,21 +2050,18 @@ gui:
           - '&7the taxes of this area.'
           - ''
           - '&8Flag: {setting}'
-          - '&8Bypass permission:'
-          - '&8lands.admin.setting_edit_taxes'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
   action-confirm:
-    title: '&8Please confirm this Action'
+    title: '&8Confirm this Action'
     size: 27
     s:
       info:
         name: '&8> &6Confirm this Action'
         lore:
-          - ''
           - '&7Click &aConfirm &7to confirm or'
           - '&cAbort &7to abort this action.'
         material: OAK_SIGN
@@ -2090,11 +2070,9 @@ gui:
       yes_surrender:
         name: '&aConfirm'
         lore:
-          - '&7Confirm this action.'
-          - ''
-          - '&cNOTE: &7Your land may'
-          - '&7need to pay a tribute'
-          - '&7in order to surrender.'
+          - '&7Your land may need to'
+          - '&7pay a tribute in order'
+          - '&7to surrender.'
         material: LIME_STAINED_GLASS_PANE
         from: 10
         to: 13
@@ -2156,7 +2134,7 @@ gui:
           - '&7received invites yet.'
           - ''
           - '&7Players can invite you by executing:'
-          - '&8/&3Lands trust {player}'
+          - '&e/lands trust {player}'
         material: OAK_SIGN
         from: 10
         to: 27
@@ -2170,7 +2148,7 @@ gui:
         from: 27
         to: 36
   player_invite:
-    title: '&8Invite {land}'
+    title: '&8{land}'
     size: 27
     f:
       info:
@@ -2188,8 +2166,7 @@ gui:
         name: '&aAccept'
         lore:
           - '&7Accept this invite.'
-          - ''
-          - '&7Tax value:&c ${tax}'
+          - '&7Taxes:&c ${tax}'
         material: LIME_STAINED_GLASS_PANE
         from: 10
         to: 13
@@ -2197,8 +2174,6 @@ gui:
         name: '&cDeny'
         lore:
           - '&7Deny this invite.'
-          - ''
-          - '&7Tax value:&c ${tax}'
         material: RED_STAINED_GLASS_PANE
         from: 15
         to: 18
@@ -2280,7 +2255,7 @@ gui:
         to: 27
 
   land_info:
-    title: '&8{land}'
+    title: '&cInfo'
     size: 27
     s:
       close:
@@ -2289,7 +2264,7 @@ gui:
           - '&7Close this menu.'
           - ''
           - '&7You can open it again'
-          - '&7by executing &8/&3Lands info&7.'
+          - '&7by executing &e/lands info&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
     f:
@@ -2352,7 +2327,7 @@ gui:
         from: 1
         to: 27
   land_various:
-    title: Various Settings
+    title: '&8Miscellaneous'
     size: 9
     a:
       failure_noaccess:
@@ -2363,8 +2338,6 @@ gui:
           - ''
           - '&7Only the land owner'
           - '&7is permitted to do that.'
-          - ''
-          - '&8Bypass permission: {bypass}'
     s: { }
     f:
       name:
@@ -2408,7 +2381,7 @@ gui:
         from: 1
         to: 9
   area_various:
-    title: Various Settings
+    title: '&8Miscellaneous'
     size: 27
     f:
       name:
@@ -2468,7 +2441,7 @@ gui:
           - '&7Close this menu.'
           - ''
           - '&7You can open it again by'
-          - '&7executing &8/&3Lands list&7.'
+          - '&7executing &e/lands list&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 46
     f:
@@ -2527,7 +2500,7 @@ gui:
           - '&7which match your filter.'
           - ''
           - '&7To create a land, simply execute'
-          - '&8/&3Lands create &8<&3name&8>.'
+          - '&e/lands create &8<&ename&8>.'
         material: PAPER
         from: 10
         to: 45
@@ -2547,7 +2520,7 @@ gui:
           - '&7set yet. They need to'
           - '&7set a land spawn first.'
           - ''
-          - '&7They can execute &8/&3Lands setspawn'
+          - '&7They can execute &e/lands setspawn'
           - '&7to set the lands spawn.'
       failure_teleport_cost:
         name: '&4Denied: &cCosts'
@@ -2761,7 +2734,7 @@ gui:
           - '&7Close this menu.'
           - ''
           - '&7You can open it again by'
-          - '&7executing &8/&3Wars menu&7.'
+          - '&7executing &e/wars menu&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 9
     a:
@@ -2771,8 +2744,7 @@ gui:
           - '&7You''re not allowed to'
           - '&7do this for &8({object}&8)'
           - ''
-          - '&8Setting: {flag}'
-          - '&8Bypass: {bypass}'
+          - '&8Flag: {flag}'
       failure_surrender:
         name: '&4Failure: &cSurrender rejected'
         lore:
@@ -2802,7 +2774,7 @@ gui:
         from: 1
         to: 27
   war_lands:
-    title: '&8{type}'
+    title: '&8{team}'
     size: 36
     f:
       back:
@@ -2978,7 +2950,7 @@ gui:
           - '&7Close this menu.'
           - ''
           - '&7You can open it again'
-          - '&7by executing &8/&3Nation menu&7.'
+          - '&7by executing &e/nation menu&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 9
       war:
@@ -3062,7 +3034,7 @@ gui:
         lore:
           - '&7Here you can manage your nation.'
           - '&7You can setup nation taxes,'
-          - '&7edit land flags or set taxes.'
+          - '&7edit natural flags or set taxes.'
         material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0='
         slot: 20
       taxes:
