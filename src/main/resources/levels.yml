@@ -15,19 +15,34 @@ land:
       name: 'Settlement'
       # These values are only active if the land isn't a member of any nation.
       values:
-        # Modify the chunks amount by x amount. This also supports negative values.
+        # The chunks value will add or remove (= negative value) chunks to the land. That means that the land can claim more (or less) chunks at /claim.
         chunks: 0
-        # Modify upkeep by x percent. This also supports negative values.
+        # The upkeep value will higher or lower (= negative value) their upkeep costs by a given value.
         upkeep: 0
     2:
       name: 'Village'
       requirements:
         # Required members to get this level assigned.
-        members: 4
+        members:
+          value: 4
+          name: 'Trust 4 Players'
+          description:
+            - '&7Trust 4 players in this land.'
+            - '&7Command: &e/lands trust'
         # Required chunks to get this level assigned.
-        chunks: 0
+        chunks:
+          value: 0
+          name: 'Claim 0 Chunks'
+          description:
+            - '&7Claim 0 chunks for this land.'
+            - '&7Command: &e/claim'
         # Required bank balance to get this level assigned (/lands balance).
-        balance: 7500
+        balance:
+          value: 7500
+          name: 'Balance of $7500'
+          description:
+            - '&7Have $7500 deposited into this land bank.'
+            - '&7Command: &e/lands deposit'
       values:
         chunks: 1
         upkeep: 5
@@ -46,9 +61,24 @@ land:
     3:
       name: 'Town'
       requirements:
-        members: 8
-        chunks: 0
-        balance: 17000
+        members:
+          value: 8
+          name: 'Trust 8 Players'
+          description:
+            - '&7Trust 8 players in this land.'
+            - '&7Command: &e/lands trust'
+        chunks:
+          value: 0
+          name: 'Claim 0 Chunks'
+          description:
+            - '&7Claim 0 chunks for this land.'
+            - '&7Command: &e/claim'
+        balance:
+          value: 17000
+          name: 'Balance of $17000'
+          description:
+            - '&7Have $17000 deposited into this land bank.'
+            - '&7Command: &e/lands deposit'
       values:
         chunks: 2
         upkeep: 10
@@ -58,9 +88,24 @@ land:
     4:
       name: 'City'
       requirements:
-        members: 14
-        chunks: 0
-        balance: 30000
+        members:
+          value: 14
+          name: 'Trust 14 Players'
+          description:
+            - '&7Trust 14 players in this land.'
+            - '&7Command: &e/lands trust'
+        chunks:
+          value: 0
+          name: 'Claim 0 Chunks'
+          description:
+            - '&7Claim 0 chunks for this land.'
+            - '&7Command: &e/claim'
+        balance:
+          value: 30000
+          name: 'Balance of $30000'
+          description:
+            - '&7Have $30000 deposited into this land bank.'
+            - '&7Command: &e/lands deposit'
       values:
         chunks: 4
         upkeep: 25
@@ -70,9 +115,24 @@ land:
     5:
       name: 'Land'
       requirements:
-        members: 24
-        chunks: 0
-        balance: 55000
+        members:
+          value: 24
+          name: 'Trust 24 Players'
+          description:
+            - '&7Trust 24 players in this land.'
+            - '&7Command: &e/lands trust'
+        chunks:
+          value: 0
+          name: 'Claim 0 Chunks'
+          description:
+            - '&7Claim 0 chunks for this land.'
+            - '&7Command: &e/claim'
+        balance:
+          value: 55000
+          name: 'Balance of $55000'
+          description:
+            - '&7Have $55000 deposited into this land bank.'
+            - '&7Command: &e/lands deposit'
       values:
         chunks: 8
         upkeep: 30
@@ -98,15 +158,41 @@ nation:
     2:
       name: 'Nation'
       requirements:
+        # Required minimum amount of unique lands in the nation.
+        # This does not include the capital land.
+        lands:
+          value: 3
+          name: '3 Lands'
+          description:
+            - '&7Invite 3 lands to join your nation'
+            - '&7and let them accept your invite.'
+            - '&7Command: &e/nation trust'
         # Required members (total unique players) to get this level assigned.
-        members: 32
+        members:
+          value: 32
+          name: '32 unique Players'
+          description:
+            - '&7Have 32 players trusted in total.'
+            - '&7Command: &e/lands trust'
         # Required total chunks to get this level assigned.
-        chunks: 0
+        chunks:
+          value: 0
+          name: 'Claim 0 Chunks'
+          description:
+            - '&7Have 0 claims in total.'
+            - '&7Command: &e/claim'
         # Required total balance (the balance of all lands) to get this level assigned.
-        balance: 100000
+        balance:
+          value: 100000
+          name: 'Balance of $100000'
+          description:
+            - '&7Have $100000 deposited in total.'
+            - '&7Command: &e/lands deposit'
       values:
-        chunks: 20
-        upkeep: 20
+        chunks:
+          value: 20
+        upkeep:
+          value: 20
       # Execute console commands, if the nation reaches this level or gets downgraded from this level to the previous one.
       # Available placeholders:
       # {level}: Name of the level
@@ -122,9 +208,31 @@ nation:
     3:
       name: 'Empire'
       requirements:
-        members: 64
-        chunks: 0
-        balance: 250000
+        lands:
+          value: 6
+          name: '6 Lands'
+          description:
+            - '&7Invite 6 lands to join your nation'
+            - '&7and let them accept your invite.'
+            - '&7Command: &e/nations trust'
+        members:
+          value: 64
+          name: '64 unique Players'
+          description:
+            - '&7Have 64 players trusted in total.'
+            - '&7Command: &e/lands trust'
+        chunks:
+          value: 0
+          name: 'Claim 0 Chunks'
+          description:
+            - '&7Have 0 claims in total.'
+            - '&7Command: &e/claim'
+        balance:
+          value: 250000
+          name: 'Balance of $250000'
+          description:
+            - '&7Have $250000 deposited in total.'
+            - '&7Command: &e/lands deposit'
       values:
         chunks: 30
         upkeep: 30
