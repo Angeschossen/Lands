@@ -93,6 +93,12 @@ All types of interaction that are not covered by the other INTERACT_ flags.
 * **INTERACT_CONTAINER**\
 Open containers, like chests
 
+* **INTERACT_DOOR**\
+  Open doors
+
+* **INTERACT_TRAPDOOR**\
+  Open trapdoors
+  
 * **INTERACT_MECHANISM**\
 Use redstone, levers, pressure plates etc.
 
@@ -134,6 +140,9 @@ Use ender pearls
 Attack monsters\
 If disabled: Monsters also won't be able to damage the players of the role.
 
+* **TRAMPLE_FARMLAND**\
+  Allow players to trample farmland.
+  
 * **NO_DAMAGE**\
 Players won't get any damage from any damage cause.
 
