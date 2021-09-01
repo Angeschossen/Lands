@@ -68,12 +68,13 @@ Description: Rename land.
 > `/Lands selection`\
 `Permission: lands.command.selection`\
 Description: Select a region for actions like /Lands claim.\
+Use `/Lands selection expand` to expand the selection to all y levels.\
 Possible actions:\
 /Lands claim\
 /Lands unclaim\
-/Lands leave\
 /Lands trust\
 /Lands untrust
+
 
 > `/Lands setrole <player> <area,*> <role>`\
 `Permission: lands.command.setrole`\
@@ -114,10 +115,14 @@ Area parameter is optional.
 `Permission: lands.command.view`\
 Description: Visualise land borders.
 
-> `/Lands wild`\
+> `/Lands wild [world]`\
 `Permission: lands.command.wild`\
 Description: Teleport to random location.\
 You can set options for this in config.
+
+> `/Lands wild [world] [player]`\
+`Permission: lands.command.wild.others`\
+Description: Execute /wild for other players.
 
 > `/Lands withdraw [land] <amount>`\
 `Permission: lands.command.withdraw`\
