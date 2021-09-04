@@ -13,7 +13,7 @@ You can even display the placeholders for you current location, by just appendin
 
 > **`%lands_affiliation%`**\
 > Description: This is combines the lands_nation_name and lands_land_name`\
-placeholder with lands_nation_name being priorized.
+placeholder with lands_nation_name being prioritized.
 
 
 ## Land
@@ -64,6 +64,10 @@ placeholder with lands_nation_name being priorized.
 
 
 ## Nation
+### _any Option
+Display placeholders for any nation the player is in. So not just their current /edit land or the land at their position.
+Just append "_any" to the placeholder, to display the information for any nation the player is in.
+
 > **`%lands_nation_name%`**\
 > Description: Nation name
 
