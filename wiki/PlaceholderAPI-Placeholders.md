@@ -15,6 +15,9 @@ You can even display the placeholders for you current location, by just appendin
 > Description: This is combines the lands_nation_name and lands_land_name`\
 placeholder with lands_nation_name being prioritized.
 
+> **`%lands_claimed%`**\
+> Description: returns true (location is claimed) or false (not claimed)
+
 
 ## Land
 > **`%lands_land_name%`**\
