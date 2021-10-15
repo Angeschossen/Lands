@@ -10,6 +10,11 @@ general:
   offline: '&cOffline'
   all: '&aAll'
 
+  nation:
+    managed:
+      nation: '&cManaged by Nation'
+      land: '&cManaged by Lands'
+
   inbox-filter:
     members: '&e☺ Members'
     economy: '&c$ Economy'
@@ -41,7 +46,7 @@ physical-item:
     material: GRASS_BLOCK
 
   selection:
-    name: '&2Claim Tool'
+    name: '&2Selection Tool'
     lore:
       - '&7Use this tool to create a selection.'
       - '&7Selections can be used for:'
@@ -49,7 +54,6 @@ physical-item:
       - ' &8- &e/unclaim'
       - ' &8- &e/assign'
     material: GOLDEN_HOE
-
   info:
     name: '&2Info Tool'
     lore:
@@ -57,6 +61,12 @@ physical-item:
       - '&7information about the claim'
       - '&7you''re pointing at.'
     material: FEATHER
+  capture:
+    name: '&2Capture Block'
+    lore:
+      - '&7Place this block on the enemy land'
+      - '&7during war in order to capture it.'
+    material: BEACON
 
 skull:
   area:
@@ -129,15 +139,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 21
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 25
       back:
@@ -291,19 +299,18 @@ gui:
           - '{inbox}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
         slot: 16
-      stats:
+      stat:
         name: '&8> &6Statistics'
         lore:
           - '&7Spawn: {0}, x={1}, z={2}'
-          - ''
           - '&7Nation: {3}'
           - '&7Claims: {4} / {5}'
           - '&7Members: {6} / {7}'
           - ''
-          - '&7Level: {8}'
+          - '&7&nLevel:&7 {8}'
           - '&7Click for more information.'
           - ''
-          - '&7Economy'
+          - '&7&nEconomy'
           - '&8- &7Land'
           - '  &7Balance: ${9}'
           - '  &7Next claim cost: ${10}'
@@ -378,15 +385,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 35
       back:
@@ -397,7 +402,21 @@ gui:
         material: RED_STAINED_GLASS_PANE
         slot: 28
     l:
-      object:
+      area:
+        name: '&6{area}'
+        lore:
+          - '&7Open the menu for'
+          - '&7this area.'
+          - ''
+          - '&7Description:'
+          - '{description}'
+          - ' '
+          - '&8✖ &3KEY Q'
+          - '   &7Delete this area.'
+        material: OAK_FENCE
+        from: 10
+        to: 27
+      area_default:
         name: '&6{area}'
         lore:
           - '&7Open the menu for'
@@ -418,16 +437,31 @@ gui:
           - '&7to make a selection and then'
           - '&e/lands selection assign {area}'
           - '&7to assign land to this area.'
+          - ' '
+          - '&8✖ &3KEY Q'
+          - '   &7Delete this area.'
         material: ACACIA_FENCE
         from: 10
         to: 27
     a:
+      failure_access:
+        name: '&4Failure: &cNo Access'
+        lore:
+          - '&cYou''re not allowed to delete'
+          - '&careas in this land. &7Your role is'
+          - '&7missing the assign areas flag.'
       failure_rental:
         name: '&4Failure: &cRental'
         lore:
           - '&7You can''t edit this area'
           - '&7while it is rented/sold.'
-          - '&7Tenant:&3 {player}'
+          - '&7Current tenant:&3 {player}'
+      failure_default:
+        name: '&4Failure: &cCan''t delete default Area'
+        lore:
+          - '&7You can''t delete the default area'
+          - '&7of this land. New claims will belong'
+          - '&7to it.'
       failure_untrusted:
         name: '&4Denied: &cNot trusted'
         lore:
@@ -467,15 +501,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 34
       back:
@@ -527,15 +559,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 35
       back:
@@ -686,7 +716,7 @@ gui:
     title: '&8{area} &7> &8Trusted Players'
     size: 36
     l:
-      object_all:
+      object_land:
         name: '&e{player}'
         lore:
           - '&7Trusted in these areas:'
@@ -694,10 +724,12 @@ gui:
           - ''
           - '&8✖ &7MIDDLE CLICK:'
           - '   &7Get more information.'
+          - '&8✖ &3KEY Q'
+          - '   &7Untrust in the whole land.'
         material: PLAYER_HEAD
         from: 10
         to: 27
-      object:
+      object_area:
         name: '&e{player}'
         lore:
           - '&7Role: {role}'
@@ -706,7 +738,9 @@ gui:
           - '   &7▲ Promote'
           - '&8✖ &9RIGHT CLICK'
           - '   &7▼ Demote'
-          - ''
+          - ' '
+          - '&8✖ &3KEY Q'
+          - '   &7Untrust in this area.'
           - '&8✖ &7MIDDLE CLICK:'
           - '   &7More information'
         material: PLAYER_HEAD
@@ -734,6 +768,36 @@ gui:
           - '&7amount of&3 {max} &7members.'
           - ''
           - '&8Permission: lands.members.<number>'
+      failure_access:
+        name: '&4Failure: &cNot allowed'
+        lore:
+          - '&cYou''re not allowed to untrust'
+          - '&cplayers. &7Your role is missing'
+          - '&7the untrust players flag.'
+      failure_self:
+        name: '&4Failure: &cCan''t untrust yourself'
+        lore:
+          - '&7To leave a land use &e/lands leave'
+          - '&7instead.'
+      failure_rented:
+        name: '&4Failure: &cRented'
+        lore:
+          - '&cYou can''t untrust the tenant&4 {player}'
+          - '&cof area&4 {area}&c. &7To remove the area'
+          - '&7for rental, use &e/lands rent remove'
+          - '&7while standing on the area.'
+      failure_edit_player_land:
+        name: '&4Failure: &cRole Priority'
+        lore:
+          - '&cYou can''t edit this player in this land.'
+          - '&7Their role&6 {role} &7has a higher or'
+          - '&7equal priority than yours.'
+      failure_edit_player_area:
+        name: '&4Failure: &cRole Priority'
+        lore:
+          - '&cYou can''t edit this player in this'
+          - '&carea. &7Their role&6 {role} &7has a higher'
+          - '&7or equal priority than yours.'
     f:
       toggle:
         name: '&8> &6View only Area'
@@ -777,15 +841,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 29
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 35
     p:
@@ -868,15 +930,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 29
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 35
     p:
@@ -895,15 +955,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 34
       back:
@@ -914,26 +972,31 @@ gui:
         material: RED_STAINED_GLASS_PANE
         slot: 28
     l:
-      object:
+      invite_area:
         name: '&e{player}'
         lore:
-          - '&7Revoke this invite or'
-          - '&7just view information.'
+          - '&7Trusts them to the area'
+          - '&6{area}&7.'
           - ''
-          - '&7This invite will trust them'
-          - '&7to the area&6 {area}&7.'
+          - '&7Sent:&5 {time}'
+          - '&7Sender: {sender}'
+          - ' '
+          - '&8✖ &3KEY Q'
+          - '   &7Revoke this invite.'
         material: PLAYER_HEAD
         from: 10
         to: 27
-      object_land:
+      invite_land:
         name: '&e{player}'
         lore:
-          - '&7Revoke this invite or'
-          - '&7just view information.'
+          - '&7Trusts them to the whole land'
+          - '&2{land}&7.'
           - ''
-          - '&7This invite will trust'
-          - '&7the player to the whole'
-          - '&7land.'
+          - '&7Sent:&5 {time}'
+          - '&7Sender: {sender}'
+          - ' '
+          - '&8✖ &3KEY Q'
+          - '   &7Revoke this invite.'
         material: PLAYER_HEAD
         from: 10
         to: 27
@@ -942,12 +1005,20 @@ gui:
         lore:
           - '&7Your land hasn''t sent'
           - '&7any invites yet.'
-          - ''
+          - ' '
           - '&7You can send invites'
           - '&7in the members menu.'
         material: OAK_SIGN
         from: 10
         to: 27
+    a:
+      failure_access:
+        name: '&4Failure: &cNo Access'
+        lore:
+          - '&cYou''re not allowed to revoke'
+          - '&cinvites in this area.'
+          - '&7Your role is missing the'
+          - '&7untrust players flag.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -957,66 +1028,11 @@ gui:
         material: GRAY_STAINED_GLASS_PANE
         from: 27
         to: 36
-  area_invite:
-    title: '{player}'
-    size: 27
-    s:
-      revoke:
-        name: '&8> &cRevoke Invite'
-        lore:
-          - '&7Click here to revoke'
-          - '&7this invite.'
-        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
-        slot: 12
-    f:
-      info:
-        name: '&8> &6Information'
-        lore:
-          - '&7Trusts them to the area'
-          - '&6{area}&7.'
-          - ''
-          - '&7Sent:&5 {time}'
-          - '&7Sender: {sender}'
-        material: OAK_SIGN
-        slot: 16
-      info_land:
-        name: '&8> &6Information'
-        lore:
-          - '&7Trusts them to the whole land'
-          - '&2{land}&7.'
-          - ''
-          - '&7Sent:&5 {time}'
-          - '&7Sender: {sender}'
-        material: OAK_SIGN
-        slot: 16
-      back:
-        name: '&cBack'
-        lore:
-          - '&7Go back to'
-          - '{back}&7.'
-        material: RED_STAINED_GLASS_PANE
-        slot: 19
-    a:
-      failure_noAccess:
-        name: '&4Denied: &bRevoke Invite'
-        lore:
-          - '&cYou''re not allowed to'
-          - '&crevoke invites in this'
-          - '&carea.'
-          - ''
-          - '&7You need the permission'
-          - '&7to untrust players in this'
-          - '&7area.'
-    p:
-      placeholder_1:
-        material: GRAY_STAINED_GLASS_PANE
-        from: 1
-        to: 27
   area_roles:
     title: '&8{area} &7> &8Roles'
     size: 27
     l:
-      object:
+      role:
         name: '&7{role}'
         lore:
           - '&7Change role priority:'
@@ -1025,6 +1041,9 @@ gui:
           - '   &7Higher priority'
           - '&8✖ &9SHIFT + RIGHT CLICK'
           - '   &7Lower priority'
+          - ' '
+          - '&8✖ &3KEY Q'
+          - '   &7Delete this role.'
         material: PLAYER_HEAD
         from: 10
         to: 18
@@ -1039,17 +1058,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - ''
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 21
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - ''
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 26
       create:
@@ -1089,6 +1104,12 @@ gui:
         lore:
           - '&7You''re not allowed to'
           - '&7edit roles in this area.'
+      failure_required:
+        name: '&4Failure: &cRole is Required'
+        lore:
+          - '&cYou can''t delete the role'
+          - '&4{role}&c, &7because it is needed'
+          - '&7for player management.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1197,6 +1218,12 @@ gui:
           - '&7It has a higher priority'
           - '&7than yours or you''re a'
           - '&7member of this role.'
+      failure_nation:
+        name: '&4Failure: &cRole managed by Nation'
+        lore:
+          - '&cThis role is partly managed by nation&4 {nation}&c.'
+          - '&7Only the nation can change this setting:'
+          - '&e/nations menu'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1233,15 +1260,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 35
     p:
@@ -1261,15 +1286,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 34
       back:
@@ -1720,6 +1743,19 @@ gui:
           - '&7It has a higher priority'
           - '&7than yours or you''re a'
           - '&7member of this role.'
+      failure_nation:
+        name: '&4Failure: &cRole managed by Nation'
+        lore:
+          - '&cThis role is partly managed by nation&4 {nation}&c.'
+          - '&7Only the nation can change this flag:'
+          - '&e/nations menu'
+      failure_blacklist:
+        name: '&4Failure: &cFlag Blacklisted'
+        lore:
+          - '&cServer admins configured that flag'
+          - '&cto be not configureable by the nation.'
+          - '&7Each land of this nation can configure'
+          - '&7it induvidually.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1737,15 +1773,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 34
       back:
@@ -2062,8 +2096,8 @@ gui:
       info:
         name: '&8> &6Confirm this Action'
         lore:
-          - '&7Click &aConfirm &7to confirm or'
-          - '&cAbort &7to abort this action.'
+          - '&7Click &a&lConfirm &7to confirm or'
+          - '&c&lAbort &7to abort this action.'
         material: OAK_SIGN
         slot: 14
     l:
@@ -2100,15 +2134,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 34
       back:
@@ -2255,7 +2287,7 @@ gui:
         to: 27
 
   land_info:
-    title: '&cInfo'
+    title: '&8{land} &7> &8Info'
     size: 27
     s:
       close:
@@ -2267,6 +2299,13 @@ gui:
           - '&7by executing &e/lands info&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 19
+      level:
+        name: '&8> &6Level'
+        lore:
+          - '&7Click here to view information'
+          - '&7about the current and next level.'
+        material: 'BEACON'
+        slot: 15
     f:
       back:
         name: '&cBack'
@@ -2284,40 +2323,19 @@ gui:
       players:
         name: '&8> &6Players &8(&7{amount}&8)'
         lore:
-          - ''
           - '&e{players}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 13
-      levels:
-        name: '&8> &6Level'
-        lore:
-          - '&7These values are only active'
-          - '&7if the land isn''t a member of'
-          - '&7any nation.'
-          - ''
-          - '&7{0}'
-          - '&7{1}% upkeep cost'
-          - '&7{2} chunks'
-          - ''
-          - '&7Next: {3}'
-          - '&c{4}% upkeep cost'
-          - '&a{5} claims'
-          - ''
-          - ' &8> &7Requirements:'
-          - '   &7{6_s} &7{6} members'
-          - '   &7{7_s} &7{7} chunks'
-          - '   &7{8_s} &7${8} bank balance'
-        material: 'BEACON'
-        slot: 15
       war:
         name: '&8> &6War Stats'
         lore:
-          - '&7Won:&7 {won}'
-          - '&7Lost:&7 {lost}'
+          - '&7Won: {won}'
+          - '&7Lost: {lost}'
           - '  &7WLR:&3 {wlr}'
-          - ''
-          - '&7Kills:&7 {kills}'
-          - '&7Deaths:&7 {deaths}'
+          - ' '
+          - '&7Captures: {captures}'
+          - '&7Kills: {kills}'
+          - '&7Deaths: {deaths}'
           - '  &7KDR:&3 {kdr}'
         material: IRON_SWORD
         slot: 17
@@ -2326,12 +2344,101 @@ gui:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
+  level_progress:
+    title: '&8Level Progress'
+    size: 27
+    s: { }
+    f:
+      page_previous:
+        name: '&9Previous Page'
+        lore:
+          - '&7Go to previous page:&3 {previous}'
+        material: ARROW
+        slot: 21
+      current:
+        name: '&6&nCurrent:&7 {level}'
+        lore:
+          - '&7Attributes:'
+          - '{attributes}'
+        material: OAK_SIGN
+        slot: 23
+      next:
+        name: '&6&nNext:&7 {level}'
+        lore:
+          - '&7{object} &7will reach this'
+          - '&7level, once all requirements'
+          - '&7are met.'
+          - ' '
+          - '&7Attributes:'
+          - '{attributes}'
+        material: BEACON
+        slot: 24
+      page_next:
+        name: '&aNext Page'
+        lore:
+          - '&7Go to next page:&3 {next}'
+        material: ARROW
+        slot: 26
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    l:
+      done:
+        name: '&a✔ {title}'
+        lore:
+          - '{bar} {progress}'
+          - ' '
+          - '{description}'
+        material: LIME_STAINED_GLASS
+        from: 10
+        to: 18
+      progress:
+        name: '&c✘ {title}'
+        lore:
+          - '{bar} {progress}'
+          - ' '
+          - '{description}'
+        material: RED_STAINED_GLASS
+        from: 10
+        to: 18
+      loading:
+        name: '&7? {title}'
+        lore:
+          - '&7The current progress is being'
+          - '&7calculated. The item will update'
+          - '&7once complete.'
+          - ' '
+          - '{description}'
+        material: GRAY_STAINED_GLASS
+        from: 10
+        to: 18
+      max:
+        name: '&7Max Level'
+        lore:
+          - '&7Reached highest level.'
+        material: PAPER
+        from: 10
+        to: 18
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+
   land_various:
     title: '&8Miscellaneous'
     size: 9
     a:
       failure_noaccess:
-        name: '&4Failure: &cNo Access'
+        name: '&4Failure: &cNot allowed'
         lore:
           - '&7You''re not allowed to edit'
           - '&7these options for this land.'
@@ -2466,15 +2573,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 48
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 52
     l:
@@ -2546,8 +2651,7 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       sort:
@@ -2568,8 +2672,7 @@ gui:
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 35
       back:
@@ -2612,6 +2715,13 @@ gui:
         material: PLAYER_HEAD
         from: 10
         to: 27
+    a:
+      failure_cooldown:
+        name: '&4Failure: &cCooldown'
+        lore:
+          - '&7You need to wait another {time}'
+          - '&7before you can do teleport to'
+          - '&7a offer again.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2623,60 +2733,36 @@ gui:
         to: 36
 
 
-  war-state:
+  war:
     title: '&8War'
     size: 27
     f:
       attackers:
-        name: '&8> &cAttackers'
+        name: '&8> &cAttacker {object}'
         lore:
-          - '&7View all attacking lands'
-          - '&7of this war.'
-          - ''
-          - '&8- &7{attacker}'
-          - '  &7Total players: {players}'
-          - ''
-          - '  &7Kills: {kills}'
-          - '  &7Deaths: {deaths}'
+          - '&7View all attacking lands.'
+          - '&7Players: {players}'
+          - ' '
+          - '&7&lStats'
+          - ' &7Captures: {cap}'
+          - ' &7Kills: {kills}'
+          - ' &3= {points} / {towin} &7points to win'
+          - ' {bar}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTU0OTQ3ZGU3ZjUyNTk4MjU1ZDZhZmVlOWQ3N2JlZmFkOWI0ZjI0YzBjNDY2M2QyOGJjZGY4YTY0NTdmMzQifX19
         slot: 11
       defenders:
-        name: '&8> &aDefenders'
+        name: '&8> &aDefender {object}'
         lore:
-          - '&7View all defending lands'
-          - '&7of this war.'
-          - ''
-          - '&8- &7{defender}'
-          - '  &7Total players: {players}'
-          - ''
-          - '  &7Kills: {kills}'
-          - '  &7Deaths: {deaths}'
+          - '&7View all defending lands.'
+          - '&7Players: {players}'
+          - ' '
+          - '&7&lStats'
+          - ' &7Captures: {cap}'
+          - ' &7Kills: {kills}'
+          - ' &3= {points} / {towin} &7points to win'
+          - ' {bar}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRkYmNiN2UxZmJlY2VhOWE3MzUwNDM2Y2JiZWEyYjQ5NmY3NGMyOTcyMDRmMWJiOWFjYzM4NzhkNTQyY2NiIn19fQ==
         slot: 13
-      info_declaration:
-        name: '&8> &6Information'
-        lore:
-          - '&7The war starts in '
-          - '&5~{time}'
-          - ''
-          - '&7The enemy can do these'
-          - '&7things in your land:'
-          - ''
-          - '{settings}'
-        material: IRON_SWORD
-        slot: 15
-      info_war:
-        name: '&8> &6Information'
-        lore:
-          - '&7The war ends in '
-          - '&5~{time}'
-          - ''
-          - '&7The enemy can do these'
-          - '&7things in your land:'
-          - ''
-          - '{settings}'
-        material: IRON_SWORD
-        slot: 15
       tribute_attacker:
         name: '&8> &6Tribute:&c ${tribute}'
         lore:
@@ -2737,6 +2823,13 @@ gui:
           - '&7executing &e/wars menu&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 9
+    s:
+      info:
+        name: '&8> &6Information'
+        lore:
+          - '&7Click for more information.'
+        material: IRON_SWORD
+        slot: 15
     a:
       failure_permission:
         name: '&4Failure: &cNo Access'
@@ -2773,6 +2866,84 @@ gui:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
+  war_info:
+    title: '&8War &7> &8Information'
+    size: 27
+    f:
+      declaration_start:
+        name: '&8> &6Start'
+        lore:
+          - '&7The war will start in'
+          - '&5{time}&7. Until then each'
+          - '&7team has time to prepare.'
+        material: CLOCK
+        slot: 16
+      war_end:
+        name: '&8> &6End'
+        lore:
+          - '&7The war will end, if'
+          - '&7one team reaches a total'
+          - '&7amount of&3 {points} &7points'
+          - '&7or a team surrenders.'
+          - ' '
+          - '&7If none of these happen,'
+          - '&7the war will timeout in'
+          - '&5{end}&7.'
+        material: CLOCK
+        slot: 16
+      points:
+        name: '&8> &6Points'
+        lore:
+          - '&7A team needs {points} points to win.'
+          - ''
+          - ' &7Kill: &3{p_kill} point(s)'
+          - ' &7Capture: &3{p_cap} point(s)'
+          - '   &7To capture a enemy area,'
+          - '   &7place a capture item inside it.'
+          - '   &7You can see the crafting recipe'
+          - '   &7for it in this menu.'
+          - ' '
+          - '&7The enemy can do these'
+          - '&7actions in your land:'
+          - '{settings}'
+        material: IRON_INGOT
+        slot: 12
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    s:
+      recipe:
+        name: '&8> &6Capture Point Recipe'
+        lore:
+          - '&7Click here to see the'
+          - '&7recipe of a capture point.'
+        material: BEACON
+        slot: 14
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  war_capture_recipe:
+    title: '&8War &7> &8Info &7> &8Recipe'
+    size: 27
+    f:
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
   war_lands:
     title: '&8{team}'
     size: 36
@@ -2787,15 +2958,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 34
     l:
@@ -2981,29 +3150,33 @@ gui:
           - '{inbox}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
         slot: 16
-      stats:
+      stat:
         name: '&8> &6Statistics'
         lore:
           - '&7Total members: {0}'
           - ''
-          - '&7Level'
-          - '&7Current: {1}'
-          - ' &7{2} claims for each land'
-          - ''
-          - '&7Next: {3} &7({4} members)'
-          - ' &a{5} claims for each land'
-          - ''
-          - '&7Economy'
+          - '&7&nLevel:&7 {1}'
+          - '&7Click for more information.'
+          - ' '
+          - '&7&nEconomy'
           - '&8- &7Nation'
-          - '  &7Balance: ${6}'
-          - '  &7Nation pays&c ${7} &7upkeep'
-          - '  &7in {8}.'
-          - ''
-          - '&8- &4Your land &8({9})'
-          - '  &7Upkeep of&c ${10} &7to the'
-          - '  &7nation in {11}.'
+          - '  &7Balance: ${2}'
+          - '  &7Nation pays&c ${3} &7upkeep'
+          - '  &7in {4}.'
+          - ' '
+          - '&8- &4Your land &8({5})'
+          - '  &7Upkeep of&c ${6} &7to the'
+          - '  &7nation in {7}.'
         material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ=='
         slot: 17
+      role:
+        name: '&8> &6Nation Role'
+        lore:
+          - '&7Configure what nation members'
+          - '&7can do in each land that is'
+          - '&7part of this nation.'
+        material: PLAYER_HEAD
+        slot: 23
     s:
       information:
         name: '&6Information'
@@ -3044,6 +3217,14 @@ gui:
           - '&7lands of your nation.'
         material: GOLD_INGOT
         slot: 22
+      effects:
+        name: '&8> &6Effect'
+        lore:
+          - '&7Set a effect to be active within'
+          - '&7your nation. Effects can be unlocked'
+          - '&7through nation level progression.'
+        material: POTION
+        slot: 24
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -3072,15 +3253,13 @@ gui:
       page_previous:
         name: '&9Previous Page'
         lore:
-          - '&7Go to previous page:&9 {previous}'
-          - '&7Current:&3 {current}'
+          - '&7Go to previous page:&3 {previous}'
         material: ARROW
         slot: 30
       page_next:
         name: '&aNext Page'
         lore:
-          - '&7Go to next page:&9 {next}'
-          - '&7Current:&3 {current}'
+          - '&7Go to next page:&3 {next}'
         material: ARROW
         slot: 35
       trust:
@@ -3130,6 +3309,85 @@ gui:
         material: PLAYER_HEAD
         from: 10
         to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+
+  nation_effects:
+    title: '&8Effects'
+    size: 36
+    f:
+      back:
+        name: '&cBack'
+        lore:
+          - '&7Go back to'
+          - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Previous Page'
+        lore:
+          - '&7Go to previous page:&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aNext Page'
+        lore:
+          - '&7Go to next page:&3 {next}'
+        material: ARROW
+        slot: 35
+    l:
+      object:
+        name: '&6{effect}'
+        lore:
+          - '&7Active: {active}'
+          - ' '
+          - '&7Click to set a effect to be active'
+          - '&7within your nation or click on a'
+          - '&7active effect, to set none.'
+        material: POTION
+        from: 10
+        to: 27
+      object_locked:
+        name: '&6{effect}'
+        lore:
+          - '&8Unlocks at level: {level}'
+        material: POTION
+        from: 10
+        to: 27
+      object_active:
+        name: '&6{effect}'
+        lore:
+          - '&7Active: {active}'
+          - ' '
+          - '&7Click to set a effect to be active'
+          - '&7within your nation or click on a'
+          - '&7active effect, to set none.'
+        material: POTION
+        enchanted: true
+        from: 10
+        to: 27
+    a:
+      failure_locked:
+        name: '&4Failure: &cLevel to low'
+        lore:
+          - '&cYour nation needs to reach level&4 {level}'
+          - '&cbefore you''re able to activate this effect.'
+        material: POTION
+      failure_max:
+        name: '&4Failure: &cMax Amount'
+        lore:
+          - '&cYour nation reached its maximum'
+          - '&camount of&4 {max} &cconcurrent'
+          - '&cactive effects.'
+          - '&7Have more effects active at the'
+          - '&7same time, by reaching a higher level.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE

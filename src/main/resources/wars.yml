@@ -20,6 +20,8 @@ declaration:
   # NOTE: Timeunit is seconds
   # Default is one day
   preparation-time: 1d
+  # Should attackers only be able to send war declarations to lands or nations where at least one player is online?
+  online: false
   # Should a broadcast message be sent to the whole server?
   # You can edit the message in your language file.
   broadcast: true
@@ -35,12 +37,58 @@ declaration:
   # Set minimum land balance for attackers to be able to start a war.
   min-balance: 5000
 
+# Configure points
+points:
+  # Get x points per kill
+  kill: 1
+  # Get x points per capture
+  capture: 5
+  # How many points does a team need to win?
+  towin: 100
+
+# Whenever a enemy places a beacon on the outskirts of a land, a capture point will be created.
+# The invaders then need to hold this point a specific time.
+capture:
+  enabled_3: true
+  # A capture point must be crafted. Players can see the recipe in their /war menu.
+  recipe_list:
+    - 'AIR,RED_STAINED_GLASS_PANE,AIR'
+    - 'AIR,BEACON,AIR'
+    - 'IRON_BLOCK,IRON_BLOCK,IRON_BLOCK'
+  # Set the maximum amount of capture points a team can have placed at the same time.
+  max: 3
+  # Only allow the team to place a capture point every period.
+  place-cooldown_time: 10m
+  # Set the chunks radius that will be affected by the capture point. Invaders will start capturing once they enter the claimed area.
+  # If set to 1, only the chunk in which the capture point is placed in, is affected.
+  # NOTE: This shouldn't be greater than your servers view distance.
+  radius: 1
+  # Should the captured area become unclaimed?
+  unclaim: true
+  # Should the unclaimed area become claimed by the enemy?
+  claim: false
+  # The invaders need to hold the capture time this long, to capture the chunk.
+  hold_time: 10m
+  # Spawn a firework every period, if any players are in the area.
+  firework_time: 30s
+  # Should a capture point item be dropped at removal of the capture point?
+  drop: false
+  # Limit y levels on which capture points are placeable.
+  y:
+    min: 30
+    max_2: 127
+
+sounds:
+  capture:
+    place_sound: 'BLOCK_BELL_USE'
+
+
 # War status message interval. This message appears while the war is running. This is very useful to inform players, which might have been offline for some time, that their land is participating in a war.
 status-interval: 15m
 
 # Set the max time a war can hold on. When this time is over the team with the most kills will win. If both teams have the same amount of kills, it will end in a draw and no team will be rewarded.
 # Default: 1,5 days
-duration: 36h
+timeout: 36h
 
 # Should players, which are engaged in a war, be hidden from dynmap?
 # NOTE: It's currently not possible to do that with BlueMap.
@@ -56,13 +104,14 @@ land-flags_list: []
 # Allow players doing the following things in the enemy land (only during war).
 # Available actions: https://github.com/Angeschossen/Lands/wiki/Roles-and-their-Flags#action-flags
 # NOTE: Adding BLOCK_PLACE or BLOCK_BREAK to this list will allow invaders to break, place ALL blocks. If you want to specify blocks, please use the lists below.
+# NOTE: In war the attackers and defenders also have the flags of the visitor role of the area they're invading.
 role-settings_list:
   - ITEM_PICKUP
   - ATTACK_PLAYER
   - LAND_ENTER
 
 # Allow the placement of specific blocks if the land part of a war.
-# NOTE: This is only needed if BLOCK_PLACE is not in the role-settings_list above.
+# NOTE: This is only needed if BLOCK_PLACE is NOT in the role-settings_list above.
 # Values: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
 block-place_list:
   - LADDER
@@ -184,6 +233,7 @@ combat:
     min-players: 1
     # Set a time period where players are still able to attack the land after the last player of the target land left the server.
     logging-cooldown: 1m
+  # Allies are lands that are part of the same nation.
   allies:
     # Should it be possible to destroy the ally lands of the target?
     # If disabled players won't be able to destroy anything in the ally land of the target.

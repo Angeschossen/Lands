@@ -43,9 +43,9 @@ general:
 help:
   general:
     prefix: '&7Usage: '
-    header: '&7------------<- &5Lands Aide &7Page&6 {page} &8/&e {pages} &7->------------'
+    header: '&7------------<- &5Lands Aide &7Page&6 {page} &a/ {pages} &7->------------'
     page: '&7Utilisez &8/&dLands help {next} &7pour la page suivante.'
-    footer: '&7------------<- &5Lands Aide &7Page&6 {page} &8/&e {pages} &7->------------'
+    footer: '&7------------<- &5Lands Aide &7Page&6 {page} &a/ {pages} &7->------------'
   command:
     help: '&8/&7Lands help &8[&aPage&8] - &eObtenir de l''aide'
     edit: '&8/&7Lands edit &8<&aLand&8> - &eEntrer en mode édition pour la parcelle'
@@ -158,12 +158,12 @@ command:
     land-not-exist: '&cLe terrain&e {land} &cn''existe pas. &7Il n''y
       a pas de terrain portant ce nom&b {land} &7dans ce monde.'
     land-not-member: '&cVous n''êtes pas membre de ce terrain&e {land}&c.
-      &7Utilisez &8/&aLands menu &7pour afficher les terrains dont vous êtes membre.'
+      &7Utilisez &a/Lands menu &7pour afficher les terrains dont vous êtes membre.'
     land-not-trusted: '&cVous ne pouvez pas faire cela. &7Joueur&b {player}
       &7n''est pas membre de ce terrain &8(&7Terrain:&e {land}&8)&7. Vous devez d''abord
-      l''inviter en tapant &8/&aLands trust&7.'
+      l''inviter en tapant &a/Lands trust&7.'
     land-no-action: '&cVous n''êtes pas membre d''un terrain où vous
-      êtes autorisé-e à faire cela. &7Utilisez &8/&aLand create &7pour créer un terrain.'
+      êtes autorisé-e à faire cela. &7Utilisez &a/Land create &7pour créer un terrain.'
     name-exists: '&cCe nom est déjà pris par un autre terrain. &7Vous
       devez en choisir un différent.'
     lands-max: '&cVous ne pouvez plus faire partie d''aucun terrain
@@ -177,13 +177,13 @@ command:
     action-cooldown: '&cVous ne pouvez pas faire cela maintenant. &7Vous
       devez patienter&b {time} &7minutes.'
     none: '&cIl semble que vous ne soyez pas membre d''un terrain.
-      &7Utilisez &8/&aLands create &7pour en créer une.'
-    land-no-own: '&cVous ne possédez pas de terrain. &7Utilisez &8/&aLands
+      &7Utilisez &a/Lands create &7pour en créer une.'
+    land-no-own: '&cVous ne possédez pas de terrain. &7Utilisez &a/Lands
       create &7pour en créer un.'
     world-invalid: '&cVous ne pouvez pas faire ceci dans votre monde
       actuel. &7Vous devez vous rendre dans un autre monde.'
     wilderness: '&cCette parcelle est libre. &7Vous devez vous rendre
-      sur une parcelle occupée. &7Vous pouvez utiliser &8/&aLands menu &7pour afficher
+      sur une parcelle occupée. &7Vous pouvez utiliser &a/Lands menu &7pour afficher
       vos terrains.'
     player-not-exist: '&cil n''y a pas de joueur avec le pseudo&e {player}&c.
       &7S''il vous plaît vérifiez votre saisie.'
@@ -196,7 +196,7 @@ command:
     chunk-is-claimed: '&cVous ne pouvez pas prendre possession de cette
       parcelle. &7Elle appartient déjà au terrain&b {land}&7.'
   help:
-    help: '&7Utilisez &8/&aLand help &7pour obtenir de l''aide.'
+    help: '&7Utilisez &a/Land help &7pour obtenir de l''aide.'
     cmd-not-exist: '&cCette sous-commande n''existe pas. &7Commande&b
       {command} &7introuvable.'
     page-not-exist: '&8[&eProtect&8] &cLa page&e {page} &cn''existe pas. &7Faute de
@@ -208,15 +208,15 @@ command:
     max-own: '&cVous ne pouvez plus créer de terrain. &7Vous avez atteint
       votre quota de&b {max} &7terrain-s possédé-s.'
     success: '&7Terrain créé avec succès&b {land} &7pour&b {cost}&7.
-      Vous pouvez y acquérir des parcelles en utilisant &8/&aLands claim&7.'
+      Vous pouvez y acquérir des parcelles en utilisant &a/Lands claim&7.'
     broadcast: '&7Le terrain&b {land} &7a été créé par&b {player}&7.'
   rename:
     success: '&7Nouveau nom enregistré avec succès&b {name} &7pour le
       terrain &8(&7Land:&e {land}&8)&7. &b ${cost}&7&r&7 ont été débités.'
   edit:
     success: '&7Vous êtes entré-e en mode d''édition pour ce terrain
-      &8(&7Terrain:&e {land}&8)&7. Les prochaines actions, telles que &8/&aLands claim
-      &7ou &8/&aLands trust&7, seront éxécutées sur ce terrain.'
+      &8(&7Terrain:&e {land}&8)&7. Les prochaines actions, telles que &a/Lands claim
+      &7ou &a/Lands trust&7, seront éxécutées sur ce terrain.'
   selection:
     disabled-config: '&cCette fonctionnalité a été désactivée dans la
       configuration par un administrateur. &7Vous devez activer ce paramètre &bland.selection.enabled&7.'
@@ -241,7 +241,7 @@ command:
       &7Votre maximum est&b {max} &7parcelles.'
     auto-create: '&7Tentative de création automatique d''un terrain
       pour vous, parce que vous n''en avez aucun dans ce monde. Vous pouvez en changer
-      le nom en exécutant &8/&aLands rename&7.'
+      le nom en exécutant &a/Lands rename&7.'
     auto-create-fail: '&cEchec de la création automatique d''un terrain
       pour vous. &7S''il vous plaît lisez les messages ci-dessus et contactez quelqu''un
       pour de l''aide.'
@@ -255,7 +255,7 @@ command:
       coûtera&b {next}&7.'
   leave:
     land-owner: '&cVous ne pouvez pas quitter ce terrain. &7En tant
-      que propriétaire vous devez le supprimer d''abord. Utilisez &8/&aLands delete&7.'
+      que propriétaire vous devez le supprimer d''abord. Utilisez &a/Lands delete&7.'
     land-success: '&7Abandon du terrain avec succès&b {land}&7. Vous  n''avez
       désormais plus accès au terrain et à ses parcelles.'
     chunk-success: '&7Abandon de cette parcelle avec succès. &7Vous
@@ -264,7 +264,7 @@ command:
     success: '&7Abandon de cette parcelle avec succès &8(&7X:&e {x}
       &7Z:&e {z}&8)&7. Vous avez été remboursé de&b ${back}.'
   delete:
-    confirm: '&cVous devez confirmer cette action. &7Utilisez &8/&aLand
+    confirm: '&cVous devez confirmer cette action. &7Utilisez &a/Land
       delete {land} confirm&7.'
     success: '&7Effacement de ce terrain avec succès &8(&7Terrain:&e
       {land}&8)&7.'
@@ -280,9 +280,9 @@ command:
     invited: '&cCe joueur possède déjà une invitation. &7S''il vous
       plaît patientez le temps qu''il l''accepte &8(&7Terrain:&e {land}&8)&7.'
     land-target: '&7Joueur&b {player} &7vous a invité à rejoindre son
-      terrain&b {land}&7. Utilisez &8/&aLand accept {land} &7pour accepter son invitation.'
+      terrain&b {land}&7. Utilisez &a/Land accept {land} &7pour accepter son invitation.'
     chunk-target: '&7Joueur&b {player} &7vous a invité sur une de ses
-      parcelles &8(&7X:&e {x} &7Z:&e {z}) &7Utilisez &8/&aLands accept {land} &7pour
+      parcelles &8(&7X:&e {x} &7Z:&e {z}) &7Utilisez &a/Lands accept {land} &7pour
       accepter son invitation.'
     chunk-success: '&7Vous avez invité avec succès&b {player} &7sur
       cette parcelle &8(&7X:&e {x} &7Z:&e {z}&8)&7.'
@@ -328,10 +328,10 @@ command:
       &7Vous pouvez seulement avoir&b {max} &7terrains.'
     land-tax-confirm: '&cLe propriétaire de ce terrain souhaite que
       vous payiez&e ${tax} &7pour rejoindre ce terrain. &7S''il vous plaît confirmez
-      cette action en tapant &8/&aLands accept {land} confirm&7.'
+      cette action en tapant &a/Lands accept {land} confirm&7.'
     chunk-tax-confirm: '&7Le propriétaire de cette parcelle souhaite
       que vous payiez&b ${tax} &7pour rejoindre cette parcelle. &7S''il vous plaît
-      confirmez cette action en tapant &8/&aLand accept {land} confirm&7.'
+      confirmez cette action en tapant &a/Land accept {land} confirm&7.'
     land-fail: '&cEchec de votre admission sur le terrain&e {land}&c.
       &7le propriétaire du terrain a atteint son maximum de&b {members} &7membres
       sur ses parcelles.'
@@ -350,7 +350,7 @@ command:
     land-broadcast: '&b{land} &8| &7Joueur&b {player} &7a rejoint notre
       parcelle&7.'
     notification: '&7Il vous reste encore&b {invites} &7invitations
-      émanant d''autres terrains. Utilisez &8/&aLand invites &7pour les consulter.'
+      émanant d''autres terrains. Utilisez &a/Land invites &7pour les consulter.'
   deny:
     not-exist: '&cVous ne possédez aucune invitation du terrain&e {land}
       &cou bien elle a expiré. &7S''il vous plaît vérifiez votre sasie.'
@@ -370,7 +370,7 @@ command:
     success: '#t#&7Point de téléportation de terrain &adéfini&7.;;&7Coût:&b {cost}'
   spawn:
     not-exist: '&cAucun point de téléportation n''est défini pour le
-      terrain&e {land}&c. &7Quelqu''un doit d''abord le créer en tapant &8/&aLand
+      terrain&e {land}&c. &7Quelqu''un doit d''abord le créer en tapant &a/Land
       setSpawn&7.'
     not-allowed: '&cVous n''êtes pas autorisé-e à vous téléporter vers
       ce terrain &7Le propriétaire doit vous attribuer la permission. Contactez-le

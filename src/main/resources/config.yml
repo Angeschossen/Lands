@@ -12,7 +12,7 @@ general:
   # English (en-US)
   # PRE configured languages:
   # Please note that these rely on community contributions and may not be up to date.
-  # French (fr-FR) by Mina, Kolsark, Kittle
+  # French (fr-FR) by Detrakeurr, Kolsark, Kittle
   # German (de-DE) by Cryper
   # Hungarian (hu-HU) by gbalint
   # Italian (it-IT) by MiniMoro
@@ -59,19 +59,18 @@ general:
   edit-by-loc: false
 
   tools:
-    # Should Lands give every new player the selection tool, which is defined in your gui language file?
-    # If you for example set GOLDEN_HOE as the material in your gui language file, all GOLDEN_HOE's will trigger a selection, not just the given one.
-    # That means that players can craft the tool too and use it to create selections. However, /lands selection still works without any tool in hand.
-    # Automatically giving new players the selection tool, just informs them about claiming and with it they can manage selections from air, instead of needing to touch the block directly.
+    # The tool used to create selections and claim, unclaim or assign them.
     selection:
-      # Should the tool automatically be given to new players?
-      give: true
-      # If true: The selection modification will cycle through pos1 and pos2.
-      # If false: left click = pos1 and right click = pos2
-      cycle: false
-    # Shoulds Lands give every new player a information tool, which is defined in your gui language file?
-    # This tool will send the /lands view information for the location the player is pointing by using the tool.
-    info: true
+      # Lands will automatically give the tool to new players and set it to the slot.
+      # Use -1 to disable receiving the tool.
+      slot: 0
+    # Enable / disable the visualization / info tool.
+    # Should Lands give every new player a information tool, which is defined in your gui language file?
+    # This tool will send the /lands view information for the location the player is pointing at by using the tool.
+    info:
+      # Use -1 to disable receiving the tool.
+      slot_2: 1
+
 
   # Set the format of all economy related displays.
   # NOTE: This setting requires server reload / restart.
@@ -104,11 +103,6 @@ general:
       # This permission contributes claims to lands you're trusted in.
       # If you want to disable this specific option, just set it to 0 or -1.
       support: 0
-
-  # Sound which should be played whenever a player gets teleported by Lands.
-  # Sounds can be disabled by setting their value to ''
-  # NOTE: More options for specific teleportations can be found below.
-  teleport_sound: 'ENTITY_ENDERMAN_TELEPORT'
 
 
 # Land settings
@@ -188,6 +182,17 @@ land:
     rent: true
     # Allow your players to sell sub areas or their whole land?
     sell: true
+    # Use holograms instead of sings? If enabled, after setting up the rent or sell sign, the sign will disappear and a clickable hologram will appear.
+    holograms: false
+    # Teleportation through the /lands rentlist command.
+    teleport:
+      # Wait time until the player gets teleported.
+      # Note: Time unit is seconds.
+      wait_5: 3
+      # Cost for teleportation to a rentable area.
+      costs_7: 0.0
+      # Cooldown for teleportation to a rentable area.
+      cooldown_6: 0s
 
   # Invite settings
   invite:
@@ -207,8 +212,15 @@ land:
     # If someone deleted his land, and the claim size isn't null (this prevents spamming).
     # Message: land.create.broadcast
     delete: true
+
+  # Settings for /lands chat
+  chat:
     # Should /lands chat messages be forwarded to console?
-    chat: false
+    forward: false
+    # Should global chat be muted for a player if they have /lands chat toggle enabled?
+    # NOTE: This setting required server reload / restart.
+    mute-global: false
+
 
   # Rename settings
   # Command: /lands rename
@@ -230,9 +242,6 @@ land:
     # Set the fly deactivation delay if a player is not allowed to fly at this position.
     # Timeunit: Seconds
     disable-delay: 3
-    # Play a sound when the players fly gets re-enabled after it has been disabled by Lands before.
-    # You can disable this, by setting it to ''
-    re-enable_sound: 'ITEM_ARMOR_EQUIP_ELYTRA'
 
   # /lands setowner Settings
   setowner:
@@ -265,8 +274,7 @@ land:
   # Specified combat settings which do not affect wars.
   combat:
     # Combat tagging
-    # If a player attacks a other player he will by tagged for x seconds so that, regardless of land settings,
-
+    # If a player attacks a other player he will by tagged for x (timeunit) so that, regardless of land settings,
     # other players can attack him.
     # 0s = disabled
     tag-time: 0s
@@ -318,7 +326,7 @@ taxes:
   untrust-member: true
   # Announce upcoming tax payments to players.
   # Set this to 0 to disable it.
-  announcement: 45m
+  announcement: 2h
 
 
 # Land upkeep costs
@@ -346,6 +354,9 @@ upkeep:
   # So only lands, which are older than x seconds, will need to pay this.
   # Timeunit is seconds.
   nopay-time: 2d
+  # Remind land members, which can deposit money into their lands, about upcoming upkeep payments until they have enough money to pay it.
+  # This helps your players lands keeping track of it and not loosing claims or their membership in the nation.
+  reminder: 2h
 
 
 # Chunk settings
@@ -386,16 +397,44 @@ chunk:
     # Cost for a teleportation.
     costs_3: 15
 
-  # Auto claim chunks while standing on them.
-  auto-claim:
-    # NOTE: This setting requires server reload / restart.
-    enabled_14: true
-    # How many times should Lands execute autoclaim until it stops automatically?
-    rounds-stop: 50
-
   # Allow claiming only in the initial world, in which the land was created?
   # This means that a land can only have claims in one world.
   initial-world: false
+
+  # Auto claim chunks while standing on them.
+  auto-action:
+    # NOTE: This setting requires server reload / restart.
+    enabled_14: true
+    # After how long should the auto-action be stopped?
+    timeout: 2m
+
+
+# Sound configuration
+# Format: SOUND:VOLUME:PITCH
+# The volume and pitch parameter are optional. They allow you to control how the sound is played.
+# Disabling a sound: Just set it to ''
+sounds:
+  # At /lands create
+  create-land_sound: 'BLOCK_ANVIL_USE:0.25'
+  # Play a sound on /claim?
+  # This does not include radius and claimblock claims.
+  claim_sound: 'ITEM_SHOVEL_FLATTEN'
+  # Sent when a player receives a notification. For example when the player receives an invite at /trust.
+  notification_sound: 'ENTITY_EXPERIENCE_ORB_PICKUP:0.25'
+  # Played for the player that invited or trusted someone.
+  invite-sent_sound: 'ITEM_ARMOR_EQUIP_ELYTRA'
+  # Played for the target player at /lands ban
+  banned_sound: 'BLOCK_IRON_DOOR_CLOSE'
+
+  # Sound which should be played whenever a player gets teleported by Lands.
+  # Sounds can be disabled by setting their value to ''
+  teleport:
+    teleported_sound: 'ENTITY_ENDERMAN_TELEPORT'
+    countdown_sound: 'BLOCK_LEVER_CLICK'
+
+  # Play a sound when the players fly gets re-enabled after it has been disabled by Lands before.
+  # You can disable this, by setting it to ''
+  fly-re-enable_sound: 'ITEM_ARMOR_EQUIP_ELYTRA'
 
 
 # Area Settings
@@ -409,7 +448,7 @@ area:
   # List of available landFlags: https://github.com/Angeschossen/Lands/wiki/Land-Flags
   # NOTE: This option requires server reload / restart.
   land-flags:
-    # Configure DEFAULT natural flags which will apply at land creation.
+    # Configure DEFAULT natural flags which will apply to new land creations.
     default_list:
       - monster_spawn
       - animal_spawn
@@ -484,11 +523,11 @@ visualization:
     wilderness:
       # Particles can be found here:
       # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html#enum.constant.summary
-      particle: 'BARRIER'
+      particle: 'REDSTONE'
       # NOTE: Only the color of the REDSTONE particle can be changed.
       # To edit the color you need to insert the hex values given here:
       # https://www.google.com/search?q=color+picker
-      color: '#00a329'
+      color: '#00bd0a'
       # Duration in seconds
       duration: 20
       rows: 1
@@ -498,11 +537,11 @@ visualization:
       block: ''
     # If the player is the land owner.
     own:
-      particle_3: 'BARRIER'
+      particle_3: 'REDSTONE'
       # NOTE: Only the color of REDSTONE and SPELL_MOB particle can be changed.
       # To edit the color you need to insert the hex values given here:
       # https://www.google.com/search?q=color+picker
-      color_3: '#03fc07'
+      color_3: '#1eff00'
       duration_3: 4
       rows_3: 1
       # If you want to use blocks instead of particles for sub AREAS (not land border):
@@ -511,7 +550,7 @@ visualization:
       block_2: ''
     # If the player is trusted in the land.
     trusted:
-      particle_4: 'BARRIER'
+      particle_4: 'REDSTONE'
       # NOTE: Only the color of REDSTONE and SPELL_MOB particle can be changed.
       # To edit the color you need to insert the hex values given here:
       # https://www.google.com/search?q=color+picker
@@ -524,7 +563,7 @@ visualization:
       block_3: ''
     # If player isn't trusted in the land.
     untrusted:
-      particle_5: 'BARRIER'
+      particle_5: 'REDSTONE'
       # NOTE: Only the color of REDSTONE and SPELL_MOB particle can be changed.
       # To edit the color you need to insert the hex values given here:
       # https://www.google.com/search?q=color+picker
@@ -537,11 +576,11 @@ visualization:
       block_4: ''
     # Visualize selection mode (/lands selection)
     selection:
-      particle_8: 'BARRIER'
+      particle_8: 'REDSTONE'
       # NOTE: Only the color of REDSTONE and SPELL_MOB particle can be changed.
       # To edit the color you need to insert the hex values given here:
       # https://www.google.com/search?q=color+picker
-      color_8: '#ff9100'
+      color_8: '#ff9d00'
       # Will stay permanent until selection mode is disabled.
       # You can change that by editing this value.
       duration_8: -1
@@ -594,17 +633,17 @@ command:
   alias:
     # Set aliases for the /lands command
     # NOTE: This setting requires server reload / restart.
-    lands_list: []
+    lands_list: [ ]
 
     # Set aliases for the /Wars command
     # This is only needed, if wars is enabled.
     # NOTE: This setting requires server reload / restart.
-    wars_list: []
+    wars_list: [ ]
 
     # Set aliases for the /Nations command
     # This is only needed, if nations is enabled.
     # NOTE: This setting requires server reload / restart.
-    nations_list: []
+    nations_list: [ ]
 
   # Block commands
   # They are not case-sensitive.
@@ -614,7 +653,7 @@ command:
       - sethome
 
     # This affects all players, which are standing in a land.
-    general_list: []
+    general_list: [ ]
 
 
 # This is the configuration of the /lands unstuck command.

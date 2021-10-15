@@ -65,9 +65,9 @@ general:
 help:
   general:
     help-prefix: '&7Használat: '
-    header: '&7------------<- &5Lands Help &7Oldal&6 {page} &8/&e {pages} &7->------------'
-    page: '&7Use &8/&eLands help {next} &7for the next page. <> = needed [] = optional'
-    footer: '&7------------<- &5Lands Help &7Oldal&6 {page} &8/&e {pages} &7->------------'
+    header: '&7------------<- &5Lands Help &7Oldal&6 {page} &a/ {pages} &7->------------'
+    page: '&7Use &a/Lands help {next} &7for the next page. <> = needed [] = optional'
+    footer: '&7------------<- &5Lands Help &7Oldal&6 {page} &a/ {pages} &7->------------'
   command:
     help: '&8/&7Lands help &8[&aPage&8] - &eSegítség menü'
     edit: '&8/&7Lands edit &8<&aLand&8> - &eTelek szerkesztő módba helyezése'
@@ -88,22 +88,22 @@ help:
     wild: '&8/&7Lands wild &8- &eRandom teleportálás'
     top: '&8/&7Lands top &8[&3oldal&8]&8- &eTop 10 telek'
     selection: '&8/&7Lands selection &8- &eTelekhatárok mutatása'
-    chat: '&8/&3Lands chat &8[&3telek&8] <&3üzenet&8> &8- &7Telek chat'
+    chat: '&a/lands chat &8[&3telek&8] <&3üzenet&8> &8- &7Telek chat'
     rename: '&8/&7Lands rename <&anév&8> - &eTelek átnevezése'
     teleport: '&8/&7Lands teleport &8[&aWorld&8] <&aX&8> <&aZ&8> - &eChunkhoz teleportálás'
     invites: '&8/&7Lands invites &8- &eMeghívók listázása'
     info: '&8/&7Lands info &8[&aTelek&8] - &eTelek infó mutatása'
     player: '&8/&7Lands player &8<&aPlayer&8> - &eInfó egy játékosról'
     map: '&8/&7Lands map &8- &eTérkép mutatása'
-    balance: '&8/&3Lands balance &8[&3telek&8] - &7Telek egyenleg ellenőrzése'
-    deposit: '&8/&3Lands deposit &8<&3amount&8> - &7Pénz töltése a telek bankjába'
-    withdraw: '&8/&3Lands withdraw &8<&3amount&8> - &7Pénz lehívása a telek bankjából'
-    list: '&8/&3Lands list &8[&3világ&8] - &7Összes telek listája'
-    assign: '&8/&3Lands assign &8<&3terület&8> - &7Kijelöléshez terület rendelése'
+    balance: '&a/lands balance &8[&3telek&8] - &7Telek egyenleg ellenőrzése'
+    deposit: '&a/lands deposit &8<&aamount&8> - &7Pénz töltése a telek bankjába'
+    withdraw: '&a/lands withdraw &8<&aamount&8> - &7Pénz lehívása a telek bankjából'
+    list: '&a/lands list &8[&3világ&8] - &7Összes telek listája'
+    assign: '&a/lands assign &8<&aterület&8> - &7Kijelöléshez terület rendelése'
     wars:
-      declare: '&8/&3Wars declare &8<&3telek&8> - &7Hadüzenet küldése'
-      info: '&8/&3Wars info - &7Aktív és jövőbeli háborúk mutatása'
-      menu: '&8/&3Wars menu &8- &7Háború menü'
+      declare: '&a/Wars declare &8<&atelek&8> - &7Hadüzenet küldése'
+      info: '&a/Wars info - &7Aktív és jövőbeli háborúk mutatása'
+      menu: '&a/Wars menu &8- &7Háború menü'
     admin:
       admin: '&8/&7Lands admin &8<&aAction&8> &8- &eAdmin parancsok'
       debug: '&8/&7Lands debug &8- &eStatisztikák mutatása'
@@ -119,7 +119,7 @@ message:
     chunk: '&cNincs hozzáférésed a chunkhoz. &8(&7Teleknév:&e {land} &7X:&e {x} &7Z:&e {z}&8)&c.'
     area: '&cNem hetedet meg ezt ezen a területen &8(&7Terület:&6 {area} &7Telek:&2 {land} &7X: {x} &7Z: {z}&8)&c.'
     land: '&cNem teheted meg ezt a telken &8(&7Teleknév:&e {land}&8)&7.'
-    land-not-owner: '&cNem vagy a &4 {land}&c tulaja. &7Válaszd ki a saját telked &8(/&3Lands edit &8<&3land&8>) vagy készíts egyet &8(/&3Lands create &8<&3name&8>)&7.'
+    land-not-owner: '&cNem vagy a &4 {land}&c tulaja. &7Válaszd ki a saját telked &8(/&3Lands edit &8<&aland&8>) vagy készíts egyet &8(/&3Lands create &8<&aname&8>)&7.'
     role-weight:
       land: '&cNem szerkesztheted ezt a játékost itt (Telek&4 {land}&c). &7A jogkörének&6( {role} )&7magasabb prioritása van.'
       area: '&cNem szerkesztheted ezt a játékost itt (Terület&4 {area} &cTelek&4 {land}&c). &7A jogkörének&6( {role} )&7magasabb prioritása van.'
@@ -198,45 +198,45 @@ command:
     land-not-exist: '&cA telek &e {land} &cnem létezik ebben a világban.'
     area-not-exist: '&e {area} &cnevű terület nem létezik&e {land}&c-n belül '
     role-not-exist: '&e {role} &cjogkör nem létezik &4 {land}&c telek &4 {area} &területén belül'
-    land-not-member: '&cNem vagy hozzáadva ehhez a telekhez:&e {land}&c. &7Használd a &8/&aLands menu &7parancsot, hogy lekérd a telkeid.'
+    land-not-member: '&cNem vagy hozzáadva ehhez a telekhez:&e {land}&c. &7Használd a &a/Lands menu &7parancsot, hogy lekérd a telkeid.'
     land-no-action:
-      edit: '&cNem vagy tagja teleknek, ahol ezt megtehetnéd &8(&4{setting}&8)&c. &7Használd a &8/&aLand create &7parancsot, hogy létrehozz egyet.'
+      edit: '&cNem vagy tagja teleknek, ahol ezt megtehetnéd &8(&4{setting}&8)&c. &7Használd a &a/Land create &7parancsot, hogy létrehozz egyet.'
       position: '&cNem teheted ezt meg a telken, hol vagy. &7Menj a saját telkedre. &7Beállítás:&3 {setting}'
     name-exists: '&cEz a név már le van foglalva. &7Használj egy másikat.'
-    money-cost-bank: '&cNincs elég pénzed a bankban. &7Kelleni fog:&b ${cost}&7. Fizess be pénzt: &8/&3Lands deposit {cost}'
+    money-cost-bank: '&cNincs elég pénzed a bankban. &7Kelleni fog:&b ${cost}&7. Fizess be pénzt: &a/lands deposit {cost}'
     money-cost: '&cNincs elég pénzed. &7Kelleni fog:&b ${cost}&7.'
     lands-max: '&cNem lehetsz több telek tagja, elérted a maximum&3 {max}&7-t.'
     name-numbers: '&cNe használj számokat a telek nevében, csak latin betűket.'
     name-accent: '&cNe használj ékezetes betűket.'
     name-length: '&ctúl hosszú név. &7A maximum &b {max} &7karakter.'
     action-cooldown: '&cNem teheted ezt. &7Várnod kell &b {time} &7percet.'
-    none: '&cNem vagy egy teleknek sem tagja. &7Használd a &8/&aLands create &7parancsot, hogy létrehozz egyet.'
-    land-no-own: '&cNincs saját telked. &7Használd a &8/&aLands create &7parancsot, hogy létrehozz egyet.'
+    none: '&cNem vagy egy teleknek sem tagja. &7Használd a &a/Lands create &7parancsot, hogy létrehozz egyet.'
+    land-no-own: '&cNincs saját telked. &7Használd a &a/Lands create &7parancsot, hogy létrehozz egyet.'
     world-invalid: '&cEbben a világban nem teheted ezt. &7Próbálkozz egy másikban.'
-    wilderness: '&cEz a chunk a vadon része. &7Menj egy foglalt területre. &7Használd a &8/&aLands menu &7parancsot, hoogy listázd a telkeid.'
+    wilderness: '&cEz a chunk a vadon része. &7Menj egy foglalt területre. &7Használd a &a/Lands menu &7parancsot, hoogy listázd a telkeid.'
     player-not-exist: '&e{player}&c nevű játékos nem létezik. &7Ellenőrizd a parancsot.'
     player-not-online: '&4 {player} &cjelenleg nincs online.'
     player-self: '&cMagaddal nem teheted ezt.'
     banks-disabled: '&7A bankok ki vannak kapcsolva'
-    land-not-trusted: '&4 {player} &7Nem tagja ennek a teleknek &8(&7Telek:&2 {land}&8)&7. Először add hozzá: &8/&3Lands trust&7.'
+    land-not-trusted: '&4 {player} &7Nem tagja ennek a teleknek &8(&7Telek:&2 {land}&8)&7. Először add hozzá: &a/lands trust&7.'
     land-max-members: '&2 {land}&ctelekhez nem lehetett hozzáadni. &7Már elérte a maximum&3 {members} &7tagot.'
     area-not-trusted: '&cEzt nem teheted meg, nem vagy a chunkhoz adva &8(&7X: {x} Z: {z}&8)&7. &2 {land} &7telek &6 {area} &7területének része.'
     number: '&4 {input} &cnem egy szám.&3 {argument} &7-nak számnak kell lennie.'
   help:
-    help: '&7Használd a &8/&aLand help &7parancsot segítségért.'
+    help: '&7Használd a &a/Land help &7parancsot segítségért.'
     cmd-not-exist: '&cEz az al-parancs nem létezik:&b {command}'
     page-not-exist: '&8[&eProtect&8] &cAz oldalszám&e {page} &cnem létezik. &7Elírtad?'
   create:
     land-other: '&cNem lehet saját telked, ha már tagja vagy egy másiknak. &7El kell hagyd&b {land}&7-t először. Egy admin kikapcsolhatja ezt a funkciót a konfigban.'
     max-own: '&cNem lehet több telked. &7Elérted a maximum&b {max} &7 telket.'
-    success: '&7Sikeresen létrehoztad a&b {land} &7 nevű telket &b {cost}&7-ért. Lefoglalhatsz chunkokat a &8/&aLands claim&7 paranccsal.'
+    success: '&7Sikeresen létrehoztad a&b {land} &7 nevű telket &b {cost}&7-ért. Lefoglalhatsz chunkokat a &a/Lands claim&7 paranccsal.'
     broadcast: '&b{land} &7létrehozva &b {player}&7 által.'
   rename:
     success: '&7Sikeresen átnevezted &b {name}&7-ra/re ennél a teleknél &8(&7Teleknév:&e {land}&8)&7.&b ${cost}&7-t fizettél.'
   edit:
-    success: '&7Beléptél a szerkesztó módba &8(&7Teleknév:&e {land}&8)&7. Műveletek, mint pl.: &8/&aLands claim &7vagy &8/&aLands trust&7, erre a telekre fognak hatni.'
+    success: '&7Beléptél a szerkesztó módba &8(&7Teleknév:&e {land}&8)&7. Műveletek, mint pl.: &a/Lands claim &7vagy &a/Lands trust&7, erre a telekre fognak hatni.'
   selection:
-    not-complete: '&cA kijelölés nem teljes, bizonyosodj meg róla, hogy mindkét pont be van állítva &8(&bBAL &7és &9JOBB kattintás is&8)&7. Kijelölő mód váltható a &8/&3Lands selection&7 paranccsal.'
+    not-complete: '&cA kijelölés nem teljes, bizonyosodj meg róla, hogy mindkét pont be van állítva &8(&bBAL &7és &9JOBB kattintás is&8)&7. Kijelölő mód váltható a &a/lands selection&7 paranccsal.'
     max: '&cA kijelölt terület túl sok chunkot tartalmaz. &7Méret:&b {current} &7Max megengedett:&b {max}'
     enableds: '&7Kijelölő mód aktiválva: Válaszd ki a kezeddel egy terület &bszemben lévő sarkait &7 hogy lefoglalj &bminden chunkot &7benne.'
     disabled: '#t#&5&lKijelölő mód[newline]&c&lkikapcsolva'
@@ -247,11 +247,11 @@ command:
       one: '#t#&5&lKijelölés[newline]&b&lPozíció 1 &8-> &7Beállítva'
       two: '#t#&5&lKijelölés[newline]&b&lPozíció 2 &8-> &7Beállítva'
     area:
-      conflicts: '&4 {conflicts} &ütközés egy másik terület chunkjaival. &7Használd a &8/&3Lands selection assgin {area} confirm &7parancsot a felülíráshoz.'
+      conflicts: '&4 {conflicts} &ütközés egy másik terület chunkjaival. &7Használd a &a/lands selection assgin {area} confirm &7parancsot a felülíráshoz.'
       assigned: '&7Sikeresen hozzáadtál&3 {chunks} &7chunkot a &6 {area}&7 nevű területedhez &8(&7Telek:&2 {land}&8)&7.'
   claim:
     already: '&cNem adhatod a telkedhez ezt a chunkot, már &2 {land}&c része.'
-    auto-create: '&7Automatikusan létrehoztunk egy telket neked. Átnevezheted a &8/&aLands rename&7 paranccsal.'
+    auto-create: '&7Automatikusan létrehoztunk egy telket neked. Átnevezheted a &a/Lands rename&7 paranccsal.'
     auto-create-fail: '&cNem lehetett automatikusan telket létrehozni. &7Jegyezd le a megelőző üzeneteket és lépj kapcsolatba egy adminnal.'
     near-other: '&cTúl közel vagy egy másik telekhez:&e {land}&c. &7Minimum chunk távolság szükséges:&b {distance}&7.'
     far-land: '&cNem foglalhatod le ezt a chunkot. &7Kell hogy legyen mellette egy már általad lefoglalt &8(&7Teleknév:&e {land}&8)&7.'
@@ -260,14 +260,14 @@ command:
     max-chunk: '&cNem tudsz még &4 {chunks} &cchunkot a telkedhez adni. &7A &2 {land} &7telked maximuma:&3 {max} &7chunk.'
     selection: '&7Sikeresen hozzáadtál&3 {chunks} &7chunkot a&2 {land}&7 nevű telkedhez. Költsége: ${cost}&7.'
   assign:
-    selection: '&cKijelölés nem aktív. &7Használd a &8/&3Lands selection &7parancsot, hogy létrehozz egyet, majd próbáld újra.'
+    selection: '&cKijelölés nem aktív. &7Használd a &a/lands selection &7parancsot, hogy létrehozz egyet, majd próbáld újra.'
     size: '&cTúl kicsi kijelölés. &7A minimum &3 {min} &7kocka és csak &3 {current}&7 van kiválasztva.'
     success: '&7Terület átméretezve. Terület:&6 {area} &7Telek: &2 {land}&7. Vizualizáció bekapcsolva.'
     conflict:
       land: '&cA kijelölésed átlóg egy másik telekre:&4 {land}&c.'
       area: '&cA kijelölésed másik területre is belóg:&4 {area}&c.'
   leave:
-    land-owner: '&cNem hagyhatod el ezt a telket, mert a tulaja vagy. &7Törölnöd kell a &8/&aLands delete&7 parancs használatával.'
+    land-owner: '&cNem hagyhatod el ezt a telket, mert a tulaja vagy. &7Törölnöd kell a &a/Lands delete&7 parancs használatával.'
     selection: '&7Sikeresen elhagytál &b {chunks} &7chunkot. Azok, ahol te voltál a tulaj, törölve lettek.'
     land:
       success: '&7Sikeresen elhagytad a telket:&b {land}&7. Nincs többé hozzáférésed a területhez.'
@@ -277,7 +277,7 @@ command:
     success: '&7Sikeresen felszabadítottad a chunkot: &8(&7X:&e {x} &7Z:&e {z}&8)&7. Még maradt&b ${back} &7darabod.'
     selection: '&7Sikeresen felszabadítottad a kijelölésben lévő chunkokat, amiknek tulaja voltál'
   delete:
-    confirm: '&cErősítsd meg a műveletet. &7Használd a &8/&aLand delete {land} confirm&7 parancsot.'
+    confirm: '&cErősítsd meg a műveletet. &7Használd a &a/Land delete {land} confirm&7 parancsot.'
     success: '&7Sikeresen törölted a telket: &8(&7Teleknév:&e {land}&8)&7.'
     broadcast: '&7A telek &b {land} &7törölve&b {player}&7 által.'
   trust:
@@ -287,11 +287,11 @@ command:
     max-members: '&cNem lehetett&4 {player} &chozzáadni a(z)&4 {land}&c telekhez. &7A tulaj elérte a maximális&3 {members} &7tagot.'
     land:
       already: '&cA játékos már tagja a teleknek &8(&7Teleknév:&e {land}&8)&7.'
-      target: '&b{player} &7meghívott a telkére:&b {land}&7. Használd a &8/&aLand accept {land} &7parancsot, hogy elfogadd.'
+      target: '&b{player} &7meghívott a telkére:&b {land}&7. Használd a &a/Land accept {land} &7parancsot, hogy elfogadd.'
       success: '&7Sikeresen meghívtad&b {player} &7-t a telkedre &8(&7Teleknév:&e {land}&8)&7. Már csak el kell fogadnia.'
     area:
       already: '&cA játékos már tagja a &6 {area}&c nevű területnek &8(&7Telek:&2 {land}&8)&7.'
-      target: '{player} &7Meghívott a telkére &8(&7Terület:&6 {area} &7Telek:&2 {land}&8) &7Használd a &8/&3Lands accept {land} &7parancsot, hogy elfogadd.'
+      target: '{player} &7Meghívott a telkére &8(&7Terület:&6 {area} &7Telek:&2 {land}&8) &7Használd a &a/lands accept {land} &7parancsot, hogy elfogadd.'
       success: '&7Sikeresen meghívtad&b {player} &7-t a telkedre  &8(&7Terület:&6 {area} &7Telek:&2 {land}&8)&7. Várj, amíg elfogadja.'
   untrust:
     land:
@@ -314,7 +314,7 @@ command:
     not-exist: '&cNincs meghívód a &e {land} &ctelekre, vagy már lejárt.'
     own-land: '&cNincs jogod, hogy tagja legyél egy teleknek, miközben van már sajátod. &7Hagyd el először a sajátod.'
     max-lands: '&cNem csatlakozhatsz több telekhez. &7A maximum:&b {max}&7.'
-    notification: '&7Még van&3 {invites} &7meghívód mások telkeire. Használd a &8/&3Land invites &7parancsot, hogy listázd őket.'
+    notification: '&7Még van&3 {invites} &7meghívód mások telkeire. Használd a &a/Land invites &7parancsot, hogy listázd őket.'
     land:
       success: '&7Sikeresen elfogadtad a &b {land}&7 telek meghívóját. Mostmár hozzáférsz az egész telekhez.'
       broadcast: '&b{land} &8|&b {player} &7csatlakozott a területünkhöz&7.'
@@ -333,18 +333,18 @@ command:
     force-land: '&cCsak a saját területedre rakhatsz teleport pontot.'
     success: '#t#&7Teleport pont &abeállítva&7.;;&7Ár:&b {cost}'
   spawn:
-    not-exist: '&cNincs teleportálási cél beállítva:&e {land}&c. &7Valakinek be kell állítania a &8/&aLand setSpawn&7 parancs használatával.'
+    not-exist: '&cNincs teleportálási cél beállítva:&e {land}&c. &7Valakinek be kell állítania a &a/Land setSpawn&7 parancs használatával.'
     not-allowed: '&cNem teleportálhatsz a telekre. &7A tulajnak jogot kell adnia rá, vedd fel vele a kapcsolatot &8(&7Teleknév:&e {land}&8)&7.'
-    chunk: '&2 {land} &7nem állított még be spawnt &8(&8/&3Lands setspawn&8) &7. &7A legelső levédett chunkhoz lettél teleportálva.'
+    chunk: '&2 {land} &7nem állított még be spawnt &8(&a/lands setspawn&8) &7. &7A legelső levédett chunkhoz lettél teleportálva.'
     success: '#t#&7Teleportálva;;&7Teleknév&b {land};;&7Ár:&b {cost}'
   wild:
     no-location: '&cNem elérhető biztonságos célpont'
     success: '&7Sikeres teleportálás: &8(&7X:&e {x} &7Z:&e {z}&8)&7Ár:&b {cost}.'
   deposit:
-    number: '&7Meg kell adnod egy valós értéket. Hazsnáld a &8/&aLand deposit &8<&aÖsszeg&8> &7vagy &8/&aLand deposit &8<&aTelek&8> <&aÖsszeg&8>&7 parancsot.'
+    number: '&7Meg kell adnod egy valós értéket. Hazsnáld a &a/Land deposit &8<&aÖsszeg&8> &7vagy &a/Land deposit &8<&aTelek&8> <&aÖsszeg&8>&7 parancsot.'
     success: '&7Sikeresen betettél&b ${cost}&7-t a telekbankba. &7Új egyenleg:&b ${bank} &8(&7Telek:&e {land}&8)'
   withdraw:
-    number: '&7Meg kell adnod egy valós értéket. Hazsnáld a &8/&aLand withdraw &8<&aÖsszeg&8> &7vagy &8/&aLand withdraw &8<&aTelek&8> <&aÖsszeg&8>&7 parancsot.'
+    number: '&7Meg kell adnod egy valós értéket. Hazsnáld a &a/Land withdraw &8<&aÖsszeg&8> &7vagy &a/Land withdraw &8<&aTelek&8> <&aÖsszeg&8>&7 parancsot.'
     balance: '&7Nincs elég pénz a telekbankban. Egyenleg:&b ${bank} &7 &8(&7Telek:&e {land}&8)'
     success: '&7Sikeresen kivettél&b ${cost}&7-t a telekbankból. &7Új egyenleg:&b ${bank} &8(&7Telek:&e {land}&8)'
   balance: '&7Egyenleg:&b ${balance} &8(&7Telek:&e {land}&8)&7.'

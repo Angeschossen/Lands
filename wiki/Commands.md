@@ -10,6 +10,10 @@ Description: Claim chunks.
 `Permission: lands.command.create`\
 Description: Create a land.
 
+>`/Lands merge <land>`\
+`Permission: lands.command.merge`\
+Description: Merge a land (parameter) into your other land.
+> 
 >`/Lands accept <land>`\
 `Permission: lands.command.accept`\
 Description: Accept invites.
@@ -105,6 +109,10 @@ Area parameter is optional.
 > `/Lands unclaim`\
 `Permission: lands.command.unclaim`\
 Description: Unclaim a chunk.
+
+> `/Lands unclaimall`\
+`Permission: lands.command.unclaimall`\
+Description: Unclaim all chunks for the land.
 
 > `/Lands untrust <player> [area,*]`\
 `Permission: lands.command.untrust`\
