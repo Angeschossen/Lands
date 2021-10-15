@@ -1,5 +1,5 @@
 ### Available Database Types
-* JSON, SQLite: We recommend using JSON or SQLite, if you don't need to connect the data to external applications. Only experienced administrators should use MySQL. 
+* SQLite, JSON: We recommend using SQLite or JSON, if you don't need to connect the data to external applications. Only experienced administrators should use MySQL.
 
 * MySQL: We recommend using MySQL, if you need to connect your database to a external system or you use a backup system that requires it. If you want to use MySQL, make sure that your MySQL server is setup correctly.
 NOTE: It is not supported to use this as an "cross server solution". Only one Lands server should be connected to the database. If you want to connect multiple Lands servers to the same database, make sure to configure different table prefixes in the Lands config.
