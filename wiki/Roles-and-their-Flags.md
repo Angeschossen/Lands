@@ -5,10 +5,10 @@ You as a administrator can edit/add default roles. Wilderness flags can be edite
 ***
 Whenever a new flag is added to Lands, all existing Lands will apply the flag, if specified by the flag author.              
 But for future land creations you need to configure it correctly here. Lands will always send you a popup in console and on  
-admin ingame accounts, if there is a new flag available.       
+admin ingame accounts, if there is a new flag available.
 
 **Reset flag(s) to their defined state from roles.yml:**
->/Lands admin land <land | *> resetFlag <flag | all>                          
+>/Lands admin land <land | *> resetFlag <flag | all>
 
 
 ## Hide / show flags from the flags menu
@@ -82,115 +82,115 @@ Example Configuration of a custom default role:
 > Actions flags represent players actions.
 
 * **BLOCK_PLACE**\
-Place blocks
+  Place blocks
 
 * **BLOCK_BREAK**\
-Break blocks
+  Break blocks
 
 * **INTERACT_GENERAL**\
-All types of interaction that are not covered by the other INTERACT_ flags.
+  All types of interaction that are not covered by the other INTERACT_ flags.
 
 * **INTERACT_CONTAINER**\
-Open containers, like chests
+  Open containers, like chests
 
 * **INTERACT_DOOR**\
   Open doors
 
 * **INTERACT_TRAPDOOR**\
   Open trapdoors
-  
+
 * **INTERACT_MECHANISM**\
-Use redstone, levers, pressure plates etc.
+  Use redstone, levers, pressure plates etc.
 
 * **INTERACT_VILLAGER**\
-Interact and trade with villagers
+  Interact and trade with villagers
 
 * **BLOCK_IGNITE**\
-Ignite blocks / set blocks on fire
+  Ignite blocks / set blocks on fire
 
 * **ATTACK_PLAYER**\
-Attack players\
-If disabled: _The role won't be able to attack anyone._
-If enabled: _The role will be able to attack other players that are also allowed to attack this role in the given claim._
-Note: _This flag may not always take effect, if combat-tag is enabled in the config._
+  Attack players\
+  If disabled: _The role won't be able to attack anyone._
+  If enabled: _The role will be able to attack other players that are also allowed to attack this role in the given claim._
+  Note: _This flag may not always take effect, if combat-tag is enabled in the config._
 
 * **ATTACK_ANIMAL**\
-Attack animals
+  Attack animals
 
 * **FLY**\
-Allow the role to fly within a area. Fly will be disabled if the player is not allowed to fly at a given location. If they enter a area where they're allowed to fly, Lands will automatically re-enable their fly (if fly was active before).\
-This is compatible with every fly plugin.
+  Allow the role to fly within a area. Fly will be disabled if the player is not allowed to fly at a given location. If they enter a area where they're allowed to fly, Lands will automatically re-enable their fly (if fly was active before).\
+  This is compatible with every fly plugin.
 
 * **LAND_ENTER**\
-Enter area
+  Enter area
 
 * **SPAWN_TELEPORT**\
-Teleport to the land spawn.
+  Teleport to the land spawn.
 
 * **VEHICLE_USAGE**\
-Use or place vehicles in the area.
+  Use or place vehicles in the area.
 
 * **ITEM_PICKUP**\
-Pickup dropped items
+  Pickup dropped items
 
 * **ENDER_PEARL**\
-Use ender pearls
+  Use ender pearls
 
 * **ATTACK_MONSTER**\
-Attack monsters\
-If disabled: Monsters also won't be able to damage the players of the role.
+  Attack monsters\
+  If disabled: Monsters also won't be able to damage the players of the role.
 
 * **TRAMPLE_FARMLAND**\
   Allow players to trample farmland.
-  
+
 * **NO_DAMAGE**\
-Players won't get any damage from any damage cause.
+  Players won't get any damage from any damage cause.
 
 ## Management Flags
 > Management flags will allow players to edit flags and options for the land.
 
 * **PLAYER_TRUST**\
-Trust other players
+  Trust other players
 
 * **PLAYER_SETROLE**\
-Set roles for trusted players (promote and demote).\
-They can only edit players which have a lower role (priority) than their own.
+  Set roles for trusted players (promote and demote).\
+  They can only edit players which have a lower role (priority) than their own.
 
 * **PLAYER_UNTRUST**\
-Untrust players\
-They can only untrust players which have a lower role (priority) than their own.
+  Untrust players\
+  They can only untrust players which have a lower role (priority) than their own.
 
 * **PLAYER_BAN**\
-Ban players\
-They can only ban players which have a lower role (priority) than their own.
+  Ban players\
+  They can only ban players which have a lower role (priority) than their own.
 
 * **SETTING_EDIT_LAND**\
-Edit natural land settings (like mob spawning etc.)\
+  Edit natural land settings (like mob spawning etc.)\
 
 * **SETTING_EDIT_ROLE**\
-Edit roles settings of roles which have a lower priority than their own role.
+  Edit roles settings of roles which have a lower priority than their own role.
 
 * **SETTING_EDIT_TAXES**\
-Edit taxes\
-Note: _It is recommended to give this permission only to trustworthy players in your land_
+  Edit taxes\
+  Note: _It is recommended to give this permission only to trustworthy players in your land_
 
 * **SETTING_EDIT_VARIOUS**\
-Allow setting a new name for the land or changing the title.
+  Allow setting a new name for the land or changing the title.
 
 * **LAND_CLAIM**\
-Claim chunks for the land
+  Claim chunks for the land
 
 * **AREA_ASSIGN**\
-Create sub areas and assign a selection to a sub area (/Lands selection assign <area>).
+  Create sub areas and assign a selection to a sub area (/Lands selection assign <area>).
 
 * **LAND_CLAIM_BORDER**\
-The players will be able to claim directly near your land, ignoring the chunk distance from config.
+  The players will be able to claim directly near your land, ignoring the chunk distance from config.
 
 * **SPAWN_SET**\
-Allow the players of the role to change the spawn.
+  Allow the players of the role to change the spawn.
 
 * **BALANCE_WITHDRAW**\
-Withdraw balance from the land bank (/Lands withdraw).
+  Withdraw balance from the land bank (/Lands withdraw).
 
 * **WAR_MANAGE**\
-Declare war with your land or surrender in the war of the land.
+  Declare war with your land or surrender in the war of the land.
