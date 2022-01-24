@@ -44,7 +44,7 @@ general:
     # Set the time zone for date text outputs.
     # Example: America/Los_Angeles or GMT-8:00
     # List of time zones: https://timezonedb.com/time-zones
-    zone: 'UTC−06:00'
+    zone: 'UTC-08:00'
 
   # Worlds where players should be able to claim.
   # This list also supports setting a optional player claims height per world.
@@ -70,11 +70,15 @@ general:
     info:
       # Use -1 to disable receiving the tool.
       slot_2: 1
+    # The camp item can also be given manually via /lands admin give <player> camp <amount> <radius> [silent]
+    # For more information about camps, check out the "camp" section in the config.
+    camp:
+      slot_3: 2
 
 
   # Set the format of all economy related displays.
   # NOTE: This setting requires server reload / restart.
-  eco-format: '#,###.00'
+  eco-format: '$#,##0.00'
 
   # Reward players by playing on your server.
   # Explanation: https://github.com/Angeschossen/Lands/wiki/Playtime-Rewards
@@ -87,22 +91,25 @@ general:
     # NOTE: Changing these requires server reload / restart.
     # NOTE: It can take up to 60 seconds for the player to get rewarded.
     time:
-      # Plus 1 chunk (/lands claim)
+      # Plus 1 chunk (/lands claim) each x seconds.
       # If you want to disable this specific option, just set it to 0 or -1.
       chunk: 3600
-      # Plus 1 lands where a player can be a member (not owner - /lands accept, /lands trust).
+      # Plus 1 lands where a player can be a member (not owner - /lands accept, /lands trust) each x seconds.
       # If you want to disable this specific option, just set it to 0 or -1.
       land: 43200
-      # Plus 1 land creation (/lands create).
+      # Plus 1 land creation (/lands create) each x seconds.
       # If you want to disable this specific option, just set it to 0 or -1.
       land-own: 86400
-      # Plus 1 land member (/lands trust)
+      # Plus 1 land member (/lands trust) each x seconds.
       # If you want to disable this specific option, just set it to 0 or -1.
       member: 21600
-      # Plus 1 lands.chunks.support.<number>
+      # Plus 1 lands.chunks.support.<number> each x seconds.
       # This permission contributes claims to lands you're trusted in.
       # If you want to disable this specific option, just set it to 0 or -1.
       support: 0
+
+  # Should players with the permission (lands.admin) be notified that there is a new update available?
+  upd-notify: false
 
 
 # Land settings
@@ -119,19 +126,24 @@ land:
     # Max land name length
     # The maximum possible length is 32 (including color codes)
     # How to filter names: https://github.com/Angeschossen/General/wiki/Messages#filter-swear-words-and-forbidden-names
-    name-length: 16
+    name-length: 24
     # Should colors be allowed in land names?
     color_2: true
     # Should numbers be allowed in land names?
     numbers: true
-    # Automatically claim chunk on players location?
-    chunk-claim: true
+    # Claim a radius of chunks at land creation.
+    # These initial claims won't cost the land anything.
+    # 0 = only the chunk in which the player currently stands.
+    claim-radius: 0
 
   # Set the minimum distance in chunks (16 blocks) between different lands that do not belong to the same owner.
-  # This prevents other land owners claiming directly at your land border.
+  # This prevents other landowners claiming directly at your land border.
   chunk-distance: 1
   # Force lands to claim near their claims.
-  force-near: true
+  force-near:
+    enabled_2: true
+    # Should claim attempts that would violate the force-near restrictions be treated as new lands?
+    treat-as-new: true
   # Chunk claiming by placing a special claim block.
   # You can give claimblocks by executing the command /lands admin give <player> claimblock [amount]
   # If you don't want your players to claim via command, just
@@ -143,6 +155,8 @@ land:
     # NOTE: If disabled, players could give claimblocks to other players which then can use these claimblocks too. Also if enabled again in the future,
     # already given claimblocks could still be used by everyone.
     only-owner: true
+    # Should claimblocks ignore the lands.chunks.<number> permission?
+    ignore-max: false
 
   # Landspawn settings
   spawn:
@@ -163,7 +177,8 @@ land:
       # Wait time until the player gets teleported.
       # NOTE: Time unit is seconds
       wait: 3
-      # Cost for teleportation to a Land spawn.
+      # Cost for teleportation to a land spawn.
+      # The land gets the teleport cost after teleportation of a player.
       costs:
         value_3: 0.0
         # Should the cost also be applied to visitors and not only trusted players?
@@ -174,7 +189,7 @@ land:
       # Teleport a player after death to the land spawn.
       re-spawn: true
 
-  # Rent/sell areas settings - Wiki: https://github.com/Angeschossen/Lands/wiki/Rent-System
+  # Rent/sell areas settings - Wiki: https://github.corent:m/Angeschossen/Lands/wiki/Rent-System
   # Rent = The players can rent a area of their choice without needing to get trusted. They can decide how long they want to rent it.
   # Taxes = Trusted players pay a defined amount of tax per defined interval.
   rent:
@@ -182,6 +197,10 @@ land:
     rent: true
     # Allow your players to sell sub areas or their whole land?
     sell: true
+    # Should rent transactions be sent to the land bank?
+    # NOTE: This will only take effect, if banks are generally enabled (option: enabled_13).
+    # If disabled the transaction will be sent to the owners personal account.
+    bank: false
     # Use holograms instead of sings? If enabled, after setting up the rent or sell sign, the sign will disappear and a clickable hologram will appear.
     holograms: false
     # Teleportation through the /lands rentlist command.
@@ -232,8 +251,10 @@ land:
     # Bypass permission: lands.bypass.cooldown.rename
     cooldown_4: 900
 
-  # Fly Settings (Flags can be found in thme roles section)
+  # Fly Settings (Flags can be found in the roles section)
   fly:
+    # If you disable flight control, the FLY flag from roles.yml won't have any effect.
+    enabled_4: true
     # Allow players to fly only in
     # Lands claim worlds (setting: claim-worlds_list)?
     # Bypass permission: lands.bypass.wilderness.fly
@@ -269,7 +290,9 @@ land:
     # Should players, which have been deleted from the servers (primary world) playerdata folder, be deleted?
     # NOTE: It is recommended to keep this disabled. If this is enabled and you delete the playerdata folder in your primary world, it MAY DELETE ALL AFFECTED LANDS depending on your expiration settings.
     delete-invalid: false
-
+    # Should lands, which have no claims, be deleted if they're at least x days old?
+    # You can disable this option by using 0.
+    no-claims: 0
 
   # Specified combat settings which do not affect wars.
   combat:
@@ -281,6 +304,8 @@ land:
     # Should players, which are members in a common land, be able to fight in wilderness?
     # NOTE: This option requires server restart / reload.
     ally-wilderness: true
+    # Block village raids if the initiator is not allowed to attack players in the claim?
+    block-raids: true
 
   # Set claim limits per world.
   # Example: If you set the permission lands.chunks.5 for your players,
@@ -303,6 +328,23 @@ land:
     # This does only involve actions where the player is physically involved, like claiming or setting a land spawn. This does not include upkeep.
     # If true and the player has enough balance on his personal account, this will also send a notice to the player that the balance has been taken from his personal account.
     fallback: false
+
+# Camps are temporary lands that will get deleted after a defined period.
+# Camp items can be given at first join or by executing /lands admin give
+camp:
+  # NOTE: This setting requires server reload / restart.
+  enabled_21: true
+  # Set how much it should cost. This also includes the chunks that are being claimed.
+  costs_8: 0
+  # After how much time should camps be deleted?
+  # 0 = never
+  expire_time: 1d
+  # Configure the default radius of chunks to claim.
+  # You can override this executing /lands admin give <player> camp <radius> [silent]
+  # 0 = only the chunk in which the camp item is placed.
+  radius: 1
+  # Set the default camp name.
+  default-name: '{player}''sCamp'
 
 
 # Taxes settings
@@ -334,7 +376,7 @@ taxes:
 # Taxes = Trusted players pay a defined amount of tax per defined interval.
 upkeep:
   # NOTE: This setting requires server reload / restart.
-  enabled_19: false
+  enabled_19: true
   # Interval of payment
   # TimeUnits:
   # Seconds: s
@@ -490,7 +532,7 @@ area:
 # Includes /lands top, leaderboard signs and holograms
 top-lands:
   # Top lands sort mode
-  # Available sort modes: BALANCE, CHUNKS, MEMBERS
+  # Available sort modes: BALANCE, CHUNKS, MEMBERS, LEVEL
   # NOTE: BALANCE requires banks to be enabled.
   # This option requires server reload / restart.
   sort-mode: 'BALANCE'
@@ -538,7 +580,7 @@ visualization:
     # If the player is the land owner.
     own:
       particle_3: 'REDSTONE'
-      # NOTE: Only the color of REDSTONE and SPELL_MOB particle can be changed.
+      # NOTE: Only the color of the REDSTONE particle can be changed.
       # To edit the color you need to insert the hex values given here:
       # https://www.google.com/search?q=color+picker
       color_3: '#1eff00'
@@ -551,7 +593,7 @@ visualization:
     # If the player is trusted in the land.
     trusted:
       particle_4: 'REDSTONE'
-      # NOTE: Only the color of REDSTONE and SPELL_MOB particle can be changed.
+      # NOTE: Only the color of the REDSTONE particle can be changed.
       # To edit the color you need to insert the hex values given here:
       # https://www.google.com/search?q=color+picker
       color_4: '#f2f200'
@@ -564,7 +606,7 @@ visualization:
     # If player isn't trusted in the land.
     untrusted:
       particle_5: 'REDSTONE'
-      # NOTE: Only the color of REDSTONE and SPELL_MOB particle can be changed.
+      # NOTE: Only the color of the REDSTONE particle can be changed.
       # To edit the color you need to insert the hex values given here:
       # https://www.google.com/search?q=color+picker
       color_5: '#ff0000'
@@ -577,7 +619,7 @@ visualization:
     # Visualize selection mode (/lands selection)
     selection:
       particle_8: 'REDSTONE'
-      # NOTE: Only the color of REDSTONE and SPELL_MOB particle can be changed.
+      # NOTE: Only the color of the REDSTONE particle can be changed.
       # To edit the color you need to insert the hex values given here:
       # https://www.google.com/search?q=color+picker
       color_8: '#ff9d00'
@@ -605,6 +647,8 @@ visualization:
   # Should for sub areas only the corners be visualized?
   # NOTE: This does not affect borders of lands.
   only-corners: true
+  # Set a y offset (adjust height of visulization)
+  offset: 0
 
   # /lands map settings
   map:
@@ -734,7 +778,7 @@ database:
     table-prefix: 'lands_'
 
   # You can also use SQLite. It will run out of the box.
-  sqlite: false
+  sqlite: true
 
   # Backup settings
   backup:
@@ -762,37 +806,23 @@ integration:
     # WorldEdit
     WorldEdit:
       # Disallow WorldEdit use in other players lands, where the player isn't trusted?
-      # Bypass permission: lands.bypass.worldedit
+      # Bypass permission in claims: lands.bypass.worldedit
+      # Bypass permission in wilderness: lands.bypass.wilderness.worldedit
       enabled_7: true
 
 
   # Economy settings
+  # If all types are disabled, the item based economy will be used instead.
   economy:
-    # Default currency
-    # Will be used, if no Vault economy lands found.
-    # NOTE: This currency is item based.
-    Default:
-      # Item, which should be used as currency.
-      # Materials can be found here:
-      # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
-      item_2: 'GOLD_INGOT'
-
-    # Vault
-    # You need an economy lands, which supports Vault, to let this work.
     Vault:
+      # You need an economy plugin, which supports Vault, to let this work.
       enabled_10: true
+    levels:
+      enabled_15: false
 
-  # Chat integrations
-  chat:
-    # PlaceholderAPI
-    # NOTE: For featherbaord you need to use {} instead of %%.
-    # To display a placeholder for your current position, just append _here to it.
-    # Example: lands_land_name_here
-    PlaceholderAPI:
-      enabled_11: true
 
   # Web integration
-  # Supports (Dynmap, BlueMap, Pl3xMap)
+  # Supports (Dynmap, BlueMap, squaremap)
   # All three can be used at the same time.
   web:
     enabled_12: true
@@ -805,13 +835,19 @@ integration:
       # NOTE: For BlueMap this needs to be a direct image web address. Recommended imgage size: 32 x 32 pixels
       icon: 'greenflag'
       # Set minimum zoom. The icon won't display, if the zoom in your browser is smaller (mousewheel).
-      # NOTE: Recommended value for BlueMap, Pl3xMap: 126
+      # NOTE: Recommended value for BlueMap, squaremap: 126
       min-zoom: 5
     # The name of the layer where users can see the marked lands.
     layer: 'Lands'
     # Set the markers height?
     # NOTE: Only needed for BlueMap
     height: 62
+    # If you want your players activity to be more anonymous, you can specify an update interval.
+    # This helps to prevent enemies spying dynmap to track player activity.
+    # Time units: d, h, m, s -> Example: 1h
+    # Default: -1 = use default handling defined by Lands (recommended)
+    # This option requires server reload / restart.
+    update_time: -1
     # Color settings
     land:
       # Opactiy of the land. Needs to be between 0 (lowest) and 255 (highest).

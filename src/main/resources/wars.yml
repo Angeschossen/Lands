@@ -43,8 +43,14 @@ points:
   kill: 1
   # Get x points per capture
   capture: 5
+  # Get x points if you destroy a capture block of the enemy.
+  cap-destroy: 3
   # How many points does a team need to win?
-  towin: 100
+  # Calculation: <team with the smallest amount of members> * towin-per-player
+  towin:
+    per-player: 5
+    # Set a minimum amount of required points. This will be used if the calculation is smaller than minimum.
+    min_2: 100
 
 # Whenever a enemy places a beacon on the outskirts of a land, a capture point will be created.
 # The invaders then need to hold this point a specific time.
@@ -93,6 +99,11 @@ timeout: 36h
 # Should players, which are engaged in a war, be hidden from dynmap?
 # NOTE: It's currently not possible to do that with BlueMap.
 hide-player: false
+
+# Should Lands set a enemy or ally nametag above players that are at war?
+# If you already have a scoreboard or tablist plugin on your server, it's recommended to use the %rel_lands_war_relation% PlaceholderAPI placeholder instead.
+# NOTE: Only players that are in the same war, will see these.
+nametag: true
 
 # Here you can define a list of commands, which shouldn't get executed while a player is engaged in a war.
 cmd-blacklist_list: []
