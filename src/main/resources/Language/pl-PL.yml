@@ -24,7 +24,7 @@ general:
     all: '&dWszyscy'
   top:
     title: '&7-----<- &5Topka Działek &8(&7Total:&b {total}&8) &7->-----'
-    entry: '&c#{pos} &a{land} &7Saldo:&e ${value}'
+    entry: '&c#{pos} &a{land} &7Saldo:&e {value}'
     next-page: '&7Następna strona: &8/&2Działki top {next}'
     last-updated: '&7Ostatnio odświeżane: {time}'
     footer: '&7-----<- &5Topka Działek &8(&7Total:&b {total}&8) &7->-----'
@@ -43,7 +43,7 @@ general:
       line-1: '&c#&l{place}'
       line-2: '&8<&a {land} &8>'
       line-3: '&7Od {owner}'
-      line-4: '&7Stan konta:&2 ${value}'
+      line-4: '&7Stan konta:&2 {value}'
     noLand:
       line-1: ' '
       line-2: '&cBrak działki'
@@ -180,7 +180,7 @@ message:
         Proszę się nie ruszać.'
       cancelled: '&cTeleportacja anulowana. &7Proszę sie nie ruszać
       w trakcie oczekiwania.&b {sec} &7sekund do teleportacji.'
-      chunk: '#t#&9&lPrzeteleportowano[newline]&7X: {x} Z: {z} Za:&a ${cost}'
+      chunk: '#t#&9&lPrzeteleportowano[newline]&7X: {x} Z: {z} Za:&a {cost}'
       cancelled-plugins: '&cTeleportacja została anuloana przez inny lands. &7Proszę
         sprawdzić pluginy. &7To nie jest ingerencja pluginu Lands'
   claimblock:
@@ -213,9 +213,9 @@ command:
     land-no-action: '&Nie jesteś w żadnej działce w której możesz to zrobić.
       &7użyj &a/Land create &7aby stworzyć nową.'
     name-exists: '&cTa nazwa jest już zajęta. &Musisz wymyślić inną.'
-    money-cost-bank: '&cNie masz wystarczająco pieniędzy żeby zapłacić czynsz. &7Potrzebujesz:&b ${cost}&7.
+    money-cost-bank: '&cNie masz wystarczająco pieniędzy żeby zapłacić czynsz. &7Potrzebujesz:&b {cost}&7.
       You need to deposit money into your land bank: &a/Lands deposit {cost}'
-    money-cost: '&cNie masz wystarczająco pieniędzy żeby zapłacić czynsz. &7potrzebujesz&b ${cost}&7.'
+    money-cost: '&cNie masz wystarczająco pieniędzy żeby zapłacić czynsz. &7potrzebujesz&b {cost}&7.'
     lands-max: '&cNie możesz być członkiem większej ilości działek. &7Osiągnąłeś swoj limit
       z&b {max} &7Działek.'
     name-numbers: '&cNie możesz używać liczb w nazwie działki. &7Proszę używać tylko liter.'
@@ -255,12 +255,12 @@ command:
     . &7Musisz opuścić tę działkę&b {land} &7A Administrator może to zmienić.'
     max-own: '&cNie możesz stworzyć więcej działek. &7Osiągnąłeś swój limit &b
       {max} &7posiadanych działek.'
-    success: '&7Pomyślnie stworzono działkę.&b {land} &7za&b ${cost}&7. możesz zajmować kolejne chunki
+    success: '&7Pomyślnie stworzono działkę.&b {land} &7za&b {cost}&7. możesz zajmować kolejne chunki
         używając &a/Lands claim&7.'
     broadcast: '&7Działka&b {land} &7Została stworzona przez:&b {player}&7.'
   rename:
     success: '&7Pomyślnie zmieniono nazwę &b {name} &7Na tej działce &8(&7Land:&e
-      {land}&8)&7. Zapłaciłeś.&b ${cost}&7.'
+      {land}&8)&7. Zapłaciłeś.&b {cost}&7.'
   edit:
     success: '&7Wszedłeś w tryb edytowania działki &8(&7Land:&e {land}&8)&7. kolejne
         kroki typu &a/Lands claim &7czy &a/Lands trust&7, będą wykonane dla tej działki.'
@@ -293,7 +293,7 @@ command:
     far-land: '&cNie możesz zapisać tego chunku. &7Musi być on połączony z twoją działką.
     &8(&7Działka:&e {land}&8)&7.'
     success: '&7Pomyślnie dodano chunk &8(&7Działka:&e {land} &7X:&e {x} &7Z:&e
-      {z}&8) &7for&b ${cost}&7. Następne dodanie chunku będzie kosztować:&b ${next}&7.'
+      {z}&8) &7for&b {cost}&7. Następne dodanie chunku będzie kosztować:&b {next}&7.'
     already-claimed: '&cW twoim zaznaczeniu znajduje się zajęty chunk nie należący
     do twojej działki.&8(&7X:&e {x} &7Z:&e {z}&8)&c. &7Należy on do działki:&b
       {land}&7.'
@@ -302,7 +302,7 @@ command:
     world: '&cNie możesz dodać teog dla działki w tym świecie &7Działka&b {land} &7może mieć chunki
     tylko w świecie:&b {world}&7.'
     selection: '&7Pomyślnie dodałeś&b {chunks} &7chunków do działki.&8(&7Działka:&e
-      {land}&8)&7. Zapłaciłeś&b ${cost}&7.'
+      {land}&8)&7. Zapłaciłeś&b {cost}&7.'
   leave:
     land-owner: '&cNie możesz opuścić tej działki. &7Jako właściciel musisz ją usunąć
     używając: &a/Lands delete&7.'
@@ -311,7 +311,7 @@ command:
     selection: '&7Pomyślnie opuściłeś &b {chunks} &7Z twojego zaznaczenia. Chunki gdzie byłeś
     właścicielem zostały usunięte.'
   unclaim:
-    success: '&7Pomyślnie usunięto ten chunk. &8(&7X:&e {x} &7Z:&e {z}&8)&7. dostałeś spowrotem:&b ${back}'
+    success: '&7Pomyślnie usunięto ten chunk. &8(&7X:&e {x} &7Z:&e {z}&8)&7. dostałeś spowrotem:&b {back}'
     selection: '&7Pomyślnie usunięto zaznaczenie z działki. Tylko chunki gdzie byłeś właścicielem zostały usunięte.'
   delete:
     confirm: '&cMusisz potwierdzić działanie &7wpisując: &a/Land delete {land} confirm&7.'
@@ -397,35 +397,35 @@ command:
   setSpawn:
     force-land: '&cMożesz ustawić spawn tylko na swojej działce. &7Idź do swojej działki&b
       {land} &7first.'
-    success: '#t#&a&lUstawiono spawn[newline]&7&lKoszt:&b&l ${cost}'
+    success: '#t#&a&lUstawiono spawn[newline]&7&lKoszt:&b&l {cost}'
   spawn:
     not-exist: '&cTutaj nie ma ustawionego spawnu dla tej działki&e {land}&c. &7Ktoś musi ustawić
       najpierw wykonując &a/Land setSpawn&7.'
     not-allowed: '&cNie możesz teleportować się do spawnu tej działki.d. &7Właściciel musi wyrazić na to zgodę. Skontaktuj się z nim, aby uzyskać pomoc 
     &8(&7Land:&e
       {land}&8)&7.'
-    success: '#t#&9&lTeleportowano[newline]&7&lDziałka&a {land} &7&lKoszt:&a ${cost}'
+    success: '#t#&9&lTeleportowano[newline]&7&lDziałka&a {land} &7&lKoszt:&a {cost}'
   wild:
     no-location: '&cNie można znaleźć dla Ciebie bezpiecznej lokalizacji pasującej do filtra
       w konfiguracji. &7Możesz spróbować ustawić maksymalny promień x oraz z dla losowej teleportacji
       do 0 w konfiguracji.'
     success: '&7Zostałeś losowo przeteleportowany &8(&7X:&e {x} &7Z:&e {z}&8)&7. Zapłaciłeś&b
-      ${cost}&7.'
+      {cost}&7.'
     searchingg: '#t#&9&lSearching[newline]&7&lRandom Location'
   deposit:
     number: '&7Musisz podać kwotę. Użyj &a/Deopozyt gruntu &8<&aAmount&8>
       &7or &a/Depozyt gruntu &8<&aLand&8> <&aAmount&8>&7.'
-    success: '&7Udało ci się dodać&b ${cost} &7do banku działki &7Nowe saldo działki
-    :&b ${bank} &8(&7Land:&e {land}&8)'
+    success: '&7Udało ci się dodać&b {cost} &7do banku działki &7Nowe saldo działki
+    :&b {bank} &8(&7Land:&e {land}&8)'
   withdraw:
     number: '&7
 Musisz podać kwotę. Użyj &a/Wycofanie działki &8<&aAmount&8>
       &7or &a/Wycowanie działki &8<&aLand&8> <&aAmount&8>&7.'
-    balance: '&7Nie ma wystarczająco pieniędzy w banku działki. Jest tu tylko&b ${bank}
-      &7w banku działki. Expected:&b ${take} &8(&7Land:&e {land}&8)'
-    success: '&7Udało ci się wziąć&b ${cost} &7z banku działki. &7Nowe saldo
-      wynosi:&b ${bank} &8(&7Land:&e {land}&8)'
-  balance: '&7Twoje saldo wynosi&b ${balance} &8(&7Land:&e {land}&8)&7.'
+    balance: '&7Nie ma wystarczająco pieniędzy w banku działki. Jest tu tylko&b {bank}
+      &7w banku działki. Expected:&b {take} &8(&7Land:&e {land}&8)'
+    success: '&7Udało ci się wziąć&b {cost} &7z banku działki. &7Nowe saldo
+      wynosi:&b {bank} &8(&7Land:&e {land}&8)'
+  balance: '&7Twoje saldo wynosi&b {balance} &8(&7Land:&e {land}&8)&7.'
   menu:
     no-permission-other: '&cNie możesz otwierać GUI innych graczy. '
   chat:

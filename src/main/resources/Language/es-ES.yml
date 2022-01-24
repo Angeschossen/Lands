@@ -20,7 +20,7 @@ general:
     offline: '&cdesconectado'
   top:
     title: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
-    entry: '&c#{pos} &a{land} &7Balance:&e ${value}'
+    entry: '&c#{pos} &a{land} &7Balance:&e {value}'
     next-page: '&7Next page: &8/&2Lands top {next}'
     last-updated: '&7Última actualización: {time} &7ago'
     footer: '&7-----<- &5Top Lands &8(&7Total:&b {total}&8) &7->-----'
@@ -39,7 +39,7 @@ general:
       line-1: '&c#&l{place}'
       line-2: '&8<&2 {land} &8>'
       line-3: '&7by {owner}'
-      line-4: '&7Balance:&3 ${value}'
+      line-4: '&7Balance:&3 {value}'
     noLand:
       line-1: ' '
       line-2: '&cSin land'
@@ -211,7 +211,7 @@ message:
         Favor no te muevas.'
       cancelled: '&cTu teleport ha sido cancelado. &7Porfavor no te muevas
         mientras estás esperando&5 {sec} &7segundos para tu teleport.'
-      chunk: '#t#&9&lTransportado[newline]&7X: {x} Z: {z} Cost:&c ${cost}'
+      chunk: '#t#&9&lTransportado[newline]&7X: {x} Z: {z} Cost:&c {cost}'
       cancelled-plugins: '&cEl teleport fue cancelado por otro plugin. &7Porfavor
         revisa tus otros plugins. &7Este no es un problema de Land.'
   claimblock:
@@ -278,9 +278,9 @@ command:
           &7Porfavor anda dentro de tu land.'
     name-exists: '&cEl nombre&4 {name} &cesta tomado por otra land. &7Necesitas elegir un
       nombre diferente.'
-    money-cost-bank: '&cNo tienes suficiente para pagar el costo. &7Necesitas&c ${cost}&7.
+    money-cost-bank: '&cNo tienes suficiente para pagar el costo. &7Necesitas&c {cost}&7.
       depositar un poco de dinero en el banco de land: &a/lands deposit {cost}'
-    money-cost: '&No tienes suficiente para pagar el costo. &7Necesitas&c ${cost}&7.'
+    money-cost: '&No tienes suficiente para pagar el costo. &7Necesitas&c {cost}&7.'
     lands-max: '&cNo puedes ser parte de ninguna land más. &7Alcansazte el máximo
       de&3 {max} &7lands. &8Permiso: lands.lands.<number>'
     name-numbers: '&cNo puedes usar numeros en los nombres de tus Lands. &7Porfavor solo usa
@@ -324,14 +324,14 @@ command:
       la config.'
     max-own: '&cNo puedes crear ninguna land más. &7Haz alcanzado el máximo de&3
       {max} &7lands propias permitidas. &8Permiso: lands.ownlands.<number>'
-    success: '&7Land creada correctamente&2 {land} &7para&c ${cost}&7. Puedes claimear
+    success: '&7Land creada correctamente&2 {land} &7para&c {cost}&7. Puedes claimear
       chunks ejecutando &a/lands claim&7. Además puedes usar &a/lands selection&7 para
       claimear una selección. Establecer Land {land} como land para futuras ediciones &8(/&3Lands
       edit&8)&7.'
     broadcast: '&7Land&2 {land} &7fue creada por&3 {player}&7.'
   rename:
     success: '&7Nuevo nombre establecido correctamente&3 {name} &7para esta land &8(&7Land:&2
-      {land}&8)&7. Haz pagado&c ${cost}&7.'
+      {land}&8)&7. Haz pagado&c {cost}&7.'
   edit:
     success: '&7Haz entrado en el modo edición para esta land &8(&7Land:&2 {land}&8)&7. Próximas
       acciones tales como &a/lands claim &7or &a/lands trust&7, serán ejecucatada para esta
@@ -377,13 +377,13 @@ command:
     far-land: '&cNo puedes claimear este chunk(s). &7Tus claims deben estar conectados
       a tu land &8(&7Land:&2 {land}&8)&7.'
     success: '&7Chunk claimeado satisfactoriamente &8(&7Land:&2 {land} &7X: {x} Z: {z}&8)
-      &7para&c ${cost}&7. El siguiente claim costará&b ${next}&7.'
+      &7para&c {cost}&7. El siguiente claim costará&b {next}&7.'
     already-claimed: '&cEn tu selección hay un chunk que actualmente ya esta claimeado y que
       no pertenece a tu land &8(&7X: {x} Z: {z}&8)&c. &7Pertenece a&2 {land}&7.'
     max-chunk: '&cNo puedes claimear&4 {chunks} &cmas chunk para esta land. &7El máximo
       por land&2 {land} &7es&3 {max} &7chunks. &8Permiso: lands.chunks.<number>'
     selection: '&7Haz claimeado correctamente&3 {chunks} &7chunks para esta land &8(&7Land:&2
-      {land}&8)&7. Haz pagado&c ${cost}&7.'
+      {land}&8)&7. Haz pagado&c {cost}&7.'
   assign:
     selection: '&cNecesitas crear una selección primero. &7Usa &a/lands selection
       &7para crear una. Después de eso, intentalo de nuevo.'
@@ -409,13 +409,13 @@ command:
         No tendrás acceso a ella nunca más.'
   unclaim:
     success: '&7Chunk des-claimeado satisfactoriamente &8(&7Land:&2 {land} &7X: {x} Z:
-      {z}&8)&7. Tienes de vuelta&a ${back} &7de dinero.'
+      {z}&8)&7. Tienes de vuelta&a {back} &7de dinero.'
     selection: '&7Haz des-claimeado satisfactoriamente esta selección. Favor tener en cuenta que
       los chunks en solo donde eras el %4DUEÑO&7, serán des-claimeados.'
   delete:
     confirm: '&cNecesitas confirmar esta acción. &7Usa &a/Land delete {land} confirm&7.'
     success: '&7Land borrada satisfactoriamente &8(&7Land:&2 {land}&8)&7. Has recibido&e
-      ${back} &7de vuelta.'
+      {back} &7de vuelta.'
     broadcast: '&7Land&2 {land} &7fue borrada por&3 {player}&7.'
   trust:
     own-land: '&cEste jugador no tiene permitido tener su propia Land y ser parte de
@@ -489,7 +489,7 @@ command:
     confirm: '&cPorfavor confirma que quieres transferir el propietario de esta land&2 {land}
       &cal jugador(a)&3 {player}&c: &a/lands setowner {player} confirm'
     success: '&7Has establecido correctamente al jugador(a)&3 {player} &7como el dueño de esta land&2
-      {land}&7. Pagaste&c ${cost}&7.'
+      {land}&7. Pagaste&c {cost}&7.'
   deny:
     not-exist: '&cNo tienes una invitacion de land&4 {land} &co ha expirado. &7Error de tipeo?'
     success: '&7Has denegado satisfactoriamente la invitación de land&2 {land}&7.'
@@ -503,7 +503,7 @@ command:
   setspawn:
     force-land: '&cSolo puedes establecer el spawn de land en tu Land. &7Ve a tu Land&2
       {land} &7primero. &8un administrador podria cambiar esto en config.'
-    success: '#t#&a&lSpawn establecido[newline]&7&lCosto:&b&l ${cost}'
+    success: '#t#&a&lSpawn establecido[newline]&7&lCosto:&b&l {cost}'
   spawn:
     not-exist: '&cNo hay spawn establecido para esta land&4 {land}&c. &7Alguien necesita establecerlo
       primero ejecutando &a/Land setspawn&7.'
@@ -511,27 +511,27 @@ command:
       que darte el permiso para poder hacerlo &8(&7Land:&2 {land}&8)&7.'
     chunk: '&7Land&2 {land} &7no ha establecido el spawnLand &8(&a/lands setspawn&8) &7aún.
       &7Teleportandote al claim inicial de esta Land.'
-    success: '&7Te has teleportado satisfactoriamente al spawn de Land&2 {land} &7Costo:&c ${cost}'
+    success: '&7Te has teleportado satisfactoriamente al spawn de Land&2 {land} &7Costo:&c {cost}'
   wild:
     no-loc: '&cNo se pudo encontrar una locación segura que calze con lo estabecido en config.
       &8Porfavor establece una distancia mas alta en el teleport aleatorio en config.
       Además puedes bajar la distancia minima en config.'
     searching: '#t#&6Buscando destinación[newline]&eEsperando que el teleport
       comienze..'
-    success: '&7Has sido transportado aleatoriamente &8(&7X: {x} Z: {z}&8)&7. has pagado&c ${cost}&7.'
+    success: '&7Has sido transportado aleatoriamente &8(&7X: {x} Z: {z}&8)&7. has pagado&c {cost}&7.'
   deposit:
     number: '&7Necesitas especificar un monto de dinero. Usa &a/Land deposit &8<&aAmount&8>
       &7o &a/Land deposit &8<&aLand&8> <&aAmount&8>&7.'
-    success: '&7Has depositado con éxito&b ${cost} &7en el banco de Land. &7El nuevo balance del
-      banco es:&b ${bank} &8(&7Land:&2 {land}&8)'
+    success: '&7Has depositado con éxito&b {cost} &7en el banco de Land. &7El nuevo balance del
+      banco es:&b {bank} &8(&7Land:&2 {land}&8)'
   withdraw:
     number: '&7Necesitas especificar un monto de dinero. Usa &a/Land withdraw &8<&aMonto&8>
       &7o &a/Land withdraw &8<&aLand&8> <&aMonto&8>&7.'
-    balance: '&cNo hay dinero suficiente en el banco de land. &7Hay solo&b ${bank}
-      &7en el banco. Esperado:&3 ${take} &8(&7Land:&2 {land}&8)'
-    success: '&7Has girado satisfactoriamente&b ${cost} &7de tu banco de Land. &7Nuevo balance
-      de banco:&b ${bank} &8(&7Land:&2 {land}&8)'
-  balance: '&7El balance es&b ${balance} &8(&7Land:&2 {land}&8)&7.'
+    balance: '&cNo hay dinero suficiente en el banco de land. &7Hay solo&b {bank}
+      &7en el banco. Esperado:&3 {take} &8(&7Land:&2 {land}&8)'
+    success: '&7Has girado satisfactoriamente&b {cost} &7de tu banco de Land. &7Nuevo balance
+      de banco:&b {bank} &8(&7Land:&2 {land}&8)'
+  balance: '&7El balance es&b {balance} &8(&7Land:&2 {land}&8)&7.'
   ban:
     area:
       trusted: '&cEl(la) jugador(a)&4 {player} &cesta confiado en esta área. &7Necesitas desconfiar de
@@ -581,7 +581,7 @@ list:
   - '&7Land:&a {land}'
   - '&7Area:&6 {area}'
   - '  &8Chunk &7X: {x} Z: {z}'
-  - '  &8Impuesto:&c ${tax}'
+  - '  &8Impuesto:&c {tax}'
   - '  &8Jugadores(as): {players}'
   - '&7---------<- &5&lVista de Land &7->---------'
   swear-words:
@@ -669,18 +669,18 @@ wars:
         ally: '&2ALIADO &8| &7Land&b {land} &7Se unió a utds como &2defensores&7!. Ellos pelearán
           de tu lado!.'
     tribute-payed:
-      defender: '&2ALIADO &8| &7Land&b {land} &7paga&c ${tribute} &7Como un tributo para
+      defender: '&2ALIADO &8| &7Land&b {land} &7paga&c {tribute} &7Como un tributo para
         los atacantes. La guerra ha terminado.'
-      attacker: '&2ALIADO &8| &7Land&b {land} &7paga&c ${tribute} &7Como un triburo para
+      attacker: '&2ALIADO &8| &7Land&b {land} &7paga&c {tribute} &7Como un triburo para
         tu land&b {attacker}&7. La guerra ha terminado.'
     surrender:
       tribute:
         received:
           all: '&aUna Land enemiga&b {land} &ase ha rendido!. &7El tributo ha sido dividido!.
-            Tú y tus aliados reciben&b ${tribute} &7cada uno.'
+            Tú y tus aliados reciben&b {tribute} &7cada uno.'
           initial: '&aUna Land enemiga&b {land} &ase ha rendido!. &7Land&b {receiver} &7recibe
-            el tributo de&b ${tribute}&7.'
-      end: '&7Land&b {land} &7Se ha rendido!. La guerra se acabó. Ellos pagaron&c ${tribute}
+            el tributo de&b {tribute}&7.'
+      end: '&7Land&b {land} &7Se ha rendido!. La guerra se acabó. Ellos pagaron&c {tribute}
         &7Al enemigo.'
     war-shield:
       set: '&aTu nueva protección diplomática(war-shield) estará activo por&b {time}&7.'

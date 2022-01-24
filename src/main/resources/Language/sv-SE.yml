@@ -74,17 +74,17 @@ general:
       line-4: ' '
     rent:
       line-2: '&6Hyra {area}'
-      line-3: '&c${cost} &8/ &5{time}'
+      line-3: '&c{cost} &8/ &5{time}'
       line-4: '&8Antal dagar: {max}'
     sell:
       area:
         line-2: '&aKöp'
         line-3: '&7Underzone&6 {area}'
-        line-4: '&c${cost}'
+        line-4: '&c{cost}'
       land:
         line-2: '&aKöp'
         line-3: '&7Land&2 {land}'
-        line-4: '&c${cost}'
+        line-4: '&c{cost}'
     rented:
       line-2: '&7Area&6 {area}'
       line-3: '&7{player}'
@@ -919,7 +919,7 @@ command:
       entry: '[NoPrefix]&8- &7{land}: &6{tax} {#fbe232}Ⓖ'
       footer: |
         [NoPrefix]&7Du behöver betala totalt&6 {total} {#fbe232}Ⓖ&7 om &3{next}&7.
-        &7På banken: ${balance} {#fbe232}Ⓖ
+        &7På banken: {balance} {#fbe232}Ⓖ
         &7---------<- &cKommande betalningar &7->---------
     changes:
       header: |
@@ -1067,7 +1067,7 @@ command:
   upkeep:
     none: '&7Du behöver inte betala till servern för något land.'
     header: '[NoPrefix]&7---------<- &cKommande betalningar &7->---------'
-    entry: '[NoPrefix][T]{covered} {land}: ${upkeep} &8[Tryck Här][C]lands deposit
+    entry: '[NoPrefix][T]{covered} {land}: {upkeep} &8[Tryck Här][C]lands deposit
       {land} {upkeep} -u[/C][H]&7Tryck här för att sätta in pengarna som saknas.[/H][/T]'
     footer: |
       [NoPrefix]&7Dinna land behöver betala totalt {total} {#fbe232}Ⓖ&7 om &5{next} &7,för att behålla alla inmutningar eller medlemmar i nationen. &7Tryck ovanför för sätta in pengar i ditt lands bank.
@@ -1143,7 +1143,7 @@ wars:
       broadcast: '&7Kriget mellan {attacker} &7och {defender} &7avslutas. Det tog:&3
         {time}&7.'
       surrender: '{object} &7Ena landet Kapitulera. Kriget är över och det betala&c
-        ${tribute} &7till fienden {enemy}&7.'
+        {tribute} &7till fienden {enemy}&7.'
       draw: '&7Kriget mellan {attacker} &7och {defender} &7slutade oavgjort. det tog&3
         {time}&7.'
       won:
@@ -1331,7 +1331,7 @@ nations:
           [T]&7Bekräfta: &8[CLICK][H]&7Klicka här för att bekräfta att du vill lämna nationen.[/H][C]nations leave confirm[/C][/T]
     rename:
       success: '&7Successfully set the new name&3 {name} &7for this nation &8(&7Nation:&9
-        {nation}&8)&7. You paid&c ${cost}&7.'
+        {nation}&8)&7. You paid&c {cost}&7.'
     setcapital:
       confirm: |
         &cBekräfta att du vill sätta land&4 {land} &csom ny huvudstad av nationen&4 {nation}&c.

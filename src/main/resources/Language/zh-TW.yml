@@ -20,7 +20,7 @@ general:
     offline: '&c離線'
   top:
     header: '&7-----<- &5國家排名 &8(&7國家:&b {total}&8) &7->-----'
-    entry: '&c#{pos} &a{land} &7Balance:&e ${value}'
+    entry: '&c#{pos} &a{land} &7Balance:&e {value}'
     next-page: '&7下一頁: &8/&2Lands top {next}'
     last-updated: '&7最後更新: {time} &'
     footer: '&7-----<- &5國家排名 &8(&7國家:&b {total}&8) &7->-----'
@@ -39,7 +39,7 @@ general:
       line-1: '&c#&l{place}'
       line-2: '&8<&2 {land} &8>'
       line-3: '&7所有者 {owner}'
-      line-4: '&7餘額:&3 ${value}'
+      line-4: '&7餘額:&3 {value}'
     noLand:
       line-1: ' '
       line-2: '&c沒有國家'
@@ -177,7 +177,7 @@ message:
       already: '&c無法進行二次傳送,因為已經在進行傳送 請等待完成.'
       started: '&7準備進行傳送. 將在&5 {sec} &7秒後進行傳送. 請不要移動.'
       cancelled: '&c傳送已被取消. &7請不要移動等待&5 {sec} &7秒.'
-      chunk: '#t#&9&l傳送至[newline]&7X: {x} Z: {z} 花費:&c ${cost}'
+      chunk: '#t#&9&l傳送至[newline]&7X: {x} Z: {z} 花費:&c {cost}'
       cancelled-plugins: '&c傳送被另一個插件取消 &7請檢查你的其他插件.'
   claimblock:
     dropped: '&c領取方塊掉落在區塊上,你的背包空間不足.'
@@ -226,9 +226,9 @@ command:
         setting: '&c你不允許在目前所在的國家上進行此操作. &7請返回你的國家. &7設置:&3 {setting}'
         general: '&c你不允許在目前所在的國家上進行此操作. &7請返回你的國家.'
     name-exists: '&c名稱&4 {name} &c已被其他國家使用. &7請重試.'
-    money-cost-bank: '&c你沒有足夠的錢來支付費用. &7你需要&c ${cost}&7. 存一些錢到國庫: &a/lands deposit
+    money-cost-bank: '&c你沒有足夠的錢來支付費用. &7你需要&c {cost}&7. 存一些錢到國庫: &a/lands deposit
       {cost}'
-    money-cost: '&c你沒有足夠的錢來支付費用. &7你需要&c ${cost}&7.'
+    money-cost: '&c你沒有足夠的錢來支付費用. &7你需要&c {cost}&7.'
     lands-max: '&c你不能再加入其他國家了. &7已達到上限&3 {max} &7國家. &8Permission: lands.lands.<number>'
     invalid-character: '&c你不能使用無效字符作為名稱. &7發現無效字符:&3 {invalid} &7請僅使用字母和數字.'
     name-length: '&c名稱過長. &7最大長度為&3 {max} &7字符.'
@@ -256,11 +256,11 @@ command:
   create:
     land-other: '&c您不能擁有自己的國家然後還想加入其他國家 &7你必須得離開國家&2 {land} &7. .'
     max-own: '&c您無法再創建任何土地. &7你已達到最大創建數量&3 {max} &7. &8Permission: lands.ownlands.<number>'
-    success: '&7成功創建國家&2 {land} &7花費&c ${cost}&7. 你現在可以開始占領區塊了 &a/lands claim&7.
+    success: '&7成功創建國家&2 {land} &7花費&c {cost}&7. 你現在可以開始占領區塊了 &a/lands claim&7.
       你也可以使用 /lands selection 來選擇區塊. 國家 {land} 的設置可以使用 &8(/&3Lands edit&8)&7.'
     broadcast: '&7國家&2 {land} &7已創建, 所有者:&3 {player}&7.'
   rename:
-    success: '&7成功設置國家新名稱&3 {name} &8(&7國家:&2 {land}&8)&7. 花費&c ${cost}&7.'
+    success: '&7成功設置國家新名稱&3 {name} &8(&7國家:&2 {land}&8)&7. 花費&c {cost}&7.'
   edit:
     success: '&7您已進入該國家的編輯模式 &8(&7國家:&2 {land}&8)&7. 下一步, 你可以使用 &a/lands claim &7或
       &a/lands trust&7 來進行編輯'
@@ -291,11 +291,11 @@ command:
     auto-create-fail: '&c無法自動為您創建土地. &7請閱讀上面的消息.'
     near-other: '&c這裡太靠近國家&4 {land}&c了. &7你至少需要距離該國家&3 {distance} 遠&7. '
     far-land: '&c你不能認領該區塊(s). &7你認領的區塊要臨近國家 &8(&7國家:&2 {land}&8)&7.'
-    success: '&7成功認領該區塊 &8(&7國家:&2 {land} &7X: {x} Z: {z}&8) &7花費&c ${cost}&7. 下次認領將會花費&b
-      ${next}&7.'
+    success: '&7成功認領該區塊 &8(&7國家:&2 {land} &7X: {x} Z: {z}&8) &7花費&c {cost}&7. 下次認領將會花費&b
+      {next}&7.'
     already-claimed: '&c選擇中有已被認領的區塊 &8(&7X: {x} Z: {z}&8)&c. &7I它屬於國家&2 {land}&7.'
     max-chunk: '&c你不能認領&4 {chunks} &c更多的區塊了 &8Permission: lands.chunks.<number>'
-    selection: '&7你已成功認領&3 {chunks} &7區塊 &8(&7國家:&2 {land}&8)&7. 花費&c ${cost}&7.'
+    selection: '&7你已成功認領&3 {chunks} &7區塊 &8(&7國家:&2 {land}&8)&7. 花費&c {cost}&7.'
   assign:
     selection: '&c您需要先創建一個選擇. &7使用 &a/lands selection &7去創建一個並且重試.'
     size: '&c你選擇的大小過小. &7最小為&3 {min} &7方塊而你只有&3 {current}&7.'
@@ -311,11 +311,11 @@ command:
     area:
       success: '&7成功離開此區域 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7. 你再也無法訪問它.'
   unclaim:
-    success: '&7成功取消認領該區塊 &8(&7國家:&2 {land} &7X: {x} Z: {z}&8)&7.你獲得了&a ${back}'
+    success: '&7成功取消認領該區塊 &8(&7國家:&2 {land} &7X: {x} Z: {z}&8)&7.你獲得了&a {back}'
     selection: '&7你已成功取消認領該區塊. 只能在你所擁有的區塊中才可以執行該操作.'
   delete:
     confirm: '&c你需要確認該操作. &7使用 &a/Land delete {land} confirm&7.'
-    success: '&7成功解散國家 &8(&7國家:&2 {land}&8)&7. 你獲得了&e ${back} &7.'
+    success: '&7成功解散國家 &8(&7國家:&2 {land}&8)&7. 你獲得了&e {back} &7.'
     broadcast: '&7國家&2 {land} &7已被&3 {player}&7 解散.'
   trust:
     own-land: '&c不允許玩家擁有自己的國家還加入其他國家'
@@ -368,7 +368,7 @@ command:
   setowner:
     confirm: '&c請確認你要將國家&2 {land} &c轉讓給&3 {player}&c: &a/lands setowner {player}
       confirm'
-    success: '&7成功將國家轉讓給&3 {player} &7現在它是國家&2 {land}&7 的所有者. 花費&c ${cost}&7.'
+    success: '&7成功將國家轉讓給&3 {player} &7現在它是國家&2 {land}&7 的所有者. 花費&c {cost}&7.'
     max-lands: '&cThe player&4 {player} &cisn''t allowed to own any more lands. &7He
       already reached his maximum of&3 {max} &7own lands. &8Permission: lands.ownlands.<number>'
   deny:
@@ -381,31 +381,31 @@ command:
     success: '&7成功傳送至 X:&3 {x} &7Z:&3 {z} &7區塊: {claimed}'
   setspawn:
     force-land: '&c你只能在你的國家設置出生點. &7返回你的國家&2 {land} &7重試.'
-    success: '#t#&a&l出生點設置至[newline]&7&l花費:&b&l ${cost}'
+    success: '#t#&a&l出生點設置至[newline]&7&l花費:&b&l {cost}'
   spawn:
     not-exist: '&c還未為&4 {land}&c設置出生點. &7請使用 &a/Land setspawn&7來進行設置.'
     not-allowed: '&c你不允許傳送到該國家. &7需要國家授予你這樣做的權限 &8(&7國家:&2 {land}&8)&7.'
     chunk: '&7國家&2 {land} &7還未設置出生點 &8(&a/lands setspawn&8) &7. &7將為你傳送至國家附近'
-    success: '&7成功傳送至&2 {land} &7出生點 &7花費:&c ${cost}'
+    success: '&7成功傳送至&2 {land} &7出生點 &7花費:&c {cost}'
     unsafe: '&cYou can''t teleport to this spawn, because it was detected as being
       unsafe for teleportation. &7Teleporting there might result into dying. They
       need to adjust the spawn by using &a/lands setspawn&7.'
   wild:
     searching: '#t#&6搜索目的地[newline]&e等待傳送..'
-    success: '&7你被隨機傳送至 &8(&7X: {x} Z: {z}&8)&7. 花費&c ${cost}&7.'
+    success: '&7你被隨機傳送至 &8(&7X: {x} Z: {z}&8)&7. 花費&c {cost}&7.'
     no-location: '&cCouldnt find a safe location for you that matches the filter in
       config. &8Please adjust your max and min distance settings and set the world
       spawn (/setworldspawn).'
   deposit:
     number: '&7你需要指定金額. 使用 &a/Land deposit &8<&aAmount&8> &7或者 &a/Land deposit
       &8<&aLand&8> <&aAmount&8>&7.'
-    success: '&7你成功往國庫中存入&b ${cost} &7. &7現在國庫餘額為:&b ${bank} &8(&7國家:&2 {land}&8)'
+    success: '&7你成功往國庫中存入&b {cost} &7. &7現在國庫餘額為:&b {bank} &8(&7國家:&2 {land}&8)'
   withdraw:
     number: '&7你需要指定金額. 使用 &a/Land withdraw &8<&aAmount&8> &7或者 &a/Land withdraw
       &8<&aLand&8> <&aAmount&8>&7.'
-    balance: '&c國庫中沒有足夠的錢能夠取出. &7國庫餘額僅剩&b ${bank} &7.預期取出:&3 ${take} &8(&7國家:&2 {land}&8)'
-    success: '&7你成功從國庫中取出&b ${cost} &7. &7現在國庫餘額為:&b ${bank} &8(&7國家:&2 {land}&8)'
-  balance: '&7餘額為&b ${balance} &8(&7國家:&2 {land}&8)&7.'
+    balance: '&c國庫中沒有足夠的錢能夠取出. &7國庫餘額僅剩&b {bank} &7.預期取出:&3 {take} &8(&7國家:&2 {land}&8)'
+    success: '&7你成功從國庫中取出&b {cost} &7. &7現在國庫餘額為:&b {bank} &8(&7國家:&2 {land}&8)'
+  balance: '&7餘額為&b {balance} &8(&7國家:&2 {land}&8)&7.'
   ban:
     area:
       trusted: '&c玩家&4 {player} &c已被信任. &7你需要先取消信任 &8(&7區域:&6 {area} &7國家:&2 {land}&8)&7.'
@@ -439,7 +439,7 @@ list:
   - '&7國家:&a {land}'
   - '&7區域:&6 {area}'
   - '  &8區塊 &7X: {x} Z: {z}'
-  - '  &8稅收:&c ${tax}'
+  - '  &8稅收:&c {tax}'
   - '  &8玩家: {players}'
   - '&7---------<- &5&l國家訊息 &7->---------'
   swear-words:
@@ -521,14 +521,14 @@ wars:
         enemy: '&c敵國 &8| &6國家&2 {land} &6與對方成為了盟國.'
         ally: '&2盟國 &8| &7國家&b {land} &7與你成為了盟友,同你並肩戰鬥.'
     tribute-payed:
-      defender: '&2敵國 &8| &7國家&b {land} &7已支付&c ${tribute} &7作為戰利品. 戰爭已結束.'
-      attacker: '&2盟國 &8| &7國家&b {land} &7已支付&c ${tribute} &7向你的國家 &b{attacker} &7提交戰利品.戰爭已結束.'
+      defender: '&2敵國 &8| &7國家&b {land} &7已支付&c {tribute} &7作為戰利品. 戰爭已結束.'
+      attacker: '&2盟國 &8| &7國家&b {land} &7已支付&c {tribute} &7向你的國家 &b{attacker} &7提交戰利品.戰爭已結束.'
     surrender:
       tribute:
         received:
-          all: '&a敵國&b {land} &a投降了！ &7戰利品已被瓜分. 你和你的盟國收到了&b ${tribute} &7.'
-          initial: '&a敵國&b {land} &a投降了! &7國家&b {receiver} &7提供了戰利品&b ${tribute}&7.'
-      end: '&7國家&b {land} &7投降了. 戰爭已結束. 他們必須支付&c ${tribute} &7來作為戰利品給敵國.'
+          all: '&a敵國&b {land} &a投降了！ &7戰利品已被瓜分. 你和你的盟國收到了&b {tribute} &7.'
+          initial: '&a敵國&b {land} &a投降了! &7國家&b {receiver} &7提供了戰利品&b {tribute}&7.'
+      end: '&7國家&b {land} &7投降了. 戰爭已結束. 他們必須支付&c {tribute} &7來作為戰利品給敵國.'
     war-shield:
       set: '&a激活保護期&b {time}&7.'
     kill:

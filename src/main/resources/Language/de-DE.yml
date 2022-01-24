@@ -51,7 +51,7 @@ general:
     offline: '&cOffline'
   top:
     entry:
-      balance: '&c#{pos} &a{land} &7Balance:&e ${value}'
+      balance: '&c#{pos} &a{land} &7Balance:&e {value}'
       chunks: '&c#{pos} &a{land} &7Chunks:&e {value}'
       members: '&c#{pos} &a{land} &7Members:&e {value}'
     hologram:
@@ -73,7 +73,7 @@ general:
       line-1: '&c#&l{place}'
       line-2: '&8<&2 {land} &8>'
       line-3: '&7{owner}'
-      line-4: '&e{value}$'
+      line-4: '&e{value}'
     noLand:
       line-1: ' '
       line-2: '&cKein Land'
@@ -81,17 +81,17 @@ general:
       line-4: ' '
     rent:
       line-2: '&6{area} Mieten'
-      line-3: '&c${cost} &8/ &5{time}'
+      line-3: '&c{cost} &8/ &5{time}'
       line-4: '&8Max: {max}'
     sell:
       area:
         line-2: '&aKaufen'
         line-3: '&7Gebiet:&6 {area}'
-        line-4: '&c${cost}'
+        line-4: '&c{cost}'
       land:
         line-2: '&aBuy'
         line-3: '&7Land&2 {land}'
-        line-4: '&c${cost}'
+        line-4: '&c{cost}'
     rented:
       line-2: '&7Gebiet&6 {area}'
       line-3: '&7{player}'
@@ -383,7 +383,7 @@ message:
       bewege dich nicht.'
     cancelled: '&cDeine Teleportation wurde abgebrochen. &7Bitte bewege dich nicht,
       während du noch&5 {sec} &7Sekunden auf die Teleportation wartest.'
-    chunk: '#t#&9&lTeleportiert[newline]&7X: {x} Z: {z} Kosten:&c ${cost}'
+    chunk: '#t#&9&lTeleportiert[newline]&7X: {x} Z: {z} Kosten:&c {cost}'
     plugin: '&cDie Teleportation wurde durch ein anderes Plugin abgebrochen. &7Bitte
       überprüfe deine anderen Plugins. &7Das Problem liegt nicht an Lands.'
     unsafe: '&cDas Ziel ist nicht sicher, die Teleportation wurde abgebrochen.'
@@ -444,20 +444,20 @@ command:
         in&5 {time}&7aus.'
       sold: '&cDu kannst ein bereits verkauftes Gebiet nicht vermieten. &7Das Gebiet&6
         {area} &7wurde von Spieler&3 {player}&7 gekauft.'
-      success: '&7Das Gebiet&6 {area} &7wurde vermietet. Der Mieter zahlt&c ${cost}
+      success: '&7Das Gebiet&6 {area} &7wurde vermietet. Der Mieter zahlt&c {cost}
         &7pro&5 {time}&7.'
       invalid: |
         &7Your line format is invalid (line: {line})
          &81. line:&7 Lands
          &82. line:&7 rent
          &83. line:&7 TIME maxTime (not required)
-         &84. line:&7 costs (example: 5 = $5)
+         &84. line:&7 costs (example: 5 = 5)
       info: |
         [NoPrefix]
         &7---------<- &5&lRent Info &7->---------
         [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this area.[/H][C]lands view here[/C][/T]
          &7Area:&6 {area}
-         &7Cost:&c ${cost} &7each {time}
+         &7Cost:&c {cost} &7each {time}
          &8Max time: {max}
         &7---------<- &5&lRent Info &r&7->---------
     rent:
@@ -466,8 +466,8 @@ command:
       max: '&cDu kannst den Mietvertrag nicht verlängern. &7Der Besitzer des Landes&2
         {land} &7hat eine maximale Mietdauer vonf&5 {max} &7festgelegt.'
       add: '&7Du hastd&5 {add} &7zu deinem Mietvertrag des Gebiets&6 {area} &7für&c
-        ${cost}&7 hinzugefügt. Es läuft in&5 {time}&7 aus.'
-      success: '&7Du hast das Gebiet&6 {area} &7vom Land&2 {land} &7für&c ${cost}&7
+        {cost}&7 hinzugefügt. Es läuft in&5 {time}&7 aus.'
+      success: '&7Du hast das Gebiet&6 {area} &7vom Land&2 {land} &7für&c {cost}&7
         gemietet. Es läuft in&5 {time}&7 aus.'
       info: |
         [NoPrefix]
@@ -476,7 +476,7 @@ command:
          &7Area:&6 {area}
          &7Tenant: {player}
          &7Time left:&5 {left}
-         &8Rent: ${cost} each {time}
+         &8Rent: {cost} each {time}
         &7---------<- &5&lRented Info &r&7->---------
       expire: '&cYou can''t add any more time to your rental of area&4 {area}&c. &7The
         land&2 {land} &7removed it for rental. It will expire in&5 {time}&7.'
@@ -491,9 +491,9 @@ command:
             or purchased.'
       tenant:
         success: '&7You removed the tenant&3 {player} &7from area&6 {area} &7of land&2
-          {land} &7and paid&c {cost}$ &7as compensation.'
+          {land} &7and paid&c {cost} &7as compensation.'
     confirm: |
-      &cPlease confirm that you want to pay&4 {cost}$ &cas compensation to the tenant&4 {player} &cin order to remove him:
+      &cPlease confirm that you want to pay&4 {cost} &cas compensation to the tenant&4 {player} &cin order to remove him:
         [T]&aConfirm: &8[CLICK][H]&7Click here to confirm this action and payment.[/H][C]lands rent removetenant confirm[/C][/T]
   sell:
     sell:
@@ -501,39 +501,39 @@ command:
         wurde. &7Das Gebiet&6 {area} &7wird beireits von&3 {player}&7 gemietet. Es
         läuft aus in&5 {time}&7.'
       success:
-        area: '&7Du stellst das Gebeit&6 {area} &7zum Verkauf frei. Kosten:&c ${cost}'
+        area: '&7Du stellst das Gebeit&6 {area} &7zum Verkauf frei. Kosten:&c {cost}'
         land: '&7Du stellst das gesamte Land&2 {land} &7zum Verkauf frei. Kosten:&c
-          ${cost}'
+          {cost}'
       invalid: |
         &7Your line format is invalid (line: {line})
          &81. line:&7 Lands
          &82. line:&7 sell
-         &83. line:&7 costs (example: 5 = $5)
+         &83. line:&7 costs (example: 5 = 5)
     buy:
       success:
-        area: '&7Du hast das Gebiet&6 {area} &7vom Land&2 {land} &7für&c ${cost}&7
+        area: '&7Du hast das Gebiet&6 {area} &7vom Land&2 {land} &7für&c {cost}&7
           gekauft.'
-        land: '&7Du hast das Land&2 {land} &7für&c ${cost}&7 gekauft'
+        land: '&7Du hast das Land&2 {land} &7für&c {cost}&7 gekauft'
       info:
         area: |
           [NoPrefix]
           &7---------<- &5&lArea Buy &7->---------
           [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this area.[/H][C]lands view here[/C][/T]
            &7Area:&6 {area}
-           &7Cost:&c ${cost}
+           &7Cost:&c {cost}
           &7---------<- &5&lArea Buy &r&7->---------
         land: |
           [NoPrefix]
           &7---------<- &5&lLand Buy &7->---------
           [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this land.[/H][C]lands view[/C][/T]
-          &7Cost:&c ${cost}
+          &7Cost:&c {cost}
           &7---------<- &5&lLand Buy &r&7->---------
     sold: |
       [NoPrefix]
       &7---------<- &5&lArea Sold &7->---------
       [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this area.[/H][C]lands view here[/C][/T]
        &7Area:&6 {area}
-       &7Sold to&3 {player} &7for&c ${cost}&7.
+       &7Sold to&3 {player} &7for&c {cost}&7.
       &7---------<- &5&lArea Sold &7->---------
   general:
     no-permission: '&cDu hast keine Berechtigung dies zu tun. &8Du brauchst: {permission}.'
@@ -547,8 +547,8 @@ command:
     name-exists: '&cDer Name&4 {name} &cwird bereits von einem anderen Land genutzt.
       &7Du musst einen anderen Namen nutzen.'
     money-cost-bank: '&cDu hast nicht genug Geld auf der Hand. &7Du brauchst&e {cost}
-      $ &7, um Geld in die Bank einzuzahlen zu können. Nutze: &a/lands deposit {cost}'
-    money-cost: '&cDu hast nicht genug Geld. &7Du brauchst&e {cost} $&7.'
+       &7, um Geld in die Bank einzuzahlen zu können. Nutze: &a/lands deposit {cost}'
+    money-cost: '&cDu hast nicht genug Geld. &7Du brauchst&e {cost} &7.'
     swear-word: '&cSchimpfwort erkannt. &7Bitte nutze keine vulgäre Sprache. Wort:&c
       {word}'
     action-cooldown: '&cDu kannst das zur Zeit nicht tun. &7Du musst&5 {time}&7 warten.'
@@ -601,14 +601,14 @@ command:
       kann dies in der Config ändern.'
     max-own: '&cDu kannst kein weiteres Land erstellen. &7Du hast dein Maximum von
       &3{max} &7erreicht. &8Rechte: lands.ownlands.<number>'
-    success: '&7Das Land&2 {land} &7wurde für&e {cost} $&7 erfolgreich erstellt. Du
+    success: '&7Das Land&2 {land} &7wurde für&e {cost} &7 erfolgreich erstellt. Du
       kannst Chunks besetztem indem du &a/lands claim &7eingibst. Du kannst auch
       &a/lands &7selection durchführen, um ein Gebiet welches du besetzen willst
       zu markieren.'
     broadcast: '&7Land&2 {land} &7wurde von&3 {player}&7 erstellt.'
   rename:
     success: '&7Der Name&3 {name} &7wurde erfolgreich geändert. Vorheriger Name &8(&7Land:&2
-      {land}&8)&7. Du hast&e {cost} $&7 gezahlt.'
+      {land}&8)&7. Du hast&e {cost} &7 gezahlt.'
   edit:
     success: '&7Du hast den Bearbeitungsmodus für das Land &8(&7Land:&2 {land}&8)&7
       aktiviert. Die nächsten Aktionen, wie z.b &a/lands claim &7oder &a/lands
@@ -660,13 +660,13 @@ command:
     far-land: '&cDu kannst den Chunk nicht beanspruchen. &7Der Chunk muss direkt an
       deinem Land &8(&7Land:&2 {land}&8)&7 sein.'
     success: '&7Der Chunk &8(&7Land:&2 {land} &7X: {x} Z: {z}&8) &7wurde erfolgreich
-      beansprucht für &e{cost} $&7. Der nächste Chunk wird dich&e {next} $ &7 kosten.'
+      beansprucht für &e{cost} &7. Der nächste Chunk wird dich&e {next}  &7 kosten.'
     already-claimed: '&cIn deiner Auswahl &8(&7X: {x} Z: {z}&8) sind bereits beanspruchte
       Chunks von dem Land {land}&7.'
     max-chunk: '&cDu kannst&4 {chunks} &cnicht beanspruchen. &7Das Maximum für das
       Land&2 {land} &7beträgt&3 {max} &7Chunks. &8Rechte: lands.chunks.<number>'
     selection: '&7Du hast erfolgreich&3 {chunks} &7Chunks  für das Land&8(&7Land:&2
-      {land}&8)&7 beansprucht. Du hast&e {cost} $&7 gezahlt.'
+      {land}&8)&7 beansprucht. Du hast&e {cost} &7 gezahlt.'
     initial-world: '&cFor land&4 {land} &cyou can only claim in its initial land creation
       world&4 {world}&c. &7You may want to create another land for the world you''re
       currently in ({current}): &a/lands create &8<&aname&8>'
@@ -701,7 +701,7 @@ command:
     rental: '&cDu kannst den Chunk nicht freigeben, &7da er ein vermietets Gebiet/verkauftes
       Gebiet enthält.(&6 {area}&7. Mieter:&3 {player})'
     success: '&7Du hast den Chunk erfolgreich freigegeben &8(&7Land:&2 {land} &7X:
-      {x} Z: {z}&8)&7. Du erhälst &e{back} $ &7zurück.'
+      {x} Z: {z}&8)&7. Du erhälst &e{back}  &7zurück.'
     selection:
       empty: '&cDu kannst keinen Chunk freigeben , da keiner beansprucht ist oder
         es dir nicht erlaubt ist welche freizugeben.'
@@ -709,13 +709,13 @@ command:
         das verkauft oder vermietet ist. (&6{area} &7vom Land&2 {land}&7. Mieter:&3
         {player})'
       partly: '&7Du hast erfolgreich {success} / {size} Chunks freigegeben. Du hast&c
-        ${back} &7zurück erhalten.'
-      success: '&7Du hast erfolgreich alle Chunks freigegeben. Du hast&c ${back} &7zurück
+        {back} &7zurück erhalten.'
+      success: '&7Du hast erfolgreich alle Chunks freigegeben. Du hast&c {back} &7zurück
         erhalten.'
       split: '&7You unclaimed {success} / {size} chunks of this selection, &cbut {failed}
         could not be unclaimed because it would result in your land being split up
         into parts &8(a admin can disable this in config)&7. Parts that would split
-        up are now visualized. You got&c ${back} &7back.'
+        up are now visualized. You got&c {back} &7back.'
     split: '&cYou can''t unclaim this chunk, because this would cause your land to
       split up into parts &8(a admin can disable this in config)&7. Parts that would
       split up are now visualized.'
@@ -747,7 +747,7 @@ command:
       success: '&7Der Spieler&3 {player} &7wurde zu dem Gebiet&8(&7Area:&6 {area}
         &7Land:&2 {land}&8)&7 eingeladen. Bitte habe Geduld.'
       target: |
-        [T]&7Player&3 {player} &7hat dich zu dem Gebiet&6 {area} &7 von seinem Land&2 {land}&7 eingeladen.[H]&7Klick hier zum Öffnen des Menüs.[/H][C]lands invites[/C][/T] &7Steuer:&c ${tax}
+        [T]&7Player&3 {player} &7hat dich zu dem Gebiet&6 {area} &7 von seinem Land&2 {land}&7 eingeladen.[H]&7Klick hier zum Öffnen des Menüs.[/H][C]lands invites[/C][/T] &7Steuer:&c {tax}
 
           [T]&2Akzeptieren &8[&8CLICK&8][H]&7Akzeptiert die Einladung.[/H][C]lands accept {land}[/C][/T]
           [T]&cAblehnen &8[&8CLICK&8][H]&Lehnt die Einladung ab.[/H][C]lands deny {land}[/C][/T]
@@ -758,7 +758,7 @@ command:
       success: '&7Der Spieler &3{player} &7 wurde zu dem Land&2 {land}&7 eingeladen.
         Er/Sie muss die Einladung annehmen.'
       target: |
-        [T]&7Player&3 {player} &7hat dich zu seinem Land&2 {land}&7 eingeladen.[H]&7Klick hier zum Öffnen des Menüs.[/H][C]lands invites[/C][/T] &7Steuer:&c ${tax}
+        [T]&7Player&3 {player} &7hat dich zu seinem Land&2 {land}&7 eingeladen.[H]&7Klick hier zum Öffnen des Menüs.[/H][C]lands invites[/C][/T] &7Steuer:&c {tax}
 
           [T]&2Akzeptieren &8[&8CLICK&8][H]&7Akzeptiert die Einladung.[/H][C]lands accept {land}[/C][/T]
           [T]&cAblehnen &8[&8CLICK&8][H]&Lehnt die Einladung ab.[/H][C]lands deny {land}[/C][/T]
@@ -835,7 +835,7 @@ command:
     not-trusted: '&cDu kannst dich nicht dorthin teleportieren. &7Du bist kein Vertrauter
       von dem Land&2 {land}&7.'
   setspawn:
-    success: '#t#&a&lSpawn gesetzt[newline]&7&lPreis:&e {cost} $'
+    success: '#t#&a&lSpawn gesetzt[newline]&7&lPreis:&e {cost} '
     wilderness: '&cYou can only set the land spawn on your land. &7You either need
       to move up or down into your land&2 {land}&7.'
   spawn:
@@ -848,10 +848,10 @@ command:
     unsafe: '&cDu kannst dich nicht zu dem Land teleportieren, es ist nicht sicher.
       &7Es könnte zum Tod führen. Das Land muss den Spawn mit &a/lands setspawn&7
       neu setzen.'
-    success: '#t#&9&lTeleportiert[newline]&7&lLand&2 {land} &7&lPreis:&e {cost} $'
+    success: '#t#&9&lTeleportiert[newline]&7&lLand&2 {land} &7&lPreis:&e {cost} '
   wild:
     success: '&7Du wurdest an einen zufälligen Ort teleportiert &8(&7X: {x} Z: {z}&8)&7.
-      Es kostet&e {cost} $&7.'
+      Es kostet&e {cost} &7.'
     searching: '#t#&6Zielort wird gesucht[newline]&eWarte bis die Teleportation beginnt..'
     no-location: '&cEs konnte kein sicherer Ort gefunden werden. &8Ein Administrator  muss
       den Radius der Suche einstellen und den Weltspawn setzen (/setworldspawn).'
@@ -860,16 +860,16 @@ command:
   deposit:
     number: '&7Du musst eine Zahl angeben, die du einzahlen willst. Nutze dafür &a/Land
       deposit &8<&aAnzahl&8> &7oder &a/Land deposit &8<&aLand&8> <&aAnzahl&8>&7.'
-    success: '&7Du hast&e {cost} $ &7in die Landesbank eingezahlt. &7Neuer Kontostand:&e
-      {bank} $ &8(&7Land:&a {land}&8)'
+    success: '&7Du hast&e {cost}  &7in die Landesbank eingezahlt. &7Neuer Kontostand:&e
+      {bank}  &8(&7Land:&a {land}&8)'
   withdraw:
     number: '&7Du musst eine Zahl angeben die du abheben willst. Nutze dafür &a/Land
       withdraw &8<&aAnzahl&8> &7oder &a/Land withdraw &8<&aLand&8> <&aAnzahl&8>&7.'
-    balance: '&7Soviel Geld ist nicht auf der Landesbank. Es sind nur&e {bank} $ &7auf
-      der Bank. Erwartet:&e {take} $ &8(&7Land:&a {land}&8)'
-    success: '&7Du hast&e {cost} $ &7aus der Landesbank genommen. &7Neuer Kontostand:&e
-      {bank} $ &8(&7Land:&a {land}&8)'
-  balance: '&7Kontostand:&e {balance} $ &8(&7Land:&a {land}&8)&7.'
+    balance: '&7Soviel Geld ist nicht auf der Landesbank. Es sind nur&e {bank}  &7auf
+      der Bank. Erwartet:&e {take}  &8(&7Land:&a {land}&8)'
+    success: '&7Du hast&e {cost}  &7aus der Landesbank genommen. &7Neuer Kontostand:&e
+      {bank}  &8(&7Land:&a {land}&8)'
+  balance: '&7Kontostand:&e {balance}  &8(&7Land:&a {land}&8)&7.'
   ban:
     area:
       success: '&3{player} &7 wurde erfolgreich von dem Gebiet &7Area:&6 {area} &8(&7Land:&2
@@ -910,7 +910,7 @@ command:
       [T]&7Land:&a {land} &8[&8Klick&8][H]&7Klick hier um mehr Infos über das Land anzuzeigen.[/H][C]lands info {land}[/C][/T]
       &7Gebiet:&6 {area}
         &8Chunk &7X: {x} Z: {z}
-        &8Steuer:&c ${tax}
+        &8Steuer:&c {tax}
         &8Spieler:&7 {players}
       &7---------<- &5&lLand View &r&7->---------
     area: |
@@ -918,7 +918,7 @@ command:
       &7---------<- &5&lArea View &7->---------
       [T]&7Land:&a {land} &8[&8Klick&8][H]&7Klick hier um mehr Infos über das Land anzuzeigen.[/H][C]lands info {land}[/C][/T]
       &7Gebiet:&6 {area}
-        &8Steuer:&c ${tax}
+        &8Steuer:&c {tax}
         &8Spieler:&7 {players}
       &7---------<- &5&lArea View &r&7->---------
     y-level: '&7Your current position is wilderness, but this chunk is already claimed
@@ -934,21 +934,21 @@ command:
     none: '&7Es gibt keine Steuern zu zahlen.'
     upcoming:
       header: '[NoPrefix]&7---------<- &cSteuern &7->---------'
-      entry: '[NoPrefix]&8- &7{land}: &c${tax}'
+      entry: '[NoPrefix]&8- &7{land}: &c{tax}'
       footer: |
-        [NoPrefix]&7Du musst ${total} in &5{next}&7 zahlen.
-        &7Guthaben: ${balance}
+        [NoPrefix]&7Du musst {total} in &5{next}&7 zahlen.
+        &7Guthaben: {balance}
         &7---------<- &cSteuern &7->---------
     changes:
       header: |
         [NoPrefix]
         &7---------<- &4Steuer Änderungen&7->---------
         &cTaxes have been changed in some lands:
-      entry: '[NoPrefix]&8- &7{land}: {color}${tax} &8(zuvor: {previous})'
+      entry: '[NoPrefix]&8- &7{land}: {color}{tax} &8(zuvor: {previous})'
       footer: |
         [NoPrefix]
         &7Zuzahlen in:&5 {next}
-        &7Guthaben: ${balance}
+        &7Guthaben: {balance}
         &8Mehr infos: /lands taxes
         &7---------<- &4Steuer Änderungen &7->---------
   top:
@@ -992,7 +992,7 @@ wars:
       broadcast: '&7Der Krieg zwischen {attacker} &7und {defender} &7hat geendet.
         Er dauerte&5 {time}&7.'
       surrender: '{object} &7hat aufgegeben. Der Krieg ist vorbei und es mussten&c
-        ${tribute} &7an den Sieger {enemy}&7 gezahlt werden.'
+        {tribute} &7an den Sieger {enemy}&7 gezahlt werden.'
       draw: '&7Der Krieg zwischen {attacker} &7und {defender} &7endete mit einem Unentschieden.
         Er dauerte&5 {time}&7.'
       won:
@@ -1042,7 +1042,7 @@ wars:
       ally: '&cDu kannst keinen Krieg gegen deine Verbündeten führen. &7Dein Land
         und das Ziel sind in derselben Nation&9 {nation}&7.'
       balance: '&cKrieg konnte nicht erklärt werden. &7Die Angreifer {object} &7brauchen
-        mind.&c ${min} &7,um einen Krieg zu starten.'
+        mind.&c {min} &7,um einen Krieg zu starten.'
       broadcast: '&7Das Land&c {attacker} &7hat dem Land&a {defender}&7 den Krieg
         erklärt. Der Krieg startet in&5 {time}&7.'
       confirm: '&cBist du dir sicher, dass du den Krieg gegen {object}&c anfangen
@@ -1053,10 +1053,10 @@ wars:
         success: |
           &7Du &8({attacker}&8) &7hast {defender} den Krieg erklärt&7.
            &7Sie müssen nurnoch annehmen ober ablehenen, damit der Krieg beginnt.
-           &7Wenn die Verteidiger aufgeben, müssen sie&c ${tribute} &7an die Angreifer zahlen.
+           &7Wenn die Verteidiger aufgeben, müssen sie&c {tribute} &7an die Angreifer zahlen.
         target: |
           &7Der Feind {attacker} &7 hat {defender} &8(&7DU&8)&7 den Krieg erklärt.
-           &7Wenn die Verteidiger aufgeben, müssen sie&c ${tribute} &7an die Angreifer zahlen.
+           &7Wenn die Verteidiger aufgeben, müssen sie&c {tribute} &7an die Angreifer zahlen.
 
            [T]&aAkzeptieren: &a/Wars declare {input} &8[&8Klick&8][H]&7Klick zum annehmen des Krieges.[/H][C]Wars declare {input}[/C][/T]
            [T]&cAblehnen: &a/Wars deny &8[&8Klick&8][H]&7Klick zum ablehnen des Krieges.[/H][C]Wars deny[/C][/T]
@@ -1115,13 +1115,13 @@ wars:
             &7Verteidiger: {defender}
 
             &7Wenn die Vertreidiger aufegeben
-            &7müssen sie:&c ${tribute} &rzahlen
+            &7müssen sie:&c {tribute} &rzahlen
 
             [T]&7Akzeptieren: &a/Wars declare {input} &8[&8Klick&8][H]&7Klick zum annehmen des Krieges.[/H][C]Wars declare {input}[/C][/T]
             [T]&7Ablehnen: &a/Wars deny &8[&8Klick&8][H]&7Klick zum ablehnen des Krieges.[/H][C]Wars deny[/C][/T]
           attacker: |-
             &4Kriegserklärung: &7Angreifer: {attacker} &7Verteidiger: {defender}
-            &7Wenn die Vertreidiger aufegeben &7müssen sie:&c ${tribute} &rzahlen
+            &7Wenn die Vertreidiger aufegeben &7müssen sie:&c {tribute} &rzahlen
             &cDie Verteidiger haben &cnoch nicht angenommen.
 nations:
   message:
@@ -1196,7 +1196,7 @@ nations:
           [T]&7Confirm: &8[CLICK][H]&7Click here to confirm this action.[/H][C]nations leave confirm[/C][/T]
     rename:
       success: '&7Successfully set the new name&3 {name} &7for this nation &8(&7Nation:&9
-        {nation}&8)&7. You paid&c ${cost}&7.'
+        {nation}&8)&7. You paid&c {cost}&7.'
     setcapital:
       level: '&cYou can''t set the land&4 {land} &cas the new capital of nation&4
         {nation}&c. &7It needs to be at least level&3 {level} &8(&7current: {current}&8)&7.'
