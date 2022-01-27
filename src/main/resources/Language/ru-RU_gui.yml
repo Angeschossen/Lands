@@ -1,0 +1,3532 @@
+# Resource page: https://www.spigotmc.org/resources/authors/315463/
+# Discord: https://discord.gg/B4MAJVk
+#
+# If you encounter any issues, please report them
+# to discord support server or via pm.
+# Bugs or issues are mostly fixed within hours.
+#
+#
+# Here you can edit the whole GUI.
+# You can set GUI titles, the size and
+# item names, lores, materials and slots.
+# Don't remove any values or keys.
+#
+# You also can add new items to your GUI.
+# This can be done under gui.<GUI>.s.<YourItemName>
+# The name needs to be unique in this section.
+# Example:
+#
+# gui:
+#   lands:
+#     title: '&8Your Lands'
+#     size: 27
+#     s:
+#       close:
+#         name: '&cClose'
+#         lore:
+#         - '&7Close this menu.'
+#         - ' '
+#         - '&8- &7You can open it again'
+#         - '  &7with &8/&3Lands menu&7.'
+#         material: 'RED_STAINED_GLASS_PANE'
+#         slot: 9
+#
+# Please note: You need to set all values
+# otherwise Lands will auto generate values.
+# Also you can't set items where list items
+# are configured. Means if for example the
+# list in the Lands GUI goes from slot
+# 10 - 12 you can set any items with
+# the slot 10, 11, 12. They will be ignored.
+#
+#
+# You also can apply new placeholders.
+# This can be done under gui.<GUI>.p.<YourItemName>
+# The name needs to be unique in this section.
+# Example:
+#
+# gui:
+#   lands:
+#     p:
+#       placeholder_1:
+#       material: 'GRAY_STAINED_GLASS_PANE'
+#       from: 1
+#       to: 9
+#
+# Please note: You need to set all values
+# otherwise Lands will auto generate values.
+# Also you can't set items where list items
+# are configured. Means if for example the
+# list in the Lands GUI goes from slot
+# 10 - 12 you can set any items with
+# the slot 10, 11, 12. They will be ignored.
+# Added enabled: false to a item to disable it.
+# You can set every item as a custom head:
+# Visit /https://minecraft-heads.com/custom-heads
+# Then copy the 'value:' and paste it at 'material:'
+#
+#
+# If you encounter any issues or you simply have
+# some questions, contact me via PM or Discord.
+# Discord: https://discord.gg/B4MAJVk
+
+general:
+  wYes: '&aДа'
+  wNo: '&cНет'
+  none: '&cНет'
+  now: '&aСейчас'
+  enabled: '&aВключено'
+  disabled: '&cВыключено'
+  unlimited: '&aнеограниченно'
+  previous: '&8пред.'
+  offline: '&cОффлайн'
+  all: '&aВсе'
+  never: Никогда
+  
+  nation:
+    managed:
+      nation: '&cУправляется Нацией'
+      land: '&cУправляется Поселением'
+  
+  inbox-filter:
+    members: '&e☺ Участники'
+    economy: '&c Экономика'
+    war: '&4⚔ Война'
+  
+  rentables:
+    buy: '&aКупить'
+    rent: '&eАрендовать'
+    cost: '&cЦена'
+    size: '&eРазмер'
+    price_blocks_ratio: '&aСоотношение цена-блок'
+  
+  war:
+    defenders: '&aЗащитники'
+    attackers: '&cАтакующие'
+    name:
+      land: '&2Поселение '
+      nation: '&9Нация '
+
+
+skull:
+  area:
+    default: DARK_OAK_FENCE
+    sub: OAK_FENCE
+
+
+physical-item:
+  claim_block:
+    name: '&7Блок для привата'
+    lore:
+    - '&7Вы можете занять чанк'
+    - '&7поставив этот блок'
+    - '&7на дикой местности.'
+    - ''
+    - '&7Владелец:&3 {owner}'
+    material: GRASS_BLOCK
+  capture_block:
+    name: '&2Блок для захвата'
+    lore:
+    - '&7Поставьте этот блок на вражеской территории'
+    - '&7во время войны чтобы захватить регион.'
+    material: BEACON
+  selection:
+    name: '&2Инструмент для выделения'
+    lore:
+    - '&7Используйте этот предмет чтобы выделить область.'
+    - '&7Выделенная область может использоваться для:'
+    - ' &8- &e/claim &f- занять территорию'
+    - ' &8- &e/unclaim &f- убрать территорию'
+    - ' &8- &e/assign &f- назначить территорию'
+    material: GOLDEN_HOE
+  info:
+    name: '&2Инструмент информации'
+    lore:
+    - '&7Используйте этот инструмент чтобы получить'
+    - '&7информацию о территории'
+    - '&7на которую вы указываете.'
+    material: FEATHER
+  camp:
+    name: '&2Лагерь'
+    lore:
+    - '&7Поставьте этот предмет чтобы создать временный'
+    - '&7лагерь который будет удален через'
+    - '&5{time}&7.'
+    - ' '
+    - '&7Радиус:&3 {radius}'
+    - '&7Лагерь не может быть расширен.'
+    material: CAMPFIRE
+  currency:
+    name: ''
+    lore: []
+    material: GOLD_INGOT
+
+
+gui:
+  main:
+    title: '&8Главное Меню'
+    size: 27
+    s:
+      lands:
+        name: '&8> &2Поселения'
+        lore:
+        - '&7Показать все ваши поселения.'
+        - ''
+        - '&7Это включает ваши собственные поселения'
+        - '&7и поселения, в которых вы состоите'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 11
+      all-lands:
+        name: '&8> &9Все Поселения'
+        lore:
+        - '&7Показать все созданные поселения'
+        - '&7на сервере.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
+        slot: 13
+      invites:
+        name: '&8> &6Приглашения'
+        lore:
+        - '&7Показать все полученные'
+        - '&7приглашения.'
+        material: WRITABLE_BOOK
+        slot: 15
+      close:
+        name: '&cЗакрыть'
+        lore:
+        - '&7Закрыть это меню.'
+        - ''
+        - '&7Вы можете открыть его снова'
+        - '&7написав &e/lands menu main&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+        enabled: true
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+    f:
+      limitation:
+        name: '&8> &6Ваши Лимиты'
+        lore:
+        - '&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'
+        - '&7+ Создать поселений: &3{ownlands}.'
+        - '&7+ Чанков на поселение: &3 {chunks}.'
+        - '&7+ Кол-во участников на поселение: &3 {members}.'
+        - ' '
+        - '&7+ Присоединиться к поселениям: &3 {lands}.'
+        - '&7+ Поддержите поселения, в которых вы являетесь участником,'
+        - '  &7дополнительными чанками: &3{support-chunks}.'
+        - '&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'
+        material: PLAYER_HEAD
+        slot: 17
+  player_lands:
+    title: '&8Ваши Поселения'
+    size: 27
+    s: {}
+    f:
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Вернуться на предыдущую страницу:&3 {previous}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 25
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться назад к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    l:
+      land:
+        name: '&2{land}'
+        lore:
+        - '&7Вы участник этого поселения.'
+        - '&7Чанки:&3 {chunks} &7/&c {max-chunks}'
+        - ''
+        - '&8✖ &9ПРАВЫЙ КЛИК'
+        - '   &7Просмотреть общую информацию'
+        - '   &7об этом поселении.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFiNDNiOGMzZDM0ZjEyNWU1YTNmOGI5MmNkNDNkZmQxNGM2MjQwMmMzMzI5ODQ2MWQ0ZDRkN2NlMmQzYWVhIn19fQ==
+        from: 10
+        to: 18
+      land_own:
+        name: '&2{land}'
+        lore:
+        - '&7Вы владеете этим поселением.'
+        - '&7Чанки:&3 {chunks} &7/&c {max-chunks}'
+        - ' '
+        - '&8✖ &9ПРАВЫЙ КЛИК'
+        - '   &7Просмотреть общую информацию'
+        - '   &7об этом поселении.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        from: 10
+        to: 18
+      camp:
+        name: '&2{land}'
+        lore:
+        - '&7Вы участник этого лагеря. Лагери это временные поселения'
+        - '&7которые не могут быть расширены и не требуют оплаты.'
+        - '&7Этот лагерь исчезнет через &5{time}&7.'
+        - ' '
+        - '&8✖ &9ПРАВЫЙ КЛИК'
+        - '   &7Просмотреть общую информацию'
+        - '   &7об этом лагере.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWJiODRlNGMxYTMzMDY5M2Y3YmU1NTE2ZmQ2YzRmMzVhZWVjNDcwNTEyNDg5Y2U3MDYzYzYzOTMyOGFkNTdjNSJ9fX0=
+        from: 10
+        to: 18
+      camp_own:
+        name: '&2{land}'
+        lore:
+        - '&7Вы владеете этим лагерем. Лагери это временные поселения'
+        - '&7которые не могут быть расширены и не требуют оплаты.'
+        - '&7Этот лагерь исчезнет через &5 {time}&7.'
+        - ' '
+        - '&8✖ &9ПРАВЫЙ КЛИК'
+        - '   &7Просмотреть общую информацию'
+        - '   &7об этом лагере.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmQ5NTk2NWQ3OWRkZjYxM2Y1OTRmZDIwZDUxZTc2NWMwOWEyYTVmZjhkMGUwOWNmZjE5YThlYTQzMDIzNThhZCJ9fX0=
+        from: 10
+        to: 18
+      no-land:
+        name: '&cЕще нет поселений'
+        lore:
+        - '&7Чтобы создать поселение просто введите:'
+        - '&e/lands create &8<&eназвание&8>.'
+        - ''
+        - '&7Другие поселения могут пригласить вас'
+        - '&7с помощью &e/lands trust {player}&7.'
+        material: OAK_SIGN
+        from: 10
+        to: 18
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  land:
+    title: '&8{level} {land}'
+    size: 45
+    s:
+      information:
+        name: '&6Информация'
+        lore:
+        - '&7В этом ряду вы можете увидеть'
+        - '&7разную подробную информацию'
+        - '&7о вашем поселении. Это поможет'
+        - '&7следить за всеми событиями'
+        - '&7в поселении.'
+        - ''
+        - '&7Нажмите на этот предмет чтобы'
+        - '&7телепортироваться на спавн.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      trusted:
+        name: '&8> &6Участники'
+        lore:
+        - '&7Получить список всех участников,'
+        - '&7независимо от того, в каких регионах'
+        - '&7они состоят.'
+        - ''
+        - '&8✖ &bSHIFT + ЛЕВЫЙ КЛИК'
+        - '   &7Управлять заблокированными игроками'
+        - '   &7во всем поселении.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 14
+      invites:
+        name: '&8> &6Приглашения'
+        lore:
+        - '&7Отмените отправленные приглашения'
+        - '&7или просто посмотрите о них'
+        - '&7информацию.'
+        material: WRITABLE_BOOK
+        slot: 15
+      management:
+        name: '&6Управление'
+        lore:
+        - '&7В этом ряду вы можете управлять своим поселением.'
+        - '&7Вы можете добавлять участников, назначать роли,'
+        - '&7редактировать природные флаги'
+        - '&7или устанавливать налоги для этой области'
+        - ''
+        - '&7Нажмите на этот предмет чтобы'
+        - '&7телепортироваться на спавн.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 29
+      various:
+        name: '&8> &6Прочие Настройки'
+        lore:
+        - '&7Измените название поселения или'
+        - '&7введите сообщение.'
+        material: BEACON
+        slot: 35
+    f:
+      land-settings:
+        name: '&8> &6Природные флаги'
+        lore:
+        - '&7Изменить природные флаги'
+        - '&7региона&6 {area}&7.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 31
+      roles:
+        name: '&8> &6Роли'
+        lore:
+        - '&7Показать роли'
+        - '&7региона&6 {area}&7.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 32
+      taxes:
+        name: '&8> &6Налоги'
+        lore:
+        - '&7Посмотреть налоги'
+        - '&7региона&6 {area}&7.'
+        material: GOLD_INGOT
+        slot: 33
+      areas:
+        name: '&8> &6Регионы'
+        lore:
+        - '&7Просмотреть все регионы этого поселения.'
+        - '&7Вы так же можете создавать новые'
+        - '&7регионы в этом меню.'
+        - ''
+        - '&7Регионы:&3 {areas} &7/&c {max-areas}'
+        - '&7Чанков:&3 {chunks} &7/&c {max-chunks}'
+        material: OAK_FENCE
+        slot: 13
+      inbox:
+        name: '&8> &6Входящие сообщения &8(&7{amount}&8)'
+        lore:
+        - '&7Нажмите чтобы открыть расширенное меню.'
+        - ''
+        - '&7Полученные сообщения:'
+        - '{inbox}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
+        slot: 16
+      stat:
+        name: '&8> &6Статистика'
+        lore:
+        - '&7Спавн: {0}, x={1}, z={2}'
+        - '&7Нация: {3}'
+        - '&7Чанков: {4} / {5}'
+        - '&7Участников: {6} / {7}'
+        - ''
+        - '&7&nУровень:&7 {8}'
+        - '&7Нажмите для подробной информации.'
+        - ''
+        - '&7&nЭкономика'
+        - '&8- &7Поселение'
+        - '  &7Баланс: {9}'
+        - '  &7Стоимость следующего чанка: {10}'
+        - '  &7Оплата&c {11} &7на содержание'
+        - '  &7через {12}'
+        - ''
+        - '&8- &4Вы'
+        - '  &7Баланс: {13}'
+        - '  &7Оплата&c {14} &7налогов через {15}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
+        slot: 17
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться назад'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 37
+    a:
+      failure_teleport_permission:
+        name: '&4Отказано: &cПрава'
+        lore:
+        - '&cВам недоступен'
+        - '&cтелепорт на любой спавн поселений.'
+        - ''
+        - '&8Право:'
+        - '&8{permission}'
+      failure_no-spawn:
+        name: '&4Ошибка: &cСпавн не установлен'
+        lore:
+        - '&7Это поселение не имеет спавна'
+        - '&7Сначала нужно установить'
+        - '&7точку спавна для поселения:'
+        - ''
+        - '&7Выполните &e/lands setspawn'
+        - '&7чтобы установить спавн.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 45
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 30
+        to: 30
+  land_areas:
+    title: '&8Регионы'
+    size: 36
+    s: {}
+    f:
+      create:
+        name: '&aСоздать Регион'
+        lore:
+        - '&7Создайте новый регион'
+        - '&7для поселения.'
+        - ''
+        - '&7Доступно:&3 {areas} &8/&c {max}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
+        slot: 32
+      delete:
+        name: '&cУдалить Регион'
+        lore:
+        - '&7Удалить регион'
+        - '&7этого поселения.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 33
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу:&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 35
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться обратно к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      area:
+        name: '&6{area}'
+        lore:
+        - '&7Открыть меню'
+        - '&7этого региона.'
+        - ''
+        - '&7Описание:'
+        - '{description}'
+        - ' '
+        - '&8✖ &3КЛАВИША Q'
+        - '   &7Удалить этот регион.'
+        material: OAK_FENCE
+        from: 10
+        to: 27
+      area_default:
+        name: '&6{area}'
+        lore:
+        - '&7Открыть меню'
+        - '&7этого региона.'
+        - ''
+        - '&7Описание:'
+        - '{description}'
+        material: OAK_FENCE
+        from: 10
+        to: 27
+      area-setup:
+        name: '&cНастроить:&6 {area}'
+        lore:
+        - '&7Вы не обозначили'
+        - '&территорию для этого региона.'
+        - ''
+        - '&7Используйте &e/lands selection'
+        - '&7чтобы выделить территорию и затем'
+        - '&e/lands selection assign {area}'
+        - '&7чтобы назначить территорию для региону.'
+        - ' '
+        - '&8✖ &3КЛАВИША Q'
+        - '   &7Удалить этот регион.'
+        material: ACACIA_FENCE
+        from: 10
+        to: 27
+    a:
+      failure_access:
+        name: '&4Ошибка: &cНет Доступа'
+        lore:
+        - '&cВам не разрешено удалять'
+        - '&cрегионы в этом поселении. &7Вашей роли'
+        - '&7не хватает флага назначения территорий.'
+      failure_rental:
+        name: '&4Ошибка: &cАрендовано'
+        lore:
+        - '&7Вы не можете изменять этот регион'
+        - '&7когда он арендован/продан.'
+        - '&7Текущий арендатор:&3 {player}'
+      failure_default:
+        name: '&4Ошибка: &cНельзя удалить регион по-умолчанию'
+        lore:
+        - '&7Вы не можете удалить регион по-умолчанию'
+        - '&7этого поселения. Новые чанки присоединяются'
+        - '&7к этому региону.'
+      failure_untrusted:
+        name: '&4Отказано: &cНе участник'
+        lore:
+        - '&cВам отказано в доступе'
+        - '&cк меню для этого региона.'
+        - ''
+        - '&7Вы должны быть участником'
+        - '&7этого региона.'
+      failure_max-areas:
+        name: '&4Ошибка: &cЛимит Регионов'
+        lore:
+        - '&7Это поселение достигло максимума'
+        - '&7количества регионов:&3 {max}.'
+        - ''
+        - '&8Право: lands.areas.<number>'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  land_claims:
+    title: '&8Claims'
+    size: 36
+    s: {}
+    f:
+      toggle:
+        name: '&7Мир:&3 {world}'
+        lore:
+        - '&7Нажмите чтобы переключить'
+        - '&7этот мир.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
+        slot: 32
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу:&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&6Мир: {world} X: {x} Z: {z}'
+        lore:
+        - '&7Захвачено: {time} &7назад'
+        - ''
+        - '&7Нажмите чтобы телепортироваться.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        from: 10
+        to: 27
+    a:
+      failure_cooldown:
+        name: '&4Ошибка: &cОткат'
+        lore:
+        - '&7Вам нужно подождать {time}'
+        - '&7перед тем как делать это.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  
+  inbox:
+    title: '&8Входящие'
+    size: 36
+    f:
+      filter:
+        name: '&8> &6Фильтровать по Типу'
+        lore:
+        - '&7Нажмите здесь, чтобы просмотреть'
+        - '&7типы сообщений.'
+        - ''
+        - '&7Текущий:&3 {type}'
+        material: HOPPER
+        slot: 32
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу:&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 35
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&8# &7{id}'
+        lore:
+        - '{message}'
+        - ''
+        - '&7Нажмите чтобы удалить.'
+        material: PAPER
+        from: 10
+        to: 27
+    a:
+      failure_owner:
+        name: '&4Ошибка: &cНет доступа'
+        lore:
+        - '&7Вам отказано в доступе к действию.'
+        - '&7Только владелец привелигирован'
+        - '&7удалять сообщения.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area:
+    title: '&8{area}'
+    size: 45
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 37
+    s:
+      information:
+        name: '&6Информация'
+        lore:
+        - '&7Здесь вы можете посмотреть'
+        - '&7разную информацию'
+        - '&7об этом регионе. Это помогает'
+        - '&7следить за всеми событиями'
+        - '&7в этом регионе.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      trusted:
+        name: '&8> &6Участники'
+        lore:
+        - '&7Получить список всех игроков, которые'
+        - '&7состоят в этом регионе.'
+        - ''
+        - '&8✖ &bSHIFT + ЛЕВЫЙ КЛИК'
+        - '   &7Управлять заблокированными игроками'
+        - '   &7этого региона.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 13
+      invites:
+        name: '&8> &6Приглашения'
+        lore:
+        - '&7Отменяйте отправленные приглашения'
+        - '&7или смотрите о них информацию'
+        - ''
+        - '&7Эти приглашения добавляют'
+        - '&7участников в этот регион.'
+        material: WRITABLE_BOOK
+        slot: 14
+      management:
+        name: '&6Управление'
+        lore:
+        - '&7Здесь вы можете управлять регионом. Вы можете'
+        - '&7добавлять участников, назначать роли,'
+        - '&7редактировать природные флаги.'
+        - '&7или устанавливать налоги для этого региона'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 29
+      land-settings:
+        name: '&8> &6Природные Флаги'
+        lore:
+        - '&7Здесь вы можете изменить природные флаги'
+        - '&7такие как спавн мобов.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 31
+      roles:
+        name: '&8> &6Роли'
+        lore:
+        - '&7Просмотреть роли в этом регионе.'
+        - ''
+        - '&7Глобальные роли автоматически'
+        - '&7добавляются в этот регион.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 32
+      taxes:
+        name: '&8> &6Налоги'
+        lore:
+        - '&7Просмотреть налоги этого региона.'
+        - ''
+        - '&7Налоги собираются'
+        - '&7по регионам.'
+        material: GOLD_INGOT
+        slot: 33
+      various:
+        name: '&8> &6Прочие Настройки'
+        lore:
+        - '&7Изменить название региона или'
+        - '&7описание.'
+        material: BEACON
+        slot: 35
+    a:
+      failure_rental:
+        name: '&4Ошибка: &cАрендовано'
+        lore:
+        - '&7Вы не можете установить налоги для региона'
+        - '&7так как он арендован/продан.'
+        - '&7Арендатор:&3 {player}'
+      failure_access:
+        name: '&4Ошибка: &cНет доступа'
+        lore:
+        - '&7Вы не можете делать этого'
+        - '&7в данном регионе.'
+        - ''
+        - '&8Флаг: {flag}'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 45
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 30
+        to: 30
+  area_players:
+    title: '&8{area} &7> &8Участники'
+    size: 36
+    l:
+      object_land:
+        name: '&e{player}'
+        lore:
+        - '&7Состоит в этих регионах:'
+        - '{areas}'
+        - ''
+        - '&8✖ &7СРЕДНИЙ КЛИК(КОЛЕСО):'
+        - '   &7Получить больше информации.'
+        - '&8✖ &3КЛАВИША Q'
+        - '   &7Удалить со всего поселения.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      object_area:
+        name: '&e{player}'
+        lore:
+        - '&7Роль: {role}'
+        - ''
+        - '&8✖ &bЛЕВЫЙ КЛИК'
+        - '   &7▲ Повысить'
+        - '&8✖ &9ПРАВЫЙ КЛИК'
+        - '   &7▼ Понизить'
+        - ' '
+        - '&8✖ &3КЛАВИША Q'
+        - '   &7Убрать из этого региона.'
+        - '&8✖ &7СРЕДНИЙ КЛИК(КОЛЕСО):'
+        - '   &7Больше информации'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    a:
+      failure_priority:
+        name: '&4Ошибка: &cПриоритет Ролей'
+        lore:
+        - '&7Вы не можете'
+        - '&7изменить настройки этой роли.'
+        - '&7Она имеет приоритет'
+        - '&7выше чем ваш или вы'
+        - '&7относитесь к этой роли.'
+      noaccess_setrole:
+        name: '&4Ошибка: &cНет прав'
+        lore:
+        - '&7Вы не можете это делать.'
+        - '&7Владелец поселения может дать вам право'
+        - '&7это делать.'
+      failure_max-players:
+        name: '&4Ошибка: &cЛимит Участников'
+        lore:
+        - '&7Это поселение достигло лимита'
+        - '&7кол-ва участников: &3 {max}.'
+        - ''
+        - '&8Право: lands.members.<number>'
+      failure_access:
+        name: '&4Ошибка: &cНет доступа'
+        lore:
+        - '&cВы не можете удалять участников'
+        - '&c&7Вашей роли не хватает флага'
+      failure_self:
+        name: '&4Ошибка: &cНельзя удалить самого себя'
+        lore:
+        - '&7Чтобы покинуть поселение'
+        - '&7используйте &e/lands leave.'
+      failure_rented:
+        name: '&4Ошибка: &cАрендовано'
+        lore:
+        - '&cВы не можете убрать арендодатора&4 {player}'
+        - '&cрегиона&4 {area}&c. &7Чтобы убрать аренду'
+        - '&7с региона, используйте &e/lands rent remove'
+        - '&7когда стоите в этом регионе.'
+      failure_edit_player_land:
+        name: '&4Ошибка: &cПриоритет Ролей'
+        lore:
+        - '&cВы не можете редактировать этого игрока в этом поселении.'
+        - '&7Его роль&6 {role} &7имеет высший приоритет'
+        - '&7или равный вашей роли.'
+      failure_edit_player_area:
+        name: '&4Ошибка: &cПриоритет Ролей'
+        lore:
+        - '&cВы не можете редактировать этого игрока в этом регионе.'
+        - '&7Его роль&6 {role} &7имеет высший приоритет'
+        - '&7или равный вашей роли.'
+    f:
+      toggle:
+        name: '&8> &6Отображать только Регион'
+        lore:
+        - '&7Показывать только игроков'
+        - '&7которые являются участниками'
+        - '&7в этом регионе &8(&6{area}&8)&7?'
+        - ''
+        - '&7Если выключено: Показывать'
+        - '&7игроков всего поселения.'
+        - '&7Так же это позволит вам'
+        - '&7добавлять / убирать игроков'
+        - '&7во всем поселении.'
+        - ''
+        - '&7Сейчас: {current}'
+        material: HOPPER
+        slot: 32
+      trust:
+        name: '&8> &aДобавить игрока'
+        lore:
+        - '&7Нажмите здесь чтобы добавить'
+        - '&7игрока в этот регион.'
+        - ''
+        - '&7Доступно:&3 {players} &8/&c {max}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
+        slot: 31
+      untrust:
+        name: '&8> &cУбрать игрока'
+        lore:
+        - '&7Нажмите здесь чтобы убрать'
+        - '&7игрока с этого региона.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 33
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 29
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 35
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area_banned:
+    title: '&8{area} &7> &8Заблокированные Игроки'
+    size: 36
+    l:
+      object_all:
+        name: '&e{player}'
+        lore:
+        - '&7Заблокирован в этих регионах:'
+        - '{areas}'
+        - ''
+        - '&8✖ &7СРЕДНИЙ КЛИК:'
+        - '   &7Получить больше информации.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      object:
+        name: '&e{player}'
+        lore:
+        - '&7Игрок заблокирован'
+        - '&7в этом регионе.'
+        - ''
+        - '&8✖ &7СРЕДНИЙ КЛИК:'
+        - '   &7Получить больше информации.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    f:
+      toggle:
+        name: '&8> &6Отображать только Регион'
+        lore:
+        - '&7Показывать только игроков'
+        - '&7которые заблокированы'
+        - '&7в этом регионе &8(&6{area}&8)&7?'
+        - ''
+        - '&7Если выключено: Показывает'
+        - '&7заблокированных игроков во всем поселении.'
+        - '&7Так же это позволяет'
+        - '&7блокировать / разблокировать'
+        - '&7игроков во всем поселении.'
+        - ''
+        - '&7Current: {current}'
+        material: HOPPER
+        slot: 32
+      ban:
+        name: '&8> &cЗаблокировать игрока'
+        lore:
+        - '&7Нажмите чтобы заблокировать'
+        - '&7игрока во всем поселении.'
+        - ''
+        - '&7Заблокированные игроки'
+        - '&7не смогут зайти или'
+        - '&7телепортироваться в него.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 31
+      unban:
+        name: '&8> &aРазблокировать игрока'
+        lore:
+        - '&7Нажмите здесь чтобы разблокировать'
+        - '&7игрока во всем регионе.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
+        slot: 33
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 29
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 35
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area_invites:
+    title: '&8{area} &7> &8Приглашения'
+    size: 36
+    f:
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      invite_area:
+        name: '&e{player}'
+        lore:
+        - '&7Добавить игрока в регион'
+        - '&6{area}&7.'
+        - ''
+        - '&7Отправлено:&5 {time}'
+        - '&7Кем: {sender}'
+        - ' '
+        - '&8✖ &3КЛАВИША Q'
+        - '   &7Отменить это приглашение.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      invite_land:
+        name: '&e{player}'
+        lore:
+        - '&7Добавить игрока во все поселение'
+        - '&2{land}&7.'
+        - ''
+        - '&7Отправлено:&5 {time}'
+        - '&7Кем: {sender}'
+        - ' '
+        - '&8✖ &3КЛАВИША Q'
+        - '   &7Отозвать это приглашение.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      no-invite:
+        name: '&cНет отправленных приглашений'
+        lore:
+        - '&7Ваше поселение еще'
+        - '&7не отправляло приглашений.'
+        - ' '
+        - '&7Вы можете отправлять приглашения'
+        - '&7в меню участников.'
+        material: OAK_SIGN
+        from: 10
+        to: 27
+    a:
+      failure_access:
+        name: '&4Ошибка: &cНет Прав'
+        lore:
+        - '&cВы не можете отзывать'
+        - '&cприглашения в этом регионе.'
+        - '&7Вашей роли не хватает флага.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  area_roles:
+    title: '&8{area} &7> &8Роли'
+    size: 27
+    l:
+      role:
+        name: '&7{role}'
+        lore:
+        - '&7Изменить приоритет роли:'
+        - ''
+        - '&8✖ &bSHIFT + ЛЕВЫЙ КЛИК'
+        - '   &7Выше'
+        - '&8✖ &9SHIFT + ПРАВЫЙ КЛИК'
+        - '   &7Ниже'
+        - ' '
+        - '&8✖ &3КЛАВИША Q'
+        - '   &7Удалить эту роль.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 18
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 26
+      create:
+        name: '&8> &aСоздать Ро ль'
+        lore:
+        - '&7Нажмите чтобы'
+        - '&7создать новую роль.'
+        - ''
+        - '&7Доступно:&3 {roles} &8/&c {max}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
+        slot: 23
+      delete:
+        name: '&cУдалить Роль'
+        lore:
+        - '&7Удалить роль'
+        - '&7этого региона.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 24
+    a:
+      failure_max-roles:
+        name: '&4Ошибка: &cЛимит Ролей'
+        lore:
+        - '&7Это поселение достигло лимита'
+        - '&7кол-ва ролей: &3 {max}.'
+        - ''
+        - '&8Право: {permission}'
+      failure_priority:
+        name: '&4Ошибка: &cПриоритет Ролей'
+        lore:
+        - '&7Вы не можете менять'
+        - '&7настройки этой роли.'
+        - '&7Она имеет высший приоритет'
+        - '&7или вы участник этой роли'
+      failure_access:
+        name: '&4Ошибка: &cНет Доступа'
+        lore:
+        - '&7Вы не можете изменять'
+        - '&7роли в этом регионе.'
+      failure_required:
+        name: '&4Ошибка: &cРоль Обязательна'
+        lore:
+        - '&cВы не можете удалить роль'
+        - '&4{role}&c, &7потому что она нужна'
+        - '&7для управления игроками.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  role:
+    title: '&8{role}'
+    size: 36
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      members:
+        name: '&8> &6Игроки с этой ролью'
+        lore:
+        - '&7Показать всех игроков с этой ролью.'
+        material: PLAYER_HEAD
+        slot: 13
+      members_visitor:
+        name: '&8> &6Игроки с этой ролью'
+        lore:
+        - '&7Все игроки которые не добавлены в поселение'
+        - '&7имеют эту роль.'
+        material: PLAYER_HEAD
+        slot: 13
+      members_nation:
+        name: '&8> &6Игроки с этой ролью'
+        lore:
+        - '&7Все игроки которые не добавлены в поселение'
+        - '&7и являются частью вашей нации,'
+        - '&7имеют эту роль.'
+        material: PLAYER_HEAD
+        slot: 13
+      icon:
+        name: '&8> &6Иконка'
+        lore:
+        - '&7Нажмите чтобы изменить'
+        - '&7иконку этой роли.'
+        material: PLAYER_HEAD
+        slot: 14
+      name:
+        name: '&8> &6Переименовать'
+        lore:
+        - '&7Переименовать эту роль.'
+        - '&7Сейчас: {name}'
+        material: NAME_TAG
+        slot: 15
+      apply:
+        name: '&8> &6Добавлять участников к новым Регионам?'
+        lore:
+        - '&7Нужно ли автоматически добавлять'
+        - '&7участников это роли'
+        - '&7к новым регионам?'
+        - ''
+        - '&7Сейчас: {apply}'
+        material: OAK_FENCE
+        slot: 24
+    s:
+      information:
+        name: '&6Информация'
+        lore:
+        - '&7Просмотреть информацию'
+        - '&7об этой роли.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      management_info:
+        name: '&6Изменение флагов для роли'
+        lore:
+        - '&7Есть два типа флагов:'
+        - '  &7&nДействий:&7 Это физические действия,'
+        - '  &7такие как разрушение блоков и т.п.'
+        - '  &7&nУправления:&7 Это флаги администрирования'
+        - '  &7такие как добавление игроков, расширение поселения и т.п.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 20
+      settings:
+        name: '&8> &6Флаги Действий'
+        lore:
+        - '&7Переключать флаги действий'
+        - '&7такие как разрушение блоков и т.п.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM2YjgyMWMxYWZkZDVhNWQxNGUzYjNiZDBhMzIyNjNjOGRmNWRmNWRiNmUxZTg4YmY2NWU5N2IyN2E4NTMwIn19fQ==
+        slot: 22
+      management:
+        name: '&8> &6Флаги Управления'
+        lore:
+        - '&7Переключать флаги управления'
+        - '&7такие как добавление игроков, расширение поселения и т.п.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZkOTZlYWM1YTcwMTY4NDM3Y2NmZmFlZTBlN2ZjNWFjNWMwMjJmNDI5ZTNlZDkyOWNkNTE4OTRhMmRkNmQ4In19fQ==
+        slot: 23
+    a:
+      failure_owner:
+        name: '&cНельзя менять Владельца'
+        lore:
+        - '&7Владельцы не могут менять свои'
+        - '&7собственные флаги. Их могут менять'
+        - '&7только администрация сервера.'
+      no-item:
+        name: '&cНет предмета в руке'
+        lore:
+        - '&7Вам нужно держать предмет'
+        - '&7в основной руке.'
+      failure_access:
+        name: '&4Ошибка: &cНет Доступа'
+        lore:
+        - '&7Вы не можете'
+        - '&7изменять роли в этом регионе.'
+      failure_priority:
+        name: '&4Ошибка: &cПриоритет Ролей'
+        lore:
+        - '&7Вы не можете'
+        - '&7изменять настройки этой роли.'
+        - '&7Она имеет высший приритет'
+        - '&7или вы участник это роли.'
+      failure_nation:
+        name: '&4Ошибка: &cРоль управляется Нацией'
+        lore:
+        - '&cЭта роль частично управляется Еацией&4 {nation}&c.'
+        - '&7Только нация может менять настройки этой роли:'
+        - '&e/nations menu'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 36
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 21
+        to: 21
+  role_players:
+    title: '&8Players'
+    size: 36
+    l:
+      object:
+        name: '&e{player}'
+        lore:
+        - '&7Этот игрок поддерживает ваше поселение'
+        - '&7дополнительными территориями: &3{support}.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 35
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  role_settings:
+    title: '&8Флаги'
+    size: 36
+    s: {}
+    f:
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      general:
+        name: '&6{flag}'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Описание:'
+        - '{desc}'
+        material: NAME_TAG
+        from: 10
+        to: 27
+      block_break:
+        name: '&6Разрушение Блоков'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7разрушать блоки?'
+        material: IRON_PICKAXE
+        from: 10
+        to: 27
+      block_place:
+        name: '&6Ставить Блоки'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7ставить блоки?'
+        material: OAK_PLANKS
+        from: 10
+        to: 27
+      block_ignite:
+        name: '&6Поджигать Блоки'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7поджигать блоки?'
+        material: FLINT_AND_STEEL
+        from: 10
+        to: 27
+      interact_general:
+        name: '&6Остальные Взаимодействия'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ' '
+        - '&7Этот флаг покрывает остальные взаимодействия'
+        - '&7которые не относятся к другим флагам.'
+        material: STRING
+        from: 10
+        to: 27
+      interact_door:
+        name: '&6Открывать двери'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7открывать двери?'
+        material: IRON_DOOR
+        from: 10
+        to: 27
+      interact_trapdoor:
+        name: '&6Открывать люки'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7открывать люки?'
+        material: OAK_TRAPDOOR
+        from: 10
+        to: 27
+      interact_container:
+        name: '&6Открывать Контейнеры'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7открывать контейнеры?'
+        material: CHEST
+        from: 10
+        to: 27
+      interact_mechanism:
+        name: '&6Использовать Редстоун'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7использовать рычаги и т.п.?'
+        material: REDSTONE
+        from: 10
+        to: 27
+      interact_villager:
+        name: '&6Торговать с Жителями'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7торговать с жителями?'
+        material: EMERALD
+        from: 10
+        to: 27
+      attack_player:
+        name: '&6Атаковать Игроков'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7атаковать игроков?'
+        - ''
+        - '&8- &7Пожалуйста, помните что если бой начался вне поселения,'
+        - '  &7он так же может продолжиться внутри поселения,'
+        - '  &7если игрок атаковал другого  за пределами границы'
+        - '&8- &7Они могут атаковать только'
+        - '  &7игроков которые атаковали их.'
+        material: IRON_SWORD
+        from: 10
+        to: 27
+      attack_animal:
+        name: '&6Атаковать Животных'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7атаковать животных?'
+        material: BOW
+        from: 10
+        to: 27
+      attack_monster:
+        name: '&6Атаковать Монстров'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7атаковать монстров?'
+        - ''
+        - '&7Если отключено, монстры не смогут'
+        - '&7атаковать игроков тоже.'
+        material: ZOMBIE_HEAD
+        from: 10
+        to: 27
+      vehicle_use:
+        name: '&6Использовать Транспорт'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7использовать транспорт?'
+        material: MINECART
+        from: 10
+        to: 27
+      fly:
+        name: '&6Летать'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7использовать &e/fly &7здесь?'
+        material: FEATHER
+        from: 10
+        to: 27
+      land_enter:
+        name: '&6Входить в регион'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7заходить в этот регион?'
+        material: OAK_FENCE_GATE
+        from: 10
+        to: 27
+      item_pickup:
+        name: '&6Поднимать предметы'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли поднимать'
+        - '&7предметы с земли?'
+        material: HOPPER
+        from: 10
+        to: 27
+      ender_pearl:
+        name: '&6Использовать Эндер Перлы'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7телепортироваться на вашу территорию'
+        - '&7используя эндер перлы'
+        - '&7и плоды хоруса?'
+        material: ENDER_PEARL
+        from: 10
+        to: 27
+      trample_farmland:
+        name: '&6Топтать посевы'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7топтать посевы?'
+        material: FARMLAND
+        from: 10
+        to: 27
+      harvest:
+        name: '&6Собирать урожай и ягоды'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ' '
+        - '&7Разрешить этой роли'
+        - '&7собирать урожай и ягоды?'
+        material: WHEAT
+        from: 10
+        to: 27
+      area_assign:
+        name: '&6Назначать Регионы'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли создавать регионы'
+        - '&7и назначать к ним территорию?'
+        material: OAK_FENCE
+        from: 10
+        to: 27
+      player_trust:
+        name: '&6Добавлять игроков'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7добавлять других игроков?'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
+        from: 10
+        to: 27
+      player_setrole:
+        name: '&6Назначать Роли'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7назначать роли для игроков?'
+        - ''
+        - '&7Они не смогут изменять'
+        - '&7роли, которые имеют'
+        - '&7высший приоритет.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjNmY3NzVlOGFjZmRmNmUxZGVhYzgwYThkYTFmMzdiM2I0YmE1Y2FhNGEzNTI0OWY5ZWIxNDVjY2Y0M2RhNSJ9fX0=
+        from: 10
+        to: 27
+      player_untrust:
+        name: '&6Убирать игроков'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7убирать игроков?'
+        - ''
+        - '&7Они не смогут убирать'
+        - '&7игроков, которые имеют'
+        - '&7высший приоритет роли.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        from: 10
+        to: 27
+      player_ban:
+        name: '&6Управлять Банами'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7блокировать/разблокировать игроков?'
+        - ''
+        - '&7Они не смогут блокировать'
+        - '&7игроков с высшим приоритетом роли.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2VkMWFiYTczZjYzOWY0YmM0MmJkNDgxOTZjNzE1MTk3YmUyNzEyYzNiOTYyYzk3ZWJmOWU5ZWQ4ZWZhMDI1In19fQ==
+        from: 10
+        to: 27
+      setting_edit_land:
+        name: '&6Изменять Природные Флаги'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7изменять природные флаги?'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        from: 10
+        to: 27
+      setting_edit_various:
+        name: '&6Изменять прочие Настройки'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли изменять'
+        - '&7прочие настройки, такие как'
+        - '&7название поселения/региона?'
+        material: NAME_TAG
+        from: 10
+        to: 27
+      setting_edit_role:
+        name: '&6Изменять Флаги Ролей'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7изменять флаги ролей'
+        - '&7и создавать новые роли?'
+        - ''
+        - '&8- &7Они не смогут'
+        - '  &7изменять флаги'
+        - '  &7своей же роли.'
+        - '&8- &7Вы должны давать'
+        - '  &7это право только'
+        - '  &7игрокам, которым доверяете.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        from: 10
+        to: 27
+      war_manage:
+        name: '&6Управлять Войной'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7объявлять и управлять войной'
+        - '&7в вашем поселении?'
+        material: IRON_SWORD
+        from: 10
+        to: 27
+      setting_edit_taxes:
+        name: '&6Изменять Налоги'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7изменять налоги?'
+        - ''
+        - '&8- &7Вы должны давать'
+        - '  &7это право только'
+        - '  &7игрокам, которым доверяете.'
+        material: GOLD_INGOT
+        from: 10
+        to: 27
+      land_claim:
+        name: '&6Захватывать и убирать '
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли занимать'
+        - '&7и так же удалять занятые чанки'
+        - '&7этого поселения?'
+        material: IRON_SHOVEL
+        from: 10
+        to: 27
+      land_claim_border:
+        name: '&6Ставить поселение на границе'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7занимать чанки для их'
+        - '&7поселения прямо на вашей границе?'
+        material: IRON_BARS
+        from: 10
+        to: 27
+      spawn_set:
+        name: '&6Устанавливать Точку Спавна'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7изменять точку спавна этого поселения?'
+        material: ENDER_EYE
+        from: 10
+        to: 27
+      spawn_teleport:
+        name: '&6Телепортироваться на Спавн'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7телепортироваться на спавн?'
+        material: ENDER_EYE
+        from: 10
+        to: 27
+      balance_withdraw:
+        name: '&6Выводить деньги из банка поселения'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Разрешить этой роли'
+        - '&7выводить деньги из'
+        - '&7банка поселения?'
+        - ''
+        - '&7Команда: &e/lands withdraw'
+        material: GOLD_NUGGET
+        from: 10
+        to: 27
+    a:
+      failure_permission:
+        name: '&4Ошибка: &cНет Прав'
+        lore:
+        - '&7Вы не можете'
+        - '&7переключать этот флаг.'
+        - ''
+        - '&8Право'
+        - '&8{permission}'
+      failure_access:
+        name: '&4Ошибка: &cНет Доступа'
+        lore:
+        - '&7Вы не можете'
+        - '&7изменять роли в этом регионе.'
+      failure_priority:
+        name: '&4Ошибка: &cПриоритет Ролей'
+        lore:
+        - '&7Вы не можете'
+        - '&7изменять настройки для этой роли.'
+        - '&7Она имеет высший приоритет'
+        - '&7над вашим или вы состоите в этой роли'
+      failure_nation:
+        name: '&4Ошибка: &cРоль управляется Нацией'
+        lore:
+        - '&cЭта роль частично управляется Нацией&4 {nation}&c.'
+        - '&7Только нация может менять этот флаг:'
+        - '&e/nations menu'
+      failure_blacklist:
+        name: '&4Ошибка: &cФлаг недоступен'
+        lore:
+        - '&cАдминистрация настроила этот флаг'
+        - '&cнеконфигурируемым нацией.'
+        - '&7Каждое поселение может настроить этот флаг'
+        - '&7индивидуально.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area_settings:
+    title: '&8{area} &7> &8Природные Флаги'
+    size: 36
+    s: {}
+    f:
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      general:
+        name: '&6{flag}'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Описание:'
+        - '{desc}'
+        material: NAME_TAG
+        from: 10
+        to: 27
+      entity_griefing:
+        name: '&6Гриферство Существами'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Позволить существам'
+        - '&7портить блоки?'
+        - ''
+        - '&8Если включено: Существа'
+        - '&8смогут разрушать ваши'
+        - '&8постройки.'
+        material: CREEPER_HEAD
+        from: 10
+        to: 27
+      tnt_griefing:
+        name: '&6Разрушение Динамитом'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Позволить динамиту'
+        - '&7разрушать блоки?'
+        - ''
+        - '&8Если включено: Игроки смогут'
+        - '&8забросить динамит в ваше поселение'
+        - '&8чтобы разрушить его.'
+        material: TNT
+        from: 10
+        to: 27
+      piston_griefing:
+        name: '&6Поршни извне'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Позволить поршням снаружи вашего поселения'
+        - '&7толкать внутрь?'
+        - ''
+        - '&8Если включено: Игроки смогут'
+        - '&8испортить ваше поселение'
+        - '&8с помощью поршней.'
+        material: PISTON
+        from: 10
+        to: 27
+      waterflow_allow:
+        name: '&6Протекание воды'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Позволить протекать воде снаружи поселения'
+        - '&7или чужих регионов протекать в ваше поселение'
+        - ''
+        - '&8Если включено: Игроки смогут'
+        - '&8использовать воду чтобы испортить'
+        - '&8ваше поселение извне.'
+        material: WATER_BUCKET
+        from: 10
+        to: 27
+      monster_spawn:
+        name: '&6Появление Монстров'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Позволить повяляться монстрам?'
+        - ''
+        - '&8Эта настройка не влияет на спавнеры'
+        material: SPAWNER
+        from: 10
+        to: 27
+      animal_spawn:
+        name: '&6Возрождение Животных'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Позволить появляться животным'
+        - ''
+        - '&8Эта настройка не влияет на спавнеры'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19
+        from: 10
+        to: 27
+      fire_spread:
+        name: '&6Распространение Огня'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Позволить огню распространяться'
+        - '&7внутри вашего поселения?'
+        - ''
+        - '&8Огонь снаружи поселения'
+        - '&8не сможет проникнуть внутрь.'
+        material: FLINT_AND_STEEL
+        from: 10
+        to: 27
+      leaf_decay:
+        name: '&6Опадение листьев'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Листья внутри поселения'
+        - '&7должны опадать?'
+        material: OAK_LEAVES
+        from: 10
+        to: 27
+      plant_growth:
+        name: '&6Рост Растений'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Должны ли растения расти?'
+        material: VINE
+        from: 10
+        to: 27
+      snow_melt:
+        name: '&6Таяние Снега'
+        lore:
+        - '&7Состояние: {enabled}'
+        - '&7Можно менять: {unlocked}'
+        - ''
+        - '&7Должен ли снег и лед таять?'
+        - '&7Если отключено, снегопад'
+        - '&7не покрывает землю снегом.'
+        material: SNOWBALL
+        from: 10
+        to: 27
+    a:
+      failure_permission:
+        name: '&4Ошибка: &cНет прав'
+        lore:
+        - '&7Вы не можете'
+        - '&7изменять эту настройку.'
+        - ''
+        - '&8Право:'
+        - '&8{permission}'
+      failure_priority:
+        name: '&4Ошибка: &cПриоритет Ролей'
+        lore:
+        - '&7Вы не можете'
+        - '&7изменять настройки этой роли.'
+        - '&7Она имеет высший приоритет'
+        - '&7над вашим или вы участник этой роли.'
+      failure_access:
+        name: '&4Ошибка: &cНет Доступа'
+        lore:
+        - '&7Вы не можете'
+        - '&7изменять роли в этом регионе.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  taxes:
+    title: '&8Налоги'
+    size: 27
+    f:
+      plus-1:
+        name: '&aДобавить {value}'
+        lore:
+        - '&7Добавить {value}'
+        - '&7к налогу.'
+        material: GLOWSTONE_DUST
+        slot: 11
+        data:
+          value: 1.0
+      plus-2:
+        name: '&aДобавить {value}'
+        lore:
+        - '&7Добавить {value}'
+        - '&7к налогу.'
+        material: GLOWSTONE_DUST
+        slot: 12
+        data:
+          value: 50.0
+      plus-3:
+        name: '&aДобавить {value}'
+        lore:
+        - '&7Добавить {value}'
+        - '&7к налогу.'
+        material: GLOWSTONE_DUST
+        slot: 13
+        data:
+          value: 500.0
+      minus-3:
+        name: '&cУбрать {value}'
+        lore:
+        - '&7Убрать {value}'
+        - '&7из налога.'
+        material: REDSTONE
+        slot: 15
+        data:
+          value: 500.0
+      minus-2:
+        name: '&cУбрать {value}'
+        lore:
+        - '&7Убрать {value}'
+        - '&7из налога.'
+        material: REDSTONE
+        slot: 16
+        data:
+          value: 50.0
+      minus-1:
+        name: '&cУбрать {value}'
+        lore:
+        - '&7Убрать {value}'
+        - '&7из налога.'
+        material: REDSTONE
+        slot: 17
+        data:
+          value: 1.0
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      tax_area:
+        name: '&7Налог:&c {tax}'
+        lore:
+        - '&7Через&5 {time} &7ваше поселение'
+        - '&7получит &a{revenue} &7с налогов от'
+        - '&7участников в этом регионе.'
+        - ' '
+        - '&7Игроки платят налоги только за регионы,'
+        - '&7в которых они состоят.'
+        material: GOLD_INGOT
+        slot: 14
+      tax_nation:
+        name: '&7Налог:&c {tax}'
+        lore:
+        - ''
+        - '&7Через&5 {time} &7ваша нация'
+        - '&7получит&a {revenue} &7налогов от'
+        - '&7поселений в нации.'
+        - ''
+        - '&7Это значение калькулируется'
+        - '&7за чанк. Так, большие поселения'
+        - '&7будут платить больше.'
+        material: GOLD_INGOT
+        slot: 14
+    a:
+      failure_maxValue:
+        name: '&4Достигнуто максимальное значение'
+        lore:
+        - '&7Вы не можете установить налоговую ставку'
+        - '&7выше чем&3 {max}&7.'
+        - ''
+        - '&7Администратор может'
+        - '&7изменить это в конфиге.'
+      failure_cooldown:
+        name: '&4Откат:&c Вам нужно подождать.'
+        lore:
+        - '&7В данный момент вы не можете изменить'
+        - '&7налоговую ставку. Вам нужно подождать'
+        - '&5{time}.'
+        - ''
+        - '&7Администратор может'
+        - '&7изменить это в конфиге.'
+      failure_noaccess:
+        name: '&4Ошибка: &cНет Доступа'
+        lore:
+        - '&7Вам не хватает флага'
+        - '&7от владельца поселения чтобы'
+        - '&7изменять налоги этого региона.'
+        - ''
+        - '&8Флаг: {setting}'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  action-confirm:
+    title: '&8Подтвердите Действие'
+    size: 27
+    s:
+      info:
+        name: '&8> &6Подтвердите Действие'
+        lore:
+        - '&7Нажмите &a&lПодтвердить &7чтобы подтвердить'
+        - '&7или &c&lОтменить &7чтобы отменить действие.'
+        material: OAK_SIGN
+        slot: 14
+    l:
+      yes_surrender:
+        name: '&aПодтвердить'
+        lore:
+        - '&7Вашему поселению возможно понадобится'
+        - '&7заплатить дань чтобы'
+        - '&7сдаться.'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      no_surrender:
+        name: '&cОтмена'
+        lore:
+        - '&7Отменить действие.'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  player_invites:
+    title: '&8Полученные Приглашения'
+    size: 36
+    s: {}
+    f:
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&6{land}'
+        lore:
+        - '&7Отлклоните это предложение или'
+        - '&7прсмотрите информацию.'
+        material: BOOK
+        from: 10
+        to: 27
+      no-invite:
+        name: '&cНет полученных приглашений'
+        lore:
+        - '&7Пока что, вы не получали'
+        - '&7приглашений.'
+        - ''
+        - '&7Игроки могут пригласить вас с помощью:'
+        - '&e/lands trust {player}'
+        material: OAK_SIGN
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  player_invite:
+    title: '&8{land}'
+    size: 27
+    f:
+      info:
+        name: '&8> &6Информация'
+        lore:
+        - '&7Регион:&6 {area}'
+        - '&7Поселение: {land}'
+        - ''
+        - '&7Получено:&5 {time}'
+        - '&7Отправитель: {sender}'
+        material: OAK_SIGN
+        slot: 14
+    l:
+      accept:
+        name: '&aПринять'
+        lore:
+        - '&7Принять это приглашение.'
+        - '&7Налоги:&c {tax}'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      deny:
+        name: '&cОтклонить'
+        lore:
+        - '&7Отклонить это приглашение.'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
+    a:
+      failure_lands:
+        name: '&4Ошибка: &cЛимит Поселений'
+        lore:
+        - '&7Вы не можете вступить в другое поселение,'
+        - '&7потому что вы достигли лимита'
+        - '&7кол-ва поселений (&3{max})'
+        - '&7участником которых вы можете быть.'
+        - ''
+        - '&8Право:'
+        - '&8{permission}'
+      failure_inviteOwner:
+        name: '&4Ошибка: &cПриглашение Владельца'
+        lore:
+        - '&7Вы не можете вступить в это'
+        - '&7поселение, потому что вы'
+        - '&7не можете иметь свое'
+        - '&7собственное поселение и'
+        - '&7быть частью другого.'
+      failure_members:
+        name: '&4Ошибка: &cНе получилось'
+        lore:
+        - '&7Не удалось сделать вас участников'
+        - '&7поселения&2 {land}, &7потому что'
+        - '&7они достигли лимита'
+        - '&7участников: &3 {max}.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  
+  player_info:
+    title: '&8Игрок {player}'
+    size: 27
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '&e{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      last_seen:
+        name: '&8> &6Последний раз заходил'
+        lore:
+        - '&5{last-seen}'
+        material: CLOCK
+        slot: 11
+      max-chunks:
+        name: '&8> &6Поддержка Чанками'
+        lore:
+        - '&7Этот игрок поддержит ваше поселение'
+        - '&7количеством чанков: &3{chunks},'
+        - '&7если он/она будет участником.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ==
+        slot: 13
+      lands:
+        name: '&8> &6Поселения &8(&7{amount}&8)'
+        lore:
+        - '{lands}'
+        material: OAK_SIGN
+        slot: 15
+      areas:
+        name: '&8> &6Участник Регионов &8(&7{amount}&8)'
+        lore:
+        - '&7Этот игрок участник этих'
+        - '&7регионов в поселении&2 {land}&7:'
+        - ''
+        - '{areas}'
+        slot: 17
+        material: OAK_FENCE
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  
+  land_info:
+    title: '&8{land} &7> &8Информация'
+    size: 27
+    s:
+      close:
+        name: '&cЗакрыть'
+        lore:
+        - '&7Закрыть это меню.'
+        - ''
+        - '&7Вы можете открыть его снова'
+        - '&7выполнив &e/lands info&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '&e{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      created:
+        name: '&8> &6Создано'
+        lore:
+        - '&5{date}'
+        material: CLOCK
+        slot: 11
+      players:
+        name: '&8> &6Игроки &8(&7{amount}&8)'
+        lore:
+        - '&e{players}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 13
+      level:
+        name: '&8> &6Уровень'
+        lore:
+        - '&7Нажмите чтобы получить информацию'
+        - '&7о текущем и следующем уровне.'
+        material: BEACON
+        slot: 15
+      level_camp:
+        name: '&8> &6Уровень'
+        lore:
+        - '&cЛагери не имеют уровней.'
+        material: BEACON
+        slot: 15
+      war:
+        name: '&8> &6Военная Статистика'
+        lore:
+        - '&7Выиграно: {won}'
+        - '&7Проиграно: {lost}'
+        - '  &7Соотношение (В/П):&3 {wlr}'
+        - ' '
+        - '&7Захватов: {captures}'
+        - '&7Убийств: {kills}'
+        - '&7Смертей: {deaths}'
+        - '  &7Соотношение (У/С):&3 {kdr}'
+        material: IRON_SWORD
+        slot: 17
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  level_progress:
+    title: '&8Прогресс Уровня'
+    size: 27
+    s: {}
+    f:
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 21
+      current:
+        name: '&6&nТекущий:&7 {level}'
+        lore:
+        - '&7Условия:'
+        - '{attributes}'
+        material: OAK_SIGN
+        slot: 23
+      next:
+        name: '&6&nСледующий:&7 {level}'
+        lore:
+        - '&7{object} &7достигнет этого'
+        - '&7уровня, когда все условия'
+        - '&7будут соблюдены.'
+        - ' '
+        - '&7Условия:'
+        - '{attributes}'
+        material: BEACON
+        slot: 24
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 26
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    l:
+      done:
+        name: '&a✔ {title}'
+        lore:
+        - '{bar} {progress}'
+        - ' '
+        - '{description}'
+        material: LIME_STAINED_GLASS
+        from: 10
+        to: 18
+      progress:
+        name: '&c✘ {title}'
+        lore:
+        - '{bar} {progress}'
+        - ' '
+        - '{description}'
+        material: RED_STAINED_GLASS
+        from: 10
+        to: 18
+      loading:
+        name: '&7? {title}'
+        lore:
+        - '&7Текущий прогресс будет'
+        - '&7рассчитан. Предмет обновится'
+        - '&7как только будет готово.'
+        - ' '
+        - '{description}'
+        material: GRAY_STAINED_GLASS
+        from: 10
+        to: 18
+      max:
+        name: '&7Максимальный Уровень'
+        lore:
+        - '&7Достигнут максимальный уровень.'
+        material: PAPER
+        from: 10
+        to: 18
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  
+  land_various:
+    title: '&8Прочее'
+    size: 9
+    a:
+      failure_noaccess:
+        name: '&4Ошибка: &cНет Доступа'
+        lore:
+        - '&7Вы не можете изменять'
+        - '&7это настройки в поселении.'
+        - ''
+        - '&7Только владелец поселения'
+        - '&7привелигрован делать это.'
+    s: {}
+    f:
+      name:
+        name: '&8> &6Название Поселения'
+        lore:
+        - '&7Установите новое название для поселения.'
+        - ''
+        - '&7Текущее:'
+        - '&7{name}'
+        material: NAME_TAG
+        slot: 3
+      title:
+        name: '&8> &6Введите Сообщение'
+        lore:
+        - '&7Это сообщение показывается игрокам,'
+        - '&7которые заходят в ваше поселение.'
+        - ''
+        - '&7Текущее:'
+        - '{title}'
+        - ''
+        - '&7Доступные переменные'
+        - '  &8> &3%owner% &8= &7Владелец'
+        - '  &8> &3%level% &8= &7Уровень'
+        - '  &8> &3%nation% &8= &7Нация'
+        - '  &8> &3%player% &8= &7Входящий игрок'
+        - ''
+        - '&8✖ &9ПРАВЫЙ КЛИК'
+        - '   &7Показать сообщение: {show}'
+        material: OAK_SIGN
+        slot: 7
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 1
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+  area_various:
+    title: '&8Прочее'
+    size: 27
+    f:
+      name:
+        name: '&8> &6Название'
+        lore:
+        - '&7Переименуйте этот регион.'
+        - ''
+        - '&7Сейчас:'
+        - '{name}'
+        material: NAME_TAG
+        slot: 11
+      description:
+        name: '&8> &6Описание'
+        lore:
+        - '&7Изменить описание'
+        - '&7этого региона.'
+        - ''
+        - '&7Сейчас:'
+        - '{description}'
+        material: OAK_SIGN
+        slot: 14
+      icon:
+        name: '&8> &6Иконка'
+        lore:
+        - '&Изменить иконку'
+        - '&7этого региона.'
+        - ''
+        - '&7Это поможет вам найти этот регион'
+        - '&7среди других в меню.'
+        material: OAK_FENCE
+        slot: 17
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      no-item:
+        name: '&cНет предмета в руке'
+        lore:
+        - '&7Вам нужно держать предмет'
+        - '&7в основной руке.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  global_lands:
+    title: '&8Все Поселения'
+    size: 54
+    s:
+      close:
+        name: '&cЗакрыть'
+        lore:
+        - '&7Закрыть это меню.'
+        - ''
+        - '&7Вы можете открыть его снова'
+        - '&7выполнив &e/lands list&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 46
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 46
+      toggle-allowed:
+        name: '&6Показывать только доступные Поселения?'
+        lore:
+        - '&7Показывать только поселения'
+        - '&7в которые можно зайти и телепортироваться?'
+        - ''
+        - '&7Нажмите здесь чтобы переключить этот параметр.'
+        - '&7Только доступные: {only-allowed}'
+        material: HOPPER
+        slot: 50
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 48
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 52
+    l:
+      object:
+        name: '&2{land}'
+        lore:
+        - '&7Уровень: {level}'
+        - '&7Название:'
+        - '&7{title}'
+        - ''
+        - '&8✖ &bЛЕВЫЙ КЛИК'
+        - '   &7Телепортироваться на спавн'
+        - '   &7этого поселения.'
+        - '&8✖ &9ПРАВЫЙ КЛИК'
+        - '   &7Открыть меню с информацией'
+        - '   &7об этом поселении.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 45
+      no-land:
+        name: '&cПоселений не найдено'
+        lore:
+        - '&7Нет поселений которые соответствуют,'
+        - '&7вашему запросу.'
+        - ''
+        - '&7Чтобы создать поселений, выполните'
+        - '&e/lands create &8<&eназвание&8>.'
+        material: PAPER
+        from: 10
+        to: 45
+    a:
+      failure_teleport_permission:
+        name: '&4Отказано: &cНет прав'
+        lore:
+        - '&cВы не можете телепортироваться'
+        - '&cк любому поселению.'
+        - ''
+        - '&8Право:'
+        - '&8{permission}'
+      failure_no-spawn:
+        name: '&4Ошибка: &cТочка спавна не установлена'
+        lore:
+        - '&7Это поселение еще не имеет'
+        - '&7точки появления. Нужно ее'
+        - '&7сначала установить.'
+        - ''
+        - '&7Они могут выполнить &e/lands setspawn'
+        - '&7чтобы установить точку спавна.'
+      failure_teleport_cost:
+        name: '&4Отказано: &cСтоимость'
+        lore:
+        - '&cВы не можете телепортироваться'
+        - '&cна спавн этого поселения.'
+        - ''
+        - '&7Вам нужно&c {costs}&7.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 36
+        to: 54
+  
+  rentables:
+    title: '&8Регионы для Аренды'
+    size: 36
+    f:
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 30
+      sort:
+        name: '&7Сортировать по: {mode}'
+        lore:
+        - '&7Нажмите чтобы переключить'
+        - '&7режим сортировки.'
+        material: HOPPER
+        slot: 32
+      type:
+        name: '&7Тип: {type}'
+        lore:
+        - '&7Нажмите чтобы уточнить'
+        - '&7если вы хотите купить'
+        - '&7или арендовать.'
+        material: COMPARATOR
+        slot: 33
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 35
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      area_rent:
+        name: '&eАренда:&6 {area}'
+        lore:
+        - '&7Размер: {size} блоков'
+        - '&7Цена:&c {costs} &7за &5{time}'
+        - ' &8┗ &7Максимальное время: {max}'
+        - ''
+        - '&7Поселение: {land}'
+        - '&7Нажмите для телепорта.'
+        material: OAK_FENCE
+        from: 10
+        to: 27
+      area_buy:
+        name: '&aКупить: &6{area}'
+        lore:
+        - '&7Размер: {size} блоков'
+        - '&7Цена:&c {costs}'
+        - ''
+        - '&7Поселение: {land}'
+        - '&7Нажмите для телепорта.'
+        material: OAK_FENCE
+        from: 10
+        to: 27
+      land_buy:
+        name: '&aКупить Поселение:&2 {land}'
+        lore:
+        - '&7Цена:&c {costs}'
+        - ''
+        - '&7Нажмите для телепорта.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    a:
+      failure_cooldown:
+        name: '&4Ошибка: &cОткат'
+        lore:
+        - '&7Вам нужно подождать еще {time}'
+        - '&7перед тем как вы сможете использовать'
+        - '&7телепорт к предложению еще раз.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  
+  
+  war:
+    title: '&8Война'
+    size: 27
+    f:
+      attackers:
+        name: '&8> &cАтакующий {object}'
+        lore:
+        - '&7Показать все атакуемые поселения.'
+        - '&7Игроки: {players}'
+        - ' '
+        - '&7&lСтатистика'
+        - ' &7Захватов: {cap}'
+        - ' &7Убийств: {kills}'
+        - ' &3= {points} / {towin} &7очков до победы'
+        - ' {bar}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTU0OTQ3ZGU3ZjUyNTk4MjU1ZDZhZmVlOWQ3N2JlZmFkOWI0ZjI0YzBjNDY2M2QyOGJjZGY4YTY0NTdmMzQifX19
+        slot: 11
+      defenders:
+        name: '&8> &aЗащитник {object}'
+        lore:
+        - '&7Показать все защищаемые поселения.'
+        - '&7Игроки: {players}'
+        - ' '
+        - '&7&lСтатистика'
+        - ' &7Завхатов: {cap}'
+        - ' &7Убийств: {kills}'
+        - ' &3= {points} / {towin} &7точков до победы'
+        - ' {bar}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRkYmNiN2UxZmJlY2VhOWE3MzUwNDM2Y2JiZWEyYjQ5NmY3NGMyOTcyMDRmMWJiOWFjYzM4NzhkNTQyY2NiIn19fQ==
+        slot: 13
+      tribute_attacker:
+        name: '&8> &6Требуемая дань:&c {tribute}'
+        lore:
+        - '&7Изменить требуемую дань'
+        - '&7для этой войны.'
+        - ''
+        - '&7Если защитники сдаются:'
+        - '&7Защитники должны заплатить&c {tribute}'
+        - '&7вам. &7Если дань равна 0,'
+        - '&7защитники не смогут сдаться.'
+        - ''
+        - '&8✖ &9ПРАВЫЙ КЛИК'
+        - '   &7Если атакующие хотят'
+        - '   &7сдаться, им нужно'
+        - '   &7заплатить&c {tribute-att}'
+        - '   &7защитникам.'
+        material: GOLD_INGOT
+        slot: 17
+      tribute_attacker_mutual:
+        name: '&8> &6Дань:&c {tribute}'
+        lore:
+        - '&7Сдаться как атакующий:'
+        - '&7Атакующие должны заплатить&c {tribute-att}'
+        - '&7защитникам.'
+        - ''
+        - '&7Если сдаются защитники:'
+        - '&7Защитникам нужно заплатить&c {tribute}'
+        - '&7вам. &7Если дань равна 0,'
+        - '&7защитники не смогут сдаться.'
+        material: GOLD_INGOT
+        slot: 17
+      tribute_defender:
+        name: '&8> &6Сдаться:&c {tribute}'
+        lore:
+        - '&7Нажмите чтобы сдаться в'
+        - '&7этой вйоне. Защитникам нужно'
+        - '&7заплатить дань в размере&c {tribute}'
+        - '&7атакующим.'
+        - ''
+        - '&7Если дань равна 0:'
+        - '&7Это значит, что атакующие не'
+        - '&7принимают капитуляцию.'
+        material: GOLD_INGOT
+        slot: 17
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      close:
+        name: '&cЗакрыть'
+        lore:
+        - '&7Закрыть это меню.'
+        - ''
+        - '&7Вы можете открыть его снова'
+        - '&7выполнив &e/wars menu&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+    s:
+      info:
+        name: '&8> &6Информация'
+        lore:
+        - '&7Нажмите чтобы увидеть информацию.'
+        material: IRON_SWORD
+        slot: 15
+    a:
+      failure_permission:
+        name: '&4Ошибка: &cНет Доступа'
+        lore:
+        - '&7Вы не можете'
+        - '&7сделать это для &8({object}&8)'
+        - ''
+        - '&8Флаг: {flag}'
+      failure_surrender:
+        name: '&4Ошибка: &cКапитуляция отклонена'
+        lore:
+        - '&7Враг не согласился'
+        - '&7с вашей капитуляцией.'
+        - ''
+        - '&7Это потому что они не выставили'
+        - '&7требуемую дань. Они могут сделать это'
+        - '&7в их меню войны.'
+      failure_attacker:
+        name: '&4Ошибка: &cНет Доступа'
+        lore:
+        - '&7Атакующие не могут'
+        - '&7сдаться.'
+        - ''
+        - '&8Это может быть настроено'
+        - '&8в конфиге.'
+      failure_cost:
+        name: '&4Ошибка: &cНе хватает средств'
+        lore:
+        - '&7У вас &8({object}&8) &7не хватает'
+        - '&7денег для оплаты требуемой дани'
+        - '&7в размере&c {tribute}&7.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  war_info:
+    title: '&8Война &7> &8Информация'
+    size: 27
+    f:
+      declaration_start:
+        name: '&8> &6Начало'
+        lore:
+        - '&7Война начнется через'
+        - '&5{time}&7. До этого'
+        - '&7у сторон есть время на подготовку.'
+        material: CLOCK
+        slot: 16
+      war_end:
+        name: '&8> &6Окончание'
+        lore:
+        - '&7Война будет окончена если'
+        - '&7одна из сторон достигнет'
+        - '&7количества очков: &3 {points}'
+        - '&7или кто-то сдастся.'
+        - ' '
+        - '&7Если ничего из этого не случится,'
+        - '&7война закончится через'
+        - '&5{end}&7.'
+        material: CLOCK
+        slot: 16
+      points:
+        name: '&8> &6Очков'
+        lore:
+        - '&7Команде нужно {points} очков до победы.'
+        - ''
+        - ' &7Убийство: &3{p_kill} очков'
+        - ' &7Захват: &3{p_cap} очков'
+        - '   &7Чтобы захватить вражескую территорию,'
+        - '   &7установите предмет для захвата на их земле.'
+        - '   &7Вы можете посмотреть рецепт для крафта'
+        - '   &7в этом меню.'
+        - ' '
+        - '&7Враги могут сделать'
+        - '&7эти действия в вашем поселении:'
+        - '{settings}'
+        material: IRON_INGOT
+        slot: 12
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    s:
+      recipe:
+        name: '&8> &6Рецепт Предмета для Захвата'
+        lore:
+        - '&7Нажмите чтобы увидеть'
+        - '&7рецепт предмета для захвата.'
+        material: BEACON
+        slot: 14
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  war_capture_recipe:
+    title: '&8Война &7> &8Информация &7> &8Рецепт'
+    size: 27
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  war_lands:
+    title: '&8{team}'
+    size: 36
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 34
+    l:
+      object:
+        name: '&2{land}'
+        lore:
+        - '&7Открыть меню информации'
+        - '&7об этом регионе.'
+        - ''
+        - '&7Всего игроков: {players}'
+        - '&7Название: {title}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  
+  war-declaration_tribute:
+    title: '&8Требуемая Дань'
+    size: 27
+    s:
+      plus-1:
+        name: '&aДобавить 1'
+        lore:
+        - '&7Добавить 1'
+        - '&7к дани.'
+        material: GLOWSTONE_DUST
+        slot: 11
+        amount: 1
+        data:
+          value: 1.0
+      plus-2:
+        name: '&aДобавить 100'
+        lore:
+        - '&7Добавить 100'
+        - '&7к дани.'
+        material: GLOWSTONE_DUST
+        slot: 12
+        data:
+          value: 100.0
+      plus-3:
+        name: '&aДобавить 1000'
+        lore:
+        - '&7Добавить 1000'
+        - '&7к дани.'
+        material: GLOWSTONE_DUST
+        slot: 13
+        data:
+          value: 1000.0
+      minus-3:
+        name: '&cУбрать 1000'
+        lore:
+        - '&7Убрать 1000'
+        - '&7из дани.'
+        material: REDSTONE
+        slot: 15
+        data:
+          value: 1000.0
+      minus-2:
+        name: '&cУбрать 100'
+        lore:
+        - '&7Убрать 100'
+        - '&7из дани.'
+        material: REDSTONE
+        slot: 16
+        data:
+          value: 100.0
+      minus-1:
+        name: '&cУбрать 1'
+        lore:
+        - '&7Убрать 1'
+        - '&7из дани.'
+        material: REDSTONE
+        slot: 17
+        data:
+          value: 1.0
+    f:
+      tribute:
+        name: '&7Дань:&c {tribute}'
+        lore:
+        - '&7Защищаемуся поселению нужно будет'
+        - '&7заплатить эту сумму'
+        - '&7чтобы сдаться.'
+        - ''
+        - '&8- &7Максимальная дань для'
+        - '  &7этого поселения&3 {max}&7.'
+        - '  &7Это было настроено'
+        - '  &7администрацией.'
+        - '&8- &7Если вы установите требуемую'
+        - '  &7дань на 0, защищающееся поселение'
+        - '  &7не сможет сдаться.'
+        material: GOLD_INGOT
+        slot: 14
+      send-declaration:
+        name: '&aОтправить Объявление Войны'
+        lore:
+        - '&7Нажмите чтобы отправить'
+        - '&7объявление войны'
+        - '&7врагу.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19
+        slot: 27
+      abort-declaration:
+        name: '&cОтменить Объявление Войны'
+        lore:
+        - '&7Нажмите чтобы отменить'
+        - '&7объявление войны.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==
+        slot: 19
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      max-tribute:
+        name: '&4Достигнуто максимальное знпчение дани'
+        lore:
+        - '&7Вы не можете установить дань'
+        - '&7больше чем&3 {max}&7.'
+        - ''
+        - '&7Это может быть настроено'
+        - '&7администрацией.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  
+  nation:
+    title: '&8{level} {nation}'
+    size: 36
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '&e{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      close:
+        name: '&cЗакрыть'
+        lore:
+        - '&7Закрыть это меню.'
+        - ''
+        - '&7Вы можете открыть его снова'
+        - '&7выполнив &e/nation menu&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+      war:
+        name: '&8> &cТекущая Война'
+        lore:
+        - '&7Получить информацию'
+        - '&7о текущей войне.'
+        - ''
+        - '&7Показать информацию про:'
+        - '&8- &7Вражескую нацию'
+        - '&8- &7Вознаграждение'
+        material: IRON_SWORD
+        slot: 15
+      no-war:
+        name: '&8> &aМирно'
+        lore:
+        - '&7Ваша нация не вовлечена'
+        - '&7ни в какую войну. Все'
+        - '&7мирно.'
+        material: WOODEN_SWORD
+        slot: 15
+      inbox:
+        name: '&8> &6Входящие &8(&7{amount}&8)'
+        lore:
+        - '&7Нажмите чтобы открыть расширенное меню.'
+        - ''
+        - '&7Полученные сообщения:'
+        - '{inbox}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
+        slot: 16
+      stat:
+        name: '&8> &6Статистика'
+        lore:
+        - '&7Всего участников: {0}'
+        - ''
+        - '&7&nУровень:&7 {1}'
+        - '&7Нажмите для большей информации.'
+        - ' '
+        - '&7&nЭкономика'
+        - '&8- &7Нация'
+        - '  &7Баланс: {2}'
+        - '  &7Нация заплатит&c ${3}'
+        - '  &7серверу через {4}.'
+        - ' '
+        - '&8- &4Ваше поселение &8({5})'
+        - '  &7Поселение заплатит&c {6} &7налогов'
+        - '  &7нации через {7}.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
+        slot: 17
+      role:
+        name: '&8> &6Роли Наций'
+        lore:
+        - '&7Настройте, что члены нации'
+        - '&7могут делать в каждом поселении'
+        - '&7которое является частью этой нации.'
+        material: PLAYER_HEAD
+        slot: 23
+    s:
+      information:
+        name: '&6Информация'
+        lore:
+        - '&7Здесь вы можете просмотреть'
+        - '&7детальную информацию'
+        - '&7о вашей нации. Это поможет'
+        - '&7быть в курсе всех событий'
+        - '&7в вашей нации.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      lands:
+        name: '&8> &6Поселения'
+        lore:
+        - '&7Просмотреть все поселения,'
+        - '&7которые состоят в этой нации'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 13
+      spawn:
+        name: '&8> &6Спавн'
+        lore:
+        - '&7Нажмите чтобы телепортироваться'
+        - '&7на спавн столицы.'
+        material: ENDER_PEARL
+        slot: 14
+      management:
+        name: '&6Управление'
+        lore:
+        - '&7Здесь вы можете управлять вашей нацией.'
+        - '&7Вы можете установить национальные налоги,'
+        - '&7изменить природные флаги и т.п.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 20
+      taxes:
+        name: '&8> &6Налоги'
+        lore:
+        - '&7Настройте налоги для'
+        - '&7поселений в вашей нации.'
+        material: GOLD_INGOT
+        slot: 22
+      effects:
+        name: '&8> &6Эффекты'
+        lore:
+        - '&7Установите эффект которые будет активен'
+        - '&7внутри нации. Эффекты могут быть открыты'
+        - '&7через прогресс уровня нации.'
+        material: POTION
+        slot: 24
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 36
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 21
+        to: 21
+  
+  nation_lands:
+    title: '&8Члены Нации'
+    size: 36
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 35
+      trust:
+        name: '&8> &aПригласите Поселение'
+        lore:
+        - '&7Нажмите чтобы пригласить'
+        - '&7поселение присоединиться к вашей нации.'
+        - ''
+        - '&7Доступно:&3 {lands} &8/&c {max}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
+        slot: 32
+      untrust:
+        name: '&8> &cУбрать Поселение'
+        lore:
+        - '&7Нажмите чтобы убрать'
+        - '&7поселение из вашей нации.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 33
+    l:
+      object:
+        name: '&2{level} {land}'
+        lore:
+        - '&7Открыть меню информации'
+        - '&7об этом поселении.'
+        - ''
+        - '&7Название:'
+        - '&7{title}'
+        - ''
+        - '&8✖ &9ПРАВЫЙ КЛИК'
+        - '   &7Получить больше информации'
+        - '   &7об этом поселении.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      capital:
+        name: '&4Столица {land}'
+        lore:
+        - '&7Открыть меню информации'
+        - '&7об этом поселении.'
+        - ''
+        - '&7Название:'
+        - '&7{title}'
+        - ''
+        - '&8✖ &9ПРАВЫЙ КЛИК'
+        - '   &7Получить больше информации'
+        - '   &7об этом поселении.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  
+  nation_effects:
+    title: '&8Эффекты'
+    size: 36
+    f:
+      back:
+        name: '&cНазад'
+        lore:
+        - '&7Вернуться к'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9Предыдущая Страница'
+        lore:
+        - '&7Перейти на предыдущую страницу&3 {previous}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aСледующая Страница'
+        lore:
+        - '&7Перейти на следующую страницу:&3 {next}'
+        material: ARROW
+        slot: 35
+    l:
+      object:
+        name: '&6{effect}'
+        lore:
+        - '&7Активен: {active}'
+        - ' '
+        - '&7Нажмите чтобы сделать активным эффект'
+        - '&7внутри вашей нации или нажмите'
+        - '&7на активный эффект чтобы его отключить.'
+        material: POTION
+        from: 10
+        to: 27
+      object_locked:
+        name: '&6{effect}'
+        lore:
+        - '&7Разблокируется на уровне: {level}'
+        material: POTION
+        from: 10
+        to: 27
+      object_active:
+        name: '&6{effect}'
+        lore:
+        - '&7Активен: {active}'
+        - ' '
+        - '&7Нажмите чтобы сделать активным эффект'
+        - '&7внутри вашей нации или нажмите'
+        - '&7на активный эффект чтобы его отключить.'
+        material: POTION
+        enchanted: true
+        from: 10
+        to: 27
+    a:
+      failure_locked:
+        name: '&4Ошибка: &cУровень мал'
+        lore:
+        - '&cВашей нации нужно достигнуть уровня&4 {level}'
+        - '&cперед тем как вы сможете активировать этот эффект.'
+        material: POTION
+      failure_max:
+        name: '&4Ошибка: &cМаксимальное Количество'
+        lore:
+        - '&cВаша нация достигла максимального'
+        - '&cколичества активных эффектов&4 {max}'
+        - '&7Увеличивайте уровень нации чтобы'
+        - '&7иметь больше активных эффектов одновременно.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
