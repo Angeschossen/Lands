@@ -8,7 +8,7 @@ general:
   disabled: '&cDisabled'
   wilderness: '&aWilderness'
   unlimited: '&aunlimited'
-  server: '&aServer'
+  server: Server
   affiliation:
     land: '&8[&2{land}&8]'
     nation: '&8[&9{nation} &8| &2{land}&8]'
@@ -685,9 +685,10 @@ command:
         personal: '&cYou don''t have enough to pay the cost. &7You need &c{cost}&7.'
   
   help:
-    header: |
-      [NoPrefix]
-      [T]&7&l&m━━━━━━━━&e&l<<<<&7&l&m━[H]&7Click here to navigate to the previous page.[/H][C]{cmd} help {previous}[/C][/T] &2Lands Help &7Page &3{page} &8/ &3{pages} [T]&7&l&m━&e&l>>>>&7&l&m━━━━━━━━[H]&7Click here to go to the next page.[/H][C]{cmd} help {next}[/C][/T]
+    header: '[NoPrefix][T]&7&l&m━━━━━━━━&e&l<<<<&7&l&m━[H]&7Click here to navigate
+      to the previous page.[/H][C]{cmd} help {previous}[/C][/T] &2Lands Help &7Page
+      &3{page} &8/ &3{pages} [T]&7&l&m━&e&l>>>>&7&l&m━━━━━━━━[H]&7Click here to go
+      to the next page.[/H][C]{cmd} help {next}[/C][/T]'
     footer: |
       [NoPrefix]
       &7Click on the arrows below to navigate.
@@ -726,49 +727,28 @@ command:
       &e/lands claim &7or &e/lands trust&7, will be executed for this land.'
   top:
     entry:
-      balance: |
-        [NoPrefix]
-        [T]&c#{pos} &2{land}
-        &7Balance: &3{balance}[H]
-        &7Chunks: {chunks}
-        &7Members: {members}
-        &7Level: {level}
-        &7Progress: {progress}%
-        &7Click for more information about this land.[/H][C]lands info {land_p}[/C][/T]
-      chunks: |
-        [NoPrefix]
-        [T]&c#{pos} &2{land}
-        &7Chunks: &3{chunks}[H]
-        &7Balance: {balance}
-        &7Chunks: {chunks}
-        &7Members: {members}
-        &7Level: {level}
-        &7Progress: {progress}%
-        &7Click for more information about this land.[/H][C]lands info {land_p}[/C][/T]
-      members: |
-        [NoPrefix]
-        [T]&c#{pos} &2{land}
-        &7Members: &3{members}[H]
-        &7Balance: {balance}
-        &7Chunks: {chunks}
-        &7Members: {members}
-        &7Level: {level}
-        &7Progress: {progress}%
-        &7Click for more information about this land.[/H][C]lands info {land_p}[/C][/T]
-      level: |
-        [NoPrefix]
-        [T]&c#{pos} &2{land}
-        &7Level: &3{level}[H]
-        &7Balance: {balance}
-        &7Chunks: {chunks}
-        &7Members: {members}
-        &7Level: {level}
-        &7Progress: {progress}%
-        &7Click for more information about this land.[/H][C]lands  info {land_p}[/C][/T]
-    mode: '&cYour input &4{input} &cisn''t a valid sort mode. &7Valid sort modes:
+      balance: '[NoPrefix][T]&c#{pos} &2{land} &7Balance: &3{balance}[H]&7Balance:
+        {balance}[newline]&7Chunks: {chunks}[newline]&7Members: {members}[newline]&7Level:
+        {level}[newline]  Progress: {progress}%[newline][newline]&7Click for more
+        information about this land.[/H][C]lands info {land_p}[/C][/T]'
+      chunks: '[NoPrefix][T]&c#{pos} &2{land} &7Chunks:&3 {chunks}[H]&7Balance: {balance}[newline]&7Chunks:
+        {chunks}[newline]&7Members: {members}[newline]&7Level: {level}[newline]  Progress:
+        {progress}%[newline][newline]&7Click for more information about this land.[/H][C]lands
+        info {land_p}[/C][/T]'
+      members: '[NoPrefix][T]&c#{pos} &2{land} &7Members: &3{members}[H]&7Balance:
+        {balance}[newline]&7Chunks: {chunks}[newline]&7Members: {members}[newline]&7Level:
+        {level}[newline]  Progress: {progress}%[newline][newline]&7Click for more
+        information about this land.[/H][C]lands info {land_p}[/C][/T]'
+      level: '[NoPrefix][T]&c#{pos} &2{land} &7Level: &3{level}[H]&7Balance: {balance}[newline]&7Chunks:
+        {chunks}[newline]&7Members: {members}[newline]&7Level: {level}[newline]  Progress:
+        {progress}%[newline][newline]&7Click for more information about this land.[/H][C]lands
+        info {land_p}[/C][/T]'
+    mode: '&cYour input&4 {input} &cisn''t a valid sort mode. &7Valid sort modes:
       {modes}'
-    header: |
-      [NoPrefix][T]&7&m━━━━━━━━━━━&e&l<<<<&7&m━[C]lands top {mode} {previous}[/C][H]&7Click here to navigate to the previous page.[/H][/T] &2Top Lands &7Page &3{page} &8/ &3{pages} [T]&7&m━&e&l>>>>&7&m━━━━━━━━━━━[C]lands top {mode} {next}[/C][H]&7Click here to navigate to the next page.[/H][/T]
+    header: '[NoPrefix][T]&7&m━━━━━━━━━━━&e&l<<<<&7&m━[C]lands top {mode} {previous}[/C][H]&7Click
+      here to navigate to the previous page.[/H][/T] &2Top Lands &7Page &3{page} &8/
+      &3{pages} [T]&7&m━&e&l>>>>&7&m━━━━━━━━━━━[C]lands top {mode} {next}[/C][H]&7Click
+      here to navigate to the next page.[/H][/T]'
     footer: |
       [NoPrefix]
       &7Click on the arrows below to navigate.
