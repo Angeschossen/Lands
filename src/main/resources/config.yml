@@ -16,8 +16,8 @@ general:
   # German (de-DE) by Cryper
   # Hungarian (hu-HU) by gbalint
   # Italian (it-IT) by MiniMoro
-  # Russian (ru-RU) by Envel
-  # Spanish (es-ES) by Port
+  # Russian (ru-RU) by _sil3nce
+  # Spanish (es-ES) by C4BR3R4
   # Swedish (sv-SE) by Broken_Arrow1
   # Polish (pl-PL) by Nideon
   # Vietnamese (vi-VN) by anhcraft
@@ -123,17 +123,17 @@ land:
     # The cost to create a land (/lands create).
     # NOTE: This includes also one chunk claim, which will be claimed automatically on land creation.
     costs: 4000.0
-    # Max land name length
-    # The maximum possible length is 32 (including color codes)
+    # Maximum land name length
+    # The maximum possible length is 80 (including color codes).
     # How to filter names: https://github.com/Angeschossen/General/wiki/Messages#filter-swear-words-and-forbidden-names
     name-length: 24
     # Should colors be allowed in land names?
     color_2: true
     # Should numbers be allowed in land names?
     numbers: true
-    # Claim a radius of chunks at land creation.
-    # These initial claims won't cost the land anything.
-    # 0 = only the chunk in which the player currently stands.
+    # Claim a radius of chunks at land creation. These initial claims won't cost the land anything.
+    # NOTE: 0 = only the chunk in which the player currently stands.
+    # NOTE: This value can't be higher than your servers view distance.
     claim-radius: 0
 
   # Set the minimum distance in chunks (16 blocks) between different lands that do not belong to the same owner.
@@ -240,6 +240,11 @@ land:
     # NOTE: This setting required server reload / restart.
     mute-global: false
 
+  # Should chunks be regenerated at unclaim?
+  # NOTE: This option is deprecated, it is recommended to use our plugin WildRegeneration,
+  # which provides more functionality, instead.
+  regen: false
+
 
   # Rename settings
   # Command: /lands rename
@@ -274,7 +279,7 @@ land:
   # Delete inactive Lands, if the owner is offline since x days.
   expiration:
     # NOTE: This setting requires server reload / restart.
-    enabled: true
+    enabled: false
     # Time in days
     # NOTE: You can set a time setting to 0 to disable it.
     offline-days:
@@ -745,6 +750,8 @@ random-teleport:
   # and should be disabled if not needed. Most world generators do not need this option as they support retrieving the biome without loading the destination chunk
   # before the teleportation counter starts.
   extensive-check: false
+  # Should the teleportation be free for players that joined the first time?
+  new-free: false
 
 
 # Lands menu settings (/lands menu)
@@ -803,12 +810,17 @@ database:
 integration:
   # Management integrations
   manager:
-    # WorldEdit
     WorldEdit:
       # Disallow WorldEdit use in other players lands, where the player isn't trusted?
       # Bypass permission in claims: lands.bypass.worldedit
       # Bypass permission in wilderness: lands.bypass.wilderness.worldedit
       enabled_7: true
+
+    # Apply the lands-claim flag also to global regions in world manager plugins, like WorldGuard?
+    # NOTE: This option should only be enabled, if you want to disallow claiming in the wilderness.
+    #       If you want to manage wilderness flags like block breaking, use /lands admin menu instead.
+    # This option requires server reload / restart.
+    global-regions: false
 
 
   # Economy settings
@@ -832,8 +844,13 @@ integration:
     # You can disable this by setting icon to ''
     spawn:
       # Set the icon
-      # NOTE: For BlueMap this needs to be a direct image web address. Recommended imgage size: 32 x 32 pixels
+      # NOTE: For BlueMap and squaremap this needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
+      #       Example: ABSOLUTE_FOLDER_PATH\spawn.png
       icon: 'greenflag'
+      # Set the icon for a nations capital.
+      # NOTE: For BlueMap and squaremap this needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
+      #       Example: ABSOLUTE_FOLDER_PATH\spawn.png
+      icon-capital: 'greenflag'
       # Set minimum zoom. The icon won't display, if the zoom in your browser is smaller (mousewheel).
       # NOTE: Recommended value for BlueMap, squaremap: 126
       min-zoom: 5
@@ -852,6 +869,9 @@ integration:
     land:
       # Opactiy of the land. Needs to be between 0 (lowest) and 255 (highest).
       opacity_3: 125
+      # Should only lands, that are part of a nation, appear on the map?
+      # Note: This option requires server reload / restart.
+      only-nation: false
       # To edit the color you need to insert the hex values given here:
       # https://www.google.com/search?q=color+picker
       color:
