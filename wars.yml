@@ -1,0 +1,257 @@
+# Wiki Page (configuration): https://github.com/Angeschossen/Lands/wiki/Wars-Config
+# Explanation for players: https://github.com/Angeschossen/Lands/wiki/Wars
+
+# Enable wars?
+# NOTE: This setting requires server reload / restart.
+enabled: true
+
+# Should wars only be possible between nations and not single lands?
+only-nations: false
+
+# War declaration settings
+declaration:
+  # Set the minimum amount of trusted players a land needs to have to be allowed to engaged in a war.
+  min-players:
+    # Set minimum amount of trusted players for the declaring attacker.
+    attacker: 0
+    # Set minimum amount of trusted players for the defender to receive a war declaration.
+    defender_3: 0
+  # "from" and "to" define the hours of each day between which a declaration can be sent.
+  # Minimum: 0 (00:00 AM)
+  # Maximum: 23 (11:00 PM)
+  # Setting one of these to -1 will disable this option.
+  send-time:
+    from: -1
+    to: -1
+  # How much time do you want to give the defender lands for war preparation, before it will start?
+  # NOTE: Timeunit is seconds
+  # Default is one day
+  preparation_time: 1d
+  # Should attackers only be able to send war declarations to lands or nations where at least one player is online?
+  online: false
+  # Should a broadcast message be sent to the whole server?
+  # You can edit the message in your language file.
+  broadcast: true
+  # Should war declarations need a mutual acceptation?
+  # If enabled, the defender land needs to confirm the declaration before the war can start. They need to do this by executing /Wars declare <attacker>
+  # They can deny a war declaration by executing /Wars deny
+  # NOTE: This setting requires server reload / restart.
+  mutual:
+    enabled_2: false
+    # Should the declaration be deleted if the enemy did not accept it during the configured period?
+    # You can disable this by setting the value to 0.
+    declaration-timeout_time: 5d
+  min-balance:
+    # Set the minimum land balance for attackers to be able to start a war.
+    attacker_2: 5000
+    # Set the minimum balance for defenders to have war declared against them directly.
+    # They can still be engaged in war, if they're part of a nation that has a balance higher than this.
+    defender_2: 0
+  min-age:
+    # Set the minimum age of a attacker.
+    attacker_time: 0d
+    # Set the minimum age of a defender.
+    defender_time: 0d
+
+# Configure points
+points:
+  # Get x points per kill
+  kill: 1
+  # Capture block points
+  capture-block:
+    # Get x points, if you capture a capture flag.
+    capture: 5
+    # Get x points, if you break a capture flag of the enemy.
+    break: 3
+    # Get x points, if you explode a capture flag of the enemy.
+    explode: 5
+  # How many points does a team need to win?
+  # Calculation: <team with the smallest amount of members> * towin-per-player
+  towin:
+    per-player: 5
+    # Set a minimum amount of required points. This will be used if the calculation is smaller than minimum.
+    min_2: 100
+
+# Whenever a enemy places a beacon on the outskirts of a land, a capture flag will be created.
+# The invaders then need to hold this point a specific time.
+capture:
+  enabled_3: true
+  # A capture point must be crafted. Players can see the recipe in their /war menu.
+  recipe_list:
+    - 'AIR,RED_STAINED_GLASS_PANE,AIR'
+    - 'AIR,BEACON,AIR'
+    - 'IRON_BLOCK,IRON_BLOCK,IRON_BLOCK'
+  # Set the maximum amount of capture points a team can have placed at the same time.
+  max: 3
+  # Only allow the team to place a capture flag every period.
+  place-cooldown_time: 10m
+  # Set the chunks radius that will be affected by the capture flag. Invaders will start capturing once they enter the claimed area.
+  # If set to 1, only the chunk in which the capture flag is placed in, is affected.
+  # NOTE: This shouldn't be greater than your servers view distance.
+  radius: 1
+  # Should the captured area become unclaimed?
+  unclaim: true
+  # Should the unclaimed area become claimed by the enemy?
+  claim: false
+  # The invaders need to hold the capture flag this long, to capture the chunk.
+  hold_time: 10m
+  # Spawn a firework every period, if any players are in the area.
+  firework_time: 30s
+  # Should a capture flag item be dropped at removal of the capture flag?
+  drop: false
+  # Limit y levels on which capture flags are placeable.
+  y:
+    min: 30
+    max_2: 127
+
+sounds:
+  capture:
+    place_sound: 'BLOCK_BELL_USE'
+
+
+# War status message interval. This message appears while the war is running. This is very useful to inform players, which might have been offline for some time, that their land is participating in a war.
+status-interval_time: 15m
+
+# Set the max time a war can hold on. When this time is over the team with the most kills will win. If both teams have the same amount of kills, it will end in a draw and no team will be rewarded.
+# Default: 1,5 days
+war-timeout_time: 36h
+
+# Should players, which are engaged in a war, be hidden from dynmap?
+# NOTE: It's currently not possible to do that with BlueMap.
+hide-player: false
+
+# Should Lands set a enemy or ally nametag above players that are at war?
+# If you already have a scoreboard or tablist plugin on your server, it's recommended to use the %rel_lands_war_relation% PlaceholderAPI placeholder instead.
+# NOTE: Only players that are in the same war, will see these.
+nametag: true
+
+# Here you can define a list of commands, which shouldn't get executed while a player is engaged in a war.
+cmd-blacklist_list: [ ]
+
+# Here you can enable natural flags during a war.
+# List of available land-flags: https://github.com/Angeschossen/Lands/wiki/Land-Flags
+land-flags_list: [ ]
+
+
+# Cutomize what happens when a defender surrenders.
+surrender:
+  # Tribute settings
+  tribute:
+    # If you disable this option, the opposite team will be able to surrender even if no tribute is set.
+    force: true
+
+    # Max tribute settings
+    max:
+      # Maximum tribute size that attackers can set.
+      # The tribute size set by the attackers will be paid by the defenders in
+      # favor of the attackers, if the defenders voluntarily surrender in the war.
+      #
+      # Use % to set a specific percentage of the defenders land balance.
+      # Use normal numbers to set a total amount of money.
+      # If you have banks disabled, the money will be taken from the land owner.
+      defender: 75%
+      # In the case that the attackers voluntarily surrender in a war, regardless
+      # of the tribute size, the attackers will pay in favor of the
+      # defenders, the amount of money set in this variable.
+      #
+      # Use % to set a specific percentage of the attackers land balance.
+      # Use normal numbers to set a total amount of money.
+      # If you have banks disabled, the money will be taken from the land owner.
+      # NOTE: You can set this to 0 to disable it.
+      attacker: 5000
+
+# War settings, which can also be chaned ingame by players.
+# Please note that they need certain permissions in order to change the settings. You can find them in the wiki.
+settings:
+  # Allow team mates killing each other. This won't count to the war kill stats.
+  friendly_fire:
+    default_2: true
+
+shield:
+  # Configure when a land should get a war shield.
+  # If a war shield is active, other lands can't attack the land.
+  activation:
+    # Give war shield to a new land?
+    # Use 0 to disable this.
+    shield_creation_time: 1d
+
+    # Set a war shield for a land after it surrendered?
+    # If you want to disable this, just set the value to 0.
+    shield_surrender_time: 4d
+
+    # Set a war shield for a land after war?
+    # If you want to disable this, just set the value to 0.
+    shield_end_time: 7d
+
+# Configure what happens when a war starts.
+start:
+  # Should a message be broadcasted to the whole server?
+  # You can edit the message in your language file.
+  broadcast_2: true
+
+# Configure what happens when a land wins a war.
+end:
+  # Execute a command when a land wins or looses.
+  # Placeholders:
+  # {winner} - Parameter name of the winner. Doesn't contain spaces.
+  # {winner_name} - Name of the winner. Might contain spaces.
+  # {winner_owner} - Owner of the winner.
+  # {loser} - Parameter name of the loser. Doesn't contain spaces.
+  # {loser_name} - Name of the winner. Might contain spaces.
+  # {loser_owner} - Owner of the loser.
+  # Set a command to [] in order to disable it.
+  winner:
+    winner-cmds_list: [ ]
+
+  loser:
+    loser-cmds_list: [ ]
+
+  # The looser will pay a specific amount of money to the attackers when the war ends.
+  # Set the reward mode.
+  # Use % to set a specific percentage of the loosers balance.
+  # Use normal numbers to set a total amount of money. If the looser does not have anough money, they will pay as much as possible.
+  # If you have banks disabled, the money will be taken from the land owner.
+  robbery: 75%
+
+
+# Invading means that the enemy is invading their opponent. Depending on the options "role-settings_list", "block-place_list" and "block-break_list"
+# they will be able to do certain actions in these lands, like opening chests.
+# If you want to limit what they're able to do, edit "role-settings_list", "block-place_list" and "block-break_list" in this section.
+invading:
+  # Limit when invading enemies are able to do certain actions (editable in the "flags" section below).
+  restrictions:
+    # Set a amount of players of the defenders, which need to be online before the attackers can interact in the land.
+    # If nations are invloved: This value is applied to the land that is currently being invaded. Not the whole nation (collection of lands).
+    # This option also affects capture flags.
+    # NOTE: If you want to allow pillages WHILE no defender is online, set this option to 0.
+    # NOTE: This setting requires server reload / restart.
+    min-players: 1
+    # Set a time period where players are still able to attack the land after the last player of the target land left the server.
+    cooldown_logging_time: 1m
+
+  # Limit what invading enemies are able to do.
+  flags:
+    # Allow players doing the following things in the enemy land (only during war).
+    # Available actions: https://github.com/Angeschossen/Lands/wiki/Roles-and-their-Flags#action-flags
+    # NOTE: Adding BLOCK_PLACE or BLOCK_BREAK to this list will allow invaders to break, place ALL blocks. If you want to specify blocks, please use the lists below.
+    # NOTE: In war the attackers and defenders also have the flags of the untrusted role of the area they're invading.
+    role-flags_list:
+      - ITEM_PICKUP
+      - ATTACK_PLAYER
+      - LAND_ENTER
+
+    # Allow the placement of specific blocks if the land part of a war.
+    # NOTE: This is only needed if BLOCK_PLACE is NOT in the role-settings_list above.
+    # Values: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+    block-place_list:
+      - LADDER
+      - VINE
+      - SCAFFOLDING
+
+    # Allow breaking of specific blocks if the land part of a war.
+    # NOTE: This is only needed if BLOCK_BREAK is NOT in the role-settings_list above.
+    # Values: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+    block-break_list:
+      - LADDER
+      - VINE
+      - SCAFFOLDING
