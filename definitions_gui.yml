@@ -1,0 +1,955 @@
+skull:
+  area:
+    default: DARK_OAK_FENCE
+    sub: OAK_FENCE
+
+
+physical:
+  claim_block:
+    material: GRASS_BLOCK
+  capture_flag:
+    material: BEACON
+  selection:
+    material: GOLDEN_HOE
+  info:
+    material: FEATHER
+  camp:
+    material: CAMPFIRE
+  currency:
+    material: GOLD_INGOT
+
+
+# Common Sounds
+# These are applied to all items starting with the defined prefix.
+common_sounds:
+  # Play a sound when the item is set in the menu.
+  set:
+    # Each item starting with [item_type]_failure_<name> will have this sound set.
+    # You can still override the "sound_set" for any item in their sections.
+    failure: ENTITY_VILLAGER_NO
+    success: ENTITY_PLAYER_LEVELUP
+
+
+common:
+  size: 45
+  entries: 10-36
+  # Automatically correct slots if menus, that inherit items from this section, have a smaller size?
+  # If this is disabled, items, which slots go over the menu size, will be set to slot 0 instead.
+  # To manually override the slots for a common item in a menu, just define this item in the custom section of the menu.
+  auto-correct: true
+  items:
+    default:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        slots: 1-45
+      back:
+        material: RED_STAINED_GLASS_PANE
+        slots: 37
+      refresh_page_previous:
+        material: ARROW
+        slots: 38
+      refresh_page_next:
+        material: ARROW
+        slots: 44
+      category:
+        material: BOOKSHELF
+        slots: 40
+      category_members:
+        material: BOOKSHELF
+        slots: 40
+
+gui:
+  main:
+    items:
+      default:
+        lands:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 11
+        nations:
+          material: skin:45587da7fe7336e8ab9f791ea5e2cfc8a827ca959567eb9d53a647babf948d5
+          slots: 12
+        invites:
+          material: WRITABLE_BOOK
+          slots: 13
+        limitation:
+          material: INHERIT
+          slots: 17
+        all-lands:
+          material: skin:c9c8881e42915a9d29bb61a16fb26d059913204d265df5b439b3d792acd56
+          slots: 29
+        all-nations:
+          material: skin:cf40942f364f6cbceffcf1151796410286a48b1aeba77243e218026c09cd1
+          slots: 30
+        rentable:
+          material: OAK_FENCE
+          slots: 31
+        flags:
+          material: skin:ec2ff244dfc9dd3a2cef63112e7502dc6367b0d02132950347b2b479a72366dd
+          slots: 32
+      patches:
+        basic:
+          lands:
+            slots: 20
+          all-lands:
+            slots: 22
+          flags:
+            slots: 24
+          limitation:
+            slots: 26
+  list_player_lands:
+    items:
+      default:
+        entry_land:
+          material: INHERIT
+        entry_land_edit:
+          material: skin:eef425b4db7d62b200e89c013e421a9e110bfb27f2d8b9f5884d10104d00f4f4
+        entry_land_own:
+          material: INHERIT
+        entry_camp:
+          material: INHERIT
+        entry_camp_edit:
+          material: INHERIT
+        entry_camp_own:
+          material: INHERIT
+
+  land:
+    items:
+      default:
+        mainblock_set:
+          material: BELL
+          slots: 45
+        mainblock_reposition:
+          material: BELL
+          slots: 45
+        player-management:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 12
+        level:
+          material: EXPERIENCE_BOTTLE
+          slots: 14
+        level_camp:
+          material: EXPERIENCE_BOTTLE
+          slots: 14
+        spawn:
+          material: ENDER_PEARL
+          slots: 9
+        various:
+          material: BEACON
+          slots: 32
+        relations:
+          material: LIME_BANNER
+          slots: 13
+        relations_camp:
+          material: LIME_BANNER
+          slots: 13
+        land-settings:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 29
+        roles:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 30
+        taxes:
+          material: GOLD_INGOT
+          slots: 31
+        areas:
+          material: OAK_FENCE
+          slots: 11
+        inbox:
+          material: skin:6bf3fcdccffd963e4334818108e1e9ae3a80566d0d3d2d4ab3051a2cd811348c
+          slots: 15
+        stats:
+          material: skin:d01afe973c5482fdc71e6aa10698833c79c437f21308ea9a1a095746ec274a0f
+          slots: 16
+      patches:
+        basic:
+          stats:
+            material: skin:d01afe973c5482fdc71e6aa10698833c79c437f21308ea9a1a095746ec274a0f
+            slots: 17
+          members:
+            material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+            slots: 11
+          roles:
+            slots: 13
+          inbox:
+            slots: 15
+          land-settings:
+            slots: 29
+          various:
+            slots: 31
+  player-management:
+    items:
+      default:
+        members:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 20
+        banned:
+          material: BARRIER
+          slots: 22
+        invites:
+          material: WRITABLE_BOOK
+          slots: 24
+        membership-requests:
+          material: BOOKSHELF
+          slots: 26
+
+  list_membership-requests:
+    items:
+      default:
+        entry_object:
+          material: INHERIT
+        membership_accept:
+          material: REDSTONE
+          slots: 42
+      patches:
+        all:
+          category:
+            slots: 40
+          category_members:
+            slots: 40
+
+  list_land_areas:
+    items:
+      default:
+        create:
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        delete:
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+        entry_area:
+          material: INHERIT
+        entry_area_default:
+          material: INHERIT
+        entry_area-setup:
+          material: ACACIA_FENCE
+
+  list_land_claims:
+    items:
+      default:
+        refresh_toggle:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 41
+        entry_object:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+
+  list_inbox:
+    items:
+      default:
+        refresh_filter:
+          material: HOPPER
+          slots: 40
+        refresh_clear:
+          material: BARRIER
+          slots: 42
+        entry_object:
+          material: PAPER
+          slots: 10-36
+
+  area:
+    items:
+      default:
+        spawn:
+          material: ENDER_PEARL
+          slots: 9
+        player-management:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 11
+        land-settings:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 29
+        roles:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 30
+        taxes:
+          material: GOLD_INGOT
+          slots: 31
+        various:
+          material: BEACON
+          slots: 32
+
+  list_area_players:
+    items:
+      default:
+        entry_land:
+          material: INHERIT
+        entry_area:
+          material: INHERIT
+        refresh_toggle:
+          material: HOPPER
+          slots: 41
+        trust:
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        untrust:
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+
+  list_area_banned:
+    items:
+      default:
+        entry_all:
+          material: INHERIT
+        entry_area:
+          material: INHERIT
+        refresh_toggle:
+          material: HOPPER
+          slots: 41
+        ban:
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        unban:
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+
+  list_area_invites:
+    items:
+      default:
+        entry_invite_area:
+          material: INHERIT
+        entry_invite_land:
+          material: INHERIT
+
+  list_area_roles:
+    items:
+      default:
+        entry_object:
+          material: INHERIT
+        create:
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        delete:
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+
+  role:
+    items:
+      default:
+        settings:
+          material: IRON_PICKAXE
+          slots: 29
+        management:
+          material: GOLD_INGOT
+          slots: 30
+        members:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 11
+        members_visitor:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 11
+        members_nation:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 11
+        members_ally:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 11
+        icon:
+          material: INHERIT
+          slots: 13
+        name:
+          material: NAME_TAG
+          slots: 12
+        apply:
+          material: OAK_FENCE
+          slots: 14
+        taxes:
+          material: GOLD_INGOT
+          slots: 15
+        taxes_never:
+          material: GOLD_INGOT
+          slots: 15
+        apply_always:
+          material: OAK_FENCE
+          slots: 14
+
+  list_role_players:
+    items:
+      default:
+        entry_object:
+          material: INHERIT
+          slots: 10-36
+
+  list_role_settings:
+    items:
+      default:
+        entry_general_admin:
+          material: INHERIT
+        entry_general_player:
+          material: INHERIT
+        entry_block_break:
+          material: IRON_PICKAXE
+        entry_block_place:
+          material: OAK_PLANKS
+        entry_block_ignite:
+          material: FLINT_AND_STEEL
+        entry_interact_general:
+          material: STRING
+        entry_interact_door:
+          material: IRON_DOOR
+        entry_interact_trapdoor:
+          material: OAK_TRAPDOOR
+        entry_interact_container:
+          material: CHEST
+        entry_interact_mechanism:
+          material: REDSTONE
+        entry_interact_villager:
+          material: EMERALD
+        entry_attack_player:
+          material: IRON_SWORD
+        entry_attack_animal:
+          material: BOW
+        entry_attack_monster:
+          material: ZOMBIE_HEAD
+        entry_vehicle_use:
+          material: MINECART
+        entry_fly:
+          material: FEATHER
+        entry_elytra:
+          material: ELYTRA
+        entry_land_enter:
+          material: OAK_FENCE_GATE
+        entry_item_pickup:
+          material: HOPPER
+        entry_ender_pearl:
+          material: ENDER_PEARL
+        entry_trample_farmland:
+          material: FARMLAND
+        entry_harvest:
+          material: WHEAT
+        entry_plant:
+          material: IRON_HOE
+        entry_shear:
+          material: SHEARS
+        entry_area_assign:
+          material: OAK_FENCE
+        entry_player_trust:
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+        entry_player_setrole:
+          material: skin:1e8ffbfd7890dfba8841166d688c93a88b6e8cac4d0260644cac9f3afd57c63e
+        entry_player_untrust:
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+        entry_player_ban:
+          material: BARRIER
+        entry_setting_edit_land:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+        entry_setting_edit_various:
+          material: NAME_TAG
+        entry_setting_edit_role:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+        entry_war_manage:
+          material: IRON_SWORD
+        entry_setting_edit_taxes:
+          material: GOLD_INGOT
+        entry_land_claim:
+          material: IRON_SHOVEL
+        entry_land_claim_border:
+          material: IRON_BARS
+        entry_spawn_set:
+          material: ENDER_EYE
+        entry_spawn_teleport:
+          material: ENDER_EYE
+        entry_balance_withdraw:
+          material: GOLD_NUGGET
+
+  list_area_settings:
+    items:
+      default:
+        entry_general_admin:
+          material: INHERIT
+        entry_general_player:
+          material: INHERIT
+        entry_entity_griefing:
+          material: CREEPER_HEAD
+        entry_tnt_griefing:
+          material: TNT
+        entry_piston_griefing:
+          material: PISTON
+        entry_waterflow_allow:
+          material: WATER_BUCKET
+        entry_monster_spawn:
+          material: SPAWNER
+        entry_phantom_spawn:
+          material: PHANTOM_SPAWN_EGG
+        entry_animal_spawn:
+          material: skin:bee8514892f3d78a32e8456fcbb8c6081e21b246d82f398bd969fec19d3c27b3
+        entry_fire_spread:
+          material: FLINT_AND_STEEL
+        entry_leaf_decay:
+          material: OAK_LEAVES
+        entry_plant_growth:
+          material: VINE
+        entry_snow_melt:
+          material: SNOWBALL
+
+  taxes:
+    items:
+      default:
+        refresh_plus-1:
+          material: GLOWSTONE_DUST
+          slots: 24
+          data:
+            modify: 1
+        refresh_plus-2:
+          material: GLOWSTONE_DUST
+          slots: 25
+          data:
+            modify: 50
+        refresh_plus-3:
+          material: GLOWSTONE_DUST
+          slots: 26
+          data:
+            modify: 500
+        refresh_minus-3:
+          material: REDSTONE
+          slots: 22
+          data:
+            modify: 1
+        refresh_minus-2:
+          material: REDSTONE
+          slots: 21
+          data:
+            modify: 50
+        refresh_minus-1:
+          material: REDSTONE
+          slots: 20
+          data:
+            modify: 500
+        tax_area:
+          material: GOLD_INGOT
+          slots: 23
+        tax_nation:
+          material: GOLD_INGOT
+          slots: 23
+
+  action-confirm:
+    items:
+      default:
+        info:
+          material: OAK_SIGN
+          slots: [5,14,23,32,41]
+        confirm:
+          material: LIME_STAINED_GLASS_PANE
+          slots: [1-4,10-13,19-22,28-31,37-40]
+          sound_click: ENTITY_PLAYER_LEVELUP
+        cancel:
+          material: RED_STAINED_GLASS_PANE
+          slots: [6-9,15-18,24-27,33-36,42-45]
+          sound_click: BLOCK_ANVIL_HIT
+
+  list_player_invites:
+    items:
+      default:
+        entry_object_owner:
+          material: INHERIT
+        entry_object_trust:
+          material: INHERIT
+  player_invite:
+    items:
+      default:
+        info:
+          material: OAK_SIGN
+          slots: 23
+        accept_owner:
+          material: LIME_STAINED_GLASS_PANE
+          slots: 19-22
+        accept_trust:
+          material: LIME_STAINED_GLASS_PANE
+          slots: 19-22
+        deny:
+          material: RED_STAINED_GLASS_PANE
+          slots: 24-27
+
+  list_player_flags:
+    title: '&8Personal Settings'
+    items:
+      default:
+        entry_general_player:
+          material: INHERIT
+        entry_enter_messages:
+          material: OAK_SIGN
+        entry_receive_invites:
+          material: WRITABLE_BOOK
+        entry_show_inbox:
+          material: skin:6bf3fcdccffd963e4334818108e1e9ae3a80566d0d3d2d4ab3051a2cd811348c
+
+  player_info:
+    items:
+      default:
+        time:
+          material: CLOCK
+          slots: 20
+        max-chunks:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 22
+        lands:
+          material: OAK_SIGN
+          slots: 24
+        areas:
+          material: OAK_FENCE
+          slots: 26
+
+  object_info:
+    items:
+      default:
+        created:
+          material: CLOCK
+          slots: 11
+        players:
+          material: skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3
+          slots: 13
+        lands:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 13
+        level:
+          material: BEACON
+          slots: 15
+        level_camp:
+          material: BEACON
+          slots: 15
+        relations:
+          material: LIME_BANNER
+          slots: 29
+        war:
+          material: IRON_SWORD
+          slots: 31
+        membership-request:
+          material: BOOKSHELF
+          slots: 33
+        membership-request_not-looking:
+          material: BOOKSHELF
+          slots: 33
+
+  object_info_relations:
+    items:
+      default:
+        allies:
+          material: LIME_BANNER
+          slots: 21
+        enemies:
+          material: RED_BANNER
+          slots: 25
+
+  list_level_progress:
+    items:
+      default:
+        current:
+          material: OAK_SIGN
+          slots: 41
+        next:
+          material: BEACON
+          slots: 42
+        entry_done:
+          material: LIME_STAINED_GLASS
+        entry_progress:
+          material: RED_STAINED_GLASS
+        entry_loading:
+          material: GRAY_STAINED_GLASS
+
+  land_various:
+    items:
+      default:
+        name:
+          material: NAME_TAG
+          slots: 20
+        title:
+          material: OAK_SIGN
+          slots: 22
+        icon:
+          material: INHERIT
+          slots: 26
+      patches:
+        all:
+          category:
+            slots: 24
+          category_members:
+            slots: 24
+
+  area_various:
+    items:
+      default:
+        name:
+          material: NAME_TAG
+          slots: 20
+        description:
+          material: OAK_SIGN
+          slots: 23
+        icon:
+          material: INHERIT
+          slots: 26
+
+  list_all:
+    items:
+      default:
+        refresh_sorting:
+          material: HOPPER
+          slots: 40
+        refresh_toggle-category:
+          material: BOOKSHELF
+          slots: 41
+        refresh_toggle-allowed:
+          material: OAK_DOOR
+          slots: 42
+        entry_land:
+          material: INHERIT
+        entry_land_looking:
+          material: INHERIT
+        entry_nation:
+          material: INHERIT
+
+  list_rentables:
+    items:
+      default:
+        refresh_sort:
+          material: HOPPER
+          slots: 41
+        refresh_type:
+          material: COMPARATOR
+          slots: 42
+        entry_area_rent:
+          material: INHERIT
+        entry_area_buy:
+          material: INHERIT
+        entry_land_buy:
+          material: INHERIT
+
+  war:
+    items:
+      default:
+        attackers:
+          material: IRON_SWORD
+          slots: 11
+        defenders:
+          material: SHIELD
+          slots: 12
+        tribute_attacker:
+          material: GOLD_INGOT
+          slots: 29
+        tribute_attacker_mutual:
+          material: GOLD_INGOT
+          slots: 29
+        tribute_defender:
+          material: GOLD_INGOT
+          slots: 29
+        declaration_start:
+          material: CLOCK
+          slots: 15
+        war_end:
+          material: CLOCK
+          slots: 15
+        points:
+          material: IRON_INGOT
+          slots: 14
+        spawn:
+          material: ENDER_PEARL
+          slots: 9
+        recipe:
+          material: BEACON
+          slots: 13
+
+  list_war_lands:
+    items:
+      default:
+        entry_object:
+          material: INHERIT
+        entry_object_ally:
+          material: INHERIT
+
+  war-declaration_tribute:
+    items:
+      default:
+        refresh_plus-1:
+          material: GLOWSTONE_DUST
+          slots: 24
+          data:
+            modify: 1
+        refresh_plus-2:
+          material: GLOWSTONE_DUST
+          slots: 25
+          data:
+            modify: 100
+        refresh_plus-3:
+          material: GLOWSTONE_DUST
+          slots: 26
+          data:
+            modify: 1000
+        refresh_minus-3:
+          material: REDSTONE
+          slots: 22
+          data:
+            modify: 1
+        refresh_minus-2:
+          material: REDSTONE
+          slots: 21
+          data:
+            modify: 100
+        refresh_minus-1:
+          material: REDSTONE
+          slots: 20
+          data:
+            modify: 1000
+        tribute:
+          material: GOLD_INGOT
+          slots: 23
+        send-declaration:
+          material: skin:96339ff2e5342ba18bdc48a99cca65d123ce781d878272f9d964ead3b8ad370
+          slots: 45
+        cancel-declaration:
+          material: skin:f84f597131bbe25dc058af888cb29831f79599bc67c95c802925ce4afba332fc
+          slots: 37
+
+  list_player_nations:
+    items:
+      default:
+        entry_nation:
+          material: INHERIT
+        entry_nation_edit:
+          material: skin:eef425b4db7d62b200e89c013e421a9e110bfb27f2d8b9f5884d10104d00f4f4
+        entry_nation_own:
+          material: INHERIT
+
+  nation:
+    items:
+      default:
+        war:
+          material: IRON_SWORD
+          slots: 12
+        no-war:
+          material: WOODEN_SWORD
+          slots: 12
+        inbox:
+          material: skin:6bf3fcdccffd963e4334818108e1e9ae3a80566d0d3d2d4ab3051a2cd811348c
+          slots: 13
+        stats:
+          material: skin:d01afe973c5482fdc71e6aa10698833c79c437f21308ea9a1a095746ec274a0f
+          slots: 16
+        role:
+          material: INHERIT
+          slots: 30
+        lands:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 11
+        relations:
+          material: LIME_BANNER
+          slots: 14
+        level:
+          material: EXPERIENCE_BOTTLE
+          slots: 15
+        spawn:
+          material: ENDER_PEARL
+          slots: 9
+        taxes:
+          material: GOLD_INGOT
+          slots: 29
+        effects:
+          material: POTION
+          slots: 31
+
+  list_nation_lands:
+    items:
+      default:
+        trust:
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 41
+        untrust:
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+        entry_object:
+          material: INHERIT
+
+  list_nation_effects:
+    items:
+      default:
+        entry_object:
+          material: POTION
+        entry_object_locked:
+          material: POTION
+        entry_object_active:
+          material: POTION
+          enchanted: true
+
+  relations:
+    items:
+      default:
+        allies:
+          material: LIME_BANNER
+          slots: 20
+        enemies:
+          material: RED_BANNER
+          slots: 22
+        offer_sent:
+          material: skin:3e4f2f9698c3f186fe44cc63d2f3c4f9a241223acf0581775d9cecd7075
+          slots: 24
+        offer_received:
+          material: skin:3b83bbccf4f0c86b12f6f79989d159454bf9281955d7e2411ce98c1b8aa38d8
+          slots: 26
+
+  list_relation:
+    items:
+      default:
+        add:
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        add_nation:
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        remove:
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+        remove_nation:
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42
+        entry_ally:
+          material: INHERIT
+        entry_enemy:
+          material: INHERIT
+        entry_offer_ally_receiver:
+          material: INHERIT
+        entry_offer_ally_sender:
+          material: INHERIT
+        entry_offer_neutral_sender:
+          material: INHERIT
+        entry_offer_neutral_receiver:
+          material: INHERIT
+
+  list_land_storage:
+    items:
+      default:
+        entry_item:
+          material: INHERIT
+
+  admin_wilderness:
+    items:
+      default:
+        action:
+          material: IRON_PICKAXE
+          slots: 20
+        management:
+          material: GOLD_INGOT
+          slots: 23
+        landflags:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 26
+
+  admin_main:
+    items:
+      default:
+        wilderness:
+          material: NAME_TAG
+          slots: 21
+        lands:
+          material: skin:8449b9318e33158e64a46ab0de121c3d40000e3332c1574932b3c849d8fa0dc2
+          slots: 25
+
+  list_admin_lands:
+    items:
+      default:
+        entry_object:
+          material: INHERIT
+        add:
+          material: skin:ffec3d25ae0d147c342c45370e0e43300a4e48a5b43f9bb858babff756144dac
+          slots: 40
+        convert:
+          material: skin:1811917c644f04f56b68c9c71b33ac082c2601c24409be78c2063d4df2a86525
+          slots: 41
+        delete:
+          material: skin:548d7d1e03e1af145b0125ab841285672b421265da2ab915015f9058438ba2d8
+          slots: 42

@@ -1,0 +1,195 @@
+# Common Sounds
+# These are applied to all items starting with the defined prefix.
+common_sounds:
+  # Play a sound when the item is set in the menu.
+  set:
+    # Each item starting with [item_type]_failure_<name> will have this sound set.
+    # You can still override the "sound_set" for any item in their sections.
+    failure: ENTITY_VILLAGER_NO
+
+common:
+  entries: 25
+
+gui:
+  main:
+    items:
+      default:
+        lands:
+          image: 'default'
+        nations:
+          image: 'default'
+        all-lands:
+          image: 'default'
+        all-nations:
+          image: 'default'
+        invites:
+          image: 'default'
+        flags:
+          image: 'default'
+        rentable:
+          image: 'default'
+        limitations:
+          image: 'default'
+  list_player_lands:
+    title: 'Your Lands'
+    items:
+      default:
+        entry_land_own:
+          image: textures/blocks/grass_carried
+        entry_land:
+          image: textures/blocks/grass_carried
+        entry_land_edit:
+          image: textures/blocks/wool_colored_green
+        entry_camp_edit:
+          image: textures/blocks/wool_colored_green
+        entry_camp_own:
+          image: textures/blocks/dirt
+        entry_camp:
+          image: textures/blocks/dirt
+  land:
+    items:
+      default:
+        areas:
+          image: 'default'
+          slot: 1
+        player-management:
+          image: 'default'
+          slot: 2
+        settings:
+          image: 'default'
+          slot: 3
+        level:
+          image: 'default'
+          slot: 4
+        level_camp:
+          image: 'default'
+          slot: 4
+        spawn:
+          image: 'default'
+          slot: 5
+        inbox-stats:
+          image: 'default'
+          slot: 6
+        edit:
+          image: 'default'
+          slot: 7
+        mainblock_reposition:
+          image: 'default'
+          slot: 8
+        mainblock_set:
+          image: 'default'
+          slot: 8
+      patches:
+        basic:
+          members:
+            image: 'ref:player-management'
+            slot: 2
+  land_settings:
+    items:
+      default:
+        roles:
+          slot: 1
+        land-settings:
+          slot: 2
+        taxes:
+          slot: 3
+        relations:
+          slot: 4
+        relations_camp:
+          slot: 4
+        various:
+          slot: 5
+
+
+  area:
+    items:
+      default:
+        player-management:
+          slot: 1
+        settings:
+          slot: 2
+        teleport:
+          slot: 3
+
+  area_spawn:
+    items:
+      default:
+        teleport:
+          slot: 1
+        set:
+          slot: 2
+
+  area_settings:
+    items:
+      default:
+        roles:
+          slot: 1
+        land-settings:
+          slot: 2
+        taxes:
+          slot: 3
+        various:
+          slot: 4
+
+  input:
+    title: 'Insert Text'
+    values:
+      input: 'Text'
+
+  action-confirm:
+    items:
+      default:
+        confirm:
+          slot: 1
+          sound_click: ENTITY_PLAYER_LEVELUP
+        cancel:
+          slot: 2
+          sound_click: BLOCK_ANVIL_HIT
+
+  role:
+    items:
+      default:
+        members:
+          slot: 1
+        flags_action:
+          slot: 2
+        flags_management:
+          slot: 3
+        name:
+          slot: 4
+        taxes:
+          slot: 5
+        apply:
+          slot: 6
+        delete:
+          slot: 'end'
+
+  player-management:
+    items:
+      default:
+        members:
+          slot: 1
+        banned:
+          slot: 2
+        invites:
+          slot: 3
+        membership-requests:
+          slot: 4
+
+  list_area_players:
+    items:
+      default:
+        toggle:
+          slot: 1
+        trust:
+          slot: 2
+
+  area_players_player:
+    items:
+      default:
+        role:
+          slot: 1
+        info:
+          slot: 2
+        untrust:
+          slot: 3
