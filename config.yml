@@ -396,6 +396,11 @@ land:
     # Set the fly deactivation delay if a player is not allowed to fly at this position.
     # Timeunit: Seconds
     disable-delay: 3
+    # Set a permission to check before Lands reactivates flight for a player.
+    # Lands only reactivates flight, if Lands previously disabled it for the player and they're now allowed to fly again
+    # at their current location. This permission just adds another requirement, besides the fly role flag.
+    reactivate-perm: ''
+
 
   # /lands setowner Settings
   setowner:
