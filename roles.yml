@@ -72,6 +72,11 @@ land:
       name: '&6&lTenant'
       # The icon supports minecraft URL values (example: https://minecraft-heads.com/) and normal material values.
       icon: 'skin:d831830a7bd3b1ab05beb98dc2f9fc5ea550b3cf649fd94d483da7cd39f7c063'
+      # Allow lands to toggle specific flags for this role? They can only do this while the area is NOT rented.
+      # WARNING: Keep in mind that this could allow lands to rent out areas, in which tenants can't do much or nothing depending
+      # on the "allow-edit" list. You can add "all" to the list to allow them to toggle all flags for this role.
+      # NOTE: They still need the generl toggle permission for the flags. These can be found in the wiki: https://github.com/Angeschossen/Lands/wiki/Permissions#toggle-role-flags
+      allow-toggle-flags: []
       # Default flag values. Please note that these only apply to new rentals.
       # Only admin lands can change these flags ingame. This prevents lands abusing this and selling areas where the tanant would have no permission to do anything.
       default:
