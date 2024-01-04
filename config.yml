@@ -134,9 +134,12 @@ general:
     # Recommended format for item economy and player experience: "# gold ingot(s)" or "# experience"
     normal: '$#,##0.00'
     # The short format will use the normal format if the value is lower than 1000.
-    # If the value is higher or equal than 1000, it will return {value} divided by 1000.
-    # This format is only used by a small amount of messages.
-    short: '${value}k'
+    # This format is only used in cases where there is not much space, like on signs.
+    # This will convert balances like the following:
+    # 1000000000 = 1B whereas {value} = 1 and {unit} = B
+    # 1000000 = 1M
+    # 1000 = 1k
+    short-unit: '${value}{unit}'
 
   # Reward players by playing on your server.
   # Explanation: https://github.com/Angeschossen/Lands/wiki/Playtime-Rewards
