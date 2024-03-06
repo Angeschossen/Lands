@@ -514,10 +514,10 @@ land:
 
 # Each chunk represents an 16x16 blocks area.
 chunk:
-  # Cost to claim a chunk.
-  # The first claim for a land will be always free.
-  # NOTE: PLAYERS WITH THE lands.free.chunks.<number> PERMISSION MIGHT BYPASS THAT.
-  #   More info: https://github.com/Angeschossen/Lands/wiki/Permissions#numbered-permissions
+  # Cost to claim chunks. In some cases the claim might be free:
+  # NOTE: This cost will only be active if the players lands.free.chunks.<number> permission is lower than the current chunks amount
+  # of the land AND if the currect chunks amount is greater or equals to the option called "claim-radius".
+  # More info: https://github.com/Angeschossen/Lands/wiki/Permissions#numbered-permissions
   costs_2: 0.0
   # Increase cost per chunk claim.
   cost-increase:
