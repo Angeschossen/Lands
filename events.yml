@@ -2,6 +2,8 @@
 # Wiki: https://github.com/Angeschossen/General/wiki/Events
 
 events:
+# BroadcastEvent: This event handles broadcasting messages to players.
+# It's currently set to execute no commands.
   BroadcastEvent:
     commands:
       condition: ''
@@ -10,6 +12,8 @@ events:
           1:
             condition: ''
             commands: [ ]
+# LandUnclaimSelectionEvent: Triggered when a land selection is unclaimed.
+# No specific actions are defined for this event yet.
   LandUnclaimSelectionEvent:
     cancel: ''
     commands:
@@ -27,6 +31,8 @@ events:
           1:
             condition: ''
             commands: [ ]
+# LandUnclaimAllEvent: Triggered when all claims on a land are removed.
+# Similar to LandUnclaimSelectionEvent, no specific actions are defined.
   LandUnclaimAllEvent:
     cancel: ''
     commands:
@@ -68,189 +74,212 @@ events:
           1:
             condition: ''
             commands: [ ]
-  ChunkPostClaimEvent:
-    commands:
-      condition: ''
-      groups:
-        player_self:
-          1:
-            condition: ''
-            commands: [ ]
-        land_trusted:
-          1:
-            condition: ''
-            commands: [ ]
-        land_online:
-          1:
-            condition: ''
-            commands: [ ]
-  ChunkPreClaimEvent:
-    cancel: ''
-    commands:
-      condition: '!cancelled'
-      groups:
-        player_self:
-          1:
-            condition: ''
-            commands: [ ]
-        land_trusted:
-          1:
-            condition: ''
-            commands: [ ]
-        land_online:
-          1:
-            condition: ''
-            commands: [ ]
-  LandBanPlayerEvent:
-    cancel: ''
-    commands:
-      condition: '!cancelled'
-      groups:
-        player_self:
-          1:
-            condition: ''
-            commands: [ ]
-        player_target:
-          1:
-            condition: ''
-            commands: [ ]
-        land_trusted:
-          1:
-            condition: 'area_name == null'
-            commands: [ ]
-        land_online:
-          1:
-            condition: 'area_name == null'
-            commands: [ ]
-        area_trusted:
-          1:
-            condition: 'area_name != null'
-            commands: [ ]
-        area_online:
-          1:
-            condition: 'area_name != null'
-            commands: [ ]
-  LandChatEvent:
-    cancel: ''
-    commands:
-      condition: '!cancelled'
-      groups:
-        player_self:
-          1:
-            condition: ''
-            commands: [ ]
-        recipients:
-          1:
-            condition: ''
-            commands: [ ]
-        land_trusted:
-          1:
-            condition: ''
-            commands: [ ]
-        land_online:
-          1:
-            condition: ''
-            commands: [ ]
-        nation_trusted:
-          1:
-            condition: ''
-            commands: [ ]
-        nation_online:
-          1:
-            condition: ''
-            commands: [ ]
-  LandCreateEvent:
-    cancel: ''
-    commands:
-      condition: '!cancelled'
-      groups:
-        player_self:
-          1:
-            condition: ''
-            commands: [ ]
-        land_trusted:
-          1:
-            condition: ''
-            commands: [ ]
-        land_online:
-          1:
-            condition: ''
-            commands: [ ]
-  LandDeleteEvent:
-    cancel: ''
-    commands:
-      condition: '!cancelled'
-      groups:
-        player_self:
-          1:
-            condition: ''
-            commands: [ ]
-        land_trusted:
-          1:
-            condition: ''
-            commands: [ ]
-        land_online:
-          1:
-            condition: ''
-            commands: [ ]
-  LandInvitePlayerEvent:
-    cancel: ''
-    commands:
-      condition: '!cancelled'
-      groups:
-        player_self:
-          1:
-            condition: ''
-            commands: [ ]
-        player_target:
-          1:
-            condition: ''
-            commands: [ ]
-        land_trusted:
-          1:
-            condition: 'area_name == null'
-            commands: [ ]
-        land_online:
-          1:
-            condition: 'area_name == null'
-            commands: [ ]
-        area_trusted:
-          1:
-            condition: 'area_name != null'
-            commands: [ ]
-        area_online:
-          1:
-            condition: 'area_name != null'
-            commands: [ ]
-  LandOwnerChangeEvent:
-    cancel: ''
-    commands:
-      condition: '!cancelled'
-      groups:
-        player_self:
-          1:
-            condition: ''
-            commands: [ ]
-        player_target:
-          1:
-            condition: ''
-            commands: [ ]
-        land_trusted:
-          1:
-            condition: 'area_name == null'
-            commands: [ ]
-        land_online:
-          1:
-            condition: 'area_name == null'
-            commands: [ ]
-        area_trusted:
-          1:
-            condition: 'area_name != null'
-            commands: [ ]
-        area_online:
-          1:
-            condition: 'area_name != null'
-            commands: [ ]
+# ChunkPostClaimEvent: Triggered after a chunk is successfully claimed.
+# Commands can be executed to notify the player or perform actions related to the new claim.
+ChunkPostClaimEvent:
+  commands:
+    condition: ''
+    groups:
+      player_self:
+        1:
+          condition: ''
+          commands: [ ]
+      land_trusted:
+        1:
+          condition: ''
+          commands: [ ]
+      land_online:
+        1:
+          condition: ''
+          commands: [ ]
+
+# ChunkPreClaimEvent: Occurs before a chunk claim is finalized.
+# It allows for checks or notifications to be executed before the claim is completed.
+ChunkPreClaimEvent:
+  cancel: ''
+  commands:
+    condition: '!cancelled'
+    groups:
+      player_self:
+        1:
+          condition: ''
+          commands: [ ]
+      land_trusted:
+        1:
+          condition: ''
+          commands: [ ]
+      land_online:
+        1:
+          condition: ''
+          commands: [ ]
+
+# LandBanPlayerEvent: Triggered when a player is banned from a land.
+# This can be used to execute commands for the banning process, such as logging or notifying relevant parties.
+LandBanPlayerEvent:
+  cancel: ''
+  commands:
+    condition: '!cancelled'
+    groups:
+      player_self:
+        1:
+          condition: ''
+          commands: [ ]
+      player_target:
+        1:
+          condition: ''
+          commands: [ ]
+      land_trusted:
+        1:
+          condition: 'area_name == null'
+          commands: [ ]
+      land_online:
+        1:
+          condition: 'area_name == null'
+          commands: [ ]
+      area_trusted:
+        1:
+          condition: 'area_name != null'
+          commands: [ ]
+      area_online:
+        1:
+          condition: 'area_name != null'
+          commands: [ ]
+
+# LandChatEvent: Occurs when a message is sent in land chat.
+# This can be customized to handle land-specific communications or notifications.
+LandChatEvent:
+  cancel: ''
+  commands:
+    condition: '!cancelled'
+    groups:
+      player_self:
+        1:
+          condition: ''
+          commands: [ ]
+      recipients:
+        1:
+          condition: ''
+          commands: [ ]
+      land_trusted:
+        1:
+          condition: ''
+          commands: [ ]
+      land_online:
+        1:
+          condition: ''
+          commands: [ ]
+      nation_trusted:
+        1:
+          condition: ''
+          commands: [ ]
+      nation_online:
+        1:
+          condition: ''
+          commands: [ ]
+
+# LandCreateEvent: Triggered when a new land is created.
+# Useful for executing initial setup commands or sending notifications about the new land.
+LandCreateEvent:
+  cancel: ''
+  commands:
+    condition: '!cancelled'
+    groups:
+      player_self:
+        1:
+          condition: ''
+          commands: [ ]
+      land_trusted:
+        1:
+          condition: ''
+          commands: [ ]
+      land_online:
+        1:
+          condition: ''
+          commands: [ ]
+
+# LandDeleteEvent: Occurs when a land is deleted.
+# This event can be used to clean up or notify other systems of the deletion.
+LandDeleteEvent:
+  cancel: ''
+  commands:
+    condition: '!cancelled'
+    groups:
+      player_self:
+        1:
+          condition: ''
+          commands: [ ]
+      land_trusted:
+        1:
+          condition: ''
+          commands: [ ]
+      land_online:
+        1:
+          condition: ''
+          commands: [ ]
+
+# LandInvitePlayerEvent: Triggered when a player is invited to a land.
+# Can be used to send custom invitations or log invite actions.
+LandInvitePlayerEvent:
+  cancel: ''
+  commands:
+    condition: '!cancelled'
+    groups:
+      player_self:
+        1:
+          condition: ''
+          commands: [ ]
+      player_target:
+        1:
+          condition: ''
+          commands: [ ]
+      land_trusted:
+        1:
+          condition: 'area_name == null'
+          commands: [ ]
+      land_online:
+        1:
+          condition: 'area_name == null'
+          commands: [ ]
+      area_trusted:
+        1:
+          condition: 'area_name != null'
+          commands: [ ]
+      area_online:
+        1:
+          condition: 'area_name != null'
+          commands: [ ]
+
+# LandOwnerChangeEvent: Triggered when the ownership of a land changes.
+# Useful for logging ownership changes or executing specific actions on ownership transfer.
+LandOwnerChangeEvent:
+  cancel: ''
+  commands:
+    condition: '!cancelled'
+    groups:
+      player_self:
+        1:
+          condition: ''
+          commands: [ ]
+      player_target:
+        1:
+          condition: ''
+          commands: [ ]
+      land_trusted:
+        1:
+          condition: 'area_name == null'
+          commands: [ ]
+      land_online:
+        1:
+          condition: 'area_name == null'
+          commands: [ ]
+      area_trusted:
+        1:
+          condition: 'area_name != null'
+          commands: [ ]
+      area_online:
+        1:
+          condition: 'area_name != null'
+          commands: [ ]
   LandRenameEvent:
     cancel: ''
     commands:
