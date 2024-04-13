@@ -1,0 +1,470 @@
+# In this file you can edit/add default land and nation levels.
+# Please note that each config section (level section) name and level name must be unique.
+# You must insert valid YAML format. To verify your format, you can paste the content of this file here: https://yaml-online-parser.appspot.com
+
+# Default land and nation levels. You can also add your own levels.
+# The order of the levels is ascending (lowest level -> highest).
+# This file can not be reloaded via /lands reload.
+
+general:
+  # If enabled, lands and nations won't downgrade, if they no longer meet their current level requirements.
+  keep-level: false
+
+land:
+  # Enable land levels?
+  enabled: true
+  # Here you can edit existing or add new levels.
+  levels:
+    1:
+      # Set the name of the level.
+      title: 'Settlement'
+      # These values are only active if the land isn't a member of any nation.
+      attributes:
+        # The chunks attribute will add or remove (= negative value) chunks to the land. That means that the land can claim more (or less) chunks at /claim.
+        chunks:
+          description: '&7{value} claims'
+          value: 0
+        # The upkeep attribute will higher or lower (= negative value) their upkeep costs by a given value.
+        # This attribute is not active, if the land is part of a nation.
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          # The increase or decrease is in percent. So setting this value to 5 will increate the upkeep by 5 percent in total (not per chunk).
+          value: 0
+    2:
+      title: 'Village'
+      requirements:
+        # Required members to get this level assigned.
+        members:
+          required: 4
+          title: 'Trust {req} Players'
+          description:
+            - '&7Trust {req} players in this land.'
+            - '&7Command: &e/lands trust'
+        # Required chunks to get this level assigned.
+        chunks:
+          required: 0
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+        # Required bank balance to get this level assigned (/lands balance).
+        balance:
+          required: 7500
+          title: 'Balance of ${req}'
+          description:
+            - '&7Have ${req} deposited into this land bank.'
+            - '&7Command: &e/lands deposit'
+        # Plugin: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 1
+            title: '{req} Upgradeable Farm'
+            description:
+              - '&7Have {req} upgradeable farm in your land.'
+              - '&7Command: &e/farm get'
+        # Plugin: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 5
+            title: '{req} Upgradeable Hoppers'
+            description:
+              - '&7Have {req} upgradeable hoppers in your land.'
+              - '&7Command: &e/hopper get'
+        # Plugin: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 3
+            title: '{req} Upgradeable Spawners'
+            description:
+              - '&7Have {req} upgradeable spawners in your land.'
+              - '&7Command: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} claims'
+          value: 1
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          value: 5
+      # Execute console commands, if the land reaches this level or gets downgraded from this level to the previous one.
+      # Available placeholders:
+      # {level}: Name of the level
+      # {land}: Parameter name of the land = without spaces.
+      # {land_name}: Name of the land. Might contain spaces.
+      # {owner}: The player name of the land owner.
+      # {member}: The player name a land member.
+      # If the command contains the {member} placeholder, the command will be executed for each player that is trusted in the land.
+      commands:
+        # When a land reaches this level.
+        reached: [ ]
+        # When a land gets downgraded from the next level to this one.
+        down: [ ]
+    3:
+      title: 'Town'
+      requirements:
+        members:
+          required: 8
+          title: 'Trust {req} Players'
+          description:
+            - '&7Trust {req} players in this land.'
+            - '&7Command: &e/lands trust'
+        chunks:
+          required: 0
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+        balance:
+          required: 17000
+          title: 'Balance of ${req}'
+          description:
+            - '&7Have ${req} deposited into this land bank.'
+            - '&7Command: &e/lands deposit'
+        # Plugin: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 3
+            title: '{req} Upgradeable Farms'
+            description:
+              - '&7Have {req} upgradeable farms in your land.'
+              - '&7Command: &e/farm get'
+        # Plugin: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 8
+            title: '{req} Upgradeable Hoppers'
+            description:
+              - '&7Have {req} upgradeable hoppers in your land.'
+              - '&7Command: &e/hopper get'
+        # Plugin: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 3
+            title: '{req} Upgradeable Spawners'
+            description:
+              - '&7Have {req} upgradeable spawners in your land.'
+              - '&7Command: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} claims'
+          value: 2
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          value: 10
+      commands:
+        reached: [ ]
+        down: [ ]
+    4:
+      title: 'Province'
+      requirements:
+        members:
+          required: 14
+          title: 'Trust {req} Players'
+          description:
+            - '&7Trust {req} players in this land.'
+            - '&7Command: &e/lands trust'
+        chunks:
+          required: 0
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+        balance:
+          required: 30000
+          title: 'Balance of ${req}'
+          description:
+            - '&7Have ${req} deposited into this land bank.'
+            - '&7Command: &e/lands deposit'
+        # Plugin: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 5
+            title: '{req} Upgradeable Farms'
+            description:
+              - '&7Have {req} upgradeable farms in your land.'
+              - '&7Command: &e/farm get'
+        # Plugin: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 15
+            title: '{req} Upgradeable Hoppers'
+            description:
+              - '&7Have {req} upgradeable hoppers in your land.'
+              - '&7Command: &e/hopper get'
+        # Plugin: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 5
+            title: '{req} Upgradeable Spawners'
+            description:
+              - '&7Have {req} upgradeable spawners in your land.'
+              - '&7Command: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} claims'
+          value: 4
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          value: 25
+      commands:
+        reached: [ ]
+        down: [ ]
+    5:
+      title: 'Land'
+      requirements:
+        members:
+          required: 24
+          title: 'Trust {req} Players'
+          description:
+            - '&7Trust {req} players in this land.'
+            - '&7Command: &e/lands trust'
+        chunks:
+          required: 0
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+        balance:
+          required: 55000
+          title: 'Balance of ${req}'
+          description:
+            - '&7Have ${req} deposited into this land bank.'
+            - '&7Command: &e/lands deposit'
+        # Plugin: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 6
+            title: '{req} Upgradeable Farms'
+            description:
+              - '&7Have {req} upgradeable farms in your land.'
+              - '&7Command: &e/farm get'
+        # Plugin: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 25
+            title: '{req} Upgradeable Hoppers'
+            description:
+              - '&7Have {req} upgradeable hoppers in your land.'
+              - '&7Command: &e/hopper get'
+        # Plugin: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 6
+            title: '{req} Upgradeable Spawners'
+            description:
+              - '&7Have {req} upgradeable spawners in your land.'
+              - '&7Command: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} claims'
+          value: 8
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          value: 30
+      commands:
+        reached: [ ]
+        down: [ ]
+
+
+nation:
+  # Enable nation levels?
+  enabled: true
+  # Here you can edit existing or add new nation levels.
+  levels:
+    1:
+      # Set the name of the level.
+      title: 'Federation'
+      # For the entry level, there are not attributes set. But you could add them anyways, if you modify the value options.
+      attributes:
+        chunks:
+          description: '&7{value} claims'
+          value: 0
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          value: 0
+        effects:
+          description: '&a+ Unlock effects: {value}'
+          value: [ ]
+        effects_amount:
+          description: '&a+ Have {value} effects active at once'
+          value: 0
+    2:
+      title: 'Nation'
+      requirements:
+        # Required minimum amount of unique lands in the nation.
+        # This does not include the capital land.
+        lands:
+          required: 3
+          title: '{req} Lands'
+          description:
+            - '&7Invite {req} lands to join your nation'
+            - '&7and let them accept your invite.'
+            - '&7Command: &e/nation trust'
+        # Required members (total unique players) to get this level assigned.
+        members:
+          required: 32
+          title: '{req} unique Players'
+          description:
+            - '&7Have {req} players trusted in total.'
+            - '&7Command: &e/lands trust'
+        # Required total chunks to get this level assigned.
+        chunks:
+          required: 0
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Have {req} claims in total.'
+            - '&7Command: &e/claim'
+        # Required total balance (the balance of all lands) to get this level assigned.
+        balance:
+          required: 100000
+          title: 'Balance of ${req}'
+          description:
+            - '&7Have ${req} deposited across all lands.'
+            - '&7Command: &e/lands deposit'
+        # Plugin: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 9
+            title: '{req} Upgradeable Farms'
+            description:
+              - '&7Have {req} upgradeable farms in your land.'
+              - '&7Command: &e/farm get'
+        # Plugin: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 24
+            title: '{req} Upgradeable Hoppers'
+            description:
+              - '&7Have {req} upgradeable hoppers in your land.'
+              - '&7Command: &e/hopper get'
+        # Plugin: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 9
+            title: '{req} Upgradeable Spawners'
+            description:
+              - '&7Have {req} upgradeable spawners in your land.'
+              - '&7Command: &e/spawner get'
+      attributes:
+        # Give each land of the nation x amount of additional chunks.
+        chunks:
+          description: '&7{value} claims'
+          value: 20
+        # Modify upkeep by x percent. This also supports negative values.
+        # The nation pays the upkeep to the server.
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          value: 20
+        # Allow nations to activate a specific amount of effects in their nation. Effects can be unlocked through level progression.
+        effects:
+          description: '&a+ Unlock effects: {value}'
+          # Configure a list of unlocked effects for this level. Valid effects: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+          # Format: EFFECT:AMPLIFIER
+          # The amiplifier is the strength (level) of the effect. Example: JUMP:2 -> Jump II
+          value:
+            - JUMP
+            - SPEED
+            - FAST_DIGGING
+            - DOLPHINS_GRACE
+        # Modify how many effects can be active at the same time.
+        effects_amount:
+          description: '&a+ Have {value} effects active at once'
+          value: 1
+      # Execute console commands, if the nation reaches this level or gets downgraded from this level to the previous one.
+      # Available placeholders:
+      # {level}: Name of the level
+      # {nation}: Name of the nation
+      # {owner}: The player name of nation owner.
+      # {land}: Parameter name of the land that is part of the nation. Doesn't contain spaces.
+      # {land_name}: Name of the land that is part of the nation. May contain spaces.
+      # If the command contains the {land} placeholder, the command will be executed for each land, which is part of the nation.
+      commands:
+        # When a nation reaches this level.
+        reached: [ ]
+        # When a nation gets downgraded from the next level to this one.
+        down: [ ]
+    3:
+      title: 'Empire'
+      requirements:
+        lands:
+          required: 6
+          title: '{req} Lands'
+          description:
+            - '&7Invite {req} lands to join your nation'
+            - '&7and let them accept your invite.'
+            - '&7Command: &e/nations trust'
+        members:
+          required: 64
+          title: '{req} unique Players'
+          description:
+            - '&7Have {req} players trusted in total.'
+            - '&7Command: &e/lands trust'
+        chunks:
+          required: 0
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Have {req} claims in total.'
+            - '&7Command: &e/claim'
+        balance:
+          required: 250000
+          title: 'Balance of ${req}'
+          description:
+            - '&7Have ${req} deposited across all lands.'
+            - '&7Command: &e/lands deposit'
+        # Plugin: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 18
+            title: '{req} Upgradeable Farms'
+            description:
+              - '&7Have {req} upgradeable farms in your land.'
+              - '&7Command: &e/farm get'
+        # Plugin: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 30
+            title: '{req} Upgradeable Hoppers'
+            description:
+              - '&7Have {req} upgradeable hoppers in your land.'
+              - '&7Command: &e/hopper get'
+        # Plugin: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 18
+            title: '{req} Upgradeable Spawners'
+            description:
+              - '&7Have {req} upgradeable spawners in your land.'
+              - '&7Command: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} claims'
+          value: 35
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          value: 35
+        effects:
+          description: '&a+ Unlock effects: {value}'
+          value:
+            - JUMP:2
+            - SPEED:2
+            - FAST_DIGGING:2
+            - DOLPHINS_GRACE:2
+            - ABSORPTION
+            - NIGHT_VISION
+            - LUCK
+            - INCREASE_DAMAGE
+            - HEALTH_BOOST
+        effects_amount:
+          description: '&a+ Have {value} effects active at once'
+          value: 3
+      commands:
+        reached: [ ]
+        down: [ ]
+
+
+# You can disable sounds by setting them to ''
+sound:
+  # Played to each player of the land or nation on level up.
+  up: 'BLOCK_BELL_USE'
+  # Played to each player of the land or nation on level down.
+  down: 'BLOCK_ANVIL_DESTROY'
+

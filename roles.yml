@@ -1,0 +1,257 @@
+# In this file you can edit/add default roles.
+# Please note that each config section (role section) name and role name must be unique.
+# You must insert valid YAML format. To verify your format, you can paste the content of this file here: https://yaml-online-parser.appspot.com
+# Explanation of roles and their flags: https://github.com/Angeschossen/Lands/wiki/Roles-and-their-Flags
+# Please note that changing options in this file may require server reload / restart.
+
+# Default land roles. You can also add your own default roles.
+# The priority of the roles is descending (highest role -> lowest).
+land:
+  # Which flags should be displayed in the role settings menu?
+  # You can still set default values below and hide them by removing them from this list.
+  # The order of this list also defines their sorting in the menus.
+  display:
+    - BLOCK_PLACE
+    - BLOCK_BREAK
+    - BLOCK_IGNITE
+    - PLANT
+    - HARVEST
+    - TRAMPLE_FARMLAND
+    - SHEAR
+    - ITEM_PICKUP
+    - INTERACT_GENERAL
+    - INTERACT_CONTAINER
+    - INTERACT_DOOR
+    - INTERACT_TRAPDOOR
+    - INTERACT_MECHANISM
+    - INTERACT_VILLAGER
+    - VEHICLE_USE
+    - ATTACK_PLAYER
+    - ATTACK_ANIMAL
+    - ATTACK_MONSTER
+    - LAND_ENTER
+    - FLY
+    - ELYTRA
+    - SPAWN_TELEPORT
+    - ENDER_PEARL
+    - PLAYER_TRUST
+    - PLAYER_SETROLE
+    - PLAYER_UNTRUST
+    - PLAYER_BAN
+    - LAND_CLAIM
+    - LAND_CLAIM_BORDER
+    - SPAWN_SET
+    - BALANCE_WITHDRAW
+    - AREA_ASSIGN
+    - WAR_MANAGE
+    - SETTING_EDIT_LAND
+    - SETTING_EDIT_ROLE
+    - SETTING_EDIT_TAXES
+    - SETTING_EDIT_VARIOUS
+
+  # Here you can add your own default roles or edit the existing ones. Players will still be able to create new roles in their land menu if they have the required permission.
+  # NOTE: The order of the roles will affect the initial priority of the role. Means that roles at the top have the highest priority and roles at the bottom the lowest.
+  ################################################################################################################################
+  # Whenever a new flag is added to Lands, all existing Lands will apply the flag, if specified by the flag author.              #
+  # But for future land creations you need to configure it correctly here. Lands will always send you a popup in console and on  #
+  # admin ingame accounts, if there is a new flag available.                                                                     #
+  # You can force sync / reset flag(s) by using /lands admin land <land | *> resetFlag <flag | all>                              #
+  ################################################################################################################################
+  roles:
+    # NOTE: The owner role can not be deleted.
+    owner:
+      name: '&4&lOwner'
+      # The icon supports minecraft URL values (example: https://minecraft-heads.com/) and normal material values.
+      icon: 'skin:83f642814fa2551e7763d04060c532adea51015cbfe030cbb78e82c92092a6fb'
+      # Default flag values. Please note that these only apply to new land creations. The flags of the owner role can only be toggled by server administrators.
+      # Using ALL instead of a list will give this role all player flags. Flags which are only for admin lands won't be set for this role.
+      default: 'ALL'
+
+    # This role can't be deleted, but is only visible if an area is rented or in admin lands.
+    tenant:
+      name: '&6&lTenant'
+      # The icon supports minecraft URL values (example: https://minecraft-heads.com/) and normal material values.
+      icon: 'skin:d831830a7bd3b1ab05beb98dc2f9fc5ea550b3cf649fd94d483da7cd39f7c063'
+      # Allow lands to toggle specific flags for this role? They can only do this while the area is NOT rented.
+      # WARNING: Keep in mind that this could allow lands to rent out areas, in which tenants can't do much or nothing depending
+      # on the "allow-edit" list. You can add "all" to the list to allow them to toggle all flags for this role.
+      # NOTE: They still need the generl toggle permission for the flags. These can be found in the wiki: https://github.com/Angeschossen/Lands/wiki/Permissions#toggle-role-flags
+      allow-toggle-flags: []
+      # Default flag values. Please note that these only apply to new rentals.
+      # Only admin lands can change these flags ingame. This prevents lands abusing this and selling areas where the tanant would have no permission to do anything.
+      default:
+        - BLOCK_PLACE
+        - BLOCK_BREAK
+        - PLANT
+        - HARVEST
+        - SHEAR
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_CONTAINER
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - BLOCK_IGNITE
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - ELYTRA
+        - LAND_ENTER
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - TRAMPLE_FARMLAND
+        - PLAYER_TRUST
+        - PLAYER_SETROLE
+        - PLAYER_UNTRUST
+        - PLAYER_BAN
+
+    # This role can be deleted, in case you don't want it.
+    admin:
+      name: '&c&lAdmin'
+      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
+      icon: 'skin:548e2397834b1a16b15b71a52175ed8ae6919366dfecd3882a85f8236ff5d1d4'
+      # Should members of this role automatically be added to new sub areas?
+      parent: true
+      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
+      default:
+        - BLOCK_PLACE
+        - BLOCK_BREAK
+        - PLANT
+        - HARVEST
+        - SHEAR
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_CONTAINER
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - BLOCK_IGNITE
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - ELYTRA
+        - LAND_ENTER
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - TRAMPLE_FARMLAND
+        - PLAYER_TRUST
+        - PLAYER_SETROLE
+        - PLAYER_UNTRUST
+        - PLAYER_BAN
+        - SETTING_EDIT_LAND
+        - SETTING_EDIT_ROLE
+
+    # NOTE: The member role can not be deleted.
+    member:
+      name: '&e&lMember'
+      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
+      icon: 'skin:e8b8c6a46d87cf86a55df214cf84bf45cca25edb9a676e96364dd6a6eea235b3'
+      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
+      default:
+        - BLOCK_PLACE
+        - BLOCK_BREAK
+        - PLANT
+        - HARVEST
+        - SHEAR
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_CONTAINER
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - BLOCK_IGNITE
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - ELYTRA
+        - LAND_ENTER
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - TRAMPLE_FARMLAND
+        - VEHICLE_USE
+        - ITEM_PICKUP
+
+    # This role can be deleted, in case you don't want it.
+    nation:
+      name: '&9&lNation'
+      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
+      icon: 'skin:45587da7fe7336e8ab9f791ea5e2cfc8a827ca959567eb9d53a647babf948d5'
+      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
+      default:
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - ELYTRA
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - LAND_ENTER
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - LAND_CLAIM_BORDER
+
+      # A nation has control over the nation role of its lands.
+      # Here you can specify flags which the nation should be able to toggle for the Nation role of its lands.
+      # The nation role can be edited in the nation menu -> /nations menu
+      toggleable-by-nation:
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - LAND_ENTER
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - LAND_CLAIM_BORDER
+
+    # This role can be deleted, in case you don't want it.
+    ally:
+      name: '&a&lAlly'
+      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
+      icon: 'skin:2567251d71b6f3a4dc03fa01e441de7edf9354794e74aec16c04f141ddf31c70'
+      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
+      default:
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - LAND_ENTER
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - LAND_CLAIM_BORDER
+
+    # NOTE: The visitor role can not be deleted.
+    visitor:
+      name: '&8&lUntrusted'
+      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
+      icon: 'skin:126ec1ca185b47aad39f931db8b0a8500ded86a127a204886ed4b3783ad1775c'
+      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
+      default:
+        - LAND_ENTER
+        - ITEM_PICKUP
+        - ATTACK_MONSTER

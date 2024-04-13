@@ -1,0 +1,143 @@
+# Web integration
+# Supports (Dynmap, BlueMap, squaremap)
+# All three can be used at the same time.
+# Changes in this section require server reload / restart.
+map:
+  general:
+    # Should land markers be hidden by default?
+    hide: false
+    # The name of the layer where users can see the marked lands.
+    layer: 'Lands'
+    # If you want your players activity to be more anonymous, you can specify an update interval.
+    # This helps to prevent enemies spying dynmap to track player activity.
+    # Time units: d, h, m, s -> Example: 1h
+    # Default: -1 = use default handling defined by Lands (recommended)
+    # This option requires server reload / restart.
+    update_time: -1
+    land:
+      # Should admin lands (/lands admin menu) be displayed?
+      show-admin: true
+      # Should only lands, that are part of a nation, appear on the map?
+      # Note: This option requires server reload / restart.
+      only-nation: false
+      # To edit the color you need to insert the hex values given here:
+      # https://www.google.com/search?q=color+picker
+      color:
+        from-name:
+          # Set the color depending on the land's name?
+          land: false
+          # Set the color depending on the nation's name?
+          nation: true
+        # Default colors, if the land name has no color set or from-name option is disabled.
+        # Color picker: https://www.google.com/search?q=color+picker
+        land: '#00ff00'
+        admin: '#ffff00'
+    border:
+      # Default border color:
+      # Color picker: https://www.google.com/search?q=color+picker
+      color:
+        from-name:
+          # Set the color depending on the land's name?
+          land_2: false
+          # Set the color depending on the nation's name?
+          nation_2: true
+        # Default colors, if the land name has no color set or from-name option is disabled.
+        # Color picker: https://www.google.com/search?q=color+picker
+        land_2: '#009933'
+        admin_2: '#ffcc00'
+
+  dynmap:
+    enabled: true
+    # Set the spawn icon
+    # You can disable this by setting icon to ''
+    spawn:
+      # Set the icon
+      icon: 'greenflag'
+      # Set the icon for a nation's capital.
+      icon-capital: 'greenflag'
+      # Set minimum zoom. The icon won't display, if the zoom in your browser is greater (mousewheel).
+      min-zoom: 0
+    land:
+      # Opactiy of the land. Needs to be between 0 (lowest) and 1 (highest).
+      opacity: 0.35
+    border:
+      # Opactiy of the land border. Needs to be between 0 (lowest) and 1 (highest).
+      opacity_2: 1
+      # Thickness of the border.
+      thickness: 2
+
+  bluemap:
+    enabled_2: true
+    # Set the spawn icon
+    # You can disable this by setting icon to ''
+    spawn:
+      # Set the icon
+      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
+      # Path is relative to the "bluemap" folder in your server.
+      # Example: 'assets\steve.png'
+      icon_2: ''
+      # Set the icon for a nations capital.
+      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
+      # Path is relative to the "bluemap" folder in your server.
+      # Example: 'assets\steve.png'
+      icon-capital_2: ''
+      # Set minimum zoom. The icon won't display, if the zoom in your browser is smaller (mousewheel).
+      min-zoom_2: 5
+    # Set the markers height.
+    height: 62
+    land:
+      # Opactiy of the land. Needs to be between 0 (lowest) and 1 (highest).
+      opacity_3: 0.35
+      # Should 3D markers be used to visualize claims? That means that they extend to the min and max height of the claim.
+      3d: false
+
+    border:
+      # Opactiy of the land border. Needs to be between 0 (lowest) and 1 (highest).
+      opacity_4: 1
+
+
+  squaremap:
+    enabled_3: true
+    # Set the spawn icon
+    # You can disable this by setting icon to ''
+    spawn:
+      # Set the icon
+      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
+      # Example: 'path-to-server\bluemap\web\assets\steve.png'
+      icon_3: ''
+      # Set the icon for a nations capital.
+      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
+      # Example: 'path-to-server\bluemap\web\assets\steve.png'
+      icon-capital_3: ''
+      # Set minimum zoom. The icon won't display, if the zoom in your browser is smaller (mousewheel).
+      min-zoom_3: 126
+    land:
+      # Opactiy of the land. Needs to be between 0 (transparent) and 255 (completely opaque).
+      opacity_5: 0.35
+    border:
+      # Opactiy of the land border. Needs to be between 0 (transparent) and 255 (completely opaque).
+      opacity_6: 1
+      # Thickness of the border.
+      thickness_3: 2
+
+  Pl3xMap:
+    enabled_4: true
+    # Set the spawn icon
+    # You can disable this by setting icon to ''
+    spawn:
+      # Set the icon
+      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
+      # Example: 'path-to-server\bluemap\web\assets\steve.png'
+      icon_4: ''
+      # Set the icon for a nations capital.
+      # NOTE: This needs to be the absolute image address. Recommended imgage size: 32 x 32 pixels
+      # Example: 'path-to-server\bluemap\web\assets\steve.png'
+      icon-capital_4: ''
+    land:
+      # Opactiy of the land. Needs to be between 0 (lowest) and 1 (highest).
+      opacity_7: 0.6
+    border:
+      # Opactiy of the land border. Needs to be between 0 (lowest) and 1 (highest).
+      opacity_8: 0.9
+      # Thickness of the border.
+      thickness_4: 2
