@@ -294,7 +294,7 @@ land:
     # Should claim attempts that would violate the force-near restrictions be treated as new lands?
     treat-as-new: true
   # Chunk claiming by placing a special claim block.
-  # You can give claimblocks by executing the command /lands player <player> give claimblock [amount]
+  # You can give claimblocks by executing the command /lands admin player <player> give claimblock [amount]
   # If you don't want your players to claim via command, just
   # don't give them lands.command.claim.
   # If you don't want your players to claim with claimblocks,
@@ -884,12 +884,14 @@ command:
     # Set aliases for the /Wars command
     # This is only needed, if wars is enabled.
     # NOTE: This setting requires server reload / restart.
-    wars_list: [ ]
+    wars_list:
+      - 'w'
 
     # Set aliases for the /Nations command
     # This is only needed, if nations is enabled.
     # NOTE: This setting requires server reload / restart.
-    nations_list: [ ]
+    nations_list:
+      - 'n'
 
   # Block commands
   # They are not case-sensitive.
@@ -916,23 +918,8 @@ gui:
 # Database options
 database:
   # MySQL database
-  # Please read this before using MySQL: https://github.com/Angeschossen/Lands/wiki/Database
   # To use this without issues, your connection limits etc. need to be configured properly in your MySQL server configuration.
-  # It is not recommended to connect multiple Lands servers to one database with the same table prefix.
-  mysql:
-    enabled_20: false
-    ip-address: 'localhost'
-    port: '3306'
-    username: 'minecraft'
-    password: 'password'
-    database: 'lands'
-
-    # It is highly recommended to set a unique table prefix if the plugin shares a database with other plugins or Lands instances.
-    table-prefix: 'lands_'
-
-  #################################################
-  # EXPERIMENTAL - DO NOT USE ON LIVE SERVERS YET #
-  #################################################
+  # If you want to synchronize lands and claims across servers, please read the setup instructions: https://github.com/Angeschossen/Lands/wiki/Database#synchronizing-claims-across-servers
   mysql-v2:
     enabled_19: false
     address_2: 'localhost'
@@ -944,10 +931,7 @@ database:
     # It is highly recommended to set a unique table prefix if the plugin shares a database with other plugins.
     table-prefix_2: 'lands_'
 
-  #################################################
-  # EXPERIMENTAL - DO NOT USE ON LIVE SERVERS YET #
-  #################################################
-  # Needed to synchronize lands claims across servers.
+  # Needed to synchronize lands and claims across servers.
   redis:
     enabled_6: false
     address_3: "redis://127.0.0.1"
@@ -959,6 +943,21 @@ database:
     # This option should only be enabled on ONE of the servers that are connected to the same Lands database and Redis.
     # If true: This server will execute tasks, such as upkeep, taxes etc. for all lands across all servers that are connected to the same Lands database and Redis.
     master: false
+
+  ##########################################################
+  # Deprecated MySQL schema. Use mysql-v2 (above) instead. #
+  ##########################################################
+  mysql:
+    enabled_20: false
+    ip-address: 'localhost'
+    port: '3306'
+    username: 'minecraft'
+    password: 'password'
+    database: 'lands'
+
+    # It is highly recommended to set a unique table prefix if the plugin shares a database with other plugins or Lands instances.
+    table-prefix: 'lands_'
+
 
   # If Lands can't connect to your MySQL database, because for example the credentials are invalid or outdated.
   # Should Lands disallow players to join the server, if it couldn't connect to the database?
