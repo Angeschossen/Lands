@@ -56,6 +56,10 @@ general:
   # The translation name should match the official language code (https://www.oracle.com/java/technologies/javase/jdk8-jre8-suported-locales.html).
   # This option also affects the grouping and decimal separator for currency formatting.
   language: 'en-US'
+  # Force default language? This will make changes to language files impossible and will always use the default.
+  # This has the benefit of always receiving fixes, such as spelling mistakes, for the default locale.
+  # You should only use this option if your language matches "en-US". For other locales it won't work.
+  force-default: false
 
   # Edit the land you're standing in instead of the land from /lands edit?
   # For /lands claim you will still need to set the claim land with /lands edit.
@@ -93,10 +97,6 @@ general:
       amount_4: 1
       usage_4: true
 
-  # Force default language? This will make changes to language files impossible and will always use the default.
-  # This will always replace existing strings with the default ones.
-  # You should only use this option if your language matches "en-US".
-  force-default: false
   # If false, chat message parts that are enclosed by [V]text[/T] will only be sent to players
   # that have the lands.admin.verbose permission. This setting only applies to chat messages.
   verbose: true
@@ -881,13 +881,13 @@ command:
     # NOTE: This setting requires server reload / restart.
     lands_list: [ ]
 
-    # Set aliases for the /Wars command
+    # Set aliases for the /wars command
     # This is only needed, if wars is enabled.
     # NOTE: This setting requires server reload / restart.
     wars_list:
       - 'w'
 
-    # Set aliases for the /Nations command
+    # Set aliases for the /nations command
     # This is only needed, if nations is enabled.
     # NOTE: This setting requires server reload / restart.
     nations_list:
