@@ -1,2 +1,12 @@
-+ Improved: Order in which lands looks for chunk-distance option nearby lands at claiming
-+ Improved: Delay tp failure message on redis upon server join
++ Added: You can now configure two different chunk distance options for buffer zones between lands.
+If you had an existing configuration, you need to re-configure it.
+
+  # Set the minimum distance in chunks (16 blocks).
+  # Players can bypass this restriction, if their role has the LAND_CLAIM_BORDER flag in the neighboring land.
+  chunk-distance:
+    # Set the minimum distance in chunks (16 blocks) between different lands.
+    land_2: 2
+    # Set the minimum distance between a land and a nation or two nations.
+    nation: 1
+
+- Fixed: Tenant UUID if sold

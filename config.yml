@@ -284,9 +284,13 @@ land:
     # NOTE: This value can't be higher than your servers view distance.
     claim-radius: 1
 
-  # Set the minimum distance in chunks (16 blocks) between different lands that do not belong to the same owner.
+  # Set the minimum distance in chunks (16 blocks).
   # Players can bypass this restriction, if their role has the LAND_CLAIM_BORDER flag in the neighboring land.
-  chunk-distance: 1
+  chunk-distance:
+    # Set the minimum distance in chunks (16 blocks) between two lands that aren't part of any nation.
+    land_2: 2
+    # Set the minimum distance between a land and a nation or two nations.
+    nation: 1
 
   # Force lands to claim near their claims.
   force-near:
