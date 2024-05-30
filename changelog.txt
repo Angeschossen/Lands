@@ -1,12 +1,23 @@
++ Changed how the following commands work:
+- /lands trust
+- /lands untrust
+- /lands setrole
+- /lands ban
+- /lands unban
+
+When no <area> argument is provided the command is executed for the whole land instead of just the default area.
+
++ Changed: /lands leave now removes the player from the whole land, if the "here" argument isn't provided
+
 + Added: You can now configure two different chunk distance options for buffer zones between lands.
 If you had an existing configuration, you need to re-configure it.
 
   # Set the minimum distance in chunks (16 blocks).
   # Players can bypass this restriction, if their role has the LAND_CLAIM_BORDER flag in the neighboring land.
   chunk-distance:
-    # Set the minimum distance in chunks (16 blocks) between different lands.
-    land_2: 2
+    # Set the minimum distance in chunks (16 blocks) between two lands that aren't part of any nation.
+    land_2: 1
     # Set the minimum distance between a land and a nation or two nations.
-    nation: 1
+    nation: 3
 
 - Fixed: Tenant UUID if sold
