@@ -331,11 +331,15 @@ land:
     # Teleportation settings
     teleport:
       # Cost for teleportation to a land spawn, if the player is not trusted in the land.
-      # Players will only pay the cost, if they're not trusted in the land.
       costs:
         value_3: 0.0
-        # Should the cost of teleportation be given to the land?
+        # Should the cost of the teleportation be given to the land?
         give-land: false
+        pay:
+          # Should untrusted players pay the teleport costs?
+          untrusted: false
+          # Should trusted players pay the teleport costs?
+          trusted: true
       # Cooldown for teleportation to a land spawn, if a player is trusted in the land.
       # This cooldown won't apply to players that aren't trusted in the land.
       spawn-cooldown_time: 0s
