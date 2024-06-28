@@ -290,7 +290,9 @@ land:
   chunk-distance:
     # Set the minimum distance in chunks (16 blocks) between two lands that aren't part of any nation.
     land_2: 1
-    # Set the minimum distance between a land and a nation or two nations.
+    # Set the minimum distance between a land that tries to expand to a neighbouring nation.
+    # This value only applies to surrounding lands. That means that if a nation tries to expand and the
+    # neighbouring claim isn't part of a nation, the "land_2" value from above will be used instead.
     nation: 3
 
   # Force lands to claim near their claims.
