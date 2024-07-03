@@ -68,8 +68,9 @@ points:
   # How many points does a team need to win?
   # Calculation: <team with the smallest amount of members> * towin-per-player
   towin:
+    # The amount of needed points to win is defined by the amount of players in the smallest team multipled by this value (per-player).
     per-player: 5
-    # Set a minimum amount of required points. This will be used if the calculation is smaller than minimum.
+    # Set a minimum amount of required points. This will be used if the calculation resulting of per-player is smaller than minimum.
     min_2: 100
 
 # Whenever a enemy places a beacon on the outskirts of a land, a capture flag will be created.
@@ -112,7 +113,7 @@ sounds:
 # War status message interval. This message appears while the war is running. This is very useful to inform players, which might have been offline for some time, that their land is participating in a war.
 status-interval_time: 15m
 
-# Set the max time a war can hold on. When this time is over the team with the most kills will win. If both teams have the same amount of kills, it will end in a draw and no team will be rewarded.
+# Set the max time a war can hold on. When this time is over the team with the points will win. If both teams have the same amount of points, it will end in a draw and no team will be rewarded.
 # Default: 1,5 days
 war-timeout_time: 36h
 
