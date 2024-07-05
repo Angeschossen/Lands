@@ -288,9 +288,13 @@ land:
   # Set the minimum Euclidean distance in chunks (16 blocks).
   # Players can bypass this restriction, if their role has the LAND_CLAIM_BORDER flag in the neighboring land.
   chunk-distance:
-    # Set the minimum distance in chunks (16 blocks) between two lands that aren't part of any nation.
+    # Available distance modes: EUCLIDEAN, DIAMOND_SHAPE
+    # EUCLIDEAN - measures Euclidean distance
+    # DIAMOND_SHAPE - creates buffer zone in form of a diamond around claims
+    mode_3: "EUCLIDEAN"
+    # Size of buffer zone around a land that isn't part of a nation.
     land_2: 1
-    # Set the minimum distance between a land that tries to expand to a neighbouring nation.
+    # Size of buffer zone around a land that is part of a nation.
     # This value only applies to surrounding lands. That means that if a nation tries to expand and the
     # neighbouring claim isn't part of a nation, the "land_2" value from above will be used instead.
     nation: 3
