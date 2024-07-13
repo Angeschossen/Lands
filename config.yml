@@ -289,8 +289,9 @@ land:
   # Set the minimum Euclidean distance in chunks (16 blocks).
   # Players can bypass this restriction, if their role has the LAND_CLAIM_BORDER flag in the neighboring land.
   chunk-distance:
-    # Available distance modes: EUCLIDEAN, DIAMOND_SHAPE
-    # EUCLIDEAN - measures Euclidean distance
+    # Available distance modes: SQUARE, EUCLIDEAN, DIAMOND_SHAPE
+    # SQUARE - checks chunks around the chunk that is being claimed in a square shape
+    # EUCLIDEAN - measures Euclidean distance from chunk that is being claimed to neighbouring chunks
     # DIAMOND_SHAPE - creates buffer zone in form of a diamond around claims
     mode_3: "EUCLIDEAN"
     # Size of buffer zone around a land that isn't part of a nation.
@@ -1040,7 +1041,8 @@ integration:
     exp:
       enabled_15: false
     # Item currency is used when all other economy options are disabled or unavailable.
-    # The currency item can be edited in the GUI language file at the "currency" item.
+    # The currency item can be changed in the GUI locale file. Just search for "currency" there. The locale file is located under /plugins/Lands/Language/yourlocale_gui.yml.
+    # You can also apply model-data to the currency item in the GUI locale file: https://github.com/Angeschossen/PluginFrameworkAPI/wiki/GUI-Menus#set-custom-model-data
     # Please note that taxes can't be enabled, if you don't use Vault economy.
     items:
       # If enabled, only items that have the same name, lore etc. will belong to the currency.
