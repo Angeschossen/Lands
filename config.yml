@@ -176,6 +176,7 @@ general:
 
 # General options for economic tasks, that apply to taxes, upkeep and nation upkeep.
 # Each task has it's own section, in this file and nations.yml, with specified options.
+# These options require server reload / restart.
 economic:
   # Default configuration: taxes, upkeep and nation upkeep are collected every day at midnight.
   interval:
@@ -191,8 +192,9 @@ economic:
     change-cooldown_time: 3h
 
   # Altert the land or nation, if their funds are insufficient for upkeep.
-  # Default: Alerts them 5 hours before upkeep collection, if their balance is insufficient.
-  insufficient-altert_time: 5h
+  # The configured time defines a period before the actual upkeep collection.
+  # Example: 12h = alert lands and nations at earliest 12 hours before the upkeep collecting, if their funds are insufficient.
+  insufficient-altert_time: 8h
 
 
 # Upkeep can be toggled in the "features" section.
