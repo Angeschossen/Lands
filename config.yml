@@ -180,21 +180,21 @@ general:
 economic:
   # Default configuration: taxes, upkeep and nation upkeep are collected every day at midnight.
   interval:
-    # Collect taxes, upkeep and nation upkeep at midnight.
-    # Format: 24 hour format.
-    time: '24:00:00'
     # Set amount of days between each payment.
     # Example:
     # 1 = executes every day at the time specified at the top of this section.
     # 2 = executes every second day at the time specified at the top of this section.
-    days_2: 1
+    days_2: 7
+    # Set the time of day. Collect taxes, upkeep and nation upkeep at this time after x days.
+    # Format: 24 hour format.
+    time: '23:00:00'
     # Set the minimum time between a player's attempt to change the tax or upkeep and the next collection.
-    change-cooldown_time: 3h
+    change-cooldown_time: 2d
 
   # Altert the land or nation, if their funds are insufficient for upkeep.
   # The configured time defines a period before the actual upkeep collection.
   # Example: 12h = alert lands and nations at earliest 12 hours before the upkeep collecting, if their funds are insufficient.
-  insufficient-altert_time: 8h
+  insufficient-altert_time: 2d
 
 
 # Upkeep can be toggled in the "features" section.
