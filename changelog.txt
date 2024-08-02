@@ -1,2 +1,31 @@
-+ Added: [Suggestion] %lands_land_name_cmd% PAPI placeholder
-- Fixed: Wait for player data to load before initializing tp - redis
++ Added: The name options for lands and nations were changed to give you more freedom and flexibility.
+         Also nations now have their own name config in nations.yml
+
+           # Land name options
+           name:
+             # Should spaces be allowed in land names?
+             # Spaces will be replaced with an underscore, when being displayed as a command parameter.
+             # Disabling this option at a later time, will also remove spaces from existing lands.
+             spaces: false
+             # Maximum land name length
+             # The maximum possible length is 80 when using MySQL and 32 when using SQLite (including color codes).
+             # How to filter names: https://github.com/Angeschossen/General/wiki/Messages#filter-swear-words-and-forbidden-names
+             length_2: 24
+             # Should colors be allowed in land names?
+             # Disabling this option at a later time, will also remove color from existing lands.
+             color_2: true
+             # Should land names be allowed to include formatting, such as bold, underlined etc.?
+             format: true
+             # Should numbers be allowed in land names?
+             numbers: true
+             # Allow only latin letters for land names?
+             # If enabled: They won't be able to use chinese letters etc.
+             only-latin: false
+
++ Added: Option to only allow latin characters for land/nation names
+
++ Added: Option to remove combat tag upon death
+      # Remove the combat tag upon death?
+      death-remove: true
+
+- Fixed: Chat input for Folia

@@ -4,21 +4,45 @@
 # NOTE: This setting requires server reload / restart.
 enabled: true
 
-# Customize the creation
-creation:
-  # Set the creation cost
-  costs: 20000.0
-  # Require a specific land level to be able to create a nation. You can set this to 1 in order to disable this.
-  # NOTE: This must be the section name of the specific level.
-  # This option requires server reload / restart.
-  level: 5
+nation:
+  # Customize the creation
+  creation:
+    # Set the creation cost
+    costs: 20000.0
+    # Require a specific land level to be able to create a nation. You can set this to 1 in order to disable this.
+    # NOTE: This must be the section name of the specific level.
+    # This option requires server reload / restart.
+    capital-level: 5
 
-# /nations rename options
-rename:
-  # Costs x each time the name is changed.
-  costs_2: 10000.0
-  # Nation needs to wait x until they can change their name again.
-  cooldown_rename_time: 1d
+  # Nation name options
+  name:
+    # Should spaces be allowed in nation names?
+    # Spaces will be replaced with an underscore, when being displayed as a command parameter.
+    # Disabling this option at a later time, will also remove spaces from existing nations.
+    spaces: false
+    # Maximum nation name length
+    # The maximum possible length is 80 when using MySQL and 32 when using SQLite (including color codes).
+    # How to filter names: https://github.com/Angeschossen/General/wiki/Messages#filter-swear-words-and-forbidden-names
+    length: 24
+    # Should colors be allowed in nation names?
+    # Disabling this option at a later time, will also remove color from existing nations.
+    color: true
+    # Should nation names be allowed to include formatting, such as bold, underlined etc.?
+    format: true
+    # Should numbers be allowed in nation names?
+    numbers: true
+    # Allow only latin letters for nation names?
+    # If enabled: They won't be able to use chinese letters etc.
+    only-latin: false
+
+    # Rename settings
+    # Command: /nations rename
+    rename:
+      # Costs x each time the name is changed.
+      costs_2: 10000.0
+      # Nation needs to wait x until they can change their name again.
+      # Bypass permission: lands.bypass.cooldown.rename_nation
+      cooldown_rename_time: 1d
 
 
 # Land related settings

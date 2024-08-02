@@ -268,25 +268,41 @@ land:
       enabled_3: true
       # Cost to repositon the mainblock after land creation.
       reposition-costs: 0
-    # Maximum land name length
-    # The maximum possible length is 80 when using MySQL and 32 when using SQLite (including color codes).
-    # How to filter names: https://github.com/Angeschossen/General/wiki/Messages#filter-swear-words-and-forbidden-names
-    name-length: 24
-    # Should colors be allowed in land and nation names?
-    # Disabling this option at a later time, will also remove color from existing lands and nations.
-    color_2: true
-    # Should land names be allowed to include formatting, such as bold, underlined etc.?
-    format: true
-    # Should spaces be allowed in land and nation names?
-    # Spaces will be replaced with an underscore, when being displayed as a command parameter.
-    # Disabling this option at a later time, will also remove spaces from existing lands and nations.
-    spaces: false
-    # Should numbers be allowed in land and nation names?
-    numbers: true
+
     # Claim a radius of chunks at land creation. These initial claims won't cost the land anything.
     # NOTE: 0 = only the chunk in which the player currently stands.
     # NOTE: This value can't be higher than your servers view distance.
     claim-radius: 1
+
+  # Land name options
+  name:
+    # Should spaces be allowed in land names?
+    # Spaces will be replaced with an underscore, when being displayed as a command parameter.
+    # Disabling this option at a later time, will also remove spaces from existing lands.
+    spaces: false
+    # Maximum land name length
+    # The maximum possible length is 80 when using MySQL and 32 when using SQLite (including color codes).
+    # How to filter names: https://github.com/Angeschossen/General/wiki/Messages#filter-swear-words-and-forbidden-names
+    length_2: 24
+    # Should colors be allowed in land names?
+    # Disabling this option at a later time, will also remove color from existing lands.
+    color_2: true
+    # Should land names be allowed to include formatting, such as bold, underlined etc.?
+    format: true
+    # Should numbers be allowed in land names?
+    numbers: true
+    # Allow only latin letters for land names?
+    # If enabled: They won't be able to use chinese letters etc.
+    only-latin: false
+
+    # Rename settings
+    # Command: /lands rename
+    rename:
+      # Costs to rename a land.
+      costs_5: 10000.0
+      # Cooldown to rename the land.
+      # Bypass permission: lands.bypass.cooldown.rename_land
+      cooldown_rename_time: 1d
 
   # Set the minimum Euclidean distance in chunks (16 blocks).
   # Players can bypass this restriction, if their role has the LAND_CLAIM_BORDER flag in the neighboring land.
@@ -406,18 +422,10 @@ land:
     # NOTE: This setting required server reload / restart.
     mute-global: false
 
-  # Rename settings
-  # Command: /lands rename
-  rename:
-    # Costs to rename a land.
-    costs_5: 0.0
-    # Cooldown to rename the land.
-    # Bypass permission: lands.bypass.cooldown.rename
-    rename-cooldown_time: 15m
-
   # Fly Settings (Flags can be found in the roles section)
   fly:
     # If you disable flight control, the FLY flag from roles.yml won't have any effect.
+    # If you want to disallow flight in the wilderness, you need to toggle the fly flag in the admin menu: /lands admin menu
     enabled_4: true
     # Allow players to fly only in
     # Lands claim worlds (setting: claim-worlds_list)?
@@ -509,6 +517,8 @@ land:
       tag_time: 0s
       # Should a player be killed, if they log out while having a combat tag set on them?
       quit-kill: false
+      # Remove the combat tag upon death?
+      death-remove: true
     # Should players, which are members in a common land, be able to fight in wilderness?
     # NOTE: This option requires server restart / reload.
     ally-wilderness: true
@@ -1070,4 +1080,4 @@ logging:
   debug: false
   # Identify caller of events etc.
   # Available: land_balance_changed
-  print-callstack_list: []
+  print-callstack_list: [ ]
