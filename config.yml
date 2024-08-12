@@ -980,9 +980,11 @@ database:
     username_3: "default"
     password_3: "password"
     # This should be the name that you configured for this server in your BungeeCord or Velocity config.
+    # NOTE: If you're using mutlipaper, this option will be overriden by multipaper's own name decision.
     server-name: "server-1"
     # This option should only be enabled on ONE of the servers that are connected to the same Lands database and Redis.
     # If true: This server will execute tasks, such as upkeep, taxes etc. for all lands across all servers that are connected to the same Lands database and Redis.
+    # NOTE: If you're using multipaper, make sure to provide the actual name of the multipaper instance that should be the master server (not the multipaper master).
     master: false
 
   # Use SQLite for the database. Doesn't require a database server.
