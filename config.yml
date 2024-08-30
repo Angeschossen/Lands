@@ -305,8 +305,8 @@ land:
       # Bypass permission: lands.bypass.cooldown.rename_land
       cooldown_rename_time: 1d
 
-  # Set the minimum Euclidean distance in chunks (16 blocks).
-  # Players can bypass this restriction, if their role has the LAND_CLAIM_BORDER flag in the neighboring land.
+  # Set the minimum Euclidean distance in chunks (16 blocks). Players won't be able to claim in this buffer zone,
+  # unless their role has the LAND_CLAIM_BORDER flag in the neighboring land.
   chunk-distance:
     # Available distance modes: SQUARE, EUCLIDEAN, DIAMOND_SHAPE
     # SQUARE - checks chunks around the chunk that is being claimed in a square shape
