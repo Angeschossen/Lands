@@ -696,22 +696,15 @@ unstuck:
 # When using this make sure to set the spawn of each world using /setworldspawn.
 random-teleport:
   # Worlds where players should be able to use /lands wild.
-  # You can use '*' as a entry, to allow all worlds.
-  # NOTE: World names are case-sensitive. If you don't enter them correctly, issues might occur.
+  # You can use '*' as an entry, to allow all worlds.
+  # Entry format: worldName:minDistance:maxDistance
+  # The minimum and maximum distance is measured from the world spawn (/setworldspawn).
   wild-worlds_list:
-    - world
+    - "world:800:30000"
 
   # Should permissions for random teleportation be per world based instead of just lands.command.wild?
   # Example: world 'A': lands.command.wild.a, world 'B': lands.command.wild.b
   world-perms: false
-
-  distance:
-    # Max distance from world spawn
-    # NOTE: YOU NEED TO SET THE WOLRD SPAWN (MIDDLE) TO LET THIS WORK PROPERLY: /setworldspawn
-    # This setting requires server reload / restart.
-    max: 30000
-    # Set the minimum distance between the players current position and the teleport destination.
-    min: 800
 
   # Players will be random teleported in this world, if they're currently not in a world defined above.
   # NOTE: The world name is case-sensitive.
