@@ -102,6 +102,11 @@ general:
   # If false, chat message parts that are enclosed by [V]text[/T] will only be sent to players
   # that have the lands.admin.verbose permission. This setting only applies to chat messages.
   verbose: true
+
+  # The plugin fetches player skins and names from Mojang.
+  # If disabled, player skins can't be displayed in the menus and name changes will only apply, when they join the server.
+  fetch-skins-names: true
+
   # Date format
   # MM: Month
   # dd: Day of month
@@ -975,10 +980,12 @@ database:
     password_3: "password"
     # This should be the name that you configured for this server in your BungeeCord or Velocity config.
     # NOTE: If you're using mutlipaper, this option will be overridden by multipaper's own name decision.
+    # NOTE: This option can be overriden in server-name.yml to allow you copying this file (config.yml) to other servers without adjust this section.
     server-name: "server-1"
     # This option should only be enabled on ONE of the servers that are connected to the same Lands database and Redis.
     # If true: This server will execute tasks, such as upkeep, taxes etc. for all lands across all servers that are connected to the same Lands database and Redis.
     # NOTE: If you're using multipaper, make sure to provide the actual name of the multipaper instance that should be the master server (not the multipaper master).
+    # NOTE: This option can be overriden in server-name.yml to allow you copying this file (config.yml) to other servers without adjust this section.
     master: false
 
   # Use SQLite for the database. Doesn't require a database server.
