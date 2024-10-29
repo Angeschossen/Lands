@@ -130,11 +130,6 @@ nametag: true
 # Here you can define a list of commands, which shouldn't get executed while a player is engaged in a war.
 cmd-blacklist_list: [ ]
 
-# Here you can enable natural flags during a war.
-# List of available land-flags: https://github.com/Angeschossen/Lands/wiki/Land-Flags
-land-flags_list: [ ]
-
-
 # Cutomize what happens when a defender surrenders.
 surrender:
   # Tribute settings
@@ -216,6 +211,11 @@ end:
   robbery: 75%
 
 
+# Here you can enable natural flags during a war.
+# List of available land-flags: https://github.com/Angeschossen/Lands/wiki/Natural-Flags
+land-flags_list: [ ]
+
+
 # Invading means that the enemy is invading their opponent. Depending on the options "role-settings_list", "block-place_list" and "block-break_list"
 # they will be able to do certain actions in these lands, like opening chests.
 # If you want to limit what they're able to do, edit "role-settings_list", "block-place_list" and "block-break_list" in this section.
@@ -237,6 +237,7 @@ invading:
     # Available actions: https://github.com/Angeschossen/Lands/wiki/Roles-and-their-Flags#action-flags
     # NOTE: Adding BLOCK_PLACE or BLOCK_BREAK to this list will allow invaders to break, place ALL blocks. If you want to specify blocks, please use the lists below.
     # NOTE: In war the attackers and defenders also have the flags of the untrusted role of the area they're invading.
+    # NOTE: If you want to allow players to ignite and explode tnt blocks you need to add BLOCK_IGNITE to this list and TNT_GRIEFING to land-flags_list above.
     role-flags_list:
       - ITEM_PICKUP
       - ATTACK_PLAYER
