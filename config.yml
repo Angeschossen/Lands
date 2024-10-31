@@ -42,7 +42,7 @@ features:
 
 # General options
 general:
-  # Worlds where players should be able to claim.
+  # Worlds where players should be able to claim. You can add all worlds by adding * to the list.
   # This list also supports setting an optional player claims height per world.
   # Example: world:30:319 -> this will configure the world 'world' with a claim height from 30 to 319.
   # NOTE: Minimum height can't be lower than your server's min height and maximum height can't be higher than your servers maximum height.
@@ -521,6 +521,9 @@ land:
       # other players can attack them.
       # 0s = disabled
       tag_time: 0s
+      # Configure worlds in which combat tags should be enabled.
+      # NOTE: If empty, it's enabled in all claim worlds from claim-worlds_list.
+      tag-worlds_list: [ ]
       # Should a player be killed, if they log out while having a combat tag set on them?
       quit-kill: false
       # Remove the combat tag upon death?
