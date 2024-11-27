@@ -435,11 +435,17 @@ land:
     # If you disable flight control, the FLY flag from roles.yml won't have any effect.
     # If you want to disallow flight in the wilderness, you need to toggle the fly flag in the admin menu: /lands admin menu
     enabled_4: true
-    # Allow players to fly only in
-    # Lands claim worlds (setting: claim-worlds_list)?
-    # Bypass permission: lands.bypass.wilderness.fly
-    # NOTE: This requires server reload / restart.
-    only-claimworld: true
+    # This option only affects worlds that aren't in claim-worlds_list.
+    # For worlds of claim-worlds_list this option is irrelevant, since flight is controlled via the FLY flag.
+    # To toggle flight control in wilderness of claim worlds, just execute /lands admin menu while standing in the world.
+    # This list allows you to deny or allow flight in worlds that aren't in claim-worlds_list. This is important if players are switching worlds.
+    # You can use wildcard (*) to add all worlds to this list.
+    # Entry format is as follows: "worldName:allowFly"
+    # Example:
+    #   world:false -> if world isn't part of claim-worlds_list, flight will be disabled in this world.
+    #   world:true -> if world isn't part of claim-worlds_list, flight won't be disabled when players enter this world.
+    #   If world is part of claim-worlds_list, the flight control will be controlled via the FLY flag in /lands admin menu or the menu of claims.
+    flight-control-worlds_list: []
     # Set the fly deactivation delay if a player is not allowed to fly at this position.
     # Timeunit: Seconds
     disable-delay: 3
