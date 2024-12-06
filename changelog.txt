@@ -1,11 +1,2 @@
-- Fixed: Issue where saved icons would cause a request to be made for the session servers to mojang at the server startup since the servers inbuild serialization would not take the profile url into account.
-If you're having this issue and getting rate limit messages after startup, try the following:
-
-1. Stop server
-2. Download and install **at least version 7.11.1 of Lands**
-3. Start server
-4. Stop server
-5. Enable force-save in config.yml under logging (at the bottom of the config)
-6. Start server
-7. Stop server. Shutdown will take longer this time.
-8. Disable force-save in config.yml under logging (at the bottom of the config)
+- Fixed: Initial land spawn with redis not immediately sync
+- Fixed: Spawn not set if mainblock didn't have space enough - still attempt to fit spawn
