@@ -1,14 +1,2 @@
-+ Added: You can now disable claiming for regular players in specific worlds, while still being able to create admin lands as a server admin.
-  # Worlds where players should be able to claim. You can add all worlds by adding * to the list.
-  # You can also set optional parameters such as, if claiming should be enabled for regular players without admin perms (permission: lands.admin.disabled-features)
-  # and the minimum and maximum claim height. The format is a follows: <worldname>:<claiming>:<min-height>:<max-height>
-  # NOTE: Minimum height can't be lower than your server's min height and maximum height can't be higher than your servers maximum height. The claim height of admin lands will always be maxed out.
-  # NOTE: This setting requires server reload / restart.
-  # Examples:
-  #   'world' -> This results in the max claim height and claiming enabled for players.
-  #   'world:true:30:319' -> This results in a claim height of 30 to 319 and claiming enabled for players.
-  #   'world:false' -> Only server admins can claim in this world to create admin lands etc.
-  claim-worlds_list:
-    - 'world'
-
-- Fixed: CMI hologram interaction
++ Added: [Suggestion] Ability to give claimblocks with a claim radius via /lands admin player <player> give claimblock <radius> <amount>
+You can also set a claim radius for the initial claimblock item given to new players in config.yml.
